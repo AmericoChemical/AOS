@@ -1,0 +1,3 @@
+Americo Operations System
+AOS.exe
+D:\Clients\Americo\AmericoOperationsSystem\Updates

@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[AOS.Application.sln]
+SCC_Aux_Path = "\\acpi-sql\AOS\VSS"
+SCC_Project_Name = "$/AOS/AOS.Application/AOS.Application", DAAAAAAA
+
+[AOS.Application.vbproj]
+SCC_Aux_Path = "\\acpi-sql\AOS\VSS"
+SCC_Project_Name = "$/AOS/AOS.Application/AOS.Application", DAAAAAAA

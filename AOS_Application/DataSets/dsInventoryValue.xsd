@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsInventoryValue" targetNamespace="http://tempuri.org/dsInventoryValue.xsd" xmlns:mstns="http://tempuri.org/dsInventoryValue.xsd" xmlns="http://tempuri.org/dsInventoryValue.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AOSDataConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AOSDataConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AOS.My.MySettings.GlobalReference.Default.AOSDataConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InventoryTableAdapter" GeneratorDataComponentClassName="InventoryTableAdapter" Name="Inventory" UserDataComponentName="InventoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AOSDataConnectionString (MySettings)" DbObjectName="AOSData.dbo.PRODUCT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     
+	PRODUCT.PRODUCTID, 
+	PRODUCT.PRODUCTDESC, 
+	PRODUCT.CONTAINER, 
+    (SELECT COUNT(INVITEM.INVITEMNUMBER) 
+		FROM 
+			INVITEM 
+		WHERE 
+			INVITEM.PRODUCTID = PRODUCT.PRODUCTID AND 
+			((INVITEM.ITEMSTATUS = 'AVAILABLE') OR (INVITEM.ITEMSTATUS = 'ALLOCATED'))) AS Qty,
+	(SELECT UNITCOST 
+		FROM 
+			PRODUCTCOST P
+		WHERE
+			COSTRECID = (SELECT MAX(COSTRECID) FROM PRODUCTCOST WHERE PRODUCTID = P.PRODUCTID)
+			AND P.PRODUCTID = PRODUCT.PRODUCTID) AS UNITCOST,
+	(SELECT UNITS 
+		FROM 
+			PRODUCTCOST P
+		WHERE
+			COSTRECID = (SELECT MAX(COSTRECID) FROM PRODUCTCOST WHERE PRODUCTID = P.PRODUCTID)
+			AND P.PRODUCTID = PRODUCT.PRODUCTID) AS UNITS,
+	(SELECT UOM 
+		FROM 
+			PRODUCTCOST P
+		WHERE
+			COSTRECID = (SELECT MAX(COSTRECID) FROM PRODUCTCOST WHERE PRODUCTID = P.PRODUCTID)
+			AND P.PRODUCTID = PRODUCT.PRODUCTID) AS UOM,
+	((SELECT UNITS 
+		FROM 
+			PRODUCTCOST P
+		WHERE
+			COSTRECID = (SELECT MAX(COSTRECID) FROM PRODUCTCOST WHERE PRODUCTID = P.PRODUCTID)
+			AND P.PRODUCTID = PRODUCT.PRODUCTID) * (SELECT UNITCOST 
+		FROM 
+			PRODUCTCOST P
+		WHERE
+			COSTRECID = (SELECT MAX(COSTRECID) FROM PRODUCTCOST WHERE PRODUCTID = P.PRODUCTID)
+			AND P.PRODUCTID = PRODUCT.PRODUCTID) * (SELECT COUNT(INVITEM.INVITEMNUMBER) 
+		FROM 
+			INVITEM 
+		WHERE 
+			INVITEM.PRODUCTID = PRODUCT.PRODUCTID AND 
+			((INVITEM.ITEMSTATUS = 'AVAILABLE') OR (INVITEM.ITEMSTATUS = 'ALLOCATED')))) AS TOTAL
+FROM
+	PRODUCT </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PRODUCTID" DataSetColumn="PRODUCTID" />
+              <Mapping SourceColumn="PRODUCTDESC" DataSetColumn="PRODUCTDESC" />
+              <Mapping SourceColumn="CONTAINER" DataSetColumn="CONTAINER" />
+              <Mapping SourceColumn="UOM" DataSetColumn="UOM" />
+              <Mapping SourceColumn="UNITS" DataSetColumn="UNITS" />
+              <Mapping SourceColumn="UNITCOST" DataSetColumn="UNITCOST" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsInventoryValue" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsInventoryValue" msprop:Generator_DataSetName="dsInventoryValue" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Inventory" msprop:Generator_UserTableName="Inventory" msprop:Generator_RowDeletedName="InventoryRowDeleted" msprop:Generator_RowChangedName="InventoryRowChanged" msprop:Generator_RowClassName="InventoryRow" msprop:Generator_RowChangingName="InventoryRowChanging" msprop:Generator_RowEvArgName="InventoryRowChangeEvent" msprop:Generator_RowEvHandlerName="InventoryRowChangeEventHandler" msprop:Generator_TableClassName="InventoryDataTable" msprop:Generator_TableVarName="tableInventory" msprop:Generator_RowDeletingName="InventoryRowDeleting" msprop:Generator_TablePropName="Inventory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PRODUCTID" msprop:Generator_UserColumnName="PRODUCTID" msprop:Generator_ColumnVarNameInTable="columnPRODUCTID" msprop:Generator_ColumnPropNameInRow="PRODUCTID" msprop:Generator_ColumnPropNameInTable="PRODUCTIDColumn" type="xs:int" />
+              <xs:element name="PRODUCTDESC" msprop:Generator_UserColumnName="PRODUCTDESC" msprop:Generator_ColumnVarNameInTable="columnPRODUCTDESC" msprop:Generator_ColumnPropNameInRow="PRODUCTDESC" msprop:Generator_ColumnPropNameInTable="PRODUCTDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTAINER" msprop:Generator_UserColumnName="CONTAINER" msprop:Generator_ColumnVarNameInTable="columnCONTAINER" msprop:Generator_ColumnPropNameInRow="CONTAINER" msprop:Generator_ColumnPropNameInTable="CONTAINERColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UOM" msprop:Generator_UserColumnName="UOM" msprop:Generator_ColumnVarNameInTable="columnUOM" msprop:Generator_ColumnPropNameInRow="UOM" msprop:Generator_ColumnPropNameInTable="UOMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNITS" msprop:Generator_UserColumnName="UNITS" msprop:Generator_ColumnVarNameInTable="columnUNITS" msprop:Generator_ColumnPropNameInRow="UNITS" msprop:Generator_ColumnPropNameInTable="UNITSColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UNITCOST" msprop:Generator_UserColumnName="UNITCOST" msprop:Generator_ColumnVarNameInTable="columnUNITCOST" msprop:Generator_ColumnPropNameInRow="UNITCOST" msprop:Generator_ColumnPropNameInTable="UNITCOSTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Qty" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTAL" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Inventory" />
+      <xs:field xpath="mstns:PRODUCTID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,5407 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AOS
+</name>
+</assembly>
+<members>
+<member name="M:AOS.BusinessObjects.Altcomponent.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Altcomponent.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Altcomponent.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Altcomponent.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apis.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apis.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apis.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apis.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apishistory.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apishistory.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apishistory.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apishistory.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisnote.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisnote.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisnote.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisnote.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisprocedure.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisprocedure.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisprocedure.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Apisprocedure.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appfunction.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appfunction.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appfunction.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appfunction.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appgroup.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appgroup.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appgroup.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appgroup.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appmenu.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appmenu.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appmenu.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appmenu.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuser.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuser.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuser.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuser.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserfunction.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserfunction.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserfunction.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserfunction.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusergroup.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusergroup.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusergroup.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusergroup.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusermenu.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusermenu.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusermenu.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appusermenu.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserpermission.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserpermission.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserpermission.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Appuserpermission.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditcategory.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditcategory.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditcategory.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditcategory.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditlog.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditlog.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditlog.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditlog.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditpermissions.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditpermissions.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditpermissions.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditpermissions.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditrule.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditrule.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditrule.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Auditrule.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoice.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoice.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoice.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoice.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoiceItem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoiceItem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoiceItem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.BDFInvoiceItem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Carrier.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Carrier.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Carrier.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Carrier.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemical.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemical.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemical.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemical.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemicalbom.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemicalbom.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemicalbom.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Chemicalbom.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commission.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commission.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commission.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commission.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionbaln.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionbaln.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionbaln.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionbaln.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionexception.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionexception.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionexception.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionexception.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionpmt.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionpmt.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionpmt.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Commissionpmt.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Component.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Component.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Component.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Component.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Container.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Container.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Container.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Container.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customer.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customer.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customer.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customer.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerassignment.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerassignment.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerassignment.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerassignment.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerpayment.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerpayment.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerpayment.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Customerpayment.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Employee.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Employee.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Employee.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Employee.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Ghsmanualspecs.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Ghsmanualspecs.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Ghsmanualspecs.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Ghsmanualspecs.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Hazmatsymbol.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Hazmatsymbol.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Hazmatsymbol.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Hazmatsymbol.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Inventorystatus.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Inventorystatus.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Inventorystatus.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Inventorystatus.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoice.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoice.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoice.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoice.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoiceitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoiceitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoiceitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoiceitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoicepayment.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoicepayment.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoicepayment.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invoicepayment.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invphys.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invphys.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invphys.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invphys.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invtx.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invtx.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invtx.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Invtx.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kit.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kit.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kit.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kit.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kitcomponent.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kitcomponent.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kitcomponent.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Kitcomponent.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LabelPrinters.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LabelPrinters.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LabelPrinters.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LabelPrinters.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListAppearance.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListAppearance.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListAppearance.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListAppearance.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListBillingtype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListBillingtype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListBillingtype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListBillingtype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemappearance.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemappearance.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemappearance.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemappearance.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemcolor.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemcolor.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemcolor.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemcolor.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcategory.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcategory.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcategory.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcategory.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalclarity.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalclarity.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalclarity.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalclarity.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcolor.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcolor.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcolor.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalcolor.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicaldangerwords.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicaldangerwords.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicaldangerwords.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicaldangerwords.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalodor.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalodor.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalodor.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalodor.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalstate.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalstate.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalstate.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemicalstate.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemodor.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemodor.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemodor.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemodor.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemstate.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemstate.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemstate.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListChemstate.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListColor.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListColor.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListColor.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListColor.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissioncategory.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissioncategory.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissioncategory.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissioncategory.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissiontype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissiontype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissiontype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCommissiontype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCompsymbol.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCompsymbol.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCompsymbol.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCompsymbol.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCostmethod.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCostmethod.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCostmethod.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCostmethod.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCosttype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCosttype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCosttype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListCosttype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFob.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFob.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFob.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFob.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFulfillmenttype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFulfillmenttype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFulfillmenttype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListFulfillmenttype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListGhspictograms.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListGhspictograms.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListGhspictograms.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListGhspictograms.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInventoryclass.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInventoryclass.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInventoryclass.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInventoryclass.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInvitemstatus.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInvitemstatus.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInvitemstatus.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListInvitemstatus.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListItemtype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListItemtype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListItemtype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListItemtype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLabeltype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLabeltype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLabeltype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLabeltype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLoadtype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLoadtype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLoadtype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListLoadtype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOdor.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOdor.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOdor.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOdor.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOption.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOption.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOption.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOption.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOrdertype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOrdertype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOrdertype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListOrdertype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPackagegroup.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPackagegroup.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPackagegroup.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPackagegroup.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPallettype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPallettype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPallettype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPallettype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPriceliststatus.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPriceliststatus.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPriceliststatus.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPriceliststatus.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPricingmethod.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPricingmethod.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPricingmethod.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListPricingmethod.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListProductstatus.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListProductstatus.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListProductstatus.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListProductstatus.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListShelflife.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListShelflife.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListShelflife.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListShelflife.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListTransporttype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListTransporttype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListTransporttype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListTransporttype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListUom.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListUom.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListUom.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListUom.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWarehouselocation.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWarehouselocation.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWarehouselocation.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWarehouselocation.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWorkordertype.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWorkordertype.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWorkordertype.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListWorkordertype.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Load.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Load.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Load.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Load.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LoadAPBatch.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LoadAPBatch.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LoadAPBatch.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.LoadAPBatch.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadbilling.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadbilling.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadbilling.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadbilling.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadcharge.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadcharge.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadcharge.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadcharge.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loaditem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loaditem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loaditem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loaditem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadpallet.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadpallet.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadpallet.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadpallet.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadquote.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadquote.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadquote.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Loadquote.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Logistics.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Logistics.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Logistics.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Logistics.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lookup.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lookup.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lookup.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lookup.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lotnumber.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lotnumber.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lotnumber.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Lotnumber.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Material.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Material.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Material.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Material.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Materialproduct.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Materialproduct.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Materialproduct.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Materialproduct.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Note.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Note.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Note.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Note.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Po.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Po.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Po.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Po.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Poitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Poitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Poitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Poitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Pricelist.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Pricelist.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Pricelist.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Pricelist.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Proditem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Proditem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Proditem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Proditem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodnote.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodnote.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodnote.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodnote.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodorder.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodorder.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodorder.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodorder.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodprocedure.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodprocedure.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodprocedure.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodprocedure.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodtime.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodtime.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodtime.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Prodtime.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Product.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Product.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Product.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Product.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productcost.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productcost.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productcost.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productcost.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productfulfillmentplan.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productfulfillmentplan.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productfulfillmentplan.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productfulfillmentplan.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productrelabelinstruction.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productrelabelinstruction.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productrelabelinstruction.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Productrelabelinstruction.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchase.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchase.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchase.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchase.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitemhistory.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitemhistory.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitemhistory.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Purchaseitemhistory.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.PurchaseRequest.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.PurchaseRequest.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.PurchaseRequest.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.PurchaseRequest.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiver.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiver.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiver.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiver.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiveritem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiveritem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiveritem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Receiveritem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelinstruction.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelinstruction.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelinstruction.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelinstruction.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorder.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorder.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorder.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorder.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorderitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorderitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorderitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Relabelorderitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rma.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rma.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rma.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rma.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rmaitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rmaitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rmaitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Rmaitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.RptSalesinvoicedata.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.RptSalesinvoicedata.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.RptSalesinvoicedata.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.RptSalesinvoicedata.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Salesperson.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Salesperson.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Salesperson.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Salesperson.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipment.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipment.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipment.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipment.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentdetail.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentdetail.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentdetail.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentdetail.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Shipmentitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Suppliercompany.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Suppliercompany.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Suppliercompany.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Suppliercompany.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Sysparameters.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Sysparameters.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Sysparameters.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Sysparameters.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Testsample.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Testsample.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Testsample.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Testsample.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendor.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendor.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendor.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendor.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendortestingmatrix.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendortestingmatrix.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendortestingmatrix.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Vendortestingmatrix.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Warehouse.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Warehouse.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Warehouse.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Warehouse.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorder.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorder.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorder.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorder.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderemailplan.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderemailplan.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderemailplan.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderemailplan.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderitem.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderitem.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderitem.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Workorderitem.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="T:AOS.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.ACP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.ActualSizeHS">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Add20">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.AddNew">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Alert">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.arrow_left">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.barcode_ok">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.barcode_properties">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.barcode_remove">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.box_2_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.calculator_search">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.CancelChanges">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Change">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Change1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Circle_LeftArrow24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Circle_LeftArrow32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Close">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.CompanyName">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.CompanyNameBright">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.CompanyNameLogo32Bright">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.CompanyNameLogo48Bright">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.customer">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.customer_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.customer_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.database_find">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.database_lookup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.DeleteHS">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.DOC">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_accept__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_add__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_delete__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_delete3__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_edit__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_error__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_go__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_text_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_text_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_text_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.document_text_search">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.edit_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.EditData">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.EditInformation">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.EditInformationHS">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Export">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Filter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.filter_find">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.FindRecord">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.folder_open_go">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_arrow_left">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_arrow_right">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Form_Cancel">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Form_Cancel1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Form_Cancel2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_check">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_find">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_info">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_items">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_notes">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_print">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.form_save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.FormBackground">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.GoRtl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.GreenCircle_LeftArrow24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.GreenCircle_LeftArrow241">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.history">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.HLP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.icons32x32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Import">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.InventoryItem_SingleImage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.List__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.list__3_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.list__4_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.list_accept">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.list_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.list_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.list_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.LogoCompanyName24pt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.LogoCompanyName24pt1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.LogoCompanyName30pt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.NewDocumentHS">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.NewRecord">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.note_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.note_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.note_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.note_text">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_add1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_delete1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_edit1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_text">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.notes_text1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.ov_check">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.ov_delete2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Print">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Printer">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.proforma_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.proforma_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.proforma_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.proforma_print">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.proforma_search">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Quarantine">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.query_stack_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.record_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.record_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Refresh">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Report1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.save_remove">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.SaveChanges">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Search">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Search1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.transport">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.transport_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.transport_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.Unquarantine">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.vendor">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.vendor_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.vendor_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.view_add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.view_delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.view_details">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.view_edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.View_table">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:AOS.My.Resources.Resources.window_arrow_left">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.checkAndAssignInventory(AOS.InventoryItemsProcessing.AllocatedType,System.Int32,System.Int32,AOS.BusinessObjects.WorkorderitemCollection,System.Int32)">
+ <summary>
+ Allocates inventory to work order items if product is available in inventory
+ </summary>
+ <param name="vProductID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.allocateInventoryItems(System.String,System.Int32,AOS.BusinessObjects.ViewInvItemDetailsCollection)">
+ <summary>
+ Allocate the Available Inventory item to the Work Order Items.
+ </summary>
+ <param name="vPurchaseItemSourceType"></param>
+ <param name="vPurchaseItemId"></param>
+ <param name="vAvailableInventoryItems"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.unAllocateInventoryItem(System.Nullable{System.Int32})">
+ <summary>
+ Unallocate Inventory Item
+ </summary>
+ <param name="vInvItemNumber"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.getAvailableInventory(System.Int32,System.String)">
+ <summary>
+ Get the list of Inventory Items that are in AVAILABLE, PENDING and TESTING statuses, have InventoryClass equals to 1
+ </summary>
+ <param name="vProductID"></param>
+ <returns>Returns the list of Inventory Items that are in AVAILABLE, PENDING and TESTING statuses, have InventoryClass equals to 1.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.getAvailableInventoryByStatus(System.Int32,System.String,System.String)">
+ <summary>
+ Get the list of Inventory Items that are in the status sent by caller method, have InventoryClass equals to 1
+ </summary>
+ <param name="vProductID"></param>
+ <returns>Returns the list of Inventory Items that are in the status that user sent, have InventoryClass equals to 1.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.getAllocatedInventory(System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ Get the list of Inventory Items that are in ALLOCATED, TESTING, or PENDING status and ALLOCATEDOCUMENT and ALLOCATEDDATE is NOT NULL
+ </summary>
+ <param name="vProductID"></param>
+ <returns>Returns the list of Inventory Items that are in ALLOCATED, TESTING, or PENDING status and ALLOCATEDOCUMENT and ALLOCATEDDATE is NOT NULL. Resultset is returned based on vSortBy order</returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.reAllocateInventoryItems(System.Int32,AOS.BusinessObjects.ViewInvItemDetailsCollection,System.String)">
+ <summary>
+ Re-Allocate the Allocated Inventory item to the Work Order Items.
+ </summary>
+ <param name="vPurchaseitemId"></param>
+ <param name="vAvailableInventory"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.updateInventoryItem(AOS.BusinessObjects.Invitem,System.DateTime,System.Int32,AOS.InventoryItemsProcessing.AllocatedType,System.String)">
+ <summary>
+ Sets AllocatedDate, AllocatedDocument and ItemStatus
+ </summary>
+ <param name="vInvItem"></param>
+ <param name="vAllocatedDate"></param>
+ <param name="vAllocatedDocument"></param>
+ <param name="vAllocatedType"></param>
+ <param name="vItemStatus"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.createInventoryItemsAndUpdateWOItems(AOS.BusinessObjects.PurchaseitemCollection)">
+ <summary>
+ Creates inventory item based on purchase order. Also update work order items
+ </summary>
+ <param name="oPurchaseItems"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.createInventoryItem(System.String,System.Int32,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Int32,System.String,System.String,System.Decimal,System.String,System.Nullable{System.Int32},System.String)">
+ <summary>
+ Creates new inventory item if product exists.
+ </summary>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.updateInventoryItemCost(System.Int32,System.Nullable{System.Decimal},System.String,System.Nullable{System.Decimal})">
+ <summary>
+ Sets ActualUnitCost, ActualCostUOM and ActualCostUnits
+ </summary>
+ <param name="vInvitemNumber"></param>
+ <param name="vActualunitcost"></param>
+ <param name="vActualcostuom"></param>
+ <param name="vActualcostunits"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.InventoryItemsProcessing.getViewInvItemDetails(System.Int32)">
+ <summary>
+ Get the list of Inventory Items for given InvItem number
+ </summary>
+ <param name="vINVITEMNum"></param>
+ <returns>Get the list of Inventory Items for given InvItem number.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.MaterialProcessing.getMaterialProductByProduct(System.Int32)">
+ <summary>
+ Get Material Product By Product Id.
+ </summary>
+ <param name="vProductID"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.MaterialProcessing.getAvailableRawMaterial(System.Int32)">
+ <summary>
+ Returns the total available by Product.
+ </summary>
+ <param name="vProductId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.MaterialProcessing.getAvailableQty(AOS.BusinessObjects.Materialproduct)">
+ <summary>
+ Returns the total available by Material Product.
+ </summary>
+ <param name="vMaterialProduct"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.createAndAssignProductionOrders(AOS.BusinessObjects.Workorder,AOS.BusinessObjects.WorkorderitemCollection,System.Int32)">
+ <summary>
+ Creates Production Order and assign those to Work Order Items
+ </summary>
+ <param name="vWorkOrder"></param>
+ <param name="vWOItems">If NULL this function will get the unallocated WOItems from the DB</param>
+ <param name="vProductID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.validateProductionOrderToRollback(System.Int32)">
+ <summary>
+ It checks following if Production Order Open (INVTX records created for this Production Order)
+ </summary>
+ <param name="vProdOrderNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.productionOrderOpen(System.Int32)">
+ <summary>
+ Returns true if production order is open otherwise returns false.
+ </summary>
+ <param name="vProdOrderNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.getProductionOrder(System.Int32)">
+ <summary>
+ Returns Production Order given ProdOrderNumber
+ </summary>
+ <param name="vProdOrderNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.getProdItems(System.Int32)">
+ <summary>
+ Returns a colleciton of Production Order Items from ProdItem table for ProdOrderNumber
+ </summary>
+ <param name="vProdOrderNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.getProdItems(System.Int32,System.Int32)">
+ <summary>
+ Returns a Production Order Item for given ProdOrderNumber and Material ID
+ </summary>
+ <param name="vProdOrderNumber"></param>
+ <param name="vMaterialId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.invTxExist(System.Int32)">
+ <summary>
+ Returns True if row in INVTX for given production order item where txType is "ProdOrder"
+ </summary>
+ <param name="vProdItemNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.rollBackProductionOrder(System.Int32)">
+ <summary>
+ Update prodOrder status and ProdItem status to complete
+ </summary>
+ <param name="vProdOrderNumber"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.updateProdItemsToComplete(System.Int32)">
+ <summary>
+ Sets the IsComplete flag of all ProdItems to true
+ </summary>
+ <param name="vProdOrderNumber"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.createProductionOrder(AOS.BusinessObjects.Workorder,AOS.BusinessObjects.WorkorderitemCollection,System.Int32)">
+ <summary>
+ It creates Production Order if an active APIS is available. If No Active / Single Use APIS is available, it will return NULL.
+ </summary>
+ <param name="vWorkOrder"></param>
+ <param name="vWOItems">It will be all unallocated work order items if called by Auto plan. 
+ It will be WO Items linked to purchase item if called from Add production order from purchase item screen. </param>
+ <param name="vProductID"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.getActiveAPIS(System.Int32)">
+ <summary>
+ Return the APIS collection for the Product where status is not ARCHIVED
+ </summary>
+ <param name="vProductID"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.getAPISItems(System.Int32)">
+ <summary>
+ Returns a collection of APIS Items from APISITEM table for APIS Number
+ </summary>
+ <param name="vAPISNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.ProductionOrderProcessing.processProductionOrder(AOS.BusinessObjects.Workorder,System.Int32)">
+ <summary>
+ Creates Production Order and run raw material fulfillment process
+ </summary>
+ <param name="vWorkOrder"></param>
+ <param name="vProductID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.getPurchaseItem(System.Int32)">
+ <summary>
+ Returns purchaseItem object if purchaseItem and purchaseItemStatus matches.
+ </summary>
+ <param name="vPurchaseItemId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.purchaseItemExists(System.Int32,System.String)">
+ <summary>
+ Returns true if purchaseItem object is found for given purchase item id and status, otherwise returns false.
+ </summary>
+ <param name="vPurchaseItemId"></param>
+ <param name="vPurchaseItemStatus">Optional parameter</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.updatePurchaseItemStatus(System.Int32,System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="vPurchaseItemId"></param>
+ <param name="vCurrentPurchaseItemStatus"></param>
+ <param name="vNewPurchaseItemStatus"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.updatePurchaseItemStatus(System.Int32,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="vPurchaseItemId"></param>
+ <param name="vPurchaseItemStatus"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.updatePurchaseItemsStatus(AOS.PurchaseProcessing.PurchaseItemSourceType,System.Int32,System.String,System.String)">
+ <summary>
+ Update the status of all purchase items associated to a particular source document if the status if CurrentPurchaseItemStatus
+ </summary>
+ <param name="vSourceType"></param>
+ <param name="vSourceDocument"></param>
+ <param name="vCurrentPurchaseItemStatus"></param>
+ <param name="vNewPurchaseItemStatus"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.checkAndCreatePurchaseItemsAndFulfillWO(System.Nullable{System.Int32},System.Int32,System.String)">
+ <summary>
+ Creates Purchase Items and Updates WO Items
+ </summary>
+ <param name="vWorkOrderNumber"></param>
+ <param name="vProductID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.updatePurchaseItem(System.Int32,System.Decimal,System.String)">
+ <summary>
+ Update Purchase Item Quantity and Status
+ </summary>
+ <param name="vPurchaseItemId"></param>
+ <param name="vQty"></param>
+ <param name="vStatus"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.closePurchaseOrderByPurchaseItemStatus(System.Int32)">
+ <summary>
+ Close the purchase order if all the purchase items are marked as received
+ </summary>
+ <param name="vPurchaseItemID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.assignPurchaseItemToWorkOrderItems(AOS.BusinessObjects.Purchaseitem,AOS.BusinessObjects.WorkorderitemCollection,System.String)">
+ <summary>
+ Assign Purchase Item To Work Order Items
+ </summary>
+ <param name="vPurchaseItem"></param>
+ <param name="vWorkOrderItems"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.getPurchaseItemsByPurchaseNumber(System.Int32,System.String,System.String,System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="vPurchaseNumber"></param>
+ <param name="vPurchaseItemStatus"></param>
+ <param name="vSortBy"></param>
+ <param name="vNotPurchaseStatus"></param>
+ collect Purchase Item which Purchase Item Status not equal vNotPurchaseStatus value.
+ <param name="vPurchaseStatus"></param>
+ collect Purchase Item which Purchase Item Status equal vNotPurchaseStatus value.
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.approvePurchaseOrder(System.String)">
+ <summary>
+ Approve purchase order by Purchase number
+ </summary>
+ <param name="vPurchaseNumber"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.approvePurchaseOrder(AOS.BusinessObjects.Purchase)">
+ <summary>
+ calls Create inventory items function.
+ calls Copy all purchase Items for this Purchase order to PurchaeItemsHistoryTable function.
+ </summary>
+ <param name="vPurchaseOrder"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.isPurchaseOrdered(System.Int32)">
+ <summary>
+ Returns True if Purchase Order associated with Purchase Item is ORDERED otherwise false.
+ </summary>
+ <param name="vPurchaseItemId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.copyPurchaseItemToPurchasehistory(AOS.BusinessObjects.PurchaseitemCollection)">
+ <summary>
+ Copy all purchase Items for this Purchase order to PurchaeItemsHistoryTable
+ </summary>
+ <param name="oPurchaseItemsCollection"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.PurchaseProcessing.duplicatePurchaseItem(AOS.BusinessObjects.Purchaseitem,System.Int32,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ Duplicate purchase item record except qty.
+ </summary>
+ <param name="oPurchaseItem"></param>
+ <param name="vQty"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.rawMaterialFulfillmentProcess(AOS.BusinessObjects.Prodorder)">
+ <summary>
+ It go thorugh all Prod Items in Prod Order and check availability. 
+ If not enough material available, it converts Available / Pending Inventory to In Process
+ </summary>
+ <param name="vProdOrder"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.getUnallocatedWorkOrderItems(System.Int32)">
+ <summary>
+ Returns work order items that need to be fulfilled. Resultset is sorted by Item ID ascending.
+ </summary>
+ <returns>vWorkOrderNumber</returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.getAllocatedWorkOrderItems(System.Int32)">
+ <summary>
+ Returns work order items that are already fulfilled. Resultset is sorted by Item ID ascending.
+ </summary>
+ <returns>vWorkOrderNumber</returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.getUnallocatedWorkOrderItems(System.Int32,System.Int32)">
+ <summary>
+ Returns work order items that need to be fulfilled. Resultset is sorted by Item ID ascending.
+ </summary>
+ <param name="vProductID"></param>
+ <returns>WorkorderitemCollection</returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.getUnallocatedWorkOrderItemsTotalQty(System.Int32,System.Int32,System.String)">
+ <summary>
+ Returns sum of work order items qty that need to be fulfilled
+ </summary>
+ <param name="vWorkOrderNumber"></param>
+ <param name="vProductID"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.unallocateWorkOrderItems(AOS.BusinessObjects.WorkorderitemCollection)">
+ <summary>
+ Unallocate 
+ </summary>
+ <param name="vWorkOrderItems"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.checkWOItemsUnallocateable(System.Int32)">
+ <summary>
+ Validate Work Order Items before starting the reversal process
+ </summary>
+ <param name="vWorkOrderNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.getWorkOrderItemsByPurchaseItemID(System.Int32,System.Int32,System.String)">
+ <summary>
+ Returns collection of work order items given the purchase item id
+ </summary>
+ <param name="vPurchaseItemNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.updateWorkOrderItem(System.Int32,System.Nullable{System.Int32},System.String,System.Nullable{System.Int32},System.String,System.String,System.Nullable{System.Decimal})">
+ <summary>
+ Updates Work Order Item based on given values
+ </summary>
+ <param name="vWorkOrderItemNumber"></param>
+ <param name="vSourceDoc"></param>
+ <param name="vSourceType"></param>
+ <param name="vInvItemNumber"></param>
+ <param name="vLotNumber"></param>
+ <param name="vWareHouseLocation"></param>
+ <param name="vUnitCost"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.validateWorkOrder(System.Object,System.Object)">
+ <summary>
+ 
+ </summary>
+ <param name="vOrderType"></param>
+ <param name="vTransportType"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.workOrderPlanSummary(System.Int32)">
+ <summary>
+ 'Collect All the rows of FulfillmentPlan,Production Order, Purchase Items.
+ </summary>
+ <param name="vWorkorderNum"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.getWOEmailPlan(System.Int32)">
+ <summary>
+ get Work Order Email plan
+ </summary>
+ <param name="vWONumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.setHtmlCellsValues(System.String,System.String,AOS.WorkOrderProcessing.CellStyle)">
+ <summary>
+ Set each html cells value.
+ </summary>
+ <param name="vTitle"></param>
+ <param name="vValue"></param>
+ <param name="vStyle"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.WorkOrderProcessing.getWorkOrderAllocatedItems(System.Int32,System.String)">
+ <summary>
+ To get all the allocated item which are fulfilled by purchase or production
+ </summary>
+ <param name="vWorkOrderNumber"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.Email.SendEmail(System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Send email with the provided details
+ </summary>
+ <param name="vBody"></param>
+ <param name="vFromEmail"></param>
+ <param name="vToEmail"></param>
+ <param name="vCompanyEmailServer"></param>
+ <param name="vSubject"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.Email.IsValidEmailAddress(System.Object)">
+ <summary>
+ checking this mail id is valid or not.
+ </summary>
+ <param name="vEmailIDs"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.LoadProcessing.splitLoadItems(AOS.BusinessObjects.Purchaseitem,AOS.BusinessObjects.Purchaseitem)">
+ <summary>
+ While spliting the purchase item, we need to link the inventory items to the newly created purchase item.
+ </summary>
+ <param name="oOldPurchase"></param>
+ <param name="oNewPurchase"></param>
+ <remarks></remarks>
+</member>
+<member name="T:AOS.dsBOL">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsBOL.BillOfLadingDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsBOL.BillOfLadingRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsBOL.BillOfLadingRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsBOLTableAdapters.BillOfLadingTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsCommissions">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsCommissions.CommissionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsCommissions.CommissionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsCommissions.CommissionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsCommissionsTableAdapters.CommissionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsCommissionsTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AOS.dsCommissionsTableAdapters.TableAdapterManager.UpdateUpdatedRows(AOS.dsCommissions,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsCommissionsTableAdapters.TableAdapterManager.UpdateInsertedRows(AOS.dsCommissions,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsCommissionsTableAdapters.TableAdapterManager.UpdateDeletedRows(AOS.dsCommissions,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AOS.dsCommissionsTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AOS.dsCommissionsTableAdapters.TableAdapterManager.UpdateAll(AOS.dsCommissions)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AOS.dsCommissionsTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AOS.dsCommissionsTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:AOS.dsHazMatLabel">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsHazMatLabel.HazMatLabelDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsHazMatLabel.HazMatLabelRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsHazMatLabel.HazMatLabelRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsHazMatLabelTableAdapters.HazMatLabelTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsAvailableInventory">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsAvailableInventory.INVITEMDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsAvailableInventory.INVITEMRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsAvailableInventory.INVITEMRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsAvailableInventoryTableAdapters.INVITEMAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetail">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetail.InvDetailDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetail.InvDetailRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetail.InvDetailRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetailTableAdapters.InvDetailTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetailTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AOS.dsInventoryDetailTableAdapters.TableAdapterManager.UpdateUpdatedRows(AOS.dsInventoryDetail,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryDetailTableAdapters.TableAdapterManager.UpdateInsertedRows(AOS.dsInventoryDetail,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryDetailTableAdapters.TableAdapterManager.UpdateDeletedRows(AOS.dsInventoryDetail,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryDetailTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AOS.dsInventoryDetailTableAdapters.TableAdapterManager.UpdateAll(AOS.dsInventoryDetail)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetailTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AOS.dsInventoryDetailTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeeds">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeeds.InventoryNeedsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeeds.InventoryNeedsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeeds.InventoryNeedsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeedsTableAdapters.InventoryNeedsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager.UpdateUpdatedRows(AOS.dsInventoryNeeds,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager.UpdateInsertedRows(AOS.dsInventoryNeeds,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager.UpdateDeletedRows(AOS.dsInventoryNeeds,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager.UpdateAll(AOS.dsInventoryNeeds)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AOS.dsInventoryNeedsTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValue">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValue.InventoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValue.InventoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValue.InventoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValueTableAdapters.InventoryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValueTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AOS.dsInventoryValueTableAdapters.TableAdapterManager.UpdateUpdatedRows(AOS.dsInventoryValue,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryValueTableAdapters.TableAdapterManager.UpdateInsertedRows(AOS.dsInventoryValue,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryValueTableAdapters.TableAdapterManager.UpdateDeletedRows(AOS.dsInventoryValue,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AOS.dsInventoryValueTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AOS.dsInventoryValueTableAdapters.TableAdapterManager.UpdateAll(AOS.dsInventoryValue)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValueTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AOS.dsInventoryValueTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:AOS.dsInvoice">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsInvoice.InvoiceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsInvoice.InvoiceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsInvoice.InvoiceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceTableAdapters.InvoiceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AOS.dsInvoiceTableAdapters.TableAdapterManager.UpdateUpdatedRows(AOS.dsInvoice,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInvoiceTableAdapters.TableAdapterManager.UpdateInsertedRows(AOS.dsInvoice,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsInvoiceTableAdapters.TableAdapterManager.UpdateDeletedRows(AOS.dsInvoice,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AOS.dsInvoiceTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AOS.dsInvoiceTableAdapters.TableAdapterManager.UpdateAll(AOS.dsInvoice)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceItems">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceItems.InvoiceItemDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceItems.InvoiceItemRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceItems.InvoiceItemRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsInvoiceItemsTableAdapters.InvoiceItemTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsPickedWorkOrders">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsPickedWorkOrders.PickedItemsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsPickedWorkOrders.PickedItemsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsPickedWorkOrders.PickedItemsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsPickedWorkOrdersTableAdapters.PickedItemsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrder">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrder.PurchaseOrderDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrder.PurchaseOrderRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrder.PurchaseOrderRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrderTableAdapters.PurchaseOrderTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager.UpdateUpdatedRows(AOS.dsPurchaseOrder,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager.UpdateInsertedRows(AOS.dsPurchaseOrder,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager.UpdateDeletedRows(AOS.dsPurchaseOrder,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager.UpdateAll(AOS.dsPurchaseOrder)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AOS.dsPurchaseOrderTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1.WorkOrderDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1.WorkOrderRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1.WorkOrderRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1TableAdapters.WorkOrderTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AOS.dsRptProduction1TableAdapters.TableAdapterManager.UpdateUpdatedRows(AOS.dsRptProduction1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsRptProduction1TableAdapters.TableAdapterManager.UpdateInsertedRows(AOS.dsRptProduction1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AOS.dsRptProduction1TableAdapters.TableAdapterManager.UpdateDeletedRows(AOS.dsRptProduction1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AOS.dsRptProduction1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AOS.dsRptProduction1TableAdapters.TableAdapterManager.UpdateAll(AOS.dsRptProduction1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AOS.dsRptProduction1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:AOS.dsRptProductsShipped">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsRptProductsShipped.ProductsShippedDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsRptProductsShipped.ProductsShippedRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsRptProductsShipped.ProductsShippedRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsRptProductsShippedTableAdapters.ProductsShippedTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsRptWorkOrder">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsRptWorkOrder.WORKORDERITEMDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsRptWorkOrder.WORKORDERITEMRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsRptWorkOrder.WORKORDERITEMRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsRptWorkOrderTableAdapters.WORKORDERITEMTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrderInvItems">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrderInvItems.WORKORDERINVITEMDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrderInvItems.WORKORDERINVITEMRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrderInvItems.WORKORDERINVITEMRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrderInvItemsTableAdapters.WORKORDERINVITEMTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrdersWithItemsToBeShipped">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrdersWithItemsToBeShipped.WORKORDERDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrdersWithItemsToBeShipped.WORKORDERRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrdersWithItemsToBeShipped.WORKORDERRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsWorkOrdersWithItemsToBeShippedTableAdapters.WORKORDERTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AOS.dsProductsShipped">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AOS.dsProductsShipped.SHIPMENTDETAILDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AOS.dsProductsShipped.SHIPMENTDETAILRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AOS.dsProductsShipped.SHIPMENTDETAILRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AOS.dsProductsShippedTableAdapters.SHIPMENTDETAILAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="M:AOS.frmMaterialNeeds.populateMaterialTabs">
+ <summary>
+ Populate Material Tabs for corresponding PurchaseProducts, ProdcutionOrder and FullAvailableInventory
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmEnterScaleWeight.calculateReceivedWeight(System.Int32,System.Int32,System.Int32@,System.Int32@)">
+ <summary>
+ Calculate received weight from the grossweight and tar weight
+ calculate variance percentage from standard weight
+ </summary>
+ <param name="vTareWeight"></param>
+ <param name="vStdweight"></param>
+ <param name="vWeightofcontent"></param>
+ <param name="vCalculatedVariancePercentage"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmReceivingPurchase.btnReceiveInventory_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+ <summary>
+ for entering the weight for received item
+ if single item go for update Inventory Item screen
+ else go to enter scale weight screen
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmUpdateInventoryItem.validateControls(System.Int32@,System.Int32@)">
+ <summary>
+ Validating the variance percentage and scale weight.
+ Compare the weight of one container contents to the STDWEIGHT for the container.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmUpdateInventoryItem.calculateReceivedWeight(System.Int32,System.Int32,System.Int32@,System.Int32@)">
+ <summary>
+ Calculate weight of the content from scale weight and tar weight
+ calculate percentage of variance with the standard weight
+ </summary>
+ <param name="vTareWeight"></param>
+ <param name="vStdweight"></param>
+ <param name="vWeightofcontent"></param>
+ <param name="vWeightDiff"></param>
+ <remarks></remarks>
+</member>
+<member name="F:AOS.frmAddEditPurchaseItem.vPurchaseItemType">
+ <summary>
+ Need to pass "DIRECT" for Direct PO or "MATERIAL" if from Material Needs
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmAddEditPurchaseOrderItem.CheckPriceListForLowPrice(System.Object)">
+ <summary>
+ Check Price list and return Customer name
+ </summary>
+ <param name="Type"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmAddEditWorkOrders.setFulfillmentPlanButtonState(System.Boolean)">
+ <summary>
+ Enable Disable plan related buttons
+ </summary>
+ <param name="vAppearance"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmAddEditWorkOrders.rbtnEmailPlan_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+ <summary>
+ Send the Fulfilment plant report as email
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:AOS.frmAddEditWorkOrders.setRowColor(System.String,System.String,DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs)">
+ <summary>
+ Set row color to pink if Field1 > Field2
+ </summary>
+ <param name="vField1"></param>
+ <param name="vField2"></param>
+ <param name="e"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:AOS.ProductionOrder.ProductionOrder">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.#ctor">
+<remarks/>
+</member>
+<member name="E:AOS.ProductionOrder.ProductionOrder.GetProdItemsCompleted">
+<remarks/>
+</member>
+<member name="E:AOS.ProductionOrder.ProductionOrder.GetProdItemDetailsCompleted">
+<remarks/>
+</member>
+<member name="E:AOS.ProductionOrder.ProductionOrder.GetInvItemDetailsCompleted">
+<remarks/>
+</member>
+<member name="E:AOS.ProductionOrder.ProductionOrder.ProdItemAddTransactionCompleted">
+<remarks/>
+</member>
+<member name="E:AOS.ProductionOrder.ProductionOrder.ProdItemMoveCompleted">
+<remarks/>
+</member>
+<member name="E:AOS.ProductionOrder.ProductionOrder.UpdateProdOrderTimerCompleted">
+<remarks/>
+</member>
+<member name="E:AOS.ProductionOrder.ProductionOrder.PrintLabelL1Completed">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetProdItems(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetProdItemsAsync(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetProdItemsAsync(System.Int32,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetProdItemDetails(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetProdItemDetailsAsync(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetProdItemDetailsAsync(System.Int32,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetInvItemDetails(System.Int32,System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetInvItemDetailsAsync(System.Int32,System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.GetInvItemDetailsAsync(System.Int32,System.Int32,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.ProdItemAddTransaction(System.Int32,System.Int32,System.String,System.Double,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.ProdItemAddTransactionAsync(System.Int32,System.Int32,System.String,System.Double,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.ProdItemAddTransactionAsync(System.Int32,System.Int32,System.String,System.Double,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.ProdItemMove(System.Int32,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.ProdItemMoveAsync(System.Int32,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.ProdItemMoveAsync(System.Int32,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.UpdateProdOrderTimer(System.Int32,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.UpdateProdOrderTimerAsync(System.Int32,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.UpdateProdOrderTimerAsync(System.Int32,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.PrintLabelL1(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.PrintLabelL1Async(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.PrintLabelL1Async(System.Int32,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:AOS.ProductionOrder.ProductionOrder.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ResponseBE">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ResponseBE.StatusCode">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ResponseBE.ErrorMsg">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ResponseBE.ResultDataTable">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ContainerBE">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ContainerBE.Container">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ContainerBE.UOM">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ContainerBE.Units">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ContainerBE.TareWeight">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.InvItemBE">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.Container">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.ResponseStatus">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.ItemNumber">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.ProductID">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.Product">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.Shipmentnumber">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.ProductDesc">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.WarehouseLocation">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.LotNumber">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.ReceivedDate">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.ItemStatus">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.AllocatedDocument">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.AllocatedDate">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.ShippedDate">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.InvItemBE.UnitsRemaining">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ProductBE">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProductBE.ProductID">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProductBE.ProductDescription">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProductBE.UOM">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProductBE.Units">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProductBE.ResponseStatus">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ProdOrderBE">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.PONumber">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.PODate">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.CreatedBy">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.ProductId">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.ProductQty">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.APISNumber">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.CustID">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.LotNumber">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.NeededBy">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdOrderBE.IsComplete">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.MaterialBE">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.MaterialBE.MaterialID">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.MaterialBE.MaterialUOM">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.MaterialBE.MaterialDescription">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ProdItemBE">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.ProdItemNo">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.Material">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.ProdOrder">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.Product">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.UOM">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.Quantity">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.RemQty">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.IsCompleted">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.ResponseStatus">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemBE.InventoryItems">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.GetProdItemsCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.GetProdItemsCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.GetProdItemsCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.GetProdItemDetailsCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.GetProdItemDetailsCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.GetProdItemDetailsCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.GetInvItemDetailsCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.GetInvItemDetailsCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.GetInvItemDetailsCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ProdItemAddTransactionCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ProdItemAddTransactionCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemAddTransactionCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ProdItemMoveCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.ProdItemMoveCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.ProdItemMoveCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.UpdateProdOrderTimerCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.UpdateProdOrderTimerCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.UpdateProdOrderTimerCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.PrintLabelL1CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:AOS.ProductionOrder.PrintLabelL1CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:AOS.ProductionOrder.PrintLabelL1CompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>

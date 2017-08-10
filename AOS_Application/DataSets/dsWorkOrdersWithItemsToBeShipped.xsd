@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsWorkOrdersWithItemsToBeShipped" targetNamespace="http://tempuri.org/dsWorkOrdersWithItemsToBeShipped.xsd" xmlns:mstns="http://tempuri.org/dsWorkOrdersWithItemsToBeShipped.xsd" xmlns="http://tempuri.org/dsWorkOrdersWithItemsToBeShipped.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AOSDataConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="AOSDataConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AOS.My.MySettings.GlobalReference.Default.AOSDataConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WORKORDERTableAdapter" GeneratorDataComponentClassName="WORKORDERTableAdapter" Name="WORKORDER" UserDataComponentName="WORKORDERTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AOSDataConnectionString (MySettings)" DbObjectName="AOSData.dbo.WORKORDER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="True" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>DELETE FROM [workorder] WHERE (([WORKORDERNUMBER] = @Original_WORKORDERNUMBER) AND ((@IsNull_CUSTORDERNUMBER = 1 AND [CUSTORDERNUMBER] IS NULL) OR ([CUSTORDERNUMBER] = @Original_CUSTORDERNUMBER)) AND ((@IsNull_CUSTID = 1 AND [CUSTID] IS NULL) OR ([CUSTID] = @Original_CUSTID)) AND ((@IsNull_BILLADDRESS1 = 1 AND [BILLADDRESS1] IS NULL) OR ([BILLADDRESS1] = @Original_BILLADDRESS1)) AND ((@IsNull_BILLADDRESS2 = 1 AND [BILLADDRESS2] IS NULL) OR ([BILLADDRESS2] = @Original_BILLADDRESS2)) AND ((@IsNull_BILLCITY = 1 AND [BILLCITY] IS NULL) OR ([BILLCITY] = @Original_BILLCITY)) AND ((@IsNull_BILLSTATEPROV = 1 AND [BILLSTATEPROV] IS NULL) OR ([BILLSTATEPROV] = @Original_BILLSTATEPROV)) AND ((@IsNull_BILLPOSTALCODE = 1 AND [BILLPOSTALCODE] IS NULL) OR ([BILLPOSTALCODE] = @Original_BILLPOSTALCODE)) AND ((@IsNull_BILLCOUNTRY = 1 AND [BILLCOUNTRY] IS NULL) OR ([BILLCOUNTRY] = @Original_BILLCOUNTRY)) AND ((@IsNull_BILLPHONE = 1 AND [BILLPHONE] IS NULL) OR ([BILLPHONE] = @Original_BILLPHONE)) AND ((@IsNull_BILLFAX = 1 AND [BILLFAX] IS NULL) OR ([BILLFAX] = @Original_BILLFAX)) AND ((@IsNull_BILLCONTACT = 1 AND [BILLCONTACT] IS NULL) OR ([BILLCONTACT] = @Original_BILLCONTACT)) AND ((@IsNull_SHIPADDRESS1 = 1 AND [SHIPADDRESS1] IS NULL) OR ([SHIPADDRESS1] = @Original_SHIPADDRESS1)) AND ((@IsNull_SHIPADDRESS2 = 1 AND [SHIPADDRESS2] IS NULL) OR ([SHIPADDRESS2] = @Original_SHIPADDRESS2)) AND ((@IsNull_SHIPCITY = 1 AND [SHIPCITY] IS NULL) OR ([SHIPCITY] = @Original_SHIPCITY)) AND ((@IsNull_SHIPSTATEPROV = 1 AND [SHIPSTATEPROV] IS NULL) OR ([SHIPSTATEPROV] = @Original_SHIPSTATEPROV)) AND ((@IsNull_SHIPPOSTALCODE = 1 AND [SHIPPOSTALCODE] IS NULL) OR ([SHIPPOSTALCODE] = @Original_SHIPPOSTALCODE)) AND ((@IsNull_SHIPCOUNTRY = 1 AND [SHIPCOUNTRY] IS NULL) OR ([SHIPCOUNTRY] = @Original_SHIPCOUNTRY)) AND ((@IsNull_SHIPCONTACT = 1 AND [SHIPCONTACT] IS NULL) OR ([SHIPCONTACT] = @Original_SHIPCONTACT)) AND ((@IsNull_FREIGHTCARRIER = 1 AND [FREIGHTCARRIER] IS NULL) OR ([FREIGHTCARRIER] = @Original_FREIGHTCARRIER)) AND ((@IsNull_FOB = 1 AND [FOB] IS NULL) OR ([FOB] = @Original_FOB)) AND ((@IsNull_CUSTORDERDATE = 1 AND [CUSTORDERDATE] IS NULL) OR ([CUSTORDERDATE] = @Original_CUSTORDERDATE)) AND ((@IsNull_CUSTOMERPO = 1 AND [CUSTOMERPO] IS NULL) OR ([CUSTOMERPO] = @Original_CUSTOMERPO)) AND ((@IsNull_ORDERTERMS = 1 AND [ORDERTERMS] IS NULL) OR ([ORDERTERMS] = @Original_ORDERTERMS)) AND ((@IsNull_DELIVERYDATE = 1 AND [DELIVERYDATE] IS NULL) OR ([DELIVERYDATE] = @Original_DELIVERYDATE)) AND ((@IsNull_PLANNEDSHIPDATE = 1 AND [PLANNEDSHIPDATE] IS NULL) OR ([PLANNEDSHIPDATE] = @Original_PLANNEDSHIPDATE)) AND ((@IsNull_HOWRECEIVED = 1 AND [HOWRECEIVED] IS NULL) OR ([HOWRECEIVED] = @Original_HOWRECEIVED)) AND ((@IsNull_ORDERSTATUS = 1 AND [ORDERSTATUS] IS NULL) OR ([ORDERSTATUS] = @Original_ORDERSTATUS)) AND ((@IsNull_WORKORDERDATE = 1 AND [WORKORDERDATE] IS NULL) OR ([WORKORDERDATE] = @Original_WORKORDERDATE)) AND ((@IsNull_PREPAREDBY = 1 AND [PREPAREDBY] IS NULL) OR ([PREPAREDBY] = @Original_PREPAREDBY)) AND ((@IsNull_SUPPLIERCOMPANY = 1 AND [SUPPLIERCOMPANY] IS NULL) OR ([SUPPLIERCOMPANY] = @Original_SUPPLIERCOMPANY)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_WORKORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WORKORDERNUMBER" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERNUMBER" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CUSTORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERNUMBER" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTID" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CUSTID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLADDRESS1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLADDRESS1" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS1" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLADDRESS2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLADDRESS2" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS2" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLCITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLCITY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCITY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLSTATEPROV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLSTATEPROV" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLPOSTALCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLPOSTALCODE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLCOUNTRY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLCOUNTRY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLPHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLPHONE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLPHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPHONE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLFAX" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLFAX" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLFAX" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLFAX" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLCONTACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLCONTACT" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCONTACT" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPADDRESS1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPADDRESS1" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS1" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPADDRESS2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPADDRESS2" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS2" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPCITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPCITY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCITY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPSTATEPROV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPSTATEPROV" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPPOSTALCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPPOSTALCODE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPCOUNTRY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPCOUNTRY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPCONTACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPCONTACT" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCONTACT" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FREIGHTCARRIER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FREIGHTCARRIER" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FREIGHTCARRIER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FREIGHTCARRIER" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FOB" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FOB" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FOB" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FOB" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTORDERDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CUSTORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CUSTORDERDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTOMERPO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTOMERPO" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CUSTOMERPO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSTOMERPO" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ORDERTERMS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ORDERTERMS" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ORDERTERMS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERTERMS" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DELIVERYDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DELIVERYDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_DELIVERYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DELIVERYDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PLANNEDSHIPDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PLANNEDSHIPDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_PLANNEDSHIPDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PLANNEDSHIPDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HOWRECEIVED" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HOWRECEIVED" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_HOWRECEIVED" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HOWRECEIVED" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ORDERSTATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ORDERSTATUS" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ORDERSTATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERSTATUS" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WORKORDERDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WORKORDERDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_WORKORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WORKORDERDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PREPAREDBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PREPAREDBY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PREPAREDBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PREPAREDBY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SUPPLIERCOMPANY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SUPPLIERCOMPANY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SUPPLIERCOMPANY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUPPLIERCOMPANY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>INSERT INTO [workorder] ([CUSTORDERNUMBER], [CUSTID], [BILLADDRESS1], [BILLADDRESS2], [BILLCITY], [BILLSTATEPROV], [BILLPOSTALCODE], [BILLCOUNTRY], [BILLPHONE], [BILLFAX], [BILLCONTACT], [SHIPADDRESS1], [SHIPADDRESS2], [SHIPCITY], [SHIPSTATEPROV], [SHIPPOSTALCODE], [SHIPCOUNTRY], [SHIPCONTACT], [FREIGHTCARRIER], [FOB], [CUSTORDERDATE], [CUSTOMERPO], [ORDERTERMS], [DELIVERYDATE], [PLANNEDSHIPDATE], [HOWRECEIVED], [ORDERSTATUS], [ORDERNOTES], [WORKORDERDATE], [PREPAREDBY], [SUPPLIERCOMPANY]) VALUES (@CUSTORDERNUMBER, @CUSTID, @BILLADDRESS1, @BILLADDRESS2, @BILLCITY, @BILLSTATEPROV, @BILLPOSTALCODE, @BILLCOUNTRY, @BILLPHONE, @BILLFAX, @BILLCONTACT, @SHIPADDRESS1, @SHIPADDRESS2, @SHIPCITY, @SHIPSTATEPROV, @SHIPPOSTALCODE, @SHIPCOUNTRY, @SHIPCONTACT, @FREIGHTCARRIER, @FOB, @CUSTORDERDATE, @CUSTOMERPO, @ORDERTERMS, @DELIVERYDATE, @PLANNEDSHIPDATE, @HOWRECEIVED, @ORDERSTATUS, @ORDERNOTES, @WORKORDERDATE, @PREPAREDBY, @SUPPLIERCOMPANY);
+SELECT WORKORDERNUMBER, CUSTORDERNUMBER, CUSTID, BILLADDRESS1, BILLADDRESS2, BILLCITY, BILLSTATEPROV, BILLPOSTALCODE, BILLCOUNTRY, BILLPHONE, BILLFAX, BILLCONTACT, SHIPADDRESS1, SHIPADDRESS2, SHIPCITY, SHIPSTATEPROV, SHIPPOSTALCODE, SHIPCOUNTRY, SHIPCONTACT, FREIGHTCARRIER, FOB, CUSTORDERDATE, CUSTOMERPO, ORDERTERMS, DELIVERYDATE, PLANNEDSHIPDATE, HOWRECEIVED, ORDERSTATUS, ORDERNOTES, WORKORDERDATE, PREPAREDBY, SUPPLIERCOMPANY FROM WORKORDER WHERE (WORKORDERNUMBER = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CUSTORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERNUMBER" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CUSTID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTID" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS1" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS2" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCITY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLPHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPHONE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLFAX" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLFAX" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCONTACT" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS1" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS2" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCITY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCONTACT" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FREIGHTCARRIER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FREIGHTCARRIER" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FOB" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FOB" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CUSTORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CUSTORDERDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CUSTOMERPO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSTOMERPO" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDERTERMS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERTERMS" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@DELIVERYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DELIVERYDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@PLANNEDSHIPDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PLANNEDSHIPDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@HOWRECEIVED" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HOWRECEIVED" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDERSTATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERSTATUS" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDERNOTES" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERNOTES" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@WORKORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WORKORDERDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PREPAREDBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PREPAREDBY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SUPPLIERCOMPANY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUPPLIERCOMPANY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>        select * from workorder where orderstatus = 'OPEN' and workordernumber in (select a.workordernumber from workorderitem a, invitem b where a.invitemnumber = b.invitemnumber and b.itemstatus = 'PICKED')
+</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>UPDATE [workorder] SET [CUSTORDERNUMBER] = @CUSTORDERNUMBER, [CUSTID] = @CUSTID, [BILLADDRESS1] = @BILLADDRESS1, [BILLADDRESS2] = @BILLADDRESS2, [BILLCITY] = @BILLCITY, [BILLSTATEPROV] = @BILLSTATEPROV, [BILLPOSTALCODE] = @BILLPOSTALCODE, [BILLCOUNTRY] = @BILLCOUNTRY, [BILLPHONE] = @BILLPHONE, [BILLFAX] = @BILLFAX, [BILLCONTACT] = @BILLCONTACT, [SHIPADDRESS1] = @SHIPADDRESS1, [SHIPADDRESS2] = @SHIPADDRESS2, [SHIPCITY] = @SHIPCITY, [SHIPSTATEPROV] = @SHIPSTATEPROV, [SHIPPOSTALCODE] = @SHIPPOSTALCODE, [SHIPCOUNTRY] = @SHIPCOUNTRY, [SHIPCONTACT] = @SHIPCONTACT, [FREIGHTCARRIER] = @FREIGHTCARRIER, [FOB] = @FOB, [CUSTORDERDATE] = @CUSTORDERDATE, [CUSTOMERPO] = @CUSTOMERPO, [ORDERTERMS] = @ORDERTERMS, [DELIVERYDATE] = @DELIVERYDATE, [PLANNEDSHIPDATE] = @PLANNEDSHIPDATE, [HOWRECEIVED] = @HOWRECEIVED, [ORDERSTATUS] = @ORDERSTATUS, [ORDERNOTES] = @ORDERNOTES, [WORKORDERDATE] = @WORKORDERDATE, [PREPAREDBY] = @PREPAREDBY, [SUPPLIERCOMPANY] = @SUPPLIERCOMPANY WHERE (([WORKORDERNUMBER] = @Original_WORKORDERNUMBER) AND ((@IsNull_CUSTORDERNUMBER = 1 AND [CUSTORDERNUMBER] IS NULL) OR ([CUSTORDERNUMBER] = @Original_CUSTORDERNUMBER)) AND ((@IsNull_CUSTID = 1 AND [CUSTID] IS NULL) OR ([CUSTID] = @Original_CUSTID)) AND ((@IsNull_BILLADDRESS1 = 1 AND [BILLADDRESS1] IS NULL) OR ([BILLADDRESS1] = @Original_BILLADDRESS1)) AND ((@IsNull_BILLADDRESS2 = 1 AND [BILLADDRESS2] IS NULL) OR ([BILLADDRESS2] = @Original_BILLADDRESS2)) AND ((@IsNull_BILLCITY = 1 AND [BILLCITY] IS NULL) OR ([BILLCITY] = @Original_BILLCITY)) AND ((@IsNull_BILLSTATEPROV = 1 AND [BILLSTATEPROV] IS NULL) OR ([BILLSTATEPROV] = @Original_BILLSTATEPROV)) AND ((@IsNull_BILLPOSTALCODE = 1 AND [BILLPOSTALCODE] IS NULL) OR ([BILLPOSTALCODE] = @Original_BILLPOSTALCODE)) AND ((@IsNull_BILLCOUNTRY = 1 AND [BILLCOUNTRY] IS NULL) OR ([BILLCOUNTRY] = @Original_BILLCOUNTRY)) AND ((@IsNull_BILLPHONE = 1 AND [BILLPHONE] IS NULL) OR ([BILLPHONE] = @Original_BILLPHONE)) AND ((@IsNull_BILLFAX = 1 AND [BILLFAX] IS NULL) OR ([BILLFAX] = @Original_BILLFAX)) AND ((@IsNull_BILLCONTACT = 1 AND [BILLCONTACT] IS NULL) OR ([BILLCONTACT] = @Original_BILLCONTACT)) AND ((@IsNull_SHIPADDRESS1 = 1 AND [SHIPADDRESS1] IS NULL) OR ([SHIPADDRESS1] = @Original_SHIPADDRESS1)) AND ((@IsNull_SHIPADDRESS2 = 1 AND [SHIPADDRESS2] IS NULL) OR ([SHIPADDRESS2] = @Original_SHIPADDRESS2)) AND ((@IsNull_SHIPCITY = 1 AND [SHIPCITY] IS NULL) OR ([SHIPCITY] = @Original_SHIPCITY)) AND ((@IsNull_SHIPSTATEPROV = 1 AND [SHIPSTATEPROV] IS NULL) OR ([SHIPSTATEPROV] = @Original_SHIPSTATEPROV)) AND ((@IsNull_SHIPPOSTALCODE = 1 AND [SHIPPOSTALCODE] IS NULL) OR ([SHIPPOSTALCODE] = @Original_SHIPPOSTALCODE)) AND ((@IsNull_SHIPCOUNTRY = 1 AND [SHIPCOUNTRY] IS NULL) OR ([SHIPCOUNTRY] = @Original_SHIPCOUNTRY)) AND ((@IsNull_SHIPCONTACT = 1 AND [SHIPCONTACT] IS NULL) OR ([SHIPCONTACT] = @Original_SHIPCONTACT)) AND ((@IsNull_FREIGHTCARRIER = 1 AND [FREIGHTCARRIER] IS NULL) OR ([FREIGHTCARRIER] = @Original_FREIGHTCARRIER)) AND ((@IsNull_FOB = 1 AND [FOB] IS NULL) OR ([FOB] = @Original_FOB)) AND ((@IsNull_CUSTORDERDATE = 1 AND [CUSTORDERDATE] IS NULL) OR ([CUSTORDERDATE] = @Original_CUSTORDERDATE)) AND ((@IsNull_CUSTOMERPO = 1 AND [CUSTOMERPO] IS NULL) OR ([CUSTOMERPO] = @Original_CUSTOMERPO)) AND ((@IsNull_ORDERTERMS = 1 AND [ORDERTERMS] IS NULL) OR ([ORDERTERMS] = @Original_ORDERTERMS)) AND ((@IsNull_DELIVERYDATE = 1 AND [DELIVERYDATE] IS NULL) OR ([DELIVERYDATE] = @Original_DELIVERYDATE)) AND ((@IsNull_PLANNEDSHIPDATE = 1 AND [PLANNEDSHIPDATE] IS NULL) OR ([PLANNEDSHIPDATE] = @Original_PLANNEDSHIPDATE)) AND ((@IsNull_HOWRECEIVED = 1 AND [HOWRECEIVED] IS NULL) OR ([HOWRECEIVED] = @Original_HOWRECEIVED)) AND ((@IsNull_ORDERSTATUS = 1 AND [ORDERSTATUS] IS NULL) OR ([ORDERSTATUS] = @Original_ORDERSTATUS)) AND ((@IsNull_WORKORDERDATE = 1 AND [WORKORDERDATE] IS NULL) OR ([WORKORDERDATE] = @Original_WORKORDERDATE)) AND ((@IsNull_PREPAREDBY = 1 AND [PREPAREDBY] IS NULL) OR ([PREPAREDBY] = @Original_PREPAREDBY)) AND ((@IsNull_SUPPLIERCOMPANY = 1 AND [SUPPLIERCOMPANY] IS NULL) OR ([SUPPLIERCOMPANY] = @Original_SUPPLIERCOMPANY)));
+SELECT WORKORDERNUMBER, CUSTORDERNUMBER, CUSTID, BILLADDRESS1, BILLADDRESS2, BILLCITY, BILLSTATEPROV, BILLPOSTALCODE, BILLCOUNTRY, BILLPHONE, BILLFAX, BILLCONTACT, SHIPADDRESS1, SHIPADDRESS2, SHIPCITY, SHIPSTATEPROV, SHIPPOSTALCODE, SHIPCOUNTRY, SHIPCONTACT, FREIGHTCARRIER, FOB, CUSTORDERDATE, CUSTOMERPO, ORDERTERMS, DELIVERYDATE, PLANNEDSHIPDATE, HOWRECEIVED, ORDERSTATUS, ORDERNOTES, WORKORDERDATE, PREPAREDBY, SUPPLIERCOMPANY FROM WORKORDER WHERE (WORKORDERNUMBER = @WORKORDERNUMBER)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CUSTORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERNUMBER" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CUSTID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTID" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS1" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS2" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCITY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLPHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPHONE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLFAX" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLFAX" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BILLCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCONTACT" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS1" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS2" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCITY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCONTACT" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FREIGHTCARRIER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FREIGHTCARRIER" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FOB" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FOB" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CUSTORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CUSTORDERDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CUSTOMERPO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSTOMERPO" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDERTERMS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERTERMS" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@DELIVERYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DELIVERYDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@PLANNEDSHIPDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PLANNEDSHIPDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@HOWRECEIVED" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HOWRECEIVED" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDERSTATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERSTATUS" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDERNOTES" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERNOTES" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@WORKORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WORKORDERDATE" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PREPAREDBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PREPAREDBY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SUPPLIERCOMPANY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUPPLIERCOMPANY" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_WORKORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WORKORDERNUMBER" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERNUMBER" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CUSTORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERNUMBER" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTID" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CUSTID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLADDRESS1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLADDRESS1" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS1" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLADDRESS2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLADDRESS2" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLADDRESS2" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLCITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLCITY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCITY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLSTATEPROV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLSTATEPROV" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLPOSTALCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLPOSTALCODE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLCOUNTRY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLCOUNTRY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLPHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLPHONE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLPHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLPHONE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLFAX" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLFAX" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLFAX" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLFAX" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BILLCONTACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLCONTACT" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_BILLCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BILLCONTACT" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPADDRESS1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPADDRESS1" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPADDRESS1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS1" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPADDRESS2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPADDRESS2" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPADDRESS2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPADDRESS2" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPCITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPCITY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPCITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCITY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPSTATEPROV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPSTATEPROV" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPSTATEPROV" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPSTATEPROV" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPPOSTALCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPPOSTALCODE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPPOSTALCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPPOSTALCODE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPCOUNTRY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPCOUNTRY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPCOUNTRY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCOUNTRY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPCONTACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPCONTACT" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPCONTACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPCONTACT" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FREIGHTCARRIER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FREIGHTCARRIER" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FREIGHTCARRIER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FREIGHTCARRIER" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FOB" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FOB" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FOB" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FOB" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTORDERDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTORDERDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CUSTORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CUSTORDERDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSTOMERPO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSTOMERPO" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CUSTOMERPO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSTOMERPO" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ORDERTERMS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ORDERTERMS" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ORDERTERMS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERTERMS" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DELIVERYDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DELIVERYDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_DELIVERYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DELIVERYDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PLANNEDSHIPDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PLANNEDSHIPDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_PLANNEDSHIPDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PLANNEDSHIPDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_HOWRECEIVED" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HOWRECEIVED" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_HOWRECEIVED" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HOWRECEIVED" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ORDERSTATUS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ORDERSTATUS" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ORDERSTATUS" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDERSTATUS" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WORKORDERDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WORKORDERDATE" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_WORKORDERDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WORKORDERDATE" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PREPAREDBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PREPAREDBY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PREPAREDBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PREPAREDBY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SUPPLIERCOMPANY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SUPPLIERCOMPANY" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SUPPLIERCOMPANY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SUPPLIERCOMPANY" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="WORKORDERNUMBER" ColumnName="WORKORDERNUMBER" DataSourceName="AOSData.dbo.WORKORDER" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@WORKORDERNUMBER" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="WORKORDERNUMBER" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="WORKORDERNUMBER" DataSetColumn="WORKORDERNUMBER" />
+              <Mapping SourceColumn="CUSTORDERNUMBER" DataSetColumn="CUSTORDERNUMBER" />
+              <Mapping SourceColumn="CUSTID" DataSetColumn="CUSTID" />
+              <Mapping SourceColumn="BILLADDRESS1" DataSetColumn="BILLADDRESS1" />
+              <Mapping SourceColumn="BILLADDRESS2" DataSetColumn="BILLADDRESS2" />
+              <Mapping SourceColumn="BILLCITY" DataSetColumn="BILLCITY" />
+              <Mapping SourceColumn="BILLSTATEPROV" DataSetColumn="BILLSTATEPROV" />
+              <Mapping SourceColumn="BILLPOSTALCODE" DataSetColumn="BILLPOSTALCODE" />
+              <Mapping SourceColumn="BILLCOUNTRY" DataSetColumn="BILLCOUNTRY" />
+              <Mapping SourceColumn="BILLPHONE" DataSetColumn="BILLPHONE" />
+              <Mapping SourceColumn="BILLFAX" DataSetColumn="BILLFAX" />
+              <Mapping SourceColumn="BILLCONTACT" DataSetColumn="BILLCONTACT" />
+              <Mapping SourceColumn="SHIPADDRESS1" DataSetColumn="SHIPADDRESS1" />
+              <Mapping SourceColumn="SHIPADDRESS2" DataSetColumn="SHIPADDRESS2" />
+              <Mapping SourceColumn="SHIPCITY" DataSetColumn="SHIPCITY" />
+              <Mapping SourceColumn="SHIPSTATEPROV" DataSetColumn="SHIPSTATEPROV" />
+              <Mapping SourceColumn="SHIPPOSTALCODE" DataSetColumn="SHIPPOSTALCODE" />
+              <Mapping SourceColumn="SHIPCOUNTRY" DataSetColumn="SHIPCOUNTRY" />
+              <Mapping SourceColumn="SHIPCONTACT" DataSetColumn="SHIPCONTACT" />
+              <Mapping SourceColumn="FREIGHTCARRIER" DataSetColumn="FREIGHTCARRIER" />
+              <Mapping SourceColumn="FOB" DataSetColumn="FOB" />
+              <Mapping SourceColumn="CUSTORDERDATE" DataSetColumn="CUSTORDERDATE" />
+              <Mapping SourceColumn="CUSTOMERPO" DataSetColumn="CUSTOMERPO" />
+              <Mapping SourceColumn="ORDERTERMS" DataSetColumn="ORDERTERMS" />
+              <Mapping SourceColumn="DELIVERYDATE" DataSetColumn="DELIVERYDATE" />
+              <Mapping SourceColumn="PLANNEDSHIPDATE" DataSetColumn="PLANNEDSHIPDATE" />
+              <Mapping SourceColumn="HOWRECEIVED" DataSetColumn="HOWRECEIVED" />
+              <Mapping SourceColumn="ORDERSTATUS" DataSetColumn="ORDERSTATUS" />
+              <Mapping SourceColumn="ORDERNOTES" DataSetColumn="ORDERNOTES" />
+              <Mapping SourceColumn="WORKORDERDATE" DataSetColumn="WORKORDERDATE" />
+              <Mapping SourceColumn="PREPAREDBY" DataSetColumn="PREPAREDBY" />
+              <Mapping SourceColumn="SUPPLIERCOMPANY" DataSetColumn="SUPPLIERCOMPANY" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsWorkOrdersWithItemsToBeShipped" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsWorkOrdersWithItemsToBeShipped" msprop:Generator_DataSetName="dsWorkOrdersWithItemsToBeShipped">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="WORKORDER" msprop:Generator_UserTableName="WORKORDER" msprop:Generator_RowDeletedName="WORKORDERRowDeleted" msprop:Generator_RowChangedName="WORKORDERRowChanged" msprop:Generator_RowClassName="WORKORDERRow" msprop:Generator_RowChangingName="WORKORDERRowChanging" msprop:Generator_RowEvArgName="WORKORDERRowChangeEvent" msprop:Generator_RowEvHandlerName="WORKORDERRowChangeEventHandler" msprop:Generator_TableClassName="WORKORDERDataTable" msprop:Generator_TableVarName="tableWORKORDER" msprop:Generator_RowDeletingName="WORKORDERRowDeleting" msprop:Generator_TablePropName="WORKORDER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WORKORDERNUMBER" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="WORKORDERNUMBER" msprop:Generator_ColumnVarNameInTable="columnWORKORDERNUMBER" msprop:Generator_ColumnPropNameInRow="WORKORDERNUMBER" msprop:Generator_ColumnPropNameInTable="WORKORDERNUMBERColumn" type="xs:int" />
+              <xs:element name="CUSTORDERNUMBER" msprop:Generator_UserColumnName="CUSTORDERNUMBER" msprop:Generator_ColumnVarNameInTable="columnCUSTORDERNUMBER" msprop:Generator_ColumnPropNameInRow="CUSTORDERNUMBER" msprop:Generator_ColumnPropNameInTable="CUSTORDERNUMBERColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CUSTID" msprop:Generator_UserColumnName="CUSTID" msprop:Generator_ColumnVarNameInTable="columnCUSTID" msprop:Generator_ColumnPropNameInRow="CUSTID" msprop:Generator_ColumnPropNameInTable="CUSTIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BILLADDRESS1" msprop:Generator_UserColumnName="BILLADDRESS1" msprop:Generator_ColumnVarNameInTable="columnBILLADDRESS1" msprop:Generator_ColumnPropNameInRow="BILLADDRESS1" msprop:Generator_ColumnPropNameInTable="BILLADDRESS1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLADDRESS2" msprop:Generator_UserColumnName="BILLADDRESS2" msprop:Generator_ColumnVarNameInTable="columnBILLADDRESS2" msprop:Generator_ColumnPropNameInRow="BILLADDRESS2" msprop:Generator_ColumnPropNameInTable="BILLADDRESS2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLCITY" msprop:Generator_UserColumnName="BILLCITY" msprop:Generator_ColumnVarNameInTable="columnBILLCITY" msprop:Generator_ColumnPropNameInRow="BILLCITY" msprop:Generator_ColumnPropNameInTable="BILLCITYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLSTATEPROV" msprop:Generator_UserColumnName="BILLSTATEPROV" msprop:Generator_ColumnVarNameInTable="columnBILLSTATEPROV" msprop:Generator_ColumnPropNameInRow="BILLSTATEPROV" msprop:Generator_ColumnPropNameInTable="BILLSTATEPROVColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLPOSTALCODE" msprop:Generator_UserColumnName="BILLPOSTALCODE" msprop:Generator_ColumnVarNameInTable="columnBILLPOSTALCODE" msprop:Generator_ColumnPropNameInRow="BILLPOSTALCODE" msprop:Generator_ColumnPropNameInTable="BILLPOSTALCODEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLCOUNTRY" msprop:Generator_UserColumnName="BILLCOUNTRY" msprop:Generator_ColumnVarNameInTable="columnBILLCOUNTRY" msprop:Generator_ColumnPropNameInRow="BILLCOUNTRY" msprop:Generator_ColumnPropNameInTable="BILLCOUNTRYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLPHONE" msprop:Generator_UserColumnName="BILLPHONE" msprop:Generator_ColumnVarNameInTable="columnBILLPHONE" msprop:Generator_ColumnPropNameInRow="BILLPHONE" msprop:Generator_ColumnPropNameInTable="BILLPHONEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLFAX" msprop:Generator_UserColumnName="BILLFAX" msprop:Generator_ColumnVarNameInTable="columnBILLFAX" msprop:Generator_ColumnPropNameInRow="BILLFAX" msprop:Generator_ColumnPropNameInTable="BILLFAXColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLCONTACT" msprop:Generator_UserColumnName="BILLCONTACT" msprop:Generator_ColumnVarNameInTable="columnBILLCONTACT" msprop:Generator_ColumnPropNameInRow="BILLCONTACT" msprop:Generator_ColumnPropNameInTable="BILLCONTACTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPADDRESS1" msprop:Generator_UserColumnName="SHIPADDRESS1" msprop:Generator_ColumnVarNameInTable="columnSHIPADDRESS1" msprop:Generator_ColumnPropNameInRow="SHIPADDRESS1" msprop:Generator_ColumnPropNameInTable="SHIPADDRESS1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPADDRESS2" msprop:Generator_UserColumnName="SHIPADDRESS2" msprop:Generator_ColumnVarNameInTable="columnSHIPADDRESS2" msprop:Generator_ColumnPropNameInRow="SHIPADDRESS2" msprop:Generator_ColumnPropNameInTable="SHIPADDRESS2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPCITY" msprop:Generator_UserColumnName="SHIPCITY" msprop:Generator_ColumnVarNameInTable="columnSHIPCITY" msprop:Generator_ColumnPropNameInRow="SHIPCITY" msprop:Generator_ColumnPropNameInTable="SHIPCITYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPSTATEPROV" msprop:Generator_UserColumnName="SHIPSTATEPROV" msprop:Generator_ColumnVarNameInTable="columnSHIPSTATEPROV" msprop:Generator_ColumnPropNameInRow="SHIPSTATEPROV" msprop:Generator_ColumnPropNameInTable="SHIPSTATEPROVColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPPOSTALCODE" msprop:Generator_UserColumnName="SHIPPOSTALCODE" msprop:Generator_ColumnVarNameInTable="columnSHIPPOSTALCODE" msprop:Generator_ColumnPropNameInRow="SHIPPOSTALCODE" msprop:Generator_ColumnPropNameInTable="SHIPPOSTALCODEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPCOUNTRY" msprop:Generator_UserColumnName="SHIPCOUNTRY" msprop:Generator_ColumnVarNameInTable="columnSHIPCOUNTRY" msprop:Generator_ColumnPropNameInRow="SHIPCOUNTRY" msprop:Generator_ColumnPropNameInTable="SHIPCOUNTRYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPCONTACT" msprop:Generator_UserColumnName="SHIPCONTACT" msprop:Generator_ColumnVarNameInTable="columnSHIPCONTACT" msprop:Generator_ColumnPropNameInRow="SHIPCONTACT" msprop:Generator_ColumnPropNameInTable="SHIPCONTACTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FREIGHTCARRIER" msprop:Generator_UserColumnName="FREIGHTCARRIER" msprop:Generator_ColumnVarNameInTable="columnFREIGHTCARRIER" msprop:Generator_ColumnPropNameInRow="FREIGHTCARRIER" msprop:Generator_ColumnPropNameInTable="FREIGHTCARRIERColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FOB" msprop:Generator_UserColumnName="FOB" msprop:Generator_ColumnVarNameInTable="columnFOB" msprop:Generator_ColumnPropNameInRow="FOB" msprop:Generator_ColumnPropNameInTable="FOBColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTORDERDATE" msprop:Generator_UserColumnName="CUSTORDERDATE" msprop:Generator_ColumnVarNameInTable="columnCUSTORDERDATE" msprop:Generator_ColumnPropNameInRow="CUSTORDERDATE" msprop:Generator_ColumnPropNameInTable="CUSTORDERDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CUSTOMERPO" msprop:Generator_UserColumnName="CUSTOMERPO" msprop:Generator_ColumnVarNameInTable="columnCUSTOMERPO" msprop:Generator_ColumnPropNameInRow="CUSTOMERPO" msprop:Generator_ColumnPropNameInTable="CUSTOMERPOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDERTERMS" msprop:Generator_UserColumnName="ORDERTERMS" msprop:Generator_ColumnVarNameInTable="columnORDERTERMS" msprop:Generator_ColumnPropNameInRow="ORDERTERMS" msprop:Generator_ColumnPropNameInTable="ORDERTERMSColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DELIVERYDATE" msprop:Generator_UserColumnName="DELIVERYDATE" msprop:Generator_ColumnVarNameInTable="columnDELIVERYDATE" msprop:Generator_ColumnPropNameInRow="DELIVERYDATE" msprop:Generator_ColumnPropNameInTable="DELIVERYDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PLANNEDSHIPDATE" msprop:Generator_UserColumnName="PLANNEDSHIPDATE" msprop:Generator_ColumnVarNameInTable="columnPLANNEDSHIPDATE" msprop:Generator_ColumnPropNameInRow="PLANNEDSHIPDATE" msprop:Generator_ColumnPropNameInTable="PLANNEDSHIPDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HOWRECEIVED" msprop:Generator_UserColumnName="HOWRECEIVED" msprop:Generator_ColumnVarNameInTable="columnHOWRECEIVED" msprop:Generator_ColumnPropNameInRow="HOWRECEIVED" msprop:Generator_ColumnPropNameInTable="HOWRECEIVEDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDERSTATUS" msprop:Generator_UserColumnName="ORDERSTATUS" msprop:Generator_ColumnVarNameInTable="columnORDERSTATUS" msprop:Generator_ColumnPropNameInRow="ORDERSTATUS" msprop:Generator_ColumnPropNameInTable="ORDERSTATUSColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDERNOTES" msprop:Generator_UserColumnName="ORDERNOTES" msprop:Generator_ColumnVarNameInTable="columnORDERNOTES" msprop:Generator_ColumnPropNameInRow="ORDERNOTES" msprop:Generator_ColumnPropNameInTable="ORDERNOTESColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WORKORDERDATE" msprop:Generator_UserColumnName="WORKORDERDATE" msprop:Generator_ColumnVarNameInTable="columnWORKORDERDATE" msprop:Generator_ColumnPropNameInRow="WORKORDERDATE" msprop:Generator_ColumnPropNameInTable="WORKORDERDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PREPAREDBY" msprop:Generator_UserColumnName="PREPAREDBY" msprop:Generator_ColumnVarNameInTable="columnPREPAREDBY" msprop:Generator_ColumnPropNameInRow="PREPAREDBY" msprop:Generator_ColumnPropNameInTable="PREPAREDBYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SUPPLIERCOMPANY" msprop:Generator_UserColumnName="SUPPLIERCOMPANY" msprop:Generator_ColumnVarNameInTable="columnSUPPLIERCOMPANY" msprop:Generator_ColumnPropNameInRow="SUPPLIERCOMPANY" msprop:Generator_ColumnPropNameInTable="SUPPLIERCOMPANYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WORKORDER" />
+      <xs:field xpath="mstns:WORKORDERNUMBER" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

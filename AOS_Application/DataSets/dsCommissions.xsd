@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCommissions" targetNamespace="http://tempuri.org/dsCommissions.xsd" xmlns:mstns="http://tempuri.org/dsCommissions.xsd" xmlns="http://tempuri.org/dsCommissions.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AOSDataConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AOSDataConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AOS.My.MySettings.GlobalReference.Default.AOSDataConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CommissionsTableAdapter" GeneratorDataComponentClassName="CommissionsTableAdapter" Name="Commissions" UserDataComponentName="CommissionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AOSDataConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COMMISSION.COMMISSIONID, COMMISSION.COMMISSIONDATE, SALESPERSON.SALESPERSONFULLNAME, COMMISSION.CUSTID, CUSTOMER.CUSTNAME, 
+                         COMMISSION.INVOICENUMBER, COMMISSION.COMMISSIONAMOUNT, COMMISSION.COMMISSIONSTATUS, COMMISSION.COMMISSIONDESC, 
+                         COMMISSION.COMMISSIONNOTE, COMMISSION.COMMISSIONCATEGORY, COMMISSION.DATECOMMISSIONPAID, COMMISSION.COMMISSIONPMTID, 
+                         COMMISSION.SALESPERSONID, CUSTOMERASSIGNMENT.CommissionRate, INVOICE.CUSTOMERPO
+FROM            COMMISSION INNER JOIN
+                         SALESPERSON ON COMMISSION.SALESPERSONID = SALESPERSON.SALESPERSONID INNER JOIN
+                         CUSTOMERASSIGNMENT ON COMMISSION.SALESPERSONID = CUSTOMERASSIGNMENT.SalespersonID AND 
+                         COMMISSION.CUSTID = CUSTOMERASSIGNMENT.CustID INNER JOIN
+                         INVOICE ON COMMISSION.INVOICENUMBER = INVOICE.INVOICENUMBER LEFT OUTER JOIN
+                         CUSTOMER ON COMMISSION.CUSTID = CUSTOMER.CUSTID
+WHERE        (COMMISSION.COMMISSIONSTATUS = 'PAYABLE')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="COMMISSIONID" DataSetColumn="COMMISSIONID" />
+              <Mapping SourceColumn="COMMISSIONDATE" DataSetColumn="COMMISSIONDATE" />
+              <Mapping SourceColumn="SALESPERSONFULLNAME" DataSetColumn="SALESPERSONFULLNAME" />
+              <Mapping SourceColumn="CUSTID" DataSetColumn="CUSTID" />
+              <Mapping SourceColumn="CUSTNAME" DataSetColumn="CUSTNAME" />
+              <Mapping SourceColumn="INVOICENUMBER" DataSetColumn="INVOICENUMBER" />
+              <Mapping SourceColumn="COMMISSIONAMOUNT" DataSetColumn="COMMISSIONAMOUNT" />
+              <Mapping SourceColumn="COMMISSIONSTATUS" DataSetColumn="COMMISSIONSTATUS" />
+              <Mapping SourceColumn="COMMISSIONDESC" DataSetColumn="COMMISSIONDESC" />
+              <Mapping SourceColumn="COMMISSIONNOTE" DataSetColumn="COMMISSIONNOTE" />
+              <Mapping SourceColumn="COMMISSIONCATEGORY" DataSetColumn="COMMISSIONCATEGORY" />
+              <Mapping SourceColumn="CommissionRate" DataSetColumn="CommissionRate" />
+              <Mapping SourceColumn="DATECOMMISSIONPAID" DataSetColumn="DATECOMMISSIONPAID" />
+              <Mapping SourceColumn="COMMISSIONPMTID" DataSetColumn="COMMISSIONPMTID" />
+              <Mapping SourceColumn="SALESPERSONID" DataSetColumn="SALESPERSONID" />
+              <Mapping SourceColumn="CUSTOMERPO" DataSetColumn="CUSTOMERPO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCommissions" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsCommissions" msprop:Generator_DataSetName="dsCommissions" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Commissions" msprop:Generator_UserTableName="Commissions" msprop:Generator_RowDeletedName="CommissionsRowDeleted" msprop:Generator_RowChangedName="CommissionsRowChanged" msprop:Generator_RowClassName="CommissionsRow" msprop:Generator_RowChangingName="CommissionsRowChanging" msprop:Generator_RowEvArgName="CommissionsRowChangeEvent" msprop:Generator_RowEvHandlerName="CommissionsRowChangeEventHandler" msprop:Generator_TableClassName="CommissionsDataTable" msprop:Generator_TableVarName="tableCommissions" msprop:Generator_RowDeletingName="CommissionsRowDeleting" msprop:Generator_TablePropName="Commissions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COMMISSIONID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="COMMISSIONID" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONID" msprop:Generator_ColumnPropNameInRow="COMMISSIONID" msprop:Generator_ColumnPropNameInTable="COMMISSIONIDColumn" type="xs:int" />
+              <xs:element name="COMMISSIONDATE" msprop:Generator_UserColumnName="COMMISSIONDATE" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONDATE" msprop:Generator_ColumnPropNameInRow="COMMISSIONDATE" msprop:Generator_ColumnPropNameInTable="COMMISSIONDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SALESPERSONFULLNAME" msdata:ReadOnly="true" msprop:Generator_UserColumnName="SALESPERSONFULLNAME" msprop:Generator_ColumnVarNameInTable="columnSALESPERSONFULLNAME" msprop:Generator_ColumnPropNameInRow="SALESPERSONFULLNAME" msprop:Generator_ColumnPropNameInTable="SALESPERSONFULLNAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTID" msprop:Generator_UserColumnName="CUSTID" msprop:Generator_ColumnVarNameInTable="columnCUSTID" msprop:Generator_ColumnPropNameInRow="CUSTID" msprop:Generator_ColumnPropNameInTable="CUSTIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CUSTNAME" msprop:Generator_UserColumnName="CUSTNAME" msprop:Generator_ColumnVarNameInTable="columnCUSTNAME" msprop:Generator_ColumnPropNameInRow="CUSTNAME" msprop:Generator_ColumnPropNameInTable="CUSTNAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INVOICENUMBER" msprop:Generator_UserColumnName="INVOICENUMBER" msprop:Generator_ColumnVarNameInTable="columnINVOICENUMBER" msprop:Generator_ColumnPropNameInRow="INVOICENUMBER" msprop:Generator_ColumnPropNameInTable="INVOICENUMBERColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="COMMISSIONAMOUNT" msprop:Generator_UserColumnName="COMMISSIONAMOUNT" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONAMOUNT" msprop:Generator_ColumnPropNameInRow="COMMISSIONAMOUNT" msprop:Generator_ColumnPropNameInTable="COMMISSIONAMOUNTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COMMISSIONSTATUS" msprop:Generator_UserColumnName="COMMISSIONSTATUS" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONSTATUS" msprop:Generator_ColumnPropNameInRow="COMMISSIONSTATUS" msprop:Generator_ColumnPropNameInTable="COMMISSIONSTATUSColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMMISSIONDESC" msprop:Generator_UserColumnName="COMMISSIONDESC" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONDESC" msprop:Generator_ColumnPropNameInRow="COMMISSIONDESC" msprop:Generator_ColumnPropNameInTable="COMMISSIONDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMMISSIONNOTE" msprop:Generator_UserColumnName="COMMISSIONNOTE" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONNOTE" msprop:Generator_ColumnPropNameInRow="COMMISSIONNOTE" msprop:Generator_ColumnPropNameInTable="COMMISSIONNOTEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMMISSIONCATEGORY" msprop:Generator_UserColumnName="COMMISSIONCATEGORY" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONCATEGORY" msprop:Generator_ColumnPropNameInRow="COMMISSIONCATEGORY" msprop:Generator_ColumnPropNameInTable="COMMISSIONCATEGORYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CommissionRate" msprop:Generator_UserColumnName="CommissionRate" msprop:Generator_ColumnVarNameInTable="columnCommissionRate" msprop:Generator_ColumnPropNameInRow="CommissionRate" msprop:Generator_ColumnPropNameInTable="CommissionRateColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DATECOMMISSIONPAID" msprop:Generator_UserColumnName="DATECOMMISSIONPAID" msprop:Generator_ColumnPropNameInRow="DATECOMMISSIONPAID" msprop:Generator_ColumnVarNameInTable="columnDATECOMMISSIONPAID" msprop:Generator_ColumnPropNameInTable="DATECOMMISSIONPAIDColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="COMMISSIONPMTID" msprop:Generator_UserColumnName="COMMISSIONPMTID" msprop:Generator_ColumnPropNameInRow="COMMISSIONPMTID" msprop:Generator_ColumnVarNameInTable="columnCOMMISSIONPMTID" msprop:Generator_ColumnPropNameInTable="COMMISSIONPMTIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SALESPERSONID" msprop:Generator_UserColumnName="SALESPERSONID" msprop:Generator_ColumnPropNameInRow="SALESPERSONID" msprop:Generator_ColumnVarNameInTable="columnSALESPERSONID" msprop:Generator_ColumnPropNameInTable="SALESPERSONIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CUSTOMERPO" msprop:Generator_UserColumnName="CUSTOMERPO" msprop:Generator_ColumnPropNameInRow="CUSTOMERPO" msprop:Generator_ColumnVarNameInTable="columnCUSTOMERPO" msprop:Generator_ColumnPropNameInTable="CUSTOMERPOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Commissions" />
+      <xs:field xpath="mstns:COMMISSIONID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
