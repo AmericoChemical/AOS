@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/AOS_Application/.vs/AOS.WindowsApp/v15/sqlite3/storage.ide
+/AOS_Application/obj/Debug/AOS.Application.vbproj.CoreCompileInputs.cache
