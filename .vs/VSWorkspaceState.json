@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AOS_Application"
+    "\\AOS_Application",
+    "\\AOS_Application\\Forms",
+    "\\AOS_Application\\Forms\\Freight"
   ],
-  "SelectedNode": "\\AOS_Application\\app.config",
+  "SelectedNode": "\\AOS_Application\\Forms\\Freight\\viewFreightDashboard.vb",
   "PreviewInSolutionExplorer": false
 }

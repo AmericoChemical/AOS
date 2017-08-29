@@ -83,6 +83,14 @@ Partial Class viewFreightDashboard
         Me.rbtnInTransitMarkAsDelivered = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnProcessLoad = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnPrintRptFutureShipments = New DevExpress.XtraBars.BarButtonItem()
+        Me.eHistoryStart = New DevExpress.XtraBars.BarEditItem()
+        Me.RepositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
+        Me.eHistoryEnd = New DevExpress.XtraBars.BarEditItem()
+        Me.RepositoryItemDateEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
+        Me.eCustomerSelector = New DevExpress.XtraBars.BarEditItem()
+        Me.RepositoryItemLookUpEdit6 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.rBtnFetchShipmentHistory = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnExportHistory = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -101,6 +109,7 @@ Partial Class viewFreightDashboard
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage8 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup13 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage6 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup26 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -109,6 +118,27 @@ Partial Class viewFreightDashboard
         Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.WorkPanelsHolder = New DevExpress.XtraEditors.PanelControl()
+        Me.RibbonPanelControl8 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl8 = New DevExpress.XtraEditors.GroupControl()
+        Me.PanelControl6 = New DevExpress.XtraEditors.PanelControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.bsCustomerShipmentHistory = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvCustomerShipmentHistory = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colCustid1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCustname1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colWorkordernumber = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOrdertype = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colActualShipmentDate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPlannedDeliveryDate1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLoadType1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQty = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colContainer = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUnits = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUom = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductdesc = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.CustomDevExGridView2 = New AOS.CustomClasses.CustomDevExGridView()
         Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
@@ -317,12 +347,12 @@ Partial Class viewFreightDashboard
         Me.colCustid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCustname = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RibbonPanelControl9 = New DevExpress.XtraEditors.PanelControl()
-        Me.RibbonPanelControl8 = New DevExpress.XtraEditors.PanelControl()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer_RefreshData = New System.Windows.Forms.Timer(Me.components)
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.ImageCollection2 = New DevExpress.Utils.ImageCollection(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.bsCustomers2 = New System.Windows.Forms.BindingSource(Me.components)
         CustemailLabel = New System.Windows.Forms.Label()
         CustphoneLabel = New System.Windows.Forms.Label()
         CustfaxLabel = New System.Windows.Forms.Label()
@@ -356,9 +386,25 @@ Partial Class viewFreightDashboard
         CType(Me.grHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit2.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WorkPanelsHolder.SuspendLayout()
+        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl8.SuspendLayout()
+        CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl8.SuspendLayout()
+        CType(Me.PanelControl6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl6.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomDevExGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -488,8 +534,8 @@ Partial Class viewFreightDashboard
         CType(Me.grCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CustemailLabel
@@ -795,13 +841,13 @@ Partial Class viewFreightDashboard
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Images = Me.ImageCollection1
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnPendingAddLoad, Me.btnPendingEditLoad, Me.rbtnRetrievePendingLoads, Me.rbtnPendingMarkAsCancelled, Me.rbtnMergeLoads, Me.rbtnRetrieveScheduledLoads, Me.rtbnScheduledLoadEdit, Me.rbtnPrintBOL, Me.rbtnScheduledMarkAsPending, Me.rbtnScheduledMarkAsInTransit, Me.rbtnScheduledMarkAsCancelled, Me.rbtnRetrieveInTransitLoads, Me.rbtnInTransitMarkAsReturned, Me.rbtnRetrieveDeliveredLoads, Me.rbtnReprintBOL, Me.rbtnDeliveredMarkAsInTransit, Me.rbtnRetrieveCancelledLoads, Me.rbtnRetrieveCustomers, Me.rbtnRetrieveCarriers, Me.rbtnAddNewCarrier, Me.rbtnEditCarrier, Me.rbtnDeleteCarrier, Me.rbtnRetrieveLogisiticsProviders, Me.rbtnAddNewLogisticsProvider, Me.rbtnEditLogisticsProvider, Me.rbtnDeleteLogisticsProvider, Me.rbtnEditFreightSettings, Me.rbtnInTransitMarkAsDelivered, Me.rbtnProcessLoad, Me.rbtnPrintRptFutureShipments})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnPendingAddLoad, Me.btnPendingEditLoad, Me.rbtnRetrievePendingLoads, Me.rbtnPendingMarkAsCancelled, Me.rbtnMergeLoads, Me.rbtnRetrieveScheduledLoads, Me.rtbnScheduledLoadEdit, Me.rbtnPrintBOL, Me.rbtnScheduledMarkAsPending, Me.rbtnScheduledMarkAsInTransit, Me.rbtnScheduledMarkAsCancelled, Me.rbtnRetrieveInTransitLoads, Me.rbtnInTransitMarkAsReturned, Me.rbtnRetrieveDeliveredLoads, Me.rbtnReprintBOL, Me.rbtnDeliveredMarkAsInTransit, Me.rbtnRetrieveCancelledLoads, Me.rbtnRetrieveCustomers, Me.rbtnRetrieveCarriers, Me.rbtnAddNewCarrier, Me.rbtnEditCarrier, Me.rbtnDeleteCarrier, Me.rbtnRetrieveLogisiticsProviders, Me.rbtnAddNewLogisticsProvider, Me.rbtnEditLogisticsProvider, Me.rbtnDeleteLogisticsProvider, Me.rbtnEditFreightSettings, Me.rbtnInTransitMarkAsDelivered, Me.rbtnProcessLoad, Me.rbtnPrintRptFutureShipments, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.rBtnFetchShipmentHistory, Me.rbtnExportHistory})
         Me.RibbonControl1.LargeImages = Me.ImageCollection1
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 88
+        Me.RibbonControl1.MaxItemId = 93
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4, Me.RibbonPage5, Me.RibbonPage8, Me.RibbonPage6, Me.RibbonPage7})
-        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1})
+        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit6})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
         Me.RibbonControl1.Size = New System.Drawing.Size(1268, 117)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
@@ -814,18 +860,18 @@ Partial Class viewFreightDashboard
         'rbtnPendingAddLoad
         '
         Me.rbtnPendingAddLoad.Caption = "Add New Load"
-        Me.rbtnPendingAddLoad.Glyph = Global.AOS.My.Resources.Resources.NewRecord
         Me.rbtnPendingAddLoad.Id = 41
-        Me.rbtnPendingAddLoad.LargeImageIndex = 2
+        Me.rbtnPendingAddLoad.ImageOptions.Image = Global.AOS.My.Resources.Resources.NewRecord
+        Me.rbtnPendingAddLoad.ImageOptions.LargeImageIndex = 2
         Me.rbtnPendingAddLoad.Name = "rbtnPendingAddLoad"
         Me.rbtnPendingAddLoad.Tag = "232"
         '
         'btnPendingEditLoad
         '
         Me.btnPendingEditLoad.Caption = "Edit Load"
-        Me.btnPendingEditLoad.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnPendingEditLoad.Id = 42
-        Me.btnPendingEditLoad.LargeImageIndex = 3
+        Me.btnPendingEditLoad.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
+        Me.btnPendingEditLoad.ImageOptions.LargeImageIndex = 3
         Me.btnPendingEditLoad.Name = "btnPendingEditLoad"
         Me.btnPendingEditLoad.Tag = "233"
         '
@@ -833,7 +879,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrievePendingLoads.Caption = "Retrieve Pending Loads"
         Me.rbtnRetrievePendingLoads.Id = 51
-        Me.rbtnRetrievePendingLoads.LargeImageIndex = 1
+        Me.rbtnRetrievePendingLoads.ImageOptions.LargeImageIndex = 1
         Me.rbtnRetrievePendingLoads.Name = "rbtnRetrievePendingLoads"
         Me.rbtnRetrievePendingLoads.Tag = "230"
         '
@@ -841,7 +887,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnPendingMarkAsCancelled.Caption = "Mark As Cancelled"
         Me.rbtnPendingMarkAsCancelled.Id = 54
-        Me.rbtnPendingMarkAsCancelled.LargeImageIndex = 7
+        Me.rbtnPendingMarkAsCancelled.ImageOptions.LargeImageIndex = 7
         Me.rbtnPendingMarkAsCancelled.Name = "rbtnPendingMarkAsCancelled"
         Me.rbtnPendingMarkAsCancelled.Tag = "235"
         '
@@ -849,7 +895,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnMergeLoads.Caption = "Merge Loads"
         Me.rbtnMergeLoads.Id = 55
-        Me.rbtnMergeLoads.LargeImageIndex = 17
+        Me.rbtnMergeLoads.ImageOptions.LargeImageIndex = 17
         Me.rbtnMergeLoads.Name = "rbtnMergeLoads"
         Me.rbtnMergeLoads.Tag = "234"
         '
@@ -857,7 +903,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrieveScheduledLoads.Caption = "Retrieve Scheduled Loads"
         Me.rbtnRetrieveScheduledLoads.Id = 57
-        Me.rbtnRetrieveScheduledLoads.LargeImageIndex = 1
+        Me.rbtnRetrieveScheduledLoads.ImageOptions.LargeImageIndex = 1
         Me.rbtnRetrieveScheduledLoads.Name = "rbtnRetrieveScheduledLoads"
         Me.rbtnRetrieveScheduledLoads.Tag = "236"
         '
@@ -865,7 +911,7 @@ Partial Class viewFreightDashboard
         '
         Me.rtbnScheduledLoadEdit.Caption = "Edit Load"
         Me.rtbnScheduledLoadEdit.Id = 58
-        Me.rtbnScheduledLoadEdit.LargeImageIndex = 3
+        Me.rtbnScheduledLoadEdit.ImageOptions.LargeImageIndex = 3
         Me.rtbnScheduledLoadEdit.Name = "rtbnScheduledLoadEdit"
         Me.rtbnScheduledLoadEdit.Tag = "237"
         '
@@ -873,7 +919,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnPrintBOL.Caption = "Print Bill Of Lading"
         Me.rbtnPrintBOL.Id = 59
-        Me.rbtnPrintBOL.LargeImageIndex = 5
+        Me.rbtnPrintBOL.ImageOptions.LargeImageIndex = 5
         Me.rbtnPrintBOL.Name = "rbtnPrintBOL"
         Me.rbtnPrintBOL.Tag = "238"
         '
@@ -881,7 +927,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnScheduledMarkAsPending.Caption = "Mark As Pending"
         Me.rbtnScheduledMarkAsPending.Id = 60
-        Me.rbtnScheduledMarkAsPending.LargeImageIndex = 14
+        Me.rbtnScheduledMarkAsPending.ImageOptions.LargeImageIndex = 14
         Me.rbtnScheduledMarkAsPending.Name = "rbtnScheduledMarkAsPending"
         Me.rbtnScheduledMarkAsPending.Tag = "239"
         '
@@ -889,7 +935,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnScheduledMarkAsInTransit.Caption = "Mark As  In Transit"
         Me.rbtnScheduledMarkAsInTransit.Id = 61
-        Me.rbtnScheduledMarkAsInTransit.LargeImageIndex = 18
+        Me.rbtnScheduledMarkAsInTransit.ImageOptions.LargeImageIndex = 18
         Me.rbtnScheduledMarkAsInTransit.Name = "rbtnScheduledMarkAsInTransit"
         Me.rbtnScheduledMarkAsInTransit.Tag = "241"
         '
@@ -897,7 +943,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnScheduledMarkAsCancelled.Caption = "Mark As Cancelled"
         Me.rbtnScheduledMarkAsCancelled.Id = 63
-        Me.rbtnScheduledMarkAsCancelled.LargeImageIndex = 7
+        Me.rbtnScheduledMarkAsCancelled.ImageOptions.LargeImageIndex = 7
         Me.rbtnScheduledMarkAsCancelled.Name = "rbtnScheduledMarkAsCancelled"
         Me.rbtnScheduledMarkAsCancelled.Tag = "242"
         '
@@ -905,7 +951,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrieveInTransitLoads.Caption = "Retrieve In Transit Loads"
         Me.rbtnRetrieveInTransitLoads.Id = 64
-        Me.rbtnRetrieveInTransitLoads.LargeImageIndex = 1
+        Me.rbtnRetrieveInTransitLoads.ImageOptions.LargeImageIndex = 1
         Me.rbtnRetrieveInTransitLoads.Name = "rbtnRetrieveInTransitLoads"
         Me.rbtnRetrieveInTransitLoads.Tag = "243"
         '
@@ -913,7 +959,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnInTransitMarkAsReturned.Caption = "Mark As Returned"
         Me.rbtnInTransitMarkAsReturned.Id = 67
-        Me.rbtnInTransitMarkAsReturned.LargeImageIndex = 19
+        Me.rbtnInTransitMarkAsReturned.ImageOptions.LargeImageIndex = 19
         Me.rbtnInTransitMarkAsReturned.Name = "rbtnInTransitMarkAsReturned"
         Me.rbtnInTransitMarkAsReturned.Tag = "244"
         '
@@ -921,7 +967,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrieveDeliveredLoads.Caption = "Retrieve Delivered Loads"
         Me.rbtnRetrieveDeliveredLoads.Id = 68
-        Me.rbtnRetrieveDeliveredLoads.LargeImageIndex = 1
+        Me.rbtnRetrieveDeliveredLoads.ImageOptions.LargeImageIndex = 1
         Me.rbtnRetrieveDeliveredLoads.Name = "rbtnRetrieveDeliveredLoads"
         Me.rbtnRetrieveDeliveredLoads.Tag = "246"
         '
@@ -929,7 +975,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnReprintBOL.Caption = "Reprint Bill Of Lading"
         Me.rbtnReprintBOL.Id = 69
-        Me.rbtnReprintBOL.LargeImageIndex = 5
+        Me.rbtnReprintBOL.ImageOptions.LargeImageIndex = 5
         Me.rbtnReprintBOL.Name = "rbtnReprintBOL"
         Me.rbtnReprintBOL.Tag = "247"
         '
@@ -937,7 +983,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnDeliveredMarkAsInTransit.Caption = "Mark As In Transit"
         Me.rbtnDeliveredMarkAsInTransit.Id = 70
-        Me.rbtnDeliveredMarkAsInTransit.LargeImageIndex = 18
+        Me.rbtnDeliveredMarkAsInTransit.ImageOptions.LargeImageIndex = 18
         Me.rbtnDeliveredMarkAsInTransit.Name = "rbtnDeliveredMarkAsInTransit"
         Me.rbtnDeliveredMarkAsInTransit.Tag = "248"
         '
@@ -945,7 +991,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrieveCancelledLoads.Caption = "Retrieve Returned/ Cancelled Loads"
         Me.rbtnRetrieveCancelledLoads.Id = 71
-        Me.rbtnRetrieveCancelledLoads.LargeImageIndex = 1
+        Me.rbtnRetrieveCancelledLoads.ImageOptions.LargeImageIndex = 1
         Me.rbtnRetrieveCancelledLoads.Name = "rbtnRetrieveCancelledLoads"
         Me.rbtnRetrieveCancelledLoads.Tag = "249"
         '
@@ -953,7 +999,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrieveCustomers.Caption = "Retrieve Customers"
         Me.rbtnRetrieveCustomers.Id = 72
-        Me.rbtnRetrieveCustomers.LargeImageIndex = 24
+        Me.rbtnRetrieveCustomers.ImageOptions.LargeImageIndex = 24
         Me.rbtnRetrieveCustomers.LargeWidth = 100
         Me.rbtnRetrieveCustomers.Name = "rbtnRetrieveCustomers"
         Me.rbtnRetrieveCustomers.Tag = "251"
@@ -962,7 +1008,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrieveCarriers.Caption = "Retrieve Carriers"
         Me.rbtnRetrieveCarriers.Id = 73
-        Me.rbtnRetrieveCarriers.LargeImageIndex = 25
+        Me.rbtnRetrieveCarriers.ImageOptions.LargeImageIndex = 25
         Me.rbtnRetrieveCarriers.LargeWidth = 100
         Me.rbtnRetrieveCarriers.Name = "rbtnRetrieveCarriers"
         Me.rbtnRetrieveCarriers.Tag = "252"
@@ -971,7 +1017,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnAddNewCarrier.Caption = "Add New Carrier"
         Me.rbtnAddNewCarrier.Id = 74
-        Me.rbtnAddNewCarrier.LargeImageIndex = 26
+        Me.rbtnAddNewCarrier.ImageOptions.LargeImageIndex = 26
         Me.rbtnAddNewCarrier.Name = "rbtnAddNewCarrier"
         Me.rbtnAddNewCarrier.Tag = "253"
         Me.rbtnAddNewCarrier.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -980,7 +1026,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnEditCarrier.Caption = "Edit  Carrier"
         Me.rbtnEditCarrier.Id = 75
-        Me.rbtnEditCarrier.LargeImageIndex = 27
+        Me.rbtnEditCarrier.ImageOptions.LargeImageIndex = 27
         Me.rbtnEditCarrier.Name = "rbtnEditCarrier"
         Me.rbtnEditCarrier.Tag = "254"
         Me.rbtnEditCarrier.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -989,7 +1035,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnDeleteCarrier.Caption = "Delete Carrier"
         Me.rbtnDeleteCarrier.Id = 76
-        Me.rbtnDeleteCarrier.LargeImageIndex = 28
+        Me.rbtnDeleteCarrier.ImageOptions.LargeImageIndex = 28
         Me.rbtnDeleteCarrier.Name = "rbtnDeleteCarrier"
         Me.rbtnDeleteCarrier.Tag = "255"
         Me.rbtnDeleteCarrier.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -998,7 +1044,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnRetrieveLogisiticsProviders.Caption = "Retrieve Logistics Providers"
         Me.rbtnRetrieveLogisiticsProviders.Id = 78
-        Me.rbtnRetrieveLogisiticsProviders.LargeImageIndex = 29
+        Me.rbtnRetrieveLogisiticsProviders.ImageOptions.LargeImageIndex = 29
         Me.rbtnRetrieveLogisiticsProviders.LargeWidth = 100
         Me.rbtnRetrieveLogisiticsProviders.Name = "rbtnRetrieveLogisiticsProviders"
         Me.rbtnRetrieveLogisiticsProviders.Tag = "256"
@@ -1007,7 +1053,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnAddNewLogisticsProvider.Caption = "Add New Provider"
         Me.rbtnAddNewLogisticsProvider.Id = 79
-        Me.rbtnAddNewLogisticsProvider.LargeImageIndex = 30
+        Me.rbtnAddNewLogisticsProvider.ImageOptions.LargeImageIndex = 30
         Me.rbtnAddNewLogisticsProvider.Name = "rbtnAddNewLogisticsProvider"
         Me.rbtnAddNewLogisticsProvider.Tag = "257"
         Me.rbtnAddNewLogisticsProvider.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -1016,7 +1062,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnEditLogisticsProvider.Caption = "Edit  Provider"
         Me.rbtnEditLogisticsProvider.Id = 80
-        Me.rbtnEditLogisticsProvider.LargeImageIndex = 31
+        Me.rbtnEditLogisticsProvider.ImageOptions.LargeImageIndex = 31
         Me.rbtnEditLogisticsProvider.Name = "rbtnEditLogisticsProvider"
         Me.rbtnEditLogisticsProvider.Tag = "258"
         Me.rbtnEditLogisticsProvider.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -1025,7 +1071,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnDeleteLogisticsProvider.Caption = "Delete Provider"
         Me.rbtnDeleteLogisticsProvider.Id = 81
-        Me.rbtnDeleteLogisticsProvider.LargeImageIndex = 32
+        Me.rbtnDeleteLogisticsProvider.ImageOptions.LargeImageIndex = 32
         Me.rbtnDeleteLogisticsProvider.Name = "rbtnDeleteLogisticsProvider"
         Me.rbtnDeleteLogisticsProvider.Tag = "259"
         Me.rbtnDeleteLogisticsProvider.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -1034,7 +1080,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnEditFreightSettings.Caption = "Edit Freight Settings"
         Me.rbtnEditFreightSettings.Id = 83
-        Me.rbtnEditFreightSettings.LargeImageIndex = 34
+        Me.rbtnEditFreightSettings.ImageOptions.LargeImageIndex = 34
         Me.rbtnEditFreightSettings.Name = "rbtnEditFreightSettings"
         Me.rbtnEditFreightSettings.Tag = "260"
         '
@@ -1042,7 +1088,7 @@ Partial Class viewFreightDashboard
         '
         Me.rbtnInTransitMarkAsDelivered.Caption = "Mark As Delivered"
         Me.rbtnInTransitMarkAsDelivered.Id = 85
-        Me.rbtnInTransitMarkAsDelivered.LargeImageIndex = 11
+        Me.rbtnInTransitMarkAsDelivered.ImageOptions.LargeImageIndex = 11
         Me.rbtnInTransitMarkAsDelivered.Name = "rbtnInTransitMarkAsDelivered"
         Me.rbtnInTransitMarkAsDelivered.Tag = "245"
         '
@@ -1051,7 +1097,7 @@ Partial Class viewFreightDashboard
         Me.rbtnProcessLoad.Caption = "Process Load"
         Me.rbtnProcessLoad.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnProcessLoad.Id = 86
-        Me.rbtnProcessLoad.LargeImageIndex = 9
+        Me.rbtnProcessLoad.ImageOptions.LargeImageIndex = 9
         Me.rbtnProcessLoad.Name = "rbtnProcessLoad"
         Me.rbtnProcessLoad.Tag = "231"
         '
@@ -1060,9 +1106,77 @@ Partial Class viewFreightDashboard
         Me.rbtnPrintRptFutureShipments.Caption = "Future Shipments"
         Me.rbtnPrintRptFutureShipments.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPrintRptFutureShipments.Id = 87
-        Me.rbtnPrintRptFutureShipments.LargeImageIndex = 5
+        Me.rbtnPrintRptFutureShipments.ImageOptions.LargeImageIndex = 5
         Me.rbtnPrintRptFutureShipments.Name = "rbtnPrintRptFutureShipments"
         Me.rbtnPrintRptFutureShipments.Tag = "250"
+        '
+        'eHistoryStart
+        '
+        Me.eHistoryStart.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.eHistoryStart.Caption = " Start Date  "
+        Me.eHistoryStart.CaptionAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.eHistoryStart.Edit = Me.RepositoryItemDateEdit1
+        Me.eHistoryStart.EditWidth = 80
+        Me.eHistoryStart.Id = 88
+        Me.eHistoryStart.Name = "eHistoryStart"
+        '
+        'RepositoryItemDateEdit1
+        '
+        Me.RepositoryItemDateEdit1.AutoHeight = False
+        Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.Name = "RepositoryItemDateEdit1"
+        '
+        'eHistoryEnd
+        '
+        Me.eHistoryEnd.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.eHistoryEnd.Caption = " End Date    "
+        Me.eHistoryEnd.CaptionAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.eHistoryEnd.Edit = Me.RepositoryItemDateEdit2
+        Me.eHistoryEnd.EditWidth = 80
+        Me.eHistoryEnd.Id = 89
+        Me.eHistoryEnd.Name = "eHistoryEnd"
+        '
+        'RepositoryItemDateEdit2
+        '
+        Me.RepositoryItemDateEdit2.AutoHeight = False
+        Me.RepositoryItemDateEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit2.Name = "RepositoryItemDateEdit2"
+        '
+        'eCustomerSelector
+        '
+        Me.eCustomerSelector.Edit = Me.RepositoryItemLookUpEdit6
+        Me.eCustomerSelector.EditWidth = 200
+        Me.eCustomerSelector.Id = 90
+        Me.eCustomerSelector.Name = "eCustomerSelector"
+        '
+        'RepositoryItemLookUpEdit6
+        '
+        Me.RepositoryItemLookUpEdit6.AutoHeight = False
+        Me.RepositoryItemLookUpEdit6.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit6.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custid", 50, "ID"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", 200, "Customer Name"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", 100, "City"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", 30, "State")})
+        Me.RepositoryItemLookUpEdit6.DataSource = Me.bsCustomers2
+        Me.RepositoryItemLookUpEdit6.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit6.DropDownRows = 20
+        Me.RepositoryItemLookUpEdit6.Name = "RepositoryItemLookUpEdit6"
+        Me.RepositoryItemLookUpEdit6.NullText = "[Select a Customer...]"
+        Me.RepositoryItemLookUpEdit6.PopupWidth = 400
+        Me.RepositoryItemLookUpEdit6.ValueMember = "Custid"
+        '
+        'rBtnFetchShipmentHistory
+        '
+        Me.rBtnFetchShipmentHistory.Caption = "Get Shipment History"
+        Me.rBtnFetchShipmentHistory.Id = 91
+        Me.rBtnFetchShipmentHistory.ImageOptions.LargeImageIndex = 1
+        Me.rBtnFetchShipmentHistory.Name = "rBtnFetchShipmentHistory"
+        '
+        'rbtnExportHistory
+        '
+        Me.rbtnExportHistory.Caption = "Export History to Excel"
+        Me.rbtnExportHistory.Id = 92
+        Me.rbtnExportHistory.ImageOptions.LargeImageIndex = 0
+        Me.rbtnExportHistory.Name = "rbtnExportHistory"
         '
         'RibbonPage1
         '
@@ -1207,7 +1321,7 @@ Partial Class viewFreightDashboard
         '
         'RibbonPage8
         '
-        Me.RibbonPage8.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup3})
+        Me.RibbonPage8.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup3, Me.RibbonPageGroup13})
         Me.RibbonPage8.Name = "RibbonPage8"
         Me.RibbonPage8.Tag = "40"
         Me.RibbonPage8.Text = "Reports"
@@ -1219,7 +1333,20 @@ Partial Class viewFreightDashboard
         Me.RibbonPageGroup3.ItemLinks.Add(Me.rbtnPrintRptFutureShipments)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         Me.RibbonPageGroup3.ShowCaptionButton = False
-        Me.RibbonPageGroup3.Text = "Freight Management Reports"
+        Me.RibbonPageGroup3.Text = "Future Shipments"
+        '
+        'RibbonPageGroup13
+        '
+        Me.RibbonPageGroup13.AllowMinimize = False
+        Me.RibbonPageGroup13.AllowTextClipping = False
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.eCustomerSelector)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.eHistoryStart)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.eHistoryEnd)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.rBtnFetchShipmentHistory, True)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.rbtnExportHistory)
+        Me.RibbonPageGroup13.Name = "RibbonPageGroup13"
+        Me.RibbonPageGroup13.ShowCaptionButton = False
+        Me.RibbonPageGroup13.Text = "Customer Shipment History"
         '
         'RibbonPage6
         '
@@ -1285,6 +1412,7 @@ Partial Class viewFreightDashboard
         'WorkPanelsHolder
         '
         Me.WorkPanelsHolder.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl8)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
@@ -1293,12 +1421,193 @@ Partial Class viewFreightDashboard
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl7)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl9)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl8)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
         Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 150)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
         Me.WorkPanelsHolder.Size = New System.Drawing.Size(1268, 599)
         Me.WorkPanelsHolder.TabIndex = 7
+        '
+        'RibbonPanelControl8
+        '
+        Me.RibbonPanelControl8.Controls.Add(Me.GroupControl8)
+        Me.RibbonPanelControl8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl8.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl8.Name = "RibbonPanelControl8"
+        Me.RibbonPanelControl8.Padding = New System.Windows.Forms.Padding(6)
+        Me.RibbonPanelControl8.Size = New System.Drawing.Size(1268, 599)
+        Me.RibbonPanelControl8.TabIndex = 5
+        '
+        'GroupControl8
+        '
+        Me.GroupControl8.Controls.Add(Me.PanelControl6)
+        Me.GroupControl8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl8.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl8.Name = "GroupControl8"
+        Me.GroupControl8.Size = New System.Drawing.Size(1252, 583)
+        Me.GroupControl8.TabIndex = 4
+        Me.GroupControl8.Text = "CUSTOMER SHIPPING HISTORY"
+        '
+        'PanelControl6
+        '
+        Me.PanelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl6.Controls.Add(Me.GridControl1)
+        Me.PanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl6.Location = New System.Drawing.Point(2, 22)
+        Me.PanelControl6.Name = "PanelControl6"
+        Me.PanelControl6.Size = New System.Drawing.Size(1248, 559)
+        Me.PanelControl6.TabIndex = 0
+        '
+        'GridControl1
+        '
+        Me.GridControl1.DataSource = Me.bsCustomerShipmentHistory
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(0, 0)
+        Me.GridControl1.MainView = Me.grvCustomerShipmentHistory
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit7})
+        Me.GridControl1.Size = New System.Drawing.Size(1248, 559)
+        Me.GridControl1.TabIndex = 0
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCustomerShipmentHistory, Me.CustomDevExGridView2})
+        '
+        'bsCustomerShipmentHistory
+        '
+        Me.bsCustomerShipmentHistory.DataSource = GetType(AOS.BusinessObjects.ViewCustomerShipmentTotalsCollection)
+        '
+        'grvCustomerShipmentHistory
+        '
+        Me.grvCustomerShipmentHistory.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCustid1, Me.colCustname1, Me.colWorkordernumber, Me.colOrdertype, Me.colActualShipmentDate, Me.colPlannedDeliveryDate1, Me.colLoadType1, Me.colQty, Me.colContainer, Me.colUnits, Me.colUom, Me.colProductid, Me.colProductdesc})
+        Me.grvCustomerShipmentHistory.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.grvCustomerShipmentHistory.GridControl = Me.GridControl1
+        Me.grvCustomerShipmentHistory.Name = "grvCustomerShipmentHistory"
+        Me.grvCustomerShipmentHistory.OptionsFilter.ShowAllTableValuesInFilterPopup = True
+        Me.grvCustomerShipmentHistory.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.grvCustomerShipmentHistory.OptionsSelection.MultiSelect = True
+        Me.grvCustomerShipmentHistory.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
+        Me.grvCustomerShipmentHistory.OptionsView.ShowAutoFilterRow = True
+        Me.grvCustomerShipmentHistory.OptionsView.ShowGroupPanel = False
+        Me.grvCustomerShipmentHistory.OptionsView.ShowIndicator = False
+        '
+        'colCustid1
+        '
+        Me.colCustid1.Caption = "Cust ID"
+        Me.colCustid1.FieldName = "Custid"
+        Me.colCustid1.Name = "colCustid1"
+        Me.colCustid1.Visible = True
+        Me.colCustid1.VisibleIndex = 0
+        Me.colCustid1.Width = 47
+        '
+        'colCustname1
+        '
+        Me.colCustname1.Caption = "Customer Name"
+        Me.colCustname1.FieldName = "Custname"
+        Me.colCustname1.Name = "colCustname1"
+        Me.colCustname1.Visible = True
+        Me.colCustname1.VisibleIndex = 1
+        Me.colCustname1.Width = 176
+        '
+        'colWorkordernumber
+        '
+        Me.colWorkordernumber.Caption = "WO #"
+        Me.colWorkordernumber.FieldName = "Workordernumber"
+        Me.colWorkordernumber.Name = "colWorkordernumber"
+        Me.colWorkordernumber.Visible = True
+        Me.colWorkordernumber.VisibleIndex = 2
+        Me.colWorkordernumber.Width = 60
+        '
+        'colOrdertype
+        '
+        Me.colOrdertype.Caption = "WO Type"
+        Me.colOrdertype.FieldName = "Ordertype"
+        Me.colOrdertype.Name = "colOrdertype"
+        Me.colOrdertype.Visible = True
+        Me.colOrdertype.VisibleIndex = 3
+        Me.colOrdertype.Width = 113
+        '
+        'colActualShipmentDate
+        '
+        Me.colActualShipmentDate.Caption = "Ship Date"
+        Me.colActualShipmentDate.FieldName = "ActualShipmentDate"
+        Me.colActualShipmentDate.Name = "colActualShipmentDate"
+        Me.colActualShipmentDate.Visible = True
+        Me.colActualShipmentDate.VisibleIndex = 4
+        Me.colActualShipmentDate.Width = 76
+        '
+        'colPlannedDeliveryDate1
+        '
+        Me.colPlannedDeliveryDate1.Caption = "Delv Date"
+        Me.colPlannedDeliveryDate1.FieldName = "PlannedDeliveryDate"
+        Me.colPlannedDeliveryDate1.Name = "colPlannedDeliveryDate1"
+        Me.colPlannedDeliveryDate1.Visible = True
+        Me.colPlannedDeliveryDate1.VisibleIndex = 5
+        Me.colPlannedDeliveryDate1.Width = 74
+        '
+        'colLoadType1
+        '
+        Me.colLoadType1.FieldName = "LoadType"
+        Me.colLoadType1.Name = "colLoadType1"
+        Me.colLoadType1.Visible = True
+        Me.colLoadType1.VisibleIndex = 6
+        '
+        'colQty
+        '
+        Me.colQty.FieldName = "Qty"
+        Me.colQty.Name = "colQty"
+        Me.colQty.Visible = True
+        Me.colQty.VisibleIndex = 7
+        '
+        'colContainer
+        '
+        Me.colContainer.FieldName = "Container"
+        Me.colContainer.Name = "colContainer"
+        Me.colContainer.Visible = True
+        Me.colContainer.VisibleIndex = 8
+        '
+        'colUnits
+        '
+        Me.colUnits.FieldName = "Units"
+        Me.colUnits.Name = "colUnits"
+        Me.colUnits.Visible = True
+        Me.colUnits.VisibleIndex = 9
+        '
+        'colUom
+        '
+        Me.colUom.Caption = "UOM"
+        Me.colUom.FieldName = "Uom"
+        Me.colUom.Name = "colUom"
+        Me.colUom.Visible = True
+        Me.colUom.VisibleIndex = 10
+        Me.colUom.Width = 45
+        '
+        'colProductid
+        '
+        Me.colProductid.Caption = "Prod ID"
+        Me.colProductid.FieldName = "Productid"
+        Me.colProductid.Name = "colProductid"
+        Me.colProductid.Visible = True
+        Me.colProductid.VisibleIndex = 11
+        Me.colProductid.Width = 45
+        '
+        'colProductdesc
+        '
+        Me.colProductdesc.Caption = "Product Description"
+        Me.colProductdesc.FieldName = "Productdesc"
+        Me.colProductdesc.Name = "colProductdesc"
+        Me.colProductdesc.Visible = True
+        Me.colProductdesc.VisibleIndex = 12
+        Me.colProductdesc.Width = 343
+        '
+        'RepositoryItemLookUpEdit7
+        '
+        Me.RepositoryItemLookUpEdit7.AutoHeight = False
+        Me.RepositoryItemLookUpEdit7.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit7.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit7.Name = "RepositoryItemLookUpEdit7"
+        Me.RepositoryItemLookUpEdit7.ValueMember = "Custname"
+        '
+        'CustomDevExGridView2
+        '
+        Me.CustomDevExGridView2.GridControl = Me.GridControl1
+        Me.CustomDevExGridView2.Name = "CustomDevExGridView2"
         '
         'RibbonPanelControl1
         '
@@ -3245,15 +3554,6 @@ Partial Class viewFreightDashboard
         Me.RibbonPanelControl9.Size = New System.Drawing.Size(1268, 599)
         Me.RibbonPanelControl9.TabIndex = 6
         '
-        'RibbonPanelControl8
-        '
-        Me.RibbonPanelControl8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl8.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl8.Name = "RibbonPanelControl8"
-        Me.RibbonPanelControl8.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl8.Size = New System.Drawing.Size(1268, 599)
-        Me.RibbonPanelControl8.TabIndex = 5
-        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -3266,7 +3566,7 @@ Partial Class viewFreightDashboard
         '
         Me.BarButtonItem1.Caption = "Mark As Returned"
         Me.BarButtonItem1.Id = 67
-        Me.BarButtonItem1.LargeGlyph = Global.AOS.My.Resources.Resources.document__2_
+        Me.BarButtonItem1.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.document__2_
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'ImageCollection2
@@ -3275,6 +3575,10 @@ Partial Class viewFreightDashboard
         '
         'Timer2
         '
+        '
+        'bsCustomers2
+        '
+        Me.bsCustomers2.DataSource = GetType(AOS.BusinessObjects.CustomerCollection)
         '
         'viewFreightDashboard
         '
@@ -3287,9 +3591,25 @@ Partial Class viewFreightDashboard
         CType(Me.grHeader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit2.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WorkPanelsHolder.ResumeLayout(False)
+        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl8.ResumeLayout(False)
+        CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl8.ResumeLayout(False)
+        CType(Me.PanelControl6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl6.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomDevExGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl1.ResumeLayout(False)
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3426,8 +3746,8 @@ Partial Class viewFreightDashboard
         CType(Me.grCustomers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageCollection2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3706,5 +4026,34 @@ Partial Class viewFreightDashboard
     Friend WithEvents RibbonPage8 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
-
+    Friend WithEvents eHistoryStart As DevExpress.XtraBars.BarEditItem
+    Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents eHistoryEnd As DevExpress.XtraBars.BarEditItem
+    Friend WithEvents RepositoryItemDateEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents eCustomerSelector As DevExpress.XtraBars.BarEditItem
+    Friend WithEvents RepositoryItemLookUpEdit6 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents RibbonPageGroup13 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents GroupControl8 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents PanelControl6 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents bsCustomerShipmentHistory As BindingSource
+    Friend grvCustomerShipmentHistory As CustomDevExGridView
+    Friend WithEvents colCustid1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colCustname1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colWorkordernumber As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colOrdertype As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colActualShipmentDate As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPlannedDeliveryDate1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colLoadType1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colQty As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colContainer As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colUnits As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colUom As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colProductid As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colProductdesc As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit7 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend CustomDevExGridView2 As CustomDevExGridView
+    Friend WithEvents rBtnFetchShipmentHistory As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rbtnExportHistory As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bsCustomers2 As BindingSource
 End Class

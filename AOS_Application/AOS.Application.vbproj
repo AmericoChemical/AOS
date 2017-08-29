@@ -833,6 +833,9 @@
     <Compile Include="BusinessObjects\Custom\ViewCustomerSalesData.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerSalesDataCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerSalesDataQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewCustomerShipmentTotals.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewCustomerShipmentTotalsCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewCustomerShipmentTotalsQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerTrendAnalysisAnnually.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerTrendAnalysisAnnuallyCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerTrendAnalysisAnnuallyQuery.vb" />
@@ -1452,6 +1455,7 @@
     <Compile Include="BusinessObjects\Generated\ViewCustomerPaymentInfo.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerPriceList.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerSalesData.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewCustomerShipmentTotals.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisAnnually.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisMonthly.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisQuarterly.vb" />
@@ -4118,6 +4122,7 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCostingApisMaterialStdCostCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCostingApisTotalCosts.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCostPriceEffects2Collection.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCustomerShipmentTotalsCollection1.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewInvoice.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewInvoiceCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewMaterialProductsFullAvailableForMaterialNeedsCollection.datasource" />

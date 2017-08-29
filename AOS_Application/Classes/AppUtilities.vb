@@ -76,8 +76,15 @@ Module AppUtilities
         frm.vInputType = "INTEGER"
         frm.vString = vNumberDefault
         frm.ShowDialog()
-        Return frm.vString
-
+        Return frm.vInteger
+    End Function
+    Public Function getUserDecimal(vPrompt As String, Optional vDecimalDefault As Decimal = 0.00) As Decimal
+        Dim frm As New frmGetDataItem
+        frm.vPrompt = vPrompt
+        frm.vInputType = "DECIMAL"
+        frm.vString = vDecimalDefault
+        frm.ShowDialog()
+        Return frm.vDecimal
     End Function
 
     Public Function getStatusValue(vType As String) As String

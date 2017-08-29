@@ -15,6 +15,7 @@ Public Class frmEditParameters
 
     Public vID As Integer       'object primary key (passed in by calling form for edit mode)
 
+    Private vLaborRate As Decimal = 0.00
     'here is where you dimension your object variables for the form
     Dim oItem As Sysparameters
     Dim vPreviousCompanyEmailDomain As String
@@ -33,8 +34,9 @@ Public Class frmEditParameters
         oItem = New Sysparameters
         oItem.LoadByPrimaryKey(vID)
         Me.bsItem.DataSource = oItem
-        vPreviousCompanyEmailDomain = oItem.CompanyEmailDomain
-        vPreviousCompanyEmailServer = oItem.CompanyEmailServer
+        vPreviousCompanyEmailDomain = oItem.Companyemaildomain
+        vPreviousCompanyEmailServer = oItem.Companyemailserver
+        vLaborRate = oItem.Stdlaborhourcost
     End Sub
 
     Private Function changesSaved() As Boolean
@@ -42,6 +44,7 @@ Public Class frmEditParameters
             bsItem.EndEdit()
             oItem.EndEdit()
             oItem.Save()
+
         Catch ex As Exception
             MsgBox(ex.Message)
             MsgBox("Error saving changes", MsgBoxStyle.Critical, "Error")
@@ -89,5 +92,25 @@ Public Class frmEditParameters
             Me.DialogResult = Windows.Forms.DialogResult.Cancel
         End If
     End Sub
-     
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Dim vNewRate As Decimal
+        vNewRate = getUserDecimal("Enter the new Standard Labor Rate:", oItem.Stdlaborhourcost)
+        If vNewRate = vLaborRate Then
+            'no real change was made to the Standard Labor Rate
+            Exit Sub
+        End If
+
+        'Confirm the change to the labor rate
+
+        'update System Parameters table with the new rate
+
+        'Fetch all ACTIVE APIS records and update Standard Costs for each of them
+
+
+
+
+
+
+    End Sub
 End Class

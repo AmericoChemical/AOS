@@ -23,12 +23,14 @@ Public Class viewFreightDashboard
     Private oCarriers As CarrierCollection
     Private oLogisticsProviders As LogisticsCollection
     Private oParm As Sysparameters
+    Private oCustList As CustomerCollection
 
 #Region " Form Load / Launch Processes "
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Timer1.Stop()
         getFreightSettings()
+        getCustList()
         getLoads("TIMER")
     End Sub
 
@@ -298,8 +300,19 @@ Public Class viewFreightDashboard
 
     Private Sub Timer_RefreshData_Tick(sender As Object, e As EventArgs) Handles Timer_RefreshData.Tick
         getFreightSettings()
+        getCustList()
         getLoads("TIMER")
     End Sub
+
+    Private Sub getCustList()
+
+        oCustList = New CustomerCollection
+        oCustList.Query.Where(oCustList.Query.Isactive.Equal(1))
+        oCustList.Query.Load()
+        bsCustomers2.DataSource = oCustList
+
+    End Sub
+
 
     Private Sub getFreightSettings()
         oParm = New Sysparameters
@@ -729,5 +742,57 @@ Public Class viewFreightDashboard
         End If
 
         setRibbonOptionsSecurity(vCurrentUserID)
+    End Sub
+
+    Private Sub rBtnFetchShipmentHistory_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rBtnFetchShipmentHistory.ItemClick
+
+        Dim vCustID As Integer
+        Dim vStart As Date
+        Dim vEnd As Date
+
+        If IsDBNull(eCustomerSelector.EditValue) Or eCustomerSelector.EditValue <= 0 Or eCustomerSelector.EditValue = Nothing Then
+            MsgBox("You must first select a Customer", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        Else
+            vCustID = eCustomerSelector.EditValue
+        End If
+
+        If IsDBNull(eHistoryStart.EditValue) Or eHistoryStart.EditValue = Nothing Then
+            MsgBox("You must first select a Start Date", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        Else
+            vStart = eHistoryStart.EditValue
+        End If
+
+        If IsDBNull(eHistoryEnd.EditValue) Or eHistoryEnd.EditValue = Nothing Then
+            MsgBox("You must first select an End Date", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        Else
+            vEnd = eHistoryEnd.EditValue
+        End If
+
+        Dim oSalesHistory As New ViewCustomerShipmentTotalsCollection
+        Select Case vCustID
+            Case 0
+                oSalesHistory.Query.Where(oSalesHistory.Query.ActualShipmentDate.Between(vStart, vEnd))
+            Case Else
+                oSalesHistory.Query.Where(oSalesHistory.Query.Custid.Equal(vCustID), oSalesHistory.Query.ActualShipmentDate.Between(vStart, vEnd))
+        End Select
+
+        oSalesHistory.Query.Load()
+        bsCustomerShipmentHistory.DataSource = oSalesHistory
+
+    End Sub
+
+    Private Sub rbtnExportHistory_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportHistory.ItemClick
+        Try
+            Dim vFilename As String
+            vFilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\exportedCustomerShipmentHistory.xlsx"
+            grvCustomerShipmentHistory.ExportToXlsx(vFilename)
+            System.Diagnostics.Process.Start(vFilename)
+            'MsgBox("Price List successfully exported to My Documents\exportedCustomerShimpentHistory.xlsx", MsgBoxStyle.Information, "Export succeeded")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

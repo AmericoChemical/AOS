@@ -68,6 +68,7 @@ Partial Class frmEditParameters
         Me.AdditionalDefaultSendToAddressTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CompanyNameLabel = New System.Windows.Forms.Label()
         CompanyAddressLabel = New System.Windows.Forms.Label()
         CompanyCityLabel = New System.Windows.Forms.Label()
@@ -301,7 +302,7 @@ Partial Class frmEditParameters
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(543, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(543, 117)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -309,35 +310,35 @@ Partial Class frmEditParameters
         '
         Me.btnNewCostRecord.Caption = "New Cost Record"
         Me.btnNewCostRecord.Id = 0
-        Me.btnNewCostRecord.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnNewCostRecord.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnNewCostRecord.Name = "btnNewCostRecord"
         '
         'btnEditCostRecord
         '
         Me.btnEditCostRecord.Caption = "Edit Cost Record"
-        Me.btnEditCostRecord.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Id = 1
+        Me.btnEditCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Name = "btnEditCostRecord"
         '
         'btnDeleteCostRecord
         '
         Me.btnDeleteCostRecord.Caption = "Delete Cost Record"
-        Me.btnDeleteCostRecord.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Id = 2
+        Me.btnDeleteCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Name = "btnDeleteCostRecord"
         '
         'btnSave
         '
         Me.btnSave.Caption = "Save" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Parameter"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeGlyph = Global.AOS.My.Resources.Resources.SaveChanges
+        Me.btnSave.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.SaveChanges
         Me.btnSave.Name = "btnSave"
         '
         'btnCancel
         '
         Me.btnCancel.Caption = "Cancel" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Parameter"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeGlyph = Global.AOS.My.Resources.Resources.CancelChanges
+        Me.btnCancel.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.CancelChanges
         Me.btnCancel.Name = "btnCancel"
         '
         'RibbonPage1
@@ -459,6 +460,7 @@ Partial Class frmEditParameters
         Me.StdlaborhourcostTextEdit.Name = "StdlaborhourcostTextEdit"
         Me.StdlaborhourcostTextEdit.Properties.DisplayFormat.FormatString = "c2"
         Me.StdlaborhourcostTextEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.StdlaborhourcostTextEdit.Properties.ReadOnly = True
         Me.StdlaborhourcostTextEdit.Size = New System.Drawing.Size(65, 20)
         Me.StdlaborhourcostTextEdit.TabIndex = 29
         '
@@ -558,10 +560,19 @@ Partial Class frmEditParameters
         Me.TextEdit2.Size = New System.Drawing.Size(330, 20)
         Me.TextEdit2.TabIndex = 40
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(270, 504)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(109, 23)
+        Me.SimpleButton1.TabIndex = 42
+        Me.SimpleButton1.Text = "Change Labor Rate"
+        '
         'frmEditParameters
         '
         Me.ClientSize = New System.Drawing.Size(543, 653)
         Me.ControlBox = False
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Label4)
         Me.Controls.Add(Me.TextEdit2)
         Me.Controls.Add(Label3)
@@ -665,4 +676,5 @@ Partial Class frmEditParameters
     Friend WithEvents AdditionalDefaultSendToAddressTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

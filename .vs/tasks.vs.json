@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-ViewCustomerShipmentTotalsQuery",
+      "appliesTo": "AOS_Application/BusinessObjects/Custom/ViewCustomerShipmentTotalsQuery.vb",
+      "type": "command"
+    }
+  ]
+}

@@ -19,20 +19,23 @@ Partial Class frmGetDataItem
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grpTitle = New DevExpress.XtraEditors.GroupControl()
+        Me.eInteger = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.eDate = New DevExpress.XtraEditors.DateEdit()
         Me.eString = New DevExpress.XtraEditors.TextEdit()
-        Me.eInteger = New DevExpress.XtraEditors.TextEdit()
+        Me.eDecimal = New DevExpress.XtraEditors.TextEdit()
         CType(Me.grpTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpTitle.SuspendLayout()
+        CType(Me.eInteger.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eString.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.eInteger.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eDecimal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grpTitle
         '
+        Me.grpTitle.Controls.Add(Me.eDecimal)
         Me.grpTitle.Controls.Add(Me.eInteger)
         Me.grpTitle.Controls.Add(Me.SimpleButton1)
         Me.grpTitle.Controls.Add(Me.eDate)
@@ -43,6 +46,17 @@ Partial Class frmGetDataItem
         Me.grpTitle.Size = New System.Drawing.Size(439, 96)
         Me.grpTitle.TabIndex = 0
         Me.grpTitle.Text = "Input Value"
+        '
+        'eInteger
+        '
+        Me.eInteger.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.eInteger.Location = New System.Drawing.Point(199, 33)
+        Me.eInteger.Name = "eInteger"
+        Me.eInteger.Properties.DisplayFormat.FormatString = "n"
+        Me.eInteger.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.eInteger.Size = New System.Drawing.Size(40, 20)
+        Me.eInteger.TabIndex = 3
         '
         'SimpleButton1
         '
@@ -71,16 +85,16 @@ Partial Class frmGetDataItem
         Me.eString.Size = New System.Drawing.Size(408, 20)
         Me.eString.TabIndex = 0
         '
-        'eInteger
+        'eDecimal
         '
-        Me.eInteger.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.eDecimal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.eInteger.Location = New System.Drawing.Point(199, 33)
-        Me.eInteger.Name = "eInteger"
-        Me.eInteger.Properties.DisplayFormat.FormatString = "n"
-        Me.eInteger.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.eInteger.Size = New System.Drawing.Size(40, 20)
-        Me.eInteger.TabIndex = 3
+        Me.eDecimal.Location = New System.Drawing.Point(182, 33)
+        Me.eDecimal.Name = "eDecimal"
+        Me.eDecimal.Properties.DisplayFormat.FormatString = "c2"
+        Me.eDecimal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.eDecimal.Size = New System.Drawing.Size(75, 20)
+        Me.eDecimal.TabIndex = 4
         '
         'frmGetDataItem
         '
@@ -92,10 +106,11 @@ Partial Class frmGetDataItem
         Me.Text = "frmGetDataItem"
         CType(Me.grpTitle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpTitle.ResumeLayout(False)
+        CType(Me.eInteger.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eString.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.eInteger.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eDecimal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -104,4 +119,5 @@ Partial Class frmGetDataItem
     Friend WithEvents eDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents eInteger As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents eDecimal As DevExpress.XtraEditors.TextEdit
 End Class
