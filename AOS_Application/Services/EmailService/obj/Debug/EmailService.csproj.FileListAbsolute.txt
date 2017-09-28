@@ -50,3 +50,10 @@ C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\bin\EmailSe
 C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.csprojResolveAssemblyReference.cache
 C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.dll
 C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.pdb
+C:\CodeRepository\AOS_Application\Services\EmailService\bin\EmailService.dll.config
+C:\CodeRepository\AOS_Application\Services\EmailService\bin\EmailService.dll
+C:\CodeRepository\AOS_Application\Services\EmailService\bin\EmailService.pdb
+C:\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.csprojResolveAssemblyReference.cache
+C:\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.csproj.CoreCompileInputs.cache
+C:\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.dll
+C:\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.pdb

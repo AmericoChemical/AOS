@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AOS_Application"
+    "\\AOS_Application",
+    "\\AOS_Application\\Service References",
+    "\\AOS_Application\\Services",
+    "\\AOS_Application\\Web References",
+    "\\AOS_Application\\Web References\\ProductionOrder"
   ],
-  "SelectedNode": "\\AOS_Application\\app.config",
+  "SelectedNode": "\\AOS_Application\\obj",
   "PreviewInSolutionExplorer": false
 }
