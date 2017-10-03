@@ -75,6 +75,11 @@ Public Class frmAddEditProduct
 #End Region
     Private Sub frmAddEdit_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         setRibbonOptions(vCurrentUserSecurityLevel)
+        If vCurrentUserSecurityLevel >= 9 Then
+            rbtnProductApisCosts.Visibility = True
+        Else
+            rbtnProductApisCosts.Visibility = False
+        End If
         If vEditType = "ADD" Then
             Me.Text = "Adding New " & vObjectName
         Else
@@ -588,5 +593,28 @@ Public Class frmAddEditProduct
         Dim frm As New frmProductSellersList
         frm.vID = vID
         frm.ShowDialog()
+    End Sub
+
+    Private Sub rbtnProductApisCosts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnProductApisCosts.ItemClick
+
+        Dim oAPIS As New ApisCollection
+        'check for ACTIVE ApisC record
+        oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("ACTIVE"), oAPIS.Query.Productid.Equal(vID))
+        If oAPIS.Query.Load Then
+            Dim frm As New frmApisStandardCosts
+            frm.vAPISID = oAPIS(0).Apisnum
+            frm.ShowDialog()
+            Exit Sub
+        End If
+
+        'check for SINGLE USE Apis record
+        oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("SINGLE USE"), oAPIS.Query.Productid.Equal(vID))
+        If oAPIS.Query.Load Then
+            Dim frm As New frmApisStandardCosts
+            frm.vAPISID = oAPIS(0).Apisnum
+            frm.ShowDialog()
+            Exit Sub
+        End If
+
     End Sub
 End Class

@@ -146,6 +146,7 @@ Partial Class frmAddEditProduct
         Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
         Me.eReceivingNotes = New DevExpress.XtraEditors.MemoEdit()
         Me.eVendorNotes = New DevExpress.XtraEditors.MemoEdit()
+        Me.rbtnProductApisCosts = New DevExpress.XtraBars.BarButtonItem()
         ProductidLabel = New System.Windows.Forms.Label()
         ProductdescLabel = New System.Windows.Forms.Label()
         ContainerLabel = New System.Windows.Forms.Label()
@@ -863,16 +864,16 @@ Partial Class frmAddEditProduct
         '
         Me.RibbonControl1.ApplicationButtonText = Nothing
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnSave, Me.btnCancel, Me.btnViewProductCost, Me.btnProductFulfillment, Me.rbtnChangeProductStatus, Me.rbtnViewPrintSDSDocument, Me.rbtnAssignChemical, Me.rbtnChangeStandardCosts, Me.rbtnProductSales, Me.rbtnProductPurchases})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnSave, Me.btnCancel, Me.btnViewProductCost, Me.btnProductFulfillment, Me.rbtnChangeProductStatus, Me.rbtnViewPrintSDSDocument, Me.rbtnAssignChemical, Me.rbtnChangeStandardCosts, Me.rbtnProductSales, Me.rbtnProductPurchases, Me.rbtnProductApisCosts})
         Me.RibbonControl1.LargeImages = Me.LargeRibbonImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 30
+        Me.RibbonControl1.MaxItemId = 31
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemWeekOfMonth1, Me.RepositoryItemAppointmentLabel1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(926, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(926, 117)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -880,7 +881,7 @@ Partial Class frmAddEditProduct
         '
         Me.btnSave.Caption = "Save  Changes"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeImageIndex = 5
+        Me.btnSave.ImageOptions.LargeImageIndex = 5
         Me.btnSave.Name = "btnSave"
         Me.btnSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
@@ -888,7 +889,7 @@ Partial Class frmAddEditProduct
         '
         Me.btnCancel.Caption = "Cancel Changes"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeImageIndex = 6
+        Me.btnCancel.ImageOptions.LargeImageIndex = 6
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
@@ -896,14 +897,14 @@ Partial Class frmAddEditProduct
         '
         Me.btnViewProductCost.Caption = "Product Cost Records"
         Me.btnViewProductCost.Id = 22
-        Me.btnViewProductCost.LargeImageIndex = 12
+        Me.btnViewProductCost.ImageOptions.LargeImageIndex = 12
         Me.btnViewProductCost.Name = "btnViewProductCost"
         '
         'btnProductFulfillment
         '
         Me.btnProductFulfillment.Caption = "Product Fulfillment Plan"
         Me.btnProductFulfillment.Id = 25
-        Me.btnProductFulfillment.LargeImageIndex = 10
+        Me.btnProductFulfillment.ImageOptions.LargeImageIndex = 10
         Me.btnProductFulfillment.Name = "btnProductFulfillment"
         Me.btnProductFulfillment.Tag = "0"
         '
@@ -912,7 +913,7 @@ Partial Class frmAddEditProduct
         Me.rbtnChangeProductStatus.Caption = "Change Product Status"
         Me.rbtnChangeProductStatus.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnChangeProductStatus.Id = 24
-        Me.rbtnChangeProductStatus.LargeImageIndex = 10
+        Me.rbtnChangeProductStatus.ImageOptions.LargeImageIndex = 10
         Me.rbtnChangeProductStatus.Name = "rbtnChangeProductStatus"
         '
         'rbtnViewPrintSDSDocument
@@ -920,35 +921,35 @@ Partial Class frmAddEditProduct
         Me.rbtnViewPrintSDSDocument.Caption = "View / Print SDS Document"
         Me.rbtnViewPrintSDSDocument.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnViewPrintSDSDocument.Id = 25
-        Me.rbtnViewPrintSDSDocument.LargeImageIndex = 7
+        Me.rbtnViewPrintSDSDocument.ImageOptions.LargeImageIndex = 7
         Me.rbtnViewPrintSDSDocument.Name = "rbtnViewPrintSDSDocument"
         '
         'rbtnAssignChemical
         '
         Me.rbtnAssignChemical.Caption = "Assign Chemical Link"
         Me.rbtnAssignChemical.Id = 26
-        Me.rbtnAssignChemical.LargeImageIndex = 10
+        Me.rbtnAssignChemical.ImageOptions.LargeImageIndex = 10
         Me.rbtnAssignChemical.Name = "rbtnAssignChemical"
         '
         'rbtnChangeStandardCosts
         '
         Me.rbtnChangeStandardCosts.Caption = "Edit Product Standard Costs"
         Me.rbtnChangeStandardCosts.Id = 27
-        Me.rbtnChangeStandardCosts.LargeImageIndex = 12
+        Me.rbtnChangeStandardCosts.ImageOptions.LargeImageIndex = 12
         Me.rbtnChangeStandardCosts.Name = "rbtnChangeStandardCosts"
         '
         'rbtnProductSales
         '
         Me.rbtnProductSales.Caption = "Product Sales"
         Me.rbtnProductSales.Id = 28
-        Me.rbtnProductSales.LargeImageIndex = 8
+        Me.rbtnProductSales.ImageOptions.LargeImageIndex = 8
         Me.rbtnProductSales.Name = "rbtnProductSales"
         '
         'rbtnProductPurchases
         '
         Me.rbtnProductPurchases.Caption = "Product Purchases"
         Me.rbtnProductPurchases.Id = 29
-        Me.rbtnProductPurchases.LargeImageIndex = 8
+        Me.rbtnProductPurchases.ImageOptions.LargeImageIndex = 8
         Me.rbtnProductPurchases.Name = "rbtnProductPurchases"
         '
         'LargeRibbonImages
@@ -1007,6 +1008,7 @@ Partial Class frmAddEditProduct
         '
         Me.rpgHistory.ItemLinks.Add(Me.rbtnProductSales)
         Me.rpgHistory.ItemLinks.Add(Me.rbtnProductPurchases)
+        Me.rpgHistory.ItemLinks.Add(Me.rbtnProductApisCosts)
         Me.rpgHistory.Name = "rpgHistory"
         Me.rpgHistory.Text = "History"
         '
@@ -1200,6 +1202,7 @@ Partial Class frmAddEditProduct
         '
         'lblModified
         '
+        Me.lblModified.Appearance.Options.UseTextOptions = True
         Me.lblModified.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lblModified.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lblModified.Location = New System.Drawing.Point(616, 8)
@@ -1526,6 +1529,13 @@ Partial Class frmAddEditProduct
         Me.eVendorNotes.Size = New System.Drawing.Size(313, 74)
         Me.eVendorNotes.TabIndex = 0
         '
+        'rbtnProductApisCosts
+        '
+        Me.rbtnProductApisCosts.Caption = "APIS Standard Costs"
+        Me.rbtnProductApisCosts.Id = 30
+        Me.rbtnProductApisCosts.ImageOptions.LargeImageIndex = 22
+        Me.rbtnProductApisCosts.Name = "rbtnProductApisCosts"
+        '
         'frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(Me, DevExpress.Utils.DefaultBoolean.[Default])
@@ -1706,4 +1716,5 @@ Partial Class frmAddEditProduct
     Friend WithEvents rbtnProductSales As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnProductPurchases As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpgHistory As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents rbtnProductApisCosts As DevExpress.XtraBars.BarButtonItem
 End Class

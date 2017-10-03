@@ -19,6 +19,7 @@ Partial Public Class rptGHSProductLabelLarge
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rptGHSProductLabelLarge))
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.XrLabel13 = New DevExpress.XtraReports.UI.XRLabel()
@@ -58,11 +59,11 @@ Partial Public Class rptGHSProductLabelLarge
         Me.FieldCaption = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
-        Me.DOTImages = New DevExpress.Utils.ImageCollection()
+        Me.DOTImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.GHSImages = New DevExpress.Utils.ImageCollection()
-        Me.bsRpt = New System.Windows.Forms.BindingSource()
+        Me.GHSImages = New DevExpress.Utils.ImageCollection(Me.components)
+        Me.bsRpt = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DOTImages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GHSImages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsRpt, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,11 +80,11 @@ Partial Public Class rptGHSProductLabelLarge
         'XrLabel13
         '
         Me.XrLabel13.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Idnumber")})
-        Me.XrLabel13.Font = New System.Drawing.Font("Arial Narrow", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel13.Font = New System.Drawing.Font("Arial Narrow", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(1164.584!, 120.0!)
         Me.XrLabel13.Name = "XrLabel13"
         Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel13.SizeF = New System.Drawing.SizeF(210.415!, 79.99998!)
+        Me.XrLabel13.SizeF = New System.Drawing.SizeF(210.415!, 97.0!)
         Me.XrLabel13.StylePriority.UseFont = False
         Me.XrLabel13.StylePriority.UseTextAlignment = False
         Me.XrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
@@ -219,7 +220,7 @@ Partial Public Class rptGHSProductLabelLarge
         'fldWeight
         '
         Me.fldWeight.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fldWeight.LocationFloat = New DevExpress.Utils.PointFloat(1198.959!, 237.75!)
+        Me.fldWeight.LocationFloat = New DevExpress.Utils.PointFloat(1198.959!, 252.7917!)
         Me.fldWeight.Name = "fldWeight"
         Me.fldWeight.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.fldWeight.SizeF = New System.Drawing.SizeF(176.0414!, 32.99998!)
@@ -228,7 +229,7 @@ Partial Public Class rptGHSProductLabelLarge
         'fldNetweightCaption
         '
         Me.fldNetweightCaption.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fldNetweightCaption.LocationFloat = New DevExpress.Utils.PointFloat(1198.959!, 204.75!)
+        Me.fldNetweightCaption.LocationFloat = New DevExpress.Utils.PointFloat(1198.959!, 219.7917!)
         Me.fldNetweightCaption.Name = "fldNetweightCaption"
         Me.fldNetweightCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.fldNetweightCaption.SizeF = New System.Drawing.SizeF(176.0415!, 32.99998!)
@@ -523,7 +524,7 @@ Partial Public Class rptGHSProductLabelLarge
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.ShowPreviewMarginLines = False
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.Title, Me.FieldCaption, Me.PageInfo, Me.DataField})
-        Me.Version = "15.1"
+        Me.Version = "17.1"
         CType(Me.DOTImages, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GHSImages, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsRpt, System.ComponentModel.ISupportInitialize).EndInit()

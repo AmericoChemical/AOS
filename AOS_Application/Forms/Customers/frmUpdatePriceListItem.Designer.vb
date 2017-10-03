@@ -46,19 +46,26 @@ Partial Class frmUpdatePriceListItem
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ProductidTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.bsProduct = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductdescTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
+        Me.bsPrice = New System.Windows.Forms.BindingSource(Me.components)
         Me.eConsignment = New DevExpress.XtraEditors.CheckEdit()
         Me.eStatus = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bsStatusCodes = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnRecalcWeightCost = New DevExpress.XtraEditors.SimpleButton()
         Me.btnRecalcVolumeCost = New DevExpress.XtraEditors.SimpleButton()
         Me.VolumeunitsSpinEdit = New DevExpress.XtraEditors.TextEdit()
         Me.VolumeuomLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bsUOMVolume = New System.Windows.Forms.BindingSource(Me.components)
         Me.WeightTextPrice = New DevExpress.XtraEditors.TextEdit()
         Me.WeightunitsTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.VolumeTextPrice = New DevExpress.XtraEditors.TextEdit()
         Me.WeightuomLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bsUOMWeight = New System.Windows.Forms.BindingSource(Me.components)
         Me.PricingMethodLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bsPricingMethod = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextEdit5 = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
         Me.TaxableCheckEdit = New DevExpress.XtraEditors.CheckEdit()
@@ -67,19 +74,12 @@ Partial Class frmUpdatePriceListItem
         Me.eUnits = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.bsCustomer = New System.Windows.Forms.BindingSource(Me.components)
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.pnlProductSelection = New DevExpress.XtraEditors.PanelControl()
         Me.eProductLookup = New DevExpress.XtraEditors.LookUpEdit()
-        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
-        Me.bsProduct = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsPrice = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsStatusCodes = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsUOMVolume = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsUOMWeight = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsPricingMethod = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsProductList = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsCustomer = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         ProductidLabel = New System.Windows.Forms.Label()
         ProductdescLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -104,18 +104,25 @@ Partial Class frmUpdatePriceListItem
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.ProductidTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsProduct, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductdescTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eConsignment.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsStatusCodes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VolumeunitsSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VolumeuomLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsUOMVolume, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WeightTextPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WeightunitsTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VolumeTextPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WeightuomLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsUOMWeight, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PricingMethodLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsPricingMethod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TaxableCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,22 +132,15 @@ Partial Class frmUpdatePriceListItem
         CType(Me.eUnits.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.pnlProductSelection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlProductSelection.SuspendLayout()
         CType(Me.eProductLookup.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsProductList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsProduct, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsPrice, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsStatusCodes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsUOMVolume, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsUOMWeight, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsPricingMethod, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsProductList, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProductidLabel
@@ -387,6 +387,10 @@ Partial Class frmUpdatePriceListItem
         Me.ProductidTextEdit.Size = New System.Drawing.Size(49, 20)
         Me.ProductidTextEdit.TabIndex = 1
         '
+        'bsProduct
+        '
+        Me.bsProduct.DataSource = GetType(AOS.BusinessObjects.Product)
+        '
         'ProductdescTextEdit
         '
         Me.ProductdescTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsProduct, "Productdesc", True))
@@ -439,6 +443,21 @@ Partial Class frmUpdatePriceListItem
         Me.GroupControl2.TabIndex = 6
         Me.GroupControl2.Text = "Price List Information"
         '
+        'CheckEdit1
+        '
+        Me.CheckEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsPrice, "Isdirect", True))
+        Me.CheckEdit1.Location = New System.Drawing.Point(34, 258)
+        Me.CheckEdit1.Name = "CheckEdit1"
+        Me.CheckEdit1.Properties.Caption = "Direct Only"
+        Me.CheckEdit1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.CheckEdit1.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked
+        Me.CheckEdit1.Size = New System.Drawing.Size(76, 19)
+        Me.CheckEdit1.TabIndex = 33
+        '
+        'bsPrice
+        '
+        Me.bsPrice.DataSource = GetType(AOS.BusinessObjects.Pricelist)
+        '
         'eConsignment
         '
         Me.eConsignment.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsPrice, "Isconsignment", True))
@@ -466,6 +485,10 @@ Partial Class frmUpdatePriceListItem
         Me.eStatus.Properties.ValueMember = "Priceliststatus"
         Me.eStatus.Size = New System.Drawing.Size(75, 20)
         Me.eStatus.TabIndex = 30
+        '
+        'bsStatusCodes
+        '
+        Me.bsStatusCodes.DataSource = GetType(AOS.BusinessObjects.ListPriceliststatusCollection)
         '
         'btnRecalcWeightCost
         '
@@ -510,6 +533,10 @@ Partial Class frmUpdatePriceListItem
         Me.VolumeuomLookUpEdit.Properties.ValueMember = "Uom"
         Me.VolumeuomLookUpEdit.Size = New System.Drawing.Size(75, 20)
         Me.VolumeuomLookUpEdit.TabIndex = 4
+        '
+        'bsUOMVolume
+        '
+        Me.bsUOMVolume.DataSource = GetType(AOS.BusinessObjects.ViewUOMByVolumeCollection)
         '
         'WeightTextPrice
         '
@@ -565,6 +592,10 @@ Partial Class frmUpdatePriceListItem
         Me.WeightuomLookUpEdit.Size = New System.Drawing.Size(75, 20)
         Me.WeightuomLookUpEdit.TabIndex = 12
         '
+        'bsUOMWeight
+        '
+        Me.bsUOMWeight.DataSource = GetType(AOS.BusinessObjects.ViewUOMByWeightCollection)
+        '
         'PricingMethodLookUpEdit
         '
         Me.PricingMethodLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsPrice, "Pricingmethod", True))
@@ -580,6 +611,10 @@ Partial Class frmUpdatePriceListItem
         Me.PricingMethodLookUpEdit.Properties.ValueMember = "PricingMethod"
         Me.PricingMethodLookUpEdit.Size = New System.Drawing.Size(75, 20)
         Me.PricingMethodLookUpEdit.TabIndex = 17
+        '
+        'bsPricingMethod
+        '
+        Me.bsPricingMethod.DataSource = GetType(AOS.BusinessObjects.ViewPricingMethodCollection)
         '
         'TextEdit5
         '
@@ -666,6 +701,10 @@ Partial Class frmUpdatePriceListItem
         Me.TextEdit1.Size = New System.Drawing.Size(350, 20)
         Me.TextEdit1.TabIndex = 1
         '
+        'bsCustomer
+        '
+        Me.bsCustomer.DataSource = GetType(AOS.BusinessObjects.Customer)
+        '
         'PanelControl2
         '
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
@@ -705,6 +744,10 @@ Partial Class frmUpdatePriceListItem
         Me.eProductLookup.Size = New System.Drawing.Size(350, 20)
         Me.eProductLookup.TabIndex = 1
         '
+        'bsProductList
+        '
+        Me.bsProductList.DataSource = GetType(AOS.BusinessObjects.ProductCollection)
+        '
         'PanelControl3
         '
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
@@ -720,49 +763,6 @@ Partial Class frmUpdatePriceListItem
         Me.PanelControl3.Name = "PanelControl3"
         Me.PanelControl3.Size = New System.Drawing.Size(370, 342)
         Me.PanelControl3.TabIndex = 2
-        '
-        'CheckEdit1
-        '
-        Me.CheckEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsPrice, "Isdirect", True))
-        Me.CheckEdit1.Location = New System.Drawing.Point(34, 258)
-        Me.CheckEdit1.Name = "CheckEdit1"
-        Me.CheckEdit1.Properties.Caption = "Direct Only"
-        Me.CheckEdit1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.CheckEdit1.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked
-        Me.CheckEdit1.Size = New System.Drawing.Size(76, 19)
-        Me.CheckEdit1.TabIndex = 33
-        '
-        'bsProduct
-        '
-        Me.bsProduct.DataSource = GetType(AOS.BusinessObjects.Product)
-        '
-        'bsPrice
-        '
-        Me.bsPrice.DataSource = GetType(AOS.BusinessObjects.Pricelist)
-        '
-        'bsStatusCodes
-        '
-        Me.bsStatusCodes.DataSource = GetType(AOS.BusinessObjects.ListPriceliststatusCollection)
-        '
-        'bsUOMVolume
-        '
-        Me.bsUOMVolume.DataSource = GetType(AOS.BusinessObjects.ViewUOMByVolumeCollection)
-        '
-        'bsUOMWeight
-        '
-        Me.bsUOMWeight.DataSource = GetType(AOS.BusinessObjects.ViewUOMByWeightCollection)
-        '
-        'bsPricingMethod
-        '
-        Me.bsPricingMethod.DataSource = GetType(AOS.BusinessObjects.ViewPricingMethodCollection)
-        '
-        'bsProductList
-        '
-        Me.bsProductList.DataSource = GetType(AOS.BusinessObjects.ProductCollection)
-        '
-        'bsCustomer
-        '
-        Me.bsCustomer.DataSource = GetType(AOS.BusinessObjects.Customer)
         '
         'frmUpdatePriceListItem
         '
@@ -782,19 +782,26 @@ Partial Class frmUpdatePriceListItem
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.ProductidTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsProduct, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductdescTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eConsignment.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsStatusCodes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VolumeunitsSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VolumeuomLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsUOMVolume, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WeightTextPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WeightunitsTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VolumeTextPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WeightuomLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsUOMWeight, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PricingMethodLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsPricingMethod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TaxableCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -804,6 +811,7 @@ Partial Class frmUpdatePriceListItem
         CType(Me.eUnits.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
@@ -811,18 +819,10 @@ Partial Class frmUpdatePriceListItem
         Me.pnlProductSelection.ResumeLayout(False)
         Me.pnlProductSelection.PerformLayout()
         CType(Me.eProductLookup.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsProductList, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsProduct, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsPrice, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsStatusCodes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsUOMVolume, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsUOMWeight, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsPricingMethod, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsProductList, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsCustomer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

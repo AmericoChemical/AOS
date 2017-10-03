@@ -53,7 +53,7 @@ Public Class frmGetDataItem
             Case "INTEGER"
                 vInteger = eInteger.EditValue
             Case "DECIMAL"
-                vDecimal = eDecimal.EditValue
+                vDecimal = IIf(IsDBNull(eDecimal.EditValue), Nothing, eDecimal.EditValue)
             Case Else
                 vString = eString.EditValue
         End Select

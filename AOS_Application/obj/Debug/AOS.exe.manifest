@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AOS.exe" size="15384576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AOS.exe" size="15427072">
       <assemblyIdentity name="AOS" version="13.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JFivCImS1bmNRM2mwZPPx6yIgZAc0L7zUxQwpLgkYig=</dsig:DigestValue>
+        <dsig:DigestValue>GjnEH6sAIjp8AVanjjiqnmQDv+7zpB95YWEQ5zmiqto=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -988,13 +988,13 @@
       <dsig:DigestValue>5BHAJHGHbE0QdeyPzUBumax8ml4MYyLtV53lDIyjuEQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="AOS.exe.config" size="6408">
+  <file name="AOS.exe.config" size="6442">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>fqR7J6io03y5LK5wfHwCXEhbjsFeItzDChYgsWOM/+s=</dsig:DigestValue>
+      <dsig:DigestValue>Yfuna8HlsgJl2gWIraav5fJhso24QL7YKnaX7sqO2pI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\ACP.ico" size="17542">

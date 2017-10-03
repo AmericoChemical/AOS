@@ -470,10 +470,10 @@ Partial Class viewInventory
         'btnAddProduct
         '
         Me.btnAddProduct.Caption = " Add  Product"
-        Me.btnAddProduct.Glyph = CType(resources.GetObject("btnAddProduct.Glyph"), System.Drawing.Image)
         Me.btnAddProduct.Id = 0
-        Me.btnAddProduct.ImageIndex = 0
-        Me.btnAddProduct.LargeImageIndex = 2
+        Me.btnAddProduct.ImageOptions.Image = CType(resources.GetObject("btnAddProduct.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddProduct.ImageOptions.ImageIndex = 0
+        Me.btnAddProduct.ImageOptions.LargeImageIndex = 2
         Me.btnAddProduct.LargeWidth = 50
         Me.btnAddProduct.Name = "btnAddProduct"
         Me.btnAddProduct.Tag = "136"
@@ -482,7 +482,7 @@ Partial Class viewInventory
         '
         Me.btnEditProduct.Caption = "Edit  Product"
         Me.btnEditProduct.Id = 1
-        Me.btnEditProduct.LargeImageIndex = 3
+        Me.btnEditProduct.ImageOptions.LargeImageIndex = 3
         Me.btnEditProduct.LargeWidth = 50
         Me.btnEditProduct.Name = "btnEditProduct"
         Me.btnEditProduct.Tag = "137"
@@ -491,7 +491,7 @@ Partial Class viewInventory
         '
         Me.btnDeleteProduct.Caption = "Delete Product"
         Me.btnDeleteProduct.Id = 2
-        Me.btnDeleteProduct.LargeImageIndex = 4
+        Me.btnDeleteProduct.ImageOptions.LargeImageIndex = 4
         Me.btnDeleteProduct.LargeWidth = 50
         Me.btnDeleteProduct.Name = "btnDeleteProduct"
         Me.btnDeleteProduct.Tag = "138"
@@ -500,7 +500,7 @@ Partial Class viewInventory
         '
         Me.btnPrintProductLabel.Caption = "Full Size Product Label"
         Me.btnPrintProductLabel.Id = 3
-        Me.btnPrintProductLabel.LargeImageIndex = 7
+        Me.btnPrintProductLabel.ImageOptions.LargeImageIndex = 7
         Me.btnPrintProductLabel.Name = "btnPrintProductLabel"
         Me.btnPrintProductLabel.Tag = "140"
         Me.btnPrintProductLabel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -508,9 +508,9 @@ Partial Class viewInventory
         'btnPrintItemLabel
         '
         Me.btnPrintItemLabel.Caption = "Full Size Barcode"
-        Me.btnPrintItemLabel.Glyph = CType(resources.GetObject("btnPrintItemLabel.Glyph"), System.Drawing.Image)
         Me.btnPrintItemLabel.Id = 4
-        Me.btnPrintItemLabel.LargeGlyph = CType(resources.GetObject("btnPrintItemLabel.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintItemLabel.ImageOptions.Image = CType(resources.GetObject("btnPrintItemLabel.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnPrintItemLabel.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintItemLabel.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintItemLabel.Name = "btnPrintItemLabel"
         '
         'eQtyAvailable
@@ -536,7 +536,7 @@ Partial Class viewInventory
         '
         Me.btnPrintMiniLabel.Caption = "Mini Size Barcode"
         Me.btnPrintMiniLabel.Id = 13
-        Me.btnPrintMiniLabel.LargeGlyph = CType(resources.GetObject("btnPrintMiniLabel.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintMiniLabel.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintMiniLabel.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintMiniLabel.Name = "btnPrintMiniLabel"
         '
         'stQtyOnHand
@@ -544,30 +544,27 @@ Partial Class viewInventory
         Me.stQtyOnHand.Caption = "Available"
         Me.stQtyOnHand.Id = 32
         Me.stQtyOnHand.Name = "stQtyOnHand"
-        Me.stQtyOnHand.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'BarStaticItem2
         '
         Me.BarStaticItem2.Caption = "Allocated"
         Me.BarStaticItem2.Id = 33
         Me.BarStaticItem2.Name = "BarStaticItem2"
-        Me.BarStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'BarStaticItem3
         '
         Me.BarStaticItem3.Caption = "On Order"
         Me.BarStaticItem3.Id = 34
         Me.BarStaticItem3.Name = "BarStaticItem3"
-        Me.BarStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'btnRecalculateInventoryQuantities
         '
         Me.btnRecalculateInventoryQuantities.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
         Me.btnRecalculateInventoryQuantities.Caption = "Refresh"
-        Me.btnRecalculateInventoryQuantities.Glyph = CType(resources.GetObject("btnRecalculateInventoryQuantities.Glyph"), System.Drawing.Image)
         Me.btnRecalculateInventoryQuantities.Id = 36
-        Me.btnRecalculateInventoryQuantities.ImageIndex = 5
-        Me.btnRecalculateInventoryQuantities.LargeGlyph = CType(resources.GetObject("btnRecalculateInventoryQuantities.LargeGlyph"), System.Drawing.Image)
+        Me.btnRecalculateInventoryQuantities.ImageOptions.Image = CType(resources.GetObject("btnRecalculateInventoryQuantities.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnRecalculateInventoryQuantities.ImageOptions.ImageIndex = 5
+        Me.btnRecalculateInventoryQuantities.ImageOptions.LargeImage = CType(resources.GetObject("btnRecalculateInventoryQuantities.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnRecalculateInventoryQuantities.Name = "btnRecalculateInventoryQuantities"
         Me.btnRecalculateInventoryQuantities.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
@@ -575,51 +572,50 @@ Partial Class viewInventory
         '
         Me.BarStaticItem1.Id = 37
         Me.BarStaticItem1.Name = "BarStaticItem1"
-        Me.BarStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'btnAddPO
         '
         Me.btnAddPO.Caption = "Add Purchase Order"
-        Me.btnAddPO.Glyph = CType(resources.GetObject("btnAddPO.Glyph"), System.Drawing.Image)
         Me.btnAddPO.Id = 41
-        Me.btnAddPO.LargeGlyph = CType(resources.GetObject("btnAddPO.LargeGlyph"), System.Drawing.Image)
+        Me.btnAddPO.ImageOptions.Image = CType(resources.GetObject("btnAddPO.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddPO.ImageOptions.LargeImage = CType(resources.GetObject("btnAddPO.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAddPO.Name = "btnAddPO"
         '
         'btnEditPO
         '
         Me.btnEditPO.Caption = "Edit Purchase Order"
-        Me.btnEditPO.Glyph = CType(resources.GetObject("btnEditPO.Glyph"), System.Drawing.Image)
         Me.btnEditPO.Id = 42
+        Me.btnEditPO.ImageOptions.Image = CType(resources.GetObject("btnEditPO.ImageOptions.Image"), System.Drawing.Image)
         Me.btnEditPO.Name = "btnEditPO"
         '
         'btnDeletePO
         '
         Me.btnDeletePO.Caption = "Delete Purchase Order"
-        Me.btnDeletePO.Glyph = Global.AOS.My.Resources.Resources.DeleteHS
         Me.btnDeletePO.Id = 43
+        Me.btnDeletePO.ImageOptions.Image = Global.AOS.My.Resources.Resources.DeleteHS
         Me.btnDeletePO.Name = "btnDeletePO"
         '
         'btnAddReceiver
         '
         Me.btnAddReceiver.Caption = "Add New Receiver"
         Me.btnAddReceiver.Id = 44
-        Me.btnAddReceiver.LargeGlyph = CType(resources.GetObject("btnAddReceiver.LargeGlyph"), System.Drawing.Image)
+        Me.btnAddReceiver.ImageOptions.LargeImage = CType(resources.GetObject("btnAddReceiver.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAddReceiver.Name = "btnAddReceiver"
         Me.btnAddReceiver.Tag = "153"
         '
         'btnEditReceiver
         '
         Me.btnEditReceiver.Caption = "Edit Receiver"
-        Me.btnEditReceiver.Glyph = CType(resources.GetObject("btnEditReceiver.Glyph"), System.Drawing.Image)
         Me.btnEditReceiver.Id = 45
+        Me.btnEditReceiver.ImageOptions.Image = CType(resources.GetObject("btnEditReceiver.ImageOptions.Image"), System.Drawing.Image)
         Me.btnEditReceiver.Name = "btnEditReceiver"
         Me.btnEditReceiver.Tag = "154"
         '
         'btnDeleteReceiver
         '
         Me.btnDeleteReceiver.Caption = "Delete Receiver"
-        Me.btnDeleteReceiver.Glyph = Global.AOS.My.Resources.Resources.DeleteHS
         Me.btnDeleteReceiver.Id = 46
+        Me.btnDeleteReceiver.ImageOptions.Image = Global.AOS.My.Resources.Resources.DeleteHS
         Me.btnDeleteReceiver.Name = "btnDeleteReceiver"
         Me.btnDeleteReceiver.Tag = "155"
         '
@@ -627,7 +623,7 @@ Partial Class viewInventory
         '
         Me.btnPostReceiver.Caption = "Post Items to Inventory"
         Me.btnPostReceiver.Id = 48
-        Me.btnPostReceiver.LargeGlyph = CType(resources.GetObject("btnPostReceiver.LargeGlyph"), System.Drawing.Image)
+        Me.btnPostReceiver.ImageOptions.LargeImage = CType(resources.GetObject("btnPostReceiver.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPostReceiver.Name = "btnPostReceiver"
         Me.btnPostReceiver.Tag = "156"
         '
@@ -635,7 +631,7 @@ Partial Class viewInventory
         '
         Me.btnPrintMiniLabel_Receiving.Caption = "Mini Size Barcode"
         Me.btnPrintMiniLabel_Receiving.Id = 49
-        Me.btnPrintMiniLabel_Receiving.LargeGlyph = CType(resources.GetObject("btnPrintMiniLabel_Receiving.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintMiniLabel_Receiving.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintMiniLabel_Receiving.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintMiniLabel_Receiving.Name = "btnPrintMiniLabel_Receiving"
         Me.btnPrintMiniLabel_Receiving.Tag = "157"
         '
@@ -643,16 +639,16 @@ Partial Class viewInventory
         '
         Me.btnPrintProductLabelBarcoded.Caption = "Full Size Barcode"
         Me.btnPrintProductLabelBarcoded.Id = 50
-        Me.btnPrintProductLabelBarcoded.LargeGlyph = CType(resources.GetObject("btnPrintProductLabelBarcoded.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintProductLabelBarcoded.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintProductLabelBarcoded.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintProductLabelBarcoded.Name = "btnPrintProductLabelBarcoded"
         Me.btnPrintProductLabelBarcoded.Tag = "158"
         '
         'btnFetchFinishedGoods
         '
         Me.btnFetchFinishedGoods.Caption = "Fetch Records"
-        Me.btnFetchFinishedGoods.Glyph = Global.AOS.My.Resources.Resources.Search
         Me.btnFetchFinishedGoods.Id = 51
-        Me.btnFetchFinishedGoods.LargeImageIndex = 28
+        Me.btnFetchFinishedGoods.ImageOptions.Image = Global.AOS.My.Resources.Resources.Search
+        Me.btnFetchFinishedGoods.ImageOptions.LargeImageIndex = 28
         Me.btnFetchFinishedGoods.LargeWidth = 60
         Me.btnFetchFinishedGoods.Name = "btnFetchFinishedGoods"
         Me.btnFetchFinishedGoods.Tag = "143"
@@ -661,7 +657,7 @@ Partial Class viewInventory
         '
         Me.btnPrintMiniInventoryLabels.Caption = "Mini Labels"
         Me.btnPrintMiniInventoryLabels.Id = 52
-        Me.btnPrintMiniInventoryLabels.LargeImageIndex = 32
+        Me.btnPrintMiniInventoryLabels.ImageOptions.LargeImageIndex = 32
         Me.btnPrintMiniInventoryLabels.LargeWidth = 60
         Me.btnPrintMiniInventoryLabels.Name = "btnPrintMiniInventoryLabels"
         Me.btnPrintMiniInventoryLabels.Tag = "147"
@@ -676,7 +672,7 @@ Partial Class viewInventory
         '
         Me.btnViewAvailableInventory.Caption = "View Available Items"
         Me.btnViewAvailableInventory.Id = 54
-        Me.btnViewAvailableInventory.LargeGlyph = CType(resources.GetObject("btnViewAvailableInventory.LargeGlyph"), System.Drawing.Image)
+        Me.btnViewAvailableInventory.ImageOptions.LargeImage = CType(resources.GetObject("btnViewAvailableInventory.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnViewAvailableInventory.Name = "btnViewAvailableInventory"
         Me.btnViewAvailableInventory.Tag = "5"
         '
@@ -684,7 +680,7 @@ Partial Class viewInventory
         '
         Me.btnPrintAvailableInventory.Caption = "Available Items List"
         Me.btnPrintAvailableInventory.Id = 55
-        Me.btnPrintAvailableInventory.LargeImageIndex = 33
+        Me.btnPrintAvailableInventory.ImageOptions.LargeImageIndex = 33
         Me.btnPrintAvailableInventory.LargeWidth = 60
         Me.btnPrintAvailableInventory.Name = "btnPrintAvailableInventory"
         Me.btnPrintAvailableInventory.Tag = "160"
@@ -693,7 +689,7 @@ Partial Class viewInventory
         '
         Me.btnPrintAvailableInventoryByBin.Caption = "Inventory by Bin"
         Me.btnPrintAvailableInventoryByBin.Id = 62
-        Me.btnPrintAvailableInventoryByBin.LargeImageIndex = 33
+        Me.btnPrintAvailableInventoryByBin.ImageOptions.LargeImageIndex = 33
         Me.btnPrintAvailableInventoryByBin.LargeWidth = 60
         Me.btnPrintAvailableInventoryByBin.Name = "btnPrintAvailableInventoryByBin"
         Me.btnPrintAvailableInventoryByBin.Tag = "161"
@@ -702,7 +698,7 @@ Partial Class viewInventory
         '
         Me.btnMaintainProducts.Caption = "Merge Products"
         Me.btnMaintainProducts.Id = 66
-        Me.btnMaintainProducts.LargeImageIndex = 47
+        Me.btnMaintainProducts.ImageOptions.LargeImageIndex = 47
         Me.btnMaintainProducts.LargeWidth = 70
         Me.btnMaintainProducts.Name = "btnMaintainProducts"
         Me.btnMaintainProducts.Tag = "141"
@@ -710,18 +706,18 @@ Partial Class viewInventory
         'btnCloseWorkOrders
         '
         Me.btnCloseWorkOrders.Caption = "Close Work Orders"
-        Me.btnCloseWorkOrders.Glyph = Global.AOS.My.Resources.Resources.Change
         Me.btnCloseWorkOrders.Id = 67
-        Me.btnCloseWorkOrders.LargeGlyph = Global.AOS.My.Resources.Resources.Change
+        Me.btnCloseWorkOrders.ImageOptions.Image = Global.AOS.My.Resources.Resources.Change
+        Me.btnCloseWorkOrders.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Change
         Me.btnCloseWorkOrders.Name = "btnCloseWorkOrders"
         Me.btnCloseWorkOrders.Tag = "8"
         '
         'btnInventoryFloorReport
         '
         Me.btnInventoryFloorReport.Caption = "Inventory on Floor"
-        Me.btnInventoryFloorReport.Glyph = Global.AOS.My.Resources.Resources.Report1
         Me.btnInventoryFloorReport.Id = 68
-        Me.btnInventoryFloorReport.LargeImageIndex = 33
+        Me.btnInventoryFloorReport.ImageOptions.Image = Global.AOS.My.Resources.Resources.Report1
+        Me.btnInventoryFloorReport.ImageOptions.LargeImageIndex = 33
         Me.btnInventoryFloorReport.LargeWidth = 60
         Me.btnInventoryFloorReport.Name = "btnInventoryFloorReport"
         Me.btnInventoryFloorReport.Tag = "162"
@@ -754,7 +750,7 @@ Partial Class viewInventory
         '
         Me.btnPLReport.Caption = "Profit && Loss (Old)"
         Me.btnPLReport.Id = 72
-        Me.btnPLReport.LargeImageIndex = 33
+        Me.btnPLReport.ImageOptions.LargeImageIndex = 33
         Me.btnPLReport.LargeWidth = 60
         Me.btnPLReport.Name = "btnPLReport"
         Me.btnPLReport.Tag = "172"
@@ -763,7 +759,7 @@ Partial Class viewInventory
         '
         Me.btnRptInventoryDetail.Caption = "Inventory Detail"
         Me.btnRptInventoryDetail.Id = 73
-        Me.btnRptInventoryDetail.LargeImageIndex = 33
+        Me.btnRptInventoryDetail.ImageOptions.LargeImageIndex = 33
         Me.btnRptInventoryDetail.LargeWidth = 60
         Me.btnRptInventoryDetail.Name = "btnRptInventoryDetail"
         Me.btnRptInventoryDetail.Tag = "163"
@@ -772,7 +768,7 @@ Partial Class viewInventory
         '
         Me.btnOnFloorValuationReport.Caption = "On Floor Valuation"
         Me.btnOnFloorValuationReport.Id = 74
-        Me.btnOnFloorValuationReport.LargeImageIndex = 33
+        Me.btnOnFloorValuationReport.ImageOptions.LargeImageIndex = 33
         Me.btnOnFloorValuationReport.LargeWidth = 60
         Me.btnOnFloorValuationReport.Name = "btnOnFloorValuationReport"
         Me.btnOnFloorValuationReport.Tag = "174"
@@ -781,7 +777,7 @@ Partial Class viewInventory
         '
         Me.btnRptInventoryDetailAvailableOnly.Caption = "Inv Detail (Available)"
         Me.btnRptInventoryDetailAvailableOnly.Id = 75
-        Me.btnRptInventoryDetailAvailableOnly.LargeImageIndex = 33
+        Me.btnRptInventoryDetailAvailableOnly.ImageOptions.LargeImageIndex = 33
         Me.btnRptInventoryDetailAvailableOnly.LargeWidth = 60
         Me.btnRptInventoryDetailAvailableOnly.Name = "btnRptInventoryDetailAvailableOnly"
         Me.btnRptInventoryDetailAvailableOnly.Tag = "164"
@@ -789,9 +785,9 @@ Partial Class viewInventory
         'btnCopyProductToNew
         '
         Me.btnCopyProductToNew.Caption = " Copy  to New"
-        Me.btnCopyProductToNew.Glyph = Global.AOS.My.Resources.Resources.AddNew
         Me.btnCopyProductToNew.Id = 76
-        Me.btnCopyProductToNew.LargeImageIndex = 46
+        Me.btnCopyProductToNew.ImageOptions.Image = Global.AOS.My.Resources.Resources.AddNew
+        Me.btnCopyProductToNew.ImageOptions.LargeImageIndex = 46
         Me.btnCopyProductToNew.LargeWidth = 50
         Me.btnCopyProductToNew.Name = "btnCopyProductToNew"
         Me.btnCopyProductToNew.Tag = "139"
@@ -800,14 +796,14 @@ Partial Class viewInventory
         '
         Me.btnFetchRawMaterials.Caption = "Fetch Data"
         Me.btnFetchRawMaterials.Id = 77
-        Me.btnFetchRawMaterials.LargeGlyph = Global.AOS.My.Resources.Resources.FindRecord
+        Me.btnFetchRawMaterials.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.FindRecord
         Me.btnFetchRawMaterials.Name = "btnFetchRawMaterials"
         '
         'BarButtonItem6
         '
         Me.BarButtonItem6.Caption = "Fetch Data"
-        Me.BarButtonItem6.Glyph = Global.AOS.My.Resources.Resources.Filter
         Me.BarButtonItem6.Id = 86
+        Me.BarButtonItem6.ImageOptions.Image = Global.AOS.My.Resources.Resources.Filter
         Me.BarButtonItem6.Name = "BarButtonItem6"
         Me.BarButtonItem6.SmallWithTextWidth = 100
         '
@@ -831,7 +827,7 @@ Partial Class viewInventory
         '
         Me.btnItemDetails.Caption = "Item Details"
         Me.btnItemDetails.Id = 92
-        Me.btnItemDetails.LargeImageIndex = 30
+        Me.btnItemDetails.ImageOptions.LargeImageIndex = 30
         Me.btnItemDetails.Name = "btnItemDetails"
         Me.btnItemDetails.Tag = "145"
         '
@@ -839,7 +835,7 @@ Partial Class viewInventory
         '
         Me.btnFixItems.Caption = "Find Missing Items"
         Me.btnFixItems.Id = 105
-        Me.btnFixItems.LargeImageIndex = 28
+        Me.btnFixItems.ImageOptions.LargeImageIndex = 28
         Me.btnFixItems.Name = "btnFixItems"
         Me.btnFixItems.Tag = "144"
         '
@@ -847,7 +843,7 @@ Partial Class viewInventory
         '
         Me.btnManageContainers.Caption = "Manage Containers"
         Me.btnManageContainers.Id = 106
-        Me.btnManageContainers.LargeImageIndex = 23
+        Me.btnManageContainers.ImageOptions.LargeImageIndex = 23
         Me.btnManageContainers.LargeWidth = 70
         Me.btnManageContainers.Name = "btnManageContainers"
         Me.btnManageContainers.Tag = "142"
@@ -861,7 +857,7 @@ Partial Class viewInventory
         '
         Me.btnPrintWOSales.Caption = "WO Sales"
         Me.btnPrintWOSales.Id = 107
-        Me.btnPrintWOSales.LargeImageIndex = 33
+        Me.btnPrintWOSales.ImageOptions.LargeImageIndex = 33
         Me.btnPrintWOSales.Name = "btnPrintWOSales"
         Me.btnPrintWOSales.Tag = "171"
         '
@@ -869,7 +865,7 @@ Partial Class viewInventory
         '
         Me.btnPrintMaxItemsbyStatus.Caption = "Scanner Test Page"
         Me.btnPrintMaxItemsbyStatus.Id = 108
-        Me.btnPrintMaxItemsbyStatus.LargeImageIndex = 33
+        Me.btnPrintMaxItemsbyStatus.ImageOptions.LargeImageIndex = 33
         Me.btnPrintMaxItemsbyStatus.Name = "btnPrintMaxItemsbyStatus"
         Me.btnPrintMaxItemsbyStatus.Tag = "173"
         '
@@ -877,14 +873,14 @@ Partial Class viewInventory
         '
         Me.btnPrintWOBarcodesReport.Caption = "Barcode Work Order"
         Me.btnPrintWOBarcodesReport.Id = 109
-        Me.btnPrintWOBarcodesReport.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.btnPrintWOBarcodesReport.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.btnPrintWOBarcodesReport.Name = "btnPrintWOBarcodesReport"
         '
         'rbtnPrintTotalInventoryByProduct
         '
         Me.rbtnPrintTotalInventoryByProduct.Caption = "Total Inventory By Product"
         Me.rbtnPrintTotalInventoryByProduct.Id = 110
-        Me.rbtnPrintTotalInventoryByProduct.LargeImageIndex = 33
+        Me.rbtnPrintTotalInventoryByProduct.ImageOptions.LargeImageIndex = 33
         Me.rbtnPrintTotalInventoryByProduct.Name = "rbtnPrintTotalInventoryByProduct"
         Me.rbtnPrintTotalInventoryByProduct.Tag = "167"
         '
@@ -892,7 +888,7 @@ Partial Class viewInventory
         '
         Me.rbtnInventoryAnalysisShortList.Caption = "Inventory Analysis - Short List"
         Me.rbtnInventoryAnalysisShortList.Id = 112
-        Me.rbtnInventoryAnalysisShortList.LargeImageIndex = 33
+        Me.rbtnInventoryAnalysisShortList.ImageOptions.LargeImageIndex = 33
         Me.rbtnInventoryAnalysisShortList.Name = "rbtnInventoryAnalysisShortList"
         Me.rbtnInventoryAnalysisShortList.Tag = "169"
         '
@@ -900,7 +896,7 @@ Partial Class viewInventory
         '
         Me.btnRptInventoryAnalysisAll.Caption = "Inventory Analysis - All Products"
         Me.btnRptInventoryAnalysisAll.Id = 113
-        Me.btnRptInventoryAnalysisAll.LargeImageIndex = 33
+        Me.btnRptInventoryAnalysisAll.ImageOptions.LargeImageIndex = 33
         Me.btnRptInventoryAnalysisAll.Name = "btnRptInventoryAnalysisAll"
         Me.btnRptInventoryAnalysisAll.Tag = "168"
         '
@@ -908,7 +904,7 @@ Partial Class viewInventory
         '
         Me.rbtnCurrentPhysicalInventory.Caption = "Current Physical Inventory"
         Me.rbtnCurrentPhysicalInventory.Id = 114
-        Me.rbtnCurrentPhysicalInventory.LargeImageIndex = 33
+        Me.rbtnCurrentPhysicalInventory.ImageOptions.LargeImageIndex = 33
         Me.rbtnCurrentPhysicalInventory.Name = "rbtnCurrentPhysicalInventory"
         Me.rbtnCurrentPhysicalInventory.Tag = "159"
         '
@@ -917,7 +913,7 @@ Partial Class viewInventory
         Me.rbtnInventoryAnalysisNonShortList.Caption = "Inventory Analysis - Non-Short List"
         Me.rbtnInventoryAnalysisNonShortList.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnInventoryAnalysisNonShortList.Id = 115
-        Me.rbtnInventoryAnalysisNonShortList.LargeImageIndex = 33
+        Me.rbtnInventoryAnalysisNonShortList.ImageOptions.LargeImageIndex = 33
         Me.rbtnInventoryAnalysisNonShortList.Name = "rbtnInventoryAnalysisNonShortList"
         Me.rbtnInventoryAnalysisNonShortList.Tag = "170"
         '
@@ -926,7 +922,7 @@ Partial Class viewInventory
         Me.rbtnCurrentQuarantined.Caption = "Current Quarantined"
         Me.rbtnCurrentQuarantined.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnCurrentQuarantined.Id = 116
-        Me.rbtnCurrentQuarantined.LargeImageIndex = 33
+        Me.rbtnCurrentQuarantined.ImageOptions.LargeImageIndex = 33
         Me.rbtnCurrentQuarantined.Name = "rbtnCurrentQuarantined"
         Me.rbtnCurrentQuarantined.Tag = "166"
         '
@@ -934,7 +930,7 @@ Partial Class viewInventory
         '
         Me.btnPLNReport.Caption = "Profit && Loss (New)"
         Me.btnPLNReport.Id = 117
-        Me.btnPLNReport.LargeImageIndex = 33
+        Me.btnPLNReport.ImageOptions.LargeImageIndex = 33
         Me.btnPLNReport.Name = "btnPLNReport"
         Me.btnPLNReport.Tag = "322"
         '
@@ -942,34 +938,34 @@ Partial Class viewInventory
         '
         Me.btnVIEWCOMPONENTS.Caption = "View  Components"
         Me.btnVIEWCOMPONENTS.Id = 118
-        Me.btnVIEWCOMPONENTS.LargeImageIndex = 39
+        Me.btnVIEWCOMPONENTS.ImageOptions.LargeImageIndex = 39
         Me.btnVIEWCOMPONENTS.LargeWidth = 70
         Me.btnVIEWCOMPONENTS.Name = "btnVIEWCOMPONENTS"
         '
         'btnAddComponent
         '
         Me.btnAddComponent.Caption = "Add   Component"
-        Me.btnAddComponent.Glyph = CType(resources.GetObject("btnAddComponent.Glyph"), System.Drawing.Image)
         Me.btnAddComponent.Id = 120
-        Me.btnAddComponent.LargeImageIndex = 34
+        Me.btnAddComponent.ImageOptions.Image = CType(resources.GetObject("btnAddComponent.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddComponent.ImageOptions.LargeImageIndex = 34
         Me.btnAddComponent.LargeWidth = 70
         Me.btnAddComponent.Name = "btnAddComponent"
         '
         'btnEditComponent
         '
         Me.btnEditComponent.Caption = "Edit  Component"
-        Me.btnEditComponent.Glyph = Global.AOS.My.Resources.Resources.EditData
         Me.btnEditComponent.Id = 121
-        Me.btnEditComponent.LargeImageIndex = 35
+        Me.btnEditComponent.ImageOptions.Image = Global.AOS.My.Resources.Resources.EditData
+        Me.btnEditComponent.ImageOptions.LargeImageIndex = 35
         Me.btnEditComponent.LargeWidth = 70
         Me.btnEditComponent.Name = "btnEditComponent"
         '
         'btnDeleteComponent
         '
         Me.btnDeleteComponent.Caption = "Delete Component"
-        Me.btnDeleteComponent.Glyph = Global.AOS.My.Resources.Resources.DeleteHS
         Me.btnDeleteComponent.Id = 122
-        Me.btnDeleteComponent.LargeImageIndex = 36
+        Me.btnDeleteComponent.ImageOptions.Image = Global.AOS.My.Resources.Resources.DeleteHS
+        Me.btnDeleteComponent.ImageOptions.LargeImageIndex = 36
         Me.btnDeleteComponent.LargeWidth = 70
         Me.btnDeleteComponent.Name = "btnDeleteComponent"
         '
@@ -977,34 +973,34 @@ Partial Class viewInventory
         '
         Me.btnVIEWKITS.Caption = " View Kits"
         Me.btnVIEWKITS.Id = 123
-        Me.btnVIEWKITS.LargeImageIndex = 45
+        Me.btnVIEWKITS.ImageOptions.LargeImageIndex = 45
         Me.btnVIEWKITS.LargeWidth = 70
         Me.btnVIEWKITS.Name = "btnVIEWKITS"
         '
         'btnAddKit
         '
         Me.btnAddKit.Caption = " Add   Kit"
-        Me.btnAddKit.Glyph = CType(resources.GetObject("btnAddKit.Glyph"), System.Drawing.Image)
         Me.btnAddKit.Id = 124
-        Me.btnAddKit.LargeImageIndex = 40
+        Me.btnAddKit.ImageOptions.Image = CType(resources.GetObject("btnAddKit.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddKit.ImageOptions.LargeImageIndex = 40
         Me.btnAddKit.LargeWidth = 70
         Me.btnAddKit.Name = "btnAddKit"
         '
         'btnEditKit
         '
         Me.btnEditKit.Caption = " Edit  Kit"
-        Me.btnEditKit.Glyph = Global.AOS.My.Resources.Resources.EditData
         Me.btnEditKit.Id = 125
-        Me.btnEditKit.LargeImageIndex = 41
+        Me.btnEditKit.ImageOptions.Image = Global.AOS.My.Resources.Resources.EditData
+        Me.btnEditKit.ImageOptions.LargeImageIndex = 41
         Me.btnEditKit.LargeWidth = 70
         Me.btnEditKit.Name = "btnEditKit"
         '
         'btnDeleteKit
         '
         Me.btnDeleteKit.Caption = "Delete Kit"
-        Me.btnDeleteKit.Glyph = Global.AOS.My.Resources.Resources.DeleteHS
         Me.btnDeleteKit.Id = 126
-        Me.btnDeleteKit.LargeImageIndex = 42
+        Me.btnDeleteKit.ImageOptions.Image = Global.AOS.My.Resources.Resources.DeleteHS
+        Me.btnDeleteKit.ImageOptions.LargeImageIndex = 42
         Me.btnDeleteKit.LargeWidth = 70
         Me.btnDeleteKit.Name = "btnDeleteKit"
         '
@@ -1044,7 +1040,7 @@ Partial Class viewInventory
         '
         Me.rbtnPrintRelabelOrdersSummary.Caption = "Print Relabel Orders Summary"
         Me.rbtnPrintRelabelOrdersSummary.Id = 147
-        Me.rbtnPrintRelabelOrdersSummary.LargeImageIndex = 21
+        Me.rbtnPrintRelabelOrdersSummary.ImageOptions.LargeImageIndex = 21
         Me.rbtnPrintRelabelOrdersSummary.Name = "rbtnPrintRelabelOrdersSummary"
         '
         'rbtnFilterFinishedGoods
@@ -1052,7 +1048,7 @@ Partial Class viewInventory
         Me.rbtnFilterFinishedGoods.Caption = "Finished Goods"
         Me.rbtnFilterFinishedGoods.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterFinishedGoods.Id = 148
-        Me.rbtnFilterFinishedGoods.LargeImageIndex = 27
+        Me.rbtnFilterFinishedGoods.ImageOptions.LargeImageIndex = 27
         Me.rbtnFilterFinishedGoods.Name = "rbtnFilterFinishedGoods"
         '
         'rbtnFilterRawMaterial
@@ -1060,7 +1056,7 @@ Partial Class viewInventory
         Me.rbtnFilterRawMaterial.Caption = "  Raw   Materials"
         Me.rbtnFilterRawMaterial.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterRawMaterial.Id = 149
-        Me.rbtnFilterRawMaterial.LargeImageIndex = 27
+        Me.rbtnFilterRawMaterial.ImageOptions.LargeImageIndex = 27
         Me.rbtnFilterRawMaterial.Name = "rbtnFilterRawMaterial"
         '
         'rbtnFilterProductsActive
@@ -1068,7 +1064,7 @@ Partial Class viewInventory
         Me.rbtnFilterProductsActive.Caption = "Active"
         Me.rbtnFilterProductsActive.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterProductsActive.Id = 151
-        Me.rbtnFilterProductsActive.LargeImageIndex = 1
+        Me.rbtnFilterProductsActive.ImageOptions.LargeImageIndex = 1
         Me.rbtnFilterProductsActive.LargeWidth = 50
         Me.rbtnFilterProductsActive.Name = "rbtnFilterProductsActive"
         '
@@ -1077,7 +1073,7 @@ Partial Class viewInventory
         Me.rbtnFilterProductsInActive.Caption = "Inactive"
         Me.rbtnFilterProductsInActive.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterProductsInActive.Id = 152
-        Me.rbtnFilterProductsInActive.LargeImageIndex = 1
+        Me.rbtnFilterProductsInActive.ImageOptions.LargeImageIndex = 1
         Me.rbtnFilterProductsInActive.LargeWidth = 50
         Me.rbtnFilterProductsInActive.Name = "rbtnFilterProductsInActive"
         '
@@ -1086,7 +1082,7 @@ Partial Class viewInventory
         Me.rbtnFilterProductsAll.Caption = "All"
         Me.rbtnFilterProductsAll.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterProductsAll.Id = 153
-        Me.rbtnFilterProductsAll.LargeImageIndex = 1
+        Me.rbtnFilterProductsAll.ImageOptions.LargeImageIndex = 1
         Me.rbtnFilterProductsAll.LargeWidth = 50
         Me.rbtnFilterProductsAll.Name = "rbtnFilterProductsAll"
         '
@@ -1095,7 +1091,7 @@ Partial Class viewInventory
         Me.rbtnPrintGHSLabel.Caption = "GHS Label"
         Me.rbtnPrintGHSLabel.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPrintGHSLabel.Id = 154
-        Me.rbtnPrintGHSLabel.LargeImageIndex = 31
+        Me.rbtnPrintGHSLabel.ImageOptions.LargeImageIndex = 31
         Me.rbtnPrintGHSLabel.Name = "rbtnPrintGHSLabel"
         '
         'rbtnPrintGHSLabelByProductOnly
@@ -1103,7 +1099,7 @@ Partial Class viewInventory
         Me.rbtnPrintGHSLabelByProductOnly.Caption = "GHS Product Label"
         Me.rbtnPrintGHSLabelByProductOnly.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPrintGHSLabelByProductOnly.Id = 155
-        Me.rbtnPrintGHSLabelByProductOnly.LargeImageIndex = 7
+        Me.rbtnPrintGHSLabelByProductOnly.ImageOptions.LargeImageIndex = 7
         Me.rbtnPrintGHSLabelByProductOnly.Name = "rbtnPrintGHSLabelByProductOnly"
         '
         'rbtnFilterProductsPending
@@ -1111,7 +1107,7 @@ Partial Class viewInventory
         Me.rbtnFilterProductsPending.Caption = "Pending"
         Me.rbtnFilterProductsPending.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterProductsPending.Id = 156
-        Me.rbtnFilterProductsPending.LargeImageIndex = 1
+        Me.rbtnFilterProductsPending.ImageOptions.LargeImageIndex = 1
         Me.rbtnFilterProductsPending.Name = "rbtnFilterProductsPending"
         '
         'rbtnPrintSDSReport
@@ -1119,7 +1115,7 @@ Partial Class viewInventory
         Me.rbtnPrintSDSReport.Caption = "View / Print SDS Document"
         Me.rbtnPrintSDSReport.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPrintSDSReport.Id = 157
-        Me.rbtnPrintSDSReport.LargeImageIndex = 7
+        Me.rbtnPrintSDSReport.ImageOptions.LargeImageIndex = 7
         Me.rbtnPrintSDSReport.Name = "rbtnPrintSDSReport"
         '
         'rbtnAllItems
@@ -1127,21 +1123,21 @@ Partial Class viewInventory
         Me.rbtnAllItems.Caption = "Find All Items"
         Me.rbtnAllItems.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnAllItems.Id = 158
-        Me.rbtnAllItems.LargeImageIndex = 28
+        Me.rbtnAllItems.ImageOptions.LargeImageIndex = 28
         Me.rbtnAllItems.Name = "rbtnAllItems"
         '
         'rbtnProductSalesHistory
         '
         Me.rbtnProductSalesHistory.Caption = "Product Sales History"
         Me.rbtnProductSalesHistory.Id = 159
-        Me.rbtnProductSalesHistory.LargeImageIndex = 8
+        Me.rbtnProductSalesHistory.ImageOptions.LargeImageIndex = 8
         Me.rbtnProductSalesHistory.Name = "rbtnProductSalesHistory"
         '
         'rbtnProductPurchaseHistory
         '
         Me.rbtnProductPurchaseHistory.Caption = "Product Purchase History"
         Me.rbtnProductPurchaseHistory.Id = 160
-        Me.rbtnProductPurchaseHistory.LargeImageIndex = 8
+        Me.rbtnProductPurchaseHistory.ImageOptions.LargeImageIndex = 8
         Me.rbtnProductPurchaseHistory.Name = "rbtnProductPurchaseHistory"
         '
         'Ribbon_LargeImages
@@ -1380,9 +1376,9 @@ Partial Class viewInventory
         Me.WorkPanelsHolder.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.WorkPanelsHolder.Appearance.Options.UseBackColor = True
         Me.WorkPanelsHolder.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl5)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
@@ -1530,8 +1526,6 @@ Partial Class viewInventory
         Me.GroupControl2.Controls.Add(Me.grItems)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl2.LookAndFeel.SkinName = "Money Twins"
-        Me.GroupControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(580, 566)
         Me.GroupControl2.TabIndex = 1
@@ -2026,8 +2020,6 @@ Partial Class viewInventory
         Me.GroupControl12.Controls.Add(Me.grKitItem)
         Me.GroupControl12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl12.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl12.LookAndFeel.SkinName = "Money Twins"
-        Me.GroupControl12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
         Me.GroupControl12.Name = "GroupControl12"
         Me.GroupControl12.Size = New System.Drawing.Size(969, 558)
         Me.GroupControl12.TabIndex = 2
@@ -2317,8 +2309,6 @@ Partial Class viewInventory
         Me.GroupControl9.Controls.Add(Me.grAltComponents)
         Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl9.LookAndFeel.SkinName = "Money Twins"
-        Me.GroupControl9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
         Me.GroupControl9.Name = "GroupControl9"
         Me.GroupControl9.Size = New System.Drawing.Size(1470, 201)
         Me.GroupControl9.TabIndex = 2
@@ -2462,7 +2452,6 @@ Partial Class viewInventory
         Me.RibbonPanelControl4.Appearance.Options.UseBackColor = True
         Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl4.LookAndFeel.SkinName = "Money Twins"
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
         Me.RibbonPanelControl4.Size = New System.Drawing.Size(1494, 582)
         Me.RibbonPanelControl4.TabIndex = 1
@@ -2617,21 +2606,21 @@ Partial Class viewInventory
         '
         Me.BarButtonItem1.Caption = "Pick Work Order"
         Me.BarButtonItem1.Id = 59
-        Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem1.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'BarButtonItem4
         '
         Me.BarButtonItem4.Caption = "Pick Work Order"
         Me.BarButtonItem4.Id = 59
-        Me.BarButtonItem4.LargeGlyph = CType(resources.GetObject("BarButtonItem4.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem4.Name = "BarButtonItem4"
         '
         'BarButtonItem5
         '
         Me.BarButtonItem5.Caption = "Pick Work Order"
         Me.BarButtonItem5.Id = 59
-        Me.BarButtonItem5.LargeGlyph = CType(resources.GetObject("BarButtonItem5.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem5.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem5.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem5.Name = "BarButtonItem5"
         '
         'Timer2
@@ -2641,7 +2630,7 @@ Partial Class viewInventory
         '
         Me.BarButtonItem7.Caption = "On Floor Valuation"
         Me.BarButtonItem7.Id = 74
-        Me.BarButtonItem7.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.BarButtonItem7.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.BarButtonItem7.LargeWidth = 60
         Me.BarButtonItem7.Name = "BarButtonItem7"
         Me.BarButtonItem7.Tag = "174"

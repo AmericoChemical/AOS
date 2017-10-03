@@ -724,6 +724,8 @@ Module WorkOrderProcessing
         Dim vHeaderDetails As String
         Dim vWorkOrderPlanSummary As New HtmlTable
         Dim vItemID As Integer = 0
+        Dim vItemDesc As String = ""
+
 
         Dim vTransType As String = ""
         If oWorkOrder.Transporttype = "DIRECT" Then
@@ -777,11 +779,22 @@ Module WorkOrderProcessing
 
             If vItemID <> oItem.Itemid Then
                 vItemID = oItem.Itemid
+                vItemDesc = oItem.Itemdescription
+
+                Dim oProduct As New Product
+                If oProduct.LoadByPrimaryKey(vItemID) Then
+                    If oProduct.Desc2 <> "" Then
+                        If oProduct.Desc2.Substring(0, 3) = "ask" Or oProduct.Desc2.Substring(0, 3) = "Ask" Then
+                            vItemDesc = vItemDesc & " [" & oProduct.Desc2 & "]"
+                        End If
+                    End If
+                End If
+
                 vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0:F2} - {1} - {2}" _
                                                                                 , oItem.Totalproductqty _
                                                                                 , oItem.Container _
-                                                                                , oItem.Itemdescription), _
-                                                                            "", _
+                                                                                , vItemDesc),
+                                                                            "",
                                                                             CellStyle.Heading))
             End If
 
@@ -797,7 +810,7 @@ Module WorkOrderProcessing
 
                         Dim vInvStatusLine As String = "(" + oCS(0).QAvail.ToString + " A"
 
-                        If Not (oCS(0).QPending = 0 And oCS(0).QInProd = 0 And oCS(0).QTesting = 0) Then
+                        If Not (oCS(0).QPending = 0 And oCS(0).QInProd = 0 And oCS(0).QTesting = 0 And oCS(0).QHold = 0) Then
                             If oCS(0).QTesting > 0 Then
                                 vInvStatusLine = vInvStatusLine + " | " + oCS(0).QTesting.ToString + " T"
                             End If
@@ -861,10 +874,10 @@ Module WorkOrderProcessing
 
                         'now add a line for each material needed in the production order
                         Dim vPad As String = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-                        Dim oMaterial As New ViewProdItemDataCollection
+                        Dim oMaterial As New ViewProdItemDataWOEmailCollection
                         oMaterial.Query.Where(oMaterial.Query.Prodordernum.Equal(oItem.Sourcedocument), oMaterial.Query.Materialid.NotIn(127, 129, 200))
                         If oMaterial.Query.Load Then
-                            For Each oRec As ViewProdItemData In oMaterial
+                            For Each oRec As ViewProdItemDataWOEmail In oMaterial
                                 vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1:F2} - {2} - {3}  -  ({4:F2})",
                                                                                      vPad,
                                                                                      oRec.Qty.ToString.PadLeft(6, " "),
@@ -872,20 +885,58 @@ Module WorkOrderProcessing
                                                                                      oRec.Materialdesc,
                                                                                      oRec.Available)))
 
+                                'For each Raw Material that is IN PRODUCTION, add the DATENEEDED value from the Production Order
+                                Dim oRMProd As New ViewRawMaterialInProductionCollection
+                                oRMProd.Query.Where(oRMProd.Query.Materialid.Equal(oRec.Materialid))
+                                If oRMProd.Query.Load Then
+                                    'add line to show available date for the raw material included in the RawMaterial Available/Inventory Amount
+                                    Dim vAvailDate As DateTime
+                                    Dim vAvailDateString As String
+                                    For Each oRMProdRec As ViewRawMaterialInProduction In oRMProd
+                                        vAvailDate = oRMProdRec.AvailDate
+                                        vAvailDateString = vAvailDate.ToShortDateString
+
+                                        vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1:F2} - {2} - {3}",
+                                                                                                                vPad + vPad + "IN PROD",
+                                                                                                                oRMProdRec.Qty,
+                                                                                                                oRMProdRec.Productdesc,
+                                                                                                                vAvailDateString)))
+                                    Next
+                                End If
+
+                                'For each Raw Material that is ON ORDER (PENDING), add the EXPECTED IN DATE from the Purchase Order
+                                Dim oMatPrch As New ViewAllMaterialOnOrderCollection
+                                oMatPrch.Query.Where(oMatPrch.Query.Materialid.Equal(oRec.Materialid))
+                                If oMatPrch.Query.Load Then
+                                    'add line to show available date for the raw material included in the RawMaterial Available/Inventory Amount
+                                    Dim vAvailDate As DateTime
+                                    Dim vAvailDateString As String
+                                    For Each oRMPrchRec As ViewAllMaterialOnOrder In oMatPrch
+                                        vAvailDate = oRMPrchRec.AvailDate
+                                        vAvailDateString = vAvailDate.ToShortDateString
+                                        vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1:F2} - {2} - {3}",
+                                                                                                                vPad + vPad + "PENDING",
+                                                                                                                oRMPrchRec.Qty,
+                                                                                                                oRMPrchRec.Productdesc,
+                                                                                                                vAvailDateString)))
+                                    Next
+                                End If
+
+
                                 'now add line(s) for AVAILABLE 
                                 Dim vAvailableProductsLine As String = ""
                                 Dim vMatAvail As New ViewMaterialAvailableContainersCollection
                                 vMatAvail.Query.Where(vMatAvail.Query.Materialid.Equal(oRec.Materialid))
                                 If vMatAvail.Query.Load Then
                                     For Each oFG As ViewMaterialAvailableContainers In vMatAvail
-                                        If Not (oFG.Qavail = 0 And oFG.Qpend = 0 And oFG.Qprod = 0 And oFG.Qtest = 0) Then
+                                        If Not (oFG.Qavail = 0 And oFG.Qprod = 0 And oFG.Qtest = 0 And oFG.Qhold = 0) Then
                                             vAvailableProductsLine = oFG.Productdesc + " (" + oFG.Container.Substring(0, 1) + ")"
                                             If oFG.Qavail > 0 Then
                                                 vAvailableProductsLine = vAvailableProductsLine + " | " + oFG.Qavail.ToString + " AVAIL"
                                             End If
-                                            If oFG.Qpend > 0 Then
-                                                vAvailableProductsLine = vAvailableProductsLine + " | " + oFG.Qpend.ToString + " PENDING"
-                                            End If
+                                            'If oFG.Qpend > 0 Then
+                                            '    vAvailableProductsLine = vAvailableProductsLine + " | " + oFG.Qpend.ToString + " PENDING"
+                                            'End If
                                             If oFG.Qprod > 0 Then
                                                 vAvailableProductsLine = vAvailableProductsLine + " | " + oFG.Qprod.ToString + " IN PROD"
                                             End If
@@ -898,6 +949,9 @@ Module WorkOrderProcessing
                                             vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1}",
                                                                                      vPad + vPad, vAvailableProductsLine)))
                                         End If
+
+
+
 
                                     Next
                                 End If
@@ -925,6 +979,17 @@ Module WorkOrderProcessing
                                                                                         oItem.Totalfulfillmentqty,
                                                                                         oItem.Sourcetype)))
 
+                        'Determine if there are any of these items currently in RECEIVED HOLD status
+                        'retrieve counts of inventory items and their current status
+                        Dim oCS As New ViewInvItemsCurrentStatusCollection
+                        oCS.Query.Where(oCS.Query.Productid.Equal(oItem.Itemid))
+                        oCS.Query.Load()
+                        If oCS(0).QHold > 0 Then
+                            Dim vInvStatusLine As String = "( " + oCS(0).QHold.ToString + " HOLD )"
+                            vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0}",
+                                                                                        vInvStatusLine)))
+                        End If
+
                         'Get Vendor Names from ProductCost records for Product ID (oItemList.ItemID)
                         Dim oCostRecs As New ViewProductCostInfoCollection
                         oCostRecs.Query.Where(oCostRecs.Query.Productid.Equal(oItem.Itemid))
@@ -933,6 +998,10 @@ Module WorkOrderProcessing
                                 vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1}", vPad3 + vPad3, oCR.Vendorname)))
                             Next
                         End If
+
+
+
+
 
                     Case SourceType.RLBL.ToString()
                         Dim vPad4 As String = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"

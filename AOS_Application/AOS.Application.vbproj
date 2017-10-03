@@ -704,6 +704,9 @@
     <Compile Include="BusinessObjects\Custom\ViewActiveProductList.vb" />
     <Compile Include="BusinessObjects\Custom\ViewActiveProductListCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewActiveProductListQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewAllMaterialOnOrder.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewAllMaterialOnOrderCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewAllMaterialOnOrderQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewAltComponent.vb" />
     <Compile Include="BusinessObjects\Custom\ViewAltComponentCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewAltComponentQuery.vb" />
@@ -974,6 +977,9 @@
     <Compile Include="BusinessObjects\Custom\ViewProdItemData.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdItemDataCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdItemDataQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewProdItemDataWOEmail.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewProdItemDataWOEmailCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewProdItemDataWOEmailQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdOrderData.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdOrderDataCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdOrderDataQuery.vb" />
@@ -1049,6 +1055,12 @@
     <Compile Include="BusinessObjects\Custom\ViewRawMaterialAvailable.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRawMaterialAvailableCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRawMaterialAvailableQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRawMaterialInProduction.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRawMaterialInProductionCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRawMaterialInProductionQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRawMaterialOnOrder.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRawMaterialOnOrderCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRawMaterialOnOrderQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewReceivedHoldItems.vb" />
     <Compile Include="BusinessObjects\Custom\ViewReceivedHoldItemsCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewReceivedHoldItemsQuery.vb" />
@@ -1412,6 +1424,7 @@
     <Compile Include="BusinessObjects\Generated\Vendor.vb" />
     <Compile Include="BusinessObjects\Generated\Vendortestingmatrix.vb" />
     <Compile Include="BusinessObjects\Generated\ViewActiveProductList.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewAllMaterialOnOrder.vb" />
     <Compile Include="BusinessObjects\Generated\ViewAltComponent.vb" />
     <Compile Include="BusinessObjects\Generated\ViewAPISData.vb" />
     <Compile Include="BusinessObjects\Generated\ViewAPISITEMData.vb" />
@@ -1502,6 +1515,7 @@
     <Compile Include="BusinessObjects\Generated\ViewPricingMethod.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdcutionOrder2.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdItemData.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewProdItemDataWOEmail.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdOrderData.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProductBuyersList.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProductChemicalGHS.vb" />
@@ -1527,6 +1541,8 @@
     <Compile Include="BusinessObjects\Generated\ViewPurchaseRequest.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRawMaterialAvailability.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRawMaterialAvailable.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewRawMaterialInProduction.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewRawMaterialOnOrder.vb" />
     <Compile Include="BusinessObjects\Generated\ViewReceivedHoldItems.vb" />
     <Compile Include="BusinessObjects\Generated\ViewReceivingHistory.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRelabelOrder.vb" />

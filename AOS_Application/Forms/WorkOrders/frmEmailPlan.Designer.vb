@@ -97,7 +97,7 @@ Partial Class frmEmailPlan
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(951, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(951, 117)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -105,35 +105,35 @@ Partial Class frmEmailPlan
         '
         Me.btnNewCostRecord.Caption = "New Cost Record"
         Me.btnNewCostRecord.Id = 0
-        Me.btnNewCostRecord.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnNewCostRecord.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnNewCostRecord.Name = "btnNewCostRecord"
         '
         'btnEditCostRecord
         '
         Me.btnEditCostRecord.Caption = "Edit Cost Record"
-        Me.btnEditCostRecord.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Id = 1
+        Me.btnEditCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Name = "btnEditCostRecord"
         '
         'btnDeleteCostRecord
         '
         Me.btnDeleteCostRecord.Caption = "Delete Cost Record"
-        Me.btnDeleteCostRecord.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Id = 2
+        Me.btnDeleteCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Name = "btnDeleteCostRecord"
         '
         'btnSend
         '
         Me.btnSend.Caption = "Send"
         Me.btnSend.Id = 4
-        Me.btnSend.LargeGlyph = Global.AOS.My.Resources.Resources.Change
+        Me.btnSend.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Change
         Me.btnSend.Name = "btnSend"
         '
         'btnCancel
         '
         Me.btnCancel.Caption = "Cancel"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeGlyph = Global.AOS.My.Resources.Resources.CancelChanges
+        Me.btnCancel.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.CancelChanges
         Me.btnCancel.Name = "btnCancel"
         '
         'RibbonPage1
@@ -162,20 +162,19 @@ Partial Class frmEmailPlan
         Me.PalletPanelControl.Controls.Add(lblTo)
         Me.PalletPanelControl.Controls.Add(lblFrom)
         Me.PalletPanelControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PalletPanelControl.Location = New System.Drawing.Point(0, 95)
+        Me.PalletPanelControl.Location = New System.Drawing.Point(0, 117)
         Me.PalletPanelControl.Name = "PalletPanelControl"
-        Me.PalletPanelControl.Size = New System.Drawing.Size(951, 631)
+        Me.PalletPanelControl.Size = New System.Drawing.Size(951, 609)
         Me.PalletPanelControl.TabIndex = 1
         '
         'BodyStatementRichEditControl
         '
+        Me.BodyStatementRichEditControl.Appearance.Text.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BodyStatementRichEditControl.Appearance.Text.Options.UseFont = True
         Me.BodyStatementRichEditControl.DataBindings.Add(New System.Windows.Forms.Binding("HtmlText", Me.bsWorkOrderEmailPlan, "Bodytext", True))
-        Me.BodyStatementRichEditControl.EnableToolTips = True
         Me.BodyStatementRichEditControl.Location = New System.Drawing.Point(70, 120)
         Me.BodyStatementRichEditControl.MenuManager = Me.RibbonControl1
         Me.BodyStatementRichEditControl.Name = "BodyStatementRichEditControl"
-        Me.BodyStatementRichEditControl.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never
-        Me.BodyStatementRichEditControl.Options.Fields.UpdateFieldsInTextBoxes = False
         Me.BodyStatementRichEditControl.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
         Me.BodyStatementRichEditControl.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
         Me.BodyStatementRichEditControl.Size = New System.Drawing.Size(862, 500)

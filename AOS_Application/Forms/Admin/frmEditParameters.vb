@@ -96,21 +96,30 @@ Public Class frmEditParameters
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Dim vNewRate As Decimal
         vNewRate = getUserDecimal("Enter the new Standard Labor Rate:", oItem.Stdlaborhourcost)
+        If IsDBNull(vNewRate) Or vNewRate = Nothing Then
+            Exit Sub
+        End If
+
         If vNewRate = vLaborRate Then
             'no real change was made to the Standard Labor Rate
             Exit Sub
         End If
 
         'Confirm the change to the labor rate
+        If MsgBox("THIS WILL CHANGE ALL RELATED PRODUCT STANDARD COSTS IN THE SYSTEM - THIS CHANGE CANNOT BE UNDONE. Are you sure you want to change the Standard Labor Rate?", MsgBoxStyle.YesNo, "Confirm Labor Rate Change") = MsgBoxResult.No Then
+            Exit Sub
+        End If
 
         'update System Parameters table with the new rate
+        eStdlaborhourcost.EditValue = vNewRate
+        If changesSaved() Then
+            editObject(vID)
+        End If
 
-        'Fetch all ACTIVE APIS records and update Standard Costs for each of them
-
-
-
-
-
+        'Update all Product Standard Costs associated with the Standard Labor Rate Change
+        Me.Cursor = Cursors.WaitCursor
+        updateStandardCostingFromStandardLaborRateChange()
+        Me.Cursor = Cursors.Default
 
     End Sub
 End Class

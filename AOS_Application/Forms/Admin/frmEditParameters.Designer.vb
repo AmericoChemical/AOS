@@ -58,7 +58,7 @@ Partial Class frmEditParameters
         Me.CompanyFAXTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.DefaultsalestaxrateTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.FreezeWarningCheckEdit = New DevExpress.XtraEditors.CheckEdit()
-        Me.StdlaborhourcostTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.eStdlaborhourcost = New DevExpress.XtraEditors.TextEdit()
         Me.CompanyEmailDomainTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.CompanyEmailServerTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.WorkOrderEmailReceiverTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -100,7 +100,7 @@ Partial Class frmEditParameters
         CType(Me.CompanyFAXTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DefaultsalestaxrateTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FreezeWarningCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StdlaborhourcostTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eStdlaborhourcost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyEmailDomainTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyEmailServerTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkOrderEmailReceiverTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -452,17 +452,17 @@ Partial Class frmEditParameters
         Me.FreezeWarningCheckEdit.Size = New System.Drawing.Size(93, 19)
         Me.FreezeWarningCheckEdit.TabIndex = 31
         '
-        'StdlaborhourcostTextEdit
+        'eStdlaborhourcost
         '
-        Me.StdlaborhourcostTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsItem, "Stdlaborhourcost", True))
-        Me.StdlaborhourcostTextEdit.Location = New System.Drawing.Point(199, 506)
-        Me.StdlaborhourcostTextEdit.MenuManager = Me.RibbonControl1
-        Me.StdlaborhourcostTextEdit.Name = "StdlaborhourcostTextEdit"
-        Me.StdlaborhourcostTextEdit.Properties.DisplayFormat.FormatString = "c2"
-        Me.StdlaborhourcostTextEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.StdlaborhourcostTextEdit.Properties.ReadOnly = True
-        Me.StdlaborhourcostTextEdit.Size = New System.Drawing.Size(65, 20)
-        Me.StdlaborhourcostTextEdit.TabIndex = 29
+        Me.eStdlaborhourcost.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsItem, "Stdlaborhourcost", True))
+        Me.eStdlaborhourcost.Location = New System.Drawing.Point(199, 506)
+        Me.eStdlaborhourcost.MenuManager = Me.RibbonControl1
+        Me.eStdlaborhourcost.Name = "eStdlaborhourcost"
+        Me.eStdlaborhourcost.Properties.DisplayFormat.FormatString = "c2"
+        Me.eStdlaborhourcost.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.eStdlaborhourcost.Properties.ReadOnly = True
+        Me.eStdlaborhourcost.Size = New System.Drawing.Size(65, 20)
+        Me.eStdlaborhourcost.TabIndex = 29
         '
         'CompanyEmailDomainTextEdit
         '
@@ -593,7 +593,7 @@ Partial Class frmEditParameters
         Me.Controls.Add(Me.CompanyEmailDomainTextEdit)
         Me.Controls.Add(Label1)
         Me.Controls.Add(StdlaborhourcostLabel)
-        Me.Controls.Add(Me.StdlaborhourcostTextEdit)
+        Me.Controls.Add(Me.eStdlaborhourcost)
         Me.Controls.Add(FreezeWarningLabel)
         Me.Controls.Add(Me.FreezeWarningCheckEdit)
         Me.Controls.Add(DefaultsalestaxrateLabel)
@@ -632,7 +632,7 @@ Partial Class frmEditParameters
         CType(Me.CompanyFAXTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DefaultsalestaxrateTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FreezeWarningCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StdlaborhourcostTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eStdlaborhourcost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CompanyEmailDomainTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CompanyEmailServerTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkOrderEmailReceiverTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -666,7 +666,7 @@ Partial Class frmEditParameters
     Friend WithEvents CompanyFAXTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents DefaultsalestaxrateTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents FreezeWarningCheckEdit As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents StdlaborhourcostTextEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents eStdlaborhourcost As DevExpress.XtraEditors.TextEdit
     Friend WithEvents CompanyEmailDomainTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents CompanyEmailServerTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents WorkOrderEmailReceiverTextEdit As DevExpress.XtraEditors.TextEdit

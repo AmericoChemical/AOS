@@ -602,6 +602,7 @@ Public Class viewShipping
                     vQtyContainers = 0
             End Select
             'now add the item as a new shipment item
+            vCustomerPO = IIf(IsDBNull(oItem.Customerpo), vCustomerPO, oItem.Customerpo)
             vProductID = IIf(IsDBNull(oItem.Productid), 0, oItem.Productid)
             vLotNumber = IIf(IsDBNull(oItem.Lotnumber), "", oItem.Lotnumber)
             vBillable = IIf(IsDBNull(oItem.Billable), 1, oItem.Billable)
@@ -737,7 +738,7 @@ Public Class viewShipping
             vBillable = IIf(IsDBNull(oItem.Billable), 1, oItem.Billable)
             If vQtyContainers <> -1 Then
                 Try
-                    createShipmentItem(vShipmentNum, vProductID, vQtyContainers, vLotNumber, vCustomerPO, vBillable, oItem.Workorderitemnumber)
+                    createShipmentItem(vShipmentNum, vProductID, vQtyContainers, vLotNumber, oItem.Customerpo, vBillable, oItem.Workorderitemnumber)
                     If vQtyContainers > 0 And Not IsDBNull(oItem.Invitemnumber) Then
                         markItemAsShipped(oItem.Invitemnumber, vShipmentNum, oShipment.Shipmentdate)
                     End If
@@ -913,9 +914,16 @@ Public Class viewShipping
         Dim oShipItem As Shipmentdetail = New Shipmentdetail
         Dim oContainer As Container = New Container
         Dim vTareWeight As Integer = 0
+        Dim oWOItem As New Workorderitem
+        Dim vCustItemID As String = ""
 
         'Get product record
         If oProduct.LoadByPrimaryKey(vProductID) = False Then
+            Exit Sub
+        End If
+
+        'Get Workorderitem record
+        If oWOItem.LoadByPrimaryKey(vWorkOrderItemNumber) = False Then
             Exit Sub
         End If
 
@@ -945,8 +953,14 @@ Public Class viewShipping
         oShipItem.Ld2 = oProduct.Unline
         'vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Stdgallons.ToString & " gal."
         vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
+
         If vCustomerPO <> "" Then
             vStr = vStr & " (PO# " & vCustomerPO & ")"
+        End If
+        'add Customer Specific Item ID to BOL line
+        vCustItemID = IIf(IsDBNull(oWOItem.Custitemid), "", oWOItem.Custitemid)
+        If vCustItemID <> "" Then
+            vStr = vStr & " [" & vCustItemID & "]"
         End If
         oShipItem.Ld3 = vStr
         oShipItem.Billable = vBillable

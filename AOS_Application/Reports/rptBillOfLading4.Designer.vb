@@ -376,7 +376,7 @@ Partial Public Class rptBillOfLading4
         '
         Me.eLD1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "ChemLine1")})
         Me.eLD1.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.eLD1.LocationFloat = New DevExpress.Utils.PointFloat(162.6173!, 16.00002!)
+        Me.eLD1.LocationFloat = New DevExpress.Utils.PointFloat(162.6172!, 0!)
         Me.eLD1.Name = "eLD1"
         Me.eLD1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.eLD1.SizeF = New System.Drawing.SizeF(609.995!, 16.0!)
@@ -388,10 +388,10 @@ Partial Public Class rptBillOfLading4
         Me.eLD3.CanShrink = True
         Me.eLD3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Ld3")})
         Me.eLD3.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.eLD3.LocationFloat = New DevExpress.Utils.PointFloat(162.6173!, 0!)
+        Me.eLD3.LocationFloat = New DevExpress.Utils.PointFloat(162.6172!, 16.00004!)
         Me.eLD3.Name = "eLD3"
         Me.eLD3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.eLD3.SizeF = New System.Drawing.SizeF(458.7091!, 16.0!)
+        Me.eLD3.SizeF = New System.Drawing.SizeF(609.995!, 16.0!)
         Me.eLD3.StylePriority.UseFont = False
         Me.eLD3.Text = "eLD3"
         Me.eLD3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
@@ -1629,7 +1629,7 @@ Partial Public Class rptBillOfLading4
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.ShowPreviewMarginLines = False
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.XrControlStyle1})
-        Me.Version = "15.2"
+        Me.Version = "17.1"
         CType(Me.bsRpt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 

@@ -196,9 +196,11 @@ Public Class frmAddNewShipmentItem
                         oRec.Classrate = oProduct.Classrate
                         oRec.Ld1 = oProduct.Dotdesc & " " & oProduct.Hazmatdesc
                         oRec.Ld2 = oProduct.Unline
-                        vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Stdgallons.ToString & " gal."
+                        'oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
+                        'vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Stdgallons.ToString & " gal."
+                        vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
                         If vCustomerPO <> "" Then
-                            vStr = vStr & "(PO# " & vCustomerPO & ")"
+                            vStr = vStr & " (PO# " & vCustomerPO & ")"
                         End If
                         oRec.Ld3 = vStr
                         If IsDBNull(oRec.Qtycontainers) Or oRec.Qtycontainers <= 0 Then

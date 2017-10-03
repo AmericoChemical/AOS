@@ -69,7 +69,7 @@
                     End If
 
                     'add product change history record for the relabeled product
-                    AddProductCostChangeHistoryRecord(oApisCost.Productid, oApisCost.Oldvolcost, oApisCost.Oldwgtcost, oApisCost.Newvolcost, oApisCost.Newwgtcost, "APIS CHNG - PROD " & vProdID & " " & oProductRecord.Productdesc, vChangeType)
+                    AddProductCostChangeHistoryRecord(oApisCost.Productid, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & vProdID & " " & oProductRecord.Productdesc, vChangeType)
                 End If
             Next
 
@@ -104,7 +104,7 @@
                             End If
 
                             'add product change history record for the relabeled product
-                            AddProductCostChangeHistoryRecord(oApisCost2.Productid, oApisCost2.Oldvolcost, oApisCost2.Oldwgtcost, oApisCost2.Newvolcost, oApisCost2.Newwgtcost, "APIS CHNG - PROD " & vProdID & " " & oProductRecord.Productdesc, vChangeType)
+                            AddProductCostChangeHistoryRecord(oApisCost2.Productid, IIf(IsDBNull(oApisCost2.Oldvolcost), 0, oApisCost2.Oldvolcost), IIf(IsDBNull(oApisCost2.Oldwgtcost), 0, oApisCost2.Oldwgtcost), IIf(IsDBNull(oApisCost2.Newvolcost), 0, oApisCost2.Newvolcost), IIf(IsDBNull(oApisCost2.Newwgtcost), 0, oApisCost2.Newwgtcost), "APIS CHNG - PROD " & vProdID & " " & oProductRecord.Productdesc, vChangeType)
                         End If
                     Next
                 End If
@@ -226,10 +226,16 @@
         Dim vOldWgtUnitCost As Decimal = 0.00
         If oProduct.LoadByPrimaryKey(vProductID) Then
             'get old values
-            vOldVolUnitCost = oProduct.Volumestandardcost
-            vOldWgtUnitCost = oProduct.Weightstandardcost
+            vOldVolUnitCost = IIf(IsDBNull(oProduct.Volumestandardcost), 0, oProduct.Volumestandardcost)
+            vOldWgtUnitCost = IIf(IsDBNull(oProduct.Weightstandardcost), 0, oProduct.Weightstandardcost)
 
             'set new values
+            If IsDBNull(oProduct.Volumeuom) Or oProduct.Volumeuom = Nothing Then
+                oProduct.Volumeuom = "GAL"
+            End If
+            If IsDBNull(oProduct.Weightuom) Or oProduct.Weightuom = Nothing Then
+                oProduct.Weightuom = "LB"
+            End If
             oProduct.Volumeunits = vVolumeUnits
             oProduct.Volumestandardcost = vVolumeUnitCost
             oProduct.Weightunits = vWeightUnits
@@ -241,8 +247,6 @@
 
         'Process Product Cost Changes Across all Related Products
         ProcessProductStandardCostChanges(vProductID, vOldVolUnitCost, vOldWgtUnitCost, vVolumeUnitCost, vWeightUnitCost, vReasonForChange, vChangeType, vChangeID)
-
-
 
         ''record this APIS COST change even in the CHANGERECORD table
         'Dim vChg As Changerecord
@@ -306,6 +310,59 @@
         'End If
 
     End Sub
+
+    Public Sub updateStandardCostingFromStandardLaborRateChange()
+
+        Dim oTotalCosts As ViewCostingApisTotalCosts
+
+        'UPDATE ALL ACTIVE APIS RECORDS WITH NEW LABOR RATE
+
+        'find all ACTIVE APIS records
+        Dim oAPISList As New ApisCollection
+        oAPISList.Query.Where(oAPISList.Query.Apisstatus.NotEqual("ARCHIVED"))
+        If Not oAPISList.Query.Load Then
+            MsgBox("No ACTIVE/SINGLE USE APIS records found.", MsgBoxStyle.Critical, "No Data to Process")
+            Exit Sub
+        End If
+
+        'Loop through APIS records, pulling up APIS Cost View
+        For Each oAPIS As Apis In oAPISList
+            'get Total Costs for the current APIS in the list
+            oTotalCosts = New ViewCostingApisTotalCosts
+            oTotalCosts.Query.Where(oTotalCosts.Query.Apisnum.Equal(oAPIS.Apisnum))
+            oTotalCosts.Query.Load()
+            'update standard costs for product created from this APIS, as well as all related products
+            updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, IIf(IsDBNull(oTotalCosts.ApisVolUnitCost), 0, oTotalCosts.ApisVolUnitCost), oTotalCosts.Weight, IIf(IsDBNull(oTotalCosts.ApisUnitCost), 0, oTotalCosts.ApisUnitCost), "STD LABOR RATE CHANGE", "STD COST", oAPIS.Apisnum)
+        Next
+
+        'UPDATE ALL RELABEL PRODUCTS WITH NEW LABOR RATE
+        Dim oRelabelProds As New ProductfulfillmentplanCollection
+        oRelabelProds.Query.Where(oRelabelProds.Query.Fulfillmenttypeid.Equal(2))
+        If oRelabelProds.Query.Load Then
+            'loop through Relabeled Products and update standard costs
+            For Each obj As Productfulfillmentplan In oRelabelProds
+                'determine standard costs with new data from origin ProductID new standard costs
+                Dim oRlbCosts As New ViewRelabelProductsCostChanges
+                oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(obj.Productid))
+                If oRlbCosts.Query.Load Then
+                    'update Relabeled Product Standard Costs
+                    Dim oProduct As New Product
+                    If oProduct.LoadByPrimaryKey(obj.Productid) Then
+                        'set new values
+                        oProduct.Volumestandardcost = oRlbCosts.Newvolcost
+                        oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
+                        oProduct.Save()
+                    End If
+
+                    'add product change history record for the relabeled product
+                    AddProductCostChangeHistoryRecord(obj.Productid, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL - LABOR RATE CHNG", "STD COST")
+                End If
+            Next
+        End If
+
+
+    End Sub
+
 
     Public Sub updateStandardCostingFromVendorCostChange(vProductID As Integer, vVolumeUnits As Decimal, vVolUOM As String, vVolumeUnitCost As Decimal, vWeightUnits As Decimal, vWeightUOM As String, vWeightUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer)
 

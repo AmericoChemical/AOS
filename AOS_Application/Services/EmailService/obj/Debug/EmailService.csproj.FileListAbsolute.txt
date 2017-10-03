@@ -44,3 +44,9 @@ C:\Data\Americo\Development\AOS2017\AM17.01\Services\EmailService\bin\EmailServi
 C:\Data\Americo\Development\AOS2017\AM17.01\Services\EmailService\obj\Debug\EmailService.csprojResolveAssemblyReference.cache
 C:\Data\Americo\Development\AOS2017\AM17.01\Services\EmailService\obj\Debug\EmailService.dll
 C:\Data\Americo\Development\AOS2017\AM17.01\Services\EmailService\obj\Debug\EmailService.pdb
+C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\bin\EmailService.dll.config
+C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\bin\EmailService.dll
+C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\bin\EmailService.pdb
+C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.dll
+C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.pdb
+C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.csprojResolveAssemblyReference.cache
