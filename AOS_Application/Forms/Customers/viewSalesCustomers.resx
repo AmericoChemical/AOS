@@ -208,7 +208,7 @@
     <value>False</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAddCustomer.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddCustomer.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -238,7 +238,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditCustomer.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditCustomer.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABZ0lEQVQ4T5WSzUrDQBSFAz6KLyB05UsU
@@ -250,7 +250,7 @@
         aDQd+VF4VIQD4zcTbp3hiIADSYLfShggQ2M5WQdHN9oCy/oBL+Ol2Z/0/cMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteCustomer.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteCustomer.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABXklEQVQ4T2OgCngoYPb/oY7vfyiXdPBQ
@@ -262,7 +262,7 @@
         Shx5eXn/Z8+ejVUzDIC8BdIM8iJUiBLAwAAAAsEG8+pQgl8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAddSalesperson.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddSalesperson.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -292,7 +292,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnAddSalesperson.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddSalesperson.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -322,7 +322,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditSalesperson.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditSalesperson.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABZ0lEQVQ4T5WSzUrDQBSFAz6KLyB05UsU
@@ -334,7 +334,7 @@
         aDQd+VF4VIQD4zcTbp3hiIADSYLfShggQ2M5WQdHN9oCy/oBL+Ol2Z/0/cMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteSalesperson.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteSalesperson.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABXklEQVQ4T2OgCngoYPb/oY7vfyiXdPBQ
@@ -346,7 +346,7 @@
         Shx5eXn/Z8+ejVUzDIC8BdIM8iJUiBLAwAAAAsEG8+pQgl8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAddPriceListItem.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddPriceListItem.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -376,7 +376,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditPriceListItem.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditPriceListItem.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABZ0lEQVQ4T5WSzUrDQBSFAz6KLyB05UsU
@@ -388,7 +388,7 @@
         aDQd+VF4VIQD4zcTbp3hiIADSYLfShggQ2M5WQdHN9oCy/oBL+Ol2Z/0/cMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeletePriceListItem.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeletePriceListItem.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABXklEQVQ4T2OgCngoYPb/oY7vfyiXdPBQ
@@ -400,7 +400,7 @@
         Shx5eXn/Z8+ejVUzDIC8BdIM8iJUiBLAwAAAAsEG8+pQgl8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAddAssignment.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddAssignment.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -430,7 +430,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnAddAssignment.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddAssignment.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -460,7 +460,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditAssignment.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditAssignment.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABZ0lEQVQ4T5WSzUrDQBSFAz6KLyB05UsU
@@ -472,7 +472,7 @@
         aDQd+VF4VIQD4zcTbp3hiIADSYLfShggQ2M5WQdHN9oCy/oBL+Ol2Z/0/cMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteAssignment.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteAssignment.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABXklEQVQ4T2OgCngoYPb/oY7vfyiXdPBQ
@@ -484,7 +484,7 @@
         Shx5eXn/Z8+ejVUzDIC8BdIM8iJUiBLAwAAAAsEG8+pQgl8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAddInvoice.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddInvoice.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -514,7 +514,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditInvoice.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditInvoice.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABZ0lEQVQ4T5WSzUrDQBSFAz6KLyB05UsU
@@ -526,7 +526,7 @@
         aDQd+VF4VIQD4zcTbp3hiIADSYLfShggQ2M5WQdHN9oCy/oBL+Ol2Z/0/cMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteInvoice.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteInvoice.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABXklEQVQ4T2OgCngoYPb/oY7vfyiXdPBQ
@@ -538,7 +538,7 @@
         Shx5eXn/Z8+ejVUzDIC8BdIM8iJUiBLAwAAAAsEG8+pQgl8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnRefreshCompleteShipments.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRefreshCompleteShipments.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAF8ElE
@@ -570,7 +570,7 @@
         i78VXS4XPt/rj9V486nIZ/8FXBfhodcUZpcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnCreateInvoice.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCreateInvoice.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -600,7 +600,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnFilterAll.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFilterAll.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAEAUlEQVRYR+VWZ09iURD1R5vYEEQEsffe
@@ -624,7 +624,7 @@
         YII=
 </value>
   </data>
-  <data name="btnCloseShipment.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCloseShipment.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAIMklEQVRYR8WV6VOb1xXG889k+qFfkukk
@@ -665,7 +665,7 @@
         qb6LuPvyGeu/glP+tyrLmXUOCGWy2FbYcvGnxJaLPx144t97xXALyZU4GgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnTransferInvoicesToQuickbooks.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnTransferInvoicesToQuickbooks.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAIMklEQVRYR8WV6VOb1xXG889k+qFfkukk
@@ -706,7 +706,7 @@
         qb6LuPvyGeu/glP+tyrLmXUOCGWy2FbYcvGnxJaLPx144t97xXALyZU4GgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditCustomerPayment.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditCustomerPayment.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -747,7 +747,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteCustomerPayment.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteCustomerPayment.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAV5JREFUOE9j
         oAp4KGD2/6GO738ol3TwUM7p/30Gzf+HNd3IM+TFvmP/z4hbgg3Z5haF05D39VPAap6dOo+p5vjO3XBD
@@ -759,7 +759,7 @@
         QmCC
 </value>
   </data>
-  <data name="btnManageCustomerAssignments.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnManageCustomerAssignments.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACDJJREFUWEfF
         lelTm9cVxvPPZPqhX5LpJNN0Jm0n6ZI4bptkJnXtxpk0juNsNjHBdhzXCxinNrHZwmIMZjWIxZjdGBQM
@@ -800,7 +800,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnManageSalespersonData.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnManageSalespersonData.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACMFJREFUWEfF
         lulTm9cVxvNX9H/ox7QzzUzbmWaaptOkWeyxszjUzmY3dXZjx00cx3GwHVw72ATbGLDZbTY7gGUQICEJ
@@ -844,9 +844,9 @@
 </value>
   </data>
   <metadata name="bsSalesperson.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>228, 17</value>
+    <value>454, 17</value>
   </metadata>
-  <data name="btnAddCommissionRec.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddCommissionRec.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAXVJREFUOE+l
         kt1KQlEQhX2WXiAKCnqEuu26q6LrXkBIiIhSKCupBBMJg6RfQqNCCzELjISUFJKjpuIP2THN7JSsnNEO
@@ -858,7 +858,7 @@
         lP83VKpv5J72NtYi0kAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnEditCommissionRec.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditCommissionRec.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -899,7 +899,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteCommissionRec.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteCommissionRec.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6
         JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAAsMAAALDAE/QCLIAAACLUlE
@@ -915,7 +915,7 @@
         CIKE5/Vi8yJsDM8P8P0HLGwR4Wl3ICYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnFetchForecastedCommissions.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFetchForecastedCommissions.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABAFJREFUWEfl
         VmdPYlEQ9Ueb2BBEBLH33nsDW+yCuonGGmPvFXvvJbaz78wuLuBd+IabrMkRGe+7c2bmzMwLAfCtUBqD
@@ -938,7 +938,7 @@
         ObnxNYg7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnFetchPayableCommissions.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFetchPayableCommissions.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABAFJREFUWEfl
         VmdPYlEQ9Ueb2BBEBLH33nsDW+yCuonGGmPvFXvvJbaz78wuLuBd+IabrMkRGe+7c2bmzMwLAfCtUBqD
@@ -961,7 +961,7 @@
         ObnxNYg7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnPrintForecastedCommissions.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrintForecastedCommissions.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACYBJREFUWEfF
         Vnls0+cZRlqnStM2DXVdV86NUUo7yoBCoaUchXUcbZm2aZoEBToG2tRN/Dlp0zZpq9pBGQXUcoUkThyT
@@ -1007,7 +1007,7 @@
         ocbXgweNPfBH+S7wRtHOd8ITAL4awbz/AkuzM1wcPcBCAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnPrintPayableCommissions.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrintPayableCommissions.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACYBJREFUWEfF
         Vnls0+cZRlqnStM2DXVdV86NUUo7yoBCoaUchXUcbZm2aZoEBToG2tRN/Dlp0zZpq9pBGQXUcoUkThyT
@@ -1053,7 +1053,7 @@
         ocbXgweNPfBH+S7wRtHOd8ITAL4awbz/AkuzM1wcPcBCAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnManageCommissionPayments.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnManageCommissionPayments.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACMFJREFUWEfF
         lulTm9cVxvNX9H/ox7QzzUzbmWaaptOkWeyxszjUzmY3dXZjx00cx3GwHVw72ATbGLDZbTY7gGUQICEJ
@@ -1096,7 +1096,7 @@
         xwOkEP3S+NGHvxx47L+iRK89Dc4ldgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnMarkCommissionForecasted.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMarkCommissionForecasted.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -1137,7 +1137,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMarkCommissionPayable.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMarkCommissionPayable.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -1178,7 +1178,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMarkCommissionPaid.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMarkCommissionPaid.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -1219,7 +1219,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnPrintCommissionsByCustomer.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrintCommissionsByCustomer.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACYBJREFUWEfF
         Vnls0+cZRlqnStM2DXVdV86NUUo7yoBCoaUchXUcbZm2aZoEBToG2tRN/Dlp0zZpq9pBGQXUcoUkThyT
@@ -1266,9 +1266,9 @@
 </value>
   </data>
   <metadata name="bsCustomerSelector.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>147, 56</value>
+    <value>706, 60</value>
   </metadata>
-  <data name="eFetchSalesHistoryData.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="eFetchSalesHistoryData.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABAFJREFUWEfl
         VmdPYlEQ9Ueb2BBEBLH33nsDW+yCuonGGmPvFXvvJbaz78wuLuBd+IabrMkRGe+7c2bmzMwLAfCtUBqD
@@ -1291,7 +1291,7 @@
         ObnxNYg7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnExportSalesHistoryData.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnExportSalesHistoryData.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACMFJREFUWEfF
         lulTm9cVxvNX9H/ox7QzzUzbmWaaptOkWeyxszjUzmY3dXZjx00cx3GwHVw72ATbGLDZbTY7gGUQICEJ
@@ -1335,24 +1335,24 @@
 </value>
   </data>
   <metadata name="bsProducts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>606, 17</value>
+    <value>902, 17</value>
   </metadata>
   <metadata name="bsSalesPersonList3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1204, 56</value>
+    <value>393, 103</value>
   </metadata>
   <metadata name="bsSalesYears.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1495, 56</value>
+    <value>715, 103</value>
   </metadata>
   <metadata name="bsCustomerLookupList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
+    <value>858, 103</value>
   </metadata>
   <metadata name="RibbonLargeImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1044, 56</value>
+    <value>201, 103</value>
   </metadata>
   <assembly alias="DevExpress.Utils.v17.1" name="DevExpress.Utils.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="RibbonLargeImages.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v17.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYxNS4yLCBWZXJzaW9uPTE1LjIu
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYxNy4xLCBWZXJzaW9uPTE3LjEu
         NC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
         eXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRv
         a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
@@ -1792,16 +1792,40 @@
         AQEAAACCIP+vbkhAAAAAwLkaECAAAZ14SUMAAAAASUVORK5CYIIL
 </value>
   </data>
+  <metadata name="bsSalesperson.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>454, 17</value>
+  </metadata>
+  <metadata name="bsCustomerSelector.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>706, 60</value>
+  </metadata>
+  <metadata name="bsProducts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>902, 17</value>
+  </metadata>
+  <metadata name="bsSalesPersonList3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>393, 103</value>
+  </metadata>
+  <metadata name="bsSalesYears.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>715, 103</value>
+  </metadata>
+  <metadata name="bsCustomerLookupList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>858, 103</value>
+  </metadata>
   <metadata name="bsCommissions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>718, 17</value>
+    <value>1034, 17</value>
   </metadata>
   <metadata name="bsCustomers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>206, 17</value>
   </metadata>
   <metadata name="bsCustomerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>357, 17</value>
+    <value>607, 17</value>
   </metadata>
-  <data name="btnAddCommission.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <metadata name="bsCustomers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>206, 17</value>
+  </metadata>
+  <metadata name="bsCustomerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>607, 17</value>
+  </metadata>
+  <data name="btnAddCommission.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr/AAAK/wE0YpqCAAAFg0lE
@@ -1831,7 +1855,7 @@
         G3TRb39C36CTPvGd+TwO91UGbE6sfTN/7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditCommission.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditCommission.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABZ0lEQVQ4T5WSzUrDQBSFAz6KLyB05UsU
@@ -1843,7 +1867,7 @@
         aDQd+VF4VIQD4zcTbp3hiIADSYLfShggQ2M5WQdHN9oCy/oBL+Ol2Z/0/cMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteCommission.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteCommission.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABXklEQVQ4T2OgCngoYPb/oY7vfyiXdPBQ
@@ -1855,7 +1879,7 @@
         Shx5eXn/Z8+ejVUzDIC8BdIM8iJUiBLAwAAAAsEG8+pQgl8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAddCommissionPmt.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddCommissionPmt.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAAh0RVh0Q29tbWVudAD2zJa/AAAFg0lEQVRYR9WXiVNTVxSH+7f0X+joTKcznTq1
@@ -1885,7 +1909,7 @@
         7dzv/A1ioga7DrUkPwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnCommissionFilterPending.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCommissionFilterPending.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAEAUlEQVRYR+VWZ09iURD1R5vYEEQEsffe
@@ -1909,7 +1933,7 @@
         YII=
 </value>
   </data>
-  <data name="btnCommissionFilterPayable.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCommissionFilterPayable.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAEAUlEQVRYR+VWZ09iURD1R5vYEEQEsffe
@@ -1933,7 +1957,7 @@
         YII=
 </value>
   </data>
-  <data name="btnCommissionFilterPaid.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCommissionFilterPaid.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAEAUlEQVRYR+VWZ09iURD1R5vYEEQEsffe
@@ -1957,7 +1981,7 @@
         YII=
 </value>
   </data>
-  <data name="btnPrintCommForecast.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrintCommForecast.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAJgElEQVRYR8VWeWzT5xlGWqdK0zYNdV1X
@@ -2004,7 +2028,7 @@
         whMAvhrBvP8CS7MzXBw9wEIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnPrintCommPayable.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrintCommPayable.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAJgElEQVRYR8VWeWzT5xlGWqdK0zYNdV1X
@@ -2051,7 +2075,7 @@
         whMAvhrBvP8CS7MzXBw9wEIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnPrintPaidCommissionsRpt.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrintPaidCommissionsRpt.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAJgElEQVRYR8VWeWzT5xlGWqdK0zYNdV1X
@@ -2098,7 +2122,7 @@
         whMAvhrBvP8CS7MzXBw9wEIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMarkPayable.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMarkPayable.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -2139,7 +2163,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMarkPaid.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMarkPaid.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -2180,7 +2204,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMarkPending.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMarkPending.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACE1JREFUWEfF
         V1tTVNkVnr+Rx7zkIQ9J5T1VyUxZk5Q1eZgay8oM44AaBBExeEGcUUcdRvECCioNNt3QNAgiXmCUwagz
@@ -2221,7 +2245,7 @@
         M25YbfPL42dfccrV868G3vsPT543S4bdw1IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnPrintCommPmtRegister.LargeGlyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrintCommPmtRegister.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACYBJREFUWEfF
         Vnls0+cZRlqnStM2DXVdV86NUUo7yoBCoaUchXUcbZm2aZoEBToG2tRN/Dlp0zZpq9pBGQXUcoUkThyT
@@ -2268,61 +2292,64 @@
 </value>
   </data>
   <metadata name="bsAssignments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>854, 17</value>
+    <value>1196, 17</value>
   </metadata>
   <metadata name="bsSalesHistory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>551, 60</value>
   </metadata>
   <metadata name="bsPriceLists.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>492, 17</value>
+    <value>768, 17</value>
   </metadata>
   <metadata name="bsCarriers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>308, 56</value>
+    <value>899, 60</value>
   </metadata>
   <metadata name="bsBulkCarriers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>414, 56</value>
+    <value>1023, 60</value>
   </metadata>
   <metadata name="bsLogistics.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>543, 56</value>
+    <value>1176, 60</value>
   </metadata>
   <metadata name="bsSalesPersonList2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>890, 56</value>
+    <value>17, 103</value>
   </metadata>
   <metadata name="bsSalespersonList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>654, 56</value>
+    <value>1307, 60</value>
   </metadata>
   <metadata name="bsInvoices.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>987, 17</value>
+    <value>1355, 17</value>
+  </metadata>
+  <metadata name="bsSalesByCustomer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="bsSalesData.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1358, 56</value>
+    <value>577, 103</value>
   </metadata>
   <metadata name="bsInvoicePayments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1385, 17</value>
+    <value>365, 60</value>
   </metadata>
   <metadata name="bsCustomerPayments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1216, 17</value>
+    <value>161, 60</value>
   </metadata>
   <metadata name="bsShipments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1095, 17</value>
+    <value>17, 60</value>
   </metadata>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>139, 17</value>
+    <value>351, 17</value>
   </metadata>
   <metadata name="Timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>801, 56</value>
+    <value>1483, 60</value>
   </metadata>
   <metadata name="bsTrendsMonthly.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 95</value>
+    <value>1070, 103</value>
   </metadata>
   <metadata name="bsTrendsQuarterly.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>291, 95</value>
+    <value>1245, 103</value>
   </metadata>
   <metadata name="bsTrendsAnnually.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>428, 95</value>
+    <value>1427, 103</value>
   </metadata>
   <metadata name="Timer3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>576, 95</value>
+    <value>17, 146</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>120</value>

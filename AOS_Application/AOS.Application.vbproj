@@ -1190,6 +1190,12 @@
     <Compile Include="BusinessObjects\Custom\ViewRptWorkOrderItemFulfillmentPlanCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRptWorkOrderItemFulfillmentPlanQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRptWorkOrderQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewSalesByCustomerAnalysis.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewSalesByCustomerAnalysisCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewSalesByCustomerAnalysisQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewSalesPersonAnalysis.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewSalesPersonAnalysisCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewSalesPersonAnalysisQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewSalespersonCustomerDetailedData.vb" />
     <Compile Include="BusinessObjects\Custom\ViewSalespersonCustomerDetailedDataCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewSalespersonCustomerDetailedDataQuery.vb" />
@@ -1584,6 +1590,8 @@
     <Compile Include="BusinessObjects\Generated\ViewRptShippingHistory.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptTotalInventoryByProduct.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptWorkOrder.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewSalesByCustomerAnalysis.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewSalesPersonAnalysis.vb" />
     <Compile Include="BusinessObjects\Generated\ViewSalespersonCustomerDetailedData.vb" />
     <Compile Include="BusinessObjects\Generated\ViewSalesQtrlyTotalsInvoiceDateRestricted.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptWorkOrderFulfillmentPlan.vb" />

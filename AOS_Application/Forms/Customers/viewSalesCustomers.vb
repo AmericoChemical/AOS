@@ -2243,6 +2243,139 @@ Public Class viewSalesCustomers
 
     End Sub
 
+
+    Private Sub rbtnGetSalesAnalysisByCustomerData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnGetSalesAnalysisByCustomerData.ItemClick
+
+        gcSalesByCustomerAnalysis.BringToFront()
+
+        'If IsDBNull(rluSalesperson.EditValue) Or rluSalesperson.EditValue = Nothing Then
+        '    MsgBox("You must select a Salesperson first", MsgBoxStyle.Critical, "Error - Missing Data")
+        '    Exit Sub
+        'End If
+        If IsDBNull(rluSalesYear.EditValue) Or rluSalesYear.EditValue = Nothing Then
+            MsgBox("You must select a Sales Year first", MsgBoxStyle.Critical, "Error - Missing Data")
+            Exit Sub
+        End If
+        Dim colSalesRepName_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn = grvSalesByCustomerAnalysis.Columns.ColumnByName("colSalesRepName_SalesByCustomerAnalysis")
+        colSalesRepName_SalesByCustomerAnalysis.Visible = True
+
+        Dim colCustName_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn = grvSalesByCustomerAnalysis.Columns.ColumnByName("colCustName_SalesByCustomerAnalysis")
+        colCustName_SalesByCustomerAnalysis.Visible = True
+
+        Dim colCustId_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn = grvSalesByCustomerAnalysis.Columns.ColumnByName("colCustId_SalesByCustomerAnalysis")
+        colCustId_SalesByCustomerAnalysis.Visible = True
+
+        colSalesRepName_SalesByCustomerAnalysis.VisibleIndex = 3
+        colCustName_SalesByCustomerAnalysis.VisibleIndex = 2
+        colCustId_SalesByCustomerAnalysis.VisibleIndex = 1
+
+
+
+        Dim oSalesData As New ViewSalesByCustomerAnalysisCollection
+        oSalesData.Query.Where(oSalesData.Query.Year.Equal(rluSalesYear.EditValue))
+
+        If Not IsDBNull(rluSalesperson.EditValue) And rluSalesperson.EditValue <> Nothing Then
+            oSalesData.Query.Where(oSalesData.Query.SalesID1.Equal(rluSalesperson.EditValue))
+        End If
+
+        oSalesData.Query.Load()
+        oSalesData.Sort = "SalesName, CustName, Year"
+        bsSalesByCustomer.DataSource = oSalesData
+
+    End Sub
+
+    Private Sub rbtnExportSalesByCustomerAnalysisToExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportSalesByCustomerAnalysisToExcel.ItemClick
+
+
+        If bsSalesByCustomer.Count <= 0 Then
+            MsgBox("There is no data to export", MsgBoxStyle.Critical, "Error - No Data")
+            Exit Sub
+        End If
+        Dim vFilePath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\" & "SalesAnalysisByCustomer_"
+        'get SalespersonFullName from Salesperson table
+        If IsDBNull(rluSalesYear.EditValue) Or rluSalesYear.EditValue = Nothing Then
+            Dim oSalesperson As New Salesperson
+            If Not oSalesperson.LoadByPrimaryKey(rluSalesperson.EditValue) Then
+                MsgBox("Could not retrieve Sales Person Name from database", MsgBoxStyle.Critical, "Error - Missing Data")
+                Exit Sub
+            End If
+            Dim vSalesName As String = oSalesperson.Salespersonfirstname & oSalesperson.Salespersonlastname
+            vFilePath = vFilePath & vSalesName & "_"
+        End If
+
+
+        Dim vSalesYear As String = rluSalesYear.EditValue
+        vFilePath = vFilePath & vSalesYear & ".xlsx"
+
+        Try
+            grvSalesByCustomerAnalysis.ExportToXlsx(vFilePath)
+            MsgBox("You can find your Excel file at the following location: " & vFilePath, MsgBoxStyle.Information, "Success")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        ' Show the result.
+        StartProcess(vFilePath)
+
+
+    End Sub
+
+    Private Sub rbtnGetSalesPersonAnalysis_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnGetSalesPersonAnalysis.ItemClick
+
+        gcSalesByCustomerAnalysis.BringToFront()
+
+        'If IsDBNull(rluSalesperson.EditValue) Or rluSalesperson.EditValue = Nothing Then
+        '    MsgBox("You must select a Salesperson first", MsgBoxStyle.Critical, "Error - Missing Data")
+        '    Exit Sub
+        'End If
+        If IsDBNull(rluSalesYear.EditValue) Or rluSalesYear.EditValue = Nothing Then
+            MsgBox("You must select a Sales Year first", MsgBoxStyle.Critical, "Error - Missing Data")
+            Exit Sub
+        End If
+
+        Dim colCustId_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn = grvSalesByCustomerAnalysis.Columns.ColumnByName("colCustId_SalesByCustomerAnalysis")
+        colCustId_SalesByCustomerAnalysis.Visible = False
+
+        Dim colCustName_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn = grvSalesByCustomerAnalysis.Columns.ColumnByName("colCustName_SalesByCustomerAnalysis")
+        colCustName_SalesByCustomerAnalysis.Visible = False
+
+        Dim colSalesRepName_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn = grvSalesByCustomerAnalysis.Columns.ColumnByName("colSalesRepName_SalesByCustomerAnalysis")
+        colSalesRepName_SalesByCustomerAnalysis.Visible = False
+
+
+        Dim oSalesData As New ViewSalesPersonAnalysisCollection
+        oSalesData.Query.Where(oSalesData.Query.Year.Equal(rluSalesYear.EditValue))
+
+        oSalesData.Query.Load()
+        oSalesData.Sort = "SalesName,  Year"
+        bsSalesByCustomer.DataSource = oSalesData
+
+    End Sub
+
+    Private Sub rbtnExportSalesPersonAnalysisToExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportSalesPersonAnalysisToExcel.ItemClick
+        If bsSalesByCustomer.Count <= 0 Then
+            MsgBox("There is no data to export", MsgBoxStyle.Critical, "Error - No Data")
+            Exit Sub
+        End If
+        Dim vFilePath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\" & "SalesPersonAnalysis"
+
+
+        Dim vSalesYear As String = rluSalesYear.EditValue
+        vFilePath = vFilePath & vSalesYear & ".xlsx"
+
+        Try
+            grvSalesByCustomerAnalysis.ExportToXlsx(vFilePath)
+            MsgBox("You can find your Excel file at the following location: " & vFilePath, MsgBoxStyle.Information, "Success")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        ' Show the result.
+        StartProcess(vFilePath)
+
+    End Sub
+
+
     Private Sub rbtnCompileTrendData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnCompileTrendData.ItemClick
 
         gcCustomerAnalysis.BringToFront()
@@ -2524,6 +2657,12 @@ Public Class viewSalesCustomers
             rpt.ShowPreview()
         End If
     End Sub
+
+
+
+
+
+
 
 
 #End Region

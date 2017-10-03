@@ -146,6 +146,10 @@ Partial Class viewSalesCustomers
         Me.rbtnViewPrintSDSDocument = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnFilterSalesACTIVE = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnFilterSalesINACTIVE = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnGetSalesAnalysisByCustomerData = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnExportSalesByCustomerAnalysisToExcel = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnGetSalesPersonAnalysis = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnExportSalesPersonAnalysisToExcel = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -396,6 +400,50 @@ Partial Class viewSalesCustomers
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPanelControl9 = New DevExpress.XtraEditors.PanelControl()
+        Me.gcSalesByCustomerAnalysis = New DevExpress.XtraEditors.GroupControl()
+        Me.grcSalesByCustomerAnalysis = New DevExpress.XtraGrid.GridControl()
+        Me.bsSalesByCustomer = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvSalesByCustomerAnalysis = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colSalesName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCustId_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCustName_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colSalesRepName_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colYear_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colJAN_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFEB_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colMAR_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQtr1_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colAPR_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colMAY_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colJUN_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQtr2_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colJUL_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colAUG_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colSEP_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQtr3_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOCT_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colNOV_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDEC_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQtr4_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colYTD_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevYear_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevJAN_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevFEB_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevMAR_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevQtr1_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevAPR_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevMAY_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevJUN_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevQtr2_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevJUL_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevAUG_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevSEP_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevQtr3_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevOCT_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevNOV_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevDEC_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevQtr4_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrevTotal_SalesByCustomerAnalysis = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.gcSalesAnalysis = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
         Me.bsSalesData = New System.Windows.Forms.BindingSource(Me.components)
@@ -645,6 +693,11 @@ Partial Class viewSalesCustomers
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl9.SuspendLayout()
+        CType(Me.gcSalesByCustomerAnalysis, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gcSalesByCustomerAnalysis.SuspendLayout()
+        CType(Me.grcSalesByCustomerAnalysis, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsSalesByCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvSalesByCustomerAnalysis, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcSalesAnalysis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gcSalesAnalysis.SuspendLayout()
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -690,7 +743,7 @@ Partial Class viewSalesCustomers
         CustidLabel.AutoSize = True
         CustidLabel.Location = New System.Drawing.Point(9, 26)
         CustidLabel.Name = "CustidLabel"
-        CustidLabel.Size = New System.Drawing.Size(43, 13)
+        CustidLabel.Size = New System.Drawing.Size(47, 14)
         CustidLabel.TabIndex = 0
         CustidLabel.Text = "Cust ID"
         '
@@ -699,7 +752,7 @@ Partial Class viewSalesCustomers
         CustnameLabel.AutoSize = True
         CustnameLabel.Location = New System.Drawing.Point(9, 52)
         CustnameLabel.Name = "CustnameLabel"
-        CustnameLabel.Size = New System.Drawing.Size(52, 13)
+        CustnameLabel.Size = New System.Drawing.Size(57, 14)
         CustnameLabel.TabIndex = 2
         CustnameLabel.Text = "Company"
         '
@@ -708,7 +761,7 @@ Partial Class viewSalesCustomers
         Custshipaddress1Label.AutoSize = True
         Custshipaddress1Label.Location = New System.Drawing.Point(9, 27)
         Custshipaddress1Label.Name = "Custshipaddress1Label"
-        Custshipaddress1Label.Size = New System.Drawing.Size(55, 13)
+        Custshipaddress1Label.Size = New System.Drawing.Size(61, 14)
         Custshipaddress1Label.TabIndex = 4
         Custshipaddress1Label.Text = "Address 1"
         '
@@ -717,7 +770,7 @@ Partial Class viewSalesCustomers
         Custshipaddress2Label.AutoSize = True
         Custshipaddress2Label.Location = New System.Drawing.Point(9, 53)
         Custshipaddress2Label.Name = "Custshipaddress2Label"
-        Custshipaddress2Label.Size = New System.Drawing.Size(55, 13)
+        Custshipaddress2Label.Size = New System.Drawing.Size(61, 14)
         Custshipaddress2Label.TabIndex = 6
         Custshipaddress2Label.Text = "Address 2"
         '
@@ -726,7 +779,7 @@ Partial Class viewSalesCustomers
         CustshipcityLabel.AutoSize = True
         CustshipcityLabel.Location = New System.Drawing.Point(9, 79)
         CustshipcityLabel.Name = "CustshipcityLabel"
-        CustshipcityLabel.Size = New System.Drawing.Size(58, 13)
+        CustshipcityLabel.Size = New System.Drawing.Size(66, 14)
         CustshipcityLabel.TabIndex = 8
         CustshipcityLabel.Text = "City ST Zip"
         '
@@ -735,7 +788,7 @@ Partial Class viewSalesCustomers
         CustshipstateprovLabel.AutoSize = True
         CustshipstateprovLabel.Location = New System.Drawing.Point(9, 105)
         CustshipstateprovLabel.Name = "CustshipstateprovLabel"
-        CustshipstateprovLabel.Size = New System.Drawing.Size(46, 13)
+        CustshipstateprovLabel.Size = New System.Drawing.Size(50, 14)
         CustshipstateprovLabel.TabIndex = 10
         CustshipstateprovLabel.Text = "Country"
         '
@@ -744,7 +797,7 @@ Partial Class viewSalesCustomers
         CustshippostalcodeLabel.AutoSize = True
         CustshippostalcodeLabel.Location = New System.Drawing.Point(9, 132)
         CustshippostalcodeLabel.Name = "CustshippostalcodeLabel"
-        CustshippostalcodeLabel.Size = New System.Drawing.Size(45, 13)
+        CustshippostalcodeLabel.Size = New System.Drawing.Size(50, 14)
         CustshippostalcodeLabel.TabIndex = 12
         CustshippostalcodeLabel.Text = "Contact"
         '
@@ -753,7 +806,7 @@ Partial Class viewSalesCustomers
         Custbilladdress1Label.AutoSize = True
         Custbilladdress1Label.Location = New System.Drawing.Point(9, 27)
         Custbilladdress1Label.Name = "Custbilladdress1Label"
-        Custbilladdress1Label.Size = New System.Drawing.Size(55, 13)
+        Custbilladdress1Label.Size = New System.Drawing.Size(61, 14)
         Custbilladdress1Label.TabIndex = 18
         Custbilladdress1Label.Text = "Address 1"
         '
@@ -762,7 +815,7 @@ Partial Class viewSalesCustomers
         Custbilladdress2Label.AutoSize = True
         Custbilladdress2Label.Location = New System.Drawing.Point(10, 53)
         Custbilladdress2Label.Name = "Custbilladdress2Label"
-        Custbilladdress2Label.Size = New System.Drawing.Size(55, 13)
+        Custbilladdress2Label.Size = New System.Drawing.Size(61, 14)
         Custbilladdress2Label.TabIndex = 20
         Custbilladdress2Label.Text = "Address 2"
         '
@@ -771,7 +824,7 @@ Partial Class viewSalesCustomers
         CustbillcityLabel.AutoSize = True
         CustbillcityLabel.Location = New System.Drawing.Point(10, 79)
         CustbillcityLabel.Name = "CustbillcityLabel"
-        CustbillcityLabel.Size = New System.Drawing.Size(58, 13)
+        CustbillcityLabel.Size = New System.Drawing.Size(66, 14)
         CustbillcityLabel.TabIndex = 22
         CustbillcityLabel.Text = "City ST Zip"
         '
@@ -780,7 +833,7 @@ Partial Class viewSalesCustomers
         CustbillstateprovLabel.AutoSize = True
         CustbillstateprovLabel.Location = New System.Drawing.Point(9, 105)
         CustbillstateprovLabel.Name = "CustbillstateprovLabel"
-        CustbillstateprovLabel.Size = New System.Drawing.Size(46, 13)
+        CustbillstateprovLabel.Size = New System.Drawing.Size(50, 14)
         CustbillstateprovLabel.TabIndex = 24
         CustbillstateprovLabel.Text = "Country"
         '
@@ -789,7 +842,7 @@ Partial Class viewSalesCustomers
         CustbillpostalcodeLabel.AutoSize = True
         CustbillpostalcodeLabel.Location = New System.Drawing.Point(10, 132)
         CustbillpostalcodeLabel.Name = "CustbillpostalcodeLabel"
-        CustbillpostalcodeLabel.Size = New System.Drawing.Size(45, 13)
+        CustbillpostalcodeLabel.Size = New System.Drawing.Size(50, 14)
         CustbillpostalcodeLabel.TabIndex = 26
         CustbillpostalcodeLabel.Text = "Contact"
         '
@@ -798,7 +851,7 @@ Partial Class viewSalesCustomers
         CustphoneLabel.AutoSize = True
         CustphoneLabel.Location = New System.Drawing.Point(9, 27)
         CustphoneLabel.Name = "CustphoneLabel"
-        CustphoneLabel.Size = New System.Drawing.Size(53, 13)
+        CustphoneLabel.Size = New System.Drawing.Size(61, 14)
         CustphoneLabel.TabIndex = 32
         CustphoneLabel.Text = "Phone No"
         '
@@ -807,7 +860,7 @@ Partial Class viewSalesCustomers
         CustfaxLabel.AutoSize = True
         CustfaxLabel.Location = New System.Drawing.Point(222, 27)
         CustfaxLabel.Name = "CustfaxLabel"
-        CustfaxLabel.Size = New System.Drawing.Size(26, 13)
+        CustfaxLabel.Size = New System.Drawing.Size(28, 14)
         CustfaxLabel.TabIndex = 34
         CustfaxLabel.Text = "FAX"
         '
@@ -816,7 +869,7 @@ Partial Class viewSalesCustomers
         IsactiveLabel.AutoSize = True
         IsactiveLabel.Location = New System.Drawing.Point(678, 3)
         IsactiveLabel.Name = "IsactiveLabel"
-        IsactiveLabel.Size = New System.Drawing.Size(37, 13)
+        IsactiveLabel.Size = New System.Drawing.Size(41, 14)
         IsactiveLabel.TabIndex = 43
         IsactiveLabel.Text = "Active"
         '
@@ -825,7 +878,7 @@ Partial Class viewSalesCustomers
         CarrieridLabel.AutoSize = True
         CarrieridLabel.Location = New System.Drawing.Point(7, 107)
         CarrieridLabel.Name = "CarrieridLabel"
-        CarrieridLabel.Size = New System.Drawing.Size(69, 13)
+        CarrieridLabel.Size = New System.Drawing.Size(76, 14)
         CarrieridLabel.TabIndex = 42
         CarrieridLabel.Text = "Truck Carrier"
         '
@@ -834,7 +887,7 @@ Partial Class viewSalesCustomers
         LogisticsidLabel.AutoSize = True
         LogisticsidLabel.Location = New System.Drawing.Point(9, 53)
         LogisticsidLabel.Name = "LogisticsidLabel"
-        LogisticsidLabel.Size = New System.Drawing.Size(47, 13)
+        LogisticsidLabel.Size = New System.Drawing.Size(52, 14)
         LogisticsidLabel.TabIndex = 43
         LogisticsidLabel.Text = "Logistics"
         '
@@ -843,7 +896,7 @@ Partial Class viewSalesCustomers
         BulkcarrieridLabel.AutoSize = True
         BulkcarrieridLabel.Location = New System.Drawing.Point(9, 133)
         BulkcarrieridLabel.Name = "BulkcarrieridLabel"
-        BulkcarrieridLabel.Size = New System.Drawing.Size(62, 13)
+        BulkcarrieridLabel.Size = New System.Drawing.Size(67, 14)
         BulkcarrieridLabel.TabIndex = 44
         BulkcarrieridLabel.Text = "Bulk Carrier"
         '
@@ -852,7 +905,7 @@ Partial Class viewSalesCustomers
         FobLabel.AutoSize = True
         FobLabel.Location = New System.Drawing.Point(9, 27)
         FobLabel.Name = "FobLabel"
-        FobLabel.Size = New System.Drawing.Size(67, 13)
+        FobLabel.Size = New System.Drawing.Size(74, 14)
         FobLabel.TabIndex = 45
         FobLabel.Text = "Freight Chrg"
         '
@@ -861,7 +914,7 @@ Partial Class viewSalesCustomers
         CustnotesLabel.AutoSize = True
         CustnotesLabel.Location = New System.Drawing.Point(9, 27)
         CustnotesLabel.Name = "CustnotesLabel"
-        CustnotesLabel.Size = New System.Drawing.Size(44, 13)
+        CustnotesLabel.Size = New System.Drawing.Size(48, 14)
         CustnotesLabel.TabIndex = 0
         CustnotesLabel.Text = "General"
         '
@@ -870,7 +923,7 @@ Partial Class viewSalesCustomers
         SalespersonidLabel.AutoSize = True
         SalespersonidLabel.Location = New System.Drawing.Point(516, 26)
         SalespersonidLabel.Name = "SalespersonidLabel"
-        SalespersonidLabel.Size = New System.Drawing.Size(71, 13)
+        SalespersonidLabel.Size = New System.Drawing.Size(77, 14)
         SalespersonidLabel.TabIndex = 48
         SalespersonidLabel.Text = "Primary Sales"
         '
@@ -879,7 +932,7 @@ Partial Class viewSalesCustomers
         FreightbillcustomerLabel.AutoSize = True
         FreightbillcustomerLabel.Location = New System.Drawing.Point(84, 81)
         FreightbillcustomerLabel.Name = "FreightbillcustomerLabel"
-        FreightbillcustomerLabel.Size = New System.Drawing.Size(80, 13)
+        FreightbillcustomerLabel.Size = New System.Drawing.Size(90, 14)
         FreightbillcustomerLabel.TabIndex = 46
         FreightbillcustomerLabel.Text = "Customer Billed"
         '
@@ -888,7 +941,7 @@ Partial Class viewSalesCustomers
         FreightoninvoiceLabel.AutoSize = True
         FreightoninvoiceLabel.Location = New System.Drawing.Point(229, 81)
         FreightoninvoiceLabel.Name = "FreightoninvoiceLabel"
-        FreightoninvoiceLabel.Size = New System.Drawing.Size(94, 13)
+        FreightoninvoiceLabel.Size = New System.Drawing.Size(106, 14)
         FreightoninvoiceLabel.TabIndex = 47
         FreightoninvoiceLabel.Text = "Freight on Invoice"
         '
@@ -897,7 +950,7 @@ Partial Class viewSalesCustomers
         CustemailLabel.AutoSize = True
         CustemailLabel.Location = New System.Drawing.Point(9, 53)
         CustemailLabel.Name = "CustemailLabel"
-        CustemailLabel.Size = New System.Drawing.Size(57, 13)
+        CustemailLabel.Size = New System.Drawing.Size(64, 14)
         CustemailLabel.TabIndex = 35
         CustemailLabel.Text = "Email Addr"
         '
@@ -906,7 +959,7 @@ Partial Class viewSalesCustomers
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(9, 107)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(63, 13)
+        Label1.Size = New System.Drawing.Size(71, 14)
         Label1.TabIndex = 53
         Label1.Text = "Work Order"
         '
@@ -915,7 +968,7 @@ Partial Class viewSalesCustomers
         Label2.AutoSize = True
         Label2.Location = New System.Drawing.Point(10, 194)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(51, 13)
+        Label2.Size = New System.Drawing.Size(59, 14)
         Label2.TabIndex = 54
         Label2.Text = "Shipment"
         '
@@ -924,7 +977,7 @@ Partial Class viewSalesCustomers
         Label3.AutoSize = True
         Label3.Location = New System.Drawing.Point(10, 246)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(42, 13)
+        Label3.Size = New System.Drawing.Size(46, 14)
         Label3.TabIndex = 55
         Label3.Text = "Invoice"
         '
@@ -933,7 +986,7 @@ Partial Class viewSalesCustomers
         Label4.AutoSize = True
         Label4.Location = New System.Drawing.Point(501, 48)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(86, 13)
+        Label4.Size = New System.Drawing.Size(95, 14)
         Label4.TabIndex = 50
         Label4.Text = "Secondary Sales"
         '
@@ -942,7 +995,7 @@ Partial Class viewSalesCustomers
         Label5.AutoSize = True
         Label5.Location = New System.Drawing.Point(576, 3)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(64, 13)
+        Label5.Size = New System.Drawing.Size(73, 14)
         Label5.TabIndex = 52
         Label5.Text = "Tax Exempt"
         '
@@ -951,7 +1004,7 @@ Partial Class viewSalesCustomers
         Label6.AutoSize = True
         Label6.Location = New System.Drawing.Point(462, 3)
         Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(69, 13)
+        Label6.Size = New System.Drawing.Size(78, 14)
         Label6.TabIndex = 54
         Label6.Text = "Consignment"
         '
@@ -1001,145 +1054,145 @@ Partial Class viewSalesCustomers
         Me.RibbonControl1.ApplicationCaption = "dsadsdsa"
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE, Me.rbtnGetSalesAnalysisByCustomerData, Me.rbtnExportSalesByCustomerAnalysisToExcel, Me.rbtnGetSalesPersonAnalysis, Me.rbtnExportSalesPersonAnalysisToExcel})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 124
+        Me.RibbonControl1.MaxItemId = 130
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage6, Me.RibbonPage4, Me.RibbonPage7, Me.RibbonPage5, Me.RibbonPage2, Me.RibbonPage10, Me.RibbonPage9})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit14, Me.RepositoryItemLookUpEdit15, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4, Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17, Me.RepositoryItemLookUpEdit18})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1482, 117)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1482, 142)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnAddCustomer
         '
         Me.btnAddCustomer.Caption = "Add New Customer"
-        Me.btnAddCustomer.Glyph = CType(resources.GetObject("btnAddCustomer.Glyph"), System.Drawing.Image)
         Me.btnAddCustomer.Id = 41
-        Me.btnAddCustomer.LargeImageIndex = 4
+        Me.btnAddCustomer.ImageOptions.Image = CType(resources.GetObject("btnAddCustomer.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddCustomer.ImageOptions.LargeImageIndex = 4
         Me.btnAddCustomer.Name = "btnAddCustomer"
         Me.btnAddCustomer.Tag = "3"
         '
         'btnEditCustomer
         '
         Me.btnEditCustomer.Caption = " Edit  Customer"
-        Me.btnEditCustomer.Glyph = CType(resources.GetObject("btnEditCustomer.Glyph"), System.Drawing.Image)
         Me.btnEditCustomer.Id = 42
-        Me.btnEditCustomer.LargeImageIndex = 5
+        Me.btnEditCustomer.ImageOptions.Image = CType(resources.GetObject("btnEditCustomer.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEditCustomer.ImageOptions.LargeImageIndex = 5
         Me.btnEditCustomer.Name = "btnEditCustomer"
         Me.btnEditCustomer.Tag = "4"
         '
         'btnDeleteCustomer
         '
         Me.btnDeleteCustomer.Caption = "Delete Customer"
-        Me.btnDeleteCustomer.Glyph = CType(resources.GetObject("btnDeleteCustomer.Glyph"), System.Drawing.Image)
         Me.btnDeleteCustomer.Id = 43
-        Me.btnDeleteCustomer.LargeImageIndex = 6
+        Me.btnDeleteCustomer.ImageOptions.Image = CType(resources.GetObject("btnDeleteCustomer.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDeleteCustomer.ImageOptions.LargeImageIndex = 6
         Me.btnDeleteCustomer.Name = "btnDeleteCustomer"
         Me.btnDeleteCustomer.Tag = "5"
         '
         'btnAddSalesperson
         '
         Me.btnAddSalesperson.Caption = "Add New Salesperson"
-        Me.btnAddSalesperson.Glyph = CType(resources.GetObject("btnAddSalesperson.Glyph"), System.Drawing.Image)
         Me.btnAddSalesperson.Id = 45
-        Me.btnAddSalesperson.LargeGlyph = CType(resources.GetObject("btnAddSalesperson.LargeGlyph"), System.Drawing.Image)
+        Me.btnAddSalesperson.ImageOptions.Image = CType(resources.GetObject("btnAddSalesperson.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddSalesperson.ImageOptions.LargeImage = CType(resources.GetObject("btnAddSalesperson.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAddSalesperson.Name = "btnAddSalesperson"
         Me.btnAddSalesperson.Tag = "85"
         '
         'btnEditSalesperson
         '
         Me.btnEditSalesperson.Caption = "Edit Salesperson"
-        Me.btnEditSalesperson.Glyph = CType(resources.GetObject("btnEditSalesperson.Glyph"), System.Drawing.Image)
         Me.btnEditSalesperson.Id = 46
+        Me.btnEditSalesperson.ImageOptions.Image = CType(resources.GetObject("btnEditSalesperson.ImageOptions.Image"), System.Drawing.Image)
         Me.btnEditSalesperson.Name = "btnEditSalesperson"
         Me.btnEditSalesperson.Tag = "86"
         '
         'btnDeleteSalesperson
         '
         Me.btnDeleteSalesperson.Caption = "Delete Salesperson"
-        Me.btnDeleteSalesperson.Glyph = CType(resources.GetObject("btnDeleteSalesperson.Glyph"), System.Drawing.Image)
         Me.btnDeleteSalesperson.Id = 47
+        Me.btnDeleteSalesperson.ImageOptions.Image = CType(resources.GetObject("btnDeleteSalesperson.ImageOptions.Image"), System.Drawing.Image)
         Me.btnDeleteSalesperson.Name = "btnDeleteSalesperson"
         Me.btnDeleteSalesperson.Tag = "87"
         '
         'btnAddPriceListItem
         '
         Me.btnAddPriceListItem.Caption = "Add Price List Item"
-        Me.btnAddPriceListItem.Glyph = CType(resources.GetObject("btnAddPriceListItem.Glyph"), System.Drawing.Image)
         Me.btnAddPriceListItem.Id = 48
-        Me.btnAddPriceListItem.LargeImageIndex = 18
+        Me.btnAddPriceListItem.ImageOptions.Image = CType(resources.GetObject("btnAddPriceListItem.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddPriceListItem.ImageOptions.LargeImageIndex = 18
         Me.btnAddPriceListItem.Name = "btnAddPriceListItem"
         Me.btnAddPriceListItem.Tag = "8"
         '
         'btnEditPriceListItem
         '
         Me.btnEditPriceListItem.Caption = "Edit Price List Item"
-        Me.btnEditPriceListItem.Glyph = CType(resources.GetObject("btnEditPriceListItem.Glyph"), System.Drawing.Image)
         Me.btnEditPriceListItem.Id = 49
-        Me.btnEditPriceListItem.LargeImageIndex = 19
+        Me.btnEditPriceListItem.ImageOptions.Image = CType(resources.GetObject("btnEditPriceListItem.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEditPriceListItem.ImageOptions.LargeImageIndex = 19
         Me.btnEditPriceListItem.Name = "btnEditPriceListItem"
         Me.btnEditPriceListItem.Tag = "9"
         '
         'btnDeletePriceListItem
         '
         Me.btnDeletePriceListItem.Caption = "Delete Price List Item"
-        Me.btnDeletePriceListItem.Glyph = CType(resources.GetObject("btnDeletePriceListItem.Glyph"), System.Drawing.Image)
         Me.btnDeletePriceListItem.Id = 50
-        Me.btnDeletePriceListItem.LargeImageIndex = 20
+        Me.btnDeletePriceListItem.ImageOptions.Image = CType(resources.GetObject("btnDeletePriceListItem.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDeletePriceListItem.ImageOptions.LargeImageIndex = 20
         Me.btnDeletePriceListItem.Name = "btnDeletePriceListItem"
         Me.btnDeletePriceListItem.Tag = "10"
         '
         'btnAddAssignment
         '
         Me.btnAddAssignment.Caption = "Add Customer Assignment"
-        Me.btnAddAssignment.Glyph = CType(resources.GetObject("btnAddAssignment.Glyph"), System.Drawing.Image)
         Me.btnAddAssignment.Id = 51
-        Me.btnAddAssignment.LargeGlyph = CType(resources.GetObject("btnAddAssignment.LargeGlyph"), System.Drawing.Image)
+        Me.btnAddAssignment.ImageOptions.Image = CType(resources.GetObject("btnAddAssignment.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddAssignment.ImageOptions.LargeImage = CType(resources.GetObject("btnAddAssignment.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAddAssignment.Name = "btnAddAssignment"
         Me.btnAddAssignment.Tag = "88"
         '
         'btnEditAssignment
         '
         Me.btnEditAssignment.Caption = "Edit Customer Assignment"
-        Me.btnEditAssignment.Glyph = CType(resources.GetObject("btnEditAssignment.Glyph"), System.Drawing.Image)
         Me.btnEditAssignment.Id = 52
+        Me.btnEditAssignment.ImageOptions.Image = CType(resources.GetObject("btnEditAssignment.ImageOptions.Image"), System.Drawing.Image)
         Me.btnEditAssignment.Name = "btnEditAssignment"
         Me.btnEditAssignment.Tag = "89"
         '
         'btnDeleteAssignment
         '
         Me.btnDeleteAssignment.Caption = "Delete Customer Assigment"
-        Me.btnDeleteAssignment.Glyph = CType(resources.GetObject("btnDeleteAssignment.Glyph"), System.Drawing.Image)
         Me.btnDeleteAssignment.Id = 53
+        Me.btnDeleteAssignment.ImageOptions.Image = CType(resources.GetObject("btnDeleteAssignment.ImageOptions.Image"), System.Drawing.Image)
         Me.btnDeleteAssignment.Name = "btnDeleteAssignment"
         Me.btnDeleteAssignment.Tag = "90"
         '
         'btnAddInvoice
         '
         Me.btnAddInvoice.Caption = "Add New Invoice"
-        Me.btnAddInvoice.Glyph = CType(resources.GetObject("btnAddInvoice.Glyph"), System.Drawing.Image)
         Me.btnAddInvoice.Id = 54
-        Me.btnAddInvoice.LargeImageIndex = 11
+        Me.btnAddInvoice.ImageOptions.Image = CType(resources.GetObject("btnAddInvoice.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAddInvoice.ImageOptions.LargeImageIndex = 11
         Me.btnAddInvoice.Name = "btnAddInvoice"
         Me.btnAddInvoice.Tag = "69"
         '
         'btnEditInvoice
         '
         Me.btnEditInvoice.Caption = " Edit  Invoice"
-        Me.btnEditInvoice.Glyph = CType(resources.GetObject("btnEditInvoice.Glyph"), System.Drawing.Image)
         Me.btnEditInvoice.Id = 55
-        Me.btnEditInvoice.LargeImageIndex = 12
+        Me.btnEditInvoice.ImageOptions.Image = CType(resources.GetObject("btnEditInvoice.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEditInvoice.ImageOptions.LargeImageIndex = 12
         Me.btnEditInvoice.Name = "btnEditInvoice"
         Me.btnEditInvoice.Tag = "70"
         '
         'btnDeleteInvoice
         '
         Me.btnDeleteInvoice.Caption = "Delete Invoice"
-        Me.btnDeleteInvoice.Glyph = CType(resources.GetObject("btnDeleteInvoice.Glyph"), System.Drawing.Image)
         Me.btnDeleteInvoice.Id = 56
-        Me.btnDeleteInvoice.LargeImageIndex = 13
+        Me.btnDeleteInvoice.ImageOptions.Image = CType(resources.GetObject("btnDeleteInvoice.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDeleteInvoice.ImageOptions.LargeImageIndex = 13
         Me.btnDeleteInvoice.Name = "btnDeleteInvoice"
         Me.btnDeleteInvoice.Tag = "71"
         '
@@ -1147,7 +1200,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnRefreshCompleteShipments.Caption = "Refresh Complete Shipments"
         Me.btnRefreshCompleteShipments.Id = 57
-        Me.btnRefreshCompleteShipments.LargeGlyph = CType(resources.GetObject("btnRefreshCompleteShipments.LargeGlyph"), System.Drawing.Image)
+        Me.btnRefreshCompleteShipments.ImageOptions.LargeImage = CType(resources.GetObject("btnRefreshCompleteShipments.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnRefreshCompleteShipments.Name = "btnRefreshCompleteShipments"
         Me.btnRefreshCompleteShipments.Tag = "66"
         '
@@ -1155,7 +1208,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnCreateInvoice.Caption = "Create Invoice from Shipment"
         Me.btnCreateInvoice.Id = 58
-        Me.btnCreateInvoice.LargeGlyph = CType(resources.GetObject("btnCreateInvoice.LargeGlyph"), System.Drawing.Image)
+        Me.btnCreateInvoice.ImageOptions.LargeImage = CType(resources.GetObject("btnCreateInvoice.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnCreateInvoice.Name = "btnCreateInvoice"
         Me.btnCreateInvoice.Tag = "67"
         '
@@ -1163,7 +1216,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnFilterPending.Caption = "Pending"
         Me.btnFilterPending.Id = 59
-        Me.btnFilterPending.LargeImageIndex = 42
+        Me.btnFilterPending.ImageOptions.LargeImageIndex = 42
         Me.btnFilterPending.Name = "btnFilterPending"
         Me.btnFilterPending.Tag = "74"
         '
@@ -1171,7 +1224,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnFilterReceivable.Caption = "Receivable"
         Me.btnFilterReceivable.Id = 60
-        Me.btnFilterReceivable.LargeImageIndex = 42
+        Me.btnFilterReceivable.ImageOptions.LargeImageIndex = 42
         Me.btnFilterReceivable.Name = "btnFilterReceivable"
         Me.btnFilterReceivable.Tag = "75"
         '
@@ -1179,7 +1232,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnFilterPaid.Caption = "Paid"
         Me.btnFilterPaid.Id = 61
-        Me.btnFilterPaid.LargeImageIndex = 42
+        Me.btnFilterPaid.ImageOptions.LargeImageIndex = 42
         Me.btnFilterPaid.Name = "btnFilterPaid"
         Me.btnFilterPaid.Tag = "76"
         '
@@ -1187,16 +1240,16 @@ Partial Class viewSalesCustomers
         '
         Me.btnFilterVoid.Caption = "Void"
         Me.btnFilterVoid.Id = 62
-        Me.btnFilterVoid.LargeImageIndex = 42
+        Me.btnFilterVoid.ImageOptions.LargeImageIndex = 42
         Me.btnFilterVoid.Name = "btnFilterVoid"
         Me.btnFilterVoid.Tag = "77"
         '
         'btnFilterAll
         '
         Me.btnFilterAll.Caption = "All"
-        Me.btnFilterAll.Glyph = CType(resources.GetObject("btnFilterAll.Glyph"), System.Drawing.Image)
         Me.btnFilterAll.Id = 63
-        Me.btnFilterAll.LargeImageIndex = 42
+        Me.btnFilterAll.ImageOptions.Image = CType(resources.GetObject("btnFilterAll.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnFilterAll.ImageOptions.LargeImageIndex = 42
         Me.btnFilterAll.Name = "btnFilterAll"
         Me.btnFilterAll.Tag = "78"
         '
@@ -1204,7 +1257,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintInvoice.Caption = "Print Invoice"
         Me.btnPrintInvoice.Id = 64
-        Me.btnPrintInvoice.LargeImageIndex = 14
+        Me.btnPrintInvoice.ImageOptions.LargeImageIndex = 14
         Me.btnPrintInvoice.Name = "btnPrintInvoice"
         Me.btnPrintInvoice.Tag = "79"
         '
@@ -1212,7 +1265,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintPriceList.Caption = "Price List"
         Me.btnPrintPriceList.Id = 65
-        Me.btnPrintPriceList.LargeImageIndex = 28
+        Me.btnPrintPriceList.ImageOptions.LargeImageIndex = 28
         Me.btnPrintPriceList.Name = "btnPrintPriceList"
         Me.btnPrintPriceList.Tag = "11"
         '
@@ -1220,7 +1273,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnCloseShipment.Caption = "Close Shipment (No Invoice)"
         Me.btnCloseShipment.Id = 66
-        Me.btnCloseShipment.LargeGlyph = CType(resources.GetObject("btnCloseShipment.LargeGlyph"), System.Drawing.Image)
+        Me.btnCloseShipment.ImageOptions.LargeImage = CType(resources.GetObject("btnCloseShipment.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnCloseShipment.Name = "btnCloseShipment"
         Me.btnCloseShipment.Tag = "68"
         '
@@ -1228,7 +1281,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnConvertWorkOrderToInvoice.Caption = "Direct Work Order Invoice"
         Me.btnConvertWorkOrderToInvoice.Id = 67
-        Me.btnConvertWorkOrderToInvoice.LargeImageIndex = 16
+        Me.btnConvertWorkOrderToInvoice.ImageOptions.LargeImageIndex = 16
         Me.btnConvertWorkOrderToInvoice.Name = "btnConvertWorkOrderToInvoice"
         Me.btnConvertWorkOrderToInvoice.Tag = "72"
         '
@@ -1236,7 +1289,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnTransferInvoicesToQuickbooks.Caption = "Transfer to Quickbooks"
         Me.btnTransferInvoicesToQuickbooks.Id = 69
-        Me.btnTransferInvoicesToQuickbooks.LargeGlyph = CType(resources.GetObject("btnTransferInvoicesToQuickbooks.LargeGlyph"), System.Drawing.Image)
+        Me.btnTransferInvoicesToQuickbooks.ImageOptions.LargeImage = CType(resources.GetObject("btnTransferInvoicesToQuickbooks.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnTransferInvoicesToQuickbooks.Name = "btnTransferInvoicesToQuickbooks"
         Me.btnTransferInvoicesToQuickbooks.Tag = "73"
         Me.btnTransferInvoicesToQuickbooks.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -1245,7 +1298,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintCustomerPaymentHistory.Caption = "Payment History"
         Me.btnPrintCustomerPaymentHistory.Id = 70
-        Me.btnPrintCustomerPaymentHistory.LargeImageIndex = 15
+        Me.btnPrintCustomerPaymentHistory.ImageOptions.LargeImageIndex = 15
         Me.btnPrintCustomerPaymentHistory.Name = "btnPrintCustomerPaymentHistory"
         Me.btnPrintCustomerPaymentHistory.Tag = "80"
         '
@@ -1253,25 +1306,25 @@ Partial Class viewSalesCustomers
         '
         Me.btnAddCustomerPayment.Caption = " New  Payment"
         Me.btnAddCustomerPayment.Id = 71
-        Me.btnAddCustomerPayment.LargeImageIndex = 31
+        Me.btnAddCustomerPayment.ImageOptions.LargeImageIndex = 31
         Me.btnAddCustomerPayment.Name = "btnAddCustomerPayment"
         Me.btnAddCustomerPayment.Tag = "81"
         '
         'btnEditCustomerPayment
         '
         Me.btnEditCustomerPayment.Caption = " Edit  Payment"
-        Me.btnEditCustomerPayment.Glyph = CType(resources.GetObject("btnEditCustomerPayment.Glyph"), System.Drawing.Image)
         Me.btnEditCustomerPayment.Id = 72
-        Me.btnEditCustomerPayment.LargeImageIndex = 32
+        Me.btnEditCustomerPayment.ImageOptions.Image = CType(resources.GetObject("btnEditCustomerPayment.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEditCustomerPayment.ImageOptions.LargeImageIndex = 32
         Me.btnEditCustomerPayment.Name = "btnEditCustomerPayment"
         Me.btnEditCustomerPayment.Tag = "82"
         '
         'btnDeleteCustomerPayment
         '
         Me.btnDeleteCustomerPayment.Caption = "Delete Payment"
-        Me.btnDeleteCustomerPayment.Glyph = CType(resources.GetObject("btnDeleteCustomerPayment.Glyph"), System.Drawing.Image)
         Me.btnDeleteCustomerPayment.Id = 73
-        Me.btnDeleteCustomerPayment.LargeImageIndex = 33
+        Me.btnDeleteCustomerPayment.ImageOptions.Image = CType(resources.GetObject("btnDeleteCustomerPayment.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDeleteCustomerPayment.ImageOptions.LargeImageIndex = 33
         Me.btnDeleteCustomerPayment.Name = "btnDeleteCustomerPayment"
         Me.btnDeleteCustomerPayment.Tag = "83"
         '
@@ -1279,7 +1332,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintCustomerPmtByDate.Caption = "Payments Info By Date"
         Me.btnPrintCustomerPmtByDate.Id = 74
-        Me.btnPrintCustomerPmtByDate.LargeImageIndex = 29
+        Me.btnPrintCustomerPmtByDate.ImageOptions.LargeImageIndex = 29
         Me.btnPrintCustomerPmtByDate.Name = "btnPrintCustomerPmtByDate"
         Me.btnPrintCustomerPmtByDate.Tag = "84"
         '
@@ -1287,15 +1340,15 @@ Partial Class viewSalesCustomers
         '
         Me.btnManageCustomerAssignments.Caption = "Commission Rates"
         Me.btnManageCustomerAssignments.Id = 78
-        Me.btnManageCustomerAssignments.LargeGlyph = CType(resources.GetObject("btnManageCustomerAssignments.LargeGlyph"), System.Drawing.Image)
+        Me.btnManageCustomerAssignments.ImageOptions.LargeImage = CType(resources.GetObject("btnManageCustomerAssignments.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnManageCustomerAssignments.Name = "btnManageCustomerAssignments"
         Me.btnManageCustomerAssignments.Tag = "102"
         '
         'btnManageSalespersonData
         '
         Me.btnManageSalespersonData.Caption = "Staff Management"
-        Me.btnManageSalespersonData.Glyph = CType(resources.GetObject("btnManageSalespersonData.Glyph"), System.Drawing.Image)
         Me.btnManageSalespersonData.Id = 79
+        Me.btnManageSalespersonData.ImageOptions.Image = CType(resources.GetObject("btnManageSalespersonData.ImageOptions.Image"), System.Drawing.Image)
         Me.btnManageSalespersonData.Name = "btnManageSalespersonData"
         Me.btnManageSalespersonData.Tag = "108"
         '
@@ -1326,7 +1379,6 @@ Partial Class viewSalesCustomers
         Me.BarStaticItem1.Caption = "Select a Salesperson:"
         Me.BarStaticItem1.Id = 82
         Me.BarStaticItem1.Name = "BarStaticItem1"
-        Me.BarStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'BarStaticItem2
         '
@@ -1335,29 +1387,28 @@ Partial Class viewSalesCustomers
         Me.BarStaticItem2.ItemAppearance.Normal.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Italic)
         Me.BarStaticItem2.ItemAppearance.Normal.Options.UseFont = True
         Me.BarStaticItem2.Name = "BarStaticItem2"
-        Me.BarStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'btnAddCommissionRec
         '
         Me.btnAddCommissionRec.Caption = "Add Commission"
-        Me.btnAddCommissionRec.Glyph = CType(resources.GetObject("btnAddCommissionRec.Glyph"), System.Drawing.Image)
         Me.btnAddCommissionRec.Id = 84
+        Me.btnAddCommissionRec.ImageOptions.Image = CType(resources.GetObject("btnAddCommissionRec.ImageOptions.Image"), System.Drawing.Image)
         Me.btnAddCommissionRec.Name = "btnAddCommissionRec"
         Me.btnAddCommissionRec.Tag = "93"
         '
         'btnEditCommissionRec
         '
         Me.btnEditCommissionRec.Caption = "Edit Commission"
-        Me.btnEditCommissionRec.Glyph = CType(resources.GetObject("btnEditCommissionRec.Glyph"), System.Drawing.Image)
         Me.btnEditCommissionRec.Id = 85
+        Me.btnEditCommissionRec.ImageOptions.Image = CType(resources.GetObject("btnEditCommissionRec.ImageOptions.Image"), System.Drawing.Image)
         Me.btnEditCommissionRec.Name = "btnEditCommissionRec"
         Me.btnEditCommissionRec.Tag = "94"
         '
         'btnDeleteCommissionRec
         '
         Me.btnDeleteCommissionRec.Caption = "Delete Commission"
-        Me.btnDeleteCommissionRec.Glyph = CType(resources.GetObject("btnDeleteCommissionRec.Glyph"), System.Drawing.Image)
         Me.btnDeleteCommissionRec.Id = 86
+        Me.btnDeleteCommissionRec.ImageOptions.Image = CType(resources.GetObject("btnDeleteCommissionRec.ImageOptions.Image"), System.Drawing.Image)
         Me.btnDeleteCommissionRec.Name = "btnDeleteCommissionRec"
         Me.btnDeleteCommissionRec.Tag = "95"
         '
@@ -1365,7 +1416,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnFetchForecastedCommissions.Caption = "Pending"
         Me.btnFetchForecastedCommissions.Id = 87
-        Me.btnFetchForecastedCommissions.LargeGlyph = CType(resources.GetObject("btnFetchForecastedCommissions.LargeGlyph"), System.Drawing.Image)
+        Me.btnFetchForecastedCommissions.ImageOptions.LargeImage = CType(resources.GetObject("btnFetchForecastedCommissions.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnFetchForecastedCommissions.Name = "btnFetchForecastedCommissions"
         Me.btnFetchForecastedCommissions.Tag = "91"
         '
@@ -1373,7 +1424,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnFetchPayableCommissions.Caption = "Payable"
         Me.btnFetchPayableCommissions.Id = 88
-        Me.btnFetchPayableCommissions.LargeGlyph = CType(resources.GetObject("btnFetchPayableCommissions.LargeGlyph"), System.Drawing.Image)
+        Me.btnFetchPayableCommissions.ImageOptions.LargeImage = CType(resources.GetObject("btnFetchPayableCommissions.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnFetchPayableCommissions.Name = "btnFetchPayableCommissions"
         Me.btnFetchPayableCommissions.Tag = "92"
         '
@@ -1381,7 +1432,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintForecastedCommissions.Caption = "Pending Commissions"
         Me.btnPrintForecastedCommissions.Id = 89
-        Me.btnPrintForecastedCommissions.LargeGlyph = CType(resources.GetObject("btnPrintForecastedCommissions.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintForecastedCommissions.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintForecastedCommissions.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintForecastedCommissions.Name = "btnPrintForecastedCommissions"
         Me.btnPrintForecastedCommissions.Tag = "99"
         '
@@ -1389,7 +1440,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintPayableCommissions.Caption = "Payable Commissions"
         Me.btnPrintPayableCommissions.Id = 90
-        Me.btnPrintPayableCommissions.LargeGlyph = CType(resources.GetObject("btnPrintPayableCommissions.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintPayableCommissions.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintPayableCommissions.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintPayableCommissions.Name = "btnPrintPayableCommissions"
         Me.btnPrintPayableCommissions.Tag = "100"
         '
@@ -1397,31 +1448,31 @@ Partial Class viewSalesCustomers
         '
         Me.btnManageCommissionPayments.Caption = "Commission Payments"
         Me.btnManageCommissionPayments.Id = 91
-        Me.btnManageCommissionPayments.LargeGlyph = CType(resources.GetObject("btnManageCommissionPayments.LargeGlyph"), System.Drawing.Image)
+        Me.btnManageCommissionPayments.ImageOptions.LargeImage = CType(resources.GetObject("btnManageCommissionPayments.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnManageCommissionPayments.Name = "btnManageCommissionPayments"
         Me.btnManageCommissionPayments.Tag = "103"
         '
         'btnMarkCommissionForecasted
         '
         Me.btnMarkCommissionForecasted.Caption = "Mark Pending"
-        Me.btnMarkCommissionForecasted.Glyph = CType(resources.GetObject("btnMarkCommissionForecasted.Glyph"), System.Drawing.Image)
         Me.btnMarkCommissionForecasted.Id = 92
+        Me.btnMarkCommissionForecasted.ImageOptions.Image = CType(resources.GetObject("btnMarkCommissionForecasted.ImageOptions.Image"), System.Drawing.Image)
         Me.btnMarkCommissionForecasted.Name = "btnMarkCommissionForecasted"
         Me.btnMarkCommissionForecasted.Tag = "96"
         '
         'btnMarkCommissionPayable
         '
         Me.btnMarkCommissionPayable.Caption = "Mark Payable"
-        Me.btnMarkCommissionPayable.Glyph = CType(resources.GetObject("btnMarkCommissionPayable.Glyph"), System.Drawing.Image)
         Me.btnMarkCommissionPayable.Id = 93
+        Me.btnMarkCommissionPayable.ImageOptions.Image = CType(resources.GetObject("btnMarkCommissionPayable.ImageOptions.Image"), System.Drawing.Image)
         Me.btnMarkCommissionPayable.Name = "btnMarkCommissionPayable"
         Me.btnMarkCommissionPayable.Tag = "97"
         '
         'btnMarkCommissionPaid
         '
         Me.btnMarkCommissionPaid.Caption = "Mark Paid"
-        Me.btnMarkCommissionPaid.Glyph = CType(resources.GetObject("btnMarkCommissionPaid.Glyph"), System.Drawing.Image)
         Me.btnMarkCommissionPaid.Id = 94
+        Me.btnMarkCommissionPaid.ImageOptions.Image = CType(resources.GetObject("btnMarkCommissionPaid.ImageOptions.Image"), System.Drawing.Image)
         Me.btnMarkCommissionPaid.Name = "btnMarkCommissionPaid"
         Me.btnMarkCommissionPaid.Tag = "98"
         '
@@ -1429,7 +1480,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintCommissionsByCustomer.Caption = "Commissions by Customer"
         Me.btnPrintCommissionsByCustomer.Id = 95
-        Me.btnPrintCommissionsByCustomer.LargeGlyph = CType(resources.GetObject("btnPrintCommissionsByCustomer.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintCommissionsByCustomer.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintCommissionsByCustomer.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintCommissionsByCustomer.Name = "btnPrintCommissionsByCustomer"
         Me.btnPrintCommissionsByCustomer.Tag = "101"
         '
@@ -1497,7 +1548,7 @@ Partial Class viewSalesCustomers
         '
         Me.eFetchSalesHistoryData.Caption = "Get Selected Customer Sales"
         Me.eFetchSalesHistoryData.Id = 99
-        Me.eFetchSalesHistoryData.LargeGlyph = CType(resources.GetObject("eFetchSalesHistoryData.LargeGlyph"), System.Drawing.Image)
+        Me.eFetchSalesHistoryData.ImageOptions.LargeImage = CType(resources.GetObject("eFetchSalesHistoryData.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.eFetchSalesHistoryData.Name = "eFetchSalesHistoryData"
         Me.eFetchSalesHistoryData.Tag = "104"
         '
@@ -1511,7 +1562,7 @@ Partial Class viewSalesCustomers
         '
         Me.btnExportSalesHistoryData.Caption = "Export to Excel"
         Me.btnExportSalesHistoryData.Id = 101
-        Me.btnExportSalesHistoryData.LargeGlyph = CType(resources.GetObject("btnExportSalesHistoryData.LargeGlyph"), System.Drawing.Image)
+        Me.btnExportSalesHistoryData.ImageOptions.LargeImage = CType(resources.GetObject("btnExportSalesHistoryData.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnExportSalesHistoryData.Name = "btnExportSalesHistoryData"
         Me.btnExportSalesHistoryData.Tag = "107"
         '
@@ -1519,7 +1570,7 @@ Partial Class viewSalesCustomers
         '
         Me.rbtnUpdateCustomers.Caption = "Update Customers"
         Me.rbtnUpdateCustomers.Id = 102
-        Me.rbtnUpdateCustomers.LargeImageIndex = 3
+        Me.rbtnUpdateCustomers.ImageOptions.LargeImageIndex = 3
         Me.rbtnUpdateCustomers.Name = "rbtnUpdateCustomers"
         Me.rbtnUpdateCustomers.Tag = "1"
         '
@@ -1584,7 +1635,7 @@ Partial Class viewSalesCustomers
         '
         Me.rbtnGetProductSales.Caption = "Get Product Sales"
         Me.rbtnGetProductSales.Id = 106
-        Me.rbtnGetProductSales.LargeGlyph = Global.AOS.My.Resources.Resources.Search1
+        Me.rbtnGetProductSales.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Search1
         Me.rbtnGetProductSales.Name = "rbtnGetProductSales"
         Me.rbtnGetProductSales.Tag = "106"
         '
@@ -1592,7 +1643,7 @@ Partial Class viewSalesCustomers
         '
         Me.rbtnPrintCustomerProductList.Caption = "Product List"
         Me.rbtnPrintCustomerProductList.Id = 107
-        Me.rbtnPrintCustomerProductList.LargeImageIndex = 28
+        Me.rbtnPrintCustomerProductList.ImageOptions.LargeImageIndex = 28
         Me.rbtnPrintCustomerProductList.Name = "rbtnPrintCustomerProductList"
         Me.rbtnPrintCustomerProductList.Tag = "12"
         '
@@ -1600,7 +1651,7 @@ Partial Class viewSalesCustomers
         '
         Me.printInvoiceHistoryReport.Caption = "Print Invoice History"
         Me.printInvoiceHistoryReport.Id = 108
-        Me.printInvoiceHistoryReport.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.printInvoiceHistoryReport.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.printInvoiceHistoryReport.Name = "printInvoiceHistoryReport"
         Me.printInvoiceHistoryReport.Tag = "105"
         '
@@ -1639,7 +1690,7 @@ Partial Class viewSalesCustomers
         Me.rbtnGetSalesAnalysisData.Caption = "Compile Sales Data"
         Me.rbtnGetSalesAnalysisData.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnGetSalesAnalysisData.Id = 111
-        Me.rbtnGetSalesAnalysisData.LargeImageIndex = 42
+        Me.rbtnGetSalesAnalysisData.ImageOptions.LargeImageIndex = 42
         Me.rbtnGetSalesAnalysisData.Name = "rbtnGetSalesAnalysisData"
         '
         'rbtnExportSalesDataToExcel
@@ -1647,7 +1698,7 @@ Partial Class viewSalesCustomers
         Me.rbtnExportSalesDataToExcel.Caption = "Export to Excel"
         Me.rbtnExportSalesDataToExcel.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnExportSalesDataToExcel.Id = 112
-        Me.rbtnExportSalesDataToExcel.LargeImageIndex = 43
+        Me.rbtnExportSalesDataToExcel.ImageOptions.LargeImageIndex = 43
         Me.rbtnExportSalesDataToExcel.Name = "rbtnExportSalesDataToExcel"
         '
         'rluSalesYear
@@ -1719,7 +1770,7 @@ Partial Class viewSalesCustomers
         Me.rbtnCompileTrendData.Caption = "Compile Trend Data"
         Me.rbtnCompileTrendData.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnCompileTrendData.Id = 116
-        Me.rbtnCompileTrendData.LargeImageIndex = 45
+        Me.rbtnCompileTrendData.ImageOptions.LargeImageIndex = 45
         Me.rbtnCompileTrendData.Name = "rbtnCompileTrendData"
         '
         'BarStaticItem3
@@ -1728,14 +1779,13 @@ Partial Class viewSalesCustomers
         Me.BarStaticItem3.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.BarStaticItem3.Id = 117
         Me.BarStaticItem3.Name = "BarStaticItem3"
-        Me.BarStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'rbtnMonthlySalesAnalysis
         '
         Me.rbtnMonthlySalesAnalysis.Caption = "Sales Analysis Data"
         Me.rbtnMonthlySalesAnalysis.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnMonthlySalesAnalysis.Id = 118
-        Me.rbtnMonthlySalesAnalysis.LargeImageIndex = 27
+        Me.rbtnMonthlySalesAnalysis.ImageOptions.LargeImageIndex = 27
         Me.rbtnMonthlySalesAnalysis.Name = "rbtnMonthlySalesAnalysis"
         Me.rbtnMonthlySalesAnalysis.Tag = "0"
         '
@@ -1744,7 +1794,7 @@ Partial Class viewSalesCustomers
         Me.rbtnFilterPriceListActive.Caption = "Active"
         Me.rbtnFilterPriceListActive.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterPriceListActive.Id = 119
-        Me.rbtnFilterPriceListActive.LargeImageIndex = 27
+        Me.rbtnFilterPriceListActive.ImageOptions.LargeImageIndex = 27
         Me.rbtnFilterPriceListActive.Name = "rbtnFilterPriceListActive"
         '
         'rbtnFilterPriceListInActive
@@ -1752,7 +1802,7 @@ Partial Class viewSalesCustomers
         Me.rbtnFilterPriceListInActive.Caption = "Inactive"
         Me.rbtnFilterPriceListInActive.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnFilterPriceListInActive.Id = 120
-        Me.rbtnFilterPriceListInActive.LargeImageIndex = 27
+        Me.rbtnFilterPriceListInActive.ImageOptions.LargeImageIndex = 27
         Me.rbtnFilterPriceListInActive.Name = "rbtnFilterPriceListInActive"
         '
         'rbtnViewPrintSDSDocument
@@ -1760,22 +1810,50 @@ Partial Class viewSalesCustomers
         Me.rbtnViewPrintSDSDocument.Caption = "View / Print SDS Document"
         Me.rbtnViewPrintSDSDocument.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnViewPrintSDSDocument.Id = 121
-        Me.rbtnViewPrintSDSDocument.LargeImageIndex = 15
+        Me.rbtnViewPrintSDSDocument.ImageOptions.LargeImageIndex = 15
         Me.rbtnViewPrintSDSDocument.Name = "rbtnViewPrintSDSDocument"
         '
         'rbtnFilterSalesACTIVE
         '
         Me.rbtnFilterSalesACTIVE.Caption = "Active"
         Me.rbtnFilterSalesACTIVE.Id = 122
-        Me.rbtnFilterSalesACTIVE.LargeImageIndex = 45
+        Me.rbtnFilterSalesACTIVE.ImageOptions.LargeImageIndex = 45
         Me.rbtnFilterSalesACTIVE.Name = "rbtnFilterSalesACTIVE"
         '
         'rbtnFilterSalesINACTIVE
         '
         Me.rbtnFilterSalesINACTIVE.Caption = "Inactive"
         Me.rbtnFilterSalesINACTIVE.Id = 123
-        Me.rbtnFilterSalesINACTIVE.LargeImageIndex = 45
+        Me.rbtnFilterSalesINACTIVE.ImageOptions.LargeImageIndex = 45
         Me.rbtnFilterSalesINACTIVE.Name = "rbtnFilterSalesINACTIVE"
+        '
+        'rbtnGetSalesAnalysisByCustomerData
+        '
+        Me.rbtnGetSalesAnalysisByCustomerData.Caption = "Compile Customer Sales"
+        Me.rbtnGetSalesAnalysisByCustomerData.Id = 124
+        Me.rbtnGetSalesAnalysisByCustomerData.ImageOptions.LargeImageIndex = 2
+        Me.rbtnGetSalesAnalysisByCustomerData.Name = "rbtnGetSalesAnalysisByCustomerData"
+        '
+        'rbtnExportSalesByCustomerAnalysisToExcel
+        '
+        Me.rbtnExportSalesByCustomerAnalysisToExcel.Caption = "Export Customer Sales"
+        Me.rbtnExportSalesByCustomerAnalysisToExcel.Id = 126
+        Me.rbtnExportSalesByCustomerAnalysisToExcel.ImageOptions.LargeImageIndex = 16
+        Me.rbtnExportSalesByCustomerAnalysisToExcel.Name = "rbtnExportSalesByCustomerAnalysisToExcel"
+        '
+        'rbtnGetSalesPersonAnalysis
+        '
+        Me.rbtnGetSalesPersonAnalysis.Caption = "Compile Sales Analysis"
+        Me.rbtnGetSalesPersonAnalysis.Id = 127
+        Me.rbtnGetSalesPersonAnalysis.ImageOptions.LargeImageIndex = 3
+        Me.rbtnGetSalesPersonAnalysis.Name = "rbtnGetSalesPersonAnalysis"
+        '
+        'rbtnExportSalesPersonAnalysisToExcel
+        '
+        Me.rbtnExportSalesPersonAnalysisToExcel.Caption = "Export Sales Analysis"
+        Me.rbtnExportSalesPersonAnalysisToExcel.Id = 128
+        Me.rbtnExportSalesPersonAnalysisToExcel.ImageOptions.LargeImageIndex = 22
+        Me.rbtnExportSalesPersonAnalysisToExcel.Name = "rbtnExportSalesPersonAnalysisToExcel"
         '
         'RibbonLargeImages
         '
@@ -2099,6 +2177,10 @@ Partial Class viewSalesCustomers
         Me.RibbonPageGroup15.ItemLinks.Add(Me.rluSalesYear)
         Me.RibbonPageGroup15.ItemLinks.Add(Me.rbtnGetSalesAnalysisData, True)
         Me.RibbonPageGroup15.ItemLinks.Add(Me.rbtnExportSalesDataToExcel, True)
+        Me.RibbonPageGroup15.ItemLinks.Add(Me.rbtnGetSalesAnalysisByCustomerData)
+        Me.RibbonPageGroup15.ItemLinks.Add(Me.rbtnExportSalesByCustomerAnalysisToExcel)
+        Me.RibbonPageGroup15.ItemLinks.Add(Me.rbtnGetSalesPersonAnalysis)
+        Me.RibbonPageGroup15.ItemLinks.Add(Me.rbtnExportSalesPersonAnalysisToExcel)
         Me.RibbonPageGroup15.Name = "RibbonPageGroup15"
         Me.RibbonPageGroup15.ShowCaptionButton = False
         Me.RibbonPageGroup15.Text = "Customer Sales Analysis"
@@ -2132,9 +2214,9 @@ Partial Class viewSalesCustomers
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl7)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 150)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 175)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1482, 565)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1482, 540)
         Me.WorkPanelsHolder.TabIndex = 7
         '
         'RibbonPanelControl5
@@ -2146,16 +2228,16 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl5.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
-        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl5.TabIndex = 1
         '
         'grpCommissions
         '
         Me.grpCommissions.Controls.Add(Me.grCommissions)
         Me.grpCommissions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grpCommissions.Location = New System.Drawing.Point(2, 372)
+        Me.grpCommissions.Location = New System.Drawing.Point(2, 397)
         Me.grpCommissions.Name = "grpCommissions"
-        Me.grpCommissions.Size = New System.Drawing.Size(1478, 191)
+        Me.grpCommissions.Size = New System.Drawing.Size(1478, 141)
         Me.grpCommissions.TabIndex = 8
         Me.grpCommissions.Text = "Commissions for ..."
         '
@@ -2163,12 +2245,12 @@ Partial Class viewSalesCustomers
         '
         Me.grCommissions.DataSource = Me.bsCommissions
         Me.grCommissions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCommissions.Location = New System.Drawing.Point(2, 22)
+        Me.grCommissions.Location = New System.Drawing.Point(2, 25)
         Me.grCommissions.LookAndFeel.SkinName = "Money Twins"
         Me.grCommissions.MainView = Me.grvCommissions
         Me.grCommissions.Name = "grCommissions"
         Me.grCommissions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.CustomerLookup, Me.RepositoryItemLookUpEdit6})
-        Me.grCommissions.Size = New System.Drawing.Size(1474, 167)
+        Me.grCommissions.Size = New System.Drawing.Size(1474, 114)
         Me.grCommissions.TabIndex = 0
         Me.grCommissions.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCommissions})
         '
@@ -2378,64 +2460,64 @@ Partial Class viewSalesCustomers
         Me.RibbonControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit5})
         Me.RibbonControl2.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
         Me.RibbonControl2.ShowToolbarCustomizeItem = False
-        Me.RibbonControl2.Size = New System.Drawing.Size(1478, 117)
+        Me.RibbonControl2.Size = New System.Drawing.Size(1478, 142)
         Me.RibbonControl2.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl2.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnAddCommission
         '
         Me.btnAddCommission.Caption = "Add Commission"
-        Me.btnAddCommission.Glyph = CType(resources.GetObject("btnAddCommission.Glyph"), System.Drawing.Image)
         Me.btnAddCommission.Id = 0
+        Me.btnAddCommission.ImageOptions.Image = CType(resources.GetObject("btnAddCommission.ImageOptions.Image"), System.Drawing.Image)
         Me.btnAddCommission.Name = "btnAddCommission"
         '
         'btnEditCommission
         '
         Me.btnEditCommission.Caption = "Edit Commission"
-        Me.btnEditCommission.Glyph = CType(resources.GetObject("btnEditCommission.Glyph"), System.Drawing.Image)
         Me.btnEditCommission.Id = 1
+        Me.btnEditCommission.ImageOptions.Image = CType(resources.GetObject("btnEditCommission.ImageOptions.Image"), System.Drawing.Image)
         Me.btnEditCommission.Name = "btnEditCommission"
         '
         'btnDeleteCommission
         '
         Me.btnDeleteCommission.Caption = "Delete Commission"
-        Me.btnDeleteCommission.Glyph = CType(resources.GetObject("btnDeleteCommission.Glyph"), System.Drawing.Image)
         Me.btnDeleteCommission.Id = 2
+        Me.btnDeleteCommission.ImageOptions.Image = CType(resources.GetObject("btnDeleteCommission.ImageOptions.Image"), System.Drawing.Image)
         Me.btnDeleteCommission.Name = "btnDeleteCommission"
         '
         'btnAddCommissionPmt
         '
         Me.btnAddCommissionPmt.Caption = "Create Commission Payment"
         Me.btnAddCommissionPmt.Id = 3
-        Me.btnAddCommissionPmt.LargeGlyph = CType(resources.GetObject("btnAddCommissionPmt.LargeGlyph"), System.Drawing.Image)
+        Me.btnAddCommissionPmt.ImageOptions.LargeImage = CType(resources.GetObject("btnAddCommissionPmt.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAddCommissionPmt.Name = "btnAddCommissionPmt"
         '
         'btnCommissionFilterPending
         '
         Me.btnCommissionFilterPending.Caption = "Pending"
         Me.btnCommissionFilterPending.Id = 6
-        Me.btnCommissionFilterPending.LargeGlyph = CType(resources.GetObject("btnCommissionFilterPending.LargeGlyph"), System.Drawing.Image)
+        Me.btnCommissionFilterPending.ImageOptions.LargeImage = CType(resources.GetObject("btnCommissionFilterPending.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnCommissionFilterPending.Name = "btnCommissionFilterPending"
         '
         'btnCommissionFilterPayable
         '
         Me.btnCommissionFilterPayable.Caption = "Payable"
         Me.btnCommissionFilterPayable.Id = 7
-        Me.btnCommissionFilterPayable.LargeGlyph = CType(resources.GetObject("btnCommissionFilterPayable.LargeGlyph"), System.Drawing.Image)
+        Me.btnCommissionFilterPayable.ImageOptions.LargeImage = CType(resources.GetObject("btnCommissionFilterPayable.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnCommissionFilterPayable.Name = "btnCommissionFilterPayable"
         '
         'btnCommissionFilterPaid
         '
         Me.btnCommissionFilterPaid.Caption = "Paid"
         Me.btnCommissionFilterPaid.Id = 8
-        Me.btnCommissionFilterPaid.LargeGlyph = CType(resources.GetObject("btnCommissionFilterPaid.LargeGlyph"), System.Drawing.Image)
+        Me.btnCommissionFilterPaid.ImageOptions.LargeImage = CType(resources.GetObject("btnCommissionFilterPaid.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnCommissionFilterPaid.Name = "btnCommissionFilterPaid"
         '
         'btnPrintCommForecast
         '
         Me.btnPrintCommForecast.Caption = "Pending"
         Me.btnPrintCommForecast.Id = 9
-        Me.btnPrintCommForecast.LargeGlyph = CType(resources.GetObject("btnPrintCommForecast.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintCommForecast.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintCommForecast.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintCommForecast.Name = "btnPrintCommForecast"
         Me.btnPrintCommForecast.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
@@ -2443,14 +2525,14 @@ Partial Class viewSalesCustomers
         '
         Me.btnPrintCommPayable.Caption = "Payable"
         Me.btnPrintCommPayable.Id = 10
-        Me.btnPrintCommPayable.LargeGlyph = CType(resources.GetObject("btnPrintCommPayable.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintCommPayable.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintCommPayable.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintCommPayable.Name = "btnPrintCommPayable"
         '
         'btnPrintPaidCommissionsRpt
         '
         Me.btnPrintPaidCommissionsRpt.Caption = "Paid"
         Me.btnPrintPaidCommissionsRpt.Id = 11
-        Me.btnPrintPaidCommissionsRpt.LargeGlyph = CType(resources.GetObject("btnPrintPaidCommissionsRpt.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintPaidCommissionsRpt.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintPaidCommissionsRpt.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintPaidCommissionsRpt.Name = "btnPrintPaidCommissionsRpt"
         '
         'btnCommissionTypes
@@ -2468,43 +2550,43 @@ Partial Class viewSalesCustomers
         'btnMarkPayable
         '
         Me.btnMarkPayable.Caption = "Mark Payable"
-        Me.btnMarkPayable.Glyph = CType(resources.GetObject("btnMarkPayable.Glyph"), System.Drawing.Image)
         Me.btnMarkPayable.Id = 15
+        Me.btnMarkPayable.ImageOptions.Image = CType(resources.GetObject("btnMarkPayable.ImageOptions.Image"), System.Drawing.Image)
         Me.btnMarkPayable.Name = "btnMarkPayable"
         '
         'btnMarkPaid
         '
         Me.btnMarkPaid.Caption = "Mark Paid"
-        Me.btnMarkPaid.Glyph = CType(resources.GetObject("btnMarkPaid.Glyph"), System.Drawing.Image)
         Me.btnMarkPaid.Id = 16
+        Me.btnMarkPaid.ImageOptions.Image = CType(resources.GetObject("btnMarkPaid.ImageOptions.Image"), System.Drawing.Image)
         Me.btnMarkPaid.Name = "btnMarkPaid"
         '
         'btnMarkPending
         '
         Me.btnMarkPending.Caption = "Mark Pending"
-        Me.btnMarkPending.Glyph = CType(resources.GetObject("btnMarkPending.Glyph"), System.Drawing.Image)
         Me.btnMarkPending.Id = 17
+        Me.btnMarkPending.ImageOptions.Image = CType(resources.GetObject("btnMarkPending.ImageOptions.Image"), System.Drawing.Image)
         Me.btnMarkPending.Name = "btnMarkPending"
         '
         'btnPrintCommPmtRegister
         '
         Me.btnPrintCommPmtRegister.Caption = "Payment Register"
         Me.btnPrintCommPmtRegister.Id = 18
-        Me.btnPrintCommPmtRegister.LargeGlyph = CType(resources.GetObject("btnPrintCommPmtRegister.LargeGlyph"), System.Drawing.Image)
+        Me.btnPrintCommPmtRegister.ImageOptions.LargeImage = CType(resources.GetObject("btnPrintCommPmtRegister.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnPrintCommPmtRegister.Name = "btnPrintCommPmtRegister"
         '
         'rbtnPrintCommByCustomer
         '
         Me.rbtnPrintCommByCustomer.Caption = "Commission By Customer"
         Me.rbtnPrintCommByCustomer.Id = 19
-        Me.rbtnPrintCommByCustomer.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.rbtnPrintCommByCustomer.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.rbtnPrintCommByCustomer.Name = "rbtnPrintCommByCustomer"
         '
         'rbtnCommissonAuditReport
         '
         Me.rbtnCommissonAuditReport.Caption = "Commission Audit Report"
         Me.rbtnCommissonAuditReport.Id = 20
-        Me.rbtnCommissonAuditReport.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.rbtnCommissonAuditReport.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.rbtnCommissonAuditReport.Name = "rbtnCommissonAuditReport"
         '
         'eInvPaidThruDate
@@ -2525,14 +2607,14 @@ Partial Class viewSalesCustomers
         '
         Me.rbtnFilterPayableCommByDate.Caption = "Payable By Date"
         Me.rbtnFilterPayableCommByDate.Id = 22
-        Me.rbtnFilterPayableCommByDate.LargeGlyph = Global.AOS.My.Resources.Resources.Filter
+        Me.rbtnFilterPayableCommByDate.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Filter
         Me.rbtnFilterPayableCommByDate.Name = "rbtnFilterPayableCommByDate"
         '
         'rbtnFilterPayableCommAll
         '
         Me.rbtnFilterPayableCommAll.Caption = "All Payable"
         Me.rbtnFilterPayableCommAll.Id = 23
-        Me.rbtnFilterPayableCommAll.LargeGlyph = Global.AOS.My.Resources.Resources.Filter
+        Me.rbtnFilterPayableCommAll.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Filter
         Me.rbtnFilterPayableCommAll.Name = "rbtnFilterPayableCommAll"
         '
         'BarStaticItem4
@@ -2540,41 +2622,40 @@ Partial Class viewSalesCustomers
         Me.BarStaticItem4.Caption = "Invoices Paid Thru"
         Me.BarStaticItem4.Id = 24
         Me.BarStaticItem4.Name = "BarStaticItem4"
-        Me.BarStaticItem4.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'rbtnMiscMarkPayableAsPaid
         '
         Me.rbtnMiscMarkPayableAsPaid.Caption = "Mark Commisison PAID"
         Me.rbtnMiscMarkPayableAsPaid.Id = 25
-        Me.rbtnMiscMarkPayableAsPaid.LargeGlyph = Global.AOS.My.Resources.Resources.EditData
+        Me.rbtnMiscMarkPayableAsPaid.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.EditData
         Me.rbtnMiscMarkPayableAsPaid.Name = "rbtnMiscMarkPayableAsPaid"
         '
         'rbtnMarkCommissionAsAudited
         '
         Me.rbtnMarkCommissionAsAudited.Caption = "Mark Commission as Audited"
         Me.rbtnMarkCommissionAsAudited.Id = 26
-        Me.rbtnMarkCommissionAsAudited.LargeGlyph = Global.AOS.My.Resources.Resources.document_text_edit
+        Me.rbtnMarkCommissionAsAudited.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.document_text_edit
         Me.rbtnMarkCommissionAsAudited.Name = "rbtnMarkCommissionAsAudited"
         '
         'btnRptCommWithExceptions
         '
         Me.btnRptCommWithExceptions.Caption = "Pending With Exceptions"
         Me.btnRptCommWithExceptions.Id = 27
-        Me.btnRptCommWithExceptions.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.btnRptCommWithExceptions.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.btnRptCommWithExceptions.Name = "btnRptCommWithExceptions"
         '
         'rbtnRptPayableWithExceptions
         '
         Me.rbtnRptPayableWithExceptions.Caption = "Payable With Exceptions"
         Me.rbtnRptPayableWithExceptions.Id = 28
-        Me.rbtnRptPayableWithExceptions.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.rbtnRptPayableWithExceptions.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.rbtnRptPayableWithExceptions.Name = "rbtnRptPayableWithExceptions"
         '
         'rbtnPrintCommPmtRegisterWithExceptions
         '
         Me.rbtnPrintCommPmtRegisterWithExceptions.Caption = "Payment Register with Exceptions"
         Me.rbtnPrintCommPmtRegisterWithExceptions.Id = 29
-        Me.rbtnPrintCommPmtRegisterWithExceptions.LargeGlyph = Global.AOS.My.Resources.Resources.Report1
+        Me.rbtnPrintCommPmtRegisterWithExceptions.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Report1
         Me.rbtnPrintCommPmtRegisterWithExceptions.Name = "rbtnPrintCommPmtRegisterWithExceptions"
         '
         'RibbonPage20
@@ -2707,12 +2788,12 @@ Partial Class viewSalesCustomers
         '
         Me.grAssignments.DataSource = Me.bsAssignments
         Me.grAssignments.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grAssignments.Location = New System.Drawing.Point(2, 22)
+        Me.grAssignments.Location = New System.Drawing.Point(2, 25)
         Me.grAssignments.LookAndFeel.SkinName = "Money Twins"
         Me.grAssignments.MainView = Me.GridView6
         Me.grAssignments.Name = "grAssignments"
         Me.grAssignments.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.grAssignments.Size = New System.Drawing.Size(1208, 223)
+        Me.grAssignments.Size = New System.Drawing.Size(1208, 220)
         Me.grAssignments.TabIndex = 0
         Me.grAssignments.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView6})
         '
@@ -2839,11 +2920,11 @@ Partial Class viewSalesCustomers
         '
         Me.grSalesperson.DataSource = Me.bsSalesperson
         Me.grSalesperson.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grSalesperson.Location = New System.Drawing.Point(2, 22)
+        Me.grSalesperson.Location = New System.Drawing.Point(2, 25)
         Me.grSalesperson.LookAndFeel.SkinName = "Money Twins"
         Me.grSalesperson.MainView = Me.GridView4
         Me.grSalesperson.Name = "grSalesperson"
-        Me.grSalesperson.Size = New System.Drawing.Size(258, 223)
+        Me.grSalesperson.Size = New System.Drawing.Size(258, 220)
         Me.grSalesperson.TabIndex = 0
         Me.grSalesperson.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
@@ -2921,7 +3002,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl2.TabIndex = 2
         '
         'grpCommissionData
@@ -2930,7 +3011,7 @@ Partial Class viewSalesCustomers
         Me.grpCommissionData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpCommissionData.Location = New System.Drawing.Point(2, 2)
         Me.grpCommissionData.Name = "grpCommissionData"
-        Me.grpCommissionData.Size = New System.Drawing.Size(1478, 561)
+        Me.grpCommissionData.Size = New System.Drawing.Size(1478, 536)
         Me.grpCommissionData.TabIndex = 9
         Me.grpCommissionData.Text = "Commissions for ..."
         '
@@ -2938,12 +3019,12 @@ Partial Class viewSalesCustomers
         '
         Me.grCommissionData.DataSource = Me.bsCommissions
         Me.grCommissionData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCommissionData.Location = New System.Drawing.Point(2, 22)
+        Me.grCommissionData.Location = New System.Drawing.Point(2, 25)
         Me.grCommissionData.LookAndFeel.SkinName = "Money Twins"
         Me.grCommissionData.MainView = Me.grvCommissionData
         Me.grCommissionData.Name = "grCommissionData"
         Me.grCommissionData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit11, Me.RepositoryItemLookUpEdit10})
-        Me.grCommissionData.Size = New System.Drawing.Size(1474, 537)
+        Me.grCommissionData.Size = New System.Drawing.Size(1474, 509)
         Me.grCommissionData.TabIndex = 0
         Me.grCommissionData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCommissionData})
         '
@@ -3126,7 +3207,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl10.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl10.Name = "RibbonPanelControl10"
-        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl10.TabIndex = 3
         '
         'GroupControl9
@@ -3135,7 +3216,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl9.Name = "GroupControl9"
-        Me.GroupControl9.Size = New System.Drawing.Size(1482, 565)
+        Me.GroupControl9.Size = New System.Drawing.Size(1482, 540)
         Me.GroupControl9.TabIndex = 9
         Me.GroupControl9.Text = "Sales History Details"
         '
@@ -3143,12 +3224,12 @@ Partial Class viewSalesCustomers
         '
         Me.grSalesHistory.DataSource = Me.bsSalesHistory
         Me.grSalesHistory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grSalesHistory.Location = New System.Drawing.Point(2, 22)
+        Me.grSalesHistory.Location = New System.Drawing.Point(2, 25)
         Me.grSalesHistory.LookAndFeel.SkinName = "Money Twins"
         Me.grSalesHistory.MainView = Me.gridViewSalesHistory
         Me.grSalesHistory.Name = "grSalesHistory"
         Me.grSalesHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit13, Me.RepositoryItemLookUpEdit12})
-        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 541)
+        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 513)
         Me.grSalesHistory.TabIndex = 0
         Me.grSalesHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewSalesHistory})
         '
@@ -3344,9 +3425,8 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl3.Controls.Add(Me.gcPriceLists)
         Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl3.LookAndFeel.SkinName = "DevExpress Dark Style"
         Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl3.TabIndex = 1
         '
         'gcPriceLists
@@ -3356,7 +3436,7 @@ Partial Class viewSalesCustomers
         Me.gcPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcPriceLists.Location = New System.Drawing.Point(2, 2)
         Me.gcPriceLists.Name = "gcPriceLists"
-        Me.gcPriceLists.Size = New System.Drawing.Size(1478, 561)
+        Me.gcPriceLists.Size = New System.Drawing.Size(1478, 536)
         Me.gcPriceLists.TabIndex = 1
         Me.gcPriceLists.Text = "Customer Price Lists"
         '
@@ -3364,12 +3444,12 @@ Partial Class viewSalesCustomers
         '
         Me.grPriceLists.DataSource = Me.bsPriceLists
         Me.grPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grPriceLists.Location = New System.Drawing.Point(2, 59)
+        Me.grPriceLists.Location = New System.Drawing.Point(2, 62)
         Me.grPriceLists.LookAndFeel.SkinName = "Money Twins"
         Me.grPriceLists.MainView = Me.viewPriceList
         Me.grPriceLists.Name = "grPriceLists"
         Me.grPriceLists.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.ProductLookupEdit})
-        Me.grPriceLists.Size = New System.Drawing.Size(1474, 500)
+        Me.grPriceLists.Size = New System.Drawing.Size(1474, 472)
         Me.grPriceLists.TabIndex = 0
         Me.grPriceLists.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewPriceList})
         '
@@ -3611,7 +3691,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Controls.Add(Me.luCustomerList)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(2, 22)
+        Me.PanelControl1.Location = New System.Drawing.Point(2, 25)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(1474, 37)
         Me.PanelControl1.TabIndex = 1
@@ -3644,7 +3724,7 @@ Partial Class viewSalesCustomers
         Me.luCustomerList.Properties.NullText = ""
         Me.luCustomerList.Properties.PopupWidth = 450
         Me.luCustomerList.Properties.ValueMember = "Custid"
-        Me.luCustomerList.Size = New System.Drawing.Size(213, 20)
+        Me.luCustomerList.Size = New System.Drawing.Size(213, 22)
         Me.luCustomerList.TabIndex = 0
         '
         'RibbonPanelControl1
@@ -3655,7 +3735,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl1.TabIndex = 0
         '
         'PanelControl9
@@ -3670,7 +3750,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl9.Location = New System.Drawing.Point(370, 2)
         Me.PanelControl9.Name = "PanelControl9"
-        Me.PanelControl9.Size = New System.Drawing.Size(1110, 561)
+        Me.PanelControl9.Size = New System.Drawing.Size(1110, 536)
         Me.PanelControl9.TabIndex = 2
         '
         'GroupControl15
@@ -3694,7 +3774,7 @@ Partial Class viewSalesCustomers
         Me.TextEdit1.MenuManager = Me.RibbonControl1
         Me.TextEdit1.Name = "TextEdit1"
         Me.TextEdit1.Properties.ReadOnly = True
-        Me.TextEdit1.Size = New System.Drawing.Size(280, 20)
+        Me.TextEdit1.Size = New System.Drawing.Size(280, 22)
         Me.TextEdit1.TabIndex = 36
         Me.TextEdit1.TabStop = False
         '
@@ -3705,7 +3785,7 @@ Partial Class viewSalesCustomers
         Me.CustphoneTextEdit.MenuManager = Me.RibbonControl1
         Me.CustphoneTextEdit.Name = "CustphoneTextEdit"
         Me.CustphoneTextEdit.Properties.ReadOnly = True
-        Me.CustphoneTextEdit.Size = New System.Drawing.Size(134, 20)
+        Me.CustphoneTextEdit.Size = New System.Drawing.Size(134, 22)
         Me.CustphoneTextEdit.TabIndex = 33
         Me.CustphoneTextEdit.TabStop = False
         '
@@ -3716,7 +3796,7 @@ Partial Class viewSalesCustomers
         Me.CustfaxTextEdit.MenuManager = Me.RibbonControl1
         Me.CustfaxTextEdit.Name = "CustfaxTextEdit"
         Me.CustfaxTextEdit.Properties.ReadOnly = True
-        Me.CustfaxTextEdit.Size = New System.Drawing.Size(108, 20)
+        Me.CustfaxTextEdit.Size = New System.Drawing.Size(108, 22)
         Me.CustfaxTextEdit.TabIndex = 35
         Me.CustfaxTextEdit.TabStop = False
         '
@@ -3835,7 +3915,7 @@ Partial Class viewSalesCustomers
         Me.CarrieridLookUpEdit.Properties.NullText = ""
         Me.CarrieridLookUpEdit.Properties.ReadOnly = True
         Me.CarrieridLookUpEdit.Properties.ValueMember = "CarrierID"
-        Me.CarrieridLookUpEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CarrieridLookUpEdit.Size = New System.Drawing.Size(280, 22)
         Me.CarrieridLookUpEdit.TabIndex = 43
         Me.CarrieridLookUpEdit.TabStop = False
         '
@@ -3850,7 +3930,7 @@ Partial Class viewSalesCustomers
         Me.FobTextEdit.MenuManager = Me.RibbonControl1
         Me.FobTextEdit.Name = "FobTextEdit"
         Me.FobTextEdit.Properties.ReadOnly = True
-        Me.FobTextEdit.Size = New System.Drawing.Size(166, 20)
+        Me.FobTextEdit.Size = New System.Drawing.Size(166, 22)
         Me.FobTextEdit.TabIndex = 46
         Me.FobTextEdit.TabStop = False
         '
@@ -3865,7 +3945,7 @@ Partial Class viewSalesCustomers
         Me.BulkcarrieridLookUpEdit.Properties.NullText = ""
         Me.BulkcarrieridLookUpEdit.Properties.ReadOnly = True
         Me.BulkcarrieridLookUpEdit.Properties.ValueMember = "CarrierID"
-        Me.BulkcarrieridLookUpEdit.Size = New System.Drawing.Size(280, 20)
+        Me.BulkcarrieridLookUpEdit.Size = New System.Drawing.Size(280, 22)
         Me.BulkcarrieridLookUpEdit.TabIndex = 45
         Me.BulkcarrieridLookUpEdit.TabStop = False
         '
@@ -3884,7 +3964,7 @@ Partial Class viewSalesCustomers
         Me.LogisticsidLookUpEdit.Properties.NullText = ""
         Me.LogisticsidLookUpEdit.Properties.ReadOnly = True
         Me.LogisticsidLookUpEdit.Properties.ValueMember = "Logisticsid"
-        Me.LogisticsidLookUpEdit.Size = New System.Drawing.Size(280, 20)
+        Me.LogisticsidLookUpEdit.Size = New System.Drawing.Size(280, 22)
         Me.LogisticsidLookUpEdit.TabIndex = 44
         Me.LogisticsidLookUpEdit.TabStop = False
         '
@@ -3919,7 +3999,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcontactTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcontactTextEdit.Name = "CustbillcontactTextEdit"
         Me.CustbillcontactTextEdit.Properties.ReadOnly = True
-        Me.CustbillcontactTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustbillcontactTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustbillcontactTextEdit.TabIndex = 31
         Me.CustbillcontactTextEdit.TabStop = False
         '
@@ -3930,7 +4010,7 @@ Partial Class viewSalesCustomers
         Me.Custbilladdress1TextEdit.MenuManager = Me.RibbonControl1
         Me.Custbilladdress1TextEdit.Name = "Custbilladdress1TextEdit"
         Me.Custbilladdress1TextEdit.Properties.ReadOnly = True
-        Me.Custbilladdress1TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custbilladdress1TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custbilladdress1TextEdit.TabIndex = 19
         Me.Custbilladdress1TextEdit.TabStop = False
         '
@@ -3941,7 +4021,7 @@ Partial Class viewSalesCustomers
         Me.CustbillpostalcodeTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillpostalcodeTextEdit.Name = "CustbillpostalcodeTextEdit"
         Me.CustbillpostalcodeTextEdit.Properties.ReadOnly = True
-        Me.CustbillpostalcodeTextEdit.Size = New System.Drawing.Size(64, 20)
+        Me.CustbillpostalcodeTextEdit.Size = New System.Drawing.Size(64, 22)
         Me.CustbillpostalcodeTextEdit.TabIndex = 27
         Me.CustbillpostalcodeTextEdit.TabStop = False
         '
@@ -3952,7 +4032,7 @@ Partial Class viewSalesCustomers
         Me.Custbilladdress2TextEdit.MenuManager = Me.RibbonControl1
         Me.Custbilladdress2TextEdit.Name = "Custbilladdress2TextEdit"
         Me.Custbilladdress2TextEdit.Properties.ReadOnly = True
-        Me.Custbilladdress2TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custbilladdress2TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custbilladdress2TextEdit.TabIndex = 21
         Me.Custbilladdress2TextEdit.TabStop = False
         '
@@ -3963,7 +4043,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcountryTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcountryTextEdit.Name = "CustbillcountryTextEdit"
         Me.CustbillcountryTextEdit.Properties.ReadOnly = True
-        Me.CustbillcountryTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustbillcountryTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustbillcountryTextEdit.TabIndex = 29
         Me.CustbillcountryTextEdit.TabStop = False
         '
@@ -3974,7 +4054,7 @@ Partial Class viewSalesCustomers
         Me.CustbillstateprovTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillstateprovTextEdit.Name = "CustbillstateprovTextEdit"
         Me.CustbillstateprovTextEdit.Properties.ReadOnly = True
-        Me.CustbillstateprovTextEdit.Size = New System.Drawing.Size(38, 20)
+        Me.CustbillstateprovTextEdit.Size = New System.Drawing.Size(38, 22)
         Me.CustbillstateprovTextEdit.TabIndex = 25
         Me.CustbillstateprovTextEdit.TabStop = False
         '
@@ -3985,7 +4065,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcityTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcityTextEdit.Name = "CustbillcityTextEdit"
         Me.CustbillcityTextEdit.Properties.ReadOnly = True
-        Me.CustbillcityTextEdit.Size = New System.Drawing.Size(166, 20)
+        Me.CustbillcityTextEdit.Size = New System.Drawing.Size(166, 22)
         Me.CustbillcityTextEdit.TabIndex = 23
         Me.CustbillcityTextEdit.TabStop = False
         '
@@ -4016,7 +4096,7 @@ Partial Class viewSalesCustomers
         Me.Custshipaddress1TextEdit.MenuManager = Me.RibbonControl1
         Me.Custshipaddress1TextEdit.Name = "Custshipaddress1TextEdit"
         Me.Custshipaddress1TextEdit.Properties.ReadOnly = True
-        Me.Custshipaddress1TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custshipaddress1TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custshipaddress1TextEdit.TabIndex = 5
         Me.Custshipaddress1TextEdit.TabStop = False
         '
@@ -4027,7 +4107,7 @@ Partial Class viewSalesCustomers
         Me.Custshipaddress2TextEdit.MenuManager = Me.RibbonControl1
         Me.Custshipaddress2TextEdit.Name = "Custshipaddress2TextEdit"
         Me.Custshipaddress2TextEdit.Properties.ReadOnly = True
-        Me.Custshipaddress2TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custshipaddress2TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custshipaddress2TextEdit.TabIndex = 7
         Me.Custshipaddress2TextEdit.TabStop = False
         '
@@ -4038,7 +4118,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcityTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcityTextEdit.Name = "CustshipcityTextEdit"
         Me.CustshipcityTextEdit.Properties.ReadOnly = True
-        Me.CustshipcityTextEdit.Size = New System.Drawing.Size(166, 20)
+        Me.CustshipcityTextEdit.Size = New System.Drawing.Size(166, 22)
         Me.CustshipcityTextEdit.TabIndex = 9
         Me.CustshipcityTextEdit.TabStop = False
         '
@@ -4049,7 +4129,7 @@ Partial Class viewSalesCustomers
         Me.CustshipstateprovTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipstateprovTextEdit.Name = "CustshipstateprovTextEdit"
         Me.CustshipstateprovTextEdit.Properties.ReadOnly = True
-        Me.CustshipstateprovTextEdit.Size = New System.Drawing.Size(38, 20)
+        Me.CustshipstateprovTextEdit.Size = New System.Drawing.Size(38, 22)
         Me.CustshipstateprovTextEdit.TabIndex = 11
         Me.CustshipstateprovTextEdit.TabStop = False
         '
@@ -4060,7 +4140,7 @@ Partial Class viewSalesCustomers
         Me.CustshippostalcodeTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshippostalcodeTextEdit.Name = "CustshippostalcodeTextEdit"
         Me.CustshippostalcodeTextEdit.Properties.ReadOnly = True
-        Me.CustshippostalcodeTextEdit.Size = New System.Drawing.Size(64, 20)
+        Me.CustshippostalcodeTextEdit.Size = New System.Drawing.Size(64, 22)
         Me.CustshippostalcodeTextEdit.TabIndex = 13
         Me.CustshippostalcodeTextEdit.TabStop = False
         '
@@ -4071,7 +4151,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcountryTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcountryTextEdit.Name = "CustshipcountryTextEdit"
         Me.CustshipcountryTextEdit.Properties.ReadOnly = True
-        Me.CustshipcountryTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustshipcountryTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustshipcountryTextEdit.TabIndex = 15
         Me.CustshipcountryTextEdit.TabStop = False
         '
@@ -4082,7 +4162,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcontactTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcontactTextEdit.Name = "CustshipcontactTextEdit"
         Me.CustshipcontactTextEdit.Properties.ReadOnly = True
-        Me.CustshipcontactTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustshipcontactTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustshipcontactTextEdit.TabIndex = 17
         Me.CustshipcontactTextEdit.TabStop = False
         '
@@ -4147,7 +4227,7 @@ Partial Class viewSalesCustomers
         Me.SalespersonIDLookUpEdit2.Properties.NullText = ""
         Me.SalespersonIDLookUpEdit2.Properties.ReadOnly = True
         Me.SalespersonIDLookUpEdit2.Properties.ValueMember = "Salespersonid"
-        Me.SalespersonIDLookUpEdit2.Size = New System.Drawing.Size(142, 20)
+        Me.SalespersonIDLookUpEdit2.Size = New System.Drawing.Size(142, 22)
         Me.SalespersonIDLookUpEdit2.TabIndex = 51
         '
         'bsSalesPersonList2
@@ -4165,7 +4245,7 @@ Partial Class viewSalesCustomers
         Me.SalespersonidLookUpEdit.Properties.NullText = ""
         Me.SalespersonidLookUpEdit.Properties.ReadOnly = True
         Me.SalespersonidLookUpEdit.Properties.ValueMember = "Salespersonid"
-        Me.SalespersonidLookUpEdit.Size = New System.Drawing.Size(142, 20)
+        Me.SalespersonidLookUpEdit.Size = New System.Drawing.Size(142, 22)
         Me.SalespersonidLookUpEdit.TabIndex = 49
         '
         'bsSalespersonList
@@ -4179,7 +4259,7 @@ Partial Class viewSalesCustomers
         Me.CustidTextEdit.MenuManager = Me.RibbonControl1
         Me.CustidTextEdit.Name = "CustidTextEdit"
         Me.CustidTextEdit.Properties.ReadOnly = True
-        Me.CustidTextEdit.Size = New System.Drawing.Size(54, 20)
+        Me.CustidTextEdit.Size = New System.Drawing.Size(54, 22)
         Me.CustidTextEdit.TabIndex = 1
         Me.CustidTextEdit.TabStop = False
         '
@@ -4203,7 +4283,7 @@ Partial Class viewSalesCustomers
         Me.CustnameTextEdit.MenuManager = Me.RibbonControl1
         Me.CustnameTextEdit.Name = "CustnameTextEdit"
         Me.CustnameTextEdit.Properties.ReadOnly = True
-        Me.CustnameTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustnameTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustnameTextEdit.TabIndex = 3
         Me.CustnameTextEdit.TabStop = False
         '
@@ -4213,7 +4293,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControl8.Location = New System.Drawing.Point(364, 2)
         Me.PanelControl8.Name = "PanelControl8"
-        Me.PanelControl8.Size = New System.Drawing.Size(6, 561)
+        Me.PanelControl8.Size = New System.Drawing.Size(6, 536)
         Me.PanelControl8.TabIndex = 1
         '
         'GroupControl1
@@ -4222,7 +4302,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupControl1.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(362, 561)
+        Me.GroupControl1.Size = New System.Drawing.Size(362, 536)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Customer List"
         '
@@ -4230,11 +4310,11 @@ Partial Class viewSalesCustomers
         '
         Me.grCustomers.DataSource = Me.bsCustomers
         Me.grCustomers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCustomers.Location = New System.Drawing.Point(2, 22)
+        Me.grCustomers.Location = New System.Drawing.Point(2, 25)
         Me.grCustomers.LookAndFeel.SkinName = "Money Twins"
         Me.grCustomers.MainView = Me.GridView3
         Me.grCustomers.Name = "grCustomers"
-        Me.grCustomers.Size = New System.Drawing.Size(358, 537)
+        Me.grCustomers.Size = New System.Drawing.Size(358, 509)
         Me.grCustomers.TabIndex = 0
         Me.grCustomers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
@@ -4307,7 +4387,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl4.TabIndex = 1
         '
         'GroupControl4
@@ -4316,7 +4396,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1478, 561)
+        Me.GroupControl4.Size = New System.Drawing.Size(1478, 536)
         Me.GroupControl4.TabIndex = 9
         Me.GroupControl4.Text = "Invoices"
         '
@@ -4324,12 +4404,12 @@ Partial Class viewSalesCustomers
         '
         Me.grInvoices.DataSource = Me.bsInvoices
         Me.grInvoices.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grInvoices.Location = New System.Drawing.Point(2, 22)
+        Me.grInvoices.Location = New System.Drawing.Point(2, 25)
         Me.grInvoices.LookAndFeel.SkinName = "Money Twins"
         Me.grInvoices.MainView = Me.grvInvoiceList
         Me.grInvoices.Name = "grInvoices"
         Me.grInvoices.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit4})
-        Me.grInvoices.Size = New System.Drawing.Size(1474, 537)
+        Me.grInvoices.Size = New System.Drawing.Size(1474, 509)
         Me.grInvoices.TabIndex = 0
         Me.grInvoices.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvInvoiceList})
         '
@@ -4496,14 +4576,583 @@ Partial Class viewSalesCustomers
         'RibbonPanelControl9
         '
         Me.RibbonPanelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.RibbonPanelControl9.Controls.Add(Me.gcSalesByCustomerAnalysis)
         Me.RibbonPanelControl9.Controls.Add(Me.gcSalesAnalysis)
         Me.RibbonPanelControl9.Controls.Add(Me.gcCustomerAnalysis)
         Me.RibbonPanelControl9.Controls.Add(Me.gcCompanyAnalysis)
         Me.RibbonPanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl9.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl9.Name = "RibbonPanelControl9"
-        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl9.TabIndex = 4
+        '
+        'gcSalesByCustomerAnalysis
+        '
+        Me.gcSalesByCustomerAnalysis.Controls.Add(Me.grcSalesByCustomerAnalysis)
+        Me.gcSalesByCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcSalesByCustomerAnalysis.Location = New System.Drawing.Point(0, 0)
+        Me.gcSalesByCustomerAnalysis.Name = "gcSalesByCustomerAnalysis"
+        Me.gcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1482, 540)
+        Me.gcSalesByCustomerAnalysis.TabIndex = 3
+        Me.gcSalesByCustomerAnalysis.Text = "Sales By Customer Analysis"
+        '
+        'grcSalesByCustomerAnalysis
+        '
+        Me.grcSalesByCustomerAnalysis.DataSource = Me.bsSalesByCustomer
+        Me.grcSalesByCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grcSalesByCustomerAnalysis.Location = New System.Drawing.Point(2, 25)
+        Me.grcSalesByCustomerAnalysis.MainView = Me.grvSalesByCustomerAnalysis
+        Me.grcSalesByCustomerAnalysis.MenuManager = Me.RibbonControl1
+        Me.grcSalesByCustomerAnalysis.Name = "grcSalesByCustomerAnalysis"
+        Me.grcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1478, 513)
+        Me.grcSalesByCustomerAnalysis.TabIndex = 0
+        Me.grcSalesByCustomerAnalysis.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvSalesByCustomerAnalysis})
+        '
+        'bsSalesByCustomer
+        '
+        Me.bsSalesByCustomer.DataSource = GetType(AOS.BusinessObjects.ViewSalesByCustomerAnalysisCollection)
+        '
+        'grvSalesByCustomerAnalysis
+        '
+        Me.grvSalesByCustomerAnalysis.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colSalesName, Me.colCustId_SalesByCustomerAnalysis, Me.colCustName_SalesByCustomerAnalysis, Me.colSalesRepName_SalesByCustomerAnalysis, Me.colYear_SalesByCustomerAnalysis, Me.colJAN_SalesByCustomerAnalysis, Me.colFEB_SalesByCustomerAnalysis, Me.colMAR_SalesByCustomerAnalysis, Me.colQtr1_SalesByCustomerAnalysis, Me.colAPR_SalesByCustomerAnalysis, Me.colMAY_SalesByCustomerAnalysis, Me.colJUN_SalesByCustomerAnalysis, Me.colQtr2_SalesByCustomerAnalysis, Me.colJUL_SalesByCustomerAnalysis, Me.colAUG_SalesByCustomerAnalysis, Me.colSEP_SalesByCustomerAnalysis, Me.colQtr3_SalesByCustomerAnalysis, Me.colOCT_SalesByCustomerAnalysis, Me.colNOV_SalesByCustomerAnalysis, Me.colDEC_SalesByCustomerAnalysis, Me.colQtr4_SalesByCustomerAnalysis, Me.colYTD_SalesByCustomerAnalysis, Me.colPrevYear_SalesByCustomerAnalysis, Me.colPrevJAN_SalesByCustomerAnalysis, Me.colPrevFEB_SalesByCustomerAnalysis, Me.colPrevMAR_SalesByCustomerAnalysis, Me.colPrevQtr1_SalesByCustomerAnalysis, Me.colPrevAPR_SalesByCustomerAnalysis, Me.colPrevMAY_SalesByCustomerAnalysis, Me.colPrevJUN_SalesByCustomerAnalysis, Me.colPrevQtr2_SalesByCustomerAnalysis, Me.colPrevJUL_SalesByCustomerAnalysis, Me.colPrevAUG_SalesByCustomerAnalysis, Me.colPrevSEP_SalesByCustomerAnalysis, Me.colPrevQtr3_SalesByCustomerAnalysis, Me.colPrevOCT_SalesByCustomerAnalysis, Me.colPrevNOV_SalesByCustomerAnalysis, Me.colPrevDEC_SalesByCustomerAnalysis, Me.colPrevQtr4_SalesByCustomerAnalysis, Me.colPrevTotal_SalesByCustomerAnalysis})
+        Me.grvSalesByCustomerAnalysis.GridControl = Me.grcSalesByCustomerAnalysis
+        Me.grvSalesByCustomerAnalysis.Name = "grvSalesByCustomerAnalysis"
+        Me.grvSalesByCustomerAnalysis.OptionsBehavior.Editable = False
+        Me.grvSalesByCustomerAnalysis.OptionsView.ShowAutoFilterRow = True
+        Me.grvSalesByCustomerAnalysis.OptionsView.ShowFooter = True
+        Me.grvSalesByCustomerAnalysis.OptionsView.ShowGroupPanel = False
+        Me.grvSalesByCustomerAnalysis.OptionsView.ShowIndicator = False
+        '
+        'colSalesName
+        '
+        Me.colSalesName.Caption = "Sales Name"
+        Me.colSalesName.FieldName = "SalesName"
+        Me.colSalesName.Name = "colSalesName"
+        Me.colSalesName.Visible = True
+        Me.colSalesName.VisibleIndex = 0
+        '
+        'colCustId_SalesByCustomerAnalysis
+        '
+        Me.colCustId_SalesByCustomerAnalysis.AppearanceCell.Options.UseTextOptions = True
+        Me.colCustId_SalesByCustomerAnalysis.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colCustId_SalesByCustomerAnalysis.Caption = "Cust ID"
+        Me.colCustId_SalesByCustomerAnalysis.FieldName = "Custid"
+        Me.colCustId_SalesByCustomerAnalysis.Name = "colCustId_SalesByCustomerAnalysis"
+        Me.colCustId_SalesByCustomerAnalysis.Visible = True
+        Me.colCustId_SalesByCustomerAnalysis.VisibleIndex = 0
+        Me.colCustId_SalesByCustomerAnalysis.Width = 37
+        '
+        'colCustName_SalesByCustomerAnalysis
+        '
+        Me.colCustName_SalesByCustomerAnalysis.Caption = "Customer Name"
+        Me.colCustName_SalesByCustomerAnalysis.FieldName = "Custname"
+        Me.colCustName_SalesByCustomerAnalysis.Name = "colCustName_SalesByCustomerAnalysis"
+        Me.colCustName_SalesByCustomerAnalysis.Visible = True
+        Me.colCustName_SalesByCustomerAnalysis.VisibleIndex = 1
+        Me.colCustName_SalesByCustomerAnalysis.Width = 150
+        '
+        'colSalesRepName_SalesByCustomerAnalysis
+        '
+        Me.colSalesRepName_SalesByCustomerAnalysis.Caption = "2nd Sales Name"
+        Me.colSalesRepName_SalesByCustomerAnalysis.FieldName = "ServiceRep"
+        Me.colSalesRepName_SalesByCustomerAnalysis.Name = "colSalesRepName_SalesByCustomerAnalysis"
+        Me.colSalesRepName_SalesByCustomerAnalysis.Visible = True
+        Me.colSalesRepName_SalesByCustomerAnalysis.VisibleIndex = 2
+        Me.colSalesRepName_SalesByCustomerAnalysis.Width = 85
+        '
+        'colYear_SalesByCustomerAnalysis
+        '
+        Me.colYear_SalesByCustomerAnalysis.AppearanceCell.Options.UseTextOptions = True
+        Me.colYear_SalesByCustomerAnalysis.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colYear_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colYear_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colYear_SalesByCustomerAnalysis.Caption = "Year"
+        Me.colYear_SalesByCustomerAnalysis.FieldName = "Year"
+        Me.colYear_SalesByCustomerAnalysis.Name = "colYear_SalesByCustomerAnalysis"
+        Me.colYear_SalesByCustomerAnalysis.Visible = True
+        Me.colYear_SalesByCustomerAnalysis.VisibleIndex = 4
+        Me.colYear_SalesByCustomerAnalysis.Width = 63
+        '
+        'colJAN_SalesByCustomerAnalysis
+        '
+        Me.colJAN_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colJAN_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colJAN_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colJAN_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colJAN_SalesByCustomerAnalysis.FieldName = "Jan"
+        Me.colJAN_SalesByCustomerAnalysis.Name = "colJAN_SalesByCustomerAnalysis"
+        Me.colJAN_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Jan", "{0:$#,###.##}")})
+        Me.colJAN_SalesByCustomerAnalysis.Visible = True
+        Me.colJAN_SalesByCustomerAnalysis.VisibleIndex = 6
+        Me.colJAN_SalesByCustomerAnalysis.Width = 64
+        '
+        'colFEB_SalesByCustomerAnalysis
+        '
+        Me.colFEB_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colFEB_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colFEB_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colFEB_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colFEB_SalesByCustomerAnalysis.FieldName = "Feb"
+        Me.colFEB_SalesByCustomerAnalysis.Name = "colFEB_SalesByCustomerAnalysis"
+        Me.colFEB_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Feb", "{0:$#,###.##}")})
+        Me.colFEB_SalesByCustomerAnalysis.Visible = True
+        Me.colFEB_SalesByCustomerAnalysis.VisibleIndex = 8
+        Me.colFEB_SalesByCustomerAnalysis.Width = 64
+        '
+        'colMAR_SalesByCustomerAnalysis
+        '
+        Me.colMAR_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colMAR_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colMAR_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colMAR_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colMAR_SalesByCustomerAnalysis.FieldName = "Mar"
+        Me.colMAR_SalesByCustomerAnalysis.Name = "colMAR_SalesByCustomerAnalysis"
+        Me.colMAR_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Mar", "{0:$#,###.##}")})
+        Me.colMAR_SalesByCustomerAnalysis.Visible = True
+        Me.colMAR_SalesByCustomerAnalysis.VisibleIndex = 10
+        Me.colMAR_SalesByCustomerAnalysis.Width = 64
+        '
+        'colQtr1_SalesByCustomerAnalysis
+        '
+        Me.colQtr1_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colQtr1_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colQtr1_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colQtr1_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colQtr1_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colQtr1_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colQtr1_SalesByCustomerAnalysis.FieldName = "Qtr1"
+        Me.colQtr1_SalesByCustomerAnalysis.Name = "colQtr1_SalesByCustomerAnalysis"
+        Me.colQtr1_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Qtr1", "{0:$#,###.##}")})
+        Me.colQtr1_SalesByCustomerAnalysis.Visible = True
+        Me.colQtr1_SalesByCustomerAnalysis.VisibleIndex = 12
+        Me.colQtr1_SalesByCustomerAnalysis.Width = 70
+        '
+        'colAPR_SalesByCustomerAnalysis
+        '
+        Me.colAPR_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colAPR_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colAPR_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colAPR_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colAPR_SalesByCustomerAnalysis.FieldName = "Apr"
+        Me.colAPR_SalesByCustomerAnalysis.Name = "colAPR_SalesByCustomerAnalysis"
+        Me.colAPR_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Apr", "{0:$#,###.##}")})
+        Me.colAPR_SalesByCustomerAnalysis.Visible = True
+        Me.colAPR_SalesByCustomerAnalysis.VisibleIndex = 14
+        Me.colAPR_SalesByCustomerAnalysis.Width = 70
+        '
+        'colMAY_SalesByCustomerAnalysis
+        '
+        Me.colMAY_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colMAY_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colMAY_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colMAY_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colMAY_SalesByCustomerAnalysis.FieldName = "May"
+        Me.colMAY_SalesByCustomerAnalysis.Name = "colMAY_SalesByCustomerAnalysis"
+        Me.colMAY_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "May", "{0:$#,###.##}")})
+        Me.colMAY_SalesByCustomerAnalysis.Visible = True
+        Me.colMAY_SalesByCustomerAnalysis.VisibleIndex = 16
+        Me.colMAY_SalesByCustomerAnalysis.Width = 64
+        '
+        'colJUN_SalesByCustomerAnalysis
+        '
+        Me.colJUN_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colJUN_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colJUN_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colJUN_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colJUN_SalesByCustomerAnalysis.FieldName = "Jun"
+        Me.colJUN_SalesByCustomerAnalysis.Name = "colJUN_SalesByCustomerAnalysis"
+        Me.colJUN_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Jun", "{0:$#,###.##}")})
+        Me.colJUN_SalesByCustomerAnalysis.Visible = True
+        Me.colJUN_SalesByCustomerAnalysis.VisibleIndex = 18
+        Me.colJUN_SalesByCustomerAnalysis.Width = 64
+        '
+        'colQtr2_SalesByCustomerAnalysis
+        '
+        Me.colQtr2_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colQtr2_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colQtr2_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colQtr2_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colQtr2_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colQtr2_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colQtr2_SalesByCustomerAnalysis.FieldName = "Qtr2"
+        Me.colQtr2_SalesByCustomerAnalysis.Name = "colQtr2_SalesByCustomerAnalysis"
+        Me.colQtr2_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Qtr2", "{0:$#,###.##}")})
+        Me.colQtr2_SalesByCustomerAnalysis.Visible = True
+        Me.colQtr2_SalesByCustomerAnalysis.VisibleIndex = 20
+        Me.colQtr2_SalesByCustomerAnalysis.Width = 70
+        '
+        'colJUL_SalesByCustomerAnalysis
+        '
+        Me.colJUL_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colJUL_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colJUL_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colJUL_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colJUL_SalesByCustomerAnalysis.FieldName = "Jul"
+        Me.colJUL_SalesByCustomerAnalysis.Name = "colJUL_SalesByCustomerAnalysis"
+        Me.colJUL_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Jul", "{0:$#,###.##}")})
+        Me.colJUL_SalesByCustomerAnalysis.Visible = True
+        Me.colJUL_SalesByCustomerAnalysis.VisibleIndex = 22
+        Me.colJUL_SalesByCustomerAnalysis.Width = 64
+        '
+        'colAUG_SalesByCustomerAnalysis
+        '
+        Me.colAUG_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colAUG_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colAUG_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colAUG_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colAUG_SalesByCustomerAnalysis.FieldName = "Aug"
+        Me.colAUG_SalesByCustomerAnalysis.Name = "colAUG_SalesByCustomerAnalysis"
+        Me.colAUG_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Aug", "{0:$#,###.##}")})
+        Me.colAUG_SalesByCustomerAnalysis.Visible = True
+        Me.colAUG_SalesByCustomerAnalysis.VisibleIndex = 24
+        Me.colAUG_SalesByCustomerAnalysis.Width = 64
+        '
+        'colSEP_SalesByCustomerAnalysis
+        '
+        Me.colSEP_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colSEP_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colSEP_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colSEP_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colSEP_SalesByCustomerAnalysis.FieldName = "Sep"
+        Me.colSEP_SalesByCustomerAnalysis.Name = "colSEP_SalesByCustomerAnalysis"
+        Me.colSEP_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Sep", "{0:$#,###.##}")})
+        Me.colSEP_SalesByCustomerAnalysis.Visible = True
+        Me.colSEP_SalesByCustomerAnalysis.VisibleIndex = 26
+        Me.colSEP_SalesByCustomerAnalysis.Width = 64
+        '
+        'colQtr3_SalesByCustomerAnalysis
+        '
+        Me.colQtr3_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colQtr3_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colQtr3_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colQtr3_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colQtr3_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colQtr3_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colQtr3_SalesByCustomerAnalysis.FieldName = "Qtr3"
+        Me.colQtr3_SalesByCustomerAnalysis.Name = "colQtr3_SalesByCustomerAnalysis"
+        Me.colQtr3_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Qtr3", "{0:$#,###.##}")})
+        Me.colQtr3_SalesByCustomerAnalysis.Visible = True
+        Me.colQtr3_SalesByCustomerAnalysis.VisibleIndex = 28
+        Me.colQtr3_SalesByCustomerAnalysis.Width = 70
+        '
+        'colOCT_SalesByCustomerAnalysis
+        '
+        Me.colOCT_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colOCT_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colOCT_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colOCT_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colOCT_SalesByCustomerAnalysis.FieldName = "Oct"
+        Me.colOCT_SalesByCustomerAnalysis.Name = "colOCT_SalesByCustomerAnalysis"
+        Me.colOCT_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Oct", "{0:$#,###.##}")})
+        Me.colOCT_SalesByCustomerAnalysis.Visible = True
+        Me.colOCT_SalesByCustomerAnalysis.VisibleIndex = 30
+        Me.colOCT_SalesByCustomerAnalysis.Width = 64
+        '
+        'colNOV_SalesByCustomerAnalysis
+        '
+        Me.colNOV_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colNOV_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colNOV_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colNOV_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colNOV_SalesByCustomerAnalysis.FieldName = "Nov"
+        Me.colNOV_SalesByCustomerAnalysis.Name = "colNOV_SalesByCustomerAnalysis"
+        Me.colNOV_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Nov", "{0:$#,###.##}")})
+        Me.colNOV_SalesByCustomerAnalysis.Visible = True
+        Me.colNOV_SalesByCustomerAnalysis.VisibleIndex = 32
+        Me.colNOV_SalesByCustomerAnalysis.Width = 64
+        '
+        'colDEC_SalesByCustomerAnalysis
+        '
+        Me.colDEC_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colDEC_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colDEC_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colDEC_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colDEC_SalesByCustomerAnalysis.FieldName = "Dec"
+        Me.colDEC_SalesByCustomerAnalysis.Name = "colDEC_SalesByCustomerAnalysis"
+        Me.colDEC_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Dec", "{0:$#,###.##}")})
+        Me.colDEC_SalesByCustomerAnalysis.Visible = True
+        Me.colDEC_SalesByCustomerAnalysis.VisibleIndex = 34
+        Me.colDEC_SalesByCustomerAnalysis.Width = 64
+        '
+        'colQtr4_SalesByCustomerAnalysis
+        '
+        Me.colQtr4_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colQtr4_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colQtr4_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colQtr4_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colQtr4_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colQtr4_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colQtr4_SalesByCustomerAnalysis.FieldName = "Qtr4"
+        Me.colQtr4_SalesByCustomerAnalysis.Name = "colQtr4_SalesByCustomerAnalysis"
+        Me.colQtr4_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Qtr4", "{0:$#,###.##}")})
+        Me.colQtr4_SalesByCustomerAnalysis.Visible = True
+        Me.colQtr4_SalesByCustomerAnalysis.VisibleIndex = 36
+        Me.colQtr4_SalesByCustomerAnalysis.Width = 70
+        '
+        'colYTD_SalesByCustomerAnalysis
+        '
+        Me.colYTD_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colYTD_SalesByCustomerAnalysis.AppearanceCell.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.colYTD_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colYTD_SalesByCustomerAnalysis.AppearanceCell.Options.UseFont = True
+        Me.colYTD_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colYTD_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colYTD_SalesByCustomerAnalysis.Caption = "YTD"
+        Me.colYTD_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colYTD_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colYTD_SalesByCustomerAnalysis.FieldName = "Ytd"
+        Me.colYTD_SalesByCustomerAnalysis.Name = "colYTD_SalesByCustomerAnalysis"
+        Me.colYTD_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ytd", "{0:$#,###.##}")})
+        Me.colYTD_SalesByCustomerAnalysis.Visible = True
+        Me.colYTD_SalesByCustomerAnalysis.VisibleIndex = 38
+        Me.colYTD_SalesByCustomerAnalysis.Width = 95
+        '
+        'colPrevYear_SalesByCustomerAnalysis
+        '
+        Me.colPrevYear_SalesByCustomerAnalysis.AppearanceCell.Options.UseTextOptions = True
+        Me.colPrevYear_SalesByCustomerAnalysis.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevYear_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevYear_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevYear_SalesByCustomerAnalysis.Caption = "Prev Year"
+        Me.colPrevYear_SalesByCustomerAnalysis.FieldName = "PrevYear"
+        Me.colPrevYear_SalesByCustomerAnalysis.Name = "colPrevYear_SalesByCustomerAnalysis"
+        Me.colPrevYear_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevYear_SalesByCustomerAnalysis.VisibleIndex = 3
+        Me.colPrevYear_SalesByCustomerAnalysis.Width = 63
+        '
+        'colPrevJAN_SalesByCustomerAnalysis
+        '
+        Me.colPrevJAN_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevJAN_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevJAN_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevJAN_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevJAN_SalesByCustomerAnalysis.FieldName = "PrevJan"
+        Me.colPrevJAN_SalesByCustomerAnalysis.Name = "colPrevJAN_SalesByCustomerAnalysis"
+        Me.colPrevJAN_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevJan", "{0:$#,###.##}")})
+        Me.colPrevJAN_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevJAN_SalesByCustomerAnalysis.VisibleIndex = 5
+        Me.colPrevJAN_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevFEB_SalesByCustomerAnalysis
+        '
+        Me.colPrevFEB_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevFEB_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevFEB_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevFEB_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevFEB_SalesByCustomerAnalysis.FieldName = "PrevFeb"
+        Me.colPrevFEB_SalesByCustomerAnalysis.Name = "colPrevFEB_SalesByCustomerAnalysis"
+        Me.colPrevFEB_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevFeb", "{0:$#,###.##}")})
+        Me.colPrevFEB_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevFEB_SalesByCustomerAnalysis.VisibleIndex = 7
+        Me.colPrevFEB_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevMAR_SalesByCustomerAnalysis
+        '
+        Me.colPrevMAR_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevMAR_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevMAR_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevMAR_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevMAR_SalesByCustomerAnalysis.FieldName = "PrevMar"
+        Me.colPrevMAR_SalesByCustomerAnalysis.Name = "colPrevMAR_SalesByCustomerAnalysis"
+        Me.colPrevMAR_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevMar", "{0:$#,###.##}")})
+        Me.colPrevMAR_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevMAR_SalesByCustomerAnalysis.VisibleIndex = 9
+        Me.colPrevMAR_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevQtr1_SalesByCustomerAnalysis
+        '
+        Me.colPrevQtr1_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colPrevQtr1_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colPrevQtr1_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevQtr1_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevQtr1_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevQtr1_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevQtr1_SalesByCustomerAnalysis.FieldName = "PrevQtr1"
+        Me.colPrevQtr1_SalesByCustomerAnalysis.Name = "colPrevQtr1_SalesByCustomerAnalysis"
+        Me.colPrevQtr1_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevQtr1", "{0:$#,###.##}")})
+        Me.colPrevQtr1_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevQtr1_SalesByCustomerAnalysis.VisibleIndex = 11
+        Me.colPrevQtr1_SalesByCustomerAnalysis.Width = 70
+        '
+        'colPrevAPR_SalesByCustomerAnalysis
+        '
+        Me.colPrevAPR_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevAPR_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevAPR_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevAPR_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevAPR_SalesByCustomerAnalysis.FieldName = "PrevApr"
+        Me.colPrevAPR_SalesByCustomerAnalysis.Name = "colPrevAPR_SalesByCustomerAnalysis"
+        Me.colPrevAPR_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevApr", "{0:$#,###.##}")})
+        Me.colPrevAPR_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevAPR_SalesByCustomerAnalysis.VisibleIndex = 13
+        Me.colPrevAPR_SalesByCustomerAnalysis.Width = 70
+        '
+        'colPrevMAY_SalesByCustomerAnalysis
+        '
+        Me.colPrevMAY_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevMAY_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevMAY_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevMAY_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevMAY_SalesByCustomerAnalysis.FieldName = "PrevMay"
+        Me.colPrevMAY_SalesByCustomerAnalysis.Name = "colPrevMAY_SalesByCustomerAnalysis"
+        Me.colPrevMAY_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevMay", "{0:$#,###.##}")})
+        Me.colPrevMAY_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevMAY_SalesByCustomerAnalysis.VisibleIndex = 15
+        Me.colPrevMAY_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevJUN_SalesByCustomerAnalysis
+        '
+        Me.colPrevJUN_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevJUN_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevJUN_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevJUN_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevJUN_SalesByCustomerAnalysis.FieldName = "PrevJun"
+        Me.colPrevJUN_SalesByCustomerAnalysis.Name = "colPrevJUN_SalesByCustomerAnalysis"
+        Me.colPrevJUN_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevJun", "{0:$#,###.##}")})
+        Me.colPrevJUN_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevJUN_SalesByCustomerAnalysis.VisibleIndex = 17
+        Me.colPrevJUN_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevQtr2_SalesByCustomerAnalysis
+        '
+        Me.colPrevQtr2_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colPrevQtr2_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colPrevQtr2_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevQtr2_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevQtr2_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevQtr2_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevQtr2_SalesByCustomerAnalysis.FieldName = "PrevQtr2"
+        Me.colPrevQtr2_SalesByCustomerAnalysis.Name = "colPrevQtr2_SalesByCustomerAnalysis"
+        Me.colPrevQtr2_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevQtr2", "{0:$#,###.##}")})
+        Me.colPrevQtr2_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevQtr2_SalesByCustomerAnalysis.VisibleIndex = 19
+        Me.colPrevQtr2_SalesByCustomerAnalysis.Width = 70
+        '
+        'colPrevJUL_SalesByCustomerAnalysis
+        '
+        Me.colPrevJUL_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevJUL_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevJUL_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevJUL_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevJUL_SalesByCustomerAnalysis.FieldName = "PrevJul"
+        Me.colPrevJUL_SalesByCustomerAnalysis.Name = "colPrevJUL_SalesByCustomerAnalysis"
+        Me.colPrevJUL_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevJul", "{0:$#,###.##}")})
+        Me.colPrevJUL_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevJUL_SalesByCustomerAnalysis.VisibleIndex = 21
+        Me.colPrevJUL_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevAUG_SalesByCustomerAnalysis
+        '
+        Me.colPrevAUG_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevAUG_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevAUG_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevAUG_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevAUG_SalesByCustomerAnalysis.FieldName = "PrevAug"
+        Me.colPrevAUG_SalesByCustomerAnalysis.Name = "colPrevAUG_SalesByCustomerAnalysis"
+        Me.colPrevAUG_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevAug", "{0:$#,###.##}")})
+        Me.colPrevAUG_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevAUG_SalesByCustomerAnalysis.VisibleIndex = 23
+        Me.colPrevAUG_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevSEP_SalesByCustomerAnalysis
+        '
+        Me.colPrevSEP_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevSEP_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevSEP_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevSEP_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevSEP_SalesByCustomerAnalysis.FieldName = "PrevSep"
+        Me.colPrevSEP_SalesByCustomerAnalysis.Name = "colPrevSEP_SalesByCustomerAnalysis"
+        Me.colPrevSEP_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevSep", "{0:$#,###.##}")})
+        Me.colPrevSEP_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevSEP_SalesByCustomerAnalysis.VisibleIndex = 25
+        Me.colPrevSEP_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevQtr3_SalesByCustomerAnalysis
+        '
+        Me.colPrevQtr3_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colPrevQtr3_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colPrevQtr3_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevQtr3_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevQtr3_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevQtr3_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevQtr3_SalesByCustomerAnalysis.FieldName = "PrevQtr3"
+        Me.colPrevQtr3_SalesByCustomerAnalysis.Name = "colPrevQtr3_SalesByCustomerAnalysis"
+        Me.colPrevQtr3_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevQtr3", "{0:$#,###.##}")})
+        Me.colPrevQtr3_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevQtr3_SalesByCustomerAnalysis.VisibleIndex = 27
+        Me.colPrevQtr3_SalesByCustomerAnalysis.Width = 70
+        '
+        'colPrevOCT_SalesByCustomerAnalysis
+        '
+        Me.colPrevOCT_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevOCT_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevOCT_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevOCT_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevOCT_SalesByCustomerAnalysis.FieldName = "PrevOct"
+        Me.colPrevOCT_SalesByCustomerAnalysis.Name = "colPrevOCT_SalesByCustomerAnalysis"
+        Me.colPrevOCT_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevOct", "{0:$#,###.##}")})
+        Me.colPrevOCT_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevOCT_SalesByCustomerAnalysis.VisibleIndex = 29
+        Me.colPrevOCT_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevNOV_SalesByCustomerAnalysis
+        '
+        Me.colPrevNOV_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevNOV_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevNOV_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevNOV_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevNOV_SalesByCustomerAnalysis.FieldName = "PrevNov"
+        Me.colPrevNOV_SalesByCustomerAnalysis.Name = "colPrevNOV_SalesByCustomerAnalysis"
+        Me.colPrevNOV_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevNov", "{0:$#,###.##}")})
+        Me.colPrevNOV_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevNOV_SalesByCustomerAnalysis.VisibleIndex = 31
+        Me.colPrevNOV_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevDEC_SalesByCustomerAnalysis
+        '
+        Me.colPrevDEC_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevDEC_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevDEC_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevDEC_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevDEC_SalesByCustomerAnalysis.FieldName = "PrevDec"
+        Me.colPrevDEC_SalesByCustomerAnalysis.Name = "colPrevDEC_SalesByCustomerAnalysis"
+        Me.colPrevDEC_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevDec", "{0:$#,###.##}")})
+        Me.colPrevDEC_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevDEC_SalesByCustomerAnalysis.VisibleIndex = 33
+        Me.colPrevDEC_SalesByCustomerAnalysis.Width = 64
+        '
+        'colPrevQtr4_SalesByCustomerAnalysis
+        '
+        Me.colPrevQtr4_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colPrevQtr4_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colPrevQtr4_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevQtr4_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevQtr4_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevQtr4_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevQtr4_SalesByCustomerAnalysis.FieldName = "PrevQtr4"
+        Me.colPrevQtr4_SalesByCustomerAnalysis.Name = "colPrevQtr4_SalesByCustomerAnalysis"
+        Me.colPrevQtr4_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevQtr4", "{0:$#,###.##}")})
+        Me.colPrevQtr4_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevQtr4_SalesByCustomerAnalysis.VisibleIndex = 35
+        Me.colPrevQtr4_SalesByCustomerAnalysis.Width = 70
+        '
+        'colPrevTotal_SalesByCustomerAnalysis
+        '
+        Me.colPrevTotal_SalesByCustomerAnalysis.AppearanceCell.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.colPrevTotal_SalesByCustomerAnalysis.AppearanceCell.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.colPrevTotal_SalesByCustomerAnalysis.AppearanceCell.Options.UseBackColor = True
+        Me.colPrevTotal_SalesByCustomerAnalysis.AppearanceCell.Options.UseFont = True
+        Me.colPrevTotal_SalesByCustomerAnalysis.AppearanceHeader.Options.UseTextOptions = True
+        Me.colPrevTotal_SalesByCustomerAnalysis.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colPrevTotal_SalesByCustomerAnalysis.Caption = "Prev Total"
+        Me.colPrevTotal_SalesByCustomerAnalysis.DisplayFormat.FormatString = "c2"
+        Me.colPrevTotal_SalesByCustomerAnalysis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colPrevTotal_SalesByCustomerAnalysis.FieldName = "PrevTotal"
+        Me.colPrevTotal_SalesByCustomerAnalysis.Name = "colPrevTotal_SalesByCustomerAnalysis"
+        Me.colPrevTotal_SalesByCustomerAnalysis.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrevTotal", "{0:$#,###.##}")})
+        Me.colPrevTotal_SalesByCustomerAnalysis.Visible = True
+        Me.colPrevTotal_SalesByCustomerAnalysis.VisibleIndex = 37
+        Me.colPrevTotal_SalesByCustomerAnalysis.Width = 95
         '
         'gcSalesAnalysis
         '
@@ -4511,7 +5160,7 @@ Partial Class viewSalesCustomers
         Me.gcSalesAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcSalesAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcSalesAnalysis.Name = "gcSalesAnalysis"
-        Me.gcSalesAnalysis.Size = New System.Drawing.Size(1482, 565)
+        Me.gcSalesAnalysis.Size = New System.Drawing.Size(1482, 540)
         Me.gcSalesAnalysis.TabIndex = 0
         Me.gcSalesAnalysis.Text = "Sales Analysis"
         '
@@ -4519,11 +5168,11 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl3.DataSource = Me.bsSalesData
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl3.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl3.Location = New System.Drawing.Point(2, 25)
         Me.GridControl3.MainView = Me.grvSalesAnalysis
         Me.GridControl3.MenuManager = Me.RibbonControl1
         Me.GridControl3.Name = "GridControl3"
-        Me.GridControl3.Size = New System.Drawing.Size(1478, 541)
+        Me.GridControl3.Size = New System.Drawing.Size(1478, 513)
         Me.GridControl3.TabIndex = 0
         Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvSalesAnalysis})
         '
@@ -4823,7 +5472,7 @@ Partial Class viewSalesCustomers
         Me.gcCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCustomerAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcCustomerAnalysis.Name = "gcCustomerAnalysis"
-        Me.gcCustomerAnalysis.Size = New System.Drawing.Size(1482, 565)
+        Me.gcCustomerAnalysis.Size = New System.Drawing.Size(1482, 540)
         Me.gcCustomerAnalysis.TabIndex = 1
         Me.gcCustomerAnalysis.Text = "Customer Analysis"
         '
@@ -4832,7 +5481,7 @@ Partial Class viewSalesCustomers
         Me.gcCompanyAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCompanyAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcCompanyAnalysis.Name = "gcCompanyAnalysis"
-        Me.gcCompanyAnalysis.Size = New System.Drawing.Size(1482, 565)
+        Me.gcCompanyAnalysis.Size = New System.Drawing.Size(1482, 540)
         Me.gcCompanyAnalysis.TabIndex = 2
         Me.gcCompanyAnalysis.Text = "Company Analysis"
         '
@@ -4842,7 +5491,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl7.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl7.Name = "RibbonPanelControl7"
-        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl7.TabIndex = 1
         '
         'GroupControl6
@@ -4853,7 +5502,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl6.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl6.Name = "GroupControl6"
-        Me.GroupControl6.Size = New System.Drawing.Size(1478, 561)
+        Me.GroupControl6.Size = New System.Drawing.Size(1478, 536)
         Me.GroupControl6.TabIndex = 2
         Me.GroupControl6.Text = "Customer Payments"
         '
@@ -4870,12 +5519,12 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl2.DataSource = Me.bsInvoicePayments
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl2.Location = New System.Drawing.Point(2, 25)
         Me.GridControl2.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl2.MainView = Me.GridView10
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit8})
-        Me.GridControl2.Size = New System.Drawing.Size(236, 114)
+        Me.GridControl2.Size = New System.Drawing.Size(236, 111)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView10})
         '
@@ -4965,9 +5614,9 @@ Partial Class viewSalesCustomers
         '
         Me.GroupControl7.Controls.Add(Me.GridControl1)
         Me.GroupControl7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GroupControl7.Location = New System.Drawing.Point(2, 53)
+        Me.GroupControl7.Location = New System.Drawing.Point(2, 56)
         Me.GroupControl7.Name = "GroupControl7"
-        Me.GroupControl7.Size = New System.Drawing.Size(457, 506)
+        Me.GroupControl7.Size = New System.Drawing.Size(457, 478)
         Me.GroupControl7.TabIndex = 2
         Me.GroupControl7.Text = "Customer Payment List"
         '
@@ -4975,12 +5624,12 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl1.DataSource = Me.bsCustomerPayments
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 25)
         Me.GridControl1.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl1.MainView = Me.GridView8
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit7})
-        Me.GridControl1.Size = New System.Drawing.Size(453, 482)
+        Me.GridControl1.Size = New System.Drawing.Size(453, 451)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView8})
         '
@@ -5085,7 +5734,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl4.Controls.Add(Me.LabelControl2)
         Me.PanelControl4.Controls.Add(Me.eCustomerLookup)
         Me.PanelControl4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl4.Location = New System.Drawing.Point(2, 22)
+        Me.PanelControl4.Location = New System.Drawing.Point(2, 25)
         Me.PanelControl4.Name = "PanelControl4"
         Me.PanelControl4.Size = New System.Drawing.Size(1474, 31)
         Me.PanelControl4.TabIndex = 1
@@ -5110,7 +5759,7 @@ Partial Class viewSalesCustomers
         Me.eCustomerLookup.Properties.NullText = ""
         Me.eCustomerLookup.Properties.PopupWidth = 450
         Me.eCustomerLookup.Properties.ValueMember = "Custid"
-        Me.eCustomerLookup.Size = New System.Drawing.Size(350, 20)
+        Me.eCustomerLookup.Size = New System.Drawing.Size(350, 22)
         Me.eCustomerLookup.TabIndex = 0
         '
         'RibbonPanelControl6
@@ -5119,7 +5768,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
-        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl6.TabIndex = 1
         '
         'GroupControl5
@@ -5128,7 +5777,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl5.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(1478, 561)
+        Me.GroupControl5.Size = New System.Drawing.Size(1478, 536)
         Me.GroupControl5.TabIndex = 10
         Me.GroupControl5.Text = "Shipments"
         '
@@ -5136,12 +5785,12 @@ Partial Class viewSalesCustomers
         '
         Me.grShipments.DataSource = Me.bsShipments
         Me.grShipments.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grShipments.Location = New System.Drawing.Point(2, 22)
+        Me.grShipments.Location = New System.Drawing.Point(2, 25)
         Me.grShipments.LookAndFeel.SkinName = "Money Twins"
         Me.grShipments.MainView = Me.GridView9
         Me.grShipments.Name = "grShipments"
         Me.grShipments.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit3, Me.RepositoryItemLookUpEdit5})
-        Me.grShipments.Size = New System.Drawing.Size(1474, 537)
+        Me.grShipments.Size = New System.Drawing.Size(1474, 509)
         Me.grShipments.TabIndex = 0
         Me.grShipments.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView9})
         '
@@ -5458,6 +6107,11 @@ Partial Class viewSalesCustomers
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl9.ResumeLayout(False)
+        CType(Me.gcSalesByCustomerAnalysis, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gcSalesByCustomerAnalysis.ResumeLayout(False)
+        CType(Me.grcSalesByCustomerAnalysis, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsSalesByCustomer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvSalesByCustomerAnalysis, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcSalesAnalysis, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gcSalesAnalysis.ResumeLayout(False)
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5912,4 +6566,56 @@ Partial Class viewSalesCustomers
     Friend WithEvents btnRptCommWithExceptions As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnRptPayableWithExceptions As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnPrintCommPmtRegisterWithExceptions As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents gcSalesByCustomerAnalysis As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents grcSalesByCustomerAnalysis As DevExpress.XtraGrid.GridControl
+    Friend grvSalesByCustomerAnalysis As CustomDevExGridView
+    Friend WithEvents colCustId_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colCustName_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colSalesRepName_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colYear_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colJAN_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colFEB_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colMAR_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colQtr1_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colAPR_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colMAY_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colJUN_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colQtr2_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colJUL_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colAUG_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colSEP_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colQtr3_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colOCT_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colNOV_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDEC_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colQtr4_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colYTD_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevYear_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevJAN_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevFEB_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevMAR_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevQtr1_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevAPR_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevMAY_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevJUN_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevQtr2_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevJUL_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevAUG_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevSEP_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevQtr3_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevOCT_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevNOV_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevDEC_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevQtr4_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrevTotal_SalesByCustomerAnalysis As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bsSalesByCustomer As BindingSource
+    Friend WithEvents colSalesName As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents rbtnGetSalesAnalysisByCustomerData As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rbtnExportSalesByCustomerAnalysisToExcel As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rbtnGetSalesPersonAnalysis As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rbtnExportSalesPersonAnalysisToExcel As DevExpress.XtraBars.BarButtonItem
 End Class
