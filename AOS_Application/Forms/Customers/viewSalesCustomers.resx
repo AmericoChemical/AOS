@@ -1792,32 +1792,8 @@
         AQEAAACCIP+vbkhAAAAAwLkaECAAAZ14SUMAAAAASUVORK5CYIIL
 </value>
   </data>
-  <metadata name="bsSalesperson.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>454, 17</value>
-  </metadata>
-  <metadata name="bsCustomerSelector.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>706, 60</value>
-  </metadata>
-  <metadata name="bsProducts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>902, 17</value>
-  </metadata>
-  <metadata name="bsSalesPersonList3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>393, 103</value>
-  </metadata>
-  <metadata name="bsSalesYears.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>715, 103</value>
-  </metadata>
-  <metadata name="bsCustomerLookupList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>858, 103</value>
-  </metadata>
   <metadata name="bsCommissions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1034, 17</value>
-  </metadata>
-  <metadata name="bsCustomers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>206, 17</value>
-  </metadata>
-  <metadata name="bsCustomerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>607, 17</value>
   </metadata>
   <metadata name="bsCustomers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>206, 17</value>
