@@ -604,6 +604,7 @@ Public Class frmAddEditProduct
             Dim frm As New frmApisStandardCosts
             frm.vAPISID = oAPIS(0).Apisnum
             frm.ShowDialog()
+            editObject(bs.Current.ProductID)
             Exit Sub
         End If
 
@@ -613,6 +614,7 @@ Public Class frmAddEditProduct
             Dim frm As New frmApisStandardCosts
             frm.vAPISID = oAPIS(0).Apisnum
             frm.ShowDialog()
+            editObject(bs.Current.ProductID)
             Exit Sub
         End If
 

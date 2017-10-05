@@ -48,9 +48,9 @@
         Dim oApisList As New ViewMaterialAPISListCollection
         If vChangeType = "APIS" Then
             'exclude the APIS that just produced the change
-            oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"), oApisList.Query.Apisnum.NotEqual(vChangeID))
+            oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"), oApisList.Query.Apisnum.NotEqual(vChangeID), oApisList.Query.Productid.NotEqual(vProdID))
         Else
-            oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"))
+            oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"), oApisList.Query.Productid.NotEqual(vProdID))
         End If
 
         If oApisList.Query.Load Then
@@ -86,7 +86,7 @@
                 End If
 
                 Dim oApisList2 As New ViewMaterialAPISListCollection
-                oApisList2.Query.Where(oApisList2.Query.Materialid.Equal(vMatID), oApisList2.Query.Apisstatus.Equal("ACTIVE"), oApisList2.Query.Apisnum.NotEqual(oAPIS1.Apisnum))
+                oApisList2.Query.Where(oApisList2.Query.Materialid.Equal(vMatID), oApisList2.Query.Apisstatus.Equal("ACTIVE"), oApisList2.Query.Apisnum.NotEqual(oAPIS1.Apisnum), oApisList2.Query.Productid.NotEqual(vProdID))
                 If oApisList2.Query.Load Then
                     'loop through all related APIS products, updating standard costs
                     For Each oApis2 As ViewMaterialAPISList In oApisList2
