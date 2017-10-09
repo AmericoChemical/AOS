@@ -2101,14 +2101,14 @@ Public Class viewSalesCustomers
             vCustID = eCustomerSelector.EditValue
         End If
 
-        If IsDBNull(eHistoryStart.EditValue) Then
+        If IsDBNull(eHistoryStart.EditValue) Or eHistoryStart.EditValue = Nothing Then
             MsgBox("You must first select a Start Date", MsgBoxStyle.Critical, "Error")
             Exit Sub
         Else
             vStart = eHistoryStart.EditValue
         End If
 
-        If IsDBNull(eHistoryEnd.EditValue) Then
+        If IsDBNull(eHistoryEnd.EditValue) Or eHistoryEnd.EditValue = Nothing Then
             MsgBox("You must first select an End Date", MsgBoxStyle.Critical, "Error")
             Exit Sub
         Else
@@ -2656,6 +2656,32 @@ Public Class viewSalesCustomers
             Dim rpt As New rptCommissionsWithExceptions(bsSalesperson.Current.SalesPersonID, "PAID", frm.vDatePicked)
             rpt.ShowPreview()
         End If
+    End Sub
+
+    Private Sub rbtnGetAllCustomersSales_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnGetAllCustomersSales.ItemClick
+        Dim vStart As Date
+        Dim vEnd As Date
+
+        If IsDBNull(eHistoryStart.EditValue) Or eHistoryStart.EditValue = Nothing Then
+            MsgBox("You must first select a Start Date", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        Else
+            vStart = eHistoryStart.EditValue
+        End If
+
+        If IsDBNull(eHistoryEnd.EditValue) Or eHistoryEnd.EditValue = Nothing Then
+            MsgBox("You must first select an End Date", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        Else
+            vEnd = eHistoryEnd.EditValue
+        End If
+
+        Dim oSalesHistory As New ViewCustomerInvoicedItemsCollection
+
+        oSalesHistory.Query.Where(oSalesHistory.Query.Invoicedate.Between(vStart, vEnd))
+        oSalesHistory.Query.Load()
+        bsSalesHistory.DataSource = oSalesHistory
+        grSalesHistory.DataSource = bsSalesHistory
     End Sub
 
 
