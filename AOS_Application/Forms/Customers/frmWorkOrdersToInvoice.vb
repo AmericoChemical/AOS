@@ -42,6 +42,7 @@ Public Class frmWorkOrdersToInvoice
             MsgBox("Error retrieving Work Orders To Invoice", MsgBoxStyle.Critical, "Error")
             Exit Sub
         End If
+
         If oWorkOrdersToInvoice.Count <= 0 Then
             MsgBox("Error retrieving Work Orders To Invoice", MsgBoxStyle.Critical, "Error - No Records found")
             Exit Sub
