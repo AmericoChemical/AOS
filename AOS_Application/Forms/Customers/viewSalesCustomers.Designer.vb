@@ -150,6 +150,8 @@ Partial Class viewSalesCustomers
         Me.rbtnExportSalesByCustomerAnalysisToExcel = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnGetSalesPersonAnalysis = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnExportSalesPersonAnalysisToExcel = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnGetAllCustomersSales = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnWorkOrdersToInvoice = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -509,7 +511,6 @@ Partial Class viewSalesCustomers
         Me.bsTrendsQuarterly = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsTrendsAnnually = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.rbtnGetAllCustomersSales = New DevExpress.XtraBars.BarButtonItem()
         CustidLabel = New System.Windows.Forms.Label()
         CustnameLabel = New System.Windows.Forms.Label()
         Custshipaddress1Label = New System.Windows.Forms.Label()
@@ -1055,10 +1056,10 @@ Partial Class viewSalesCustomers
         Me.RibbonControl1.ApplicationCaption = "dsadsdsa"
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE, Me.rbtnGetSalesAnalysisByCustomerData, Me.rbtnExportSalesByCustomerAnalysisToExcel, Me.rbtnGetSalesPersonAnalysis, Me.rbtnExportSalesPersonAnalysisToExcel, Me.rbtnGetAllCustomersSales})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE, Me.rbtnGetSalesAnalysisByCustomerData, Me.rbtnExportSalesByCustomerAnalysisToExcel, Me.rbtnGetSalesPersonAnalysis, Me.rbtnExportSalesPersonAnalysisToExcel, Me.rbtnGetAllCustomersSales, Me.rbtnWorkOrdersToInvoice})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 131
+        Me.RibbonControl1.MaxItemId = 132
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage6, Me.RibbonPage4, Me.RibbonPage7, Me.RibbonPage5, Me.RibbonPage2, Me.RibbonPage10, Me.RibbonPage9})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit14, Me.RepositoryItemLookUpEdit15, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4, Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17, Me.RepositoryItemLookUpEdit18})
@@ -1858,6 +1859,20 @@ Partial Class viewSalesCustomers
         Me.rbtnExportSalesPersonAnalysisToExcel.ImageOptions.LargeImageIndex = 22
         Me.rbtnExportSalesPersonAnalysisToExcel.Name = "rbtnExportSalesPersonAnalysisToExcel"
         '
+        'rbtnGetAllCustomersSales
+        '
+        Me.rbtnGetAllCustomersSales.Caption = "Get All Customers Sales"
+        Me.rbtnGetAllCustomersSales.Id = 130
+        Me.rbtnGetAllCustomersSales.ImageOptions.LargeImageIndex = 45
+        Me.rbtnGetAllCustomersSales.Name = "rbtnGetAllCustomersSales"
+        '
+        'rbtnWorkOrdersToInvoice
+        '
+        Me.rbtnWorkOrdersToInvoice.Caption = "WorkOrders To Invoice"
+        Me.rbtnWorkOrdersToInvoice.Id = 131
+        Me.rbtnWorkOrdersToInvoice.ImageOptions.LargeImageIndex = 17
+        Me.rbtnWorkOrdersToInvoice.Name = "rbtnWorkOrdersToInvoice"
+        '
         'RibbonLargeImages
         '
         Me.RibbonLargeImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -1958,6 +1973,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnEditInvoice, True)
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnDeleteInvoice, True)
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnConvertWorkOrderToInvoice, True)
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.rbtnWorkOrdersToInvoice)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.ShowCaptionButton = False
         Me.RibbonPageGroup4.Text = "Invoice Management"
@@ -5942,13 +5958,6 @@ Partial Class viewSalesCustomers
         Me.Timer3.Enabled = True
         Me.Timer3.Interval = 15000
         '
-        'rbtnGetAllCustomersSales
-        '
-        Me.rbtnGetAllCustomersSales.Caption = "Get All Customers Sales"
-        Me.rbtnGetAllCustomersSales.Id = 130
-        Me.rbtnGetAllCustomersSales.ImageOptions.LargeImageIndex = 45
-        Me.rbtnGetAllCustomersSales.Name = "rbtnGetAllCustomersSales"
-        '
         'viewSalesCustomers
         '
         Me.Controls.Add(Me.WorkPanelsHolder)
@@ -6630,4 +6639,5 @@ Partial Class viewSalesCustomers
     Friend WithEvents rbtnGetSalesPersonAnalysis As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnExportSalesPersonAnalysisToExcel As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnGetAllCustomersSales As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rbtnWorkOrdersToInvoice As DevExpress.XtraBars.BarButtonItem
 End Class

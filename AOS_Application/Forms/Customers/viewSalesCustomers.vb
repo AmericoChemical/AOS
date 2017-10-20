@@ -2684,10 +2684,11 @@ Public Class viewSalesCustomers
         grSalesHistory.DataSource = bsSalesHistory
     End Sub
 
+    Private Sub rbtnWorkOrdersToInvoice_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnWorkOrdersToInvoice.ItemClick
+        Dim frm As New frmWorkOrdersToInvoice
+        frm.ShowDialog()
 
-
-
-
+    End Sub
 
 
 

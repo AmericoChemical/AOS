@@ -941,5 +941,24 @@ Public Class viewPurchasing2
     Private Sub rbtnRefreshMaterialNeeds_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnRefreshMaterialNeeds.ItemClick
         refreshMonitorGrids()
     End Sub
+
+
+
+    Private Sub bsVendors_CurrentChanged(sender As Object, e As EventArgs) Handles bsVendors.CurrentChanged
+        grpVendorProduct_VendorMgmt.Text = "Products For Vendor " & bsVendors.Current.VendorName
+        loadVendorProducts(bsVendors.Current.VendorId)
+    End Sub
+
+
+    Private Sub loadVendorProducts(ByVal vVendorID As Integer)
+        Dim oVendorProducts As ViewVendorProductAllCollection = New ViewVendorProductAllCollection
+        oVendorProducts.Query.Where(oVendorProducts.Query.Vendorid.Equal(vVendorID))
+        oVendorProducts.Query.Load()
+        bsVendorProducts.DataSource = oVendorProducts
+        Me.grVendorProduct.Refresh()
+
+    End Sub
+
+
 End Class
 
