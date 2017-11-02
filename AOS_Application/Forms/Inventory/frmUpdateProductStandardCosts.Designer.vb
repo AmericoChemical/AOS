@@ -248,9 +248,9 @@ Partial Class frmUpdateProductStandardCosts
         Me.GroupControl2.Controls.Add(VolumeunitsLabel)
         Me.GroupControl2.Controls.Add(Me.eVolUnits)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 171)
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 193)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(388, 231)
+        Me.GroupControl2.Size = New System.Drawing.Size(388, 214)
         Me.GroupControl2.TabIndex = 1
         Me.GroupControl2.Text = "Product Cost Information"
         '
@@ -371,7 +371,7 @@ Partial Class frmUpdateProductStandardCosts
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(388, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(388, 117)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -379,7 +379,7 @@ Partial Class frmUpdateProductStandardCosts
         '
         Me.rbtnSave.Caption = "Save"
         Me.rbtnSave.Id = 4
-        Me.rbtnSave.LargeGlyph = Global.AOS.My.Resources.Resources.SaveChanges
+        Me.rbtnSave.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.SaveChanges
         Me.rbtnSave.Name = "rbtnSave"
         Me.rbtnSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
@@ -387,7 +387,7 @@ Partial Class frmUpdateProductStandardCosts
         '
         Me.rbtnCancel.Caption = "Cancel"
         Me.rbtnCancel.Id = 5
-        Me.rbtnCancel.LargeGlyph = Global.AOS.My.Resources.Resources.CancelChanges
+        Me.rbtnCancel.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.CancelChanges
         Me.rbtnCancel.Name = "rbtnCancel"
         Me.rbtnCancel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
@@ -395,21 +395,21 @@ Partial Class frmUpdateProductStandardCosts
         '
         Me.btnAlterAdd.Caption = "Add New Comp Alternate"
         Me.btnAlterAdd.Id = 24
-        Me.btnAlterAdd.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnAlterAdd.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnAlterAdd.Name = "btnAlterAdd"
         '
         'btnAlterEdit
         '
         Me.btnAlterEdit.Caption = "Edit Comp Alternate"
-        Me.btnAlterEdit.Glyph = Global.AOS.My.Resources.Resources.document_edit__2_
         Me.btnAlterEdit.Id = 25
+        Me.btnAlterEdit.ImageOptions.Image = Global.AOS.My.Resources.Resources.document_edit__2_
         Me.btnAlterEdit.Name = "btnAlterEdit"
         '
         'btnAlterDelete
         '
         Me.btnAlterDelete.Caption = "Delete Comp alternate"
-        Me.btnAlterDelete.Glyph = CType(resources.GetObject("btnAlterDelete.Glyph"), System.Drawing.Image)
         Me.btnAlterDelete.Id = 26
+        Me.btnAlterDelete.ImageOptions.Image = CType(resources.GetObject("btnAlterDelete.ImageOptions.Image"), System.Drawing.Image)
         Me.btnAlterDelete.Name = "btnAlterDelete"
         '
         'RibbonPage1
@@ -446,7 +446,7 @@ Partial Class frmUpdateProductStandardCosts
         Me.GroupControl1.Controls.Add(Me.TextEdit2)
         Me.GroupControl1.Controls.Add(ProductdescLabel)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 117)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(388, 76)
         Me.GroupControl1.TabIndex = 0
@@ -454,7 +454,7 @@ Partial Class frmUpdateProductStandardCosts
         '
         'frmUpdateProductStandardCosts
         '
-        Me.ClientSize = New System.Drawing.Size(388, 402)
+        Me.ClientSize = New System.Drawing.Size(388, 407)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)

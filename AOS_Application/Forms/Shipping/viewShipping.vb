@@ -952,8 +952,8 @@ Public Class viewShipping
         oShipItem.Ld1 = oProduct.Dotdesc & " " & oProduct.Hazmatdesc
         oShipItem.Ld2 = oProduct.Unline
         'vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Stdgallons.ToString & " gal."
-        vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
-
+        'vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
+        vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc)
         If vCustomerPO <> "" Then
             vStr = vStr & " (PO# " & vCustomerPO & ")"
         End If

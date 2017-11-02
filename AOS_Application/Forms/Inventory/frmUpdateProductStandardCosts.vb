@@ -168,6 +168,12 @@ Public Class frmUpdateProductStandardCosts
             Return False
         End If
 
+        If eWgtUnits.EditValue <> oProduct.Stdweight Then
+            MsgBox("The WEIGHT units do not match the LABEL WEIGHT for the Product", MsgBoxStyle.Critical, "ERROR")
+            Return False
+        End If
+
+
         If IsDBNull(eReason.EditValue) Or eReason.EditValue = Nothing Then
             MsgBox("You must enter a reason for the costing changes.", MsgBoxStyle.Critical, "ERROR - Missing Reason for Change")
             Return False

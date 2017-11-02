@@ -19,6 +19,7 @@ Partial Public Class rptInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rptInvoice))
         Dim ShapeRectangle1 As DevExpress.XtraPrinting.Shape.ShapeRectangle = New DevExpress.XtraPrinting.Shape.ShapeRectangle()
         Dim ShapeRectangle2 As DevExpress.XtraPrinting.Shape.ShapeRectangle = New DevExpress.XtraPrinting.Shape.ShapeRectangle()
@@ -82,6 +83,7 @@ Partial Public Class rptInvoice
         Me.XrShape2 = New DevExpress.XtraReports.UI.XRShape()
         Me.XrShape5 = New DevExpress.XtraReports.UI.XRShape()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.XrLabel54 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel51 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel50 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel49 = New DevExpress.XtraReports.UI.XRLabel()
@@ -91,8 +93,7 @@ Partial Public Class rptInvoice
         Me.XrCrossBandBox1 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.bsRpt = New System.Windows.Forms.BindingSource()
-        Me.XrLabel54 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.bsRpt = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.bsRpt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -521,7 +522,7 @@ Partial Public Class rptInvoice
         Me.XrLabel21.LocationFloat = New DevExpress.Utils.PointFloat(142.0!, 320.0!)
         Me.XrLabel21.Name = "XrLabel21"
         Me.XrLabel21.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel21.SizeF = New System.Drawing.SizeF(208.0!, 25.0!)
+        Me.XrLabel21.SizeF = New System.Drawing.SizeF(597.9999!, 25.0!)
         Me.XrLabel21.Text = "XrLabel21"
         Me.XrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
@@ -752,11 +753,11 @@ Partial Public Class rptInvoice
         'XrShape5
         '
         Me.XrShape5.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrShape5.LocationFloat = New DevExpress.Utils.PointFloat(58.0!, 317.0!)
+        Me.XrShape5.LocationFloat = New DevExpress.Utils.PointFloat(57.99999!, 317.0!)
         Me.XrShape5.Name = "XrShape5"
         Me.XrShape5.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.XrShape5.Shape = ShapeRectangle5
-        Me.XrShape5.SizeF = New System.Drawing.SizeF(300.0!, 33.0!)
+        Me.XrShape5.SizeF = New System.Drawing.SizeF(690.0!, 33.0!)
         Me.XrShape5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'PageFooter
@@ -766,6 +767,23 @@ Partial Public Class rptInvoice
         Me.PageFooter.Name = "PageFooter"
         Me.PageFooter.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.PageFooter.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrLabel54
+        '
+        Me.XrLabel54.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel54.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Accountingnotes")})
+        Me.XrLabel54.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel54.LocationFloat = New DevExpress.Utils.PointFloat(8.0!, 9.999974!)
+        Me.XrLabel54.Multiline = True
+        Me.XrLabel54.Name = "XrLabel54"
+        Me.XrLabel54.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel54.SizeF = New System.Drawing.SizeF(492.0!, 80.00002!)
+        Me.XrLabel54.StylePriority.UseBorders = False
+        Me.XrLabel54.StylePriority.UseFont = False
+        Me.XrLabel54.StylePriority.UseTextAlignment = False
+        Me.XrLabel54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'XrLabel51
         '
@@ -869,23 +887,6 @@ Partial Public Class rptInvoice
         '
         Me.bsRpt.DataSource = GetType(AOS.BusinessObjects.ViewRptInvoice2Collection)
         '
-        'XrLabel54
-        '
-        Me.XrLabel54.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-            Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrLabel54.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Accountingnotes")})
-        Me.XrLabel54.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel54.LocationFloat = New DevExpress.Utils.PointFloat(8.0!, 9.999974!)
-        Me.XrLabel54.Multiline = True
-        Me.XrLabel54.Name = "XrLabel54"
-        Me.XrLabel54.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel54.SizeF = New System.Drawing.SizeF(492.0!, 80.00002!)
-        Me.XrLabel54.StylePriority.UseBorders = False
-        Me.XrLabel54.StylePriority.UseFont = False
-        Me.XrLabel54.StylePriority.UseTextAlignment = False
-        Me.XrLabel54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
         'rptInvoice
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.PageHeader, Me.PageFooter, Me.TopMarginBand1, Me.BottomMarginBand1})
@@ -893,7 +894,7 @@ Partial Public Class rptInvoice
         Me.DataSource = Me.bsRpt
         Me.Margins = New System.Drawing.Printing.Margins(50, 50, 50, 50)
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
-        Me.Version = "15.1"
+        Me.Version = "17.1"
         CType(Me.bsRpt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 

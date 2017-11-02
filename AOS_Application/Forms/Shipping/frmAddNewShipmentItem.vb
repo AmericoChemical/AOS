@@ -198,7 +198,8 @@ Public Class frmAddNewShipmentItem
                         oRec.Ld2 = oProduct.Unline
                         'oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
                         'vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Stdgallons.ToString & " gal."
-                        vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
+                        'vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc) & " - " & oProduct.Units.ToString & " " & oProduct.Uom
+                        vStr = oProduct.Container & "/" & oProduct.Stdweight.ToString & " LB. " & Trim(oProduct.Productdesc)
                         If vCustomerPO <> "" Then
                             vStr = vStr & " (PO# " & vCustomerPO & ")"
                         End If
@@ -246,9 +247,10 @@ Public Class frmAddNewShipmentItem
                         oRec.Classrate = oProduct.Classrate
                         oRec.Ld1 = oProduct.Dotdesc & " " & oProduct.Hazmatdesc
                         oRec.Ld2 = oProduct.Unline
-                        vStr = "EMPTY " & oProduct.Container & "/ " & IIf(IsDBNull(getTareWeight(oProduct.Container)), 0, getTareWeight(oProduct.Container)).ToString & " LB / LAST CONTAINED: " & Trim(oProduct.Productdesc) & " - " & oProduct.Stdgallons.ToString & " GAL"
+                        'vStr = "EMPTY " & oProduct.Container & "/ " & IIf(IsDBNull(getTareWeight(oProduct.Container)), 0, getTareWeight(oProduct.Container)).ToString & " LB / LAST CONTAINED: " & Trim(oProduct.Productdesc) & " - " & oProduct.Stdgallons.ToString & " GAL"
+                        vStr = "EMPTY " & oProduct.Container & "/ " & IIf(IsDBNull(getTareWeight(oProduct.Container)), 0, getTareWeight(oProduct.Container)).ToString & " LB / LAST CONTAINED: " & Trim(oProduct.Productdesc)
                         If vCustomerPO <> "" Then
-                            vStr = vStr & "(PO# " & vCustomerPO & ")"
+                            vStr = vStr & " (PO# " & vCustomerPO & ")"
                         End If
                         oRec.Ld3 = vStr
                         oRec.Ld3 = vStr
