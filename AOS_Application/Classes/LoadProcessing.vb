@@ -68,6 +68,7 @@
                         Case Else
                             rLoad.LoadType = "INTERNAL"
                     End Select
+                    rLoad.LoadNotes = oWO.Transportationnotes
                     rLoad.Save()
                 End If
             Next
@@ -308,7 +309,8 @@
         oLoadItem.Ld1 = oItem.Dotdesc & " " & oItem.Hazmatdesc
         oLoadItem.Ld2 = oItem.Unline
         Dim vStr As String
-        vStr = oItem.Container & "/" & oItem.Totalweight.ToString & " " & oItem.Weightuom & " / " & Trim(oItem.Itemdescription) & " - " & oItem.Totalvolume.ToString & " " & oItem.Volumeuom
+        'vStr = oItem.Container & "/" & oItem.Totalweight.ToString & " " & oItem.Weightuom & " / " & Trim(oItem.Itemdescription) & " - " & oItem.Totalvolume.ToString & " " & oItem.Volumeuom
+        vStr = oItem.Container & "/" & oItem.Totalweight.ToString & " " & oItem.Weightuom & " / " & Trim(oItem.Itemdescription)
         If oItem.Customerpo <> "" Then
             vStr = vStr & "(PO# " & oItem.Customerpo & ")"
         End If
@@ -377,7 +379,8 @@
         oLoadItem.Ld1 = oItem.Dotdesc & " " & oItem.Hazmatdesc
         oLoadItem.Ld2 = oItem.Unline
         Dim vStr As String
-        vStr = oItem.Container & "/" & oItem.Totalweight.ToString & " " & oItem.Weightuom & " / " & Trim(oItem.Productdesc) & " - " & oItem.Totalvolume.ToString & " " & oItem.Volumeuom
+        'vStr = oItem.Container & "/" & oItem.Totalweight.ToString & " " & oItem.Weightuom & " / " & Trim(oItem.Productdesc) & " - " & oItem.Totalvolume.ToString & " " & oItem.Volumeuom
+        vStr = oItem.Container & "/" & oItem.Totalweight.ToString & " " & oItem.Weightuom & " / " & Trim(oItem.Productdesc)
         If oItem.Customerpo <> "" Then
             vStr = vStr & "(PO# " & oItem.Customerpo & ")"
         End If

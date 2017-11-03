@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/11/2014 1:43:56 PM
+' Date Generated       : 10/20/2017 3:48:29 PM
 '===============================================================================
 
 Imports System
@@ -2269,7 +2269,7 @@ Namespace BusinessObjects
 				
 			c = New esColumnMetadata(InvoiceMetadata.ColumnNames.Freightcarrier, 21, GetType(System.String), esSystemType.String)	
 			c.PropertyName = InvoiceMetadata.PropertyNames.Freightcarrier
-			c.CharacterMaxLength = 50
+			c.CharacterMaxLength = 200
 			c.IsNullable = True
 			_columns.Add(c)
 				

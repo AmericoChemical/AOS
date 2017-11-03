@@ -143,6 +143,7 @@
         Dim oWOItems As WorkorderitemCollection
         Dim oLoad As Load
         Dim oCarrier As Carrier
+        Dim oLogistics As Logistics
 
         'fetch Work Order record
         oWorkOrder = New Workorder
@@ -226,9 +227,22 @@
                     oInvoice.Freightcarrier = oWorkOrder.Freightcarrier
                 End If
             End If
+
         Else
             oInvoice.Freightcarrier = oWorkOrder.Freightcarrier
         End If
+
+        If vLoadID <> 0 Then
+            'lookup Logistics Provider
+            oLogistics = New Logistics
+            If IsDBNull(oLoad.LogisticsID) Or oLoad.LogisticsID Is Nothing Then
+            Else
+                If oLogistics.LoadByPrimaryKey(oLoad.LogisticsID) Then
+                    oInvoice.Freightcarrier = oInvoice.Freightcarrier & " / " & oLogistics.Logisticsname
+                End If
+            End If
+        End If
+
         oInvoice.Save()
 
         Dim vNewInvNum As Integer = oInvoice.Invoicenumber

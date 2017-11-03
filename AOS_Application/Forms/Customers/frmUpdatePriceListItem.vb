@@ -331,6 +331,20 @@ Public Class frmUpdatePriceListItem
             End If
         End If
 
+        'Check UNITS for Pricing and Product Standard Costing
+        If oPrice.Volumeunits <> oProduct.Volumeunits Then
+            If MsgBox("The VOLUME Units for the Price List are different than the VOLUME Units for the Product Standard Cost. Do you want to continue?", MsgBoxStyle.YesNo, "Confirm SAVE Action") = MsgBoxResult.No Then
+                Return False
+            End If
+        End If
+
+        If oPrice.Weightunits <> oProduct.Weightunits Then
+            If MsgBox("The WEIGHT Units for the Price List are different than the VOLUME Units for the Product Standard Cost. Do you want to continue?", MsgBoxStyle.YesNo, "Confirm SAVE Action") = MsgBoxResult.No Then
+                Return False
+            End If
+        End If
+
+
 
         If ValidateCost() = False Then
             If MsgBox("Partial pricing data is entered. Do you want to continue?", vbYesNo + vbQuestion) = vbNo Then

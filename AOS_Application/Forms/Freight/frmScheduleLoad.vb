@@ -195,6 +195,20 @@ Public Class frmScheduleLoad
             bsLoad.EndEdit()
             oLoad.EndEdit()
             oLoad.Save()
+
+            'Update WorkOrder Shipping information from Scheduled Load shipping information
+            Dim vOrdList As New ViewLoadWorkordersCollection
+            vOrdList.Query.Where(vOrdList.Query.LoadID.Equal(oLoad.LoadID))
+            If vOrdList.Query.Load Then
+                For Each vOrder As ViewLoadWorkorders In vOrdList
+                    Dim vOrd As New Workorder
+                    If vOrd.LoadByPrimaryKey(vOrder.Workordernumber) Then
+                        vOrd.Logisticsid = oLoad.ScheduledLogisticsID
+                        vOrd.Carrierid = oLoad.ScheduledCarrierID
+                        vOrd.Save()
+                    End If
+                Next
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
             MsgBox("Error saving changes", MsgBoxStyle.Critical, "Error")
@@ -238,10 +252,10 @@ Public Class frmScheduleLoad
             Return False
         End If
 
-        If oLoad.ScheduledShipmentDate < Today Then
-            MsgBox("Scheduled Ship Date must be greater than or equal to today's date", MsgBoxStyle.Critical, "Error - Shipment Date")
-            Return False
-        End If
+        'If oLoad.ScheduledShipmentDate < Today Then
+        '    MsgBox("Scheduled Ship Date must be greater than or equal to today's date", MsgBoxStyle.Critical, "Error - Shipment Date")
+        '    Return False
+        'End If
 
         If IsDBNull(oLoad.ScheduledCarrierID) Then
             MsgBox("You must select a Carrier before the load can be marked as scheduled", MsgBoxStyle.Critical, "Error - Carrier Missing")
