@@ -475,15 +475,15 @@ Public Class frmAddEditPurchaseOrderItem
         If String.IsNullOrEmpty(eProduct.EditValue.ToString()) Then
             Return False
         End If
-        If Not String.IsNullOrEmpty(Me.VolumeTextStandardCost.Text.Trim) And _
-          Val(Me.VolumeTextStandardCost.Text.Trim) > 0 Or _
-          Not String.IsNullOrEmpty(Me.WeightTextStandardCost.Text.Trim) And _
-          Val(Me.WeightTextStandardCost.Text.Trim) > 0 Or _
-          Not String.IsNullOrEmpty(Me.VolumeunitsSpinEdit.Text.Trim) And _
-          Val(Me.VolumeunitsSpinEdit.Text.Trim) > 0 Or _
-          Not String.IsNullOrEmpty(Me.WeightunitsTextEdit.Text.Trim) And _
-          Val(Me.WeightunitsTextEdit.Text.Trim) > 0 Or _
-          Not String.IsNullOrEmpty(Me.VolumeuomLookUpEdit.Text.Trim) Or _
+        If Not String.IsNullOrEmpty(Me.VolumeTextStandardCost.Text.Trim) And
+          Val(Me.VolumeTextStandardCost.Text.Trim) > 0 Or
+          Not String.IsNullOrEmpty(Me.WeightTextStandardCost.Text.Trim) And
+          Val(Me.WeightTextStandardCost.Text.Trim) > 0 Or
+          Not String.IsNullOrEmpty(Me.VolumeunitsSpinEdit.Text.Trim) And
+          Val(Me.VolumeunitsSpinEdit.Text.Trim) > 0 Or
+          Not String.IsNullOrEmpty(Me.WeightunitsTextEdit.Text.Trim) And
+          Val(Me.WeightunitsTextEdit.Text.Trim) > 0 Or
+          Not String.IsNullOrEmpty(Me.VolumeuomLookUpEdit.Text.Trim) Or
           Not String.IsNullOrEmpty(Me.WeightuomLookUpEdit.Text.Trim) Then
 
             If eProduct.EditValue > 0 Then
@@ -498,15 +498,15 @@ Public Class frmAddEditPurchaseOrderItem
     End Function
 
     Private Function ValidateAllPriceList() As Boolean
-        If Not String.IsNullOrEmpty(Me.VolumeTextStandardCost.Text.Trim) And _
-          Val(Me.VolumeTextStandardCost.Text.Trim) > 0 And _
-          Not String.IsNullOrEmpty(Me.WeightTextStandardCost.Text.Trim) And _
-          Val(Me.WeightTextStandardCost.Text.Trim) > 0 And _
-          Not String.IsNullOrEmpty(Me.VolumeunitsSpinEdit.Text.Trim) And _
-          Val(Me.VolumeunitsSpinEdit.Text.Trim) > 0 And _
-          Not String.IsNullOrEmpty(Me.WeightunitsTextEdit.Text.Trim) And _
-          Val(Me.WeightunitsTextEdit.Text.Trim) > 0 And _
-          Not String.IsNullOrEmpty(Me.VolumeuomLookUpEdit.Text.Trim) And _
+        If Not String.IsNullOrEmpty(Me.VolumeTextStandardCost.Text.Trim) And
+          Val(Me.VolumeTextStandardCost.Text.Trim) > 0 And
+          Not String.IsNullOrEmpty(Me.WeightTextStandardCost.Text.Trim) And
+          Val(Me.WeightTextStandardCost.Text.Trim) > 0 And
+          Not String.IsNullOrEmpty(Me.VolumeunitsSpinEdit.Text.Trim) And
+          Val(Me.VolumeunitsSpinEdit.Text.Trim) > 0 And
+          Not String.IsNullOrEmpty(Me.WeightunitsTextEdit.Text.Trim) And
+          Val(Me.WeightunitsTextEdit.Text.Trim) > 0 And
+          Not String.IsNullOrEmpty(Me.VolumeuomLookUpEdit.Text.Trim) And
           Not String.IsNullOrEmpty(Me.WeightuomLookUpEdit.Text.Trim) Then
             Return True
         Else

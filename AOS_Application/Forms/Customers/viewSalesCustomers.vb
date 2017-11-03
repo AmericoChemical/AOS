@@ -1143,8 +1143,10 @@ Public Class viewSalesCustomers
         If bsInvoices.Count <= 0 Then
             Exit Sub
         End If
-        deleteInvoice(bsInvoices.Current.InvoiceNumber)     'code in InvoiceProcessing module
+        deleteInvoice(bsInvoices.Current.InvoiceNumber, True)     'code in InvoiceProcessing module
+        loadInvoices(vInvoiceStatus)
         updateSalesPersonData()
+
     End Sub
 
     Private Sub btnEditInvoice_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEditInvoice.ItemClick
@@ -2688,6 +2690,12 @@ Public Class viewSalesCustomers
         Dim frm As New frmWorkOrdersToInvoice
         frm.ShowDialog()
 
+    End Sub
+
+    Private Sub btnInvoiceHistory_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnInvoiceHistory.ItemClick
+        Dim frm As New frmInvoiceHistoryList
+        frm.vInvoiceNum = Me.bsInvoices.Current.InvoiceNumber
+        frm.ShowDialog()
     End Sub
 
 

@@ -291,7 +291,7 @@
 
     End Function
 
-    Public Function deleteInvoice(vInvNum As Integer) As Boolean
+    Public Function deleteInvoice(vInvNum As Integer, ByVal Optional bDeleteReasonRequired As Boolean = False) As Boolean
 
         Dim str As String
         str = "Are you sure you want to delete Invoice# " & vInvNum.ToString & "?" & Chr(13) & Chr(13)
@@ -309,47 +309,57 @@
             MsgBox("This invoice already has payments recorded against it and can not be deleted.", MsgBoxStyle.Critical, "Error")
             Exit Function
         End If
-
+        'first add history
+        If bDeleteReasonRequired Then
+            Dim oInvoiceHistoryHeader As New Invoicehistoryheader
+            oInvoiceHistoryHeader = frmAddEditInvoice.SaveInvoiceHistoryAll(vInvNum)
+            Dim frmChangeReason As New frmInvoiceChangeReason
+            frmChangeReason.vInvoiceNum = vInv
+            frmChangeReason.vEditType = "DELETE"
+            frmChangeReason.vInvoiceHistoryHeader = oInvoiceHistoryHeader
+            frmChangeReason.ShowDialog()
+            If (String.IsNullOrEmpty(oInvoiceHistoryHeader.Changereason)) Then
+                MsgBox("You must Enter Reason for Deleteing Invoice")
+                Return False
+            End If
+        End If
         'first delete any commissions from this invoice
         Try
-            Dim oComms As New CommissionCollection
-            oComms.Query.Where(oComms.Query.Invoicenumber.Equal(vInv))
-            If oComms.Query.Load Then
-                oComms.MarkAllAsDeleted()
-                oComms.Save()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Exit Function
-        End Try
+                    Dim oComms As New CommissionCollection
+                    oComms.Query.Where(oComms.Query.Invoicenumber.Equal(vInv))
+                    If oComms.Query.Load Then
+                        oComms.MarkAllAsDeleted()
+                        oComms.Save()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                    Exit Function
+                End Try
 
+                'second, delete any invoice items for this invoice
+                Try
+                    Dim oInvItems As New InvoiceitemCollection
+                    oInvItems.Query.Where(oInvItems.Query.Invoicenumber.Equal(vInv))
+                    If oInvItems.Query.Load Then
+                        oInvItems.MarkAllAsDeleted()
+                        oInvItems.Save()
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                    Exit Function
+                End Try
 
-        'second, delete any invoice items for this invoice
-        Try
-            Dim oInvItems As New InvoiceitemCollection
-            oInvItems.Query.Where(oInvItems.Query.Invoicenumber.Equal(vInv))
-            If oInvItems.Query.Load Then
-                oInvItems.MarkAllAsDeleted()
-                oInvItems.Save()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Exit Function
-        End Try
-
-
-        'finally, delete invoice record itself
-        Try
-            Dim oInvoice As Invoice
-            oInvoice = New Invoice
-            oInvoice.LoadByPrimaryKey(vInv)
-            oInvoice.MarkAsDeleted()
-            oInvoice.Save()
-        Catch ex As Exception
-            MsgBox("Error in deleting selected record", MsgBoxStyle.Critical, "Error - Delete Failed")
-        End Try
-
-        Return True
+                'finally, delete invoice record itself
+                Try
+                    Dim oInvoice As Invoice
+                    oInvoice = New Invoice
+                    oInvoice.LoadByPrimaryKey(vInv)
+                    oInvoice.MarkAsDeleted()
+                    oInvoice.Save()
+                Catch ex As Exception
+                    MsgBox("Error in deleting selected record", MsgBoxStyle.Critical, "Error - Delete Failed")
+                End Try
+                Return True
 
     End Function
 

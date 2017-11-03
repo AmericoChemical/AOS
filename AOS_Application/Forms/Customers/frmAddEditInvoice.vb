@@ -25,6 +25,9 @@ Public Class frmAddEditInvoice
     Dim oSales As SalespersonCollection
     Dim oCarriers As CarrierCollection
     Dim oFOB As ListFobCollection
+    Dim oInvoiceHistoryHeader As Invoicehistoryheader
+
+    Dim IsItemModified As Boolean
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Timer1.Stop()
@@ -202,6 +205,9 @@ Public Class frmAddEditInvoice
         frm.vEditType = "ADD"
         frm.vTaxExempt = getTaxStatus(Me.bsInvoice.Current.CustID)
         vResult = frm.ShowDialog()
+        If vResult = DialogResult.Yes Then
+            IsItemModified = True
+        End If
         getInvoiceItems(vInvoiceNum)
     End Sub
     Private Sub addMiscCharge()
@@ -210,10 +216,15 @@ Public Class frmAddEditInvoice
         Dim vResult As DialogResult
         frm.vEditType = "ADD"
         vResult = frm.ShowDialog()
+        If vResult = DialogResult.Yes Then
+            IsItemModified = True
+        End If
         getInvoiceItems(vInvoiceNum)
     End Sub
 
     Private Sub editItem()
+        Dim vResult As DialogResult
+
         If bsInvoiceItems.Count <= 0 Then
             Exit Sub
         End If
@@ -222,7 +233,7 @@ Public Class frmAddEditInvoice
             frmMisc.vID = Me.bsInvoiceItems.Current.InvoiceItemNumber
             frmMisc.vFKID = Me.bsInvoice.Current.InvoiceNumber
             frmMisc.vEditType = "EDIT"
-            frmMisc.ShowDialog()
+            vResult = frmMisc.ShowDialog()
         Else
             Dim frm As New frmAddEditInvoiceItemProduct
             frm.vID = Me.bsInvoiceItems.Current.InvoiceItemNumber
@@ -230,7 +241,10 @@ Public Class frmAddEditInvoice
             frm.vCustID = Me.bsInvoice.Current.CustID
             frm.vTaxExempt = getTaxStatus(Me.bsInvoice.Current.CustID)
             frm.vEditType = "EDIT"
-            frm.ShowDialog()
+            vResult = frm.ShowDialog()
+        End If
+        If vResult = DialogResult.Yes Then
+            IsItemModified = True
         End If
         getInvoiceItems(vInvoiceNum)
     End Sub
@@ -256,6 +270,7 @@ Public Class frmAddEditInvoice
             sqlcnn.Close()
         End Try
         MsgBox("Record successfully deleted", MsgBoxStyle.Information, "Success")
+        IsItemModified = True
         getInvoiceItems(vInvoiceNum)
     End Sub
 
@@ -289,16 +304,11 @@ Public Class frmAddEditInvoice
     End Sub
 
     Private Sub btnSaveInvoice_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSaveInvoice.ItemClick
-        saveInvoice()
+        ValidateAndSaveInvoice()
     End Sub
 
     Private Sub saveInvoice()
-        bsInvoice.EndEdit()
-        bsInvoiceItems.EndEdit()
-        If bsInvoiceItems.Count <= 0 Then
-            MsgBox("You must enter at least one Item to save the work order", MsgBoxStyle.Critical, "Error - No items")
-            Exit Sub
-        End If
+
         oInvoice.Save()
         oItems.Save()
         If oInvoice.Invoicestatus = "PENDING" Then
@@ -306,23 +316,111 @@ Public Class frmAddEditInvoice
             If MsgBox("Do you want to mark this Invoice as RECEIVABLE?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.Yes Then
                 oInvoice.Invoicestatus = "RECEIVABLE"
                 oInvoice.Save()
+                oInvoiceHistoryHeader = SaveInvoiceHistoryAll(vInvoiceNum, True, "Invoice Marked As Receivable")
             End If
         End If
         Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub
 
+    Private Sub ValidateAndSaveInvoice()
+        If bsInvoiceItems.Count <= 0 Then
+            MsgBox("You must enter at least one Item to save the invoice", MsgBoxStyle.Critical, "Error - No items")
+            Exit Sub
+        End If
+
+        bsInvoice.EndEdit()
+        bsInvoiceItems.EndEdit()
+
+        If vEditType = "EDIT" Then
+            If oInvoice.es.IsModified OrElse IsItemModified Then
+                Dim frmChangeReason As New frmInvoiceChangeReason
+                frmChangeReason.vInvoiceNum = vInvoiceNum
+                frmChangeReason.vEditType = "EDIT"
+                frmChangeReason.vInvoiceHistoryHeader = oInvoiceHistoryHeader
+                frmChangeReason.ShowDialog()
+
+                If (Not String.IsNullOrEmpty(oInvoiceHistoryHeader.Changereason)) Then
+
+                    saveInvoice()
+                Else
+                    MsgBox("You must Enter Reason for Invoice Change")
+                End If
+            Else
+                'discard header
+
+                saveInvoice()
+            End If
+
+        Else
+
+            saveInvoice()
+        End If
+    End Sub
     Private Sub btnCancelChanges_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCancelChanges.ItemClick
+
         oInvoice.CancelEdit()
         Try
             If vEditType = "ADD" Then
+                Dim cInvoiceItemCollection As New InvoiceitemCollection
+                cInvoiceItemCollection.Query.Where(cInvoiceItemCollection.Query.Invoicenumber = oInvoice.Invoicenumber)
+                If (cInvoiceItemCollection.Query.Load) Then
+                    cInvoiceItemCollection.MarkAllAsDeleted()
+                    cInvoiceItemCollection.Save()
+                End If
                 oInvoice.MarkAsDeleted()
                 oInvoice.Save()
+            Else
+                If oInvoice.es.IsModified OrElse IsItemModified Then
+                    Dim vConfirm As String = "Are you sure you want to Cancel changes to the Invoice? vbcrlf Any edits to invoice items will also be reverted."
+                    If MsgBox(vConfirm, MsgBoxStyle.YesNo, "Confirm Cancel Changes") = MsgBoxResult.No Then
+                    End If
+                End If
+
+                If IsItemModified Then
+                    RevertInvoiceToHistory(oInvoice, oInvoiceHistoryHeader)
+                End If
             End If
         Catch ex As Exception
+            Exit Sub
+
         End Try
+
+        DeleteInvoiceHistory(vInvoiceNum)
         Me.DialogResult = Windows.Forms.DialogResult.Cancel
     End Sub
 
+    Private Sub RevertInvoiceToHistory(ByRef invoice As Invoice, ByVal invoiceHistoryHeader As Invoicehistoryheader)
+        Dim invHistoryItems As New InvoicehistoryitemCollection
+        invHistoryItems.Query.Where(invHistoryItems.Query.Invoicehistoryid = invoiceHistoryHeader.Invoicehistoryid)
+        If (invHistoryItems.Query.Load) Then
+            Dim iq As InvoiceitemQuery = New InvoiceitemQuery("iq")
+            Dim hq As InvoicehistoryitemQuery = New InvoicehistoryitemQuery("hq")
+            iq.Select(iq)
+            iq.LeftJoin(hq).On(iq.Invoiceitemnumber = hq.Invoiceitemnumber And hq.Invoicehistoryid = invoiceHistoryHeader.Invoicehistoryid)
+            iq.Where(iq.Invoicenumber = invoice.Invoicenumber And hq.Invoicehistoryid.IsNull)
+
+            Dim invItems As New InvoiceitemCollection
+            If (invItems.Load(iq)) Then
+                invItems.MarkAllAsDeleted()
+                invItems.Save()
+            End If
+            For Each invHistItem As Invoicehistoryitem In invHistoryItems
+                Dim invItem As New Invoiceitem
+                If (Not invItem.LoadByPrimaryKey(invHistItem.Invoiceitemnumber)) Then
+                    invItem.AddNew()
+                End If
+                ConvertInvoiceHistoryItemToInvoiceItem(invHistItem, invItem)
+                invItem.Save()
+            Next
+
+        End If
+
+        'Dim invHistory As New Invoicehistory
+        'If (invHistory.LoadByPrimaryKey(invoiceHistoryHeader.Invoicehistoryid)) Then
+        '    ConvertInvoiceHistoryToInvoice(invHistory, invoice)
+        '    invoice.Save()
+        'End If
+    End Sub
     Private Sub btnMiscCharge_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnMiscCharge.ItemClick
         addMiscCharge()
     End Sub
@@ -386,7 +484,7 @@ Public Class frmAddEditInvoice
                         vCommission = oItem.Grossprofit * vRate
                     End If
                 Else
-                    vCommission = oItem.Extprice * vRate
+                    vCommission = If(oItem.Extprice Is Nothing, 0, oItem.Extprice) * vRate
                 End If
             End If
             vTotalCommission = vTotalCommission + vCommission
@@ -457,7 +555,8 @@ Public Class frmAddEditInvoice
     End Sub
 
     Private Sub rbtnPrintInvoice_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnPrintInvoice.ItemClick
-        saveInvoice()
+        '        saveInvoice()
+        ValidateAndSaveInvoice()
         printInvoice()
     End Sub
 
@@ -465,5 +564,256 @@ Public Class frmAddEditInvoice
         Dim rpt As New rptInvoice(oInvoice.Invoicenumber)
         rpt.ShowPreview()
         Me.DialogResult = Windows.Forms.DialogResult.OK
+    End Sub
+
+    Private Sub frmAddEditInvoice_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ' history
+        If vEditType = "EDIT" Then
+            oInvoiceHistoryHeader = SaveInvoiceHistoryAll(vInvoiceNum)
+        End If
+    End Sub
+
+    Public Shared Function SaveInvoiceHistoryAll(ByVal invoiceNum As Integer, Optional ByVal ChangeCommitted As Boolean = False, Optional ByVal ChangeReason As String = "") As Invoicehistoryheader
+        Dim invoiceHistoryHeader As Invoicehistoryheader = saveInvoiceHistoryHeader(invoiceNum, ChangeCommitted, ChangeReason)
+        saveInvoiceHistory(invoiceNum, invoiceHistoryHeader)
+        saveInvoiceItemHistory(invoiceNum, invoiceHistoryHeader)
+        SaveInvoiceHistoryAll = invoiceHistoryHeader
+    End Function
+    Private Shared Function saveInvoiceHistoryHeader(ByVal invoiceNum As Integer, Optional ByVal ChangeCommitted As Boolean = False, Optional ByVal ChangeReason As String = "") As Invoicehistoryheader
+
+        ' Delete any uncommeted headers for invoice by current user
+
+        DeleteInvoiceHistory(invoiceNum)
+        'Dim cmd As SqlClient.SqlCommand
+        'Try
+        '    Dim Str As String = "DELETE FROM InvoiceHistoryHeader WHERE INVOICEITEMNUMBER = " & vInvoiceNum & " AND "
+        '    sqlcnn.Open()
+        '    cmd = New SqlClient.SqlCommand(Str, sqlcnn)
+        '    cmd.ExecuteNonQuery()
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'Finally
+        '    sqlcnn.Close()
+        'End Try
+
+        Dim oInvoiceHistoryHeader = New Invoicehistoryheader
+        '        oInvoiceHistoryHeader.es.Connection.ConnectionString = sqlcnn.ConnectionString & ";password=" & My.Settings.SQLDatabaseUserPassword
+        oInvoiceHistoryHeader.AddNew()
+        oInvoiceHistoryHeader.Invoicenumber = invoiceNum
+        oInvoiceHistoryHeader.Changetype = "EDIT"
+        oInvoiceHistoryHeader.Changeddate = DateTime.Now
+        oInvoiceHistoryHeader.Changedby = vCurrentUserLogin
+        If (ChangeCommitted AndAlso ChangeReason <> "") Then
+            oInvoiceHistoryHeader.Changereason = ChangeReason
+            oInvoiceHistoryHeader.Changecommitted = True
+        Else
+            oInvoiceHistoryHeader.Changereason = ""
+
+        End If
+        oInvoiceHistoryHeader.Save()
+        '        eInvoiceNumber.EditValue = vInvoiceNum
+        oInvoiceHistoryHeader.EndEdit()
+        Return oInvoiceHistoryHeader
+    End Function
+
+    Private Shared Sub DeleteInvoiceHistory(ByVal invoiceNum As String)
+        Dim oInvoiceHeadersToDelete As New InvoicehistoryheaderCollection
+        oInvoiceHeadersToDelete.Query.Where(oInvoiceHeadersToDelete.Query.Changecommitted = False, oInvoiceHeadersToDelete.Query.Changedby = vCurrentUserLogin, oInvoiceHeadersToDelete.Query.Invoicenumber = invoiceNum)
+        If (oInvoiceHeadersToDelete.Query.Load()) Then
+            oInvoiceHeadersToDelete.es.Connection.SqlAccessType = EntitySpaces.Interfaces.esSqlAccessType.StoredProcedure
+            oInvoiceHeadersToDelete.MarkAllAsDeleted()
+            oInvoiceHeadersToDelete.Save()
+        End If
+    End Sub
+
+    Private Shared Sub saveInvoiceHistory(ByVal invoiceNum As Integer, ByVal invoiceHistoryHeader As Invoicehistoryheader)
+        Dim oInvoice As New Invoice
+        If (oInvoice.LoadByPrimaryKey(invoiceNum)) Then
+            Dim oInvoiceHistory As New Invoicehistory
+            oInvoiceHistory.AddNew()
+            oInvoiceHistory.Invoicehistoryid = invoiceHistoryHeader.Invoicehistoryid
+            ConvertInvoiceToInvoiceHistory(oInvoice, oInvoiceHistory)
+            oInvoiceHistory.Save()
+        End If
+
+    End Sub
+
+    Private Shared Sub saveInvoiceItemHistory(ByVal invoiceNum As Integer, ByVal invoiceHistoryHeader As Invoicehistoryheader)
+        Dim oInvoiceItems As New InvoiceitemCollection
+        Dim oInvoiceHistoryItems As New InvoicehistoryitemCollection
+        oInvoiceItems.Query.Where(oInvoiceItems.Query.Invoicenumber = invoiceNum)
+        If (oInvoiceItems.Query.Load()) Then
+            For Each iItem As Invoiceitem In oInvoiceItems
+                Dim oInvoiceHistoryItem As New Invoicehistoryitem
+                oInvoiceHistoryItem = oInvoiceHistoryItems.AddNew()
+                oInvoiceHistoryItem.Invoicehistoryid = invoiceHistoryHeader.Invoicehistoryid
+                ConvertInvoiceItemToInvoiceHistoryItem(iItem, oInvoiceHistoryItem)
+            Next
+            oInvoiceHistoryItems.Save()
+        End If
+    End Sub
+
+
+    Private Shared Sub ConvertInvoiceToInvoiceHistory(ByVal vInvoice As Invoice, ByRef vInvoiceHistory As Invoicehistory)
+        With vInvoiceHistory
+            .Invoicenumber = vInvoice.Invoicenumber
+            .Invoicedate = vInvoice.Invoicedate
+            .Shipmentnumber = vInvoice.Shipmentnumber
+            .Shipmentdate = vInvoice.Shipmentdate
+            .Custid = vInvoice.Custid
+            .Billaddress1 = vInvoice.Billaddress1
+            .Billaddress2 = vInvoice.Billaddress2
+            .Billcity = vInvoice.Billcity
+            .Billstateprov = vInvoice.Billstateprov
+            .Billpostalcode = vInvoice.Billpostalcode
+            .Billcountry = vInvoice.Billcountry
+            .Billphone = vInvoice.Billphone
+            .Billfax = vInvoice.Billfax
+            .Billcontact = vInvoice.Billcontact
+            .Shipaddress1 = vInvoice.Shipaddress1
+            .Shipaddress2 = vInvoice.Shipaddress2
+            .Shipcity = vInvoice.Shipcity
+            .Shipstateprov = vInvoice.Shipstateprov
+            .Shippostalcode = vInvoice.Shippostalcode
+            .Shipcountry = vInvoice.Shipcountry
+            .Shipcontact = vInvoice.Shipcontact
+            .Freightcarrier = vInvoice.Freightcarrier
+            .Fob = vInvoice.Fob
+            .Customerpo = vInvoice.Customerpo
+            .Orderterms = vInvoice.Orderterms
+            .Deliverydate = vInvoice.Deliverydate
+            .Shippeddate = vInvoice.Shippeddate
+            .Subtotal = vInvoice.Subtotal
+            .Salestax = vInvoice.Salestax
+            .Total = vInvoice.Total
+            .Invoicestatus = vInvoice.Invoicestatus
+            .Invnumview = vInvoice.Invnumview
+            .Logisticsid = vInvoice.Logisticsid
+            .Modifyby = vInvoice.Modifyby
+            .Modifytime = vInvoice.Modifytime
+            .Createdby = vInvoice.Createdby
+            .Createdtime = vInvoice.Createdtime
+
+        End With
+    End Sub
+
+    Private Shared Sub ConvertInvoiceItemToInvoiceHistoryItem(ByVal vInvoiceItem As Invoiceitem, ByRef vInvoiceHistoryItem As Invoicehistoryitem)
+        With vInvoiceHistoryItem
+            .Invoiceitemnumber = vInvoiceItem.Invoiceitemnumber
+            .Invoicenumber = vInvoiceItem.Invoicenumber
+            .Shipmentdetailid = vInvoiceItem.Shipmentdetailid
+            .Invitemnumber = vInvoiceItem.Invitemnumber
+            .Productid = vInvoiceItem.Productid
+            .Productdesc = vInvoiceItem.Productdesc
+            .Quantity = vInvoiceItem.Quantity
+            .Container = vInvoiceItem.Container
+            .Units = vInvoiceItem.Units
+            .Uom = vInvoiceItem.Uom
+            .Itemprice = vInvoiceItem.Itemprice
+            .Extprice = vInvoiceItem.Extprice
+            .Unitcost = vInvoiceItem.Unitcost
+            .Extcost = vInvoiceItem.Extcost
+            .Grossprofit = vInvoiceItem.Grossprofit
+            .Taxable = vInvoiceItem.Taxable
+            .Workorderitemnumber = vInvoiceItem.Workorderitemnumber
+            .Unitorcontainer = vInvoiceItem.Unitorcontainer
+            .Priceunits = vInvoiceItem.Priceunits
+            .Priceuom = vInvoiceItem.Priceuom
+            .Unitprice = vInvoiceItem.Unitprice
+            .Standardcostunits = vInvoiceItem.Standardcostunits
+            .Standardcostuom = vInvoiceItem.Standardcostuom
+            .Standardunitcost = vInvoiceItem.Standardunitcost
+            .Actualcostunits = vInvoiceItem.Actualcostunits
+            .Actualcostuom = vInvoiceItem.Actualcostuom
+            .Actualunitcost = vInvoiceItem.Actualunitcost
+            .Extstandardcost = vInvoiceItem.Extstandardcost
+            .Extactualcost = vInvoiceItem.Extactualcost
+            .Extsalesprice = vInvoiceItem.Extsalesprice
+            .Custitemid = vInvoiceItem.Custitemid
+            .Itemid = vInvoiceItem.Itemid
+            .Itemdescription = vInvoiceItem.Itemdescription
+            .Itemtype = vInvoiceItem.Itemtype
+        End With
+    End Sub
+
+    Private Sub ConvertInvoiceHistoryToInvoice(ByVal vInvoiceHistory As Invoicehistory, ByRef vInvoice As Invoice)
+        With vInvoice
+            .Invoicenumber = vInvoiceHistory.Invoicenumber
+            .Invoicedate = vInvoiceHistory.Invoicedate
+            .Shipmentnumber = vInvoiceHistory.Shipmentnumber
+            .Shipmentdate = vInvoiceHistory.Shipmentdate
+            .Custid = vInvoiceHistory.Custid
+            .Billaddress1 = vInvoiceHistory.Billaddress1
+            .Billaddress2 = vInvoiceHistory.Billaddress2
+            .Billcity = vInvoiceHistory.Billcity
+            .Billstateprov = vInvoiceHistory.Billstateprov
+            .Billpostalcode = vInvoiceHistory.Billpostalcode
+            .Billcountry = vInvoiceHistory.Billcountry
+            .Billphone = vInvoiceHistory.Billphone
+            .Billfax = vInvoiceHistory.Billfax
+            .Billcontact = vInvoiceHistory.Billcontact
+            .Shipaddress1 = vInvoiceHistory.Shipaddress1
+            .Shipaddress2 = vInvoiceHistory.Shipaddress2
+            .Shipcity = vInvoiceHistory.Shipcity
+            .Shipstateprov = vInvoiceHistory.Shipstateprov
+            .Shippostalcode = vInvoiceHistory.Shippostalcode
+            .Shipcountry = vInvoiceHistory.Shipcountry
+            .Shipcontact = vInvoiceHistory.Shipcontact
+            .Freightcarrier = vInvoiceHistory.Freightcarrier
+            .Fob = vInvoiceHistory.Fob
+            .Customerpo = vInvoiceHistory.Customerpo
+            .Orderterms = vInvoiceHistory.Orderterms
+            .Deliverydate = vInvoiceHistory.Deliverydate
+            .Shippeddate = vInvoiceHistory.Shippeddate
+            .Subtotal = vInvoiceHistory.Subtotal
+            .Salestax = vInvoiceHistory.Salestax
+            .Total = vInvoiceHistory.Total
+            .Invoicestatus = vInvoiceHistory.Invoicestatus
+            .Invnumview = vInvoiceHistory.Invnumview
+            .Logisticsid = vInvoiceHistory.Logisticsid
+            .Modifyby = vInvoiceHistory.Modifyby
+            .Modifytime = vInvoiceHistory.Modifytime
+            .Createdby = vInvoiceHistory.Createdby
+            .Createdtime = vInvoiceHistory.Createdtime
+
+        End With
+    End Sub
+    Private Sub ConvertInvoiceHistoryItemToInvoiceItem(ByVal vInvoiceHistoryItem As Invoicehistoryitem, ByRef vInvoiceItem As Invoiceitem)
+        With vInvoiceItem
+            .Invoiceitemnumber = vInvoiceHistoryItem.Invoiceitemnumber
+            .Invoicenumber = vInvoiceHistoryItem.Invoicenumber
+            .Shipmentdetailid = vInvoiceHistoryItem.Shipmentdetailid
+            .Invitemnumber = vInvoiceHistoryItem.Invitemnumber
+            .Productid = vInvoiceHistoryItem.Productid
+            .Productdesc = vInvoiceHistoryItem.Productdesc
+            .Quantity = vInvoiceHistoryItem.Quantity
+            .Container = vInvoiceHistoryItem.Container
+            .Units = vInvoiceHistoryItem.Units
+            .Uom = vInvoiceHistoryItem.Uom
+            .Itemprice = vInvoiceHistoryItem.Itemprice
+            .Extprice = vInvoiceHistoryItem.Extprice
+            .Unitcost = vInvoiceHistoryItem.Unitcost
+            .Extcost = vInvoiceHistoryItem.Extcost
+            .Grossprofit = vInvoiceHistoryItem.Grossprofit
+            .Taxable = vInvoiceHistoryItem.Taxable
+            .Workorderitemnumber = vInvoiceHistoryItem.Workorderitemnumber
+            .Unitorcontainer = vInvoiceHistoryItem.Unitorcontainer
+            .Priceunits = vInvoiceHistoryItem.Priceunits
+            .Priceuom = vInvoiceHistoryItem.Priceuom
+            .Unitprice = vInvoiceHistoryItem.Unitprice
+            .Standardcostunits = vInvoiceHistoryItem.Standardcostunits
+            .Standardcostuom = vInvoiceHistoryItem.Standardcostuom
+            .Standardunitcost = vInvoiceHistoryItem.Standardunitcost
+            .Actualcostunits = vInvoiceHistoryItem.Actualcostunits
+            .Actualcostuom = vInvoiceHistoryItem.Actualcostuom
+            .Actualunitcost = vInvoiceHistoryItem.Actualunitcost
+            .Extstandardcost = vInvoiceHistoryItem.Extstandardcost
+            .Extactualcost = vInvoiceHistoryItem.Extactualcost
+            .Extsalesprice = vInvoiceHistoryItem.Extsalesprice
+            .Custitemid = vInvoiceHistoryItem.Custitemid
+            .Itemid = vInvoiceHistoryItem.Itemid
+            .Itemdescription = vInvoiceHistoryItem.Itemdescription
+            .Itemtype = vInvoiceHistoryItem.Itemtype
+        End With
     End Sub
 End Class

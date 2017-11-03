@@ -406,6 +406,15 @@
     <Compile Include="BusinessObjects\Custom\InvitemQuery.vb" />
     <Compile Include="BusinessObjects\Custom\Invoice.vb" />
     <Compile Include="BusinessObjects\Custom\InvoiceCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\Invoicehistory.vb" />
+    <Compile Include="BusinessObjects\Custom\InvoicehistoryCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\Invoicehistoryheader.vb" />
+    <Compile Include="BusinessObjects\Custom\InvoicehistoryheaderCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\InvoicehistoryheaderQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\Invoicehistoryitem.vb" />
+    <Compile Include="BusinessObjects\Custom\InvoicehistoryitemCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\InvoicehistoryitemQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\InvoicehistoryQuery.vb" />
     <Compile Include="BusinessObjects\Custom\Invoiceitem.vb" />
     <Compile Include="BusinessObjects\Custom\InvoiceitemCollection.vb" />
     <Compile Include="BusinessObjects\Custom\InvoiceitemQuery.vb" />
@@ -1141,6 +1150,9 @@
     <Compile Include="BusinessObjects\Custom\ViewRptInvoice2Collection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRptInvoice2Query.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRptInvoiceCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRptInvoiceHistorical.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRptInvoiceHistoricalCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRptInvoiceHistoricalQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRptInvoiceHistory.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRptInvoiceHistoryCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRptInvoiceHistoryQuery.vb" />
@@ -1337,6 +1349,9 @@
     <Compile Include="BusinessObjects\Generated\Inventorystatus.vb" />
     <Compile Include="BusinessObjects\Generated\Invitem.vb" />
     <Compile Include="BusinessObjects\Generated\Invoice.vb" />
+    <Compile Include="BusinessObjects\Generated\Invoicehistory.vb" />
+    <Compile Include="BusinessObjects\Generated\Invoicehistoryheader.vb" />
+    <Compile Include="BusinessObjects\Generated\Invoicehistoryitem.vb" />
     <Compile Include="BusinessObjects\Generated\Invoiceitem.vb" />
     <Compile Include="BusinessObjects\Generated\Invoicepayment.vb" />
     <Compile Include="BusinessObjects\Generated\Invphys.vb" />
@@ -1582,6 +1597,7 @@
     <Compile Include="BusinessObjects\Generated\ViewRptInventoryValuation.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptInvoice.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptInvoice2.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewRptInvoiceHistorical.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptInvoiceHistory.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptPOFulfillmentPlan.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRptPOItemList.vb" />
@@ -1746,6 +1762,24 @@
       <DependentUpon>dsProductsShipped.xsd</DependentUpon>
     </Compile>
     <Compile Include="Excel\Application.vb" />
+    <Compile Include="Forms\Customers\frmViewInvoiceHistory.Designer.vb">
+      <DependentUpon>frmViewInvoiceHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customers\frmViewInvoiceHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customers\frmInvoiceChangeReason.Designer.vb">
+      <DependentUpon>frmInvoiceChangeReason.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customers\frmInvoiceChangeReason.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customers\frmInvoiceHistoryList.Designer.vb">
+      <DependentUpon>frmInvoiceHistoryList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customers\frmInvoiceHistoryList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Customers\frmWorkOrdersToInvoice.Designer.vb">
       <DependentUpon>frmWorkOrdersToInvoice.vb</DependentUpon>
     </Compile>
@@ -2814,6 +2848,12 @@
     <Compile Include="Reports\rptDirectPurchaseOrder2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptInvoiceHistorical.Designer.vb">
+      <DependentUpon>rptInvoiceHistorical.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptInvoiceHistorical.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptPOList3.Designer.vb">
       <DependentUpon>rptPOList3.vb</DependentUpon>
     </Compile>
@@ -3228,6 +3268,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Customers\frmViewInvoiceHistory.resx">
+      <DependentUpon>frmViewInvoiceHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customers\frmInvoiceChangeReason.resx">
+      <DependentUpon>frmInvoiceChangeReason.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customers\frmInvoiceHistoryList.resx">
+      <DependentUpon>frmInvoiceHistoryList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Customers\frmWorkOrdersToInvoice.resx">
       <DependentUpon>frmWorkOrdersToInvoice.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -3870,6 +3921,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptDirectPurchaseOrder2.resx">
       <DependentUpon>rptDirectPurchaseOrder2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptInvoiceHistorical.resx">
+      <DependentUpon>rptInvoiceHistorical.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptPOItemList2.resx">

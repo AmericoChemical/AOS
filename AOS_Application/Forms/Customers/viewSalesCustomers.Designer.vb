@@ -152,6 +152,7 @@ Partial Class viewSalesCustomers
         Me.rbtnExportSalesPersonAnalysisToExcel = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnGetAllCustomersSales = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnWorkOrdersToInvoice = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnInvoiceHistory = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -167,6 +168,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPageGroup18 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup14 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup34 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage7 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup19 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -745,7 +747,7 @@ Partial Class viewSalesCustomers
         CustidLabel.AutoSize = True
         CustidLabel.Location = New System.Drawing.Point(9, 26)
         CustidLabel.Name = "CustidLabel"
-        CustidLabel.Size = New System.Drawing.Size(43, 13)
+        CustidLabel.Size = New System.Drawing.Size(47, 14)
         CustidLabel.TabIndex = 0
         CustidLabel.Text = "Cust ID"
         '
@@ -754,7 +756,7 @@ Partial Class viewSalesCustomers
         CustnameLabel.AutoSize = True
         CustnameLabel.Location = New System.Drawing.Point(9, 52)
         CustnameLabel.Name = "CustnameLabel"
-        CustnameLabel.Size = New System.Drawing.Size(52, 13)
+        CustnameLabel.Size = New System.Drawing.Size(57, 14)
         CustnameLabel.TabIndex = 2
         CustnameLabel.Text = "Company"
         '
@@ -763,7 +765,7 @@ Partial Class viewSalesCustomers
         Custshipaddress1Label.AutoSize = True
         Custshipaddress1Label.Location = New System.Drawing.Point(9, 27)
         Custshipaddress1Label.Name = "Custshipaddress1Label"
-        Custshipaddress1Label.Size = New System.Drawing.Size(55, 13)
+        Custshipaddress1Label.Size = New System.Drawing.Size(61, 14)
         Custshipaddress1Label.TabIndex = 4
         Custshipaddress1Label.Text = "Address 1"
         '
@@ -772,7 +774,7 @@ Partial Class viewSalesCustomers
         Custshipaddress2Label.AutoSize = True
         Custshipaddress2Label.Location = New System.Drawing.Point(9, 53)
         Custshipaddress2Label.Name = "Custshipaddress2Label"
-        Custshipaddress2Label.Size = New System.Drawing.Size(55, 13)
+        Custshipaddress2Label.Size = New System.Drawing.Size(61, 14)
         Custshipaddress2Label.TabIndex = 6
         Custshipaddress2Label.Text = "Address 2"
         '
@@ -781,7 +783,7 @@ Partial Class viewSalesCustomers
         CustshipcityLabel.AutoSize = True
         CustshipcityLabel.Location = New System.Drawing.Point(9, 79)
         CustshipcityLabel.Name = "CustshipcityLabel"
-        CustshipcityLabel.Size = New System.Drawing.Size(58, 13)
+        CustshipcityLabel.Size = New System.Drawing.Size(66, 14)
         CustshipcityLabel.TabIndex = 8
         CustshipcityLabel.Text = "City ST Zip"
         '
@@ -790,7 +792,7 @@ Partial Class viewSalesCustomers
         CustshipstateprovLabel.AutoSize = True
         CustshipstateprovLabel.Location = New System.Drawing.Point(9, 105)
         CustshipstateprovLabel.Name = "CustshipstateprovLabel"
-        CustshipstateprovLabel.Size = New System.Drawing.Size(46, 13)
+        CustshipstateprovLabel.Size = New System.Drawing.Size(50, 14)
         CustshipstateprovLabel.TabIndex = 10
         CustshipstateprovLabel.Text = "Country"
         '
@@ -799,7 +801,7 @@ Partial Class viewSalesCustomers
         CustshippostalcodeLabel.AutoSize = True
         CustshippostalcodeLabel.Location = New System.Drawing.Point(9, 132)
         CustshippostalcodeLabel.Name = "CustshippostalcodeLabel"
-        CustshippostalcodeLabel.Size = New System.Drawing.Size(45, 13)
+        CustshippostalcodeLabel.Size = New System.Drawing.Size(50, 14)
         CustshippostalcodeLabel.TabIndex = 12
         CustshippostalcodeLabel.Text = "Contact"
         '
@@ -808,7 +810,7 @@ Partial Class viewSalesCustomers
         Custbilladdress1Label.AutoSize = True
         Custbilladdress1Label.Location = New System.Drawing.Point(9, 27)
         Custbilladdress1Label.Name = "Custbilladdress1Label"
-        Custbilladdress1Label.Size = New System.Drawing.Size(55, 13)
+        Custbilladdress1Label.Size = New System.Drawing.Size(61, 14)
         Custbilladdress1Label.TabIndex = 18
         Custbilladdress1Label.Text = "Address 1"
         '
@@ -817,7 +819,7 @@ Partial Class viewSalesCustomers
         Custbilladdress2Label.AutoSize = True
         Custbilladdress2Label.Location = New System.Drawing.Point(10, 53)
         Custbilladdress2Label.Name = "Custbilladdress2Label"
-        Custbilladdress2Label.Size = New System.Drawing.Size(55, 13)
+        Custbilladdress2Label.Size = New System.Drawing.Size(61, 14)
         Custbilladdress2Label.TabIndex = 20
         Custbilladdress2Label.Text = "Address 2"
         '
@@ -826,7 +828,7 @@ Partial Class viewSalesCustomers
         CustbillcityLabel.AutoSize = True
         CustbillcityLabel.Location = New System.Drawing.Point(10, 79)
         CustbillcityLabel.Name = "CustbillcityLabel"
-        CustbillcityLabel.Size = New System.Drawing.Size(58, 13)
+        CustbillcityLabel.Size = New System.Drawing.Size(66, 14)
         CustbillcityLabel.TabIndex = 22
         CustbillcityLabel.Text = "City ST Zip"
         '
@@ -835,7 +837,7 @@ Partial Class viewSalesCustomers
         CustbillstateprovLabel.AutoSize = True
         CustbillstateprovLabel.Location = New System.Drawing.Point(9, 105)
         CustbillstateprovLabel.Name = "CustbillstateprovLabel"
-        CustbillstateprovLabel.Size = New System.Drawing.Size(46, 13)
+        CustbillstateprovLabel.Size = New System.Drawing.Size(50, 14)
         CustbillstateprovLabel.TabIndex = 24
         CustbillstateprovLabel.Text = "Country"
         '
@@ -844,7 +846,7 @@ Partial Class viewSalesCustomers
         CustbillpostalcodeLabel.AutoSize = True
         CustbillpostalcodeLabel.Location = New System.Drawing.Point(10, 132)
         CustbillpostalcodeLabel.Name = "CustbillpostalcodeLabel"
-        CustbillpostalcodeLabel.Size = New System.Drawing.Size(45, 13)
+        CustbillpostalcodeLabel.Size = New System.Drawing.Size(50, 14)
         CustbillpostalcodeLabel.TabIndex = 26
         CustbillpostalcodeLabel.Text = "Contact"
         '
@@ -853,7 +855,7 @@ Partial Class viewSalesCustomers
         CustphoneLabel.AutoSize = True
         CustphoneLabel.Location = New System.Drawing.Point(9, 27)
         CustphoneLabel.Name = "CustphoneLabel"
-        CustphoneLabel.Size = New System.Drawing.Size(53, 13)
+        CustphoneLabel.Size = New System.Drawing.Size(61, 14)
         CustphoneLabel.TabIndex = 32
         CustphoneLabel.Text = "Phone No"
         '
@@ -862,7 +864,7 @@ Partial Class viewSalesCustomers
         CustfaxLabel.AutoSize = True
         CustfaxLabel.Location = New System.Drawing.Point(222, 27)
         CustfaxLabel.Name = "CustfaxLabel"
-        CustfaxLabel.Size = New System.Drawing.Size(26, 13)
+        CustfaxLabel.Size = New System.Drawing.Size(28, 14)
         CustfaxLabel.TabIndex = 34
         CustfaxLabel.Text = "FAX"
         '
@@ -871,7 +873,7 @@ Partial Class viewSalesCustomers
         IsactiveLabel.AutoSize = True
         IsactiveLabel.Location = New System.Drawing.Point(678, 3)
         IsactiveLabel.Name = "IsactiveLabel"
-        IsactiveLabel.Size = New System.Drawing.Size(37, 13)
+        IsactiveLabel.Size = New System.Drawing.Size(41, 14)
         IsactiveLabel.TabIndex = 43
         IsactiveLabel.Text = "Active"
         '
@@ -880,7 +882,7 @@ Partial Class viewSalesCustomers
         CarrieridLabel.AutoSize = True
         CarrieridLabel.Location = New System.Drawing.Point(7, 107)
         CarrieridLabel.Name = "CarrieridLabel"
-        CarrieridLabel.Size = New System.Drawing.Size(69, 13)
+        CarrieridLabel.Size = New System.Drawing.Size(76, 14)
         CarrieridLabel.TabIndex = 42
         CarrieridLabel.Text = "Truck Carrier"
         '
@@ -889,7 +891,7 @@ Partial Class viewSalesCustomers
         LogisticsidLabel.AutoSize = True
         LogisticsidLabel.Location = New System.Drawing.Point(9, 53)
         LogisticsidLabel.Name = "LogisticsidLabel"
-        LogisticsidLabel.Size = New System.Drawing.Size(47, 13)
+        LogisticsidLabel.Size = New System.Drawing.Size(52, 14)
         LogisticsidLabel.TabIndex = 43
         LogisticsidLabel.Text = "Logistics"
         '
@@ -898,7 +900,7 @@ Partial Class viewSalesCustomers
         BulkcarrieridLabel.AutoSize = True
         BulkcarrieridLabel.Location = New System.Drawing.Point(9, 133)
         BulkcarrieridLabel.Name = "BulkcarrieridLabel"
-        BulkcarrieridLabel.Size = New System.Drawing.Size(62, 13)
+        BulkcarrieridLabel.Size = New System.Drawing.Size(67, 14)
         BulkcarrieridLabel.TabIndex = 44
         BulkcarrieridLabel.Text = "Bulk Carrier"
         '
@@ -907,7 +909,7 @@ Partial Class viewSalesCustomers
         FobLabel.AutoSize = True
         FobLabel.Location = New System.Drawing.Point(9, 27)
         FobLabel.Name = "FobLabel"
-        FobLabel.Size = New System.Drawing.Size(67, 13)
+        FobLabel.Size = New System.Drawing.Size(74, 14)
         FobLabel.TabIndex = 45
         FobLabel.Text = "Freight Chrg"
         '
@@ -916,7 +918,7 @@ Partial Class viewSalesCustomers
         CustnotesLabel.AutoSize = True
         CustnotesLabel.Location = New System.Drawing.Point(9, 27)
         CustnotesLabel.Name = "CustnotesLabel"
-        CustnotesLabel.Size = New System.Drawing.Size(44, 13)
+        CustnotesLabel.Size = New System.Drawing.Size(48, 14)
         CustnotesLabel.TabIndex = 0
         CustnotesLabel.Text = "General"
         '
@@ -925,7 +927,7 @@ Partial Class viewSalesCustomers
         SalespersonidLabel.AutoSize = True
         SalespersonidLabel.Location = New System.Drawing.Point(516, 26)
         SalespersonidLabel.Name = "SalespersonidLabel"
-        SalespersonidLabel.Size = New System.Drawing.Size(71, 13)
+        SalespersonidLabel.Size = New System.Drawing.Size(77, 14)
         SalespersonidLabel.TabIndex = 48
         SalespersonidLabel.Text = "Primary Sales"
         '
@@ -934,7 +936,7 @@ Partial Class viewSalesCustomers
         FreightbillcustomerLabel.AutoSize = True
         FreightbillcustomerLabel.Location = New System.Drawing.Point(84, 81)
         FreightbillcustomerLabel.Name = "FreightbillcustomerLabel"
-        FreightbillcustomerLabel.Size = New System.Drawing.Size(80, 13)
+        FreightbillcustomerLabel.Size = New System.Drawing.Size(90, 14)
         FreightbillcustomerLabel.TabIndex = 46
         FreightbillcustomerLabel.Text = "Customer Billed"
         '
@@ -943,7 +945,7 @@ Partial Class viewSalesCustomers
         FreightoninvoiceLabel.AutoSize = True
         FreightoninvoiceLabel.Location = New System.Drawing.Point(229, 81)
         FreightoninvoiceLabel.Name = "FreightoninvoiceLabel"
-        FreightoninvoiceLabel.Size = New System.Drawing.Size(94, 13)
+        FreightoninvoiceLabel.Size = New System.Drawing.Size(106, 14)
         FreightoninvoiceLabel.TabIndex = 47
         FreightoninvoiceLabel.Text = "Freight on Invoice"
         '
@@ -952,7 +954,7 @@ Partial Class viewSalesCustomers
         CustemailLabel.AutoSize = True
         CustemailLabel.Location = New System.Drawing.Point(9, 53)
         CustemailLabel.Name = "CustemailLabel"
-        CustemailLabel.Size = New System.Drawing.Size(57, 13)
+        CustemailLabel.Size = New System.Drawing.Size(64, 14)
         CustemailLabel.TabIndex = 35
         CustemailLabel.Text = "Email Addr"
         '
@@ -961,7 +963,7 @@ Partial Class viewSalesCustomers
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(9, 107)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(63, 13)
+        Label1.Size = New System.Drawing.Size(71, 14)
         Label1.TabIndex = 53
         Label1.Text = "Work Order"
         '
@@ -970,7 +972,7 @@ Partial Class viewSalesCustomers
         Label2.AutoSize = True
         Label2.Location = New System.Drawing.Point(10, 194)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(51, 13)
+        Label2.Size = New System.Drawing.Size(59, 14)
         Label2.TabIndex = 54
         Label2.Text = "Shipment"
         '
@@ -979,7 +981,7 @@ Partial Class viewSalesCustomers
         Label3.AutoSize = True
         Label3.Location = New System.Drawing.Point(10, 246)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(42, 13)
+        Label3.Size = New System.Drawing.Size(46, 14)
         Label3.TabIndex = 55
         Label3.Text = "Invoice"
         '
@@ -988,7 +990,7 @@ Partial Class viewSalesCustomers
         Label4.AutoSize = True
         Label4.Location = New System.Drawing.Point(501, 48)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(86, 13)
+        Label4.Size = New System.Drawing.Size(95, 14)
         Label4.TabIndex = 50
         Label4.Text = "Secondary Sales"
         '
@@ -997,7 +999,7 @@ Partial Class viewSalesCustomers
         Label5.AutoSize = True
         Label5.Location = New System.Drawing.Point(576, 3)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(64, 13)
+        Label5.Size = New System.Drawing.Size(73, 14)
         Label5.TabIndex = 52
         Label5.Text = "Tax Exempt"
         '
@@ -1006,7 +1008,7 @@ Partial Class viewSalesCustomers
         Label6.AutoSize = True
         Label6.Location = New System.Drawing.Point(462, 3)
         Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(69, 13)
+        Label6.Size = New System.Drawing.Size(78, 14)
         Label6.TabIndex = 54
         Label6.Text = "Consignment"
         '
@@ -1056,15 +1058,15 @@ Partial Class viewSalesCustomers
         Me.RibbonControl1.ApplicationCaption = "dsadsdsa"
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE, Me.rbtnGetSalesAnalysisByCustomerData, Me.rbtnExportSalesByCustomerAnalysisToExcel, Me.rbtnGetSalesPersonAnalysis, Me.rbtnExportSalesPersonAnalysisToExcel, Me.rbtnGetAllCustomersSales, Me.rbtnWorkOrdersToInvoice})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE, Me.rbtnGetSalesAnalysisByCustomerData, Me.rbtnExportSalesByCustomerAnalysisToExcel, Me.rbtnGetSalesPersonAnalysis, Me.rbtnExportSalesPersonAnalysisToExcel, Me.rbtnGetAllCustomersSales, Me.rbtnWorkOrdersToInvoice, Me.btnInvoiceHistory})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 132
+        Me.RibbonControl1.MaxItemId = 133
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage6, Me.RibbonPage4, Me.RibbonPage7, Me.RibbonPage5, Me.RibbonPage2, Me.RibbonPage10, Me.RibbonPage9})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit14, Me.RepositoryItemLookUpEdit15, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4, Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17, Me.RepositoryItemLookUpEdit18})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1482, 116)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1482, 142)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnAddCustomer
@@ -1873,6 +1875,13 @@ Partial Class viewSalesCustomers
         Me.rbtnWorkOrdersToInvoice.ImageOptions.LargeImageIndex = 17
         Me.rbtnWorkOrdersToInvoice.Name = "rbtnWorkOrdersToInvoice"
         '
+        'btnInvoiceHistory
+        '
+        Me.btnInvoiceHistory.Caption = "Invoice History"
+        Me.btnInvoiceHistory.Id = 132
+        Me.btnInvoiceHistory.ImageOptions.LargeImageIndex = 27
+        Me.btnInvoiceHistory.Name = "btnInvoiceHistory"
+        '
         'RibbonLargeImages
         '
         Me.RibbonLargeImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -1961,7 +1970,7 @@ Partial Class viewSalesCustomers
         '
         'RibbonPage4
         '
-        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4, Me.RibbonPageGroup18, Me.RibbonPageGroup5, Me.RibbonPageGroup14})
+        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4, Me.RibbonPageGroup18, Me.RibbonPageGroup5, Me.RibbonPageGroup14, Me.RibbonPageGroup34})
         Me.RibbonPage4.Name = "RibbonPage4"
         Me.RibbonPage4.Tag = "13"
         Me.RibbonPage4.Text = "Invoices"
@@ -2007,6 +2016,12 @@ Partial Class viewSalesCustomers
         Me.RibbonPageGroup14.Name = "RibbonPageGroup14"
         Me.RibbonPageGroup14.ShowCaptionButton = False
         Me.RibbonPageGroup14.Text = "Reports"
+        '
+        'RibbonPageGroup34
+        '
+        Me.RibbonPageGroup34.ItemLinks.Add(Me.btnInvoiceHistory)
+        Me.RibbonPageGroup34.Name = "RibbonPageGroup34"
+        Me.RibbonPageGroup34.Text = "History  "
         '
         'RibbonPage7
         '
@@ -2234,9 +2249,9 @@ Partial Class viewSalesCustomers
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl7)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 149)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 175)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1482, 566)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1482, 540)
         Me.WorkPanelsHolder.TabIndex = 7
         '
         'RibbonPanelControl5
@@ -2248,16 +2263,16 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl5.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
-        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl5.TabIndex = 1
         '
         'grpCommissions
         '
         Me.grpCommissions.Controls.Add(Me.grCommissions)
         Me.grpCommissions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grpCommissions.Location = New System.Drawing.Point(2, 370)
+        Me.grpCommissions.Location = New System.Drawing.Point(2, 397)
         Me.grpCommissions.Name = "grpCommissions"
-        Me.grpCommissions.Size = New System.Drawing.Size(1478, 194)
+        Me.grpCommissions.Size = New System.Drawing.Size(1478, 141)
         Me.grpCommissions.TabIndex = 8
         Me.grpCommissions.Text = "Commissions for ..."
         '
@@ -2265,12 +2280,12 @@ Partial Class viewSalesCustomers
         '
         Me.grCommissions.DataSource = Me.bsCommissions
         Me.grCommissions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCommissions.Location = New System.Drawing.Point(2, 20)
+        Me.grCommissions.Location = New System.Drawing.Point(2, 25)
         Me.grCommissions.LookAndFeel.SkinName = "Money Twins"
         Me.grCommissions.MainView = Me.grvCommissions
         Me.grCommissions.Name = "grCommissions"
         Me.grCommissions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.CustomerLookup, Me.RepositoryItemLookUpEdit6})
-        Me.grCommissions.Size = New System.Drawing.Size(1474, 172)
+        Me.grCommissions.Size = New System.Drawing.Size(1474, 114)
         Me.grCommissions.TabIndex = 0
         Me.grCommissions.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCommissions})
         '
@@ -2473,14 +2488,14 @@ Partial Class viewSalesCustomers
         Me.RibbonControl2.ApplicationButtonText = Nothing
         Me.RibbonControl2.ExpandCollapseItem.Id = 0
         Me.RibbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl2.ExpandCollapseItem, Me.btnAddCommission, Me.btnEditCommission, Me.btnDeleteCommission, Me.btnAddCommissionPmt, Me.btnCommissionFilterPending, Me.btnCommissionFilterPayable, Me.btnCommissionFilterPaid, Me.btnPrintCommForecast, Me.btnPrintCommPayable, Me.btnPrintPaidCommissionsRpt, Me.btnCommissionTypes, Me.btnCommissionBalancesDue, Me.btnMarkPayable, Me.btnMarkPaid, Me.btnMarkPending, Me.btnPrintCommPmtRegister, Me.rbtnPrintCommByCustomer, Me.rbtnCommissonAuditReport, Me.eInvPaidThruDate, Me.rbtnFilterPayableCommByDate, Me.rbtnFilterPayableCommAll, Me.BarStaticItem4, Me.rbtnMiscMarkPayableAsPaid, Me.rbtnMarkCommissionAsAudited, Me.btnRptCommWithExceptions, Me.rbtnRptPayableWithExceptions, Me.rbtnPrintCommPmtRegisterWithExceptions})
-        Me.RibbonControl2.Location = New System.Drawing.Point(2, 254)
+        Me.RibbonControl2.Location = New System.Drawing.Point(2, 255)
         Me.RibbonControl2.MaxItemId = 30
         Me.RibbonControl2.Name = "RibbonControl2"
         Me.RibbonControl2.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage20, Me.RibbonPage8})
         Me.RibbonControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit5})
         Me.RibbonControl2.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
         Me.RibbonControl2.ShowToolbarCustomizeItem = False
-        Me.RibbonControl2.Size = New System.Drawing.Size(1478, 116)
+        Me.RibbonControl2.Size = New System.Drawing.Size(1478, 142)
         Me.RibbonControl2.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl2.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -2778,7 +2793,7 @@ Partial Class viewSalesCustomers
         Me.SplitterControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.SplitterControl1.Location = New System.Drawing.Point(2, 249)
         Me.SplitterControl1.Name = "SplitterControl1"
-        Me.SplitterControl1.Size = New System.Drawing.Size(1478, 5)
+        Me.SplitterControl1.Size = New System.Drawing.Size(1478, 6)
         Me.SplitterControl1.TabIndex = 10
         Me.SplitterControl1.TabStop = False
         '
@@ -2808,12 +2823,12 @@ Partial Class viewSalesCustomers
         '
         Me.grAssignments.DataSource = Me.bsAssignments
         Me.grAssignments.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grAssignments.Location = New System.Drawing.Point(2, 20)
+        Me.grAssignments.Location = New System.Drawing.Point(2, 25)
         Me.grAssignments.LookAndFeel.SkinName = "Money Twins"
         Me.grAssignments.MainView = Me.GridView6
         Me.grAssignments.Name = "grAssignments"
         Me.grAssignments.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.grAssignments.Size = New System.Drawing.Size(1208, 225)
+        Me.grAssignments.Size = New System.Drawing.Size(1208, 220)
         Me.grAssignments.TabIndex = 0
         Me.grAssignments.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView6})
         '
@@ -2940,11 +2955,11 @@ Partial Class viewSalesCustomers
         '
         Me.grSalesperson.DataSource = Me.bsSalesperson
         Me.grSalesperson.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grSalesperson.Location = New System.Drawing.Point(2, 20)
+        Me.grSalesperson.Location = New System.Drawing.Point(2, 25)
         Me.grSalesperson.LookAndFeel.SkinName = "Money Twins"
         Me.grSalesperson.MainView = Me.GridView4
         Me.grSalesperson.Name = "grSalesperson"
-        Me.grSalesperson.Size = New System.Drawing.Size(258, 225)
+        Me.grSalesperson.Size = New System.Drawing.Size(258, 220)
         Me.grSalesperson.TabIndex = 0
         Me.grSalesperson.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
@@ -3022,7 +3037,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl2.TabIndex = 2
         '
         'grpCommissionData
@@ -3031,7 +3046,7 @@ Partial Class viewSalesCustomers
         Me.grpCommissionData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpCommissionData.Location = New System.Drawing.Point(2, 2)
         Me.grpCommissionData.Name = "grpCommissionData"
-        Me.grpCommissionData.Size = New System.Drawing.Size(1478, 562)
+        Me.grpCommissionData.Size = New System.Drawing.Size(1478, 536)
         Me.grpCommissionData.TabIndex = 9
         Me.grpCommissionData.Text = "Commissions for ..."
         '
@@ -3039,12 +3054,12 @@ Partial Class viewSalesCustomers
         '
         Me.grCommissionData.DataSource = Me.bsCommissions
         Me.grCommissionData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCommissionData.Location = New System.Drawing.Point(2, 20)
+        Me.grCommissionData.Location = New System.Drawing.Point(2, 25)
         Me.grCommissionData.LookAndFeel.SkinName = "Money Twins"
         Me.grCommissionData.MainView = Me.grvCommissionData
         Me.grCommissionData.Name = "grCommissionData"
         Me.grCommissionData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit11, Me.RepositoryItemLookUpEdit10})
-        Me.grCommissionData.Size = New System.Drawing.Size(1474, 540)
+        Me.grCommissionData.Size = New System.Drawing.Size(1474, 509)
         Me.grCommissionData.TabIndex = 0
         Me.grCommissionData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCommissionData})
         '
@@ -3227,7 +3242,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl10.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl10.Name = "RibbonPanelControl10"
-        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl10.TabIndex = 3
         '
         'GroupControl9
@@ -3236,7 +3251,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl9.Name = "GroupControl9"
-        Me.GroupControl9.Size = New System.Drawing.Size(1482, 566)
+        Me.GroupControl9.Size = New System.Drawing.Size(1482, 540)
         Me.GroupControl9.TabIndex = 9
         Me.GroupControl9.Text = "Sales History Details"
         '
@@ -3244,12 +3259,12 @@ Partial Class viewSalesCustomers
         '
         Me.grSalesHistory.DataSource = Me.bsSalesHistory
         Me.grSalesHistory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grSalesHistory.Location = New System.Drawing.Point(2, 20)
+        Me.grSalesHistory.Location = New System.Drawing.Point(2, 25)
         Me.grSalesHistory.LookAndFeel.SkinName = "Money Twins"
         Me.grSalesHistory.MainView = Me.gridViewSalesHistory
         Me.grSalesHistory.Name = "grSalesHistory"
         Me.grSalesHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit13, Me.RepositoryItemLookUpEdit12})
-        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 544)
+        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 513)
         Me.grSalesHistory.TabIndex = 0
         Me.grSalesHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewSalesHistory})
         '
@@ -3446,7 +3461,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl3.TabIndex = 1
         '
         'gcPriceLists
@@ -3456,7 +3471,7 @@ Partial Class viewSalesCustomers
         Me.gcPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcPriceLists.Location = New System.Drawing.Point(2, 2)
         Me.gcPriceLists.Name = "gcPriceLists"
-        Me.gcPriceLists.Size = New System.Drawing.Size(1478, 562)
+        Me.gcPriceLists.Size = New System.Drawing.Size(1478, 536)
         Me.gcPriceLists.TabIndex = 1
         Me.gcPriceLists.Text = "Customer Price Lists"
         '
@@ -3464,12 +3479,12 @@ Partial Class viewSalesCustomers
         '
         Me.grPriceLists.DataSource = Me.bsPriceLists
         Me.grPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grPriceLists.Location = New System.Drawing.Point(2, 57)
+        Me.grPriceLists.Location = New System.Drawing.Point(2, 62)
         Me.grPriceLists.LookAndFeel.SkinName = "Money Twins"
         Me.grPriceLists.MainView = Me.viewPriceList
         Me.grPriceLists.Name = "grPriceLists"
         Me.grPriceLists.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.ProductLookupEdit})
-        Me.grPriceLists.Size = New System.Drawing.Size(1474, 503)
+        Me.grPriceLists.Size = New System.Drawing.Size(1474, 472)
         Me.grPriceLists.TabIndex = 0
         Me.grPriceLists.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewPriceList})
         '
@@ -3711,7 +3726,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Controls.Add(Me.luCustomerList)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(2, 20)
+        Me.PanelControl1.Location = New System.Drawing.Point(2, 25)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(1474, 37)
         Me.PanelControl1.TabIndex = 1
@@ -3744,7 +3759,7 @@ Partial Class viewSalesCustomers
         Me.luCustomerList.Properties.NullText = ""
         Me.luCustomerList.Properties.PopupWidth = 450
         Me.luCustomerList.Properties.ValueMember = "Custid"
-        Me.luCustomerList.Size = New System.Drawing.Size(213, 20)
+        Me.luCustomerList.Size = New System.Drawing.Size(213, 22)
         Me.luCustomerList.TabIndex = 0
         '
         'RibbonPanelControl1
@@ -3755,7 +3770,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl1.TabIndex = 0
         '
         'PanelControl9
@@ -3770,7 +3785,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl9.Location = New System.Drawing.Point(370, 2)
         Me.PanelControl9.Name = "PanelControl9"
-        Me.PanelControl9.Size = New System.Drawing.Size(1110, 562)
+        Me.PanelControl9.Size = New System.Drawing.Size(1110, 536)
         Me.PanelControl9.TabIndex = 2
         '
         'GroupControl15
@@ -3794,7 +3809,7 @@ Partial Class viewSalesCustomers
         Me.TextEdit1.MenuManager = Me.RibbonControl1
         Me.TextEdit1.Name = "TextEdit1"
         Me.TextEdit1.Properties.ReadOnly = True
-        Me.TextEdit1.Size = New System.Drawing.Size(280, 20)
+        Me.TextEdit1.Size = New System.Drawing.Size(280, 22)
         Me.TextEdit1.TabIndex = 36
         Me.TextEdit1.TabStop = False
         '
@@ -3805,7 +3820,7 @@ Partial Class viewSalesCustomers
         Me.CustphoneTextEdit.MenuManager = Me.RibbonControl1
         Me.CustphoneTextEdit.Name = "CustphoneTextEdit"
         Me.CustphoneTextEdit.Properties.ReadOnly = True
-        Me.CustphoneTextEdit.Size = New System.Drawing.Size(134, 20)
+        Me.CustphoneTextEdit.Size = New System.Drawing.Size(134, 22)
         Me.CustphoneTextEdit.TabIndex = 33
         Me.CustphoneTextEdit.TabStop = False
         '
@@ -3816,7 +3831,7 @@ Partial Class viewSalesCustomers
         Me.CustfaxTextEdit.MenuManager = Me.RibbonControl1
         Me.CustfaxTextEdit.Name = "CustfaxTextEdit"
         Me.CustfaxTextEdit.Properties.ReadOnly = True
-        Me.CustfaxTextEdit.Size = New System.Drawing.Size(108, 20)
+        Me.CustfaxTextEdit.Size = New System.Drawing.Size(108, 22)
         Me.CustfaxTextEdit.TabIndex = 35
         Me.CustfaxTextEdit.TabStop = False
         '
@@ -3935,7 +3950,7 @@ Partial Class viewSalesCustomers
         Me.CarrieridLookUpEdit.Properties.NullText = ""
         Me.CarrieridLookUpEdit.Properties.ReadOnly = True
         Me.CarrieridLookUpEdit.Properties.ValueMember = "CarrierID"
-        Me.CarrieridLookUpEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CarrieridLookUpEdit.Size = New System.Drawing.Size(280, 22)
         Me.CarrieridLookUpEdit.TabIndex = 43
         Me.CarrieridLookUpEdit.TabStop = False
         '
@@ -3950,7 +3965,7 @@ Partial Class viewSalesCustomers
         Me.FobTextEdit.MenuManager = Me.RibbonControl1
         Me.FobTextEdit.Name = "FobTextEdit"
         Me.FobTextEdit.Properties.ReadOnly = True
-        Me.FobTextEdit.Size = New System.Drawing.Size(166, 20)
+        Me.FobTextEdit.Size = New System.Drawing.Size(166, 22)
         Me.FobTextEdit.TabIndex = 46
         Me.FobTextEdit.TabStop = False
         '
@@ -3965,7 +3980,7 @@ Partial Class viewSalesCustomers
         Me.BulkcarrieridLookUpEdit.Properties.NullText = ""
         Me.BulkcarrieridLookUpEdit.Properties.ReadOnly = True
         Me.BulkcarrieridLookUpEdit.Properties.ValueMember = "CarrierID"
-        Me.BulkcarrieridLookUpEdit.Size = New System.Drawing.Size(280, 20)
+        Me.BulkcarrieridLookUpEdit.Size = New System.Drawing.Size(280, 22)
         Me.BulkcarrieridLookUpEdit.TabIndex = 45
         Me.BulkcarrieridLookUpEdit.TabStop = False
         '
@@ -3984,7 +3999,7 @@ Partial Class viewSalesCustomers
         Me.LogisticsidLookUpEdit.Properties.NullText = ""
         Me.LogisticsidLookUpEdit.Properties.ReadOnly = True
         Me.LogisticsidLookUpEdit.Properties.ValueMember = "Logisticsid"
-        Me.LogisticsidLookUpEdit.Size = New System.Drawing.Size(280, 20)
+        Me.LogisticsidLookUpEdit.Size = New System.Drawing.Size(280, 22)
         Me.LogisticsidLookUpEdit.TabIndex = 44
         Me.LogisticsidLookUpEdit.TabStop = False
         '
@@ -4019,7 +4034,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcontactTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcontactTextEdit.Name = "CustbillcontactTextEdit"
         Me.CustbillcontactTextEdit.Properties.ReadOnly = True
-        Me.CustbillcontactTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustbillcontactTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustbillcontactTextEdit.TabIndex = 31
         Me.CustbillcontactTextEdit.TabStop = False
         '
@@ -4030,7 +4045,7 @@ Partial Class viewSalesCustomers
         Me.Custbilladdress1TextEdit.MenuManager = Me.RibbonControl1
         Me.Custbilladdress1TextEdit.Name = "Custbilladdress1TextEdit"
         Me.Custbilladdress1TextEdit.Properties.ReadOnly = True
-        Me.Custbilladdress1TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custbilladdress1TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custbilladdress1TextEdit.TabIndex = 19
         Me.Custbilladdress1TextEdit.TabStop = False
         '
@@ -4041,7 +4056,7 @@ Partial Class viewSalesCustomers
         Me.CustbillpostalcodeTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillpostalcodeTextEdit.Name = "CustbillpostalcodeTextEdit"
         Me.CustbillpostalcodeTextEdit.Properties.ReadOnly = True
-        Me.CustbillpostalcodeTextEdit.Size = New System.Drawing.Size(64, 20)
+        Me.CustbillpostalcodeTextEdit.Size = New System.Drawing.Size(64, 22)
         Me.CustbillpostalcodeTextEdit.TabIndex = 27
         Me.CustbillpostalcodeTextEdit.TabStop = False
         '
@@ -4052,7 +4067,7 @@ Partial Class viewSalesCustomers
         Me.Custbilladdress2TextEdit.MenuManager = Me.RibbonControl1
         Me.Custbilladdress2TextEdit.Name = "Custbilladdress2TextEdit"
         Me.Custbilladdress2TextEdit.Properties.ReadOnly = True
-        Me.Custbilladdress2TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custbilladdress2TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custbilladdress2TextEdit.TabIndex = 21
         Me.Custbilladdress2TextEdit.TabStop = False
         '
@@ -4063,7 +4078,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcountryTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcountryTextEdit.Name = "CustbillcountryTextEdit"
         Me.CustbillcountryTextEdit.Properties.ReadOnly = True
-        Me.CustbillcountryTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustbillcountryTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustbillcountryTextEdit.TabIndex = 29
         Me.CustbillcountryTextEdit.TabStop = False
         '
@@ -4074,7 +4089,7 @@ Partial Class viewSalesCustomers
         Me.CustbillstateprovTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillstateprovTextEdit.Name = "CustbillstateprovTextEdit"
         Me.CustbillstateprovTextEdit.Properties.ReadOnly = True
-        Me.CustbillstateprovTextEdit.Size = New System.Drawing.Size(38, 20)
+        Me.CustbillstateprovTextEdit.Size = New System.Drawing.Size(38, 22)
         Me.CustbillstateprovTextEdit.TabIndex = 25
         Me.CustbillstateprovTextEdit.TabStop = False
         '
@@ -4085,7 +4100,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcityTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcityTextEdit.Name = "CustbillcityTextEdit"
         Me.CustbillcityTextEdit.Properties.ReadOnly = True
-        Me.CustbillcityTextEdit.Size = New System.Drawing.Size(166, 20)
+        Me.CustbillcityTextEdit.Size = New System.Drawing.Size(166, 22)
         Me.CustbillcityTextEdit.TabIndex = 23
         Me.CustbillcityTextEdit.TabStop = False
         '
@@ -4116,7 +4131,7 @@ Partial Class viewSalesCustomers
         Me.Custshipaddress1TextEdit.MenuManager = Me.RibbonControl1
         Me.Custshipaddress1TextEdit.Name = "Custshipaddress1TextEdit"
         Me.Custshipaddress1TextEdit.Properties.ReadOnly = True
-        Me.Custshipaddress1TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custshipaddress1TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custshipaddress1TextEdit.TabIndex = 5
         Me.Custshipaddress1TextEdit.TabStop = False
         '
@@ -4127,7 +4142,7 @@ Partial Class viewSalesCustomers
         Me.Custshipaddress2TextEdit.MenuManager = Me.RibbonControl1
         Me.Custshipaddress2TextEdit.Name = "Custshipaddress2TextEdit"
         Me.Custshipaddress2TextEdit.Properties.ReadOnly = True
-        Me.Custshipaddress2TextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.Custshipaddress2TextEdit.Size = New System.Drawing.Size(280, 22)
         Me.Custshipaddress2TextEdit.TabIndex = 7
         Me.Custshipaddress2TextEdit.TabStop = False
         '
@@ -4138,7 +4153,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcityTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcityTextEdit.Name = "CustshipcityTextEdit"
         Me.CustshipcityTextEdit.Properties.ReadOnly = True
-        Me.CustshipcityTextEdit.Size = New System.Drawing.Size(166, 20)
+        Me.CustshipcityTextEdit.Size = New System.Drawing.Size(166, 22)
         Me.CustshipcityTextEdit.TabIndex = 9
         Me.CustshipcityTextEdit.TabStop = False
         '
@@ -4149,7 +4164,7 @@ Partial Class viewSalesCustomers
         Me.CustshipstateprovTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipstateprovTextEdit.Name = "CustshipstateprovTextEdit"
         Me.CustshipstateprovTextEdit.Properties.ReadOnly = True
-        Me.CustshipstateprovTextEdit.Size = New System.Drawing.Size(38, 20)
+        Me.CustshipstateprovTextEdit.Size = New System.Drawing.Size(38, 22)
         Me.CustshipstateprovTextEdit.TabIndex = 11
         Me.CustshipstateprovTextEdit.TabStop = False
         '
@@ -4160,7 +4175,7 @@ Partial Class viewSalesCustomers
         Me.CustshippostalcodeTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshippostalcodeTextEdit.Name = "CustshippostalcodeTextEdit"
         Me.CustshippostalcodeTextEdit.Properties.ReadOnly = True
-        Me.CustshippostalcodeTextEdit.Size = New System.Drawing.Size(64, 20)
+        Me.CustshippostalcodeTextEdit.Size = New System.Drawing.Size(64, 22)
         Me.CustshippostalcodeTextEdit.TabIndex = 13
         Me.CustshippostalcodeTextEdit.TabStop = False
         '
@@ -4171,7 +4186,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcountryTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcountryTextEdit.Name = "CustshipcountryTextEdit"
         Me.CustshipcountryTextEdit.Properties.ReadOnly = True
-        Me.CustshipcountryTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustshipcountryTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustshipcountryTextEdit.TabIndex = 15
         Me.CustshipcountryTextEdit.TabStop = False
         '
@@ -4182,7 +4197,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcontactTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcontactTextEdit.Name = "CustshipcontactTextEdit"
         Me.CustshipcontactTextEdit.Properties.ReadOnly = True
-        Me.CustshipcontactTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustshipcontactTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustshipcontactTextEdit.TabIndex = 17
         Me.CustshipcontactTextEdit.TabStop = False
         '
@@ -4247,7 +4262,7 @@ Partial Class viewSalesCustomers
         Me.SalespersonIDLookUpEdit2.Properties.NullText = ""
         Me.SalespersonIDLookUpEdit2.Properties.ReadOnly = True
         Me.SalespersonIDLookUpEdit2.Properties.ValueMember = "Salespersonid"
-        Me.SalespersonIDLookUpEdit2.Size = New System.Drawing.Size(142, 20)
+        Me.SalespersonIDLookUpEdit2.Size = New System.Drawing.Size(142, 22)
         Me.SalespersonIDLookUpEdit2.TabIndex = 51
         '
         'bsSalesPersonList2
@@ -4265,7 +4280,7 @@ Partial Class viewSalesCustomers
         Me.SalespersonidLookUpEdit.Properties.NullText = ""
         Me.SalespersonidLookUpEdit.Properties.ReadOnly = True
         Me.SalespersonidLookUpEdit.Properties.ValueMember = "Salespersonid"
-        Me.SalespersonidLookUpEdit.Size = New System.Drawing.Size(142, 20)
+        Me.SalespersonidLookUpEdit.Size = New System.Drawing.Size(142, 22)
         Me.SalespersonidLookUpEdit.TabIndex = 49
         '
         'bsSalespersonList
@@ -4279,7 +4294,7 @@ Partial Class viewSalesCustomers
         Me.CustidTextEdit.MenuManager = Me.RibbonControl1
         Me.CustidTextEdit.Name = "CustidTextEdit"
         Me.CustidTextEdit.Properties.ReadOnly = True
-        Me.CustidTextEdit.Size = New System.Drawing.Size(54, 20)
+        Me.CustidTextEdit.Size = New System.Drawing.Size(54, 22)
         Me.CustidTextEdit.TabIndex = 1
         Me.CustidTextEdit.TabStop = False
         '
@@ -4303,7 +4318,7 @@ Partial Class viewSalesCustomers
         Me.CustnameTextEdit.MenuManager = Me.RibbonControl1
         Me.CustnameTextEdit.Name = "CustnameTextEdit"
         Me.CustnameTextEdit.Properties.ReadOnly = True
-        Me.CustnameTextEdit.Size = New System.Drawing.Size(280, 20)
+        Me.CustnameTextEdit.Size = New System.Drawing.Size(280, 22)
         Me.CustnameTextEdit.TabIndex = 3
         Me.CustnameTextEdit.TabStop = False
         '
@@ -4313,7 +4328,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControl8.Location = New System.Drawing.Point(364, 2)
         Me.PanelControl8.Name = "PanelControl8"
-        Me.PanelControl8.Size = New System.Drawing.Size(6, 562)
+        Me.PanelControl8.Size = New System.Drawing.Size(6, 536)
         Me.PanelControl8.TabIndex = 1
         '
         'GroupControl1
@@ -4322,7 +4337,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupControl1.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(362, 562)
+        Me.GroupControl1.Size = New System.Drawing.Size(362, 536)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Customer List"
         '
@@ -4330,11 +4345,11 @@ Partial Class viewSalesCustomers
         '
         Me.grCustomers.DataSource = Me.bsCustomers
         Me.grCustomers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCustomers.Location = New System.Drawing.Point(2, 20)
+        Me.grCustomers.Location = New System.Drawing.Point(2, 25)
         Me.grCustomers.LookAndFeel.SkinName = "Money Twins"
         Me.grCustomers.MainView = Me.GridView3
         Me.grCustomers.Name = "grCustomers"
-        Me.grCustomers.Size = New System.Drawing.Size(358, 540)
+        Me.grCustomers.Size = New System.Drawing.Size(358, 509)
         Me.grCustomers.TabIndex = 0
         Me.grCustomers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
@@ -4407,7 +4422,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl4.TabIndex = 1
         '
         'GroupControl4
@@ -4416,7 +4431,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1478, 562)
+        Me.GroupControl4.Size = New System.Drawing.Size(1478, 536)
         Me.GroupControl4.TabIndex = 9
         Me.GroupControl4.Text = "Invoices"
         '
@@ -4424,12 +4439,12 @@ Partial Class viewSalesCustomers
         '
         Me.grInvoices.DataSource = Me.bsInvoices
         Me.grInvoices.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grInvoices.Location = New System.Drawing.Point(2, 20)
+        Me.grInvoices.Location = New System.Drawing.Point(2, 25)
         Me.grInvoices.LookAndFeel.SkinName = "Money Twins"
         Me.grInvoices.MainView = Me.grvInvoiceList
         Me.grInvoices.Name = "grInvoices"
         Me.grInvoices.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit4})
-        Me.grInvoices.Size = New System.Drawing.Size(1474, 540)
+        Me.grInvoices.Size = New System.Drawing.Size(1474, 509)
         Me.grInvoices.TabIndex = 0
         Me.grInvoices.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvInvoiceList})
         '
@@ -4603,7 +4618,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl9.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl9.Name = "RibbonPanelControl9"
-        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl9.TabIndex = 4
         '
         'gcSalesByCustomerAnalysis
@@ -4612,7 +4627,7 @@ Partial Class viewSalesCustomers
         Me.gcSalesByCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcSalesByCustomerAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcSalesByCustomerAnalysis.Name = "gcSalesByCustomerAnalysis"
-        Me.gcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1482, 566)
+        Me.gcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1482, 540)
         Me.gcSalesByCustomerAnalysis.TabIndex = 3
         Me.gcSalesByCustomerAnalysis.Text = "Sales By Customer Analysis"
         '
@@ -4620,11 +4635,11 @@ Partial Class viewSalesCustomers
         '
         Me.grcSalesByCustomerAnalysis.DataSource = Me.bsSalesByCustomer
         Me.grcSalesByCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grcSalesByCustomerAnalysis.Location = New System.Drawing.Point(2, 20)
+        Me.grcSalesByCustomerAnalysis.Location = New System.Drawing.Point(2, 25)
         Me.grcSalesByCustomerAnalysis.MainView = Me.grvSalesByCustomerAnalysis
         Me.grcSalesByCustomerAnalysis.MenuManager = Me.RibbonControl1
         Me.grcSalesByCustomerAnalysis.Name = "grcSalesByCustomerAnalysis"
-        Me.grcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1478, 544)
+        Me.grcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1478, 513)
         Me.grcSalesByCustomerAnalysis.TabIndex = 0
         Me.grcSalesByCustomerAnalysis.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvSalesByCustomerAnalysis})
         '
@@ -5180,7 +5195,7 @@ Partial Class viewSalesCustomers
         Me.gcSalesAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcSalesAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcSalesAnalysis.Name = "gcSalesAnalysis"
-        Me.gcSalesAnalysis.Size = New System.Drawing.Size(1482, 566)
+        Me.gcSalesAnalysis.Size = New System.Drawing.Size(1482, 540)
         Me.gcSalesAnalysis.TabIndex = 0
         Me.gcSalesAnalysis.Text = "Sales Analysis"
         '
@@ -5188,11 +5203,11 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl3.DataSource = Me.bsSalesData
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl3.Location = New System.Drawing.Point(2, 20)
+        Me.GridControl3.Location = New System.Drawing.Point(2, 25)
         Me.GridControl3.MainView = Me.grvSalesAnalysis
         Me.GridControl3.MenuManager = Me.RibbonControl1
         Me.GridControl3.Name = "GridControl3"
-        Me.GridControl3.Size = New System.Drawing.Size(1478, 544)
+        Me.GridControl3.Size = New System.Drawing.Size(1478, 513)
         Me.GridControl3.TabIndex = 0
         Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvSalesAnalysis})
         '
@@ -5492,7 +5507,7 @@ Partial Class viewSalesCustomers
         Me.gcCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCustomerAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcCustomerAnalysis.Name = "gcCustomerAnalysis"
-        Me.gcCustomerAnalysis.Size = New System.Drawing.Size(1482, 566)
+        Me.gcCustomerAnalysis.Size = New System.Drawing.Size(1482, 540)
         Me.gcCustomerAnalysis.TabIndex = 1
         Me.gcCustomerAnalysis.Text = "Customer Analysis"
         '
@@ -5501,7 +5516,7 @@ Partial Class viewSalesCustomers
         Me.gcCompanyAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCompanyAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcCompanyAnalysis.Name = "gcCompanyAnalysis"
-        Me.gcCompanyAnalysis.Size = New System.Drawing.Size(1482, 566)
+        Me.gcCompanyAnalysis.Size = New System.Drawing.Size(1482, 540)
         Me.gcCompanyAnalysis.TabIndex = 2
         Me.gcCompanyAnalysis.Text = "Company Analysis"
         '
@@ -5511,7 +5526,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl7.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl7.Name = "RibbonPanelControl7"
-        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl7.TabIndex = 1
         '
         'GroupControl6
@@ -5522,7 +5537,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl6.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl6.Name = "GroupControl6"
-        Me.GroupControl6.Size = New System.Drawing.Size(1478, 562)
+        Me.GroupControl6.Size = New System.Drawing.Size(1478, 536)
         Me.GroupControl6.TabIndex = 2
         Me.GroupControl6.Text = "Customer Payments"
         '
@@ -5539,12 +5554,12 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl2.DataSource = Me.bsInvoicePayments
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.Location = New System.Drawing.Point(2, 20)
+        Me.GridControl2.Location = New System.Drawing.Point(2, 25)
         Me.GridControl2.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl2.MainView = Me.GridView10
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit8})
-        Me.GridControl2.Size = New System.Drawing.Size(236, 116)
+        Me.GridControl2.Size = New System.Drawing.Size(236, 111)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView10})
         '
@@ -5634,9 +5649,9 @@ Partial Class viewSalesCustomers
         '
         Me.GroupControl7.Controls.Add(Me.GridControl1)
         Me.GroupControl7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GroupControl7.Location = New System.Drawing.Point(2, 51)
+        Me.GroupControl7.Location = New System.Drawing.Point(2, 56)
         Me.GroupControl7.Name = "GroupControl7"
-        Me.GroupControl7.Size = New System.Drawing.Size(457, 509)
+        Me.GroupControl7.Size = New System.Drawing.Size(457, 478)
         Me.GroupControl7.TabIndex = 2
         Me.GroupControl7.Text = "Customer Payment List"
         '
@@ -5644,12 +5659,12 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl1.DataSource = Me.bsCustomerPayments
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 20)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 25)
         Me.GridControl1.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl1.MainView = Me.GridView8
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit7})
-        Me.GridControl1.Size = New System.Drawing.Size(453, 487)
+        Me.GridControl1.Size = New System.Drawing.Size(453, 451)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView8})
         '
@@ -5754,7 +5769,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl4.Controls.Add(Me.LabelControl2)
         Me.PanelControl4.Controls.Add(Me.eCustomerLookup)
         Me.PanelControl4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl4.Location = New System.Drawing.Point(2, 20)
+        Me.PanelControl4.Location = New System.Drawing.Point(2, 25)
         Me.PanelControl4.Name = "PanelControl4"
         Me.PanelControl4.Size = New System.Drawing.Size(1474, 31)
         Me.PanelControl4.TabIndex = 1
@@ -5779,7 +5794,7 @@ Partial Class viewSalesCustomers
         Me.eCustomerLookup.Properties.NullText = ""
         Me.eCustomerLookup.Properties.PopupWidth = 450
         Me.eCustomerLookup.Properties.ValueMember = "Custid"
-        Me.eCustomerLookup.Size = New System.Drawing.Size(350, 20)
+        Me.eCustomerLookup.Size = New System.Drawing.Size(350, 22)
         Me.eCustomerLookup.TabIndex = 0
         '
         'RibbonPanelControl6
@@ -5788,7 +5803,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
-        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1482, 566)
+        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1482, 540)
         Me.RibbonPanelControl6.TabIndex = 1
         '
         'GroupControl5
@@ -5797,7 +5812,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl5.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(1478, 562)
+        Me.GroupControl5.Size = New System.Drawing.Size(1478, 536)
         Me.GroupControl5.TabIndex = 10
         Me.GroupControl5.Text = "Shipments"
         '
@@ -5805,12 +5820,12 @@ Partial Class viewSalesCustomers
         '
         Me.grShipments.DataSource = Me.bsShipments
         Me.grShipments.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grShipments.Location = New System.Drawing.Point(2, 20)
+        Me.grShipments.Location = New System.Drawing.Point(2, 25)
         Me.grShipments.LookAndFeel.SkinName = "Money Twins"
         Me.grShipments.MainView = Me.GridView9
         Me.grShipments.Name = "grShipments"
         Me.grShipments.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit3, Me.RepositoryItemLookUpEdit5})
-        Me.grShipments.Size = New System.Drawing.Size(1474, 540)
+        Me.grShipments.Size = New System.Drawing.Size(1474, 509)
         Me.grShipments.TabIndex = 0
         Me.grShipments.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView9})
         '
@@ -6640,4 +6655,6 @@ Partial Class viewSalesCustomers
     Friend WithEvents rbtnExportSalesPersonAnalysisToExcel As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnGetAllCustomersSales As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnWorkOrdersToInvoice As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnInvoiceHistory As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup34 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

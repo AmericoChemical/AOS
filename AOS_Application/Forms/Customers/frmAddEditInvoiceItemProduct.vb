@@ -141,7 +141,7 @@ Public Class frmAddEditInvoiceItemProduct
     End Function
 
     Private Sub eProduct_EditValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles eProduct.EditValueChanged
-        If eProduct.EditValue Is Nothing Then
+        If IsDBNull(eProduct.EditValue) OrElse eProduct.EditValue Is Nothing Then
             Exit Sub
         End If
 
