@@ -4,3 +4,12 @@
 
 /AOS_Application/.vs/AOS.WindowsApp/v15/sqlite3/storage.ide
 /AOS_Application/obj/Debug/AOS.Application.vbproj.CoreCompileInputs.cache
+/AOS_Application/obj/Debug/AOS.rptInvoiceHistorical.resources
+/AOS_Application/obj/Debug/AOS.frmWorkOrdersToInvoice.resources
+/AOS_Application/obj/Debug/AOS.frmViewInvoiceHistory.resources
+/AOS_Application/obj/Debug/AOS.frmInvoiceHistoryList.resources
+/AOS_Application/obj/Debug/AOS.frmInvoiceChangeReason.resources
+/AOS_Application/obj/Debug/AOS.Application.vbprojResolveAssemblyReference.cache
+/AOS_Application/obj/Debug/AOS.Application.vbproj.CopyComplete
+/AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CoreCompileInputs.cache
+/AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CopyComplete
