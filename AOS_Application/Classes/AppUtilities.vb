@@ -35,6 +35,14 @@ Module AppUtilities
         End Try
     End Sub
 
+    Public Function isActiveProduct(vProdID As Integer) As Boolean
+
+
+
+
+        Return True
+    End Function
+
 
 
 #End Region

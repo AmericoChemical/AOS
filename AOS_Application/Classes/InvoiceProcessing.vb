@@ -235,9 +235,14 @@
         If vLoadID <> 0 Then
             'lookup Logistics Provider
             oLogistics = New Logistics
-            If IsDBNull(oLoad.LogisticsID) Or oLoad.LogisticsID Is Nothing Then
+            If IsDBNull(oLoad.ScheduledLogisticsID) Or oLoad.ScheduledLogisticsID Is Nothing Then
+                oInvoice.Logisticsid = oWorkOrder.Logisticsid
+                If oLogistics.LoadByPrimaryKey(oWorkOrder.Logisticsid) Then
+                    oInvoice.Freightcarrier = oInvoice.Freightcarrier & " / " & oLogistics.Logisticsname
+                End If
             Else
-                If oLogistics.LoadByPrimaryKey(oLoad.LogisticsID) Then
+                oInvoice.Logisticsid = oLoad.ScheduledLogisticsID
+                If oLogistics.LoadByPrimaryKey(oLoad.ScheduledLogisticsID) Then
                     oInvoice.Freightcarrier = oInvoice.Freightcarrier & " / " & oLogistics.Logisticsname
                 End If
             End If

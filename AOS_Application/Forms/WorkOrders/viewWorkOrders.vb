@@ -836,5 +836,8 @@ Public Class viewWorkOrders
         printWorkOrderAndSourceOrders(bsCanceledOrders.Current.workOrderNumber)
     End Sub
 
-
+    Private Sub rbtnRptDailyWOList_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnRptDailyWOList.ItemClick
+        Dim frm As New frmWorkOrdersDailyList
+        frm.ShowDialog()
+    End Sub
 End Class

@@ -339,7 +339,7 @@ Public Class frmUpdatePriceListItem
         End If
 
         If oPrice.Weightunits <> oProduct.Weightunits Then
-            If MsgBox("The WEIGHT Units for the Price List are different than the VOLUME Units for the Product Standard Cost. Do you want to continue?", MsgBoxStyle.YesNo, "Confirm SAVE Action") = MsgBoxResult.No Then
+            If MsgBox("The WEIGHT Units for the Price List are different than the WEIGHT Units for the Product Standard Cost. Do you want to continue?", MsgBoxStyle.YesNo, "Confirm SAVE Action") = MsgBoxResult.No Then
                 Return False
             End If
         End If

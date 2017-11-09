@@ -372,6 +372,12 @@ Public Class viewInventory
         If MsgBox(str, MsgBoxStyle.YesNo, "Confirm Delete Request") = MsgBoxResult.No Then
             Exit Sub
         End If
+
+        If isActiveProduct(bsProducts.Current.productID) Then
+            MsgBox("The Product you selected cannot be deleted. It is in use in one or more processes in the database. You may want to change the status to INACTIVE.", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        End If
+
         Try
             Dim oProduct As Product
             oProduct = New Product
@@ -381,7 +387,9 @@ Public Class viewInventory
         Catch ex As Exception
             MsgBox("Error in deleting selected record", MsgBoxStyle.Critical, "Error - Delete Failed")
         End Try
+
         getProducts()
+
     End Sub
 
     Private Sub printItemLabel()
@@ -523,7 +531,7 @@ Public Class viewInventory
 
 #Region " FORM OBJECT PROCESSING "
     'Private Sub searchTextbox_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
-    '    bsProducts.Filter = "Customer Name like '" & sender.Text & "%'"
+    '    bsProducts.Filter = "Customer Name Like '" & sender.Text & "%'"
     '    grProducts.DataSource = bsProducts
     '    grProducts.Refresh()
     'End Sub

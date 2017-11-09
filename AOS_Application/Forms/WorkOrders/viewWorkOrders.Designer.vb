@@ -219,6 +219,9 @@ Partial Class viewWorkOrders
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPageGroup15 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPage7 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rbtnRptDailyWOList = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.FormCaption, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -326,11 +329,11 @@ Partial Class viewWorkOrders
         Me.RibbonControl1.ApplicationCaption = "dsadsdsa"
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddPending, Me.btnEditPending, Me.btnCancelPending, Me.btnMarkApproved, Me.btnPrintPendingWorkOrderReport, Me.btnGetPendingWorkOrders, Me.btnEditApprovedOrder, Me.btnCancelApprovedOrder, Me.btnGetApprovedOrders, Me.btnPrintApprovedWorkOrder, Me.btnMarkApprovedAsInProcess, Me.btnGetInProcessWorkOrders, Me.btnGetCompleteOrders, Me.btnGetCancelledOrders, Me.btnEditInProcessOrder, Me.btnCancelInProcessOrder, Me.btnPrintInProcessOrder, Me.btnMarkInProcessOrderAsComplete, Me.btnViewCompleteOrder, Me.btnPickWorkOrder, Me.btnViewCancelledOrder, Me.btnMarkInProcessAsApproved, Me.rbtnEditCompleteOrder, Me.rbtnRetrieveOrdersForInvoicing, Me.rbtnCreateInvoiceFromWorkOrder, Me.rbtnCompleteWorkorder, Me.btnApprovedMarkReadyToInvoice, Me.btnPrintApprovedWorkOrderReport, Me.btnPrintInProcessWorkOrderReport, Me.btnPrintApprovedWorkOrderDocs, Me.btnPrintInProcessOrderDocs, Me.rbtnPrintReadytoInvoiceWorkorderDocs, Me.btnPrintPendingWorkOrderDocs, Me.btnPrintPendingWorkOrder, Me.rbtnPrintReadytoInvoiceWorkorder, Me.rbtnPrintCompleteWorkorder, Me.rbtnPrintCompleteWorkorderDocs, Me.rbtnPrintCanceledWorkorder, Me.rbtnPrintCanceledWorkorderDocs})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddPending, Me.btnEditPending, Me.btnCancelPending, Me.btnMarkApproved, Me.btnPrintPendingWorkOrderReport, Me.btnGetPendingWorkOrders, Me.btnEditApprovedOrder, Me.btnCancelApprovedOrder, Me.btnGetApprovedOrders, Me.btnPrintApprovedWorkOrder, Me.btnMarkApprovedAsInProcess, Me.btnGetInProcessWorkOrders, Me.btnGetCompleteOrders, Me.btnGetCancelledOrders, Me.btnEditInProcessOrder, Me.btnCancelInProcessOrder, Me.btnPrintInProcessOrder, Me.btnMarkInProcessOrderAsComplete, Me.btnViewCompleteOrder, Me.btnPickWorkOrder, Me.btnViewCancelledOrder, Me.btnMarkInProcessAsApproved, Me.rbtnEditCompleteOrder, Me.rbtnRetrieveOrdersForInvoicing, Me.rbtnCreateInvoiceFromWorkOrder, Me.rbtnCompleteWorkorder, Me.btnApprovedMarkReadyToInvoice, Me.btnPrintApprovedWorkOrderReport, Me.btnPrintInProcessWorkOrderReport, Me.btnPrintApprovedWorkOrderDocs, Me.btnPrintInProcessOrderDocs, Me.rbtnPrintReadytoInvoiceWorkorderDocs, Me.btnPrintPendingWorkOrderDocs, Me.btnPrintPendingWorkOrder, Me.rbtnPrintReadytoInvoiceWorkorder, Me.rbtnPrintCompleteWorkorder, Me.rbtnPrintCompleteWorkorderDocs, Me.rbtnPrintCanceledWorkorder, Me.rbtnPrintCanceledWorkorderDocs, Me.rbtnRptDailyWOList})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 93
+        Me.RibbonControl1.MaxItemId = 94
         Me.RibbonControl1.Name = "RibbonControl1"
-        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage6, Me.RibbonPage4, Me.RibbonPage5})
+        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage6, Me.RibbonPage4, Me.RibbonPage5, Me.RibbonPage7})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
         Me.RibbonControl1.Size = New System.Drawing.Size(1086, 117)
@@ -339,27 +342,27 @@ Partial Class viewWorkOrders
         'btnAddPending
         '
         Me.btnAddPending.Caption = "Add New"
-        Me.btnAddPending.Glyph = Global.AOS.My.Resources.Resources.form_add
         Me.btnAddPending.Id = 41
-        Me.btnAddPending.LargeGlyph = Global.AOS.My.Resources.Resources.form_add
+        Me.btnAddPending.ImageOptions.Image = Global.AOS.My.Resources.Resources.form_add
+        Me.btnAddPending.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_add
         Me.btnAddPending.Name = "btnAddPending"
         Me.btnAddPending.Tag = "176"
         '
         'btnEditPending
         '
         Me.btnEditPending.Caption = "Edit"
-        Me.btnEditPending.Glyph = Global.AOS.My.Resources.Resources.form_edit
         Me.btnEditPending.Id = 42
-        Me.btnEditPending.LargeGlyph = Global.AOS.My.Resources.Resources.form_edit
+        Me.btnEditPending.ImageOptions.Image = Global.AOS.My.Resources.Resources.form_edit
+        Me.btnEditPending.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_edit
         Me.btnEditPending.Name = "btnEditPending"
         Me.btnEditPending.Tag = "177"
         '
         'btnCancelPending
         '
         Me.btnCancelPending.Caption = "Mark As Cancelled"
-        Me.btnCancelPending.Glyph = Global.AOS.My.Resources.Resources.form_delete
         Me.btnCancelPending.Id = 43
-        Me.btnCancelPending.LargeGlyph = Global.AOS.My.Resources.Resources.form_delete
+        Me.btnCancelPending.ImageOptions.Image = Global.AOS.My.Resources.Resources.form_delete
+        Me.btnCancelPending.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_delete
         Me.btnCancelPending.Name = "btnCancelPending"
         Me.btnCancelPending.Tag = "180"
         '
@@ -367,7 +370,7 @@ Partial Class viewWorkOrders
         '
         Me.btnMarkApproved.Caption = "Mark As Approved"
         Me.btnMarkApproved.Id = 51
-        Me.btnMarkApproved.LargeGlyph = Global.AOS.My.Resources.Resources.form_arrow_right
+        Me.btnMarkApproved.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_arrow_right
         Me.btnMarkApproved.Name = "btnMarkApproved"
         Me.btnMarkApproved.Tag = "179"
         '
@@ -375,7 +378,7 @@ Partial Class viewWorkOrders
         '
         Me.btnPrintPendingWorkOrderReport.Caption = "Print Fulfillment Plan"
         Me.btnPrintPendingWorkOrderReport.Id = 52
-        Me.btnPrintPendingWorkOrderReport.LargeGlyph = Global.AOS.My.Resources.Resources.form_items
+        Me.btnPrintPendingWorkOrderReport.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_items
         Me.btnPrintPendingWorkOrderReport.Name = "btnPrintPendingWorkOrderReport"
         Me.btnPrintPendingWorkOrderReport.Tag = "178"
         '
@@ -383,7 +386,7 @@ Partial Class viewWorkOrders
         '
         Me.btnGetPendingWorkOrders.Caption = "Retrieve Pending Orders"
         Me.btnGetPendingWorkOrders.Id = 53
-        Me.btnGetPendingWorkOrders.LargeGlyph = Global.AOS.My.Resources.Resources.database_lookup
+        Me.btnGetPendingWorkOrders.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.database_lookup
         Me.btnGetPendingWorkOrders.Name = "btnGetPendingWorkOrders"
         Me.btnGetPendingWorkOrders.Tag = "175"
         '
@@ -391,7 +394,7 @@ Partial Class viewWorkOrders
         '
         Me.btnEditApprovedOrder.Caption = "Edit"
         Me.btnEditApprovedOrder.Id = 54
-        Me.btnEditApprovedOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_edit
+        Me.btnEditApprovedOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_edit
         Me.btnEditApprovedOrder.Name = "btnEditApprovedOrder"
         Me.btnEditApprovedOrder.Tag = "182"
         '
@@ -399,7 +402,7 @@ Partial Class viewWorkOrders
         '
         Me.btnCancelApprovedOrder.Caption = "Mark As Cancelled"
         Me.btnCancelApprovedOrder.Id = 55
-        Me.btnCancelApprovedOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_delete
+        Me.btnCancelApprovedOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_delete
         Me.btnCancelApprovedOrder.Name = "btnCancelApprovedOrder"
         Me.btnCancelApprovedOrder.Tag = "187"
         '
@@ -407,7 +410,7 @@ Partial Class viewWorkOrders
         '
         Me.btnGetApprovedOrders.Caption = "Retrieve Approved Work Orders"
         Me.btnGetApprovedOrders.Id = 56
-        Me.btnGetApprovedOrders.LargeGlyph = Global.AOS.My.Resources.Resources.database_lookup
+        Me.btnGetApprovedOrders.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.database_lookup
         Me.btnGetApprovedOrders.Name = "btnGetApprovedOrders"
         Me.btnGetApprovedOrders.Tag = "181"
         '
@@ -415,7 +418,7 @@ Partial Class viewWorkOrders
         '
         Me.btnPrintApprovedWorkOrder.Caption = "Print Work Order"
         Me.btnPrintApprovedWorkOrder.Id = 57
-        Me.btnPrintApprovedWorkOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.btnPrintApprovedWorkOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.btnPrintApprovedWorkOrder.Name = "btnPrintApprovedWorkOrder"
         Me.btnPrintApprovedWorkOrder.Tag = "183"
         '
@@ -423,7 +426,7 @@ Partial Class viewWorkOrders
         '
         Me.btnMarkApprovedAsInProcess.Caption = "Mark As   In Process"
         Me.btnMarkApprovedAsInProcess.Id = 59
-        Me.btnMarkApprovedAsInProcess.LargeGlyph = Global.AOS.My.Resources.Resources.form_arrow_right
+        Me.btnMarkApprovedAsInProcess.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_arrow_right
         Me.btnMarkApprovedAsInProcess.Name = "btnMarkApprovedAsInProcess"
         Me.btnMarkApprovedAsInProcess.Tag = "185"
         '
@@ -431,7 +434,7 @@ Partial Class viewWorkOrders
         '
         Me.btnGetInProcessWorkOrders.Caption = "Retrieve In Process Orders"
         Me.btnGetInProcessWorkOrders.Id = 61
-        Me.btnGetInProcessWorkOrders.LargeGlyph = Global.AOS.My.Resources.Resources.database_lookup
+        Me.btnGetInProcessWorkOrders.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.database_lookup
         Me.btnGetInProcessWorkOrders.Name = "btnGetInProcessWorkOrders"
         Me.btnGetInProcessWorkOrders.Tag = "188"
         '
@@ -439,7 +442,7 @@ Partial Class viewWorkOrders
         '
         Me.btnGetCompleteOrders.Caption = "Retrieve Complete Orders"
         Me.btnGetCompleteOrders.Id = 62
-        Me.btnGetCompleteOrders.LargeGlyph = Global.AOS.My.Resources.Resources.database_lookup
+        Me.btnGetCompleteOrders.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.database_lookup
         Me.btnGetCompleteOrders.Name = "btnGetCompleteOrders"
         Me.btnGetCompleteOrders.Tag = "198"
         '
@@ -447,7 +450,7 @@ Partial Class viewWorkOrders
         '
         Me.btnGetCancelledOrders.Caption = "Retrieve Cancelled Orders"
         Me.btnGetCancelledOrders.Id = 63
-        Me.btnGetCancelledOrders.LargeGlyph = Global.AOS.My.Resources.Resources.database_lookup
+        Me.btnGetCancelledOrders.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.database_lookup
         Me.btnGetCancelledOrders.Name = "btnGetCancelledOrders"
         Me.btnGetCancelledOrders.Tag = "200"
         '
@@ -455,7 +458,7 @@ Partial Class viewWorkOrders
         '
         Me.btnEditInProcessOrder.Caption = "Edit"
         Me.btnEditInProcessOrder.Id = 64
-        Me.btnEditInProcessOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_edit
+        Me.btnEditInProcessOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_edit
         Me.btnEditInProcessOrder.Name = "btnEditInProcessOrder"
         Me.btnEditInProcessOrder.Tag = "189"
         '
@@ -463,7 +466,7 @@ Partial Class viewWorkOrders
         '
         Me.btnCancelInProcessOrder.Caption = "Mark As Cancelled"
         Me.btnCancelInProcessOrder.Id = 65
-        Me.btnCancelInProcessOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_delete
+        Me.btnCancelInProcessOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_delete
         Me.btnCancelInProcessOrder.Name = "btnCancelInProcessOrder"
         Me.btnCancelInProcessOrder.Tag = "194"
         '
@@ -471,7 +474,7 @@ Partial Class viewWorkOrders
         '
         Me.btnPrintInProcessOrder.Caption = "Print Work Order"
         Me.btnPrintInProcessOrder.Id = 66
-        Me.btnPrintInProcessOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.btnPrintInProcessOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.btnPrintInProcessOrder.Name = "btnPrintInProcessOrder"
         Me.btnPrintInProcessOrder.Tag = "190"
         '
@@ -479,7 +482,7 @@ Partial Class viewWorkOrders
         '
         Me.btnMarkInProcessOrderAsComplete.Caption = "Mark As Complete"
         Me.btnMarkInProcessOrderAsComplete.Id = 67
-        Me.btnMarkInProcessOrderAsComplete.LargeGlyph = Global.AOS.My.Resources.Resources.form_check
+        Me.btnMarkInProcessOrderAsComplete.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_check
         Me.btnMarkInProcessOrderAsComplete.Name = "btnMarkInProcessOrderAsComplete"
         Me.btnMarkInProcessOrderAsComplete.Tag = "193"
         Me.btnMarkInProcessOrderAsComplete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -488,14 +491,14 @@ Partial Class viewWorkOrders
         '
         Me.btnViewCompleteOrder.Caption = "View Order Details"
         Me.btnViewCompleteOrder.Id = 68
-        Me.btnViewCompleteOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form
+        Me.btnViewCompleteOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form
         Me.btnViewCompleteOrder.Name = "btnViewCompleteOrder"
         '
         'btnPickWorkOrder
         '
         Me.btnPickWorkOrder.Caption = "Pick Items on Order"
         Me.btnPickWorkOrder.Id = 69
-        Me.btnPickWorkOrder.LargeGlyph = Global.AOS.My.Resources.Resources.barcode_ok
+        Me.btnPickWorkOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.barcode_ok
         Me.btnPickWorkOrder.Name = "btnPickWorkOrder"
         Me.btnPickWorkOrder.Tag = "191"
         '
@@ -503,7 +506,7 @@ Partial Class viewWorkOrders
         '
         Me.btnViewCancelledOrder.Caption = "View Order Details"
         Me.btnViewCancelledOrder.Id = 70
-        Me.btnViewCancelledOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form
+        Me.btnViewCancelledOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form
         Me.btnViewCancelledOrder.Name = "btnViewCancelledOrder"
         Me.btnViewCancelledOrder.Tag = "201"
         '
@@ -511,7 +514,7 @@ Partial Class viewWorkOrders
         '
         Me.btnMarkInProcessAsApproved.Caption = "Mark As Approved"
         Me.btnMarkInProcessAsApproved.Id = 71
-        Me.btnMarkInProcessAsApproved.LargeGlyph = Global.AOS.My.Resources.Resources.form_arrow_left
+        Me.btnMarkInProcessAsApproved.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_arrow_left
         Me.btnMarkInProcessAsApproved.Name = "btnMarkInProcessAsApproved"
         Me.btnMarkInProcessAsApproved.Tag = "192"
         Me.btnMarkInProcessAsApproved.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -520,7 +523,7 @@ Partial Class viewWorkOrders
         '
         Me.rbtnEditCompleteOrder.Caption = "Edit Work Order"
         Me.rbtnEditCompleteOrder.Id = 72
-        Me.rbtnEditCompleteOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_edit
+        Me.rbtnEditCompleteOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_edit
         Me.rbtnEditCompleteOrder.Name = "rbtnEditCompleteOrder"
         Me.rbtnEditCompleteOrder.Tag = "199"
         '
@@ -529,7 +532,7 @@ Partial Class viewWorkOrders
         Me.rbtnRetrieveOrdersForInvoicing.Caption = "Retrieve Orders for Invoicing"
         Me.rbtnRetrieveOrdersForInvoicing.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnRetrieveOrdersForInvoicing.Id = 73
-        Me.rbtnRetrieveOrdersForInvoicing.LargeGlyph = Global.AOS.My.Resources.Resources.database_lookup
+        Me.rbtnRetrieveOrdersForInvoicing.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.database_lookup
         Me.rbtnRetrieveOrdersForInvoicing.Name = "rbtnRetrieveOrdersForInvoicing"
         Me.rbtnRetrieveOrdersForInvoicing.Tag = "195"
         '
@@ -538,7 +541,7 @@ Partial Class viewWorkOrders
         Me.rbtnCreateInvoiceFromWorkOrder.Caption = "Create Invoice"
         Me.rbtnCreateInvoiceFromWorkOrder.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnCreateInvoiceFromWorkOrder.Id = 74
-        Me.rbtnCreateInvoiceFromWorkOrder.LargeGlyph = Global.AOS.My.Resources.Resources.document_add__2_
+        Me.rbtnCreateInvoiceFromWorkOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.document_add__2_
         Me.rbtnCreateInvoiceFromWorkOrder.LargeWidth = 75
         Me.rbtnCreateInvoiceFromWorkOrder.Name = "rbtnCreateInvoiceFromWorkOrder"
         Me.rbtnCreateInvoiceFromWorkOrder.Tag = "196"
@@ -548,7 +551,7 @@ Partial Class viewWorkOrders
         Me.rbtnCompleteWorkorder.Caption = "Complete (Close) Work Order"
         Me.rbtnCompleteWorkorder.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnCompleteWorkorder.Id = 75
-        Me.rbtnCompleteWorkorder.LargeGlyph = Global.AOS.My.Resources.Resources.form_check
+        Me.rbtnCompleteWorkorder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_check
         Me.rbtnCompleteWorkorder.Name = "rbtnCompleteWorkorder"
         Me.rbtnCompleteWorkorder.Tag = "197"
         '
@@ -557,7 +560,7 @@ Partial Class viewWorkOrders
         Me.btnApprovedMarkReadyToInvoice.Caption = "Mark Ready to Invoice"
         Me.btnApprovedMarkReadyToInvoice.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.btnApprovedMarkReadyToInvoice.Id = 76
-        Me.btnApprovedMarkReadyToInvoice.LargeGlyph = Global.AOS.My.Resources.Resources.form_arrow_right
+        Me.btnApprovedMarkReadyToInvoice.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_arrow_right
         Me.btnApprovedMarkReadyToInvoice.Name = "btnApprovedMarkReadyToInvoice"
         Me.btnApprovedMarkReadyToInvoice.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
@@ -565,35 +568,35 @@ Partial Class viewWorkOrders
         '
         Me.btnPrintApprovedWorkOrderReport.Caption = "Print Fulfillment Plan"
         Me.btnPrintApprovedWorkOrderReport.Id = 77
-        Me.btnPrintApprovedWorkOrderReport.LargeGlyph = Global.AOS.My.Resources.Resources.form_items
+        Me.btnPrintApprovedWorkOrderReport.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_items
         Me.btnPrintApprovedWorkOrderReport.Name = "btnPrintApprovedWorkOrderReport"
         '
         'btnPrintInProcessWorkOrderReport
         '
         Me.btnPrintInProcessWorkOrderReport.Caption = "Print Fulfillment Plan"
         Me.btnPrintInProcessWorkOrderReport.Id = 78
-        Me.btnPrintInProcessWorkOrderReport.LargeGlyph = Global.AOS.My.Resources.Resources.form_items
+        Me.btnPrintInProcessWorkOrderReport.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_items
         Me.btnPrintInProcessWorkOrderReport.Name = "btnPrintInProcessWorkOrderReport"
         '
         'btnPrintApprovedWorkOrderDocs
         '
         Me.btnPrintApprovedWorkOrderDocs.Caption = "Print WO Docs"
         Me.btnPrintApprovedWorkOrderDocs.Id = 79
-        Me.btnPrintApprovedWorkOrderDocs.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.btnPrintApprovedWorkOrderDocs.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.btnPrintApprovedWorkOrderDocs.Name = "btnPrintApprovedWorkOrderDocs"
         '
         'btnPrintInProcessOrderDocs
         '
         Me.btnPrintInProcessOrderDocs.Caption = "Print WO Docs"
         Me.btnPrintInProcessOrderDocs.Id = 80
-        Me.btnPrintInProcessOrderDocs.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.btnPrintInProcessOrderDocs.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.btnPrintInProcessOrderDocs.Name = "btnPrintInProcessOrderDocs"
         '
         'rbtnPrintReadytoInvoiceWorkorderDocs
         '
         Me.rbtnPrintReadytoInvoiceWorkorderDocs.Caption = "Print WO Docs"
         Me.rbtnPrintReadytoInvoiceWorkorderDocs.Id = 85
-        Me.rbtnPrintReadytoInvoiceWorkorderDocs.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.rbtnPrintReadytoInvoiceWorkorderDocs.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.rbtnPrintReadytoInvoiceWorkorderDocs.Name = "rbtnPrintReadytoInvoiceWorkorderDocs"
         '
         'btnPrintPendingWorkOrderDocs
@@ -601,7 +604,7 @@ Partial Class viewWorkOrders
         Me.btnPrintPendingWorkOrderDocs.Caption = "Print WO Docs"
         Me.btnPrintPendingWorkOrderDocs.Enabled = False
         Me.btnPrintPendingWorkOrderDocs.Id = 86
-        Me.btnPrintPendingWorkOrderDocs.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.btnPrintPendingWorkOrderDocs.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.btnPrintPendingWorkOrderDocs.Name = "btnPrintPendingWorkOrderDocs"
         '
         'btnPrintPendingWorkOrder
@@ -609,21 +612,21 @@ Partial Class viewWorkOrders
         Me.btnPrintPendingWorkOrder.Caption = "Print Work Order"
         Me.btnPrintPendingWorkOrder.Enabled = False
         Me.btnPrintPendingWorkOrder.Id = 87
-        Me.btnPrintPendingWorkOrder.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.btnPrintPendingWorkOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.btnPrintPendingWorkOrder.Name = "btnPrintPendingWorkOrder"
         '
         'rbtnPrintReadytoInvoiceWorkorder
         '
         Me.rbtnPrintReadytoInvoiceWorkorder.Caption = "Print Work Order"
         Me.rbtnPrintReadytoInvoiceWorkorder.Id = 88
-        Me.rbtnPrintReadytoInvoiceWorkorder.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.rbtnPrintReadytoInvoiceWorkorder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.rbtnPrintReadytoInvoiceWorkorder.Name = "rbtnPrintReadytoInvoiceWorkorder"
         '
         'rbtnPrintCompleteWorkorder
         '
         Me.rbtnPrintCompleteWorkorder.Caption = "Print Work Order"
         Me.rbtnPrintCompleteWorkorder.Id = 89
-        Me.rbtnPrintCompleteWorkorder.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.rbtnPrintCompleteWorkorder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.rbtnPrintCompleteWorkorder.Name = "rbtnPrintCompleteWorkorder"
         '
         'rbtnPrintCompleteWorkorderDocs
@@ -631,14 +634,14 @@ Partial Class viewWorkOrders
         Me.rbtnPrintCompleteWorkorderDocs.Caption = "Print WO Docs"
         Me.rbtnPrintCompleteWorkorderDocs.Enabled = False
         Me.rbtnPrintCompleteWorkorderDocs.Id = 90
-        Me.rbtnPrintCompleteWorkorderDocs.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.rbtnPrintCompleteWorkorderDocs.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.rbtnPrintCompleteWorkorderDocs.Name = "rbtnPrintCompleteWorkorderDocs"
         '
         'rbtnPrintCanceledWorkorder
         '
         Me.rbtnPrintCanceledWorkorder.Caption = "Print Work Order"
         Me.rbtnPrintCanceledWorkorder.Id = 91
-        Me.rbtnPrintCanceledWorkorder.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.rbtnPrintCanceledWorkorder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.rbtnPrintCanceledWorkorder.Name = "rbtnPrintCanceledWorkorder"
         '
         'rbtnPrintCanceledWorkorderDocs
@@ -646,7 +649,7 @@ Partial Class viewWorkOrders
         Me.rbtnPrintCanceledWorkorderDocs.Caption = "Print WO Docs"
         Me.rbtnPrintCanceledWorkorderDocs.Enabled = False
         Me.rbtnPrintCanceledWorkorderDocs.Id = 92
-        Me.rbtnPrintCanceledWorkorderDocs.LargeGlyph = Global.AOS.My.Resources.Resources.form_print
+        Me.rbtnPrintCanceledWorkorderDocs.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
         Me.rbtnPrintCanceledWorkorderDocs.Name = "rbtnPrintCanceledWorkorderDocs"
         '
         'RibbonPage1
@@ -2216,7 +2219,7 @@ Partial Class viewWorkOrders
         '
         Me.BarButtonItem1.Caption = "Edit"
         Me.BarButtonItem1.Id = 54
-        Me.BarButtonItem1.LargeGlyph = Global.AOS.My.Resources.Resources.form_edit
+        Me.BarButtonItem1.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_edit
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'Timer2
@@ -2236,6 +2239,28 @@ Partial Class viewWorkOrders
         Me.RibbonPageGroup15.Name = "RibbonPageGroup15"
         Me.RibbonPageGroup15.ShowCaptionButton = False
         Me.RibbonPageGroup15.Text = "Reports"
+        '
+        'RibbonPage7
+        '
+        Me.RibbonPage7.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup3})
+        Me.RibbonPage7.Name = "RibbonPage7"
+        Me.RibbonPage7.Text = "Reports"
+        '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.AllowMinimize = False
+        Me.RibbonPageGroup3.AllowTextClipping = False
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.rbtnRptDailyWOList)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        Me.RibbonPageGroup3.ShowCaptionButton = False
+        Me.RibbonPageGroup3.Text = "Work Order Reports"
+        '
+        'rbtnRptDailyWOList
+        '
+        Me.rbtnRptDailyWOList.Caption = "Daily Work Order List"
+        Me.rbtnRptDailyWOList.Id = 93
+        Me.rbtnRptDailyWOList.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.form_print
+        Me.rbtnRptDailyWOList.Name = "rbtnRptDailyWOList"
         '
         'viewWorkOrders
         '
@@ -2514,4 +2539,7 @@ Partial Class viewWorkOrders
     Friend WithEvents rbtnPrintCanceledWorkorder As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnPrintCanceledWorkorderDocs As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents colOpenPurchPendingQty As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents rbtnRptDailyWOList As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPage7 As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

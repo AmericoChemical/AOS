@@ -333,6 +333,13 @@ Public Class frmUpdateProductUnitCost
             Exit Sub
         End If
 
+        If Not IsDBNull(oProduct.Stdweight) Then
+            If eWgtUnits.EditValue <> oProduct.Stdweight Then
+                If MsgBox("The Label Weight is not the same as the Standard Weight Units. Do want to save anyway?", MsgBoxStyle.YesNo, "Warning!") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
+        End If
 
         If MsgBox("Are you sure you want to UPDATE the existing STANDARD COSTS for this product to the VENDOR PRODUCT COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
             Exit Sub

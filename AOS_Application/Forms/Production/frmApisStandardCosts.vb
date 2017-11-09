@@ -19,6 +19,7 @@ Public Class frmApisStandardCosts
     Dim oAPIS As ViewAPISData
     Dim oMatlCosts As ViewCostingApisMaterialStdCostCollection
     Dim oTotalCosts As ViewCostingApisTotalCosts
+    Dim oProduct As Product
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Timer1.Stop()
@@ -38,7 +39,15 @@ Public Class frmApisStandardCosts
         getAPISData(vID)
         getAPISMaterialCosts(vID)
         getAPISTotalCosts(vID)
+        getProduct(oAPIS.Productid)
 
+    End Sub
+
+    Private Sub getProduct(vProdID As Integer)
+        oProduct = New Product
+        If Not oProduct.LoadByPrimaryKey(vProdID) Then
+            MsgBox("Could not open associated Product record for the APIS", MsgBoxStyle.Critical, "ERROR")
+        End If
     End Sub
 
     Private Sub getAPISData(vID As Integer)
@@ -67,6 +76,14 @@ Public Class frmApisStandardCosts
     End Sub
 
     Private Sub btnUpdateStandardCosts_Click(sender As Object, e As EventArgs) Handles btnUpdateStandardCosts.Click
+
+        If Not IsDBNull(oProduct.Stdweight) Then
+            If oTotalCosts.Weight <> oProduct.Stdweight Then
+                If MsgBox("The Label Weight does not match the Standard Weight Units. Do you want to save anyway?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
+        End If
 
         If MsgBox("Are you sure you want to UPDATE the existing STANDARD COSTS for this product to the CALCULATED APIS COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
             Exit Sub

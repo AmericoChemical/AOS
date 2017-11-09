@@ -3656,5 +3656,9 @@ C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.application
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.exe
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.xml
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.pdb
-C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbprojResolveAssemblyReference.cache
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmWorkOrdersToInvoice.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmViewInvoiceHistory.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmInvoiceChangeReason.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmInvoiceHistoryList.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptInvoiceHistorical.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmWorkOrdersDailyList.resources
