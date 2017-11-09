@@ -25,6 +25,7 @@ Partial Class frmInvoiceHistoryList
         Me.rbtnSelectHistoricalInvoice = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnCancel = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnPrintInvoiceHistorical = New DevExpress.XtraBars.BarButtonItem()
+        Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -38,14 +39,13 @@ Partial Class frmInvoiceHistoryList
         Me.colChangetype = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colChangereason = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colChangedby = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsInvoiceHistoryHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -60,7 +60,7 @@ Partial Class frmInvoiceHistoryList
         Me.RibbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(764, 115)
+        Me.RibbonControl1.Size = New System.Drawing.Size(764, 95)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -86,6 +86,11 @@ Partial Class frmInvoiceHistoryList
         Me.rbtnPrintInvoiceHistorical.Id = 3
         Me.rbtnPrintInvoiceHistorical.ImageOptions.LargeImageIndex = 10
         Me.rbtnPrintInvoiceHistorical.Name = "rbtnPrintInvoiceHistorical"
+        '
+        'LargeRibbonImages
+        '
+        Me.LargeRibbonImages.ImageSize = New System.Drawing.Size(32, 32)
+        Me.LargeRibbonImages.ImageStream = CType(resources.GetObject("LargeRibbonImages.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
         '
         'RibbonPage1
         '
@@ -113,21 +118,21 @@ Partial Class frmInvoiceHistoryList
         '
         Me.GroupControl1.Controls.Add(Me.GridControl1)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 115)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 95)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(764, 293)
+        Me.GroupControl1.Size = New System.Drawing.Size(764, 313)
         Me.GroupControl1.TabIndex = 1
-        Me.GroupControl1.Text = "Select Historical Record for Invoice#: "
+        Me.GroupControl1.Text = "Select History Record for Invoice#: "
         '
         'GridControl1
         '
         Me.GridControl1.DataSource = Me.bsInvoiceHistoryHeader
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 25)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 20)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(760, 266)
+        Me.GridControl1.Size = New System.Drawing.Size(760, 291)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -194,11 +199,6 @@ Partial Class frmInvoiceHistoryList
         Me.colChangedby.Visible = True
         Me.colChangedby.VisibleIndex = 5
         '
-        'LargeRibbonImages
-        '
-        Me.LargeRibbonImages.ImageSize = New System.Drawing.Size(32, 32)
-        Me.LargeRibbonImages.ImageStream = CType(resources.GetObject("LargeRibbonImages.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
-        '
         'frmInvoiceHistoryList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,12 +212,12 @@ Partial Class frmInvoiceHistoryList
         Me.Name = "frmInvoiceHistoryList"
         Me.Text = "Invoice Change History"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsInvoiceHistoryHeader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

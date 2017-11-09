@@ -8,11 +8,15 @@ Public Class frmInvoiceHistoryList
     Dim oInvoiceHistoryId As Integer
 
     Private Sub frmInvoiceHistoryList_Load(sender As Object, e As EventArgs) Handles Me.Load
+        GroupControl1.Text = "Select History Record for Invoice#: " & vInvoiceNum
         oInvoiceHistoryHeaders = New InvoicehistoryheaderCollection
         oInvoiceHistoryHeaders.Query.Where(oInvoiceHistoryHeaders.Query.Invoicenumber = vInvoiceNum And oInvoiceHistoryHeaders.Query.Changecommitted = True)
         If oInvoiceHistoryHeaders.Query.Load Then
             oInvoiceHistoryHeaders.Sort = "InvoiceHistoryId Desc"
             bsInvoiceHistoryHeader.DataSource = oInvoiceHistoryHeaders
+        Else
+            MessageBox.Show("No Invoice History Found.")
+            Me.DialogResult = Windows.Forms.DialogResult.Cancel
         End If
     End Sub
 

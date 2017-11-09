@@ -344,6 +344,7 @@ Public Class frmAddEditInvoice
                     saveInvoice()
                 Else
                     MsgBox("You must Enter Reason for Invoice Change")
+
                 End If
             Else
                 'discard header
@@ -371,7 +372,7 @@ Public Class frmAddEditInvoice
                 oInvoice.Save()
             Else
                 If oInvoice.es.IsModified OrElse IsItemModified Then
-                    Dim vConfirm As String = "Are you sure you want to Cancel changes to the Invoice? vbcrlf Any edits to invoice items will also be reverted."
+                    Dim vConfirm As String = "Are you sure you want to Cancel Changes to the Invoice? Any edits to invoice items will also be reverted."
                     If MsgBox(vConfirm, MsgBoxStyle.YesNo, "Confirm Cancel Changes") = MsgBoxResult.No Then
                     End If
                 End If
@@ -557,7 +558,9 @@ Public Class frmAddEditInvoice
     Private Sub rbtnPrintInvoice_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnPrintInvoice.ItemClick
         '        saveInvoice()
         ValidateAndSaveInvoice()
-        printInvoice()
+        If Me.DialogResult = DialogResult.OK Then
+            printInvoice()
+        End If
     End Sub
 
     Private Sub printInvoice()
