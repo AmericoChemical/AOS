@@ -251,6 +251,15 @@ Public Class frmAddEditProduct
             Exit Sub
         End If
 
+        If Not IsDBNull(eLblWeight.EditValue) And Not IsDBNull(eWgtUnits.EditValue) Then
+            If eLblWeight.EditValue <> eWgtUnits.EditValue Then
+                If MsgBox("The Label Weight does not match the Standard Weight Units. Do you want to save anyway?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
+        End If
+
+
         'If ValidateCost() = False Then
         '    If MsgBox("Partial pricing data is entered. Are you sure you want to continue?", vbYesNo + vbQuestion) = vbNo Then
         '        SetFocustoFirstNullFieldinPricingMethod()

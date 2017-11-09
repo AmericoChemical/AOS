@@ -857,6 +857,9 @@
     <Compile Include="BusinessObjects\Custom\ViewCustomerTrendAnalysisQuarterly.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerTrendAnalysisQuarterlyCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerTrendAnalysisQuarterlyQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewDailyWorkorderList.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewDailyWorkorderListCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewDailyWorkorderListQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewInventoryAnalysisByProduct.vb" />
     <Compile Include="BusinessObjects\Custom\ViewInventoryAnalysisByProductCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewInventoryAnalysisByProductQuery.vb" />
@@ -1499,6 +1502,7 @@
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisAnnually.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisMonthly.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisQuarterly.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewDailyWorkorderList.vb" />
     <Compile Include="BusinessObjects\Generated\ViewInventoryAnalysisByProduct.vb" />
     <Compile Include="BusinessObjects\Generated\ViewInvItemDetails.vb" />
     <Compile Include="BusinessObjects\Generated\ViewInvItemList.vb" />
@@ -2264,6 +2268,12 @@
       <DependentUpon>frmAddEditContainerType.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\frmAddEditContainerType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkOrders\frmWorkOrdersDailyList.Designer.vb">
+      <DependentUpon>frmWorkOrdersDailyList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkOrders\frmWorkOrdersDailyList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\rptCommissionsWithExceptions.Designer.vb">
@@ -3579,6 +3589,10 @@
       <DependentUpon>frmAddEditContainerType.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkOrders\frmWorkOrdersDailyList.resx">
+      <DependentUpon>frmWorkOrdersDailyList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptCommissionsWithExceptions.resx">
       <DependentUpon>rptCommissionsWithExceptions.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -4220,6 +4234,8 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCostingApisTotalCosts.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCostPriceEffects2Collection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCustomerShipmentTotalsCollection1.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewDailyWorkorderList.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewDailyWorkorderListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewInvoice.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewInvoiceCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewMaterialProductsFullAvailableForMaterialNeedsCollection.datasource" />
@@ -4299,7 +4315,6 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.Chemical.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.Chemicalbom.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ChemicalbomCollection.datasource" />
-    <None Include="My Project\DataSources\AOS.BusinessObjects.ChemicalcategoryCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ChemicalCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.Component.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ComponentCollection.datasource" />
@@ -4311,8 +4326,6 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.esListFulfillmenttypeCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.esPurchase.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.esPurchaseCollection.datasource" />
-    <None Include="My Project\DataSources\AOS.BusinessObjects.esViewKitList.datasource" />
-    <None Include="My Project\DataSources\AOS.BusinessObjects.esViewKitListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.Formula.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.Formulachangehistory.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.FormulachangehistoryCollection.datasource" />
@@ -4556,7 +4569,6 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRawMaterialAvailableCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabelInvItemList.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabelInvItemListCollection.datasource" />
-    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabelInvItemListQuery.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabelOrder.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabelOrderCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabelOrderItem.datasource" />
@@ -4832,22 +4844,22 @@
   <ItemGroup>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.WinForms">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
