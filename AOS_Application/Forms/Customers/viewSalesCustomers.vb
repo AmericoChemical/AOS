@@ -33,6 +33,8 @@ Public Class viewSalesCustomers
     Dim oSalesList As SalespersonCollection
     Dim oSalesYears As ViewSalesYearsCollection
     Dim oCustomerLookupList As ViewCustomerLookupCollection
+    Dim oCustomerNotes As Customer
+    Dim oProductNotes As Product
 
     Dim vInvoiceStatus As String = "PENDING"
     Dim vCommFilter As String = "PENDING"
@@ -385,6 +387,17 @@ Public Class viewSalesCustomers
         oProductList.LoadAll()
         bsProducts.DataSource = oProductList
         bsProducts.ResetBindings(False)
+    End Sub
+
+    Private Sub loadProductNotes(vProdID As Integer)
+        oProductNotes = New Product
+        oProductNotes.LoadByPrimaryKey(vProdID)
+        bsProductNotes.DataSource = oProductNotes
+    End Sub
+    Private Sub loadCustomerNotes(vCustID As Integer)
+        oCustomerNotes = New Customer
+        oCustomerNotes.LoadByPrimaryKey(vCustID)
+        bsCustomerNotes.DataSource = oCustomerNotes
     End Sub
 
 #End Region
@@ -1495,6 +1508,7 @@ Public Class viewSalesCustomers
 
     Private Sub luCustomerList_EditValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles luCustomerList.EditValueChanged
         loadPriceLists(luCustomerList.EditValue, "ACTIVE")
+        loadCustomerNotes(luCustomerList.EditValue)
     End Sub
     Private Sub editPriceListItem()
         Dim frm As New frmUpdatePriceListItem
@@ -2696,6 +2710,13 @@ Public Class viewSalesCustomers
         Dim frm As New frmInvoiceHistoryList
         frm.vInvoiceNum = Me.bsInvoices.Current.InvoiceNumber
         frm.ShowDialog()
+    End Sub
+
+    Private Sub bsPriceLists_CurrentChanged(sender As Object, e As EventArgs) Handles bsPriceLists.CurrentChanged
+        If bsPriceLists.Count <= 0 Then
+            Exit Sub
+        End If
+        loadProductNotes(bsPriceLists.Current.ProductID)
     End Sub
 
 

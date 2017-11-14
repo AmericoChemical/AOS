@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AOS.exe" size="15856640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AOS.exe" size="15861760">
       <assemblyIdentity name="AOS" version="13.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gnieJI5xmrX6DiXBXpTGmXn3zzAC3Zc6tBbLnC32BWI=</dsig:DigestValue>
+        <dsig:DigestValue>YFzkwAkHqZx/UD7416uVn8R3YHKjNxnyHG3tfFZ9e9g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

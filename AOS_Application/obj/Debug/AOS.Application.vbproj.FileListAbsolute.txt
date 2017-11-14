@@ -3662,3 +3662,4 @@ C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmInvoiceChangeRea
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmInvoiceHistoryList.resources
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptInvoiceHistorical.resources
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmWorkOrdersDailyList.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbprojResolveAssemblyReference.cache
