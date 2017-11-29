@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 1/25/2016 2:52:58 PM
+' Date Generated       : 11/28/2017 9:38:57 AM
 '===============================================================================
 
 Imports System
@@ -217,6 +217,9 @@ Namespace BusinessObjects
 												
 						Case "ItemStatus"
 							Me.str.ItemStatus = CType(value, string)
+												
+						Case "Isautoflag"
+							Me.str.Isautoflag = CType(value, string)
 					
 					End Select
 					
@@ -276,6 +279,12 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
 								Me.FailedMaterialWeight = CType(value, Nullable(Of System.Boolean))
+							End If
+						
+						Case "Isautoflag"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.Isautoflag = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -511,6 +520,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As System.String)
 				MyBase.SetSystemString(ReceivingeventMetadata.ColumnNames.ItemStatus, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to RECEIVINGEVENT.ISAUTOFLAG
+		' </summary>
+		Public Overridable Property Isautoflag As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ReceivingeventMetadata.ColumnNames.Isautoflag)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ReceivingeventMetadata.ColumnNames.Isautoflag, value)
 			End Set
 		End Property		
 		
@@ -886,6 +908,27 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Isautoflag As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.Isautoflag
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Isautoflag = Nothing
+					Else
+						entity.Isautoflag = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esReceivingevent
@@ -1073,6 +1116,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property ItemStatus As esQueryItem
 			Get
 				Return New esQueryItem(Me, ReceivingeventMetadata.ColumnNames.ItemStatus, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Isautoflag As esQueryItem
+			Get
+				Return New esQueryItem(Me, ReceivingeventMetadata.ColumnNames.Isautoflag, esSystemType.Boolean)
 			End Get
 		End Property 
 		
@@ -1369,6 +1418,12 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ReceivingeventMetadata.ColumnNames.Isautoflag, 17, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ReceivingeventMetadata.PropertyNames.Isautoflag
+			c.HasDefault = True
+			c.Default = "((0))"
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -1414,6 +1469,7 @@ Namespace BusinessObjects
 			 Public Const FailedLabelWeight As String = "FailedLabelWeight"
 			 Public Const FailedMaterialWeight As String = "FailedMaterialWeight"
 			 Public Const ItemStatus As String = "ItemStatus"
+			 Public Const Isautoflag As String = "ISAUTOFLAG"
 		End Class
 #End Region	
 		
@@ -1436,6 +1492,7 @@ Namespace BusinessObjects
 			 Public Const FailedLabelWeight As String = "FailedLabelWeight"
 			 Public Const FailedMaterialWeight As String = "FailedMaterialWeight"
 			 Public Const ItemStatus As String = "ItemStatus"
+			 Public Const Isautoflag As String = "Isautoflag"
 		End Class
 #End Region	
 
@@ -1499,7 +1556,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Container", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("FailedLabelWeight", new esTypeMap("bit", "System.Boolean"))
 				meta.AddTypeMap("FailedMaterialWeight", new esTypeMap("bit", "System.Boolean"))
-				meta.AddTypeMap("ItemStatus", new esTypeMap("varchar", "System.String"))			
+				meta.AddTypeMap("ItemStatus", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Isautoflag", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 

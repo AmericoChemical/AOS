@@ -20,6 +20,7 @@
         oEvent.LotNumber = vLotNumber
         oEvent.Container = vContainer
         oEvent.Pallet = vPallet
+        oEvent.Isautoflag = False
         oEvent.Save()
 
 
@@ -39,6 +40,13 @@
             oEvent.FailedLabelWeight = 1
         Else
             oEvent.FailedLabelWeight = 0
+        End If
+
+        If Not oProduct.Chemicalid Is Nothing Then
+            Dim oChemical As New Chemical
+            If oChemical.LoadByPrimaryKey(oProduct.Chemicalid) Then
+                oEvent.Isautoflag = oChemical.Isautoflag
+            End If
         End If
 
         'Gather weights of Container and Pallet user choices
@@ -88,10 +96,18 @@
             prepareMiniBarcodeLabelForInventoryItem(oItem.Invitemnumber)
             Return 0
         Else
-            If oEvent.FailedLabelWeight = True Or oEvent.FailedMaterialWeight = True Then
+            If oEvent.FailedLabelWeight = True Or oEvent.FailedMaterialWeight = True Or oEvent.Isautoflag Then
                 'put item in RECEIVED/HOLD status and create RECEIVED/HOLD record
                 updateInventoryItemData(oItem.Invitemnumber, "RCVDHOLD", vMaterialWeight, vLotNumber)
-                addNewReceivedHoldRecord(oItem.Invitemnumber, "WEIGHT ERROR", "Item Weights not within Product specifications", oEvent.EventID, False)
+                If (oEvent.Isautoflag) Then
+                    If (oEvent.FailedLabelWeight = True Or oEvent.FailedMaterialWeight = True) Then
+                        addNewReceivedHoldRecord(oItem.Invitemnumber, "AUTO FLAG/WEIGHT ERROR", "Auto flag & Item Weights not within Product specifications", oEvent.EventID, False)
+                    Else
+                        addNewReceivedHoldRecord(oItem.Invitemnumber, "AUTO FLAG", "Auto Flag Item", oEvent.EventID, False)
+                    End If
+                Else
+                    addNewReceivedHoldRecord(oItem.Invitemnumber, "WEIGHT ERROR", "Item Weights not within Product specifications", oEvent.EventID, False)
+                End If
                 'Print Inventory Item tag/small barcode label
                 prepareMiniBarcodeLabelForInventoryItem(oItem.Invitemnumber)
                 Return 0

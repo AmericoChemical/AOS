@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/17/2016 2:37:08 PM
+' Date Generated       : 11/15/2017 2:13:19 PM
 '===============================================================================
 
 Imports System
@@ -274,6 +274,9 @@ Namespace BusinessObjects
 												
 						Case "Usenonregdot"
 							Me.str.Usenonregdot = CType(value, string)
+												
+						Case "Isautoflag"
+							Me.str.Isautoflag = CType(value, string)
 					
 					End Select
 					
@@ -393,6 +396,12 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
 								Me.Usenonregdot = CType(value, Nullable(Of System.Boolean))
+							End If
+						
+						Case "Isautoflag"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.Isautoflag = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -875,6 +884,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Boolean))
 				MyBase.SetSystemBoolean(ChemicalMetadata.ColumnNames.Usenonregdot, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to CHEMICAL.ISAUTOFLAG
+		' </summary>
+		Public Overridable Property Isautoflag As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ChemicalMetadata.ColumnNames.Isautoflag)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ChemicalMetadata.ColumnNames.Isautoflag, value)
 			End Set
 		End Property		
 		
@@ -1640,6 +1662,27 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Isautoflag As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.Isautoflag
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Isautoflag = Nothing
+					Else
+						entity.Isautoflag = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esChemical
@@ -1941,6 +1984,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property Usenonregdot As esQueryItem
 			Get
 				Return New esQueryItem(Me, ChemicalMetadata.ColumnNames.Usenonregdot, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Isautoflag As esQueryItem
+			Get
+				Return New esQueryItem(Me, ChemicalMetadata.ColumnNames.Isautoflag, esSystemType.Boolean)
 			End Get
 		End Property 
 		
@@ -2355,6 +2404,12 @@ Namespace BusinessObjects
 			c.Default = "((0))"
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ChemicalMetadata.ColumnNames.Isautoflag, 36, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ChemicalMetadata.PropertyNames.Isautoflag
+			c.HasDefault = True
+			c.Default = "((0))"
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -2419,6 +2474,7 @@ Namespace BusinessObjects
 			 Public Const Istoxic As String = "ISTOXIC"
 			 Public Const Sampleonly As String = "SAMPLEONLY"
 			 Public Const Usenonregdot As String = "USENONREGDOT"
+			 Public Const Isautoflag As String = "ISAUTOFLAG"
 		End Class
 #End Region	
 		
@@ -2460,6 +2516,7 @@ Namespace BusinessObjects
 			 Public Const Istoxic As String = "Istoxic"
 			 Public Const Sampleonly As String = "Sampleonly"
 			 Public Const Usenonregdot As String = "Usenonregdot"
+			 Public Const Isautoflag As String = "Isautoflag"
 		End Class
 #End Region	
 
@@ -2542,7 +2599,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Idnumber", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Istoxic", new esTypeMap("bit", "System.Boolean"))
 				meta.AddTypeMap("Sampleonly", new esTypeMap("bit", "System.Boolean"))
-				meta.AddTypeMap("Usenonregdot", new esTypeMap("bit", "System.Boolean"))			
+				meta.AddTypeMap("Usenonregdot", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("Isautoflag", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 

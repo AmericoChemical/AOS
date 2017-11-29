@@ -86,6 +86,8 @@ Partial Class frmAddEditChemical2
         Me.btnSDSFilePath = New DevExpress.XtraEditors.SimpleButton()
         Me.eSDSFileName = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
+        Me.chkAutoFlag = New DevExpress.XtraEditors.CheckEdit()
+        Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
         Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
         Me.bsPkgGroups = New System.Windows.Forms.BindingSource(Me.components)
@@ -100,7 +102,6 @@ Partial Class frmAddEditChemical2
         Me.FireTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.PersonalprotectionTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ReactivityTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
         ChemicalidLabel = New System.Windows.Forms.Label()
         ChemicalnameLabel = New System.Windows.Forms.Label()
         AppearanceLabel = New System.Windows.Forms.Label()
@@ -159,6 +160,8 @@ Partial Class frmAddEditChemical2
         CType(Me.eSDSFileName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
+        CType(Me.chkAutoFlag.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsPkgGroups, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -173,7 +176,6 @@ Partial Class frmAddEditChemical2
         CType(Me.FireTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PersonalprotectionTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReactivityTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ChemicalidLabel
@@ -447,7 +449,7 @@ Partial Class frmAddEditChemical2
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(538, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(538, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -455,14 +457,14 @@ Partial Class frmAddEditChemical2
         '
         Me.btnSave.Caption = "Save"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeImageIndex = 7
+        Me.btnSave.ImageOptions.LargeImageIndex = 7
         Me.btnSave.Name = "btnSave"
         '
         'btnCancel
         '
         Me.btnCancel.Caption = "Cancel"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeImageIndex = 8
+        Me.btnCancel.ImageOptions.LargeImageIndex = 8
         Me.btnCancel.Name = "btnCancel"
         '
         'rbtnProductList
@@ -470,7 +472,7 @@ Partial Class frmAddEditChemical2
         Me.rbtnProductList.Caption = "Current Linked Product List"
         Me.rbtnProductList.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnProductList.Id = 9
-        Me.rbtnProductList.LargeImageIndex = 38
+        Me.rbtnProductList.ImageOptions.LargeImageIndex = 38
         Me.rbtnProductList.Name = "rbtnProductList"
         '
         'rbtnChangeChemicalStatus
@@ -478,7 +480,7 @@ Partial Class frmAddEditChemical2
         Me.rbtnChangeChemicalStatus.Caption = "Change Chemical Status"
         Me.rbtnChangeChemicalStatus.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnChangeChemicalStatus.Id = 12
-        Me.rbtnChangeChemicalStatus.LargeImageIndex = 11
+        Me.rbtnChangeChemicalStatus.ImageOptions.LargeImageIndex = 11
         Me.rbtnChangeChemicalStatus.Name = "rbtnChangeChemicalStatus"
         '
         'rbtnViewPrintSDS
@@ -486,14 +488,14 @@ Partial Class frmAddEditChemical2
         Me.rbtnViewPrintSDS.Caption = "View / Print SDS Document"
         Me.rbtnViewPrintSDS.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnViewPrintSDS.Id = 13
-        Me.rbtnViewPrintSDS.LargeImageIndex = 6
+        Me.rbtnViewPrintSDS.ImageOptions.LargeImageIndex = 6
         Me.rbtnViewPrintSDS.Name = "rbtnViewPrintSDS"
         '
         'rbtnGHSLabelSpecs
         '
         Me.rbtnGHSLabelSpecs.Caption = "Edit GHS Label Specs"
         Me.rbtnGHSLabelSpecs.Id = 15
-        Me.rbtnGHSLabelSpecs.LargeImageIndex = 9
+        Me.rbtnGHSLabelSpecs.ImageOptions.LargeImageIndex = 9
         Me.rbtnGHSLabelSpecs.Name = "rbtnGHSLabelSpecs"
         '
         'Ribbon_LargeImages
@@ -546,7 +548,7 @@ Partial Class frmAddEditChemical2
         Me.GroupControl1.Controls.Add(ChemicalidLabel)
         Me.GroupControl1.Controls.Add(Me.ChemicalidTextEdit)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 116)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(538, 93)
         Me.GroupControl1.TabIndex = 1
@@ -766,7 +768,7 @@ Partial Class frmAddEditChemical2
         Me.GroupControl2.Controls.Add(Me.SgLowTextEdit)
         Me.GroupControl2.Controls.Add(SgLowLabel)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 247)
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 268)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(538, 160)
         Me.GroupControl2.TabIndex = 3
@@ -782,7 +784,7 @@ Partial Class frmAddEditChemical2
         Me.GroupControl3.Controls.Add(eSDSFilePath)
         Me.GroupControl3.Controls.Add(Me.eSDSFileName)
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 188)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 209)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(538, 59)
         Me.GroupControl3.TabIndex = 2
@@ -807,6 +809,7 @@ Partial Class frmAddEditChemical2
         '
         'GroupControl4
         '
+        Me.GroupControl4.Controls.Add(Me.chkAutoFlag)
         Me.GroupControl4.Controls.Add(Me.CheckEdit2)
         Me.GroupControl4.Controls.Add(Me.CheckEdit1)
         Me.GroupControl4.Controls.Add(Me.LookUpEdit1)
@@ -832,11 +835,33 @@ Partial Class frmAddEditChemical2
         Me.GroupControl4.Controls.Add(ReactivityLabel)
         Me.GroupControl4.Controls.Add(Me.ReactivityTextEdit)
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl4.Location = New System.Drawing.Point(0, 407)
+        Me.GroupControl4.Location = New System.Drawing.Point(0, 428)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(538, 221)
+        Me.GroupControl4.Size = New System.Drawing.Size(538, 200)
         Me.GroupControl4.TabIndex = 6
         Me.GroupControl4.Text = "Primary OSHA / DOT Shipping Information"
+        '
+        'chkAutoFlag
+        '
+        Me.chkAutoFlag.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsChem, "Isautoflag", True))
+        Me.chkAutoFlag.Location = New System.Drawing.Point(173, 181)
+        Me.chkAutoFlag.MenuManager = Me.RibbonControl1
+        Me.chkAutoFlag.Name = "chkAutoFlag"
+        Me.chkAutoFlag.Properties.Caption = "Auto Flag"
+        Me.chkAutoFlag.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.chkAutoFlag.Size = New System.Drawing.Size(84, 19)
+        Me.chkAutoFlag.TabIndex = 48
+        '
+        'CheckEdit2
+        '
+        Me.CheckEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsChem, "Istoxic", True))
+        Me.CheckEdit2.Location = New System.Drawing.Point(10, 181)
+        Me.CheckEdit2.MenuManager = Me.RibbonControl1
+        Me.CheckEdit2.Name = "CheckEdit2"
+        Me.CheckEdit2.Properties.Caption = "Chem is Toxic"
+        Me.CheckEdit2.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.CheckEdit2.Size = New System.Drawing.Size(92, 19)
+        Me.CheckEdit2.TabIndex = 47
         '
         'CheckEdit1
         '
@@ -964,17 +989,6 @@ Partial Class frmAddEditChemical2
         Me.ReactivityTextEdit.Size = New System.Drawing.Size(40, 20)
         Me.ReactivityTextEdit.TabIndex = 2
         '
-        'CheckEdit2
-        '
-        Me.CheckEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsChem, "Istoxic", True))
-        Me.CheckEdit2.Location = New System.Drawing.Point(10, 181)
-        Me.CheckEdit2.MenuManager = Me.RibbonControl1
-        Me.CheckEdit2.Name = "CheckEdit2"
-        Me.CheckEdit2.Properties.Caption = "Chem is Toxic"
-        Me.CheckEdit2.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.CheckEdit2.Size = New System.Drawing.Size(92, 19)
-        Me.CheckEdit2.TabIndex = 47
-        '
         'frmAddEditChemical2
         '
         Me.ClientSize = New System.Drawing.Size(538, 628)
@@ -1025,6 +1039,8 @@ Partial Class frmAddEditChemical2
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
         Me.GroupControl4.PerformLayout()
+        CType(Me.chkAutoFlag.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsPkgGroups, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1039,7 +1055,6 @@ Partial Class frmAddEditChemical2
         CType(Me.FireTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PersonalprotectionTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReactivityTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1097,4 +1112,5 @@ Partial Class frmAddEditChemical2
     Friend WithEvents rbtnGHSLabelSpecs As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents CheckEdit1 As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents CheckEdit2 As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkAutoFlag As DevExpress.XtraEditors.CheckEdit
 End Class

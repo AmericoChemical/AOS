@@ -28,10 +28,13 @@ Partial Class frmReceiveHoldList
         Me.rbtnReturnToPriorStatus = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnReceivedToInventory = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnChangeItemStatus = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnResolveItem = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnGHSLabel = New DevExpress.XtraBars.BarButtonItem()
         Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New AOS.CustomClasses.CustomDevExGridView()
@@ -66,8 +69,8 @@ Partial Class frmReceiveHoldList
         Me.colContainer1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFailedLabelWeight = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFailedMaterialWeight = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIsautoflag = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colItemStatus1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.rbtnResolveItem = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.bs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,15 +96,15 @@ Partial Class frmReceiveHoldList
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnBack, Me.rbtnReturnToPriorStatus, Me.rbtnReceivedToInventory, Me.rbtnChangeItemStatus, Me.rbtnResolveItem})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnBack, Me.rbtnReturnToPriorStatus, Me.rbtnReceivedToInventory, Me.rbtnChangeItemStatus, Me.rbtnResolveItem, Me.rbtnGHSLabel})
         Me.RibbonControl1.LargeImages = Me.LargeRibbonImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 11
+        Me.RibbonControl1.MaxItemId = 12
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1266, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1266, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -109,7 +112,7 @@ Partial Class frmReceiveHoldList
         '
         Me.btnBack.Caption = "Back"
         Me.btnBack.Id = 5
-        Me.btnBack.LargeImageIndex = 36
+        Me.btnBack.ImageOptions.LargeImageIndex = 36
         Me.btnBack.Name = "btnBack"
         '
         'rbtnReturnToPriorStatus
@@ -117,7 +120,7 @@ Partial Class frmReceiveHoldList
         Me.rbtnReturnToPriorStatus.Caption = "Return to Prior Status"
         Me.rbtnReturnToPriorStatus.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnReturnToPriorStatus.Id = 7
-        Me.rbtnReturnToPriorStatus.LargeImageIndex = 37
+        Me.rbtnReturnToPriorStatus.ImageOptions.LargeImageIndex = 37
         Me.rbtnReturnToPriorStatus.Name = "rbtnReturnToPriorStatus"
         '
         'rbtnReceivedToInventory
@@ -125,7 +128,7 @@ Partial Class frmReceiveHoldList
         Me.rbtnReceivedToInventory.Caption = "Move to Next Status"
         Me.rbtnReceivedToInventory.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnReceivedToInventory.Id = 8
-        Me.rbtnReceivedToInventory.LargeImageIndex = 38
+        Me.rbtnReceivedToInventory.ImageOptions.LargeImageIndex = 38
         Me.rbtnReceivedToInventory.Name = "rbtnReceivedToInventory"
         '
         'rbtnChangeItemStatus
@@ -133,8 +136,22 @@ Partial Class frmReceiveHoldList
         Me.rbtnChangeItemStatus.Caption = "Change Item Status"
         Me.rbtnChangeItemStatus.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnChangeItemStatus.Id = 9
-        Me.rbtnChangeItemStatus.LargeImageIndex = 39
+        Me.rbtnChangeItemStatus.ImageOptions.LargeImageIndex = 39
         Me.rbtnChangeItemStatus.Name = "rbtnChangeItemStatus"
+        '
+        'rbtnResolveItem
+        '
+        Me.rbtnResolveItem.Caption = "Resolve Item"
+        Me.rbtnResolveItem.Id = 10
+        Me.rbtnResolveItem.ImageOptions.LargeImageIndex = 27
+        Me.rbtnResolveItem.Name = "rbtnResolveItem"
+        '
+        'rbtnGHSLabel
+        '
+        Me.rbtnGHSLabel.Caption = "Print GHS Label && Continue"
+        Me.rbtnGHSLabel.Id = 11
+        Me.rbtnGHSLabel.ImageOptions.LargeImageIndex = 24
+        Me.rbtnGHSLabel.Name = "rbtnGHSLabel"
         '
         'LargeRibbonImages
         '
@@ -143,7 +160,7 @@ Partial Class frmReceiveHoldList
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2, Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2, Me.RibbonPageGroup1, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -167,11 +184,17 @@ Partial Class frmReceiveHoldList
         Me.RibbonPageGroup1.ShowCaptionButton = False
         Me.RibbonPageGroup1.Text = "Item Processing"
         '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.rbtnGHSLabel)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        Me.RibbonPageGroup3.Text = "Auto Flag"
+        '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.GridControl1)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 116)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(1266, 276)
         Me.GroupControl1.TabIndex = 1
@@ -181,11 +204,11 @@ Partial Class frmReceiveHoldList
         '
         Me.GridControl1.DataSource = Me.bs
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 20)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1262, 252)
+        Me.GridControl1.Size = New System.Drawing.Size(1262, 254)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -299,9 +322,9 @@ Partial Class frmReceiveHoldList
         '
         Me.GroupControl2.Controls.Add(Me.GridControl2)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 371)
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 392)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(1266, 184)
+        Me.GroupControl2.Size = New System.Drawing.Size(1266, 163)
         Me.GroupControl2.TabIndex = 3
         Me.GroupControl2.Text = "Inventory Items on Received / Hold Status"
         '
@@ -309,11 +332,11 @@ Partial Class frmReceiveHoldList
         '
         Me.GridControl2.DataSource = Me.bsEvents
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl2.Location = New System.Drawing.Point(2, 20)
         Me.GridControl2.MainView = Me.CustomDevExGridView1
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1262, 160)
+        Me.GridControl2.Size = New System.Drawing.Size(1262, 141)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.CustomDevExGridView1})
         '
@@ -323,7 +346,7 @@ Partial Class frmReceiveHoldList
         '
         'CustomDevExGridView1
         '
-        Me.CustomDevExGridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colEventID1, Me.colEventTime, Me.colEventWho, Me.colEventType, Me.colInvItemNumber1, Me.colDocumentType, Me.colDocumentID, Me.colLabelWeight, Me.colScaleWeight, Me.colLotNumber1, Me.colEventNotes, Me.colPallet, Me.colProductID1, Me.colContainer1, Me.colFailedLabelWeight, Me.colFailedMaterialWeight, Me.colItemStatus1})
+        Me.CustomDevExGridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colEventID1, Me.colEventTime, Me.colEventWho, Me.colEventType, Me.colInvItemNumber1, Me.colDocumentType, Me.colDocumentID, Me.colLabelWeight, Me.colScaleWeight, Me.colLotNumber1, Me.colEventNotes, Me.colPallet, Me.colProductID1, Me.colContainer1, Me.colFailedLabelWeight, Me.colFailedMaterialWeight, Me.colIsautoflag, Me.colItemStatus1})
         Me.CustomDevExGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
         Me.CustomDevExGridView1.GridControl = Me.GridControl2
         Me.CustomDevExGridView1.Name = "CustomDevExGridView1"
@@ -445,19 +468,19 @@ Partial Class frmReceiveHoldList
         Me.colFailedMaterialWeight.Visible = True
         Me.colFailedMaterialWeight.VisibleIndex = 15
         '
+        'colIsautoflag
+        '
+        Me.colIsautoflag.FieldName = "Isautoflag"
+        Me.colIsautoflag.Name = "colIsautoflag"
+        Me.colIsautoflag.Visible = True
+        Me.colIsautoflag.VisibleIndex = 16
+        '
         'colItemStatus1
         '
         Me.colItemStatus1.FieldName = "ItemStatus"
         Me.colItemStatus1.Name = "colItemStatus1"
         Me.colItemStatus1.Visible = True
-        Me.colItemStatus1.VisibleIndex = 16
-        '
-        'rbtnResolveItem
-        '
-        Me.rbtnResolveItem.Caption = "Resolve Item"
-        Me.rbtnResolveItem.Id = 10
-        Me.rbtnResolveItem.LargeImageIndex = 27
-        Me.rbtnResolveItem.Name = "rbtnResolveItem"
+        Me.colItemStatus1.VisibleIndex = 17
         '
         'frmReceiveHoldList
         '
@@ -536,4 +559,7 @@ Partial Class frmReceiveHoldList
     Friend WithEvents colFailedMaterialWeight As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colItemStatus1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents rbtnResolveItem As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents colIsautoflag As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents rbtnGHSLabel As DevExpress.XtraBars.BarButtonItem
 End Class

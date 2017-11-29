@@ -1,4 +1,7 @@
 Imports AOS.BusinessObjects
+Imports DevExpress.Data
+Imports DevExpress.XtraGrid.Views.Base
+Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class frmReceiveHoldList
     Inherits DevExpress.XtraEditors.XtraForm
@@ -165,6 +168,11 @@ Public Class frmReceiveHoldList
             Exit Sub
         End If
 
+        MoveToNextStep(vItemID, vPriorStatus, vReason)
+
+    End Sub
+
+    Private Sub MoveToNextStep(vItemID As Integer, vPriorStatus As String, vReason As String)
         Select Case vPriorStatus
             Case "PENDING"
                 receiveRCVDHOLDItemIntoTesting(vItemID)
@@ -188,8 +196,6 @@ Public Class frmReceiveHoldList
             oRcv.Resolutiontext = vReason
             oRcv.Save()
         End If
-
-
     End Sub
 
     Private Sub rbtnChangeItemStatus_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnChangeItemStatus.ItemClick
@@ -262,4 +268,83 @@ Public Class frmReceiveHoldList
         loadData()
 
     End Sub
+
+    Private Sub GridView1_RowStyle(sender As Object, e As RowStyleEventArgs) Handles GridView1.RowStyle
+
+
+        If (e.RowHandle >= 0) Then
+
+            'set colorbased on reasoncode
+            Dim vReasonCode As String = GridView1.GetRowCellDisplayText(e.RowHandle, GridView1.Columns("Reasoncode"))
+            If (e.RowHandle = 0) Then
+                If vReasonCode.Contains("AUTO FLAG") Then
+                    rbtnGHSLabel.Enabled = True
+                Else
+                    rbtnGHSLabel.Enabled = False
+
+                End If
+            End If
+            If vReasonCode.Contains("AUTO FLAG") And vReasonCode.Contains("WEIGHT ERROR") Then
+                e.Appearance.BackColor = Color.Orange
+                e.Appearance.BackColor2 = Color.Orange
+                e.Appearance.ForeColor = Color.White
+                Exit Sub
+            End If
+            If vReasonCode.Contains("AUTO FLAG") Then
+                e.Appearance.BackColor = Color.Yellow
+                e.Appearance.BackColor2 = Color.Yellow
+                e.Appearance.ForeColor = Color.Black
+                Exit Sub
+            End If
+            If vReasonCode.Contains("WEIGHT ERROR") Then
+                e.Appearance.BackColor = Color.Red
+                e.Appearance.BackColor2 = Color.Red
+                e.Appearance.ForeColor = Color.White
+
+                Exit Sub
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub rbtnGHSLabel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnGHSLabel.ItemClick
+        If bs.Count <= 0 Then
+            Exit Sub
+        End If
+
+        If (bs.Current.Reasoncode.Contains("AUTO FLAG")) Then
+            Dim oItem As New Invitem
+            If Not oItem.LoadByPrimaryKey(bs.Current.InvItemNumber) Then
+                MsgBox("Could not locate Inventory Item record", MsgBoxStyle.Critical, "Error")
+                Exit Sub
+            End If
+
+            Dim rpt As New rptGHSProductLabelLarge(oItem.Invitemnumber, oItem.Productid, oItem.Lotnumber)
+            rpt.ShowPreviewDialog()
+            If bs.Current.Reasoncode.Equals("AUTO FLAG") Then
+                MoveToNextStep(bs.Current.InvitemNumber, bs.Current.PriorItemStatus, "GHS Label Printed")
+            Else
+                receiveItem(bs.Current.InvitemNumber, bs.Current.PriorItemStatus)
+            End If
+
+            loadData()
+        End If
+    End Sub
+
+    Private Sub GridView1_RowClick(sender As Object, e As RowClickEventArgs) Handles GridView1.RowClick
+        If (e.RowHandle >= 0) Then
+
+            Dim vReasonCode As String = GridView1.GetRowCellDisplayText(e.RowHandle, GridView1.Columns("Reasoncode"))
+            If vReasonCode.Contains("AUTO FLAG") Then
+                rbtnGHSLabel.Enabled = True
+            Else
+                rbtnGHSLabel.Enabled = False
+
+            End If
+
+        End If
+    End Sub
+
+
 End Class
