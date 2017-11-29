@@ -1047,7 +1047,7 @@ Module WorkOrderProcessing
                                                                              vPad + vPad, vAvailableProductsLine)))
 
 
-                                    If oFGR.Qpend > 0 Then
+                                    If oFGR.Qpend = 0 Then
                                         'Get Vendor Names from ProductCost records for Product ID (oFGR.Rlblproductid)
                                         Dim oCostRecs As New ViewProductCostInfoCollection
                                         oCostRecs.Query.Where(oCostRecs.Query.Productid.Equal(oFGR.Rlblproductid))
