@@ -2846,6 +2846,12 @@
     <Compile Include="Reports\rptBillOfLading4.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptCustomerNotes.Designer.vb">
+      <DependentUpon>rptCustomerNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptCustomerNotes.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptGHSProductLabelLarge.Designer.vb">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>
     </Compile>
@@ -3929,6 +3935,10 @@
     <EmbeddedResource Include="Reports\rptBillOfLading4.resx">
       <DependentUpon>rptBillOfLading4.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCustomerNotes.resx">
+      <DependentUpon>rptCustomerNotes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptGHSProductLabelLarge.resx">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -4844,22 +4854,22 @@
   <ItemGroup>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.WinForms">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

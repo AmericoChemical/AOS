@@ -237,8 +237,11 @@
             oLogistics = New Logistics
             If IsDBNull(oLoad.ScheduledLogisticsID) Or oLoad.ScheduledLogisticsID Is Nothing Then
                 oInvoice.Logisticsid = oWorkOrder.Logisticsid
-                If oLogistics.LoadByPrimaryKey(oWorkOrder.Logisticsid) Then
-                    oInvoice.Freightcarrier = oInvoice.Freightcarrier & " / " & oLogistics.Logisticsname
+                If IsDBNull(oWorkOrder.Logisticsid) Or oWorkOrder.Logisticsid Is Nothing Then
+                Else
+                    If oLogistics.LoadByPrimaryKey(oWorkOrder.Logisticsid) Then
+                        oInvoice.Freightcarrier = oInvoice.Freightcarrier & " / " & oLogistics.Logisticsname
+                    End If
                 End If
             Else
                 oInvoice.Logisticsid = oLoad.ScheduledLogisticsID

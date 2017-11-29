@@ -49,6 +49,12 @@ Partial Class viewSalesCustomers
         Dim Label4 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
+        Dim Label18 As System.Windows.Forms.Label
+        Dim Label16 As System.Windows.Forms.Label
+        Dim Label15 As System.Windows.Forms.Label
+        Dim Label8 As System.Windows.Forms.Label
+        Dim Label9 As System.Windows.Forms.Label
+        Dim Label11 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(viewSalesCustomers))
         Me.FormCaption = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New AOS.CustomClasses.CustomDevExGridView()
@@ -192,6 +198,43 @@ Partial Class viewSalesCustomers
         Me.RibbonPageGroup16 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.WorkPanelsHolder = New DevExpress.XtraEditors.PanelControl()
+        Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.gcPriceLists = New DevExpress.XtraEditors.GroupControl()
+        Me.grPriceLists = New DevExpress.XtraGrid.GridControl()
+        Me.bsPriceLists = New System.Windows.Forms.BindingSource(Me.components)
+        Me.viewPriceList = New AOS.CustomClasses.CustomDevExGridView()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductid1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colContainer = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUom = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUnits = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPricemethod = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUnitprice = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colContainerprice = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colEffectivedate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPriceliststatus = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.ProductLookupEdit = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl16 = New DevExpress.XtraEditors.GroupControl()
+        Me.MemoEdit5 = New DevExpress.XtraEditors.MemoEdit()
+        Me.MemoEdit8 = New DevExpress.XtraEditors.MemoEdit()
+        Me.MemoEdit9 = New DevExpress.XtraEditors.MemoEdit()
+        Me.btnExportToXLS = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.luCustomerList = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bsCustomerList = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.MemoEdit4 = New DevExpress.XtraEditors.MemoEdit()
+        Me.eReceivingNotes = New DevExpress.XtraEditors.MemoEdit()
+        Me.eVendorNotes = New DevExpress.XtraEditors.MemoEdit()
         Me.RibbonPanelControl5 = New DevExpress.XtraEditors.PanelControl()
         Me.grpCommissions = New DevExpress.XtraEditors.GroupControl()
         Me.grCommissions = New DevExpress.XtraGrid.GridControl()
@@ -213,7 +256,6 @@ Partial Class viewSalesCustomers
         Me.colVariance = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAuditflag = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.CustomerLookup = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.bsCustomerList = New System.Windows.Forms.BindingSource(Me.components)
         Me.RibbonControl2 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnAddCommission = New DevExpress.XtraBars.BarButtonItem()
         Me.btnEditCommission = New DevExpress.XtraBars.BarButtonItem()
@@ -307,34 +349,6 @@ Partial Class viewSalesCustomers
         Me.colExtprice = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit13 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.gcPriceLists = New DevExpress.XtraEditors.GroupControl()
-        Me.grPriceLists = New DevExpress.XtraGrid.GridControl()
-        Me.bsPriceLists = New System.Windows.Forms.BindingSource(Me.components)
-        Me.viewPriceList = New AOS.CustomClasses.CustomDevExGridView()
-        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductid1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colContainer = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colUom = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colUnits = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPricemethod = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colUnitprice = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colContainerprice = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colEffectivedate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPriceliststatus = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.ProductLookupEdit = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.btnExportToXLS = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.luCustomerList = New DevExpress.XtraEditors.LookUpEdit()
         Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl9 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl15 = New DevExpress.XtraEditors.GroupControl()
@@ -513,6 +527,8 @@ Partial Class viewSalesCustomers
         Me.bsTrendsQuarterly = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsTrendsAnnually = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.bsCustomerNotes = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsProductNotes = New System.Windows.Forms.BindingSource(Me.components)
         CustidLabel = New System.Windows.Forms.Label()
         CustnameLabel = New System.Windows.Forms.Label()
         Custshipaddress1Label = New System.Windows.Forms.Label()
@@ -543,6 +559,12 @@ Partial Class viewSalesCustomers
         Label4 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
+        Label18 = New System.Windows.Forms.Label()
+        Label16 = New System.Windows.Forms.Label()
+        Label15 = New System.Windows.Forms.Label()
+        Label8 = New System.Windows.Forms.Label()
+        Label9 = New System.Windows.Forms.Label()
+        Label11 = New System.Windows.Forms.Label()
         CType(Me.FormCaption, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -571,6 +593,28 @@ Partial Class viewSalesCustomers
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WorkPanelsHolder.SuspendLayout()
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl3.SuspendLayout()
+        CType(Me.gcPriceLists, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gcPriceLists.SuspendLayout()
+        CType(Me.grPriceLists, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsPriceLists, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.viewPriceList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductLookupEdit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
+        CType(Me.GroupControl16, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl16.SuspendLayout()
+        CType(Me.MemoEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MemoEdit8.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MemoEdit9.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.luCustomerList.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomerList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.MemoEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eReceivingNotes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eVendorNotes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl5.SuspendLayout()
         CType(Me.grpCommissions, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -581,7 +625,6 @@ Partial Class viewSalesCustomers
         CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerLookup, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsCustomerList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit5.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -615,17 +658,6 @@ Partial Class viewSalesCustomers
         CType(Me.gridViewSalesHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl3.SuspendLayout()
-        CType(Me.gcPriceLists, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gcPriceLists.SuspendLayout()
-        CType(Me.grPriceLists, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsPriceLists, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.viewPriceList, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductLookupEdit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl1.SuspendLayout()
-        CType(Me.luCustomerList.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl1.SuspendLayout()
         CType(Me.PanelControl9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -740,6 +772,8 @@ Partial Class viewSalesCustomers
         CType(Me.bsTrendsMonthly, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsTrendsQuarterly, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsTrendsAnnually, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomerNotes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsProductNotes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CustidLabel
@@ -747,7 +781,7 @@ Partial Class viewSalesCustomers
         CustidLabel.AutoSize = True
         CustidLabel.Location = New System.Drawing.Point(9, 26)
         CustidLabel.Name = "CustidLabel"
-        CustidLabel.Size = New System.Drawing.Size(47, 14)
+        CustidLabel.Size = New System.Drawing.Size(43, 13)
         CustidLabel.TabIndex = 0
         CustidLabel.Text = "Cust ID"
         '
@@ -756,7 +790,7 @@ Partial Class viewSalesCustomers
         CustnameLabel.AutoSize = True
         CustnameLabel.Location = New System.Drawing.Point(9, 52)
         CustnameLabel.Name = "CustnameLabel"
-        CustnameLabel.Size = New System.Drawing.Size(57, 14)
+        CustnameLabel.Size = New System.Drawing.Size(52, 13)
         CustnameLabel.TabIndex = 2
         CustnameLabel.Text = "Company"
         '
@@ -765,7 +799,7 @@ Partial Class viewSalesCustomers
         Custshipaddress1Label.AutoSize = True
         Custshipaddress1Label.Location = New System.Drawing.Point(9, 27)
         Custshipaddress1Label.Name = "Custshipaddress1Label"
-        Custshipaddress1Label.Size = New System.Drawing.Size(61, 14)
+        Custshipaddress1Label.Size = New System.Drawing.Size(55, 13)
         Custshipaddress1Label.TabIndex = 4
         Custshipaddress1Label.Text = "Address 1"
         '
@@ -774,7 +808,7 @@ Partial Class viewSalesCustomers
         Custshipaddress2Label.AutoSize = True
         Custshipaddress2Label.Location = New System.Drawing.Point(9, 53)
         Custshipaddress2Label.Name = "Custshipaddress2Label"
-        Custshipaddress2Label.Size = New System.Drawing.Size(61, 14)
+        Custshipaddress2Label.Size = New System.Drawing.Size(55, 13)
         Custshipaddress2Label.TabIndex = 6
         Custshipaddress2Label.Text = "Address 2"
         '
@@ -783,7 +817,7 @@ Partial Class viewSalesCustomers
         CustshipcityLabel.AutoSize = True
         CustshipcityLabel.Location = New System.Drawing.Point(9, 79)
         CustshipcityLabel.Name = "CustshipcityLabel"
-        CustshipcityLabel.Size = New System.Drawing.Size(66, 14)
+        CustshipcityLabel.Size = New System.Drawing.Size(58, 13)
         CustshipcityLabel.TabIndex = 8
         CustshipcityLabel.Text = "City ST Zip"
         '
@@ -792,7 +826,7 @@ Partial Class viewSalesCustomers
         CustshipstateprovLabel.AutoSize = True
         CustshipstateprovLabel.Location = New System.Drawing.Point(9, 105)
         CustshipstateprovLabel.Name = "CustshipstateprovLabel"
-        CustshipstateprovLabel.Size = New System.Drawing.Size(50, 14)
+        CustshipstateprovLabel.Size = New System.Drawing.Size(46, 13)
         CustshipstateprovLabel.TabIndex = 10
         CustshipstateprovLabel.Text = "Country"
         '
@@ -801,7 +835,7 @@ Partial Class viewSalesCustomers
         CustshippostalcodeLabel.AutoSize = True
         CustshippostalcodeLabel.Location = New System.Drawing.Point(9, 132)
         CustshippostalcodeLabel.Name = "CustshippostalcodeLabel"
-        CustshippostalcodeLabel.Size = New System.Drawing.Size(50, 14)
+        CustshippostalcodeLabel.Size = New System.Drawing.Size(45, 13)
         CustshippostalcodeLabel.TabIndex = 12
         CustshippostalcodeLabel.Text = "Contact"
         '
@@ -810,7 +844,7 @@ Partial Class viewSalesCustomers
         Custbilladdress1Label.AutoSize = True
         Custbilladdress1Label.Location = New System.Drawing.Point(9, 27)
         Custbilladdress1Label.Name = "Custbilladdress1Label"
-        Custbilladdress1Label.Size = New System.Drawing.Size(61, 14)
+        Custbilladdress1Label.Size = New System.Drawing.Size(55, 13)
         Custbilladdress1Label.TabIndex = 18
         Custbilladdress1Label.Text = "Address 1"
         '
@@ -819,7 +853,7 @@ Partial Class viewSalesCustomers
         Custbilladdress2Label.AutoSize = True
         Custbilladdress2Label.Location = New System.Drawing.Point(10, 53)
         Custbilladdress2Label.Name = "Custbilladdress2Label"
-        Custbilladdress2Label.Size = New System.Drawing.Size(61, 14)
+        Custbilladdress2Label.Size = New System.Drawing.Size(55, 13)
         Custbilladdress2Label.TabIndex = 20
         Custbilladdress2Label.Text = "Address 2"
         '
@@ -828,7 +862,7 @@ Partial Class viewSalesCustomers
         CustbillcityLabel.AutoSize = True
         CustbillcityLabel.Location = New System.Drawing.Point(10, 79)
         CustbillcityLabel.Name = "CustbillcityLabel"
-        CustbillcityLabel.Size = New System.Drawing.Size(66, 14)
+        CustbillcityLabel.Size = New System.Drawing.Size(58, 13)
         CustbillcityLabel.TabIndex = 22
         CustbillcityLabel.Text = "City ST Zip"
         '
@@ -837,7 +871,7 @@ Partial Class viewSalesCustomers
         CustbillstateprovLabel.AutoSize = True
         CustbillstateprovLabel.Location = New System.Drawing.Point(9, 105)
         CustbillstateprovLabel.Name = "CustbillstateprovLabel"
-        CustbillstateprovLabel.Size = New System.Drawing.Size(50, 14)
+        CustbillstateprovLabel.Size = New System.Drawing.Size(46, 13)
         CustbillstateprovLabel.TabIndex = 24
         CustbillstateprovLabel.Text = "Country"
         '
@@ -846,7 +880,7 @@ Partial Class viewSalesCustomers
         CustbillpostalcodeLabel.AutoSize = True
         CustbillpostalcodeLabel.Location = New System.Drawing.Point(10, 132)
         CustbillpostalcodeLabel.Name = "CustbillpostalcodeLabel"
-        CustbillpostalcodeLabel.Size = New System.Drawing.Size(50, 14)
+        CustbillpostalcodeLabel.Size = New System.Drawing.Size(45, 13)
         CustbillpostalcodeLabel.TabIndex = 26
         CustbillpostalcodeLabel.Text = "Contact"
         '
@@ -855,7 +889,7 @@ Partial Class viewSalesCustomers
         CustphoneLabel.AutoSize = True
         CustphoneLabel.Location = New System.Drawing.Point(9, 27)
         CustphoneLabel.Name = "CustphoneLabel"
-        CustphoneLabel.Size = New System.Drawing.Size(61, 14)
+        CustphoneLabel.Size = New System.Drawing.Size(53, 13)
         CustphoneLabel.TabIndex = 32
         CustphoneLabel.Text = "Phone No"
         '
@@ -864,7 +898,7 @@ Partial Class viewSalesCustomers
         CustfaxLabel.AutoSize = True
         CustfaxLabel.Location = New System.Drawing.Point(222, 27)
         CustfaxLabel.Name = "CustfaxLabel"
-        CustfaxLabel.Size = New System.Drawing.Size(28, 14)
+        CustfaxLabel.Size = New System.Drawing.Size(26, 13)
         CustfaxLabel.TabIndex = 34
         CustfaxLabel.Text = "FAX"
         '
@@ -873,7 +907,7 @@ Partial Class viewSalesCustomers
         IsactiveLabel.AutoSize = True
         IsactiveLabel.Location = New System.Drawing.Point(678, 3)
         IsactiveLabel.Name = "IsactiveLabel"
-        IsactiveLabel.Size = New System.Drawing.Size(41, 14)
+        IsactiveLabel.Size = New System.Drawing.Size(37, 13)
         IsactiveLabel.TabIndex = 43
         IsactiveLabel.Text = "Active"
         '
@@ -882,7 +916,7 @@ Partial Class viewSalesCustomers
         CarrieridLabel.AutoSize = True
         CarrieridLabel.Location = New System.Drawing.Point(7, 107)
         CarrieridLabel.Name = "CarrieridLabel"
-        CarrieridLabel.Size = New System.Drawing.Size(76, 14)
+        CarrieridLabel.Size = New System.Drawing.Size(69, 13)
         CarrieridLabel.TabIndex = 42
         CarrieridLabel.Text = "Truck Carrier"
         '
@@ -891,7 +925,7 @@ Partial Class viewSalesCustomers
         LogisticsidLabel.AutoSize = True
         LogisticsidLabel.Location = New System.Drawing.Point(9, 53)
         LogisticsidLabel.Name = "LogisticsidLabel"
-        LogisticsidLabel.Size = New System.Drawing.Size(52, 14)
+        LogisticsidLabel.Size = New System.Drawing.Size(47, 13)
         LogisticsidLabel.TabIndex = 43
         LogisticsidLabel.Text = "Logistics"
         '
@@ -900,7 +934,7 @@ Partial Class viewSalesCustomers
         BulkcarrieridLabel.AutoSize = True
         BulkcarrieridLabel.Location = New System.Drawing.Point(9, 133)
         BulkcarrieridLabel.Name = "BulkcarrieridLabel"
-        BulkcarrieridLabel.Size = New System.Drawing.Size(67, 14)
+        BulkcarrieridLabel.Size = New System.Drawing.Size(62, 13)
         BulkcarrieridLabel.TabIndex = 44
         BulkcarrieridLabel.Text = "Bulk Carrier"
         '
@@ -909,7 +943,7 @@ Partial Class viewSalesCustomers
         FobLabel.AutoSize = True
         FobLabel.Location = New System.Drawing.Point(9, 27)
         FobLabel.Name = "FobLabel"
-        FobLabel.Size = New System.Drawing.Size(74, 14)
+        FobLabel.Size = New System.Drawing.Size(67, 13)
         FobLabel.TabIndex = 45
         FobLabel.Text = "Freight Chrg"
         '
@@ -918,7 +952,7 @@ Partial Class viewSalesCustomers
         CustnotesLabel.AutoSize = True
         CustnotesLabel.Location = New System.Drawing.Point(9, 27)
         CustnotesLabel.Name = "CustnotesLabel"
-        CustnotesLabel.Size = New System.Drawing.Size(48, 14)
+        CustnotesLabel.Size = New System.Drawing.Size(44, 13)
         CustnotesLabel.TabIndex = 0
         CustnotesLabel.Text = "General"
         '
@@ -927,7 +961,7 @@ Partial Class viewSalesCustomers
         SalespersonidLabel.AutoSize = True
         SalespersonidLabel.Location = New System.Drawing.Point(516, 26)
         SalespersonidLabel.Name = "SalespersonidLabel"
-        SalespersonidLabel.Size = New System.Drawing.Size(77, 14)
+        SalespersonidLabel.Size = New System.Drawing.Size(71, 13)
         SalespersonidLabel.TabIndex = 48
         SalespersonidLabel.Text = "Primary Sales"
         '
@@ -936,7 +970,7 @@ Partial Class viewSalesCustomers
         FreightbillcustomerLabel.AutoSize = True
         FreightbillcustomerLabel.Location = New System.Drawing.Point(84, 81)
         FreightbillcustomerLabel.Name = "FreightbillcustomerLabel"
-        FreightbillcustomerLabel.Size = New System.Drawing.Size(90, 14)
+        FreightbillcustomerLabel.Size = New System.Drawing.Size(80, 13)
         FreightbillcustomerLabel.TabIndex = 46
         FreightbillcustomerLabel.Text = "Customer Billed"
         '
@@ -945,7 +979,7 @@ Partial Class viewSalesCustomers
         FreightoninvoiceLabel.AutoSize = True
         FreightoninvoiceLabel.Location = New System.Drawing.Point(229, 81)
         FreightoninvoiceLabel.Name = "FreightoninvoiceLabel"
-        FreightoninvoiceLabel.Size = New System.Drawing.Size(106, 14)
+        FreightoninvoiceLabel.Size = New System.Drawing.Size(94, 13)
         FreightoninvoiceLabel.TabIndex = 47
         FreightoninvoiceLabel.Text = "Freight on Invoice"
         '
@@ -954,7 +988,7 @@ Partial Class viewSalesCustomers
         CustemailLabel.AutoSize = True
         CustemailLabel.Location = New System.Drawing.Point(9, 53)
         CustemailLabel.Name = "CustemailLabel"
-        CustemailLabel.Size = New System.Drawing.Size(64, 14)
+        CustemailLabel.Size = New System.Drawing.Size(57, 13)
         CustemailLabel.TabIndex = 35
         CustemailLabel.Text = "Email Addr"
         '
@@ -963,7 +997,7 @@ Partial Class viewSalesCustomers
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(9, 107)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(71, 14)
+        Label1.Size = New System.Drawing.Size(63, 13)
         Label1.TabIndex = 53
         Label1.Text = "Work Order"
         '
@@ -972,7 +1006,7 @@ Partial Class viewSalesCustomers
         Label2.AutoSize = True
         Label2.Location = New System.Drawing.Point(10, 194)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(59, 14)
+        Label2.Size = New System.Drawing.Size(51, 13)
         Label2.TabIndex = 54
         Label2.Text = "Shipment"
         '
@@ -981,7 +1015,7 @@ Partial Class viewSalesCustomers
         Label3.AutoSize = True
         Label3.Location = New System.Drawing.Point(10, 246)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(46, 14)
+        Label3.Size = New System.Drawing.Size(42, 13)
         Label3.TabIndex = 55
         Label3.Text = "Invoice"
         '
@@ -990,7 +1024,7 @@ Partial Class viewSalesCustomers
         Label4.AutoSize = True
         Label4.Location = New System.Drawing.Point(501, 48)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(95, 14)
+        Label4.Size = New System.Drawing.Size(86, 13)
         Label4.TabIndex = 50
         Label4.Text = "Secondary Sales"
         '
@@ -999,7 +1033,7 @@ Partial Class viewSalesCustomers
         Label5.AutoSize = True
         Label5.Location = New System.Drawing.Point(576, 3)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(73, 14)
+        Label5.Size = New System.Drawing.Size(64, 13)
         Label5.TabIndex = 52
         Label5.Text = "Tax Exempt"
         '
@@ -1008,9 +1042,63 @@ Partial Class viewSalesCustomers
         Label6.AutoSize = True
         Label6.Location = New System.Drawing.Point(462, 3)
         Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(78, 14)
+        Label6.Size = New System.Drawing.Size(69, 13)
         Label6.TabIndex = 54
         Label6.Text = "Consignment"
+        '
+        'Label18
+        '
+        Label18.AutoSize = True
+        Label18.Location = New System.Drawing.Point(1025, 31)
+        Label18.Name = "Label18"
+        Label18.Size = New System.Drawing.Size(107, 13)
+        Label18.TabIndex = 22
+        Label18.Text = "Standard Cost Notes"
+        '
+        'Label16
+        '
+        Label16.AutoSize = True
+        Label16.Location = New System.Drawing.Point(519, 30)
+        Label16.Name = "Label16"
+        Label16.Size = New System.Drawing.Size(84, 13)
+        Label16.TabIndex = 20
+        Label16.Text = "Receiving Notes"
+        '
+        'Label15
+        '
+        Label15.AutoSize = True
+        Label15.Location = New System.Drawing.Point(6, 31)
+        Label15.Name = "Label15"
+        Label15.Size = New System.Drawing.Size(72, 13)
+        Label15.TabIndex = 19
+        Label15.Text = "Vendor Notes"
+        '
+        'Label8
+        '
+        Label8.AutoSize = True
+        Label8.Location = New System.Drawing.Point(776, 24)
+        Label8.Name = "Label8"
+        Label8.Size = New System.Drawing.Size(60, 13)
+        Label8.TabIndex = 51
+        Label8.Text = "Accounting"
+        '
+        'Label9
+        '
+        Label9.AutoSize = True
+        Label9.Location = New System.Drawing.Point(389, 24)
+        Label9.Name = "Label9"
+        Label9.Size = New System.Drawing.Size(58, 13)
+        Label9.TabIndex = 49
+        Label9.Text = "Production"
+        '
+        'Label11
+        '
+        Label11.AutoSize = True
+        Label11.Location = New System.Drawing.Point(5, 24)
+        Label11.Name = "Label11"
+        Label11.Size = New System.Drawing.Size(75, 13)
+        Label11.TabIndex = 45
+        Label11.Text = "General Notes"
         '
         'FormCaption
         '
@@ -1066,7 +1154,7 @@ Partial Class viewSalesCustomers
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage6, Me.RibbonPage4, Me.RibbonPage7, Me.RibbonPage5, Me.RibbonPage2, Me.RibbonPage10, Me.RibbonPage9})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit14, Me.RepositoryItemLookUpEdit15, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4, Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17, Me.RepositoryItemLookUpEdit18})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1482, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1482, 117)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnAddCustomer
@@ -2239,20 +2327,427 @@ Partial Class viewSalesCustomers
         'WorkPanelsHolder
         '
         Me.WorkPanelsHolder.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl5)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl10)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl9)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl7)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 175)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 150)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1482, 540)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1482, 565)
         Me.WorkPanelsHolder.TabIndex = 7
+        '
+        'RibbonPanelControl3
+        '
+        Me.RibbonPanelControl3.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.RibbonPanelControl3.Appearance.Options.UseBackColor = True
+        Me.RibbonPanelControl3.Controls.Add(Me.gcPriceLists)
+        Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl3.TabIndex = 1
+        '
+        'gcPriceLists
+        '
+        Me.gcPriceLists.Controls.Add(Me.grPriceLists)
+        Me.gcPriceLists.Controls.Add(Me.PanelControl1)
+        Me.gcPriceLists.Controls.Add(Me.GroupControl3)
+        Me.gcPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcPriceLists.Location = New System.Drawing.Point(2, 2)
+        Me.gcPriceLists.Name = "gcPriceLists"
+        Me.gcPriceLists.Size = New System.Drawing.Size(1478, 561)
+        Me.gcPriceLists.TabIndex = 1
+        Me.gcPriceLists.Text = "Customer Price Lists"
+        '
+        'grPriceLists
+        '
+        Me.grPriceLists.DataSource = Me.bsPriceLists
+        Me.grPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grPriceLists.Location = New System.Drawing.Point(2, 162)
+        Me.grPriceLists.LookAndFeel.SkinName = "Money Twins"
+        Me.grPriceLists.MainView = Me.viewPriceList
+        Me.grPriceLists.Name = "grPriceLists"
+        Me.grPriceLists.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.ProductLookupEdit})
+        Me.grPriceLists.Size = New System.Drawing.Size(1474, 267)
+        Me.grPriceLists.TabIndex = 0
+        Me.grPriceLists.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewPriceList})
+        '
+        'bsPriceLists
+        '
+        Me.bsPriceLists.DataSource = GetType(AOS.BusinessObjects.ViewPriceListDataCollection)
+        '
+        'viewPriceList
+        '
+        Me.viewPriceList.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.viewPriceList.Appearance.FocusedCell.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.viewPriceList.Appearance.FocusedCell.BorderColor = System.Drawing.Color.Transparent
+        Me.viewPriceList.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black
+        Me.viewPriceList.Appearance.FocusedCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.viewPriceList.Appearance.FocusedCell.Options.UseBackColor = True
+        Me.viewPriceList.Appearance.FocusedCell.Options.UseBorderColor = True
+        Me.viewPriceList.Appearance.FocusedCell.Options.UseForeColor = True
+        Me.viewPriceList.Appearance.FocusedCell.Options.UseTextOptions = True
+        Me.viewPriceList.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
+        Me.viewPriceList.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.viewPriceList.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.viewPriceList.Appearance.FocusedRow.BorderColor = System.Drawing.Color.Transparent
+        Me.viewPriceList.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black
+        Me.viewPriceList.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.viewPriceList.Appearance.FocusedRow.Options.UseBackColor = True
+        Me.viewPriceList.Appearance.FocusedRow.Options.UseBorderColor = True
+        Me.viewPriceList.Appearance.FocusedRow.Options.UseForeColor = True
+        Me.viewPriceList.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.viewPriceList.Appearance.HideSelectionRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.viewPriceList.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.Transparent
+        Me.viewPriceList.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.Black
+        Me.viewPriceList.Appearance.HideSelectionRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.viewPriceList.Appearance.HideSelectionRow.Options.UseBackColor = True
+        Me.viewPriceList.Appearance.HideSelectionRow.Options.UseBorderColor = True
+        Me.viewPriceList.Appearance.HideSelectionRow.Options.UseForeColor = True
+        Me.viewPriceList.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.viewPriceList.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.viewPriceList.Appearance.SelectedRow.BorderColor = System.Drawing.Color.Transparent
+        Me.viewPriceList.Appearance.SelectedRow.ForeColor = System.Drawing.Color.Black
+        Me.viewPriceList.Appearance.SelectedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.viewPriceList.Appearance.SelectedRow.Options.UseBackColor = True
+        Me.viewPriceList.Appearance.SelectedRow.Options.UseBorderColor = True
+        Me.viewPriceList.Appearance.SelectedRow.Options.UseForeColor = True
+        Me.viewPriceList.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn12, Me.colProductid, Me.colProductid1, Me.colContainer, Me.colUom, Me.colUnits, Me.colPricemethod, Me.colUnitprice, Me.colContainerprice, Me.colEffectivedate, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn19, Me.colPriceliststatus})
+        Me.viewPriceList.CustomizationFormBounds = New System.Drawing.Rectangle(1168, 667, 216, 190)
+        Me.viewPriceList.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None
+        Me.viewPriceList.GridControl = Me.grPriceLists
+        Me.viewPriceList.Name = "viewPriceList"
+        Me.viewPriceList.OptionsBehavior.Editable = False
+        Me.viewPriceList.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.viewPriceList.OptionsView.ShowGroupPanel = False
+        Me.viewPriceList.OptionsView.ShowIndicator = False
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.Caption = "Cust Prod Code"
+        Me.GridColumn12.FieldName = "Customerproductcode"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 8
+        Me.GridColumn12.Width = 95
+        '
+        'colProductid
+        '
+        Me.colProductid.Caption = "Prod ID"
+        Me.colProductid.FieldName = "Productid"
+        Me.colProductid.Name = "colProductid"
+        Me.colProductid.Visible = True
+        Me.colProductid.VisibleIndex = 0
+        Me.colProductid.Width = 70
+        '
+        'colProductid1
+        '
+        Me.colProductid1.Caption = "Product Description"
+        Me.colProductid1.FieldName = "Productdesc"
+        Me.colProductid1.Name = "colProductid1"
+        Me.colProductid1.Visible = True
+        Me.colProductid1.VisibleIndex = 1
+        Me.colProductid1.Width = 334
+        '
+        'colContainer
+        '
+        Me.colContainer.Caption = "Container"
+        Me.colContainer.FieldName = "Container"
+        Me.colContainer.Name = "colContainer"
+        Me.colContainer.Visible = True
+        Me.colContainer.VisibleIndex = 3
+        Me.colContainer.Width = 60
+        '
+        'colUom
+        '
+        Me.colUom.Caption = "UOM"
+        Me.colUom.FieldName = "Uom"
+        Me.colUom.Name = "colUom"
+        Me.colUom.Width = 40
+        '
+        'colUnits
+        '
+        Me.colUnits.Caption = "Units"
+        Me.colUnits.FieldName = "Units"
+        Me.colUnits.Name = "colUnits"
+        Me.colUnits.Visible = True
+        Me.colUnits.VisibleIndex = 4
+        Me.colUnits.Width = 37
+        '
+        'colPricemethod
+        '
+        Me.colPricemethod.Caption = "Price Method"
+        Me.colPricemethod.FieldName = "Unitorcontainer"
+        Me.colPricemethod.Name = "colPricemethod"
+        Me.colPricemethod.Visible = True
+        Me.colPricemethod.VisibleIndex = 5
+        Me.colPricemethod.Width = 79
+        '
+        'colUnitprice
+        '
+        Me.colUnitprice.AppearanceCell.Options.UseTextOptions = True
+        Me.colUnitprice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colUnitprice.Caption = "Unit Price"
+        Me.colUnitprice.DisplayFormat.FormatString = "c2"
+        Me.colUnitprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colUnitprice.FieldName = "Unitprice"
+        Me.colUnitprice.Name = "colUnitprice"
+        Me.colUnitprice.Width = 67
+        '
+        'colContainerprice
+        '
+        Me.colContainerprice.AppearanceCell.Options.UseTextOptions = True
+        Me.colContainerprice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colContainerprice.Caption = "Container Price"
+        Me.colContainerprice.DisplayFormat.FormatString = "c2"
+        Me.colContainerprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colContainerprice.FieldName = "Containerprice"
+        Me.colContainerprice.Name = "colContainerprice"
+        Me.colContainerprice.Visible = True
+        Me.colContainerprice.VisibleIndex = 6
+        Me.colContainerprice.Width = 90
+        '
+        'colEffectivedate
+        '
+        Me.colEffectivedate.Caption = "Effective Date"
+        Me.colEffectivedate.DisplayFormat.FormatString = "MM/dd/yyyy"
+        Me.colEffectivedate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.colEffectivedate.FieldName = "Effectivedate"
+        Me.colEffectivedate.Name = "colEffectivedate"
+        Me.colEffectivedate.Visible = True
+        Me.colEffectivedate.VisibleIndex = 7
+        Me.colEffectivedate.Width = 84
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "Volume Units"
+        Me.GridColumn13.FieldName = "Volumeunits"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 9
+        Me.GridColumn13.Width = 78
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.Caption = "Volume UOM"
+        Me.GridColumn14.FieldName = "Volumeuom"
+        Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.Visible = True
+        Me.GridColumn14.VisibleIndex = 10
+        Me.GridColumn14.Width = 77
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "Volume Price"
+        Me.GridColumn15.FieldName = "Volumeprice"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 11
+        Me.GridColumn15.Width = 82
+        '
+        'GridColumn16
+        '
+        Me.GridColumn16.Caption = "Weight Units"
+        Me.GridColumn16.FieldName = "Weightunits"
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 12
+        Me.GridColumn16.Width = 77
+        '
+        'GridColumn17
+        '
+        Me.GridColumn17.Caption = "Weight UOM"
+        Me.GridColumn17.FieldName = "Weightuom"
+        Me.GridColumn17.Name = "GridColumn17"
+        Me.GridColumn17.Visible = True
+        Me.GridColumn17.VisibleIndex = 13
+        Me.GridColumn17.Width = 76
+        '
+        'GridColumn18
+        '
+        Me.GridColumn18.Caption = "Weight Price"
+        Me.GridColumn18.FieldName = "Weightprice"
+        Me.GridColumn18.Name = "GridColumn18"
+        Me.GridColumn18.Visible = True
+        Me.GridColumn18.VisibleIndex = 14
+        Me.GridColumn18.Width = 79
+        '
+        'GridColumn19
+        '
+        Me.GridColumn19.Caption = "Pricing Method"
+        Me.GridColumn19.FieldName = "Pricingmethod"
+        Me.GridColumn19.Name = "GridColumn19"
+        Me.GridColumn19.Visible = True
+        Me.GridColumn19.VisibleIndex = 15
+        Me.GridColumn19.Width = 92
+        '
+        'colPriceliststatus
+        '
+        Me.colPriceliststatus.Caption = "Status"
+        Me.colPriceliststatus.FieldName = "Priceliststatus"
+        Me.colPriceliststatus.Name = "colPriceliststatus"
+        Me.colPriceliststatus.Visible = True
+        Me.colPriceliststatus.VisibleIndex = 2
+        Me.colPriceliststatus.Width = 64
+        '
+        'ProductLookupEdit
+        '
+        Me.ProductLookupEdit.AutoHeight = False
+        Me.ProductLookupEdit.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.ProductLookupEdit.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productid", "Productid", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productdesc", "Productdesc", 65, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.ProductLookupEdit.DataSource = Me.bsProducts
+        Me.ProductLookupEdit.DisplayMember = "Productdesc"
+        Me.ProductLookupEdit.Name = "ProductLookupEdit"
+        Me.ProductLookupEdit.NullText = ""
+        Me.ProductLookupEdit.ReadOnly = True
+        Me.ProductLookupEdit.ShowFooter = False
+        Me.ProductLookupEdit.ShowHeader = False
+        Me.ProductLookupEdit.ValueMember = "Productid"
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.Controls.Add(Me.GroupControl16)
+        Me.PanelControl1.Controls.Add(Me.btnExportToXLS)
+        Me.PanelControl1.Controls.Add(Me.LabelControl1)
+        Me.PanelControl1.Controls.Add(Me.luCustomerList)
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControl1.Location = New System.Drawing.Point(2, 22)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(1474, 140)
+        Me.PanelControl1.TabIndex = 1
+        '
+        'GroupControl16
+        '
+        Me.GroupControl16.Controls.Add(Me.MemoEdit5)
+        Me.GroupControl16.Controls.Add(Label8)
+        Me.GroupControl16.Controls.Add(Label9)
+        Me.GroupControl16.Controls.Add(Me.MemoEdit8)
+        Me.GroupControl16.Controls.Add(Label11)
+        Me.GroupControl16.Controls.Add(Me.MemoEdit9)
+        Me.GroupControl16.Location = New System.Drawing.Point(322, 5)
+        Me.GroupControl16.Name = "GroupControl16"
+        Me.GroupControl16.Size = New System.Drawing.Size(1147, 130)
+        Me.GroupControl16.TabIndex = 54
+        Me.GroupControl16.Text = "Notes"
+        '
+        'MemoEdit5
+        '
+        Me.MemoEdit5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsCustomerNotes, "Accountingnotes", True))
+        Me.MemoEdit5.Location = New System.Drawing.Point(779, 42)
+        Me.MemoEdit5.Name = "MemoEdit5"
+        Me.MemoEdit5.Properties.Appearance.Options.UseTextOptions = True
+        Me.MemoEdit5.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.MemoEdit5.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
+        Me.MemoEdit5.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.MemoEdit5.Size = New System.Drawing.Size(363, 83)
+        Me.MemoEdit5.TabIndex = 52
+        '
+        'MemoEdit8
+        '
+        Me.MemoEdit8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsCustomerNotes, "Prodfulfillmentnotes", True))
+        Me.MemoEdit8.Location = New System.Drawing.Point(392, 42)
+        Me.MemoEdit8.Name = "MemoEdit8"
+        Me.MemoEdit8.Properties.Appearance.Options.UseTextOptions = True
+        Me.MemoEdit8.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.MemoEdit8.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
+        Me.MemoEdit8.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.MemoEdit8.Size = New System.Drawing.Size(363, 83)
+        Me.MemoEdit8.TabIndex = 46
+        '
+        'MemoEdit9
+        '
+        Me.MemoEdit9.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsCustomerNotes, "Custnotes", True))
+        Me.MemoEdit9.Location = New System.Drawing.Point(5, 42)
+        Me.MemoEdit9.Name = "MemoEdit9"
+        Me.MemoEdit9.Properties.Appearance.Options.UseTextOptions = True
+        Me.MemoEdit9.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.MemoEdit9.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
+        Me.MemoEdit9.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
+        Me.MemoEdit9.Size = New System.Drawing.Size(363, 83)
+        Me.MemoEdit9.TabIndex = 0
+        '
+        'btnExportToXLS
+        '
+        Me.btnExportToXLS.Location = New System.Drawing.Point(103, 36)
+        Me.btnExportToXLS.Name = "btnExportToXLS"
+        Me.btnExportToXLS.Size = New System.Drawing.Size(127, 23)
+        Me.btnExportToXLS.TabIndex = 2
+        Me.btnExportToXLS.Text = "Export Data to Excel"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Location = New System.Drawing.Point(6, 9)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(91, 13)
+        Me.LabelControl1.TabIndex = 1
+        Me.LabelControl1.Text = "Select a Customer:"
+        '
+        'luCustomerList
+        '
+        Me.luCustomerList.Location = New System.Drawing.Point(103, 6)
+        Me.luCustomerList.Name = "luCustomerList"
+        Me.luCustomerList.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.luCustomerList.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custid", "ID", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 200, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.luCustomerList.Properties.DataSource = Me.bsCustomerList
+        Me.luCustomerList.Properties.DisplayMember = "Custname"
+        Me.luCustomerList.Properties.DropDownRows = 15
+        Me.luCustomerList.Properties.NullText = ""
+        Me.luCustomerList.Properties.PopupWidth = 450
+        Me.luCustomerList.Properties.ValueMember = "Custid"
+        Me.luCustomerList.Size = New System.Drawing.Size(213, 20)
+        Me.luCustomerList.TabIndex = 0
+        '
+        'bsCustomerList
+        '
+        Me.bsCustomerList.DataSource = GetType(AOS.BusinessObjects.CustomerCollection)
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Label18)
+        Me.GroupControl3.Controls.Add(Me.MemoEdit4)
+        Me.GroupControl3.Controls.Add(Label16)
+        Me.GroupControl3.Controls.Add(Label15)
+        Me.GroupControl3.Controls.Add(Me.eReceivingNotes)
+        Me.GroupControl3.Controls.Add(Me.eVendorNotes)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupControl3.Location = New System.Drawing.Point(2, 429)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(1474, 130)
+        Me.GroupControl3.TabIndex = 6
+        Me.GroupControl3.Text = "Product Notes"
+        '
+        'MemoEdit4
+        '
+        Me.MemoEdit4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsProductNotes, "Standardcostnotes", True))
+        Me.MemoEdit4.Location = New System.Drawing.Point(1028, 51)
+        Me.MemoEdit4.MenuManager = Me.RibbonControl1
+        Me.MemoEdit4.Name = "MemoEdit4"
+        Me.MemoEdit4.Size = New System.Drawing.Size(435, 74)
+        Me.MemoEdit4.TabIndex = 21
+        '
+        'eReceivingNotes
+        '
+        Me.eReceivingNotes.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsProductNotes, "Receivingnotes", True))
+        Me.eReceivingNotes.Location = New System.Drawing.Point(522, 51)
+        Me.eReceivingNotes.MenuManager = Me.RibbonControl1
+        Me.eReceivingNotes.Name = "eReceivingNotes"
+        Me.eReceivingNotes.Size = New System.Drawing.Size(482, 74)
+        Me.eReceivingNotes.TabIndex = 1
+        '
+        'eVendorNotes
+        '
+        Me.eVendorNotes.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsProductNotes, "Purchasingnotes", True))
+        Me.eVendorNotes.Location = New System.Drawing.Point(9, 52)
+        Me.eVendorNotes.MenuManager = Me.RibbonControl1
+        Me.eVendorNotes.Name = "eVendorNotes"
+        Me.eVendorNotes.Size = New System.Drawing.Size(489, 74)
+        Me.eVendorNotes.TabIndex = 0
         '
         'RibbonPanelControl5
         '
@@ -2263,16 +2758,16 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl5.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
-        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl5.TabIndex = 1
         '
         'grpCommissions
         '
         Me.grpCommissions.Controls.Add(Me.grCommissions)
         Me.grpCommissions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grpCommissions.Location = New System.Drawing.Point(2, 397)
+        Me.grpCommissions.Location = New System.Drawing.Point(2, 372)
         Me.grpCommissions.Name = "grpCommissions"
-        Me.grpCommissions.Size = New System.Drawing.Size(1478, 141)
+        Me.grpCommissions.Size = New System.Drawing.Size(1478, 191)
         Me.grpCommissions.TabIndex = 8
         Me.grpCommissions.Text = "Commissions for ..."
         '
@@ -2280,12 +2775,12 @@ Partial Class viewSalesCustomers
         '
         Me.grCommissions.DataSource = Me.bsCommissions
         Me.grCommissions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCommissions.Location = New System.Drawing.Point(2, 25)
+        Me.grCommissions.Location = New System.Drawing.Point(2, 22)
         Me.grCommissions.LookAndFeel.SkinName = "Money Twins"
         Me.grCommissions.MainView = Me.grvCommissions
         Me.grCommissions.Name = "grCommissions"
         Me.grCommissions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.CustomerLookup, Me.RepositoryItemLookUpEdit6})
-        Me.grCommissions.Size = New System.Drawing.Size(1474, 114)
+        Me.grCommissions.Size = New System.Drawing.Size(1474, 167)
         Me.grCommissions.TabIndex = 0
         Me.grCommissions.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCommissions})
         '
@@ -2479,10 +2974,6 @@ Partial Class viewSalesCustomers
         Me.CustomerLookup.ReadOnly = True
         Me.CustomerLookup.ValueMember = "Custid"
         '
-        'bsCustomerList
-        '
-        Me.bsCustomerList.DataSource = GetType(AOS.BusinessObjects.CustomerCollection)
-        '
         'RibbonControl2
         '
         Me.RibbonControl2.ApplicationButtonText = Nothing
@@ -2495,7 +2986,7 @@ Partial Class viewSalesCustomers
         Me.RibbonControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit5})
         Me.RibbonControl2.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
         Me.RibbonControl2.ShowToolbarCustomizeItem = False
-        Me.RibbonControl2.Size = New System.Drawing.Size(1478, 142)
+        Me.RibbonControl2.Size = New System.Drawing.Size(1478, 117)
         Me.RibbonControl2.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl2.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -2823,12 +3314,12 @@ Partial Class viewSalesCustomers
         '
         Me.grAssignments.DataSource = Me.bsAssignments
         Me.grAssignments.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grAssignments.Location = New System.Drawing.Point(2, 25)
+        Me.grAssignments.Location = New System.Drawing.Point(2, 22)
         Me.grAssignments.LookAndFeel.SkinName = "Money Twins"
         Me.grAssignments.MainView = Me.GridView6
         Me.grAssignments.Name = "grAssignments"
         Me.grAssignments.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.grAssignments.Size = New System.Drawing.Size(1208, 220)
+        Me.grAssignments.Size = New System.Drawing.Size(1208, 223)
         Me.grAssignments.TabIndex = 0
         Me.grAssignments.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView6})
         '
@@ -2955,11 +3446,11 @@ Partial Class viewSalesCustomers
         '
         Me.grSalesperson.DataSource = Me.bsSalesperson
         Me.grSalesperson.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grSalesperson.Location = New System.Drawing.Point(2, 25)
+        Me.grSalesperson.Location = New System.Drawing.Point(2, 22)
         Me.grSalesperson.LookAndFeel.SkinName = "Money Twins"
         Me.grSalesperson.MainView = Me.GridView4
         Me.grSalesperson.Name = "grSalesperson"
-        Me.grSalesperson.Size = New System.Drawing.Size(258, 220)
+        Me.grSalesperson.Size = New System.Drawing.Size(258, 223)
         Me.grSalesperson.TabIndex = 0
         Me.grSalesperson.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
@@ -3037,7 +3528,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl2.TabIndex = 2
         '
         'grpCommissionData
@@ -3046,7 +3537,7 @@ Partial Class viewSalesCustomers
         Me.grpCommissionData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpCommissionData.Location = New System.Drawing.Point(2, 2)
         Me.grpCommissionData.Name = "grpCommissionData"
-        Me.grpCommissionData.Size = New System.Drawing.Size(1478, 536)
+        Me.grpCommissionData.Size = New System.Drawing.Size(1478, 561)
         Me.grpCommissionData.TabIndex = 9
         Me.grpCommissionData.Text = "Commissions for ..."
         '
@@ -3054,12 +3545,12 @@ Partial Class viewSalesCustomers
         '
         Me.grCommissionData.DataSource = Me.bsCommissions
         Me.grCommissionData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCommissionData.Location = New System.Drawing.Point(2, 25)
+        Me.grCommissionData.Location = New System.Drawing.Point(2, 22)
         Me.grCommissionData.LookAndFeel.SkinName = "Money Twins"
         Me.grCommissionData.MainView = Me.grvCommissionData
         Me.grCommissionData.Name = "grCommissionData"
         Me.grCommissionData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit11, Me.RepositoryItemLookUpEdit10})
-        Me.grCommissionData.Size = New System.Drawing.Size(1474, 509)
+        Me.grCommissionData.Size = New System.Drawing.Size(1474, 537)
         Me.grCommissionData.TabIndex = 0
         Me.grCommissionData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCommissionData})
         '
@@ -3242,7 +3733,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl10.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl10.Name = "RibbonPanelControl10"
-        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl10.TabIndex = 3
         '
         'GroupControl9
@@ -3251,7 +3742,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl9.Name = "GroupControl9"
-        Me.GroupControl9.Size = New System.Drawing.Size(1482, 540)
+        Me.GroupControl9.Size = New System.Drawing.Size(1482, 565)
         Me.GroupControl9.TabIndex = 9
         Me.GroupControl9.Text = "Sales History Details"
         '
@@ -3259,12 +3750,12 @@ Partial Class viewSalesCustomers
         '
         Me.grSalesHistory.DataSource = Me.bsSalesHistory
         Me.grSalesHistory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grSalesHistory.Location = New System.Drawing.Point(2, 25)
+        Me.grSalesHistory.Location = New System.Drawing.Point(2, 22)
         Me.grSalesHistory.LookAndFeel.SkinName = "Money Twins"
         Me.grSalesHistory.MainView = Me.gridViewSalesHistory
         Me.grSalesHistory.Name = "grSalesHistory"
         Me.grSalesHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit13, Me.RepositoryItemLookUpEdit12})
-        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 513)
+        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 541)
         Me.grSalesHistory.TabIndex = 0
         Me.grSalesHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewSalesHistory})
         '
@@ -3453,315 +3944,6 @@ Partial Class viewSalesCustomers
         Me.RepositoryItemLookUpEdit12.ReadOnly = True
         Me.RepositoryItemLookUpEdit12.ValueMember = "Custid"
         '
-        'RibbonPanelControl3
-        '
-        Me.RibbonPanelControl3.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.RibbonPanelControl3.Appearance.Options.UseBackColor = True
-        Me.RibbonPanelControl3.Controls.Add(Me.gcPriceLists)
-        Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1482, 540)
-        Me.RibbonPanelControl3.TabIndex = 1
-        '
-        'gcPriceLists
-        '
-        Me.gcPriceLists.Controls.Add(Me.grPriceLists)
-        Me.gcPriceLists.Controls.Add(Me.PanelControl1)
-        Me.gcPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcPriceLists.Location = New System.Drawing.Point(2, 2)
-        Me.gcPriceLists.Name = "gcPriceLists"
-        Me.gcPriceLists.Size = New System.Drawing.Size(1478, 536)
-        Me.gcPriceLists.TabIndex = 1
-        Me.gcPriceLists.Text = "Customer Price Lists"
-        '
-        'grPriceLists
-        '
-        Me.grPriceLists.DataSource = Me.bsPriceLists
-        Me.grPriceLists.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grPriceLists.Location = New System.Drawing.Point(2, 62)
-        Me.grPriceLists.LookAndFeel.SkinName = "Money Twins"
-        Me.grPriceLists.MainView = Me.viewPriceList
-        Me.grPriceLists.Name = "grPriceLists"
-        Me.grPriceLists.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.ProductLookupEdit})
-        Me.grPriceLists.Size = New System.Drawing.Size(1474, 472)
-        Me.grPriceLists.TabIndex = 0
-        Me.grPriceLists.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewPriceList})
-        '
-        'bsPriceLists
-        '
-        Me.bsPriceLists.DataSource = GetType(AOS.BusinessObjects.ViewPriceListDataCollection)
-        '
-        'viewPriceList
-        '
-        Me.viewPriceList.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.viewPriceList.Appearance.FocusedCell.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.viewPriceList.Appearance.FocusedCell.BorderColor = System.Drawing.Color.Transparent
-        Me.viewPriceList.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black
-        Me.viewPriceList.Appearance.FocusedCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.viewPriceList.Appearance.FocusedCell.Options.UseBackColor = True
-        Me.viewPriceList.Appearance.FocusedCell.Options.UseBorderColor = True
-        Me.viewPriceList.Appearance.FocusedCell.Options.UseForeColor = True
-        Me.viewPriceList.Appearance.FocusedCell.Options.UseTextOptions = True
-        Me.viewPriceList.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
-        Me.viewPriceList.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.viewPriceList.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.viewPriceList.Appearance.FocusedRow.BorderColor = System.Drawing.Color.Transparent
-        Me.viewPriceList.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black
-        Me.viewPriceList.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.viewPriceList.Appearance.FocusedRow.Options.UseBackColor = True
-        Me.viewPriceList.Appearance.FocusedRow.Options.UseBorderColor = True
-        Me.viewPriceList.Appearance.FocusedRow.Options.UseForeColor = True
-        Me.viewPriceList.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.viewPriceList.Appearance.HideSelectionRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.viewPriceList.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.Transparent
-        Me.viewPriceList.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.Black
-        Me.viewPriceList.Appearance.HideSelectionRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.viewPriceList.Appearance.HideSelectionRow.Options.UseBackColor = True
-        Me.viewPriceList.Appearance.HideSelectionRow.Options.UseBorderColor = True
-        Me.viewPriceList.Appearance.HideSelectionRow.Options.UseForeColor = True
-        Me.viewPriceList.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.viewPriceList.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.viewPriceList.Appearance.SelectedRow.BorderColor = System.Drawing.Color.Transparent
-        Me.viewPriceList.Appearance.SelectedRow.ForeColor = System.Drawing.Color.Black
-        Me.viewPriceList.Appearance.SelectedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.viewPriceList.Appearance.SelectedRow.Options.UseBackColor = True
-        Me.viewPriceList.Appearance.SelectedRow.Options.UseBorderColor = True
-        Me.viewPriceList.Appearance.SelectedRow.Options.UseForeColor = True
-        Me.viewPriceList.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn12, Me.colProductid, Me.colProductid1, Me.colContainer, Me.colUom, Me.colUnits, Me.colPricemethod, Me.colUnitprice, Me.colContainerprice, Me.colEffectivedate, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn19, Me.colPriceliststatus})
-        Me.viewPriceList.CustomizationFormBounds = New System.Drawing.Rectangle(1168, 667, 216, 190)
-        Me.viewPriceList.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None
-        Me.viewPriceList.GridControl = Me.grPriceLists
-        Me.viewPriceList.Name = "viewPriceList"
-        Me.viewPriceList.OptionsBehavior.Editable = False
-        Me.viewPriceList.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.viewPriceList.OptionsView.ShowGroupPanel = False
-        Me.viewPriceList.OptionsView.ShowIndicator = False
-        '
-        'GridColumn12
-        '
-        Me.GridColumn12.Caption = "Cust Prod Code"
-        Me.GridColumn12.FieldName = "Customerproductcode"
-        Me.GridColumn12.Name = "GridColumn12"
-        Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 8
-        Me.GridColumn12.Width = 95
-        '
-        'colProductid
-        '
-        Me.colProductid.Caption = "Prod ID"
-        Me.colProductid.FieldName = "Productid"
-        Me.colProductid.Name = "colProductid"
-        Me.colProductid.Visible = True
-        Me.colProductid.VisibleIndex = 0
-        Me.colProductid.Width = 70
-        '
-        'colProductid1
-        '
-        Me.colProductid1.Caption = "Product Description"
-        Me.colProductid1.FieldName = "Productdesc"
-        Me.colProductid1.Name = "colProductid1"
-        Me.colProductid1.Visible = True
-        Me.colProductid1.VisibleIndex = 1
-        Me.colProductid1.Width = 334
-        '
-        'colContainer
-        '
-        Me.colContainer.Caption = "Container"
-        Me.colContainer.FieldName = "Container"
-        Me.colContainer.Name = "colContainer"
-        Me.colContainer.Visible = True
-        Me.colContainer.VisibleIndex = 3
-        Me.colContainer.Width = 60
-        '
-        'colUom
-        '
-        Me.colUom.Caption = "UOM"
-        Me.colUom.FieldName = "Uom"
-        Me.colUom.Name = "colUom"
-        Me.colUom.Width = 40
-        '
-        'colUnits
-        '
-        Me.colUnits.Caption = "Units"
-        Me.colUnits.FieldName = "Units"
-        Me.colUnits.Name = "colUnits"
-        Me.colUnits.Visible = True
-        Me.colUnits.VisibleIndex = 4
-        Me.colUnits.Width = 37
-        '
-        'colPricemethod
-        '
-        Me.colPricemethod.Caption = "Price Method"
-        Me.colPricemethod.FieldName = "Unitorcontainer"
-        Me.colPricemethod.Name = "colPricemethod"
-        Me.colPricemethod.Visible = True
-        Me.colPricemethod.VisibleIndex = 5
-        Me.colPricemethod.Width = 79
-        '
-        'colUnitprice
-        '
-        Me.colUnitprice.AppearanceCell.Options.UseTextOptions = True
-        Me.colUnitprice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.colUnitprice.Caption = "Unit Price"
-        Me.colUnitprice.DisplayFormat.FormatString = "c2"
-        Me.colUnitprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colUnitprice.FieldName = "Unitprice"
-        Me.colUnitprice.Name = "colUnitprice"
-        Me.colUnitprice.Width = 67
-        '
-        'colContainerprice
-        '
-        Me.colContainerprice.AppearanceCell.Options.UseTextOptions = True
-        Me.colContainerprice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.colContainerprice.Caption = "Container Price"
-        Me.colContainerprice.DisplayFormat.FormatString = "c2"
-        Me.colContainerprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colContainerprice.FieldName = "Containerprice"
-        Me.colContainerprice.Name = "colContainerprice"
-        Me.colContainerprice.Visible = True
-        Me.colContainerprice.VisibleIndex = 6
-        Me.colContainerprice.Width = 90
-        '
-        'colEffectivedate
-        '
-        Me.colEffectivedate.Caption = "Effective Date"
-        Me.colEffectivedate.DisplayFormat.FormatString = "MM/dd/yyyy"
-        Me.colEffectivedate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.colEffectivedate.FieldName = "Effectivedate"
-        Me.colEffectivedate.Name = "colEffectivedate"
-        Me.colEffectivedate.Visible = True
-        Me.colEffectivedate.VisibleIndex = 7
-        Me.colEffectivedate.Width = 84
-        '
-        'GridColumn13
-        '
-        Me.GridColumn13.Caption = "Volume Units"
-        Me.GridColumn13.FieldName = "Volumeunits"
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 9
-        Me.GridColumn13.Width = 78
-        '
-        'GridColumn14
-        '
-        Me.GridColumn14.Caption = "Volume UOM"
-        Me.GridColumn14.FieldName = "Volumeuom"
-        Me.GridColumn14.Name = "GridColumn14"
-        Me.GridColumn14.Visible = True
-        Me.GridColumn14.VisibleIndex = 10
-        Me.GridColumn14.Width = 77
-        '
-        'GridColumn15
-        '
-        Me.GridColumn15.Caption = "Volume Price"
-        Me.GridColumn15.FieldName = "Volumeprice"
-        Me.GridColumn15.Name = "GridColumn15"
-        Me.GridColumn15.Visible = True
-        Me.GridColumn15.VisibleIndex = 11
-        Me.GridColumn15.Width = 82
-        '
-        'GridColumn16
-        '
-        Me.GridColumn16.Caption = "Weight Units"
-        Me.GridColumn16.FieldName = "Weightunits"
-        Me.GridColumn16.Name = "GridColumn16"
-        Me.GridColumn16.Visible = True
-        Me.GridColumn16.VisibleIndex = 12
-        Me.GridColumn16.Width = 77
-        '
-        'GridColumn17
-        '
-        Me.GridColumn17.Caption = "Weight UOM"
-        Me.GridColumn17.FieldName = "Weightuom"
-        Me.GridColumn17.Name = "GridColumn17"
-        Me.GridColumn17.Visible = True
-        Me.GridColumn17.VisibleIndex = 13
-        Me.GridColumn17.Width = 76
-        '
-        'GridColumn18
-        '
-        Me.GridColumn18.Caption = "Weight Price"
-        Me.GridColumn18.FieldName = "Weightprice"
-        Me.GridColumn18.Name = "GridColumn18"
-        Me.GridColumn18.Visible = True
-        Me.GridColumn18.VisibleIndex = 14
-        Me.GridColumn18.Width = 79
-        '
-        'GridColumn19
-        '
-        Me.GridColumn19.Caption = "Pricing Method"
-        Me.GridColumn19.FieldName = "Pricingmethod"
-        Me.GridColumn19.Name = "GridColumn19"
-        Me.GridColumn19.Visible = True
-        Me.GridColumn19.VisibleIndex = 15
-        Me.GridColumn19.Width = 92
-        '
-        'colPriceliststatus
-        '
-        Me.colPriceliststatus.Caption = "Status"
-        Me.colPriceliststatus.FieldName = "Priceliststatus"
-        Me.colPriceliststatus.Name = "colPriceliststatus"
-        Me.colPriceliststatus.Visible = True
-        Me.colPriceliststatus.VisibleIndex = 2
-        Me.colPriceliststatus.Width = 64
-        '
-        'ProductLookupEdit
-        '
-        Me.ProductLookupEdit.AutoHeight = False
-        Me.ProductLookupEdit.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ProductLookupEdit.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productid", "Productid", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productdesc", "Productdesc", 65, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.ProductLookupEdit.DataSource = Me.bsProducts
-        Me.ProductLookupEdit.DisplayMember = "Productdesc"
-        Me.ProductLookupEdit.Name = "ProductLookupEdit"
-        Me.ProductLookupEdit.NullText = ""
-        Me.ProductLookupEdit.ReadOnly = True
-        Me.ProductLookupEdit.ShowFooter = False
-        Me.ProductLookupEdit.ShowHeader = False
-        Me.ProductLookupEdit.ValueMember = "Productid"
-        '
-        'PanelControl1
-        '
-        Me.PanelControl1.Controls.Add(Me.btnExportToXLS)
-        Me.PanelControl1.Controls.Add(Me.LabelControl1)
-        Me.PanelControl1.Controls.Add(Me.luCustomerList)
-        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(2, 25)
-        Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1474, 37)
-        Me.PanelControl1.TabIndex = 1
-        '
-        'btnExportToXLS
-        '
-        Me.btnExportToXLS.Location = New System.Drawing.Point(367, 7)
-        Me.btnExportToXLS.Name = "btnExportToXLS"
-        Me.btnExportToXLS.Size = New System.Drawing.Size(127, 23)
-        Me.btnExportToXLS.TabIndex = 2
-        Me.btnExportToXLS.Text = "Export Data to Excel"
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Location = New System.Drawing.Point(6, 9)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(91, 13)
-        Me.LabelControl1.TabIndex = 1
-        Me.LabelControl1.Text = "Select a Customer:"
-        '
-        'luCustomerList
-        '
-        Me.luCustomerList.Location = New System.Drawing.Point(103, 6)
-        Me.luCustomerList.Name = "luCustomerList"
-        Me.luCustomerList.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.luCustomerList.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custid", "ID", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 200, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.luCustomerList.Properties.DataSource = Me.bsCustomerList
-        Me.luCustomerList.Properties.DisplayMember = "Custname"
-        Me.luCustomerList.Properties.DropDownRows = 15
-        Me.luCustomerList.Properties.NullText = ""
-        Me.luCustomerList.Properties.PopupWidth = 450
-        Me.luCustomerList.Properties.ValueMember = "Custid"
-        Me.luCustomerList.Size = New System.Drawing.Size(213, 22)
-        Me.luCustomerList.TabIndex = 0
-        '
         'RibbonPanelControl1
         '
         Me.RibbonPanelControl1.Controls.Add(Me.PanelControl9)
@@ -3770,7 +3952,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl1.TabIndex = 0
         '
         'PanelControl9
@@ -3785,7 +3967,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl9.Location = New System.Drawing.Point(370, 2)
         Me.PanelControl9.Name = "PanelControl9"
-        Me.PanelControl9.Size = New System.Drawing.Size(1110, 536)
+        Me.PanelControl9.Size = New System.Drawing.Size(1110, 561)
         Me.PanelControl9.TabIndex = 2
         '
         'GroupControl15
@@ -3809,7 +3991,7 @@ Partial Class viewSalesCustomers
         Me.TextEdit1.MenuManager = Me.RibbonControl1
         Me.TextEdit1.Name = "TextEdit1"
         Me.TextEdit1.Properties.ReadOnly = True
-        Me.TextEdit1.Size = New System.Drawing.Size(280, 22)
+        Me.TextEdit1.Size = New System.Drawing.Size(280, 20)
         Me.TextEdit1.TabIndex = 36
         Me.TextEdit1.TabStop = False
         '
@@ -3820,7 +4002,7 @@ Partial Class viewSalesCustomers
         Me.CustphoneTextEdit.MenuManager = Me.RibbonControl1
         Me.CustphoneTextEdit.Name = "CustphoneTextEdit"
         Me.CustphoneTextEdit.Properties.ReadOnly = True
-        Me.CustphoneTextEdit.Size = New System.Drawing.Size(134, 22)
+        Me.CustphoneTextEdit.Size = New System.Drawing.Size(134, 20)
         Me.CustphoneTextEdit.TabIndex = 33
         Me.CustphoneTextEdit.TabStop = False
         '
@@ -3831,7 +4013,7 @@ Partial Class viewSalesCustomers
         Me.CustfaxTextEdit.MenuManager = Me.RibbonControl1
         Me.CustfaxTextEdit.Name = "CustfaxTextEdit"
         Me.CustfaxTextEdit.Properties.ReadOnly = True
-        Me.CustfaxTextEdit.Size = New System.Drawing.Size(108, 22)
+        Me.CustfaxTextEdit.Size = New System.Drawing.Size(108, 20)
         Me.CustfaxTextEdit.TabIndex = 35
         Me.CustfaxTextEdit.TabStop = False
         '
@@ -3950,7 +4132,7 @@ Partial Class viewSalesCustomers
         Me.CarrieridLookUpEdit.Properties.NullText = ""
         Me.CarrieridLookUpEdit.Properties.ReadOnly = True
         Me.CarrieridLookUpEdit.Properties.ValueMember = "CarrierID"
-        Me.CarrieridLookUpEdit.Size = New System.Drawing.Size(280, 22)
+        Me.CarrieridLookUpEdit.Size = New System.Drawing.Size(280, 20)
         Me.CarrieridLookUpEdit.TabIndex = 43
         Me.CarrieridLookUpEdit.TabStop = False
         '
@@ -3965,7 +4147,7 @@ Partial Class viewSalesCustomers
         Me.FobTextEdit.MenuManager = Me.RibbonControl1
         Me.FobTextEdit.Name = "FobTextEdit"
         Me.FobTextEdit.Properties.ReadOnly = True
-        Me.FobTextEdit.Size = New System.Drawing.Size(166, 22)
+        Me.FobTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.FobTextEdit.TabIndex = 46
         Me.FobTextEdit.TabStop = False
         '
@@ -3980,7 +4162,7 @@ Partial Class viewSalesCustomers
         Me.BulkcarrieridLookUpEdit.Properties.NullText = ""
         Me.BulkcarrieridLookUpEdit.Properties.ReadOnly = True
         Me.BulkcarrieridLookUpEdit.Properties.ValueMember = "CarrierID"
-        Me.BulkcarrieridLookUpEdit.Size = New System.Drawing.Size(280, 22)
+        Me.BulkcarrieridLookUpEdit.Size = New System.Drawing.Size(280, 20)
         Me.BulkcarrieridLookUpEdit.TabIndex = 45
         Me.BulkcarrieridLookUpEdit.TabStop = False
         '
@@ -3999,7 +4181,7 @@ Partial Class viewSalesCustomers
         Me.LogisticsidLookUpEdit.Properties.NullText = ""
         Me.LogisticsidLookUpEdit.Properties.ReadOnly = True
         Me.LogisticsidLookUpEdit.Properties.ValueMember = "Logisticsid"
-        Me.LogisticsidLookUpEdit.Size = New System.Drawing.Size(280, 22)
+        Me.LogisticsidLookUpEdit.Size = New System.Drawing.Size(280, 20)
         Me.LogisticsidLookUpEdit.TabIndex = 44
         Me.LogisticsidLookUpEdit.TabStop = False
         '
@@ -4034,7 +4216,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcontactTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcontactTextEdit.Name = "CustbillcontactTextEdit"
         Me.CustbillcontactTextEdit.Properties.ReadOnly = True
-        Me.CustbillcontactTextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.CustbillcontactTextEdit.Size = New System.Drawing.Size(280, 20)
         Me.CustbillcontactTextEdit.TabIndex = 31
         Me.CustbillcontactTextEdit.TabStop = False
         '
@@ -4045,7 +4227,7 @@ Partial Class viewSalesCustomers
         Me.Custbilladdress1TextEdit.MenuManager = Me.RibbonControl1
         Me.Custbilladdress1TextEdit.Name = "Custbilladdress1TextEdit"
         Me.Custbilladdress1TextEdit.Properties.ReadOnly = True
-        Me.Custbilladdress1TextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.Custbilladdress1TextEdit.Size = New System.Drawing.Size(280, 20)
         Me.Custbilladdress1TextEdit.TabIndex = 19
         Me.Custbilladdress1TextEdit.TabStop = False
         '
@@ -4056,7 +4238,7 @@ Partial Class viewSalesCustomers
         Me.CustbillpostalcodeTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillpostalcodeTextEdit.Name = "CustbillpostalcodeTextEdit"
         Me.CustbillpostalcodeTextEdit.Properties.ReadOnly = True
-        Me.CustbillpostalcodeTextEdit.Size = New System.Drawing.Size(64, 22)
+        Me.CustbillpostalcodeTextEdit.Size = New System.Drawing.Size(64, 20)
         Me.CustbillpostalcodeTextEdit.TabIndex = 27
         Me.CustbillpostalcodeTextEdit.TabStop = False
         '
@@ -4067,7 +4249,7 @@ Partial Class viewSalesCustomers
         Me.Custbilladdress2TextEdit.MenuManager = Me.RibbonControl1
         Me.Custbilladdress2TextEdit.Name = "Custbilladdress2TextEdit"
         Me.Custbilladdress2TextEdit.Properties.ReadOnly = True
-        Me.Custbilladdress2TextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.Custbilladdress2TextEdit.Size = New System.Drawing.Size(280, 20)
         Me.Custbilladdress2TextEdit.TabIndex = 21
         Me.Custbilladdress2TextEdit.TabStop = False
         '
@@ -4078,7 +4260,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcountryTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcountryTextEdit.Name = "CustbillcountryTextEdit"
         Me.CustbillcountryTextEdit.Properties.ReadOnly = True
-        Me.CustbillcountryTextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.CustbillcountryTextEdit.Size = New System.Drawing.Size(280, 20)
         Me.CustbillcountryTextEdit.TabIndex = 29
         Me.CustbillcountryTextEdit.TabStop = False
         '
@@ -4089,7 +4271,7 @@ Partial Class viewSalesCustomers
         Me.CustbillstateprovTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillstateprovTextEdit.Name = "CustbillstateprovTextEdit"
         Me.CustbillstateprovTextEdit.Properties.ReadOnly = True
-        Me.CustbillstateprovTextEdit.Size = New System.Drawing.Size(38, 22)
+        Me.CustbillstateprovTextEdit.Size = New System.Drawing.Size(38, 20)
         Me.CustbillstateprovTextEdit.TabIndex = 25
         Me.CustbillstateprovTextEdit.TabStop = False
         '
@@ -4100,7 +4282,7 @@ Partial Class viewSalesCustomers
         Me.CustbillcityTextEdit.MenuManager = Me.RibbonControl1
         Me.CustbillcityTextEdit.Name = "CustbillcityTextEdit"
         Me.CustbillcityTextEdit.Properties.ReadOnly = True
-        Me.CustbillcityTextEdit.Size = New System.Drawing.Size(166, 22)
+        Me.CustbillcityTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.CustbillcityTextEdit.TabIndex = 23
         Me.CustbillcityTextEdit.TabStop = False
         '
@@ -4131,7 +4313,7 @@ Partial Class viewSalesCustomers
         Me.Custshipaddress1TextEdit.MenuManager = Me.RibbonControl1
         Me.Custshipaddress1TextEdit.Name = "Custshipaddress1TextEdit"
         Me.Custshipaddress1TextEdit.Properties.ReadOnly = True
-        Me.Custshipaddress1TextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.Custshipaddress1TextEdit.Size = New System.Drawing.Size(280, 20)
         Me.Custshipaddress1TextEdit.TabIndex = 5
         Me.Custshipaddress1TextEdit.TabStop = False
         '
@@ -4142,7 +4324,7 @@ Partial Class viewSalesCustomers
         Me.Custshipaddress2TextEdit.MenuManager = Me.RibbonControl1
         Me.Custshipaddress2TextEdit.Name = "Custshipaddress2TextEdit"
         Me.Custshipaddress2TextEdit.Properties.ReadOnly = True
-        Me.Custshipaddress2TextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.Custshipaddress2TextEdit.Size = New System.Drawing.Size(280, 20)
         Me.Custshipaddress2TextEdit.TabIndex = 7
         Me.Custshipaddress2TextEdit.TabStop = False
         '
@@ -4153,7 +4335,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcityTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcityTextEdit.Name = "CustshipcityTextEdit"
         Me.CustshipcityTextEdit.Properties.ReadOnly = True
-        Me.CustshipcityTextEdit.Size = New System.Drawing.Size(166, 22)
+        Me.CustshipcityTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.CustshipcityTextEdit.TabIndex = 9
         Me.CustshipcityTextEdit.TabStop = False
         '
@@ -4164,7 +4346,7 @@ Partial Class viewSalesCustomers
         Me.CustshipstateprovTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipstateprovTextEdit.Name = "CustshipstateprovTextEdit"
         Me.CustshipstateprovTextEdit.Properties.ReadOnly = True
-        Me.CustshipstateprovTextEdit.Size = New System.Drawing.Size(38, 22)
+        Me.CustshipstateprovTextEdit.Size = New System.Drawing.Size(38, 20)
         Me.CustshipstateprovTextEdit.TabIndex = 11
         Me.CustshipstateprovTextEdit.TabStop = False
         '
@@ -4175,7 +4357,7 @@ Partial Class viewSalesCustomers
         Me.CustshippostalcodeTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshippostalcodeTextEdit.Name = "CustshippostalcodeTextEdit"
         Me.CustshippostalcodeTextEdit.Properties.ReadOnly = True
-        Me.CustshippostalcodeTextEdit.Size = New System.Drawing.Size(64, 22)
+        Me.CustshippostalcodeTextEdit.Size = New System.Drawing.Size(64, 20)
         Me.CustshippostalcodeTextEdit.TabIndex = 13
         Me.CustshippostalcodeTextEdit.TabStop = False
         '
@@ -4186,7 +4368,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcountryTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcountryTextEdit.Name = "CustshipcountryTextEdit"
         Me.CustshipcountryTextEdit.Properties.ReadOnly = True
-        Me.CustshipcountryTextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.CustshipcountryTextEdit.Size = New System.Drawing.Size(280, 20)
         Me.CustshipcountryTextEdit.TabIndex = 15
         Me.CustshipcountryTextEdit.TabStop = False
         '
@@ -4197,7 +4379,7 @@ Partial Class viewSalesCustomers
         Me.CustshipcontactTextEdit.MenuManager = Me.RibbonControl1
         Me.CustshipcontactTextEdit.Name = "CustshipcontactTextEdit"
         Me.CustshipcontactTextEdit.Properties.ReadOnly = True
-        Me.CustshipcontactTextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.CustshipcontactTextEdit.Size = New System.Drawing.Size(280, 20)
         Me.CustshipcontactTextEdit.TabIndex = 17
         Me.CustshipcontactTextEdit.TabStop = False
         '
@@ -4262,7 +4444,7 @@ Partial Class viewSalesCustomers
         Me.SalespersonIDLookUpEdit2.Properties.NullText = ""
         Me.SalespersonIDLookUpEdit2.Properties.ReadOnly = True
         Me.SalespersonIDLookUpEdit2.Properties.ValueMember = "Salespersonid"
-        Me.SalespersonIDLookUpEdit2.Size = New System.Drawing.Size(142, 22)
+        Me.SalespersonIDLookUpEdit2.Size = New System.Drawing.Size(142, 20)
         Me.SalespersonIDLookUpEdit2.TabIndex = 51
         '
         'bsSalesPersonList2
@@ -4280,7 +4462,7 @@ Partial Class viewSalesCustomers
         Me.SalespersonidLookUpEdit.Properties.NullText = ""
         Me.SalespersonidLookUpEdit.Properties.ReadOnly = True
         Me.SalespersonidLookUpEdit.Properties.ValueMember = "Salespersonid"
-        Me.SalespersonidLookUpEdit.Size = New System.Drawing.Size(142, 22)
+        Me.SalespersonidLookUpEdit.Size = New System.Drawing.Size(142, 20)
         Me.SalespersonidLookUpEdit.TabIndex = 49
         '
         'bsSalespersonList
@@ -4294,7 +4476,7 @@ Partial Class viewSalesCustomers
         Me.CustidTextEdit.MenuManager = Me.RibbonControl1
         Me.CustidTextEdit.Name = "CustidTextEdit"
         Me.CustidTextEdit.Properties.ReadOnly = True
-        Me.CustidTextEdit.Size = New System.Drawing.Size(54, 22)
+        Me.CustidTextEdit.Size = New System.Drawing.Size(54, 20)
         Me.CustidTextEdit.TabIndex = 1
         Me.CustidTextEdit.TabStop = False
         '
@@ -4318,7 +4500,7 @@ Partial Class viewSalesCustomers
         Me.CustnameTextEdit.MenuManager = Me.RibbonControl1
         Me.CustnameTextEdit.Name = "CustnameTextEdit"
         Me.CustnameTextEdit.Properties.ReadOnly = True
-        Me.CustnameTextEdit.Size = New System.Drawing.Size(280, 22)
+        Me.CustnameTextEdit.Size = New System.Drawing.Size(280, 20)
         Me.CustnameTextEdit.TabIndex = 3
         Me.CustnameTextEdit.TabStop = False
         '
@@ -4328,7 +4510,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControl8.Location = New System.Drawing.Point(364, 2)
         Me.PanelControl8.Name = "PanelControl8"
-        Me.PanelControl8.Size = New System.Drawing.Size(6, 536)
+        Me.PanelControl8.Size = New System.Drawing.Size(6, 561)
         Me.PanelControl8.TabIndex = 1
         '
         'GroupControl1
@@ -4337,7 +4519,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupControl1.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(362, 536)
+        Me.GroupControl1.Size = New System.Drawing.Size(362, 561)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Customer List"
         '
@@ -4345,11 +4527,11 @@ Partial Class viewSalesCustomers
         '
         Me.grCustomers.DataSource = Me.bsCustomers
         Me.grCustomers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCustomers.Location = New System.Drawing.Point(2, 25)
+        Me.grCustomers.Location = New System.Drawing.Point(2, 22)
         Me.grCustomers.LookAndFeel.SkinName = "Money Twins"
         Me.grCustomers.MainView = Me.GridView3
         Me.grCustomers.Name = "grCustomers"
-        Me.grCustomers.Size = New System.Drawing.Size(358, 509)
+        Me.grCustomers.Size = New System.Drawing.Size(358, 537)
         Me.grCustomers.TabIndex = 0
         Me.grCustomers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
@@ -4422,7 +4604,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl4.TabIndex = 1
         '
         'GroupControl4
@@ -4431,7 +4613,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1478, 536)
+        Me.GroupControl4.Size = New System.Drawing.Size(1478, 561)
         Me.GroupControl4.TabIndex = 9
         Me.GroupControl4.Text = "Invoices"
         '
@@ -4439,12 +4621,12 @@ Partial Class viewSalesCustomers
         '
         Me.grInvoices.DataSource = Me.bsInvoices
         Me.grInvoices.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grInvoices.Location = New System.Drawing.Point(2, 25)
+        Me.grInvoices.Location = New System.Drawing.Point(2, 22)
         Me.grInvoices.LookAndFeel.SkinName = "Money Twins"
         Me.grInvoices.MainView = Me.grvInvoiceList
         Me.grInvoices.Name = "grInvoices"
         Me.grInvoices.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit4})
-        Me.grInvoices.Size = New System.Drawing.Size(1474, 509)
+        Me.grInvoices.Size = New System.Drawing.Size(1474, 537)
         Me.grInvoices.TabIndex = 0
         Me.grInvoices.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvInvoiceList})
         '
@@ -4618,7 +4800,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl9.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl9.Name = "RibbonPanelControl9"
-        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl9.TabIndex = 4
         '
         'gcSalesByCustomerAnalysis
@@ -4627,7 +4809,7 @@ Partial Class viewSalesCustomers
         Me.gcSalesByCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcSalesByCustomerAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcSalesByCustomerAnalysis.Name = "gcSalesByCustomerAnalysis"
-        Me.gcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1482, 540)
+        Me.gcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1482, 565)
         Me.gcSalesByCustomerAnalysis.TabIndex = 3
         Me.gcSalesByCustomerAnalysis.Text = "Sales By Customer Analysis"
         '
@@ -4635,11 +4817,11 @@ Partial Class viewSalesCustomers
         '
         Me.grcSalesByCustomerAnalysis.DataSource = Me.bsSalesByCustomer
         Me.grcSalesByCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grcSalesByCustomerAnalysis.Location = New System.Drawing.Point(2, 25)
+        Me.grcSalesByCustomerAnalysis.Location = New System.Drawing.Point(2, 22)
         Me.grcSalesByCustomerAnalysis.MainView = Me.grvSalesByCustomerAnalysis
         Me.grcSalesByCustomerAnalysis.MenuManager = Me.RibbonControl1
         Me.grcSalesByCustomerAnalysis.Name = "grcSalesByCustomerAnalysis"
-        Me.grcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1478, 513)
+        Me.grcSalesByCustomerAnalysis.Size = New System.Drawing.Size(1478, 541)
         Me.grcSalesByCustomerAnalysis.TabIndex = 0
         Me.grcSalesByCustomerAnalysis.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvSalesByCustomerAnalysis})
         '
@@ -5195,7 +5377,7 @@ Partial Class viewSalesCustomers
         Me.gcSalesAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcSalesAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcSalesAnalysis.Name = "gcSalesAnalysis"
-        Me.gcSalesAnalysis.Size = New System.Drawing.Size(1482, 540)
+        Me.gcSalesAnalysis.Size = New System.Drawing.Size(1482, 565)
         Me.gcSalesAnalysis.TabIndex = 0
         Me.gcSalesAnalysis.Text = "Sales Analysis"
         '
@@ -5203,11 +5385,11 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl3.DataSource = Me.bsSalesData
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl3.Location = New System.Drawing.Point(2, 25)
+        Me.GridControl3.Location = New System.Drawing.Point(2, 22)
         Me.GridControl3.MainView = Me.grvSalesAnalysis
         Me.GridControl3.MenuManager = Me.RibbonControl1
         Me.GridControl3.Name = "GridControl3"
-        Me.GridControl3.Size = New System.Drawing.Size(1478, 513)
+        Me.GridControl3.Size = New System.Drawing.Size(1478, 541)
         Me.GridControl3.TabIndex = 0
         Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvSalesAnalysis})
         '
@@ -5507,7 +5689,7 @@ Partial Class viewSalesCustomers
         Me.gcCustomerAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCustomerAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcCustomerAnalysis.Name = "gcCustomerAnalysis"
-        Me.gcCustomerAnalysis.Size = New System.Drawing.Size(1482, 540)
+        Me.gcCustomerAnalysis.Size = New System.Drawing.Size(1482, 565)
         Me.gcCustomerAnalysis.TabIndex = 1
         Me.gcCustomerAnalysis.Text = "Customer Analysis"
         '
@@ -5516,7 +5698,7 @@ Partial Class viewSalesCustomers
         Me.gcCompanyAnalysis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCompanyAnalysis.Location = New System.Drawing.Point(0, 0)
         Me.gcCompanyAnalysis.Name = "gcCompanyAnalysis"
-        Me.gcCompanyAnalysis.Size = New System.Drawing.Size(1482, 540)
+        Me.gcCompanyAnalysis.Size = New System.Drawing.Size(1482, 565)
         Me.gcCompanyAnalysis.TabIndex = 2
         Me.gcCompanyAnalysis.Text = "Company Analysis"
         '
@@ -5526,7 +5708,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl7.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl7.Name = "RibbonPanelControl7"
-        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl7.TabIndex = 1
         '
         'GroupControl6
@@ -5537,7 +5719,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl6.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl6.Name = "GroupControl6"
-        Me.GroupControl6.Size = New System.Drawing.Size(1478, 536)
+        Me.GroupControl6.Size = New System.Drawing.Size(1478, 561)
         Me.GroupControl6.TabIndex = 2
         Me.GroupControl6.Text = "Customer Payments"
         '
@@ -5554,12 +5736,12 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl2.DataSource = Me.bsInvoicePayments
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.Location = New System.Drawing.Point(2, 25)
+        Me.GridControl2.Location = New System.Drawing.Point(2, 22)
         Me.GridControl2.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl2.MainView = Me.GridView10
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit8})
-        Me.GridControl2.Size = New System.Drawing.Size(236, 111)
+        Me.GridControl2.Size = New System.Drawing.Size(236, 114)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView10})
         '
@@ -5649,9 +5831,9 @@ Partial Class viewSalesCustomers
         '
         Me.GroupControl7.Controls.Add(Me.GridControl1)
         Me.GroupControl7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GroupControl7.Location = New System.Drawing.Point(2, 56)
+        Me.GroupControl7.Location = New System.Drawing.Point(2, 53)
         Me.GroupControl7.Name = "GroupControl7"
-        Me.GroupControl7.Size = New System.Drawing.Size(457, 478)
+        Me.GroupControl7.Size = New System.Drawing.Size(457, 506)
         Me.GroupControl7.TabIndex = 2
         Me.GroupControl7.Text = "Customer Payment List"
         '
@@ -5659,12 +5841,12 @@ Partial Class viewSalesCustomers
         '
         Me.GridControl1.DataSource = Me.bsCustomerPayments
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 25)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
         Me.GridControl1.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl1.MainView = Me.GridView8
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit7})
-        Me.GridControl1.Size = New System.Drawing.Size(453, 451)
+        Me.GridControl1.Size = New System.Drawing.Size(453, 482)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView8})
         '
@@ -5769,7 +5951,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl4.Controls.Add(Me.LabelControl2)
         Me.PanelControl4.Controls.Add(Me.eCustomerLookup)
         Me.PanelControl4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl4.Location = New System.Drawing.Point(2, 25)
+        Me.PanelControl4.Location = New System.Drawing.Point(2, 22)
         Me.PanelControl4.Name = "PanelControl4"
         Me.PanelControl4.Size = New System.Drawing.Size(1474, 31)
         Me.PanelControl4.TabIndex = 1
@@ -5794,7 +5976,7 @@ Partial Class viewSalesCustomers
         Me.eCustomerLookup.Properties.NullText = ""
         Me.eCustomerLookup.Properties.PopupWidth = 450
         Me.eCustomerLookup.Properties.ValueMember = "Custid"
-        Me.eCustomerLookup.Size = New System.Drawing.Size(350, 22)
+        Me.eCustomerLookup.Size = New System.Drawing.Size(350, 20)
         Me.eCustomerLookup.TabIndex = 0
         '
         'RibbonPanelControl6
@@ -5803,7 +5985,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
-        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1482, 540)
+        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1482, 565)
         Me.RibbonPanelControl6.TabIndex = 1
         '
         'GroupControl5
@@ -5812,7 +5994,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl5.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(1478, 536)
+        Me.GroupControl5.Size = New System.Drawing.Size(1478, 561)
         Me.GroupControl5.TabIndex = 10
         Me.GroupControl5.Text = "Shipments"
         '
@@ -5820,12 +6002,12 @@ Partial Class viewSalesCustomers
         '
         Me.grShipments.DataSource = Me.bsShipments
         Me.grShipments.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grShipments.Location = New System.Drawing.Point(2, 25)
+        Me.grShipments.Location = New System.Drawing.Point(2, 22)
         Me.grShipments.LookAndFeel.SkinName = "Money Twins"
         Me.grShipments.MainView = Me.GridView9
         Me.grShipments.Name = "grShipments"
         Me.grShipments.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit3, Me.RepositoryItemLookUpEdit5})
-        Me.grShipments.Size = New System.Drawing.Size(1474, 509)
+        Me.grShipments.Size = New System.Drawing.Size(1474, 537)
         Me.grShipments.TabIndex = 0
         Me.grShipments.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView9})
         '
@@ -5973,6 +6155,14 @@ Partial Class viewSalesCustomers
         Me.Timer3.Enabled = True
         Me.Timer3.Interval = 15000
         '
+        'bsCustomerNotes
+        '
+        Me.bsCustomerNotes.DataSource = GetType(AOS.BusinessObjects.Customer)
+        '
+        'bsProductNotes
+        '
+        Me.bsProductNotes.DataSource = GetType(AOS.BusinessObjects.Product)
+        '
         'viewSalesCustomers
         '
         Me.Controls.Add(Me.WorkPanelsHolder)
@@ -6008,6 +6198,31 @@ Partial Class viewSalesCustomers
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WorkPanelsHolder.ResumeLayout(False)
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl3.ResumeLayout(False)
+        CType(Me.gcPriceLists, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gcPriceLists.ResumeLayout(False)
+        CType(Me.grPriceLists, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsPriceLists, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.viewPriceList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductLookupEdit, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
+        Me.PanelControl1.PerformLayout()
+        CType(Me.GroupControl16, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl16.ResumeLayout(False)
+        Me.GroupControl16.PerformLayout()
+        CType(Me.MemoEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MemoEdit8.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MemoEdit9.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.luCustomerList.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomerList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        Me.GroupControl3.PerformLayout()
+        CType(Me.MemoEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eReceivingNotes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eVendorNotes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl5.ResumeLayout(False)
         Me.RibbonPanelControl5.PerformLayout()
@@ -6019,7 +6234,6 @@ Partial Class viewSalesCustomers
         CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsCustomers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerLookup, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsCustomerList, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit5.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6053,18 +6267,6 @@ Partial Class viewSalesCustomers
         CType(Me.gridViewSalesHistory, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl3.ResumeLayout(False)
-        CType(Me.gcPriceLists, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gcPriceLists.ResumeLayout(False)
-        CType(Me.grPriceLists, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsPriceLists, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.viewPriceList, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductLookupEdit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl1.ResumeLayout(False)
-        Me.PanelControl1.PerformLayout()
-        CType(Me.luCustomerList.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl1.ResumeLayout(False)
         CType(Me.PanelControl9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6186,6 +6388,8 @@ Partial Class viewSalesCustomers
         CType(Me.bsTrendsMonthly, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsTrendsQuarterly, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsTrendsAnnually, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomerNotes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsProductNotes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -6657,4 +6861,14 @@ Partial Class viewSalesCustomers
     Friend WithEvents rbtnWorkOrdersToInvoice As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnInvoiceHistory As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup34 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents MemoEdit4 As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents eReceivingNotes As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents eVendorNotes As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents GroupControl16 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents MemoEdit5 As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents MemoEdit8 As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents MemoEdit9 As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents bsCustomerNotes As BindingSource
+    Friend WithEvents bsProductNotes As BindingSource
 End Class
