@@ -37,10 +37,86 @@ Module AppUtilities
 
     Public Function isActiveProduct(vProdID As Integer) As Boolean
 
+        Dim oWorkOrderItems As New WorkorderitemCollection
+        If oWorkOrderItems.Load(oWorkOrderItems.Query.Where(oWorkOrderItems.Query.Productid = vProdID)) Then
+            Return True
+        End If
+
+        Dim oInvItems As New InvitemCollection
+        If oInvItems.Load(oInvItems.Query.Where(oInvItems.Query.Productid = vProdID)) Then
+            Return True
+        End If
+
+        Dim oInvoiceItems As New InvoiceitemCollection
+        If oInvoiceItems.Load(oInvoiceItems.Query.Where(oInvItems.Query.Productid = vProdID)) Then
+            Return True
+        End If
+
+        Dim oShipmentitem As New ShipmentitemCollection
+        If oShipmentitem.Load(oShipmentitem.Query.Where(oShipmentitem.Query.Productid = vProdID)) Then
+            Return True
+        End If
+
+        Dim oPOitem As New PoitemCollection
+        If oPOitem.Load(oPOitem.Query.Where(oPOitem.Query.Productid = vProdID)) Then
+            Return True
+        End If
+
+
+        Dim oReceiveritem As New ReceiveritemCollection
+        If oReceiveritem.Load(oReceiveritem.Query.Where(oReceiveritem.Query.Productid = vProdID)) Then
+            Return True
+        End If
+
+
+        Dim oLoadItems As New LoaditemCollection
+        If oLoadItems.Load(oLoadItems.Query.Where(oLoadItems.Query.ItemID = vProdID)) Then
+            Return True
+        End If
+
+        Dim oReLabelOrderItems As New RelabelorderitemCollection
+        If oReLabelOrderItems.Load(oReLabelOrderItems.Query.Where(oReLabelOrderItems.Query.Itemid = vProdID)) Then
+            Return True
+        End If
+
+        Dim oPurchaseItem As New PurchaseitemCollection
+        If oPurchaseItem.Load(oPurchaseItem.Query.Where(oPurchaseItem.Query.Itemid = vProdID)) Then
+            Return True
+        End If
+
+
+        Dim oApis As New ApisCollection
+        If oApis.Load(oApis.Query.Where(oApis.Query.Productid = vProdID)) Then
+            Return True
+        End If
 
 
 
-        Return True
+        'ProdId/itemId not found in 
+        'Dim oProdItems As New ProditemCollection
+        'If oProdItems.Load(oProdItems.Query.Where(oProdItems.Query.Productid = vProdID)) Then
+        '    Return True
+        'End If
+
+        ' ProductID Found in 
+        ' STDCOSTS
+        ' LABOR
+        ' MATARIAL - CostingProductId
+        ' MATERIALPRODUCT
+        'COMMISSIONREVIEW
+        'PRICELIST
+        'APISCosts
+        ' ProdVendList
+        ' ProdChemicalLink
+        'INVOICEHISTORYITEM
+        'PRODUCTFULFILLMENTPLAN - PRODUCTID/ASSOCIATEDPRODUCTID
+        'PRODUCTCOST
+        'PRODUCTRESV
+        'RECEIVINGEVENT
+
+
+
+        Return False
     End Function
 
 
