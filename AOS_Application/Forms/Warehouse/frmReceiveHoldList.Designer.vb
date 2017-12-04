@@ -69,7 +69,7 @@ Partial Class frmReceiveHoldList
         Me.colContainer1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFailedLabelWeight = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFailedMaterialWeight = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colIsautoflag = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIsautolabel = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colItemStatus1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,7 +188,7 @@ Partial Class frmReceiveHoldList
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.rbtnGHSLabel)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Auto Flag"
+        Me.RibbonPageGroup3.Text = "Auto Label"
         '
         'GroupControl1
         '
@@ -346,7 +346,7 @@ Partial Class frmReceiveHoldList
         '
         'CustomDevExGridView1
         '
-        Me.CustomDevExGridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colEventID1, Me.colEventTime, Me.colEventWho, Me.colEventType, Me.colInvItemNumber1, Me.colDocumentType, Me.colDocumentID, Me.colLabelWeight, Me.colScaleWeight, Me.colLotNumber1, Me.colEventNotes, Me.colPallet, Me.colProductID1, Me.colContainer1, Me.colFailedLabelWeight, Me.colFailedMaterialWeight, Me.colIsautoflag, Me.colItemStatus1})
+        Me.CustomDevExGridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colEventID1, Me.colEventTime, Me.colEventWho, Me.colEventType, Me.colInvItemNumber1, Me.colDocumentType, Me.colDocumentID, Me.colLabelWeight, Me.colScaleWeight, Me.colLotNumber1, Me.colEventNotes, Me.colPallet, Me.colProductID1, Me.colContainer1, Me.colFailedLabelWeight, Me.colFailedMaterialWeight, Me.colIsautolabel, Me.colItemStatus1})
         Me.CustomDevExGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
         Me.CustomDevExGridView1.GridControl = Me.GridControl2
         Me.CustomDevExGridView1.Name = "CustomDevExGridView1"
@@ -468,12 +468,12 @@ Partial Class frmReceiveHoldList
         Me.colFailedMaterialWeight.Visible = True
         Me.colFailedMaterialWeight.VisibleIndex = 15
         '
-        'colIsautoflag
+        'colIsautolabel
         '
-        Me.colIsautoflag.FieldName = "Isautoflag"
-        Me.colIsautoflag.Name = "colIsautoflag"
-        Me.colIsautoflag.Visible = True
-        Me.colIsautoflag.VisibleIndex = 16
+        Me.colIsautolabel.FieldName = "Isautolabel"
+        Me.colIsautolabel.Name = "colIsautolabel"
+        Me.colIsautolabel.Visible = True
+        Me.colIsautolabel.VisibleIndex = 16
         '
         'colItemStatus1
         '
@@ -559,7 +559,7 @@ Partial Class frmReceiveHoldList
     Friend WithEvents colFailedMaterialWeight As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colItemStatus1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents rbtnResolveItem As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents colIsautoflag As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colIsautolabel As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents rbtnGHSLabel As DevExpress.XtraBars.BarButtonItem
 End Class

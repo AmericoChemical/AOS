@@ -20,7 +20,7 @@
         oEvent.LotNumber = vLotNumber
         oEvent.Container = vContainer
         oEvent.Pallet = vPallet
-        oEvent.Isautoflag = False
+        oEvent.Isautolabel = False
         oEvent.Save()
 
 
@@ -45,7 +45,7 @@
         If Not oProduct.Chemicalid Is Nothing Then
             Dim oChemical As New Chemical
             If oChemical.LoadByPrimaryKey(oProduct.Chemicalid) Then
-                oEvent.Isautoflag = oChemical.Isautoflag
+                oEvent.Isautolabel = oChemical.Isautolabel
             End If
         End If
 
@@ -96,14 +96,14 @@
             prepareMiniBarcodeLabelForInventoryItem(oItem.Invitemnumber)
             Return 0
         Else
-            If oEvent.FailedLabelWeight = True Or oEvent.FailedMaterialWeight = True Or oEvent.Isautoflag Then
+            If oEvent.FailedLabelWeight = True Or oEvent.FailedMaterialWeight = True Or oEvent.Isautolabel Then
                 'put item in RECEIVED/HOLD status and create RECEIVED/HOLD record
                 updateInventoryItemData(oItem.Invitemnumber, "RCVDHOLD", vMaterialWeight, vLotNumber)
-                If (oEvent.Isautoflag) Then
+                If (oEvent.Isautolabel) Then
                     If (oEvent.FailedLabelWeight = True Or oEvent.FailedMaterialWeight = True) Then
-                        addNewReceivedHoldRecord(oItem.Invitemnumber, "AUTO FLAG/WEIGHT ERROR", "Auto flag & Item Weights not within Product specifications", oEvent.EventID, False)
+                        addNewReceivedHoldRecord(oItem.Invitemnumber, "AUTO LABEL/WEIGHT ERROR", "Auto Label & Item Weights not within Product specifications", oEvent.EventID, False)
                     Else
-                        addNewReceivedHoldRecord(oItem.Invitemnumber, "AUTO FLAG", "Auto Flag Item", oEvent.EventID, False)
+                        addNewReceivedHoldRecord(oItem.Invitemnumber, "AUTO LABEL", "Auto Label Item", oEvent.EventID, False)
                     End If
                 Else
                     addNewReceivedHoldRecord(oItem.Invitemnumber, "WEIGHT ERROR", "Item Weights not within Product specifications", oEvent.EventID, False)

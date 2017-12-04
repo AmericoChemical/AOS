@@ -196,6 +196,8 @@ Public Class frmReceiveHoldList
             oRcv.Resolutiontext = vReason
             oRcv.Save()
         End If
+        updateReceivedPurchaseItem(vItemID)
+
     End Sub
 
     Private Sub rbtnChangeItemStatus_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnChangeItemStatus.ItemClick
@@ -277,20 +279,20 @@ Public Class frmReceiveHoldList
             'set colorbased on reasoncode
             Dim vReasonCode As String = GridView1.GetRowCellDisplayText(e.RowHandle, GridView1.Columns("Reasoncode"))
             If (e.RowHandle = 0) Then
-                If vReasonCode.Contains("AUTO FLAG") Then
+                If vReasonCode.Contains("AUTO LABEL") Then
                     rbtnGHSLabel.Enabled = True
                 Else
                     rbtnGHSLabel.Enabled = False
 
                 End If
             End If
-            If vReasonCode.Contains("AUTO FLAG") And vReasonCode.Contains("WEIGHT ERROR") Then
+            If vReasonCode.Contains("AUTO LABEL") And vReasonCode.Contains("WEIGHT ERROR") Then
                 e.Appearance.BackColor = Color.Orange
                 e.Appearance.BackColor2 = Color.Orange
                 e.Appearance.ForeColor = Color.White
                 Exit Sub
             End If
-            If vReasonCode.Contains("AUTO FLAG") Then
+            If vReasonCode.Contains("AUTO LABEL") Then
                 e.Appearance.BackColor = Color.Yellow
                 e.Appearance.BackColor2 = Color.Yellow
                 e.Appearance.ForeColor = Color.Black
@@ -313,7 +315,7 @@ Public Class frmReceiveHoldList
             Exit Sub
         End If
 
-        If (bs.Current.Reasoncode.Contains("AUTO FLAG")) Then
+        If (bs.Current.Reasoncode.Contains("AUTO LABEL")) Then
             Dim oItem As New Invitem
             If Not oItem.LoadByPrimaryKey(bs.Current.InvItemNumber) Then
                 MsgBox("Could not locate Inventory Item record", MsgBoxStyle.Critical, "Error")
@@ -322,7 +324,7 @@ Public Class frmReceiveHoldList
 
             Dim rpt As New rptGHSProductLabelLarge(oItem.Invitemnumber, oItem.Productid, oItem.Lotnumber)
             rpt.ShowPreviewDialog()
-            If bs.Current.Reasoncode.Equals("AUTO FLAG") Then
+            If bs.Current.Reasoncode.Equals("AUTO LABEL") Then
                 MoveToNextStep(bs.Current.InvitemNumber, bs.Current.PriorItemStatus, "GHS Label Printed")
             Else
                 receiveItem(bs.Current.InvitemNumber, bs.Current.PriorItemStatus)
@@ -336,7 +338,7 @@ Public Class frmReceiveHoldList
         If (e.RowHandle >= 0) Then
 
             Dim vReasonCode As String = GridView1.GetRowCellDisplayText(e.RowHandle, GridView1.Columns("Reasoncode"))
-            If vReasonCode.Contains("AUTO FLAG") Then
+            If vReasonCode.Contains("AUTO LABEL") Then
                 rbtnGHSLabel.Enabled = True
             Else
                 rbtnGHSLabel.Enabled = False

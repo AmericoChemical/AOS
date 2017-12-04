@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 11/28/2017 9:38:57 AM
+' Date Generated       : 12/1/2017 3:00:53 PM
 '===============================================================================
 
 Imports System
@@ -218,8 +218,8 @@ Namespace BusinessObjects
 						Case "ItemStatus"
 							Me.str.ItemStatus = CType(value, string)
 												
-						Case "Isautoflag"
-							Me.str.Isautoflag = CType(value, string)
+						Case "Isautolabel"
+							Me.str.Isautolabel = CType(value, string)
 					
 					End Select
 					
@@ -281,10 +281,10 @@ Namespace BusinessObjects
 								Me.FailedMaterialWeight = CType(value, Nullable(Of System.Boolean))
 							End If
 						
-						Case "Isautoflag"
+						Case "Isautolabel"
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
-								Me.Isautoflag = CType(value, Nullable(Of System.Boolean))
+								Me.Isautolabel = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -524,15 +524,15 @@ Namespace BusinessObjects
 		End Property		
 			
 		' <summary>
-		' Maps to RECEIVINGEVENT.ISAUTOFLAG
+		' Maps to RECEIVINGEVENT.ISAUTOLABEL
 		' </summary>
-		Public Overridable Property Isautoflag As Nullable(Of System.Boolean)
+		Public Overridable Property Isautolabel As Nullable(Of System.Boolean)
 			Get
-				Return MyBase.GetSystemBoolean(ReceivingeventMetadata.ColumnNames.Isautoflag)
+				Return MyBase.GetSystemBoolean(ReceivingeventMetadata.ColumnNames.Isautolabel)
 			End Get
 			
 			Set(ByVal value As Nullable(Of System.Boolean))
-				MyBase.SetSystemBoolean(ReceivingeventMetadata.ColumnNames.Isautoflag, value)
+				MyBase.SetSystemBoolean(ReceivingeventMetadata.ColumnNames.Isautolabel, value)
 			End Set
 		End Property		
 		
@@ -909,9 +909,9 @@ Namespace BusinessObjects
 				End Set
 			End Property
 		  	
-			Public Property Isautoflag As System.String 
+			Public Property Isautolabel As System.String 
 				Get
-					Dim data_ As Nullable(Of System.Boolean) = entity.Isautoflag
+					Dim data_ As Nullable(Of System.Boolean) = entity.Isautolabel
 					
 					If Not data_.HasValue Then
 					
@@ -923,9 +923,9 @@ Namespace BusinessObjects
 
 				Set(ByVal Value as System.String)
 					If String.IsNullOrEmpty(value) Then
-						entity.Isautoflag = Nothing
+						entity.Isautolabel = Nothing
 					Else
-						entity.Isautoflag = Convert.ToBoolean(Value)
+						entity.Isautolabel = Convert.ToBoolean(Value)
 					End If
 				End Set
 			End Property
@@ -1119,9 +1119,9 @@ Namespace BusinessObjects
 			End Get
 		End Property 
 		
-		Public ReadOnly Property Isautoflag As esQueryItem
+		Public ReadOnly Property Isautolabel As esQueryItem
 			Get
-				Return New esQueryItem(Me, ReceivingeventMetadata.ColumnNames.Isautoflag, esSystemType.Boolean)
+				Return New esQueryItem(Me, ReceivingeventMetadata.ColumnNames.Isautolabel, esSystemType.Boolean)
 			End Get
 		End Property 
 		
@@ -1418,10 +1418,11 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
-			c = New esColumnMetadata(ReceivingeventMetadata.ColumnNames.Isautoflag, 17, GetType(System.Boolean), esSystemType.Boolean)	
-			c.PropertyName = ReceivingeventMetadata.PropertyNames.Isautoflag
+			c = New esColumnMetadata(ReceivingeventMetadata.ColumnNames.Isautolabel, 17, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ReceivingeventMetadata.PropertyNames.Isautolabel
 			c.HasDefault = True
 			c.Default = "((0))"
+			c.IsNullable = True
 			_columns.Add(c)
 				
 		End Sub
@@ -1469,7 +1470,7 @@ Namespace BusinessObjects
 			 Public Const FailedLabelWeight As String = "FailedLabelWeight"
 			 Public Const FailedMaterialWeight As String = "FailedMaterialWeight"
 			 Public Const ItemStatus As String = "ItemStatus"
-			 Public Const Isautoflag As String = "ISAUTOFLAG"
+			 Public Const Isautolabel As String = "ISAUTOLABEL"
 		End Class
 #End Region	
 		
@@ -1492,7 +1493,7 @@ Namespace BusinessObjects
 			 Public Const FailedLabelWeight As String = "FailedLabelWeight"
 			 Public Const FailedMaterialWeight As String = "FailedMaterialWeight"
 			 Public Const ItemStatus As String = "ItemStatus"
-			 Public Const Isautoflag As String = "Isautoflag"
+			 Public Const Isautolabel As String = "Isautolabel"
 		End Class
 #End Region	
 
@@ -1557,7 +1558,7 @@ Namespace BusinessObjects
 				meta.AddTypeMap("FailedLabelWeight", new esTypeMap("bit", "System.Boolean"))
 				meta.AddTypeMap("FailedMaterialWeight", new esTypeMap("bit", "System.Boolean"))
 				meta.AddTypeMap("ItemStatus", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("Isautoflag", new esTypeMap("bit", "System.Boolean"))			
+				meta.AddTypeMap("Isautolabel", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 

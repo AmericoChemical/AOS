@@ -86,7 +86,7 @@ Partial Class frmAddEditChemical2
         Me.btnSDSFilePath = New DevExpress.XtraEditors.SimpleButton()
         Me.eSDSFileName = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
-        Me.chkAutoFlag = New DevExpress.XtraEditors.CheckEdit()
+        Me.chkAutoLabel = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
         Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
@@ -160,7 +160,7 @@ Partial Class frmAddEditChemical2
         CType(Me.eSDSFileName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
-        CType(Me.chkAutoFlag.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkAutoLabel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -809,7 +809,7 @@ Partial Class frmAddEditChemical2
         '
         'GroupControl4
         '
-        Me.GroupControl4.Controls.Add(Me.chkAutoFlag)
+        Me.GroupControl4.Controls.Add(Me.chkAutoLabel)
         Me.GroupControl4.Controls.Add(Me.CheckEdit2)
         Me.GroupControl4.Controls.Add(Me.CheckEdit1)
         Me.GroupControl4.Controls.Add(Me.LookUpEdit1)
@@ -841,16 +841,16 @@ Partial Class frmAddEditChemical2
         Me.GroupControl4.TabIndex = 6
         Me.GroupControl4.Text = "Primary OSHA / DOT Shipping Information"
         '
-        'chkAutoFlag
+        'chkAutoLabel
         '
-        Me.chkAutoFlag.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsChem, "Isautoflag", True))
-        Me.chkAutoFlag.Location = New System.Drawing.Point(173, 181)
-        Me.chkAutoFlag.MenuManager = Me.RibbonControl1
-        Me.chkAutoFlag.Name = "chkAutoFlag"
-        Me.chkAutoFlag.Properties.Caption = "Auto Flag"
-        Me.chkAutoFlag.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.chkAutoFlag.Size = New System.Drawing.Size(84, 19)
-        Me.chkAutoFlag.TabIndex = 48
+        Me.chkAutoLabel.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsChem, "Isautolabel", True))
+        Me.chkAutoLabel.Location = New System.Drawing.Point(173, 181)
+        Me.chkAutoLabel.MenuManager = Me.RibbonControl1
+        Me.chkAutoLabel.Name = "chkAutoLabel"
+        Me.chkAutoLabel.Properties.Caption = "Auto Label"
+        Me.chkAutoLabel.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.chkAutoLabel.Size = New System.Drawing.Size(84, 19)
+        Me.chkAutoLabel.TabIndex = 48
         '
         'CheckEdit2
         '
@@ -1039,7 +1039,7 @@ Partial Class frmAddEditChemical2
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
         Me.GroupControl4.PerformLayout()
-        CType(Me.chkAutoFlag.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkAutoLabel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1112,5 +1112,5 @@ Partial Class frmAddEditChemical2
     Friend WithEvents rbtnGHSLabelSpecs As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents CheckEdit1 As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents CheckEdit2 As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents chkAutoFlag As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkAutoLabel As DevExpress.XtraEditors.CheckEdit
 End Class
