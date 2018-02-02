@@ -77,6 +77,7 @@ Partial Class viewProduction
         Me.rbtnGetAllMaterials = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnViewChemical = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnPrintSDSReport = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnRelabeledProductsList = New DevExpress.XtraBars.BarButtonItem()
         Me.Ribbon_LargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -98,12 +99,28 @@ Partial Class viewProduction
         Me.RibbonPageGroup12 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup13 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup14 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup17 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.pnlLegend = New DevExpress.XtraEditors.PanelControl()
         Me.lblColorMapping = New DevExpress.XtraEditors.LabelControl()
         Me.lblRedDesc = New DevExpress.XtraEditors.LabelControl()
         Me.ceRed = New DevExpress.XtraEditors.ColorEdit()
         Me.WorkPanelsHolder = New DevExpress.XtraEditors.PanelControl()
+        Me.RibbonPanelControl6 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.grRelabelOrders = New DevExpress.XtraGrid.GridControl()
+        Me.bsRelabelOrders = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvRelabelOrders = New AOS.CustomClasses.CustomDevExGridView()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
@@ -129,21 +146,6 @@ Partial Class viewProduction
         Me.colChemicalname = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colChemicalstatus = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.RibbonPanelControl6 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.grRelabelOrders = New DevExpress.XtraGrid.GridControl()
-        Me.bsRelabelOrders = New System.Windows.Forms.BindingSource(Me.components)
-        Me.grvRelabelOrders = New AOS.CustomClasses.CustomDevExGridView()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.gvProductionOrders = New DevExpress.XtraGrid.GridControl()
@@ -213,6 +215,14 @@ Partial Class viewProduction
         CType(Me.ceRed.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WorkPanelsHolder.SuspendLayout()
+        CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl6.SuspendLayout()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.grRelabelOrders, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsRelabelOrders, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvRelabelOrders, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl3.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -231,14 +241,6 @@ Partial Class viewProduction
         CType(Me.bsChemicals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl6.SuspendLayout()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl3.SuspendLayout()
-        CType(Me.grRelabelOrders, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsRelabelOrders, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grvRelabelOrders, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -303,10 +305,10 @@ Partial Class viewProduction
         Me.RibbonControl1.ApplicationCaption = "dsadsdsa"
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddProductionOrder, Me.btnEditProductionOrder, Me.btnCancelProductionOrder, Me.rbtnOpenProductionOrders, Me.rbtnPrintProductionOrder, Me.rbtnUpdateAPIS, Me.rbtnAddNewAPIS, Me.rbtnEditAPIS, Me.rbtnDeleteAPIS, Me.rbtnPrintAPIS, Me.rbtnGetActiveMaterials, Me.rbtnAddNewMaterialItem, Me.rbtnEditMaterialItem, Me.rbtnDeleteMaterialItem, Me.rbtnRawMaterialAvailableInventory, Me.rbtnMarkProdOrderComplete, Me.rbtnCompletedProductionOrders, Me.rbtnReopenProdOrder, Me.rbtnRevision, Me.rbtnRetrieveChemicalList, Me.rbtnAddNewChemical, Me.rbtnEditChemical, Me.rbtnDeleteChemical, Me.rbtnAllAPIS, Me.rbtnActiveAPIS, Me.rbtnArchivedAPIS, Me.rbtnSingleUseAPIS, Me.rbtnRetrieveProductionOrders, Me.rRptStartDate, Me.rRptEndDate, Me.rbtnPrintProductionOrdersSummary, Me.rbtnRMInventoryTxs, Me.rbtnGetLinkedAPISData, Me.rbtnCanceledProductionOrders, Me.rbtnRetrieveRelabelOrders, Me.btnEditRelabelOrder, Me.btnCancelRelabelOrder, Me.rbtnPrintRelabelOrder, Me.rbtnOpenRelabelOrders, Me.rbtnCompletedRelabelOrders, Me.rbtnCanceledRelabelOrders, Me.rRptRelabelStartDate, Me.rRptRelabelEndDate, Me.rbtnPrintRelabelOrdersSummary, Me.rbtnActiveChemicals, Me.rbtnInactiveChemicals, Me.rbtnGetArchivedMaterials, Me.rbtnGetAllMaterials, Me.rbtnViewChemical, Me.rbtnPrintSDSReport})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddProductionOrder, Me.btnEditProductionOrder, Me.btnCancelProductionOrder, Me.rbtnOpenProductionOrders, Me.rbtnPrintProductionOrder, Me.rbtnUpdateAPIS, Me.rbtnAddNewAPIS, Me.rbtnEditAPIS, Me.rbtnDeleteAPIS, Me.rbtnPrintAPIS, Me.rbtnGetActiveMaterials, Me.rbtnAddNewMaterialItem, Me.rbtnEditMaterialItem, Me.rbtnDeleteMaterialItem, Me.rbtnRawMaterialAvailableInventory, Me.rbtnMarkProdOrderComplete, Me.rbtnCompletedProductionOrders, Me.rbtnReopenProdOrder, Me.rbtnRevision, Me.rbtnRetrieveChemicalList, Me.rbtnAddNewChemical, Me.rbtnEditChemical, Me.rbtnDeleteChemical, Me.rbtnAllAPIS, Me.rbtnActiveAPIS, Me.rbtnArchivedAPIS, Me.rbtnSingleUseAPIS, Me.rbtnRetrieveProductionOrders, Me.rRptStartDate, Me.rRptEndDate, Me.rbtnPrintProductionOrdersSummary, Me.rbtnRMInventoryTxs, Me.rbtnGetLinkedAPISData, Me.rbtnCanceledProductionOrders, Me.rbtnRetrieveRelabelOrders, Me.btnEditRelabelOrder, Me.btnCancelRelabelOrder, Me.rbtnPrintRelabelOrder, Me.rbtnOpenRelabelOrders, Me.rbtnCompletedRelabelOrders, Me.rbtnCanceledRelabelOrders, Me.rRptRelabelStartDate, Me.rRptRelabelEndDate, Me.rbtnPrintRelabelOrdersSummary, Me.rbtnActiveChemicals, Me.rbtnInactiveChemicals, Me.rbtnGetArchivedMaterials, Me.rbtnGetAllMaterials, Me.rbtnViewChemical, Me.rbtnPrintSDSReport, Me.rbtnRelabeledProductsList})
         Me.RibbonControl1.LargeImages = Me.Ribbon_LargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 102
+        Me.RibbonControl1.MaxItemId = 103
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage5, Me.RibbonPage6})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4})
@@ -317,27 +319,27 @@ Partial Class viewProduction
         'btnAddProductionOrder
         '
         Me.btnAddProductionOrder.Caption = "Add New Order"
-        Me.btnAddProductionOrder.Glyph = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnAddProductionOrder.Id = 41
-        Me.btnAddProductionOrder.LargeImageIndex = 18
+        Me.btnAddProductionOrder.ImageOptions.Image = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnAddProductionOrder.ImageOptions.LargeImageIndex = 18
         Me.btnAddProductionOrder.Name = "btnAddProductionOrder"
         Me.btnAddProductionOrder.Tag = "203"
         '
         'btnEditProductionOrder
         '
         Me.btnEditProductionOrder.Caption = "Edit  Order"
-        Me.btnEditProductionOrder.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditProductionOrder.Id = 42
-        Me.btnEditProductionOrder.LargeImageIndex = 19
+        Me.btnEditProductionOrder.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
+        Me.btnEditProductionOrder.ImageOptions.LargeImageIndex = 19
         Me.btnEditProductionOrder.Name = "btnEditProductionOrder"
         Me.btnEditProductionOrder.Tag = "204"
         '
         'btnCancelProductionOrder
         '
         Me.btnCancelProductionOrder.Caption = "Cancel Order"
-        Me.btnCancelProductionOrder.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnCancelProductionOrder.Id = 43
-        Me.btnCancelProductionOrder.LargeImageIndex = 20
+        Me.btnCancelProductionOrder.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
+        Me.btnCancelProductionOrder.ImageOptions.LargeImageIndex = 20
         Me.btnCancelProductionOrder.Name = "btnCancelProductionOrder"
         Me.btnCancelProductionOrder.Tag = "205"
         '
@@ -345,7 +347,7 @@ Partial Class viewProduction
         '
         Me.rbtnOpenProductionOrders.Caption = "Open  Orders"
         Me.rbtnOpenProductionOrders.Id = 51
-        Me.rbtnOpenProductionOrders.LargeImageIndex = 25
+        Me.rbtnOpenProductionOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnOpenProductionOrders.Name = "rbtnOpenProductionOrders"
         Me.rbtnOpenProductionOrders.Tag = "207"
         '
@@ -353,7 +355,7 @@ Partial Class viewProduction
         '
         Me.rbtnPrintProductionOrder.Caption = "Print Order"
         Me.rbtnPrintProductionOrder.Id = 52
-        Me.rbtnPrintProductionOrder.LargeImageIndex = 21
+        Me.rbtnPrintProductionOrder.ImageOptions.LargeImageIndex = 21
         Me.rbtnPrintProductionOrder.Name = "rbtnPrintProductionOrder"
         Me.rbtnPrintProductionOrder.Tag = "206"
         '
@@ -361,7 +363,7 @@ Partial Class viewProduction
         '
         Me.rbtnUpdateAPIS.Caption = "Retrieve APIS Data"
         Me.rbtnUpdateAPIS.Id = 53
-        Me.rbtnUpdateAPIS.LargeGlyph = Global.AOS.My.Resources.Resources.FindRecord
+        Me.rbtnUpdateAPIS.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.FindRecord
         Me.rbtnUpdateAPIS.Name = "rbtnUpdateAPIS"
         Me.rbtnUpdateAPIS.Tag = "210"
         '
@@ -369,7 +371,7 @@ Partial Class viewProduction
         '
         Me.rbtnAddNewAPIS.Caption = "Add New APIS"
         Me.rbtnAddNewAPIS.Id = 54
-        Me.rbtnAddNewAPIS.LargeImageIndex = 43
+        Me.rbtnAddNewAPIS.ImageOptions.LargeImageIndex = 43
         Me.rbtnAddNewAPIS.Name = "rbtnAddNewAPIS"
         Me.rbtnAddNewAPIS.Tag = "211"
         '
@@ -377,7 +379,7 @@ Partial Class viewProduction
         '
         Me.rbtnEditAPIS.Caption = "Edit APIS"
         Me.rbtnEditAPIS.Id = 55
-        Me.rbtnEditAPIS.LargeImageIndex = 44
+        Me.rbtnEditAPIS.ImageOptions.LargeImageIndex = 44
         Me.rbtnEditAPIS.Name = "rbtnEditAPIS"
         Me.rbtnEditAPIS.Tag = "212"
         '
@@ -385,7 +387,7 @@ Partial Class viewProduction
         '
         Me.rbtnDeleteAPIS.Caption = "Delete APIS"
         Me.rbtnDeleteAPIS.Id = 56
-        Me.rbtnDeleteAPIS.LargeImageIndex = 45
+        Me.rbtnDeleteAPIS.ImageOptions.LargeImageIndex = 45
         Me.rbtnDeleteAPIS.Name = "rbtnDeleteAPIS"
         Me.rbtnDeleteAPIS.Tag = "213"
         '
@@ -393,7 +395,7 @@ Partial Class viewProduction
         '
         Me.rbtnPrintAPIS.Caption = "Print APIS"
         Me.rbtnPrintAPIS.Id = 57
-        Me.rbtnPrintAPIS.LargeImageIndex = 48
+        Me.rbtnPrintAPIS.ImageOptions.LargeImageIndex = 48
         Me.rbtnPrintAPIS.Name = "rbtnPrintAPIS"
         Me.rbtnPrintAPIS.Tag = "215"
         '
@@ -401,7 +403,7 @@ Partial Class viewProduction
         '
         Me.rbtnGetActiveMaterials.Caption = "Active Materials"
         Me.rbtnGetActiveMaterials.Id = 58
-        Me.rbtnGetActiveMaterials.LargeImageIndex = 17
+        Me.rbtnGetActiveMaterials.ImageOptions.LargeImageIndex = 17
         Me.rbtnGetActiveMaterials.Name = "rbtnGetActiveMaterials"
         Me.rbtnGetActiveMaterials.Tag = "220"
         '
@@ -409,7 +411,7 @@ Partial Class viewProduction
         '
         Me.rbtnAddNewMaterialItem.Caption = "Add New Material Item"
         Me.rbtnAddNewMaterialItem.Id = 59
-        Me.rbtnAddNewMaterialItem.LargeImageIndex = 18
+        Me.rbtnAddNewMaterialItem.ImageOptions.LargeImageIndex = 18
         Me.rbtnAddNewMaterialItem.Name = "rbtnAddNewMaterialItem"
         Me.rbtnAddNewMaterialItem.Tag = "221"
         '
@@ -417,7 +419,7 @@ Partial Class viewProduction
         '
         Me.rbtnEditMaterialItem.Caption = "Edit Material Item"
         Me.rbtnEditMaterialItem.Id = 60
-        Me.rbtnEditMaterialItem.LargeImageIndex = 19
+        Me.rbtnEditMaterialItem.ImageOptions.LargeImageIndex = 19
         Me.rbtnEditMaterialItem.Name = "rbtnEditMaterialItem"
         Me.rbtnEditMaterialItem.Tag = "222"
         '
@@ -425,7 +427,7 @@ Partial Class viewProduction
         '
         Me.rbtnDeleteMaterialItem.Caption = "Delete Material Item"
         Me.rbtnDeleteMaterialItem.Id = 61
-        Me.rbtnDeleteMaterialItem.LargeImageIndex = 20
+        Me.rbtnDeleteMaterialItem.ImageOptions.LargeImageIndex = 20
         Me.rbtnDeleteMaterialItem.Name = "rbtnDeleteMaterialItem"
         Me.rbtnDeleteMaterialItem.Tag = "223"
         '
@@ -433,7 +435,7 @@ Partial Class viewProduction
         '
         Me.rbtnRawMaterialAvailableInventory.Caption = "Raw Material Available Inventory"
         Me.rbtnRawMaterialAvailableInventory.Id = 62
-        Me.rbtnRawMaterialAvailableInventory.LargeImageIndex = 21
+        Me.rbtnRawMaterialAvailableInventory.ImageOptions.LargeImageIndex = 21
         Me.rbtnRawMaterialAvailableInventory.Name = "rbtnRawMaterialAvailableInventory"
         Me.rbtnRawMaterialAvailableInventory.Tag = "225"
         '
@@ -441,14 +443,14 @@ Partial Class viewProduction
         '
         Me.rbtnMarkProdOrderComplete.Caption = "Mark Production Order as Complete"
         Me.rbtnMarkProdOrderComplete.Id = 64
-        Me.rbtnMarkProdOrderComplete.LargeGlyph = Global.AOS.My.Resources.Resources.list_accept
+        Me.rbtnMarkProdOrderComplete.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.list_accept
         Me.rbtnMarkProdOrderComplete.Name = "rbtnMarkProdOrderComplete"
         '
         'rbtnCompletedProductionOrders
         '
         Me.rbtnCompletedProductionOrders.Caption = "Completed Orders"
         Me.rbtnCompletedProductionOrders.Id = 65
-        Me.rbtnCompletedProductionOrders.LargeImageIndex = 25
+        Me.rbtnCompletedProductionOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnCompletedProductionOrders.Name = "rbtnCompletedProductionOrders"
         Me.rbtnCompletedProductionOrders.Tag = "208"
         '
@@ -456,14 +458,14 @@ Partial Class viewProduction
         '
         Me.rbtnReopenProdOrder.Caption = "Re-open Production Order"
         Me.rbtnReopenProdOrder.Id = 66
-        Me.rbtnReopenProdOrder.LargeGlyph = Global.AOS.My.Resources.Resources.list__3_
+        Me.rbtnReopenProdOrder.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.list__3_
         Me.rbtnReopenProdOrder.Name = "rbtnReopenProdOrder"
         '
         'rbtnRevision
         '
         Me.rbtnRevision.Caption = "Create New Revision"
         Me.rbtnRevision.Id = 67
-        Me.rbtnRevision.LargeImageIndex = 50
+        Me.rbtnRevision.ImageOptions.LargeImageIndex = 50
         Me.rbtnRevision.Name = "rbtnRevision"
         Me.rbtnRevision.Tag = "214"
         '
@@ -471,7 +473,7 @@ Partial Class viewProduction
         '
         Me.rbtnRetrieveChemicalList.Caption = "All Chemicals"
         Me.rbtnRetrieveChemicalList.Id = 68
-        Me.rbtnRetrieveChemicalList.LargeImageIndex = 1
+        Me.rbtnRetrieveChemicalList.ImageOptions.LargeImageIndex = 1
         Me.rbtnRetrieveChemicalList.Name = "rbtnRetrieveChemicalList"
         Me.rbtnRetrieveChemicalList.Tag = "226"
         '
@@ -479,7 +481,7 @@ Partial Class viewProduction
         '
         Me.rbtnAddNewChemical.Caption = "Add New Chemical"
         Me.rbtnAddNewChemical.Id = 69
-        Me.rbtnAddNewChemical.LargeImageIndex = 2
+        Me.rbtnAddNewChemical.ImageOptions.LargeImageIndex = 2
         Me.rbtnAddNewChemical.Name = "rbtnAddNewChemical"
         Me.rbtnAddNewChemical.Tag = "227"
         '
@@ -487,7 +489,7 @@ Partial Class viewProduction
         '
         Me.rbtnEditChemical.Caption = "Edit  Chemical"
         Me.rbtnEditChemical.Id = 70
-        Me.rbtnEditChemical.LargeImageIndex = 3
+        Me.rbtnEditChemical.ImageOptions.LargeImageIndex = 3
         Me.rbtnEditChemical.Name = "rbtnEditChemical"
         Me.rbtnEditChemical.Tag = "228"
         '
@@ -495,7 +497,7 @@ Partial Class viewProduction
         '
         Me.rbtnDeleteChemical.Caption = "Delete Chemical"
         Me.rbtnDeleteChemical.Id = 71
-        Me.rbtnDeleteChemical.LargeImageIndex = 4
+        Me.rbtnDeleteChemical.ImageOptions.LargeImageIndex = 4
         Me.rbtnDeleteChemical.Name = "rbtnDeleteChemical"
         Me.rbtnDeleteChemical.Tag = "229"
         '
@@ -504,7 +506,7 @@ Partial Class viewProduction
         Me.rbtnAllAPIS.Caption = "All"
         Me.rbtnAllAPIS.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnAllAPIS.Id = 72
-        Me.rbtnAllAPIS.LargeImageIndex = 42
+        Me.rbtnAllAPIS.ImageOptions.LargeImageIndex = 42
         Me.rbtnAllAPIS.Name = "rbtnAllAPIS"
         Me.rbtnAllAPIS.Tag = "216"
         '
@@ -513,7 +515,7 @@ Partial Class viewProduction
         Me.rbtnActiveAPIS.Caption = "Active"
         Me.rbtnActiveAPIS.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnActiveAPIS.Id = 73
-        Me.rbtnActiveAPIS.LargeImageIndex = 42
+        Me.rbtnActiveAPIS.ImageOptions.LargeImageIndex = 42
         Me.rbtnActiveAPIS.Name = "rbtnActiveAPIS"
         Me.rbtnActiveAPIS.Tag = "217"
         '
@@ -522,7 +524,7 @@ Partial Class viewProduction
         Me.rbtnArchivedAPIS.Caption = "Archived"
         Me.rbtnArchivedAPIS.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnArchivedAPIS.Id = 74
-        Me.rbtnArchivedAPIS.LargeImageIndex = 42
+        Me.rbtnArchivedAPIS.ImageOptions.LargeImageIndex = 42
         Me.rbtnArchivedAPIS.Name = "rbtnArchivedAPIS"
         Me.rbtnArchivedAPIS.Tag = "218"
         '
@@ -531,7 +533,7 @@ Partial Class viewProduction
         Me.rbtnSingleUseAPIS.Caption = "Single Use"
         Me.rbtnSingleUseAPIS.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnSingleUseAPIS.Id = 75
-        Me.rbtnSingleUseAPIS.LargeImageIndex = 42
+        Me.rbtnSingleUseAPIS.ImageOptions.LargeImageIndex = 42
         Me.rbtnSingleUseAPIS.Name = "rbtnSingleUseAPIS"
         Me.rbtnSingleUseAPIS.Tag = "219"
         '
@@ -540,7 +542,7 @@ Partial Class viewProduction
         Me.rbtnRetrieveProductionOrders.Caption = "Retrieve All Orders"
         Me.rbtnRetrieveProductionOrders.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnRetrieveProductionOrders.Id = 76
-        Me.rbtnRetrieveProductionOrders.LargeImageIndex = 17
+        Me.rbtnRetrieveProductionOrders.ImageOptions.LargeImageIndex = 17
         Me.rbtnRetrieveProductionOrders.Name = "rbtnRetrieveProductionOrders"
         Me.rbtnRetrieveProductionOrders.Tag = "202"
         '
@@ -550,9 +552,9 @@ Partial Class viewProduction
         Me.rRptStartDate.Caption = "Start Date "
         Me.rRptStartDate.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rRptStartDate.Edit = Me.RepositoryItemDateEdit1
+        Me.rRptStartDate.EditWidth = 80
         Me.rRptStartDate.Id = 77
         Me.rRptStartDate.Name = "rRptStartDate"
-        Me.rRptStartDate.Width = 80
         '
         'RepositoryItemDateEdit1
         '
@@ -567,9 +569,9 @@ Partial Class viewProduction
         Me.rRptEndDate.Caption = "End Date   "
         Me.rRptEndDate.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rRptEndDate.Edit = Me.RepositoryItemDateEdit2
+        Me.rRptEndDate.EditWidth = 80
         Me.rRptEndDate.Id = 78
         Me.rRptEndDate.Name = "rRptEndDate"
-        Me.rRptEndDate.Width = 80
         '
         'RepositoryItemDateEdit2
         '
@@ -583,7 +585,7 @@ Partial Class viewProduction
         Me.rbtnPrintProductionOrdersSummary.Caption = "Print Production Orders Summary"
         Me.rbtnPrintProductionOrdersSummary.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPrintProductionOrdersSummary.Id = 79
-        Me.rbtnPrintProductionOrdersSummary.LargeImageIndex = 21
+        Me.rbtnPrintProductionOrdersSummary.ImageOptions.LargeImageIndex = 21
         Me.rbtnPrintProductionOrdersSummary.Name = "rbtnPrintProductionOrdersSummary"
         Me.rbtnPrintProductionOrdersSummary.Tag = "209"
         '
@@ -592,7 +594,7 @@ Partial Class viewProduction
         Me.rbtnRMInventoryTxs.Caption = "Raw Material Usage"
         Me.rbtnRMInventoryTxs.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnRMInventoryTxs.Id = 81
-        Me.rbtnRMInventoryTxs.LargeImageIndex = 27
+        Me.rbtnRMInventoryTxs.ImageOptions.LargeImageIndex = 27
         Me.rbtnRMInventoryTxs.Name = "rbtnRMInventoryTxs"
         '
         'rbtnGetLinkedAPISData
@@ -600,29 +602,29 @@ Partial Class viewProduction
         Me.rbtnGetLinkedAPISData.Caption = "APIS List"
         Me.rbtnGetLinkedAPISData.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnGetLinkedAPISData.Id = 82
-        Me.rbtnGetLinkedAPISData.LargeImageIndex = 27
+        Me.rbtnGetLinkedAPISData.ImageOptions.LargeImageIndex = 27
         Me.rbtnGetLinkedAPISData.Name = "rbtnGetLinkedAPISData"
         '
         'rbtnCanceledProductionOrders
         '
         Me.rbtnCanceledProductionOrders.Caption = "Cancelled Orders"
-        Me.rbtnCanceledProductionOrders.Glyph = Global.AOS.My.Resources.Resources.Search
         Me.rbtnCanceledProductionOrders.Id = 83
-        Me.rbtnCanceledProductionOrders.LargeImageIndex = 25
+        Me.rbtnCanceledProductionOrders.ImageOptions.Image = Global.AOS.My.Resources.Resources.Search
+        Me.rbtnCanceledProductionOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnCanceledProductionOrders.Name = "rbtnCanceledProductionOrders"
         '
         'rbtnRetrieveRelabelOrders
         '
         Me.rbtnRetrieveRelabelOrders.Caption = "Retrieve All Orders"
         Me.rbtnRetrieveRelabelOrders.Id = 85
-        Me.rbtnRetrieveRelabelOrders.LargeImageIndex = 17
+        Me.rbtnRetrieveRelabelOrders.ImageOptions.LargeImageIndex = 17
         Me.rbtnRetrieveRelabelOrders.Name = "rbtnRetrieveRelabelOrders"
         '
         'btnEditRelabelOrder
         '
         Me.btnEditRelabelOrder.Caption = "Edit  Order"
         Me.btnEditRelabelOrder.Id = 86
-        Me.btnEditRelabelOrder.LargeImageIndex = 19
+        Me.btnEditRelabelOrder.ImageOptions.LargeImageIndex = 19
         Me.btnEditRelabelOrder.Name = "btnEditRelabelOrder"
         '
         'btnCancelRelabelOrder
@@ -630,35 +632,35 @@ Partial Class viewProduction
         Me.btnCancelRelabelOrder.Caption = "Cancel Order"
         Me.btnCancelRelabelOrder.Enabled = False
         Me.btnCancelRelabelOrder.Id = 87
-        Me.btnCancelRelabelOrder.LargeImageIndex = 20
+        Me.btnCancelRelabelOrder.ImageOptions.LargeImageIndex = 20
         Me.btnCancelRelabelOrder.Name = "btnCancelRelabelOrder"
         '
         'rbtnPrintRelabelOrder
         '
         Me.rbtnPrintRelabelOrder.Caption = "Print Order"
         Me.rbtnPrintRelabelOrder.Id = 88
-        Me.rbtnPrintRelabelOrder.LargeImageIndex = 21
+        Me.rbtnPrintRelabelOrder.ImageOptions.LargeImageIndex = 21
         Me.rbtnPrintRelabelOrder.Name = "rbtnPrintRelabelOrder"
         '
         'rbtnOpenRelabelOrders
         '
         Me.rbtnOpenRelabelOrders.Caption = "Open  Orders"
         Me.rbtnOpenRelabelOrders.Id = 89
-        Me.rbtnOpenRelabelOrders.LargeImageIndex = 25
+        Me.rbtnOpenRelabelOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnOpenRelabelOrders.Name = "rbtnOpenRelabelOrders"
         '
         'rbtnCompletedRelabelOrders
         '
         Me.rbtnCompletedRelabelOrders.Caption = "Completed Orders"
         Me.rbtnCompletedRelabelOrders.Id = 90
-        Me.rbtnCompletedRelabelOrders.LargeImageIndex = 25
+        Me.rbtnCompletedRelabelOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnCompletedRelabelOrders.Name = "rbtnCompletedRelabelOrders"
         '
         'rbtnCanceledRelabelOrders
         '
         Me.rbtnCanceledRelabelOrders.Caption = "Cancelled Orders"
         Me.rbtnCanceledRelabelOrders.Id = 91
-        Me.rbtnCanceledRelabelOrders.LargeImageIndex = 25
+        Me.rbtnCanceledRelabelOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnCanceledRelabelOrders.Name = "rbtnCanceledRelabelOrders"
         '
         'rRptRelabelStartDate
@@ -666,9 +668,9 @@ Partial Class viewProduction
         Me.rRptRelabelStartDate.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
         Me.rRptRelabelStartDate.Caption = "Start Date "
         Me.rRptRelabelStartDate.Edit = Me.RepositoryItemDateEdit3
+        Me.rRptRelabelStartDate.EditWidth = 80
         Me.rRptRelabelStartDate.Id = 92
         Me.rRptRelabelStartDate.Name = "rRptRelabelStartDate"
-        Me.rRptRelabelStartDate.Width = 80
         '
         'RepositoryItemDateEdit3
         '
@@ -682,9 +684,9 @@ Partial Class viewProduction
         Me.rRptRelabelEndDate.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
         Me.rRptRelabelEndDate.Caption = "End Date   "
         Me.rRptRelabelEndDate.Edit = Me.RepositoryItemDateEdit4
+        Me.rRptRelabelEndDate.EditWidth = 80
         Me.rRptRelabelEndDate.Id = 93
         Me.rRptRelabelEndDate.Name = "rRptRelabelEndDate"
-        Me.rRptRelabelEndDate.Width = 80
         '
         'RepositoryItemDateEdit4
         '
@@ -697,7 +699,7 @@ Partial Class viewProduction
         '
         Me.rbtnPrintRelabelOrdersSummary.Caption = "Print Relabel Orders Summary"
         Me.rbtnPrintRelabelOrdersSummary.Id = 94
-        Me.rbtnPrintRelabelOrdersSummary.LargeImageIndex = 21
+        Me.rbtnPrintRelabelOrdersSummary.ImageOptions.LargeImageIndex = 21
         Me.rbtnPrintRelabelOrdersSummary.Name = "rbtnPrintRelabelOrdersSummary"
         '
         'rbtnActiveChemicals
@@ -705,7 +707,7 @@ Partial Class viewProduction
         Me.rbtnActiveChemicals.Caption = "Active Chemicals"
         Me.rbtnActiveChemicals.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnActiveChemicals.Id = 95
-        Me.rbtnActiveChemicals.LargeImageIndex = 1
+        Me.rbtnActiveChemicals.ImageOptions.LargeImageIndex = 1
         Me.rbtnActiveChemicals.Name = "rbtnActiveChemicals"
         '
         'rbtnInactiveChemicals
@@ -713,7 +715,7 @@ Partial Class viewProduction
         Me.rbtnInactiveChemicals.Caption = "Inactive Chemicals"
         Me.rbtnInactiveChemicals.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnInactiveChemicals.Id = 96
-        Me.rbtnInactiveChemicals.LargeImageIndex = 1
+        Me.rbtnInactiveChemicals.ImageOptions.LargeImageIndex = 1
         Me.rbtnInactiveChemicals.Name = "rbtnInactiveChemicals"
         '
         'rbtnGetArchivedMaterials
@@ -721,7 +723,7 @@ Partial Class viewProduction
         Me.rbtnGetArchivedMaterials.Caption = "Archived Materials"
         Me.rbtnGetArchivedMaterials.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnGetArchivedMaterials.Id = 98
-        Me.rbtnGetArchivedMaterials.LargeImageIndex = 17
+        Me.rbtnGetArchivedMaterials.ImageOptions.LargeImageIndex = 17
         Me.rbtnGetArchivedMaterials.Name = "rbtnGetArchivedMaterials"
         '
         'rbtnGetAllMaterials
@@ -729,7 +731,7 @@ Partial Class viewProduction
         Me.rbtnGetAllMaterials.Caption = " All  Materials"
         Me.rbtnGetAllMaterials.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnGetAllMaterials.Id = 99
-        Me.rbtnGetAllMaterials.LargeImageIndex = 17
+        Me.rbtnGetAllMaterials.ImageOptions.LargeImageIndex = 17
         Me.rbtnGetAllMaterials.Name = "rbtnGetAllMaterials"
         '
         'rbtnViewChemical
@@ -737,7 +739,7 @@ Partial Class viewProduction
         Me.rbtnViewChemical.Caption = " View Chemical"
         Me.rbtnViewChemical.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnViewChemical.Id = 100
-        Me.rbtnViewChemical.LargeImageIndex = 9
+        Me.rbtnViewChemical.ImageOptions.LargeImageIndex = 9
         Me.rbtnViewChemical.Name = "rbtnViewChemical"
         '
         'rbtnPrintSDSReport
@@ -745,8 +747,15 @@ Partial Class viewProduction
         Me.rbtnPrintSDSReport.Caption = "View / Print SDS Document"
         Me.rbtnPrintSDSReport.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPrintSDSReport.Id = 101
-        Me.rbtnPrintSDSReport.LargeImageIndex = 6
+        Me.rbtnPrintSDSReport.ImageOptions.LargeImageIndex = 6
         Me.rbtnPrintSDSReport.Name = "rbtnPrintSDSReport"
+        '
+        'rbtnRelabeledProductsList
+        '
+        Me.rbtnRelabeledProductsList.Caption = "Relabeled Products List"
+        Me.rbtnRelabeledProductsList.Id = 102
+        Me.rbtnRelabeledProductsList.ImageOptions.LargeImageIndex = 27
+        Me.rbtnRelabeledProductsList.Name = "rbtnRelabeledProductsList"
         '
         'Ribbon_LargeImages
         '
@@ -912,7 +921,7 @@ Partial Class viewProduction
         '
         'RibbonPage6
         '
-        Me.RibbonPage6.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup12, Me.RibbonPageGroup13, Me.RibbonPageGroup14})
+        Me.RibbonPage6.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup12, Me.RibbonPageGroup13, Me.RibbonPageGroup14, Me.RibbonPageGroup17})
         Me.RibbonPage6.Name = "RibbonPage6"
         Me.RibbonPage6.Text = "Relabel Orders"
         '
@@ -947,6 +956,15 @@ Partial Class viewProduction
         Me.RibbonPageGroup14.Name = "RibbonPageGroup14"
         Me.RibbonPageGroup14.ShowCaptionButton = False
         Me.RibbonPageGroup14.Text = "Reports"
+        '
+        'RibbonPageGroup17
+        '
+        Me.RibbonPageGroup17.AllowMinimize = False
+        Me.RibbonPageGroup17.AllowTextClipping = False
+        Me.RibbonPageGroup17.ItemLinks.Add(Me.rbtnRelabeledProductsList)
+        Me.RibbonPageGroup17.Name = "RibbonPageGroup17"
+        Me.RibbonPageGroup17.ShowCaptionButton = False
+        Me.RibbonPageGroup17.Text = "Reference"
         '
         'RepositoryItemTextEdit1
         '
@@ -998,9 +1016,9 @@ Partial Class viewProduction
         'WorkPanelsHolder
         '
         Me.WorkPanelsHolder.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl5)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl9)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl8)
@@ -1012,6 +1030,150 @@ Partial Class viewProduction
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
         Me.WorkPanelsHolder.Size = New System.Drawing.Size(1154, 576)
         Me.WorkPanelsHolder.TabIndex = 7
+        '
+        'RibbonPanelControl6
+        '
+        Me.RibbonPanelControl6.Controls.Add(Me.GroupControl3)
+        Me.RibbonPanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
+        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1154, 576)
+        Me.RibbonPanelControl6.TabIndex = 1
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.grRelabelOrders)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl3.Location = New System.Drawing.Point(2, 2)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(1150, 572)
+        Me.GroupControl3.TabIndex = 1
+        Me.GroupControl3.Text = "Relabel Orders"
+        '
+        'grRelabelOrders
+        '
+        Me.grRelabelOrders.DataSource = Me.bsRelabelOrders
+        Me.grRelabelOrders.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grRelabelOrders.Location = New System.Drawing.Point(2, 22)
+        Me.grRelabelOrders.MainView = Me.grvRelabelOrders
+        Me.grRelabelOrders.Name = "grRelabelOrders"
+        Me.grRelabelOrders.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit4})
+        Me.grRelabelOrders.Size = New System.Drawing.Size(1146, 548)
+        Me.grRelabelOrders.TabIndex = 1
+        Me.grRelabelOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvRelabelOrders})
+        '
+        'bsRelabelOrders
+        '
+        Me.bsRelabelOrders.DataSource = GetType(AOS.BusinessObjects.ViewRelabelOrderCollection)
+        '
+        'grvRelabelOrders
+        '
+        Me.grvRelabelOrders.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12})
+        Me.grvRelabelOrders.GridControl = Me.grRelabelOrders
+        Me.grvRelabelOrders.Name = "grvRelabelOrders"
+        Me.grvRelabelOrders.OptionsBehavior.Editable = False
+        Me.grvRelabelOrders.OptionsView.ShowAutoFilterRow = True
+        Me.grvRelabelOrders.OptionsView.ShowGroupPanel = False
+        Me.grvRelabelOrders.ViewCaption = "OPEN Work Orders"
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "RLBL Ord #"
+        Me.GridColumn2.FieldName = "Relabelordernumber"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.OptionsColumn.FixedWidth = True
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 0
+        Me.GridColumn2.Width = 70
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "Order Date"
+        Me.GridColumn5.FieldName = "Relabelorderdate"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.FixedWidth = True
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 1
+        Me.GridColumn5.Width = 65
+        '
+        'GridColumn6
+        '
+        Me.GridColumn6.Caption = "Qty"
+        Me.GridColumn6.FieldName = "Qty"
+        Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.OptionsColumn.FixedWidth = True
+        Me.GridColumn6.Visible = True
+        Me.GridColumn6.VisibleIndex = 2
+        Me.GridColumn6.Width = 45
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.Caption = "Container"
+        Me.GridColumn7.FieldName = "Container"
+        Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.OptionsColumn.FixedWidth = True
+        Me.GridColumn7.Visible = True
+        Me.GridColumn7.VisibleIndex = 5
+        Me.GridColumn7.Width = 80
+        '
+        'GridColumn8
+        '
+        Me.GridColumn8.Caption = "Item ID"
+        Me.GridColumn8.FieldName = "Itemid"
+        Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.OptionsColumn.FixedWidth = True
+        Me.GridColumn8.Visible = True
+        Me.GridColumn8.VisibleIndex = 3
+        Me.GridColumn8.Width = 50
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "Item Description"
+        Me.GridColumn9.FieldName = "Itemdesc"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 4
+        Me.GridColumn9.Width = 779
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.Caption = "Work Order #"
+        Me.GridColumn10.FieldName = "Workordernumber"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.OptionsColumn.FixedWidth = True
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 6
+        Me.GridColumn10.Width = 80
+        '
+        'GridColumn11
+        '
+        Me.GridColumn11.Caption = "Needed By"
+        Me.GridColumn11.FieldName = "Neededby"
+        Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.OptionsColumn.FixedWidth = True
+        Me.GridColumn11.Visible = True
+        Me.GridColumn11.VisibleIndex = 7
+        Me.GridColumn11.Width = 65
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.Caption = "Status"
+        Me.GridColumn12.FieldName = "Relabelorderstatus"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.OptionsColumn.FixedWidth = True
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 8
+        Me.GridColumn12.Width = 80
+        '
+        'RepositoryItemLookUpEdit4
+        '
+        Me.RepositoryItemLookUpEdit4.AutoHeight = False
+        Me.RepositoryItemLookUpEdit4.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit4.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit4.Name = "RepositoryItemLookUpEdit4"
+        Me.RepositoryItemLookUpEdit4.NullText = ""
+        Me.RepositoryItemLookUpEdit4.ShowPopupShadow = False
+        Me.RepositoryItemLookUpEdit4.ValueMember = "Custid"
         '
         'RibbonPanelControl3
         '
@@ -1272,150 +1434,6 @@ Partial Class viewProduction
         Me.RepositoryItemLookUpEdit3.NullText = ""
         Me.RepositoryItemLookUpEdit3.ShowPopupShadow = False
         Me.RepositoryItemLookUpEdit3.ValueMember = "Custid"
-        '
-        'RibbonPanelControl6
-        '
-        Me.RibbonPanelControl6.Controls.Add(Me.GroupControl3)
-        Me.RibbonPanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
-        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1154, 576)
-        Me.RibbonPanelControl6.TabIndex = 1
-        '
-        'GroupControl3
-        '
-        Me.GroupControl3.Controls.Add(Me.grRelabelOrders)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(2, 2)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1150, 572)
-        Me.GroupControl3.TabIndex = 1
-        Me.GroupControl3.Text = "Relabel Orders"
-        '
-        'grRelabelOrders
-        '
-        Me.grRelabelOrders.DataSource = Me.bsRelabelOrders
-        Me.grRelabelOrders.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grRelabelOrders.Location = New System.Drawing.Point(2, 22)
-        Me.grRelabelOrders.MainView = Me.grvRelabelOrders
-        Me.grRelabelOrders.Name = "grRelabelOrders"
-        Me.grRelabelOrders.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit4})
-        Me.grRelabelOrders.Size = New System.Drawing.Size(1146, 548)
-        Me.grRelabelOrders.TabIndex = 1
-        Me.grRelabelOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvRelabelOrders})
-        '
-        'bsRelabelOrders
-        '
-        Me.bsRelabelOrders.DataSource = GetType(AOS.BusinessObjects.ViewRelabelOrderCollection)
-        '
-        'grvRelabelOrders
-        '
-        Me.grvRelabelOrders.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12})
-        Me.grvRelabelOrders.GridControl = Me.grRelabelOrders
-        Me.grvRelabelOrders.Name = "grvRelabelOrders"
-        Me.grvRelabelOrders.OptionsBehavior.Editable = False
-        Me.grvRelabelOrders.OptionsView.ShowAutoFilterRow = True
-        Me.grvRelabelOrders.OptionsView.ShowGroupPanel = False
-        Me.grvRelabelOrders.ViewCaption = "OPEN Work Orders"
-        '
-        'GridColumn2
-        '
-        Me.GridColumn2.Caption = "RLBL Ord #"
-        Me.GridColumn2.FieldName = "Relabelordernumber"
-        Me.GridColumn2.Name = "GridColumn2"
-        Me.GridColumn2.OptionsColumn.FixedWidth = True
-        Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 0
-        Me.GridColumn2.Width = 70
-        '
-        'GridColumn5
-        '
-        Me.GridColumn5.Caption = "Order Date"
-        Me.GridColumn5.FieldName = "Relabelorderdate"
-        Me.GridColumn5.Name = "GridColumn5"
-        Me.GridColumn5.OptionsColumn.FixedWidth = True
-        Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 1
-        Me.GridColumn5.Width = 65
-        '
-        'GridColumn6
-        '
-        Me.GridColumn6.Caption = "Qty"
-        Me.GridColumn6.FieldName = "Qty"
-        Me.GridColumn6.Name = "GridColumn6"
-        Me.GridColumn6.OptionsColumn.FixedWidth = True
-        Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 2
-        Me.GridColumn6.Width = 45
-        '
-        'GridColumn7
-        '
-        Me.GridColumn7.Caption = "Container"
-        Me.GridColumn7.FieldName = "Container"
-        Me.GridColumn7.Name = "GridColumn7"
-        Me.GridColumn7.OptionsColumn.FixedWidth = True
-        Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 5
-        Me.GridColumn7.Width = 80
-        '
-        'GridColumn8
-        '
-        Me.GridColumn8.Caption = "Item ID"
-        Me.GridColumn8.FieldName = "Itemid"
-        Me.GridColumn8.Name = "GridColumn8"
-        Me.GridColumn8.OptionsColumn.FixedWidth = True
-        Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 3
-        Me.GridColumn8.Width = 50
-        '
-        'GridColumn9
-        '
-        Me.GridColumn9.Caption = "Item Description"
-        Me.GridColumn9.FieldName = "Itemdesc"
-        Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 4
-        Me.GridColumn9.Width = 779
-        '
-        'GridColumn10
-        '
-        Me.GridColumn10.Caption = "Work Order #"
-        Me.GridColumn10.FieldName = "Workordernumber"
-        Me.GridColumn10.Name = "GridColumn10"
-        Me.GridColumn10.OptionsColumn.FixedWidth = True
-        Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 6
-        Me.GridColumn10.Width = 80
-        '
-        'GridColumn11
-        '
-        Me.GridColumn11.Caption = "Needed By"
-        Me.GridColumn11.FieldName = "Neededby"
-        Me.GridColumn11.Name = "GridColumn11"
-        Me.GridColumn11.OptionsColumn.FixedWidth = True
-        Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 7
-        Me.GridColumn11.Width = 65
-        '
-        'GridColumn12
-        '
-        Me.GridColumn12.Caption = "Status"
-        Me.GridColumn12.FieldName = "Relabelorderstatus"
-        Me.GridColumn12.Name = "GridColumn12"
-        Me.GridColumn12.OptionsColumn.FixedWidth = True
-        Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 8
-        Me.GridColumn12.Width = 80
-        '
-        'RepositoryItemLookUpEdit4
-        '
-        Me.RepositoryItemLookUpEdit4.AutoHeight = False
-        Me.RepositoryItemLookUpEdit4.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit4.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit4.Name = "RepositoryItemLookUpEdit4"
-        Me.RepositoryItemLookUpEdit4.NullText = ""
-        Me.RepositoryItemLookUpEdit4.ShowPopupShadow = False
-        Me.RepositoryItemLookUpEdit4.ValueMember = "Custid"
         '
         'RibbonPanelControl1
         '
@@ -1843,7 +1861,7 @@ Partial Class viewProduction
         '
         Me.rbtnRawMaterialOrderStatus.Caption = "Raw Material Order Status"
         Me.rbtnRawMaterialOrderStatus.Id = 63
-        Me.rbtnRawMaterialOrderStatus.LargeImageIndex = 21
+        Me.rbtnRawMaterialOrderStatus.ImageOptions.LargeImageIndex = 21
         Me.rbtnRawMaterialOrderStatus.Name = "rbtnRawMaterialOrderStatus"
         Me.rbtnRawMaterialOrderStatus.Tag = "224"
         '
@@ -1873,6 +1891,14 @@ Partial Class viewProduction
         CType(Me.ceRed.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WorkPanelsHolder.ResumeLayout(False)
+        CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl6.ResumeLayout(False)
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.grRelabelOrders, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsRelabelOrders, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvRelabelOrders, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl3.ResumeLayout(False)
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1891,14 +1917,6 @@ Partial Class viewProduction
         CType(Me.bsChemicals, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl6.ResumeLayout(False)
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl3.ResumeLayout(False)
-        CType(Me.grRelabelOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsRelabelOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grvRelabelOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl1.ResumeLayout(False)
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2099,4 +2117,6 @@ Partial Class viewProduction
     Friend WithEvents RibbonPageGroup16 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup15 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents rbtnRawMaterialOrderStatus As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rbtnRelabeledProductsList As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup17 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

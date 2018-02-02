@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 4/7/2017 3:25:37 PM
+' Date Generated       : 12/12/2017 1:09:39 PM
 '===============================================================================
 
 Imports System
@@ -144,23 +144,29 @@ Namespace BusinessObjects
 						Case "Custid"
 							Me.str.Custid = CType(value, string)
 												
-						Case "Volumeprice"
-							Me.str.Volumeprice = CType(value, string)
+						Case "Custname"
+							Me.str.Custname = CType(value, string)
+												
+						Case "Volumeunits"
+							Me.str.Volumeunits = CType(value, string)
 												
 						Case "Volumeuom"
 							Me.str.Volumeuom = CType(value, string)
 												
-						Case "Weightprice"
-							Me.str.Weightprice = CType(value, string)
+						Case "Volumeprice"
+							Me.str.Volumeprice = CType(value, string)
+												
+						Case "Weightunits"
+							Me.str.Weightunits = CType(value, string)
 												
 						Case "Weightuom"
 							Me.str.Weightuom = CType(value, string)
 												
+						Case "Weightprice"
+							Me.str.Weightprice = CType(value, string)
+												
 						Case "Priceliststatus"
 							Me.str.Priceliststatus = CType(value, string)
-												
-						Case "Custname"
-							Me.str.Custname = CType(value, string)
 												
 						Case "Lastpurchased"
 							Me.str.Lastpurchased = CType(value, string)
@@ -183,10 +189,22 @@ Namespace BusinessObjects
 								Me.Custid = CType(value, Nullable(Of System.Int32))
 							End If
 						
+						Case "Volumeunits"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.Volumeunits = CType(value, Nullable(Of System.Decimal))
+							End If
+						
 						Case "Volumeprice"
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
 								Me.Volumeprice = CType(value, Nullable(Of System.Decimal))
+							End If
+						
+						Case "Weightunits"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.Weightunits = CType(value, Nullable(Of System.Decimal))
 							End If
 						
 						Case "Weightprice"
@@ -269,15 +287,28 @@ Namespace BusinessObjects
 		End Property		
 			
 		' <summary>
-		' Maps to viewProductBuyersList.VOLUMEPRICE
+		' Maps to viewProductBuyersList.CUSTNAME
 		' </summary>
-		Public Overridable Property Volumeprice As Nullable(Of System.Decimal)
+		Public Overridable Property Custname As System.String
 			Get
-				Return MyBase.GetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Volumeprice)
+				Return MyBase.GetSystemString(ViewProductBuyersListMetadata.ColumnNames.Custname)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewProductBuyersListMetadata.ColumnNames.Custname, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewProductBuyersList.VOLUMEUNITS
+		' </summary>
+		Public Overridable Property Volumeunits As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Volumeunits)
 			End Get
 			
 			Set(ByVal value As Nullable(Of System.Decimal))
-				MyBase.SetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Volumeprice, value)
+				MyBase.SetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Volumeunits, value)
 			End Set
 		End Property		
 			
@@ -295,15 +326,28 @@ Namespace BusinessObjects
 		End Property		
 			
 		' <summary>
-		' Maps to viewProductBuyersList.WEIGHTPRICE
+		' Maps to viewProductBuyersList.VOLUMEPRICE
 		' </summary>
-		Public Overridable Property Weightprice As Nullable(Of System.Decimal)
+		Public Overridable Property Volumeprice As Nullable(Of System.Decimal)
 			Get
-				Return MyBase.GetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Weightprice)
+				Return MyBase.GetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Volumeprice)
 			End Get
 			
 			Set(ByVal value As Nullable(Of System.Decimal))
-				MyBase.SetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Weightprice, value)
+				MyBase.SetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Volumeprice, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewProductBuyersList.WEIGHTUNITS
+		' </summary>
+		Public Overridable Property Weightunits As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Weightunits)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Weightunits, value)
 			End Set
 		End Property		
 			
@@ -321,6 +365,19 @@ Namespace BusinessObjects
 		End Property		
 			
 		' <summary>
+		' Maps to viewProductBuyersList.WEIGHTPRICE
+		' </summary>
+		Public Overridable Property Weightprice As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Weightprice)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewProductBuyersListMetadata.ColumnNames.Weightprice, value)
+			End Set
+		End Property		
+			
+		' <summary>
 		' Maps to viewProductBuyersList.PRICELISTSTATUS
 		' </summary>
 		Public Overridable Property Priceliststatus As System.String
@@ -330,19 +387,6 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As System.String)
 				MyBase.SetSystemString(ViewProductBuyersListMetadata.ColumnNames.Priceliststatus, value)
-			End Set
-		End Property		
-			
-		' <summary>
-		' Maps to viewProductBuyersList.CUSTNAME
-		' </summary>
-		Public Overridable Property Custname As System.String
-			Get
-				Return MyBase.GetSystemString(ViewProductBuyersListMetadata.ColumnNames.Custname)
-			End Get
-			
-			Set(ByVal value As System.String)
-				MyBase.SetSystemString(ViewProductBuyersListMetadata.ColumnNames.Custname, value)
 			End Set
 		End Property		
 			
@@ -465,6 +509,67 @@ Namespace BusinessObjects
 				End Set
 			End Property
 		  	
+			Public Property Custname As System.String 
+				Get
+					Dim data_ As System.String = entity.Custname
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Custname = Nothing
+					Else
+						entity.Custname = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Volumeunits As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Decimal) = entity.Volumeunits
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Volumeunits = Nothing
+					Else
+						entity.Volumeunits = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Volumeuom As System.String 
+				Get
+					Dim data_ As System.String = entity.Volumeuom
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Volumeuom = Nothing
+					Else
+						entity.Volumeuom = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
+		  	
 			Public Property Volumeprice As System.String 
 				Get
 					Dim data_ As Nullable(Of System.Decimal) = entity.Volumeprice
@@ -486,9 +591,30 @@ Namespace BusinessObjects
 				End Set
 			End Property
 		  	
-			Public Property Volumeuom As System.String 
+			Public Property Weightunits As System.String 
 				Get
-					Dim data_ As System.String = entity.Volumeuom
+					Dim data_ As Nullable(Of System.Decimal) = entity.Weightunits
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Weightunits = Nothing
+					Else
+						entity.Weightunits = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Weightuom As System.String 
+				Get
+					Dim data_ As System.String = entity.Weightuom
 					
 					if data_ Is Nothing Then
 						Return String.Empty
@@ -499,9 +625,9 @@ Namespace BusinessObjects
 
 				Set(ByVal Value as System.String)
 					If String.IsNullOrEmpty(value) Then
-						entity.Volumeuom = Nothing
+						entity.Weightuom = Nothing
 					Else
-						entity.Volumeuom = Convert.ToString(Value)
+						entity.Weightuom = Convert.ToString(Value)
 					End If
 				End Set
 			End Property
@@ -527,26 +653,6 @@ Namespace BusinessObjects
 				End Set
 			End Property
 		  	
-			Public Property Weightuom As System.String 
-				Get
-					Dim data_ As System.String = entity.Weightuom
-					
-					if data_ Is Nothing Then
-						Return String.Empty
-					Else
-						Return Convert.ToString(data_)
-					End If
-				End Get
-
-				Set(ByVal Value as System.String)
-					If String.IsNullOrEmpty(value) Then
-						entity.Weightuom = Nothing
-					Else
-						entity.Weightuom = Convert.ToString(Value)
-					End If
-				End Set
-			End Property
-		  	
 			Public Property Priceliststatus As System.String 
 				Get
 					Dim data_ As System.String = entity.Priceliststatus
@@ -563,26 +669,6 @@ Namespace BusinessObjects
 						entity.Priceliststatus = Nothing
 					Else
 						entity.Priceliststatus = Convert.ToString(Value)
-					End If
-				End Set
-			End Property
-		  	
-			Public Property Custname As System.String 
-				Get
-					Dim data_ As System.String = entity.Custname
-					
-					if data_ Is Nothing Then
-						Return String.Empty
-					Else
-						Return Convert.ToString(data_)
-					End If
-				End Get
-
-				Set(ByVal Value as System.String)
-					If String.IsNullOrEmpty(value) Then
-						entity.Custname = Nothing
-					Else
-						entity.Custname = Convert.ToString(Value)
 					End If
 				End Set
 			End Property
@@ -675,9 +761,15 @@ Namespace BusinessObjects
 			End Get
 		End Property 
 		
-		Public ReadOnly Property Volumeprice As esQueryItem
+		Public ReadOnly Property Custname As esQueryItem
 			Get
-				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Volumeprice, esSystemType.Decimal)
+				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Custname, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Volumeunits As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Volumeunits, esSystemType.Decimal)
 			End Get
 		End Property 
 		
@@ -687,9 +779,15 @@ Namespace BusinessObjects
 			End Get
 		End Property 
 		
-		Public ReadOnly Property Weightprice As esQueryItem
+		Public ReadOnly Property Volumeprice As esQueryItem
 			Get
-				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Weightprice, esSystemType.Decimal)
+				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Volumeprice, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Weightunits As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Weightunits, esSystemType.Decimal)
 			End Get
 		End Property 
 		
@@ -699,15 +797,15 @@ Namespace BusinessObjects
 			End Get
 		End Property 
 		
-		Public ReadOnly Property Priceliststatus As esQueryItem
+		Public ReadOnly Property Weightprice As esQueryItem
 			Get
-				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Priceliststatus, esSystemType.String)
+				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Weightprice, esSystemType.Decimal)
 			End Get
 		End Property 
 		
-		Public ReadOnly Property Custname As esQueryItem
+		Public ReadOnly Property Priceliststatus As esQueryItem
 			Get
-				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Custname, esSystemType.String)
+				Return New esQueryItem(Me, ViewProductBuyersListMetadata.ColumnNames.Priceliststatus, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -931,45 +1029,59 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
-			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Volumeprice, 4, GetType(System.Decimal), esSystemType.Decimal)	
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Custname, 4, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Custname
+			c.CharacterMaxLength = 50
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Volumeunits, 5, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Volumeunits
+			c.NumericPrecision = 18
+			c.NumericScale = 4
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Volumeuom, 6, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Volumeuom
+			c.CharacterMaxLength = 50
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Volumeprice, 7, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Volumeprice
 			c.NumericPrecision = 18
 			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
-			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Volumeuom, 5, GetType(System.String), esSystemType.String)	
-			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Volumeuom
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Weightunits, 8, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Weightunits
+			c.NumericPrecision = 18
+			c.NumericScale = 4
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Weightuom, 9, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Weightuom
 			c.CharacterMaxLength = 50
 			c.IsNullable = True
 			_columns.Add(c)
 				
-			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Weightprice, 6, GetType(System.Decimal), esSystemType.Decimal)	
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Weightprice, 10, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Weightprice
 			c.NumericPrecision = 18
 			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
-			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Weightuom, 7, GetType(System.String), esSystemType.String)	
-			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Weightuom
-			c.CharacterMaxLength = 50
-			c.IsNullable = True
-			_columns.Add(c)
-				
-			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Priceliststatus, 8, GetType(System.String), esSystemType.String)	
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Priceliststatus, 11, GetType(System.String), esSystemType.String)	
 			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Priceliststatus
 			c.CharacterMaxLength = 50
 			c.IsNullable = True
 			_columns.Add(c)
 				
-			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Custname, 9, GetType(System.String), esSystemType.String)	
-			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Custname
-			c.CharacterMaxLength = 50
-			c.IsNullable = True
-			_columns.Add(c)
-				
-			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Lastpurchased, 10, GetType(System.DateTime), esSystemType.DateTime)	
+			c = New esColumnMetadata(ViewProductBuyersListMetadata.ColumnNames.Lastpurchased, 12, GetType(System.DateTime), esSystemType.DateTime)	
 			c.PropertyName = ViewProductBuyersListMetadata.PropertyNames.Lastpurchased
 			c.IsNullable = True
 			_columns.Add(c)
@@ -1006,12 +1118,14 @@ Namespace BusinessObjects
 			 Public Const Productdesc As String = "PRODUCTDESC"
 			 Public Const Container As String = "CONTAINER"
 			 Public Const Custid As String = "CUSTID"
-			 Public Const Volumeprice As String = "VOLUMEPRICE"
-			 Public Const Volumeuom As String = "VOLUMEUOM"
-			 Public Const Weightprice As String = "WEIGHTPRICE"
-			 Public Const Weightuom As String = "WEIGHTUOM"
-			 Public Const Priceliststatus As String = "PRICELISTSTATUS"
 			 Public Const Custname As String = "CUSTNAME"
+			 Public Const Volumeunits As String = "VOLUMEUNITS"
+			 Public Const Volumeuom As String = "VOLUMEUOM"
+			 Public Const Volumeprice As String = "VOLUMEPRICE"
+			 Public Const Weightunits As String = "WEIGHTUNITS"
+			 Public Const Weightuom As String = "WEIGHTUOM"
+			 Public Const Weightprice As String = "WEIGHTPRICE"
+			 Public Const Priceliststatus As String = "PRICELISTSTATUS"
 			 Public Const Lastpurchased As String = "LASTPURCHASED"
 		End Class
 #End Region	
@@ -1022,12 +1136,14 @@ Namespace BusinessObjects
 			 Public Const Productdesc As String = "Productdesc"
 			 Public Const Container As String = "Container"
 			 Public Const Custid As String = "Custid"
-			 Public Const Volumeprice As String = "Volumeprice"
-			 Public Const Volumeuom As String = "Volumeuom"
-			 Public Const Weightprice As String = "Weightprice"
-			 Public Const Weightuom As String = "Weightuom"
-			 Public Const Priceliststatus As String = "Priceliststatus"
 			 Public Const Custname As String = "Custname"
+			 Public Const Volumeunits As String = "Volumeunits"
+			 Public Const Volumeuom As String = "Volumeuom"
+			 Public Const Volumeprice As String = "Volumeprice"
+			 Public Const Weightunits As String = "Weightunits"
+			 Public Const Weightuom As String = "Weightuom"
+			 Public Const Weightprice As String = "Weightprice"
+			 Public Const Priceliststatus As String = "Priceliststatus"
 			 Public Const Lastpurchased As String = "Lastpurchased"
 		End Class
 #End Region	
@@ -1080,12 +1196,14 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Productdesc", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Container", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Custid", new esTypeMap("int", "System.Int32"))
-				meta.AddTypeMap("Volumeprice", new esTypeMap("decimal", "System.Decimal"))
-				meta.AddTypeMap("Volumeuom", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("Weightprice", new esTypeMap("decimal", "System.Decimal"))
-				meta.AddTypeMap("Weightuom", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("Priceliststatus", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Custname", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Volumeunits", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Volumeuom", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Volumeprice", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Weightunits", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Weightuom", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Weightprice", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Priceliststatus", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Lastpurchased", new esTypeMap("datetime", "System.DateTime"))			
 				
 				

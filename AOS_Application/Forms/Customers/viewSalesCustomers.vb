@@ -35,6 +35,7 @@ Public Class viewSalesCustomers
     Dim oCustomerLookupList As ViewCustomerLookupCollection
     Dim oCustomerNotes As Customer
     Dim oProductNotes As Product
+    Dim oCustomers2 As CustomerCollection
 
     Dim vInvoiceStatus As String = "PENDING"
     Dim vCommFilter As String = "PENDING"
@@ -336,6 +337,11 @@ Public Class viewSalesCustomers
         oCustomerList.LoadAll()
         oCustomerList.Sort = "CUSTNAME ASC"
         bsCustomerList.DataSource = oCustomerList
+
+        oCustomers2 = New CustomerCollection
+        oCustomers2.LoadAll()
+        oCustomers2.Sort = "CUSTNAME ASC"
+        bsCustomers2.DataSource = oCustomers2
 
     End Sub
 
@@ -2707,6 +2713,10 @@ Public Class viewSalesCustomers
     End Sub
 
     Private Sub btnInvoiceHistory_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnInvoiceHistory.ItemClick
+        If bsInvoices.Count <= 0 Then
+            Exit Sub
+        End If
+
         Dim frm As New frmInvoiceHistoryList
         frm.vInvoiceNum = Me.bsInvoices.Current.InvoiceNumber
         frm.ShowDialog()
@@ -2717,6 +2727,37 @@ Public Class viewSalesCustomers
             Exit Sub
         End If
         loadProductNotes(bsPriceLists.Current.ProductID)
+    End Sub
+
+    Private Sub rbtnRptCustomerCommissionAssignments_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnRptCustomerCommissionAssignments.ItemClick
+        Dim vcustid As Integer
+
+        If IsDBNull(eCustomerLookup2.EditValue) Or eCustomerLookup2.EditValue <= 0 Then
+            MsgBox("You must first select a Customer", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        Else
+            vcustid = eCustomerLookup2.EditValue
+        End If
+
+        If IsDBNull(vcustid) Or vcustid = Nothing Then
+            Exit Sub
+        End If
+
+        If vcustid > 0 Then
+            Dim rpt As New rptCommissionAssignmentByCustomer(vcustid)
+            rpt.ShowPreviewDialog
+        End If
+
+    End Sub
+
+    Private Sub rbtnRptCustomerNotes_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnRptCustomerNotes.ItemClick
+        If bsCustomers.Count <= 0 Then
+            Exit Sub
+        End If
+
+        Dim rpt As New rptCustomerNotes(bsCustomers.Current.CustID)
+        rpt.ShowPreviewDialog
+
     End Sub
 
 

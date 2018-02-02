@@ -42,6 +42,8 @@ Partial Class frmProductBuyersList
         Me.colPriceliststatus = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCustname = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colLastpurchased = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +72,7 @@ Partial Class frmProductBuyersList
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1109, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1109, 117)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -78,14 +80,14 @@ Partial Class frmProductBuyersList
         '
         Me.btnCancel.Caption = "Close"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeImageIndex = 1
+        Me.btnCancel.ImageOptions.LargeImageIndex = 1
         Me.btnCancel.Name = "btnCancel"
         '
         'rbtnExportToExcel
         '
         Me.rbtnExportToExcel.Caption = "Export To Excel"
         Me.rbtnExportToExcel.Id = 6
-        Me.rbtnExportToExcel.LargeGlyph = Global.AOS.My.Resources.Resources.export_excel
+        Me.rbtnExportToExcel.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.export_excel
         Me.rbtnExportToExcel.Name = "rbtnExportToExcel"
         '
         'LargeRibbonImages
@@ -112,9 +114,9 @@ Partial Class frmProductBuyersList
         '
         Me.GroupControl1.Controls.Add(Me.GridControl1)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 117)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1109, 460)
+        Me.GroupControl1.Size = New System.Drawing.Size(1109, 438)
         Me.GroupControl1.TabIndex = 1
         Me.GroupControl1.Text = "Customer Price Lists / Sales History"
         '
@@ -126,13 +128,13 @@ Partial Class frmProductBuyersList
         Me.GridControl1.MainView = Me.grvItemList
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1105, 436)
+        Me.GridControl1.Size = New System.Drawing.Size(1105, 414)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvItemList})
         '
         'grvItemList
         '
-        Me.grvItemList.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid, Me.colProductdesc, Me.colContainer, Me.colCustid, Me.colVolumeprice, Me.colVolumeuom, Me.colWeightprice, Me.colWeightuom, Me.colPriceliststatus, Me.colCustname, Me.colLastpurchased})
+        Me.grvItemList.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid, Me.colProductdesc, Me.colContainer, Me.colCustid, Me.colVolumeprice, Me.colVolumeuom, Me.colWeightprice, Me.colWeightuom, Me.colPriceliststatus, Me.colCustname, Me.colLastpurchased, Me.GridColumn1, Me.GridColumn2})
         Me.grvItemList.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
         Me.grvItemList.GridControl = Me.GridControl1
         Me.grvItemList.Name = "grvItemList"
@@ -149,7 +151,7 @@ Partial Class frmProductBuyersList
         Me.colProductid.Name = "colProductid"
         Me.colProductid.Visible = True
         Me.colProductid.VisibleIndex = 0
-        Me.colProductid.Width = 64
+        Me.colProductid.Width = 51
         '
         'colProductdesc
         '
@@ -158,7 +160,7 @@ Partial Class frmProductBuyersList
         Me.colProductdesc.Name = "colProductdesc"
         Me.colProductdesc.Visible = True
         Me.colProductdesc.VisibleIndex = 1
-        Me.colProductdesc.Width = 249
+        Me.colProductdesc.Width = 244
         '
         'colContainer
         '
@@ -166,7 +168,7 @@ Partial Class frmProductBuyersList
         Me.colContainer.Name = "colContainer"
         Me.colContainer.Visible = True
         Me.colContainer.VisibleIndex = 2
-        Me.colContainer.Width = 86
+        Me.colContainer.Width = 71
         '
         'colCustid
         '
@@ -175,7 +177,7 @@ Partial Class frmProductBuyersList
         Me.colCustid.Name = "colCustid"
         Me.colCustid.Visible = True
         Me.colCustid.VisibleIndex = 3
-        Me.colCustid.Width = 48
+        Me.colCustid.Width = 49
         '
         'colVolumeprice
         '
@@ -183,17 +185,17 @@ Partial Class frmProductBuyersList
         Me.colVolumeprice.FieldName = "Volumeprice"
         Me.colVolumeprice.Name = "colVolumeprice"
         Me.colVolumeprice.Visible = True
-        Me.colVolumeprice.VisibleIndex = 5
-        Me.colVolumeprice.Width = 70
+        Me.colVolumeprice.VisibleIndex = 7
+        Me.colVolumeprice.Width = 48
         '
         'colVolumeuom
         '
-        Me.colVolumeuom.Caption = "UOM"
+        Me.colVolumeuom.Caption = "VOL UOM"
         Me.colVolumeuom.FieldName = "Volumeuom"
         Me.colVolumeuom.Name = "colVolumeuom"
         Me.colVolumeuom.Visible = True
         Me.colVolumeuom.VisibleIndex = 6
-        Me.colVolumeuom.Width = 49
+        Me.colVolumeuom.Width = 58
         '
         'colWeightprice
         '
@@ -201,25 +203,26 @@ Partial Class frmProductBuyersList
         Me.colWeightprice.FieldName = "Weightprice"
         Me.colWeightprice.Name = "colWeightprice"
         Me.colWeightprice.Visible = True
-        Me.colWeightprice.VisibleIndex = 7
+        Me.colWeightprice.VisibleIndex = 10
+        Me.colWeightprice.Width = 54
         '
         'colWeightuom
         '
-        Me.colWeightuom.Caption = "UOM"
+        Me.colWeightuom.Caption = "WGT UOM"
         Me.colWeightuom.FieldName = "Weightuom"
         Me.colWeightuom.Name = "colWeightuom"
         Me.colWeightuom.Visible = True
-        Me.colWeightuom.VisibleIndex = 8
-        Me.colWeightuom.Width = 50
+        Me.colWeightuom.VisibleIndex = 9
+        Me.colWeightuom.Width = 59
         '
         'colPriceliststatus
         '
-        Me.colPriceliststatus.Caption = "Price List Status"
+        Me.colPriceliststatus.Caption = "Status"
         Me.colPriceliststatus.FieldName = "Priceliststatus"
         Me.colPriceliststatus.Name = "colPriceliststatus"
         Me.colPriceliststatus.Visible = True
-        Me.colPriceliststatus.VisibleIndex = 10
-        Me.colPriceliststatus.Width = 91
+        Me.colPriceliststatus.VisibleIndex = 11
+        Me.colPriceliststatus.Width = 50
         '
         'colCustname
         '
@@ -228,16 +231,34 @@ Partial Class frmProductBuyersList
         Me.colCustname.Name = "colCustname"
         Me.colCustname.Visible = True
         Me.colCustname.VisibleIndex = 4
-        Me.colCustname.Width = 216
+        Me.colCustname.Width = 204
         '
         'colLastpurchased
         '
-        Me.colLastpurchased.Caption = "Last Sold"
+        Me.colLastpurchased.Caption = "Last Purchased"
         Me.colLastpurchased.FieldName = "Lastpurchased"
         Me.colLastpurchased.Name = "colLastpurchased"
         Me.colLastpurchased.Visible = True
-        Me.colLastpurchased.VisibleIndex = 9
-        Me.colLastpurchased.Width = 107
+        Me.colLastpurchased.VisibleIndex = 12
+        Me.colLastpurchased.Width = 91
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "VOL Units"
+        Me.GridColumn1.FieldName = "Volumeunits"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 5
+        Me.GridColumn1.Width = 63
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "WGT Units"
+        Me.GridColumn2.FieldName = "Weightunits"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 8
+        Me.GridColumn2.Width = 61
         '
         'frmProductBuyersList
         '
@@ -273,6 +294,7 @@ Partial Class frmProductBuyersList
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents grvItemList As CustomDevExGridView
+    Friend WithEvents rbtnExportToExcel As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents colProductid As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colProductdesc As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colContainer As DevExpress.XtraGrid.Columns.GridColumn
@@ -284,5 +306,6 @@ Partial Class frmProductBuyersList
     Friend WithEvents colPriceliststatus As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colCustname As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colLastpurchased As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents rbtnExportToExcel As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

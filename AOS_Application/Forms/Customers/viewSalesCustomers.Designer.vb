@@ -159,6 +159,11 @@ Partial Class viewSalesCustomers
         Me.rbtnGetAllCustomersSales = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnWorkOrdersToInvoice = New DevExpress.XtraBars.BarButtonItem()
         Me.btnInvoiceHistory = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnRptCustomerCommissionAssignments = New DevExpress.XtraBars.BarButtonItem()
+        Me.eCustomerLookup2 = New DevExpress.XtraBars.BarEditItem()
+        Me.RepositoryItemLookUpEdit19 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.bsCustomers2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.rText2 = New DevExpress.XtraBars.BarStaticItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -182,6 +187,7 @@ Partial Class viewSalesCustomers
         Me.RibbonPageGroup30 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup35 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup24 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup21 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -225,6 +231,7 @@ Partial Class viewSalesCustomers
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl16 = New DevExpress.XtraEditors.GroupControl()
         Me.MemoEdit5 = New DevExpress.XtraEditors.MemoEdit()
+        Me.bsCustomerNotes = New System.Windows.Forms.BindingSource(Me.components)
         Me.MemoEdit8 = New DevExpress.XtraEditors.MemoEdit()
         Me.MemoEdit9 = New DevExpress.XtraEditors.MemoEdit()
         Me.btnExportToXLS = New DevExpress.XtraEditors.SimpleButton()
@@ -233,6 +240,7 @@ Partial Class viewSalesCustomers
         Me.bsCustomerList = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.MemoEdit4 = New DevExpress.XtraEditors.MemoEdit()
+        Me.bsProductNotes = New System.Windows.Forms.BindingSource(Me.components)
         Me.eReceivingNotes = New DevExpress.XtraEditors.MemoEdit()
         Me.eVendorNotes = New DevExpress.XtraEditors.MemoEdit()
         Me.RibbonPanelControl5 = New DevExpress.XtraEditors.PanelControl()
@@ -313,23 +321,6 @@ Partial Class viewSalesCustomers
         Me.colSalespersonfirstname = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colSalespersonlastname = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colStatus = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RibbonPanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.grpCommissionData = New DevExpress.XtraEditors.GroupControl()
-        Me.grCommissionData = New DevExpress.XtraGrid.GridControl()
-        Me.grvCommissionData = New AOS.CustomClasses.CustomDevExGridView()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit10 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCommissionID = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit11 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPanelControl10 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl9 = New DevExpress.XtraEditors.GroupControl()
         Me.grSalesHistory = New DevExpress.XtraGrid.GridControl()
@@ -347,8 +338,26 @@ Partial Class viewSalesCustomers
         Me.colUnits1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colItemprice = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colExtprice = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn20 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit13 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.RibbonPanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.grpCommissionData = New DevExpress.XtraEditors.GroupControl()
+        Me.grCommissionData = New DevExpress.XtraGrid.GridControl()
+        Me.grvCommissionData = New AOS.CustomClasses.CustomDevExGridView()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit10 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCommissionID = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit11 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl9 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl15 = New DevExpress.XtraEditors.GroupControl()
@@ -527,8 +536,9 @@ Partial Class viewSalesCustomers
         Me.bsTrendsQuarterly = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsTrendsAnnually = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.bsCustomerNotes = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsProductNotes = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ChemicalCollection1 = New AOS.BusinessObjects.ChemicalCollection()
+        Me.RibbonPageGroup36 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rbtnRptCustomerNotes = New DevExpress.XtraBars.BarButtonItem()
         CustidLabel = New System.Windows.Forms.Label()
         CustnameLabel = New System.Windows.Forms.Label()
         Custshipaddress1Label = New System.Windows.Forms.Label()
@@ -589,6 +599,8 @@ Partial Class viewSalesCustomers
         CType(Me.bsSalesYears, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCustomerLookupList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -606,6 +618,7 @@ Partial Class viewSalesCustomers
         CType(Me.GroupControl16, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl16.SuspendLayout()
         CType(Me.MemoEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomerNotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MemoEdit8.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MemoEdit9.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.luCustomerList.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -613,6 +626,7 @@ Partial Class viewSalesCustomers
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.MemoEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsProductNotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eReceivingNotes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eVendorNotes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -641,14 +655,6 @@ Partial Class viewSalesCustomers
         Me.GroupControl2.SuspendLayout()
         CType(Me.grSalesperson, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl2.SuspendLayout()
-        CType(Me.grpCommissionData, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grpCommissionData.SuspendLayout()
-        CType(Me.grCommissionData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grvCommissionData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl10.SuspendLayout()
         CType(Me.GroupControl9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -658,6 +664,14 @@ Partial Class viewSalesCustomers
         CType(Me.gridViewSalesHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl2.SuspendLayout()
+        CType(Me.grpCommissionData, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpCommissionData.SuspendLayout()
+        CType(Me.grCommissionData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvCommissionData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl1.SuspendLayout()
         CType(Me.PanelControl9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -772,8 +786,6 @@ Partial Class viewSalesCustomers
         CType(Me.bsTrendsMonthly, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsTrendsQuarterly, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsTrendsAnnually, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsCustomerNotes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsProductNotes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CustidLabel
@@ -1146,13 +1158,13 @@ Partial Class viewSalesCustomers
         Me.RibbonControl1.ApplicationCaption = "dsadsdsa"
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE, Me.rbtnGetSalesAnalysisByCustomerData, Me.rbtnExportSalesByCustomerAnalysisToExcel, Me.rbtnGetSalesPersonAnalysis, Me.rbtnExportSalesPersonAnalysisToExcel, Me.rbtnGetAllCustomersSales, Me.rbtnWorkOrdersToInvoice, Me.btnInvoiceHistory})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddCustomer, Me.btnEditCustomer, Me.btnDeleteCustomer, Me.btnAddSalesperson, Me.btnEditSalesperson, Me.btnDeleteSalesperson, Me.btnAddPriceListItem, Me.btnEditPriceListItem, Me.btnDeletePriceListItem, Me.btnAddAssignment, Me.btnEditAssignment, Me.btnDeleteAssignment, Me.btnAddInvoice, Me.btnEditInvoice, Me.btnDeleteInvoice, Me.btnRefreshCompleteShipments, Me.btnCreateInvoice, Me.btnFilterPending, Me.btnFilterReceivable, Me.btnFilterPaid, Me.btnFilterVoid, Me.btnFilterAll, Me.btnPrintInvoice, Me.btnPrintPriceList, Me.btnCloseShipment, Me.btnConvertWorkOrderToInvoice, Me.btnTransferInvoicesToQuickbooks, Me.btnPrintCustomerPaymentHistory, Me.btnAddCustomerPayment, Me.btnEditCustomerPayment, Me.btnDeleteCustomerPayment, Me.btnPrintCustomerPmtByDate, Me.btnManageCustomerAssignments, Me.btnManageSalespersonData, Me.luActiveSalesPerson, Me.BarStaticItem1, Me.BarStaticItem2, Me.btnAddCommissionRec, Me.btnEditCommissionRec, Me.btnDeleteCommissionRec, Me.btnFetchForecastedCommissions, Me.btnFetchPayableCommissions, Me.btnPrintForecastedCommissions, Me.btnPrintPayableCommissions, Me.btnManageCommissionPayments, Me.btnMarkCommissionForecasted, Me.btnMarkCommissionPayable, Me.btnMarkCommissionPaid, Me.btnPrintCommissionsByCustomer, Me.eHistoryStart, Me.eHistoryEnd, Me.eCustomerSelector, Me.eFetchSalesHistoryData, Me.BarButtonItem2, Me.btnExportSalesHistoryData, Me.rbtnUpdateCustomers, Me.eProductLookup, Me.eProductStart, Me.eProductEnd, Me.rbtnGetProductSales, Me.rbtnPrintCustomerProductList, Me.printInvoiceHistoryReport, Me.rluSalesperson, Me.rbtnGetSalesAnalysisData, Me.rbtnExportSalesDataToExcel, Me.rluSalesYear, Me.rluCustomer, Me.BarButtonItem1, Me.rbtnCompileTrendData, Me.BarStaticItem3, Me.rbtnMonthlySalesAnalysis, Me.rbtnFilterPriceListActive, Me.rbtnFilterPriceListInActive, Me.rbtnViewPrintSDSDocument, Me.rbtnFilterSalesACTIVE, Me.rbtnFilterSalesINACTIVE, Me.rbtnGetSalesAnalysisByCustomerData, Me.rbtnExportSalesByCustomerAnalysisToExcel, Me.rbtnGetSalesPersonAnalysis, Me.rbtnExportSalesPersonAnalysisToExcel, Me.rbtnGetAllCustomersSales, Me.rbtnWorkOrdersToInvoice, Me.btnInvoiceHistory, Me.rbtnRptCustomerCommissionAssignments, Me.eCustomerLookup2, Me.rText2, Me.rbtnRptCustomerNotes})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 133
+        Me.RibbonControl1.MaxItemId = 137
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage3, Me.RibbonPage6, Me.RibbonPage4, Me.RibbonPage7, Me.RibbonPage5, Me.RibbonPage2, Me.RibbonPage10, Me.RibbonPage9})
-        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit14, Me.RepositoryItemLookUpEdit15, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4, Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17, Me.RepositoryItemLookUpEdit18})
+        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit14, Me.RepositoryItemLookUpEdit15, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4, Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17, Me.RepositoryItemLookUpEdit18, Me.RepositoryItemLookUpEdit19})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
         Me.RibbonControl1.Size = New System.Drawing.Size(1482, 117)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
@@ -1970,6 +1982,42 @@ Partial Class viewSalesCustomers
         Me.btnInvoiceHistory.ImageOptions.LargeImageIndex = 27
         Me.btnInvoiceHistory.Name = "btnInvoiceHistory"
         '
+        'rbtnRptCustomerCommissionAssignments
+        '
+        Me.rbtnRptCustomerCommissionAssignments.Caption = "Customer Commission Assignments"
+        Me.rbtnRptCustomerCommissionAssignments.Id = 133
+        Me.rbtnRptCustomerCommissionAssignments.ImageOptions.LargeImageIndex = 28
+        Me.rbtnRptCustomerCommissionAssignments.Name = "rbtnRptCustomerCommissionAssignments"
+        '
+        'eCustomerLookup2
+        '
+        Me.eCustomerLookup2.Edit = Me.RepositoryItemLookUpEdit19
+        Me.eCustomerLookup2.EditWidth = 200
+        Me.eCustomerLookup2.Id = 134
+        Me.eCustomerLookup2.Name = "eCustomerLookup2"
+        '
+        'RepositoryItemLookUpEdit19
+        '
+        Me.RepositoryItemLookUpEdit19.AutoHeight = False
+        Me.RepositoryItemLookUpEdit19.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit19.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", 150, "Customer Name"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", 80, "City"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State")})
+        Me.RepositoryItemLookUpEdit19.DataSource = Me.bsCustomers2
+        Me.RepositoryItemLookUpEdit19.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit19.Name = "RepositoryItemLookUpEdit19"
+        Me.RepositoryItemLookUpEdit19.NullText = "[Select a customer...]"
+        Me.RepositoryItemLookUpEdit19.PopupWidth = 400
+        Me.RepositoryItemLookUpEdit19.ValueMember = "Custid"
+        '
+        'bsCustomers2
+        '
+        Me.bsCustomers2.DataSource = GetType(AOS.BusinessObjects.CustomerCollection)
+        '
+        'rText2
+        '
+        Me.rText2.Caption = "Customer Name:"
+        Me.rText2.Id = 135
+        Me.rText2.Name = "rText2"
+        '
         'RibbonLargeImages
         '
         Me.RibbonLargeImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -1977,7 +2025,7 @@ Partial Class viewSalesCustomers
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup36})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Tag = "11"
         Me.RibbonPage1.Text = "Customers"
@@ -2138,7 +2186,7 @@ Partial Class viewSalesCustomers
         '
         'RibbonPage5
         '
-        Me.RibbonPage5.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup30, Me.RibbonPageGroup8, Me.RibbonPageGroup2})
+        Me.RibbonPage5.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup30, Me.RibbonPageGroup8, Me.RibbonPageGroup2, Me.RibbonPageGroup35})
         Me.RibbonPage5.Name = "RibbonPage5"
         Me.RibbonPage5.Tag = "15"
         Me.RibbonPage5.Text = "Sales & Commissions"
@@ -2172,6 +2220,17 @@ Partial Class viewSalesCustomers
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
         Me.RibbonPageGroup2.ShowCaptionButton = False
         Me.RibbonPageGroup2.Text = "Customer Assignments"
+        '
+        'RibbonPageGroup35
+        '
+        Me.RibbonPageGroup35.AllowMinimize = False
+        Me.RibbonPageGroup35.AllowTextClipping = False
+        Me.RibbonPageGroup35.ItemLinks.Add(Me.rText2)
+        Me.RibbonPageGroup35.ItemLinks.Add(Me.eCustomerLookup2)
+        Me.RibbonPageGroup35.ItemLinks.Add(Me.rbtnRptCustomerCommissionAssignments, True)
+        Me.RibbonPageGroup35.Name = "RibbonPageGroup35"
+        Me.RibbonPageGroup35.ShowCaptionButton = False
+        Me.RibbonPageGroup35.Text = "Reports"
         '
         'RibbonPage2
         '
@@ -2329,8 +2388,8 @@ Partial Class viewSalesCustomers
         Me.WorkPanelsHolder.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl5)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl10)
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl9)
@@ -2648,6 +2707,10 @@ Partial Class viewSalesCustomers
         Me.MemoEdit5.Size = New System.Drawing.Size(363, 83)
         Me.MemoEdit5.TabIndex = 52
         '
+        'bsCustomerNotes
+        '
+        Me.bsCustomerNotes.DataSource = GetType(AOS.BusinessObjects.Customer)
+        '
         'MemoEdit8
         '
         Me.MemoEdit8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsCustomerNotes, "Prodfulfillmentnotes", True))
@@ -2730,6 +2793,10 @@ Partial Class viewSalesCustomers
         Me.MemoEdit4.Name = "MemoEdit4"
         Me.MemoEdit4.Size = New System.Drawing.Size(435, 74)
         Me.MemoEdit4.TabIndex = 21
+        '
+        'bsProductNotes
+        '
+        Me.bsProductNotes.DataSource = GetType(AOS.BusinessObjects.Product)
         '
         'eReceivingNotes
         '
@@ -3522,6 +3589,233 @@ Partial Class viewSalesCustomers
         Me.colStatus.Visible = True
         Me.colStatus.VisibleIndex = 2
         '
+        'RibbonPanelControl10
+        '
+        Me.RibbonPanelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.RibbonPanelControl10.Controls.Add(Me.GroupControl9)
+        Me.RibbonPanelControl10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl10.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl10.Name = "RibbonPanelControl10"
+        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 565)
+        Me.RibbonPanelControl10.TabIndex = 3
+        '
+        'GroupControl9
+        '
+        Me.GroupControl9.Controls.Add(Me.grSalesHistory)
+        Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl9.Name = "GroupControl9"
+        Me.GroupControl9.Size = New System.Drawing.Size(1482, 565)
+        Me.GroupControl9.TabIndex = 9
+        Me.GroupControl9.Text = "Sales History Details"
+        '
+        'grSalesHistory
+        '
+        Me.grSalesHistory.DataSource = Me.bsSalesHistory
+        Me.grSalesHistory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grSalesHistory.Location = New System.Drawing.Point(2, 22)
+        Me.grSalesHistory.LookAndFeel.SkinName = "Money Twins"
+        Me.grSalesHistory.MainView = Me.gridViewSalesHistory
+        Me.grSalesHistory.Name = "grSalesHistory"
+        Me.grSalesHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit13, Me.RepositoryItemLookUpEdit12})
+        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 541)
+        Me.grSalesHistory.TabIndex = 0
+        Me.grSalesHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewSalesHistory})
+        '
+        'bsSalesHistory
+        '
+        Me.bsSalesHistory.DataSource = GetType(AOS.BusinessObjects.ViewCustomerInvoicedItemsCollection)
+        '
+        'gridViewSalesHistory
+        '
+        Me.gridViewSalesHistory.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.FocusedCell.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.FocusedCell.BorderColor = System.Drawing.Color.Transparent
+        Me.gridViewSalesHistory.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black
+        Me.gridViewSalesHistory.Appearance.FocusedCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseBackColor = True
+        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseBorderColor = True
+        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseForeColor = True
+        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseTextOptions = True
+        Me.gridViewSalesHistory.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
+        Me.gridViewSalesHistory.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.FocusedRow.BorderColor = System.Drawing.Color.Transparent
+        Me.gridViewSalesHistory.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black
+        Me.gridViewSalesHistory.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.gridViewSalesHistory.Appearance.FocusedRow.Options.UseBackColor = True
+        Me.gridViewSalesHistory.Appearance.FocusedRow.Options.UseBorderColor = True
+        Me.gridViewSalesHistory.Appearance.FocusedRow.Options.UseForeColor = True
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.Transparent
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.Black
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.Options.UseBackColor = True
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.Options.UseBorderColor = True
+        Me.gridViewSalesHistory.Appearance.HideSelectionRow.Options.UseForeColor = True
+        Me.gridViewSalesHistory.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.gridViewSalesHistory.Appearance.SelectedRow.BorderColor = System.Drawing.Color.Transparent
+        Me.gridViewSalesHistory.Appearance.SelectedRow.ForeColor = System.Drawing.Color.Black
+        Me.gridViewSalesHistory.Appearance.SelectedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
+        Me.gridViewSalesHistory.Appearance.SelectedRow.Options.UseBackColor = True
+        Me.gridViewSalesHistory.Appearance.SelectedRow.Options.UseBorderColor = True
+        Me.gridViewSalesHistory.Appearance.SelectedRow.Options.UseForeColor = True
+        Me.gridViewSalesHistory.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCustid6, Me.colCustname1, Me.colInvoicenumber3, Me.colInvoicedate1, Me.colProductid2, Me.colProductdesc, Me.colQuantity, Me.colContainer1, Me.colUom1, Me.colUnits1, Me.colItemprice, Me.colExtprice, Me.GridColumn20})
+        Me.gridViewSalesHistory.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None
+        Me.gridViewSalesHistory.GridControl = Me.grSalesHistory
+        Me.gridViewSalesHistory.Name = "gridViewSalesHistory"
+        Me.gridViewSalesHistory.OptionsBehavior.Editable = False
+        Me.gridViewSalesHistory.OptionsFilter.AllowMRUFilterList = False
+        Me.gridViewSalesHistory.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.gridViewSalesHistory.OptionsView.ShowAutoFilterRow = True
+        Me.gridViewSalesHistory.OptionsView.ShowGroupPanel = False
+        Me.gridViewSalesHistory.OptionsView.ShowIndicator = False
+        '
+        'colCustid6
+        '
+        Me.colCustid6.Caption = "Cust ID"
+        Me.colCustid6.FieldName = "Custid"
+        Me.colCustid6.Name = "colCustid6"
+        Me.colCustid6.Visible = True
+        Me.colCustid6.VisibleIndex = 0
+        Me.colCustid6.Width = 91
+        '
+        'colCustname1
+        '
+        Me.colCustname1.Caption = "Customer Name"
+        Me.colCustname1.FieldName = "Custname"
+        Me.colCustname1.Name = "colCustname1"
+        Me.colCustname1.Visible = True
+        Me.colCustname1.VisibleIndex = 1
+        Me.colCustname1.Width = 231
+        '
+        'colInvoicenumber3
+        '
+        Me.colInvoicenumber3.Caption = "Inv #"
+        Me.colInvoicenumber3.FieldName = "Invoicenumber"
+        Me.colInvoicenumber3.Name = "colInvoicenumber3"
+        Me.colInvoicenumber3.Visible = True
+        Me.colInvoicenumber3.VisibleIndex = 3
+        Me.colInvoicenumber3.Width = 109
+        '
+        'colInvoicedate1
+        '
+        Me.colInvoicedate1.Caption = "Inv Date"
+        Me.colInvoicedate1.FieldName = "Invoicedate"
+        Me.colInvoicedate1.Name = "colInvoicedate1"
+        Me.colInvoicedate1.Visible = True
+        Me.colInvoicedate1.VisibleIndex = 4
+        Me.colInvoicedate1.Width = 109
+        '
+        'colProductid2
+        '
+        Me.colProductid2.Caption = "Prod ID"
+        Me.colProductid2.FieldName = "Productid"
+        Me.colProductid2.Name = "colProductid2"
+        Me.colProductid2.Visible = True
+        Me.colProductid2.VisibleIndex = 5
+        Me.colProductid2.Width = 102
+        '
+        'colProductdesc
+        '
+        Me.colProductdesc.Caption = "Product Description"
+        Me.colProductdesc.FieldName = "Productdesc"
+        Me.colProductdesc.Name = "colProductdesc"
+        Me.colProductdesc.Visible = True
+        Me.colProductdesc.VisibleIndex = 6
+        Me.colProductdesc.Width = 173
+        '
+        'colQuantity
+        '
+        Me.colQuantity.Caption = "Qty"
+        Me.colQuantity.FieldName = "Quantity"
+        Me.colQuantity.Name = "colQuantity"
+        Me.colQuantity.Visible = True
+        Me.colQuantity.VisibleIndex = 7
+        Me.colQuantity.Width = 61
+        '
+        'colContainer1
+        '
+        Me.colContainer1.Caption = "Container"
+        Me.colContainer1.FieldName = "Container"
+        Me.colContainer1.Name = "colContainer1"
+        Me.colContainer1.Visible = True
+        Me.colContainer1.VisibleIndex = 8
+        Me.colContainer1.Width = 95
+        '
+        'colUom1
+        '
+        Me.colUom1.Caption = "UOM"
+        Me.colUom1.FieldName = "Uom"
+        Me.colUom1.Name = "colUom1"
+        Me.colUom1.Visible = True
+        Me.colUom1.VisibleIndex = 10
+        Me.colUom1.Width = 95
+        '
+        'colUnits1
+        '
+        Me.colUnits1.Caption = "Units"
+        Me.colUnits1.FieldName = "Units"
+        Me.colUnits1.Name = "colUnits1"
+        Me.colUnits1.Visible = True
+        Me.colUnits1.VisibleIndex = 9
+        Me.colUnits1.Width = 95
+        '
+        'colItemprice
+        '
+        Me.colItemprice.Caption = "Price"
+        Me.colItemprice.DisplayFormat.FormatString = "c2"
+        Me.colItemprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colItemprice.FieldName = "Itemprice"
+        Me.colItemprice.Name = "colItemprice"
+        Me.colItemprice.Visible = True
+        Me.colItemprice.VisibleIndex = 11
+        Me.colItemprice.Width = 95
+        '
+        'colExtprice
+        '
+        Me.colExtprice.Caption = "Ext Price"
+        Me.colExtprice.DisplayFormat.FormatString = "c2"
+        Me.colExtprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colExtprice.FieldName = "Extprice"
+        Me.colExtprice.Name = "colExtprice"
+        Me.colExtprice.Visible = True
+        Me.colExtprice.VisibleIndex = 12
+        Me.colExtprice.Width = 107
+        '
+        'GridColumn20
+        '
+        Me.GridColumn20.Caption = "Cust PO"
+        Me.GridColumn20.FieldName = "Customerpo"
+        Me.GridColumn20.Name = "GridColumn20"
+        Me.GridColumn20.Visible = True
+        Me.GridColumn20.VisibleIndex = 2
+        Me.GridColumn20.Width = 113
+        '
+        'RepositoryItemLookUpEdit13
+        '
+        Me.RepositoryItemLookUpEdit13.AutoHeight = False
+        Me.RepositoryItemLookUpEdit13.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit13.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custid", "ID", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 150, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit13.DataSource = Me.bsCustomerList
+        Me.RepositoryItemLookUpEdit13.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit13.Name = "RepositoryItemLookUpEdit13"
+        Me.RepositoryItemLookUpEdit13.NullText = ""
+        Me.RepositoryItemLookUpEdit13.ReadOnly = True
+        Me.RepositoryItemLookUpEdit13.ValueMember = "Custid"
+        '
+        'RepositoryItemLookUpEdit12
+        '
+        Me.RepositoryItemLookUpEdit12.AutoHeight = False
+        Me.RepositoryItemLookUpEdit12.DataSource = Me.bsCustomers
+        Me.RepositoryItemLookUpEdit12.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit12.Name = "RepositoryItemLookUpEdit12"
+        Me.RepositoryItemLookUpEdit12.NullText = ""
+        Me.RepositoryItemLookUpEdit12.ReadOnly = True
+        Me.RepositoryItemLookUpEdit12.ValueMember = "Custid"
+        '
         'RibbonPanelControl2
         '
         Me.RibbonPanelControl2.Controls.Add(Me.grpCommissionData)
@@ -3725,224 +4019,6 @@ Partial Class viewSalesCustomers
         Me.RepositoryItemLookUpEdit11.NullText = ""
         Me.RepositoryItemLookUpEdit11.ReadOnly = True
         Me.RepositoryItemLookUpEdit11.ValueMember = "Custid"
-        '
-        'RibbonPanelControl10
-        '
-        Me.RibbonPanelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.RibbonPanelControl10.Controls.Add(Me.GroupControl9)
-        Me.RibbonPanelControl10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl10.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl10.Name = "RibbonPanelControl10"
-        Me.RibbonPanelControl10.Size = New System.Drawing.Size(1482, 565)
-        Me.RibbonPanelControl10.TabIndex = 3
-        '
-        'GroupControl9
-        '
-        Me.GroupControl9.Controls.Add(Me.grSalesHistory)
-        Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl9.Name = "GroupControl9"
-        Me.GroupControl9.Size = New System.Drawing.Size(1482, 565)
-        Me.GroupControl9.TabIndex = 9
-        Me.GroupControl9.Text = "Sales History Details"
-        '
-        'grSalesHistory
-        '
-        Me.grSalesHistory.DataSource = Me.bsSalesHistory
-        Me.grSalesHistory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grSalesHistory.Location = New System.Drawing.Point(2, 22)
-        Me.grSalesHistory.LookAndFeel.SkinName = "Money Twins"
-        Me.grSalesHistory.MainView = Me.gridViewSalesHistory
-        Me.grSalesHistory.Name = "grSalesHistory"
-        Me.grSalesHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit13, Me.RepositoryItemLookUpEdit12})
-        Me.grSalesHistory.Size = New System.Drawing.Size(1478, 541)
-        Me.grSalesHistory.TabIndex = 0
-        Me.grSalesHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewSalesHistory})
-        '
-        'bsSalesHistory
-        '
-        Me.bsSalesHistory.DataSource = GetType(AOS.BusinessObjects.ViewCustomerInvoicedItemsCollection)
-        '
-        'gridViewSalesHistory
-        '
-        Me.gridViewSalesHistory.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.FocusedCell.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.FocusedCell.BorderColor = System.Drawing.Color.Transparent
-        Me.gridViewSalesHistory.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black
-        Me.gridViewSalesHistory.Appearance.FocusedCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseBackColor = True
-        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseBorderColor = True
-        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseForeColor = True
-        Me.gridViewSalesHistory.Appearance.FocusedCell.Options.UseTextOptions = True
-        Me.gridViewSalesHistory.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
-        Me.gridViewSalesHistory.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.FocusedRow.BorderColor = System.Drawing.Color.Transparent
-        Me.gridViewSalesHistory.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black
-        Me.gridViewSalesHistory.Appearance.FocusedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.gridViewSalesHistory.Appearance.FocusedRow.Options.UseBackColor = True
-        Me.gridViewSalesHistory.Appearance.FocusedRow.Options.UseBorderColor = True
-        Me.gridViewSalesHistory.Appearance.FocusedRow.Options.UseForeColor = True
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.Transparent
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.Black
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.Options.UseBackColor = True
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.Options.UseBorderColor = True
-        Me.gridViewSalesHistory.Appearance.HideSelectionRow.Options.UseForeColor = True
-        Me.gridViewSalesHistory.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.gridViewSalesHistory.Appearance.SelectedRow.BorderColor = System.Drawing.Color.Transparent
-        Me.gridViewSalesHistory.Appearance.SelectedRow.ForeColor = System.Drawing.Color.Black
-        Me.gridViewSalesHistory.Appearance.SelectedRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.gridViewSalesHistory.Appearance.SelectedRow.Options.UseBackColor = True
-        Me.gridViewSalesHistory.Appearance.SelectedRow.Options.UseBorderColor = True
-        Me.gridViewSalesHistory.Appearance.SelectedRow.Options.UseForeColor = True
-        Me.gridViewSalesHistory.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCustid6, Me.colCustname1, Me.colInvoicenumber3, Me.colInvoicedate1, Me.colProductid2, Me.colProductdesc, Me.colQuantity, Me.colContainer1, Me.colUom1, Me.colUnits1, Me.colItemprice, Me.colExtprice})
-        Me.gridViewSalesHistory.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None
-        Me.gridViewSalesHistory.GridControl = Me.grSalesHistory
-        Me.gridViewSalesHistory.Name = "gridViewSalesHistory"
-        Me.gridViewSalesHistory.OptionsBehavior.Editable = False
-        Me.gridViewSalesHistory.OptionsFilter.AllowMRUFilterList = False
-        Me.gridViewSalesHistory.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.gridViewSalesHistory.OptionsView.ShowAutoFilterRow = True
-        Me.gridViewSalesHistory.OptionsView.ShowGroupPanel = False
-        Me.gridViewSalesHistory.OptionsView.ShowIndicator = False
-        '
-        'colCustid6
-        '
-        Me.colCustid6.Caption = "Cust ID"
-        Me.colCustid6.FieldName = "Custid"
-        Me.colCustid6.Name = "colCustid6"
-        Me.colCustid6.Visible = True
-        Me.colCustid6.VisibleIndex = 0
-        Me.colCustid6.Width = 53
-        '
-        'colCustname1
-        '
-        Me.colCustname1.Caption = "Customer Name"
-        Me.colCustname1.FieldName = "Custname"
-        Me.colCustname1.Name = "colCustname1"
-        Me.colCustname1.Visible = True
-        Me.colCustname1.VisibleIndex = 1
-        Me.colCustname1.Width = 135
-        '
-        'colInvoicenumber3
-        '
-        Me.colInvoicenumber3.Caption = "Inv #"
-        Me.colInvoicenumber3.FieldName = "Invoicenumber"
-        Me.colInvoicenumber3.Name = "colInvoicenumber3"
-        Me.colInvoicenumber3.Visible = True
-        Me.colInvoicenumber3.VisibleIndex = 2
-        Me.colInvoicenumber3.Width = 63
-        '
-        'colInvoicedate1
-        '
-        Me.colInvoicedate1.Caption = "Inv Date"
-        Me.colInvoicedate1.FieldName = "Invoicedate"
-        Me.colInvoicedate1.Name = "colInvoicedate1"
-        Me.colInvoicedate1.Visible = True
-        Me.colInvoicedate1.VisibleIndex = 3
-        Me.colInvoicedate1.Width = 63
-        '
-        'colProductid2
-        '
-        Me.colProductid2.Caption = "Prod ID"
-        Me.colProductid2.FieldName = "Productid"
-        Me.colProductid2.Name = "colProductid2"
-        Me.colProductid2.Visible = True
-        Me.colProductid2.VisibleIndex = 4
-        Me.colProductid2.Width = 59
-        '
-        'colProductdesc
-        '
-        Me.colProductdesc.Caption = "Product Description"
-        Me.colProductdesc.FieldName = "Productdesc"
-        Me.colProductdesc.Name = "colProductdesc"
-        Me.colProductdesc.Visible = True
-        Me.colProductdesc.VisibleIndex = 5
-        Me.colProductdesc.Width = 100
-        '
-        'colQuantity
-        '
-        Me.colQuantity.Caption = "Qty"
-        Me.colQuantity.FieldName = "Quantity"
-        Me.colQuantity.Name = "colQuantity"
-        Me.colQuantity.Visible = True
-        Me.colQuantity.VisibleIndex = 6
-        Me.colQuantity.Width = 36
-        '
-        'colContainer1
-        '
-        Me.colContainer1.Caption = "Container"
-        Me.colContainer1.FieldName = "Container"
-        Me.colContainer1.Name = "colContainer1"
-        Me.colContainer1.Visible = True
-        Me.colContainer1.VisibleIndex = 7
-        Me.colContainer1.Width = 55
-        '
-        'colUom1
-        '
-        Me.colUom1.Caption = "UOM"
-        Me.colUom1.FieldName = "Uom"
-        Me.colUom1.Name = "colUom1"
-        Me.colUom1.Visible = True
-        Me.colUom1.VisibleIndex = 9
-        Me.colUom1.Width = 55
-        '
-        'colUnits1
-        '
-        Me.colUnits1.Caption = "Units"
-        Me.colUnits1.FieldName = "Units"
-        Me.colUnits1.Name = "colUnits1"
-        Me.colUnits1.Visible = True
-        Me.colUnits1.VisibleIndex = 8
-        Me.colUnits1.Width = 55
-        '
-        'colItemprice
-        '
-        Me.colItemprice.Caption = "Price"
-        Me.colItemprice.DisplayFormat.FormatString = "c2"
-        Me.colItemprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colItemprice.FieldName = "Itemprice"
-        Me.colItemprice.Name = "colItemprice"
-        Me.colItemprice.Visible = True
-        Me.colItemprice.VisibleIndex = 10
-        Me.colItemprice.Width = 55
-        '
-        'colExtprice
-        '
-        Me.colExtprice.Caption = "Ext Price"
-        Me.colExtprice.DisplayFormat.FormatString = "c2"
-        Me.colExtprice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colExtprice.FieldName = "Extprice"
-        Me.colExtprice.Name = "colExtprice"
-        Me.colExtprice.Visible = True
-        Me.colExtprice.VisibleIndex = 11
-        Me.colExtprice.Width = 55
-        '
-        'RepositoryItemLookUpEdit13
-        '
-        Me.RepositoryItemLookUpEdit13.AutoHeight = False
-        Me.RepositoryItemLookUpEdit13.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit13.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custid", "ID", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 150, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.RepositoryItemLookUpEdit13.DataSource = Me.bsCustomerList
-        Me.RepositoryItemLookUpEdit13.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit13.Name = "RepositoryItemLookUpEdit13"
-        Me.RepositoryItemLookUpEdit13.NullText = ""
-        Me.RepositoryItemLookUpEdit13.ReadOnly = True
-        Me.RepositoryItemLookUpEdit13.ValueMember = "Custid"
-        '
-        'RepositoryItemLookUpEdit12
-        '
-        Me.RepositoryItemLookUpEdit12.AutoHeight = False
-        Me.RepositoryItemLookUpEdit12.DataSource = Me.bsCustomers
-        Me.RepositoryItemLookUpEdit12.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit12.Name = "RepositoryItemLookUpEdit12"
-        Me.RepositoryItemLookUpEdit12.NullText = ""
-        Me.RepositoryItemLookUpEdit12.ReadOnly = True
-        Me.RepositoryItemLookUpEdit12.ValueMember = "Custid"
         '
         'RibbonPanelControl1
         '
@@ -6155,13 +6231,32 @@ Partial Class viewSalesCustomers
         Me.Timer3.Enabled = True
         Me.Timer3.Interval = 15000
         '
-        'bsCustomerNotes
+        'ChemicalCollection1
         '
-        Me.bsCustomerNotes.DataSource = GetType(AOS.BusinessObjects.Customer)
+        Me.ChemicalCollection1.AllowDelete = True
+        Me.ChemicalCollection1.AllowEdit = True
+        Me.ChemicalCollection1.AllowNew = True
+        Me.ChemicalCollection1.EnableHierarchicalBinding = True
+        Me.ChemicalCollection1.Filter = ""
+        Me.ChemicalCollection1.RowStateFilter = System.Data.DataViewRowState.None
+        Me.ChemicalCollection1.Sort = ""
+        Me.ChemicalCollection1.SuspendListChangedEvents = False
         '
-        'bsProductNotes
+        'RibbonPageGroup36
         '
-        Me.bsProductNotes.DataSource = GetType(AOS.BusinessObjects.Product)
+        Me.RibbonPageGroup36.AllowMinimize = False
+        Me.RibbonPageGroup36.AllowTextClipping = False
+        Me.RibbonPageGroup36.ItemLinks.Add(Me.rbtnRptCustomerNotes)
+        Me.RibbonPageGroup36.Name = "RibbonPageGroup36"
+        Me.RibbonPageGroup36.ShowCaptionButton = False
+        Me.RibbonPageGroup36.Text = "Reports"
+        '
+        'rbtnRptCustomerNotes
+        '
+        Me.rbtnRptCustomerNotes.Caption = "Customer Notes"
+        Me.rbtnRptCustomerNotes.Id = 136
+        Me.rbtnRptCustomerNotes.ImageOptions.LargeImageIndex = 15
+        Me.rbtnRptCustomerNotes.Name = "rbtnRptCustomerNotes"
         '
         'viewSalesCustomers
         '
@@ -6194,6 +6289,8 @@ Partial Class viewSalesCustomers
         CType(Me.bsSalesYears, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsCustomerLookupList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6213,6 +6310,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl16.ResumeLayout(False)
         Me.GroupControl16.PerformLayout()
         CType(Me.MemoEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomerNotes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MemoEdit8.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MemoEdit9.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.luCustomerList.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6221,6 +6319,7 @@ Partial Class viewSalesCustomers
         Me.GroupControl3.ResumeLayout(False)
         Me.GroupControl3.PerformLayout()
         CType(Me.MemoEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsProductNotes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eReceivingNotes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eVendorNotes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6250,14 +6349,6 @@ Partial Class viewSalesCustomers
         Me.GroupControl2.ResumeLayout(False)
         CType(Me.grSalesperson, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl2.ResumeLayout(False)
-        CType(Me.grpCommissionData, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grpCommissionData.ResumeLayout(False)
-        CType(Me.grCommissionData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grvCommissionData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl10.ResumeLayout(False)
         CType(Me.GroupControl9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6267,6 +6358,14 @@ Partial Class viewSalesCustomers
         CType(Me.gridViewSalesHistory, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl2.ResumeLayout(False)
+        CType(Me.grpCommissionData, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpCommissionData.ResumeLayout(False)
+        CType(Me.grCommissionData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvCommissionData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl1.ResumeLayout(False)
         CType(Me.PanelControl9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6388,8 +6487,6 @@ Partial Class viewSalesCustomers
         CType(Me.bsTrendsMonthly, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsTrendsQuarterly, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsTrendsAnnually, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsCustomerNotes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsProductNotes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -6871,4 +6968,14 @@ Partial Class viewSalesCustomers
     Friend WithEvents MemoEdit9 As DevExpress.XtraEditors.MemoEdit
     Friend WithEvents bsCustomerNotes As BindingSource
     Friend WithEvents bsProductNotes As BindingSource
+    Friend WithEvents GridColumn20 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents ChemicalCollection1 As ChemicalCollection
+    Friend WithEvents rbtnRptCustomerCommissionAssignments As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents eCustomerLookup2 As DevExpress.XtraBars.BarEditItem
+    Friend WithEvents RepositoryItemLookUpEdit19 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents bsCustomers2 As BindingSource
+    Friend WithEvents rText2 As DevExpress.XtraBars.BarStaticItem
+    Friend WithEvents RibbonPageGroup35 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents rbtnRptCustomerNotes As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup36 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

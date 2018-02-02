@@ -449,7 +449,7 @@ Partial Class frmAddEditChemical2
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(538, 116)
+        Me.RibbonControl1.Size = New System.Drawing.Size(538, 117)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -548,7 +548,7 @@ Partial Class frmAddEditChemical2
         Me.GroupControl1.Controls.Add(ChemicalidLabel)
         Me.GroupControl1.Controls.Add(Me.ChemicalidTextEdit)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 116)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 117)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(538, 93)
         Me.GroupControl1.TabIndex = 1
@@ -768,7 +768,7 @@ Partial Class frmAddEditChemical2
         Me.GroupControl2.Controls.Add(Me.SgLowTextEdit)
         Me.GroupControl2.Controls.Add(SgLowLabel)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 268)
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 269)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(538, 160)
         Me.GroupControl2.TabIndex = 3
@@ -784,7 +784,7 @@ Partial Class frmAddEditChemical2
         Me.GroupControl3.Controls.Add(eSDSFilePath)
         Me.GroupControl3.Controls.Add(Me.eSDSFileName)
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 209)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 210)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(538, 59)
         Me.GroupControl3.TabIndex = 2
@@ -835,9 +835,9 @@ Partial Class frmAddEditChemical2
         Me.GroupControl4.Controls.Add(ReactivityLabel)
         Me.GroupControl4.Controls.Add(Me.ReactivityTextEdit)
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl4.Location = New System.Drawing.Point(0, 428)
+        Me.GroupControl4.Location = New System.Drawing.Point(0, 429)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(538, 200)
+        Me.GroupControl4.Size = New System.Drawing.Size(538, 199)
         Me.GroupControl4.TabIndex = 6
         Me.GroupControl4.Text = "Primary OSHA / DOT Shipping Information"
         '

@@ -1000,9 +1000,6 @@ Module WorkOrderProcessing
                         End If
 
 
-
-
-
                     Case SourceType.RLBL.ToString()
                         Dim vPad4 As String = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                         vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0:F2} - {1} - {2} - {3:F2} - {4} - {5}",
@@ -1047,19 +1044,38 @@ Module WorkOrderProcessing
                                                                              vPad + vPad, vAvailableProductsLine)))
 
 
-                                    If oFGR.Qpend = 0 Then
-                                        'Get Vendor Names from ProductCost records for Product ID (oFGR.Rlblproductid)
-                                        Dim oCostRecs As New ViewProductCostInfoCollection
-                                        oCostRecs.Query.Where(oCostRecs.Query.Productid.Equal(oFGR.Rlblproductid))
-                                        If oCostRecs.Query.Load Then
-                                            For Each oCR As ViewProductCostInfo In oCostRecs
-                                                vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1}", vPad4 + vPad4, oCR.Vendorname)))
-                                            Next
-                                        End If
-                                    End If
 
 
                                 End If
+
+                                '12/04/2017 Shaun McGuire
+                                'added this code to show Vendor Names IF the item to be relabeled has to be purchased
+                                If oItem.Rlblsourcertype = "PRCH" Then
+                                    'Get Vendor Names from ProductCost records for Product ID (oFGR.Rlblproductid)
+                                    Dim oCostRecs As New ViewProductCostInfoCollection
+                                    oCostRecs.Query.Where(oCostRecs.Query.Productid.Equal(oFGR.Rlblproductid))
+                                    If oCostRecs.Query.Load Then
+                                        For Each oCR As ViewProductCostInfo In oCostRecs
+                                            vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1}", vPad4 + vPad4, oCR.Vendorname)))
+                                        Next
+                                    End If
+                                End If
+
+
+                                'removed this code and replace with code directly above
+                                '12/04/2017 Shaun McGuire
+                                'If oFGR.Qpend = 0 Then
+                                '    'Get Vendor Names from ProductCost records for Product ID (oFGR.Rlblproductid)
+                                '    Dim oCostRecs As New ViewProductCostInfoCollection
+                                '    oCostRecs.Query.Where(oCostRecs.Query.Productid.Equal(oFGR.Rlblproductid))
+                                '    If oCostRecs.Query.Load Then
+                                '        For Each oCR As ViewProductCostInfo In oCostRecs
+                                '            vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1}", vPad4 + vPad4, oCR.Vendorname)))
+                                '        Next
+                                '    End If
+                                'End If
+
+
                             End If
 
                         Catch ex As Exception

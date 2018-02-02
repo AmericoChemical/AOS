@@ -824,6 +824,9 @@
     <Compile Include="BusinessObjects\Custom\ViewCurrentPhysicalInventory.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCurrentPhysicalInventoryCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCurrentPhysicalInventoryQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewCustomerCommissionAssignments.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewCustomerCommissionAssignmentsCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewCustomerCommissionAssignmentsQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerInvoicedItems.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerInvoicedItemsCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewCustomerInvoicedItemsQuery.vb" />
@@ -1079,6 +1082,9 @@
     <Compile Include="BusinessObjects\Custom\ViewReceivingHistory.vb" />
     <Compile Include="BusinessObjects\Custom\ViewReceivingHistoryCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewReceivingHistoryQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRelabeledProductsList.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRelabeledProductsListCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewRelabeledProductsListQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRelabelOrder.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRelabelOrderCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewRelabelOrderItem.vb" />
@@ -1491,6 +1497,7 @@
     <Compile Include="BusinessObjects\Generated\ViewCostingMaterialDefaultProduct.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCostPriceEffects2.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCurrentPhysicalInventory.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewCustomerCommissionAssignments.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerInvoicedItems.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerInvoiceList.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerLookup.vb" />
@@ -1576,6 +1583,7 @@
     <Compile Include="BusinessObjects\Generated\ViewRawMaterialOnOrder.vb" />
     <Compile Include="BusinessObjects\Generated\ViewReceivedHoldItems.vb" />
     <Compile Include="BusinessObjects\Generated\ViewReceivingHistory.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewRelabeledProductsList.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRelabelOrder.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRelabelOrderItem.vb" />
     <Compile Include="BusinessObjects\Generated\ViewRelabelOrderProduct.vb" />
@@ -2204,6 +2212,12 @@
     <Compile Include="Forms\Production\frmMaterialAPISList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Production\frmRelabeledProductsList.Designer.vb">
+      <DependentUpon>frmRelabeledProductsList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\frmRelabeledProductsList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Production\frmSelectProduct.Designer.vb">
       <DependentUpon>frmSelectProduct.vb</DependentUpon>
     </Compile>
@@ -2275,6 +2289,12 @@
     </Compile>
     <Compile Include="Forms\WorkOrders\frmWorkOrdersDailyList.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCommissionAssignmentByCustomer.Designer.vb">
+      <DependentUpon>rptCommissionAssignmentByCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptCommissionAssignmentByCustomer.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptCommissionsWithExceptions.Designer.vb">
       <DependentUpon>rptCommissionsWithExceptions.vb</DependentUpon>
@@ -3554,6 +3574,10 @@
       <DependentUpon>frmMaterialAPISList.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\frmRelabeledProductsList.resx">
+      <DependentUpon>frmRelabeledProductsList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\frmSelectProduct.resx">
       <DependentUpon>frmSelectProduct.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -3597,6 +3621,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkOrders\frmWorkOrdersDailyList.resx">
       <DependentUpon>frmWorkOrdersDailyList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCommissionAssignmentByCustomer.resx">
+      <DependentUpon>rptCommissionAssignmentByCustomer.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptCommissionsWithExceptions.resx">
@@ -4258,6 +4286,8 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewProductSellersListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewReceivedHoldItemsCollection1.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewReceivingHistoryCollection.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabeledProductsList.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRelabeledProductsListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRptBillOfLading4.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRptBillOfLading4Collection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewRptBillOfLading5.datasource" />

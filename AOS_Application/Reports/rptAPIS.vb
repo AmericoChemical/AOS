@@ -14,6 +14,7 @@ Public Class rptAPIS
         Dim oMaterial As ViewAPISITEMDataCollection
         Dim oProcs As ApisprocedureCollection
         Dim oNotes As ApisnoteCollection
+        Dim oComponents As ViewKitComponentCollection
 
         Try
             oAPIS = New ViewAPISData
@@ -38,6 +39,11 @@ Public Class rptAPIS
             oNotes.Query.Where(oNotes.Query.Apisnum.Equal(vAPISNum))
             oNotes.Query.Load()
             bsAPISNotes.DataSource = oNotes
+
+            oComponents = New ViewKitComponentCollection
+            oComponents.Query.Where(oComponents.Query.Kitid.Equal(oAPIS.Kitid))
+            oComponents.Query.Load()
+            bsKitComponents.DataSource = oComponents
 
         Catch ex As Exception
             MsgBox("There was an error retrieving data", MsgBoxStyle.Critical, "Error - Data Not Retrieved")

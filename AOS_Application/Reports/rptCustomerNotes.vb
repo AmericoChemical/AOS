@@ -2,19 +2,19 @@ Imports AOS.BusinessObjects
 
 Public Class rptCustomerNotes
 
-    Public Sub New(Optional ByVal vDate As Date = #10/1/2009#)
+    Public Sub New(ByVal vCustID As Integer)
         MyBase.New()
         'This call is required by the Designer.
         InitializeComponent()
         'Add any initialization after the InitializeComponent() call
-        getdata(vDate)
+        getdata(vCustID)
     End Sub
 
-    Private Sub getdata(ByVal vDate As Date)
-        Dim vPmt As New ViewCustomerPaymentInfoCollection
-        vPmt.Query.Where(vPmt.Query.Paymentdate.Equal(vDate))
-        vPmt.Query.Load()
-        Me.DataSource = vPmt
+    Private Sub getdata(ByVal vCustID As Integer)
+        Dim oCust As New CustomerCollection
+        oCust.Query.Where(oCust.Query.Custid.Equal(vCustID))
+        oCust.Query.Load()
+        Me.DataSource = oCust
     End Sub
 
 End Class
