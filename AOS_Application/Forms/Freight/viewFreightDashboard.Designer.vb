@@ -89,6 +89,7 @@ Partial Class viewFreightDashboard
         Me.RepositoryItemDateEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.eCustomerSelector = New DevExpress.XtraBars.BarEditItem()
         Me.RepositoryItemLookUpEdit6 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.bsCustomers2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.rBtnFetchShipmentHistory = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnExportHistory = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -118,80 +119,60 @@ Partial Class viewFreightDashboard
         Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.WorkPanelsHolder = New DevExpress.XtraEditors.PanelControl()
-        Me.RibbonPanelControl8 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl8 = New DevExpress.XtraEditors.GroupControl()
-        Me.PanelControl6 = New DevExpress.XtraEditors.PanelControl()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.bsCustomerShipmentHistory = New System.Windows.Forms.BindingSource(Me.components)
-        Me.grvCustomerShipmentHistory = New AOS.CustomClasses.CustomDevExGridView()
-        Me.colCustid1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCustname1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colWorkordernumber = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colOrdertype = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colActualShipmentDate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPlannedDeliveryDate1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colLoadType1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colQty = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colContainer = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colUnits = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colUom = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductdesc = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.CustomDevExGridView2 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.grPendingLoads = New DevExpress.XtraGrid.GridControl()
-        Me.bsPendingLoads = New System.Windows.Forms.BindingSource(Me.components)
-        Me.grvPendingLoads = New AOS.CustomClasses.CustomDevExGridView()
-        Me.colLoadID = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colLoadStatus = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colLoadType = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPlannedDepartureDate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPlannedDeliveryDate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colOriginType = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colOriginName = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colOriginCity = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colOriginState = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDestType = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDestName = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDestCity = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDestState = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCarrierID = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCarrierName = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPallets = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colGrossWt = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn71 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridView4 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.RibbonPanelControl4 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
-        Me.PanelControl4 = New DevExpress.XtraEditors.PanelControl()
-        Me.grDeliveredLoads = New DevExpress.XtraGrid.GridControl()
-        Me.bsDeliveredLoads = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView7 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn36 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn37 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn40 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn43 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn44 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn45 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn46 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn47 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn48 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn49 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn76 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn38 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn50 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn51 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn74 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridView8 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.RibbonPanelControl5 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
+        Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
+        Me.grCancelledLoads = New DevExpress.XtraGrid.GridControl()
+        Me.bsCancelledLoads = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView9 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.GridColumn52 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn53 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn54 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn55 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn56 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn57 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn58 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn59 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn60 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn61 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn62 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn63 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn64 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn65 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn66 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalSkids4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn67 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn68 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn75 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridView10 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.RibbonPanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.grScheduledLoads = New DevExpress.XtraGrid.GridControl()
+        Me.bsScheduledLoads = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView1 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalSkids3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn72 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridView2 = New AOS.CustomClasses.CustomDevExGridView()
         Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
@@ -214,62 +195,87 @@ Partial Class viewFreightDashboard
         Me.GridColumn32 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn22 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn21 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalSkids2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn33 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn34 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GridView6 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.RibbonPanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.grScheduledLoads = New DevExpress.XtraGrid.GridControl()
-        Me.bsScheduledLoads = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView1 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn72 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridView2 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.RibbonPanelControl5 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
-        Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
-        Me.grCancelledLoads = New DevExpress.XtraGrid.GridControl()
-        Me.bsCancelledLoads = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView9 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.GridColumn52 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn53 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn54 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn55 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn56 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn57 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn58 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn59 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn60 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn61 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn62 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn63 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn64 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn65 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn66 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn67 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn68 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn75 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridView10 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.RibbonPanelControl8 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl8 = New DevExpress.XtraEditors.GroupControl()
+        Me.PanelControl6 = New DevExpress.XtraEditors.PanelControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.bsCustomerShipmentHistory = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvCustomerShipmentHistory = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colCustid1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCustname1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colWorkordernumber = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOrdertype = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colActualShipmentDate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPlannedDeliveryDate1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLoadType1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQty = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colContainer = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUnits = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUom = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductdesc = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.CustomDevExGridView2 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.RibbonPanelControl4 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
+        Me.PanelControl4 = New DevExpress.XtraEditors.PanelControl()
+        Me.grDeliveredLoads = New DevExpress.XtraGrid.GridControl()
+        Me.bsDeliveredLoads = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView7 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn36 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn37 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn40 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn43 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn44 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn45 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn46 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn47 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn48 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn49 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn76 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn38 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalSkids1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn50 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn51 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn74 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridView8 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.grPendingLoads = New DevExpress.XtraGrid.GridControl()
+        Me.bsPendingLoads = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvPendingLoads = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colLoadID = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLoadStatus = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLoadType = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPlannedDepartureDate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPlannedDeliveryDate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOriginType = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOriginName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOriginCity = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOriginState = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDestType = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDestName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDestCity = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDestState = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCarrierID = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCarrierName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPallets = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalSkids = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colGrossWt = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn71 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridView4 = New AOS.CustomClasses.CustomDevExGridView()
         Me.RibbonPanelControl7 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl7 = New DevExpress.XtraEditors.GroupControl()
         Me.MaxLoadWeightTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -352,7 +358,6 @@ Partial Class viewFreightDashboard
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.ImageCollection2 = New DevExpress.Utils.ImageCollection(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.bsCustomers2 = New System.Windows.Forms.BindingSource(Me.components)
         CustemailLabel = New System.Windows.Forms.Label()
         CustphoneLabel = New System.Windows.Forms.Label()
         CustfaxLabel = New System.Windows.Forms.Label()
@@ -391,64 +396,10 @@ Partial Class viewFreightDashboard
         CType(Me.RepositoryItemDateEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit2.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WorkPanelsHolder.SuspendLayout()
-        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl8.SuspendLayout()
-        CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl8.SuspendLayout()
-        CType(Me.PanelControl6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl6.SuspendLayout()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grvCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CustomDevExGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl1.SuspendLayout()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl1.SuspendLayout()
-        CType(Me.grPendingLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsPendingLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grvPendingLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl4.SuspendLayout()
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl4.SuspendLayout()
-        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl4.SuspendLayout()
-        CType(Me.grDeliveredLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsDeliveredLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl3.SuspendLayout()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl3.SuspendLayout()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl3.SuspendLayout()
-        CType(Me.grInTransitLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsInTransitLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl2.SuspendLayout()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl2.SuspendLayout()
-        CType(Me.grScheduledLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsScheduledLoads, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl5.SuspendLayout()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -460,6 +411,61 @@ Partial Class viewFreightDashboard
         CType(Me.GridView9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl2.SuspendLayout()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl2.SuspendLayout()
+        CType(Me.grScheduledLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsScheduledLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl3.SuspendLayout()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
+        CType(Me.grInTransitLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsInTransitLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl8.SuspendLayout()
+        CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl8.SuspendLayout()
+        CType(Me.PanelControl6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl6.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomDevExGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl4.SuspendLayout()
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl4.SuspendLayout()
+        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl4.SuspendLayout()
+        CType(Me.grDeliveredLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsDeliveredLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl1.SuspendLayout()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
+        CType(Me.grPendingLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsPendingLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvPendingLoads, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl7.SuspendLayout()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -535,7 +541,6 @@ Partial Class viewFreightDashboard
         CType(Me.GridView11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CustemailLabel
@@ -849,7 +854,7 @@ Partial Class viewFreightDashboard
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4, Me.RibbonPage5, Me.RibbonPage8, Me.RibbonPage6, Me.RibbonPage7})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemLookUpEdit6})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1268, 117)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1268, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'ImageCollection1
@@ -1164,6 +1169,10 @@ Partial Class viewFreightDashboard
         Me.RepositoryItemLookUpEdit6.PopupWidth = 400
         Me.RepositoryItemLookUpEdit6.ValueMember = "Custid"
         '
+        'bsCustomers2
+        '
+        Me.bsCustomers2.DataSource = GetType(AOS.BusinessObjects.CustomerCollection)
+        '
         'rBtnFetchShipmentHistory
         '
         Me.rBtnFetchShipmentHistory.Caption = "Get Shipment History"
@@ -1412,20 +1421,691 @@ Partial Class viewFreightDashboard
         'WorkPanelsHolder
         '
         Me.WorkPanelsHolder.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl8)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
-        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl5)
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl3)
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl8)
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
+        Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl7)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl9)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 150)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 149)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1268, 599)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1268, 600)
         Me.WorkPanelsHolder.TabIndex = 7
+        '
+        'RibbonPanelControl5
+        '
+        Me.RibbonPanelControl5.Controls.Add(Me.GroupControl5)
+        Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl5.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
+        Me.RibbonPanelControl5.Padding = New System.Windows.Forms.Padding(6)
+        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1268, 600)
+        Me.RibbonPanelControl5.TabIndex = 3
+        '
+        'GroupControl5
+        '
+        Me.GroupControl5.Controls.Add(Me.PanelControl5)
+        Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl5.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl5.Name = "GroupControl5"
+        Me.GroupControl5.Size = New System.Drawing.Size(1252, 584)
+        Me.GroupControl5.TabIndex = 4
+        Me.GroupControl5.Text = "RETURNED / CANCELLED LOADS"
+        '
+        'PanelControl5
+        '
+        Me.PanelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl5.Controls.Add(Me.grCancelledLoads)
+        Me.PanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl5.Location = New System.Drawing.Point(2, 20)
+        Me.PanelControl5.Name = "PanelControl5"
+        Me.PanelControl5.Size = New System.Drawing.Size(1248, 562)
+        Me.PanelControl5.TabIndex = 0
+        '
+        'grCancelledLoads
+        '
+        Me.grCancelledLoads.DataSource = Me.bsCancelledLoads
+        Me.grCancelledLoads.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grCancelledLoads.Location = New System.Drawing.Point(0, 0)
+        Me.grCancelledLoads.MainView = Me.GridView9
+        Me.grCancelledLoads.Name = "grCancelledLoads"
+        Me.grCancelledLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5})
+        Me.grCancelledLoads.Size = New System.Drawing.Size(1248, 562)
+        Me.grCancelledLoads.TabIndex = 0
+        Me.grCancelledLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView9, Me.GridView10})
+        '
+        'bsCancelledLoads
+        '
+        Me.bsCancelledLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
+        '
+        'GridView9
+        '
+        Me.GridView9.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn52, Me.GridColumn53, Me.GridColumn54, Me.GridColumn55, Me.GridColumn56, Me.GridColumn57, Me.GridColumn58, Me.GridColumn59, Me.GridColumn60, Me.GridColumn61, Me.GridColumn62, Me.GridColumn63, Me.GridColumn64, Me.GridColumn65, Me.GridColumn66, Me.colTotalSkids4, Me.GridColumn67, Me.GridColumn68, Me.GridColumn75})
+        Me.GridView9.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView9.GridControl = Me.grCancelledLoads
+        Me.GridView9.Name = "GridView9"
+        Me.GridView9.OptionsFilter.ShowAllTableValuesInFilterPopup = True
+        Me.GridView9.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView9.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
+        Me.GridView9.OptionsView.ShowAutoFilterRow = True
+        Me.GridView9.OptionsView.ShowGroupPanel = False
+        Me.GridView9.OptionsView.ShowIndicator = False
+        '
+        'GridColumn52
+        '
+        Me.GridColumn52.FieldName = "LoadID"
+        Me.GridColumn52.Name = "GridColumn52"
+        Me.GridColumn52.Visible = True
+        Me.GridColumn52.VisibleIndex = 0
+        Me.GridColumn52.Width = 45
+        '
+        'GridColumn53
+        '
+        Me.GridColumn53.FieldName = "LoadStatus"
+        Me.GridColumn53.Name = "GridColumn53"
+        Me.GridColumn53.Visible = True
+        Me.GridColumn53.VisibleIndex = 1
+        Me.GridColumn53.Width = 59
+        '
+        'GridColumn54
+        '
+        Me.GridColumn54.FieldName = "LoadType"
+        Me.GridColumn54.Name = "GridColumn54"
+        Me.GridColumn54.Visible = True
+        Me.GridColumn54.VisibleIndex = 2
+        Me.GridColumn54.Width = 56
+        '
+        'GridColumn55
+        '
+        Me.GridColumn55.FieldName = "PlannedDepartureDate"
+        Me.GridColumn55.Name = "GridColumn55"
+        Me.GridColumn55.Visible = True
+        Me.GridColumn55.VisibleIndex = 4
+        Me.GridColumn55.Width = 76
+        '
+        'GridColumn56
+        '
+        Me.GridColumn56.FieldName = "PlannedDeliveryDate"
+        Me.GridColumn56.Name = "GridColumn56"
+        Me.GridColumn56.Visible = True
+        Me.GridColumn56.VisibleIndex = 5
+        Me.GridColumn56.Width = 76
+        '
+        'GridColumn57
+        '
+        Me.GridColumn57.FieldName = "OriginType"
+        Me.GridColumn57.Name = "GridColumn57"
+        Me.GridColumn57.Visible = True
+        Me.GridColumn57.VisibleIndex = 6
+        Me.GridColumn57.Width = 76
+        '
+        'GridColumn58
+        '
+        Me.GridColumn58.FieldName = "OriginName"
+        Me.GridColumn58.Name = "GridColumn58"
+        Me.GridColumn58.Visible = True
+        Me.GridColumn58.VisibleIndex = 7
+        Me.GridColumn58.Width = 76
+        '
+        'GridColumn59
+        '
+        Me.GridColumn59.FieldName = "OriginCity"
+        Me.GridColumn59.Name = "GridColumn59"
+        Me.GridColumn59.Visible = True
+        Me.GridColumn59.VisibleIndex = 8
+        Me.GridColumn59.Width = 76
+        '
+        'GridColumn60
+        '
+        Me.GridColumn60.FieldName = "OriginState"
+        Me.GridColumn60.Name = "GridColumn60"
+        Me.GridColumn60.Visible = True
+        Me.GridColumn60.VisibleIndex = 9
+        Me.GridColumn60.Width = 76
+        '
+        'GridColumn61
+        '
+        Me.GridColumn61.FieldName = "DestType"
+        Me.GridColumn61.Name = "GridColumn61"
+        Me.GridColumn61.Visible = True
+        Me.GridColumn61.VisibleIndex = 10
+        Me.GridColumn61.Width = 76
+        '
+        'GridColumn62
+        '
+        Me.GridColumn62.FieldName = "DestName"
+        Me.GridColumn62.Name = "GridColumn62"
+        Me.GridColumn62.Visible = True
+        Me.GridColumn62.VisibleIndex = 11
+        Me.GridColumn62.Width = 76
+        '
+        'GridColumn63
+        '
+        Me.GridColumn63.FieldName = "DestCity"
+        Me.GridColumn63.Name = "GridColumn63"
+        Me.GridColumn63.Visible = True
+        Me.GridColumn63.VisibleIndex = 12
+        Me.GridColumn63.Width = 76
+        '
+        'GridColumn64
+        '
+        Me.GridColumn64.FieldName = "DestState"
+        Me.GridColumn64.Name = "GridColumn64"
+        Me.GridColumn64.Visible = True
+        Me.GridColumn64.VisibleIndex = 13
+        Me.GridColumn64.Width = 76
+        '
+        'GridColumn65
+        '
+        Me.GridColumn65.FieldName = "CarrierID"
+        Me.GridColumn65.Name = "GridColumn65"
+        '
+        'GridColumn66
+        '
+        Me.GridColumn66.Caption = "Sched Carrier"
+        Me.GridColumn66.FieldName = "ScheduledCarrierName"
+        Me.GridColumn66.Name = "GridColumn66"
+        Me.GridColumn66.Visible = True
+        Me.GridColumn66.VisibleIndex = 14
+        Me.GridColumn66.Width = 100
+        '
+        'colTotalSkids4
+        '
+        Me.colTotalSkids4.Caption = "Skids"
+        Me.colTotalSkids4.FieldName = "TotalSkids"
+        Me.colTotalSkids4.Name = "colTotalSkids4"
+        Me.colTotalSkids4.Visible = True
+        Me.colTotalSkids4.VisibleIndex = 15
+        '
+        'GridColumn67
+        '
+        Me.GridColumn67.FieldName = "Pallets"
+        Me.GridColumn67.Name = "GridColumn67"
+        Me.GridColumn67.Visible = True
+        Me.GridColumn67.VisibleIndex = 16
+        Me.GridColumn67.Width = 64
+        '
+        'GridColumn68
+        '
+        Me.GridColumn68.FieldName = "GrossWt"
+        Me.GridColumn68.Name = "GridColumn68"
+        Me.GridColumn68.Visible = True
+        Me.GridColumn68.VisibleIndex = 17
+        Me.GridColumn68.Width = 95
+        '
+        'GridColumn75
+        '
+        Me.GridColumn75.Caption = "WO#"
+        Me.GridColumn75.FieldName = "WorkOrderNumbers"
+        Me.GridColumn75.Name = "GridColumn75"
+        Me.GridColumn75.Visible = True
+        Me.GridColumn75.VisibleIndex = 3
+        Me.GridColumn75.Width = 67
+        '
+        'RepositoryItemLookUpEdit5
+        '
+        Me.RepositoryItemLookUpEdit5.AutoHeight = False
+        Me.RepositoryItemLookUpEdit5.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit5.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit5.Name = "RepositoryItemLookUpEdit5"
+        Me.RepositoryItemLookUpEdit5.ValueMember = "Custname"
+        '
+        'GridView10
+        '
+        Me.GridView10.GridControl = Me.grCancelledLoads
+        Me.GridView10.Name = "GridView10"
+        '
+        'RibbonPanelControl2
+        '
+        Me.RibbonPanelControl2.Controls.Add(Me.GroupControl1)
+        Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
+        Me.RibbonPanelControl2.Padding = New System.Windows.Forms.Padding(6)
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1268, 600)
+        Me.RibbonPanelControl2.TabIndex = 1
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.PanelControl2)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(1252, 584)
+        Me.GroupControl1.TabIndex = 4
+        Me.GroupControl1.Text = "SCHEDULED LOADS"
+        '
+        'PanelControl2
+        '
+        Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl2.Controls.Add(Me.grScheduledLoads)
+        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl2.Location = New System.Drawing.Point(2, 20)
+        Me.PanelControl2.Name = "PanelControl2"
+        Me.PanelControl2.Size = New System.Drawing.Size(1248, 562)
+        Me.PanelControl2.TabIndex = 0
+        '
+        'grScheduledLoads
+        '
+        Me.grScheduledLoads.DataSource = Me.bsScheduledLoads
+        Me.grScheduledLoads.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grScheduledLoads.Location = New System.Drawing.Point(0, 0)
+        Me.grScheduledLoads.MainView = Me.GridView1
+        Me.grScheduledLoads.Name = "grScheduledLoads"
+        Me.grScheduledLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2})
+        Me.grScheduledLoads.Size = New System.Drawing.Size(1248, 562)
+        Me.grScheduledLoads.TabIndex = 0
+        Me.grScheduledLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView2})
+        '
+        'bsScheduledLoads
+        '
+        Me.bsScheduledLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
+        '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.colTotalSkids3, Me.GridColumn16, Me.GridColumn17, Me.GridColumn72})
+        Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView1.GridControl = Me.grScheduledLoads
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsFilter.ShowAllTableValuesInFilterPopup = True
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
+        Me.GridView1.OptionsView.ShowAutoFilterRow = True
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        Me.GridView1.OptionsView.ShowIndicator = False
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.FieldName = "LoadID"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 0
+        Me.GridColumn1.Width = 45
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.FieldName = "LoadStatus"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 1
+        Me.GridColumn2.Width = 59
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.FieldName = "LoadType"
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.Width = 56
+        '
+        'GridColumn4
+        '
+        Me.GridColumn4.FieldName = "PlannedDepartureDate"
+        Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.Visible = True
+        Me.GridColumn4.VisibleIndex = 4
+        Me.GridColumn4.Width = 76
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.FieldName = "PlannedDeliveryDate"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 5
+        Me.GridColumn5.Width = 76
+        '
+        'GridColumn6
+        '
+        Me.GridColumn6.FieldName = "OriginType"
+        Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.Visible = True
+        Me.GridColumn6.VisibleIndex = 6
+        Me.GridColumn6.Width = 76
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.FieldName = "OriginName"
+        Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.Visible = True
+        Me.GridColumn7.VisibleIndex = 7
+        Me.GridColumn7.Width = 76
+        '
+        'GridColumn8
+        '
+        Me.GridColumn8.FieldName = "OriginCity"
+        Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.Visible = True
+        Me.GridColumn8.VisibleIndex = 8
+        Me.GridColumn8.Width = 76
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.FieldName = "OriginState"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 9
+        Me.GridColumn9.Width = 76
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.FieldName = "DestType"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 10
+        Me.GridColumn10.Width = 76
+        '
+        'GridColumn11
+        '
+        Me.GridColumn11.FieldName = "DestName"
+        Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.Visible = True
+        Me.GridColumn11.VisibleIndex = 11
+        Me.GridColumn11.Width = 76
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.FieldName = "DestCity"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 12
+        Me.GridColumn12.Width = 76
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.FieldName = "DestState"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 13
+        Me.GridColumn13.Width = 76
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.FieldName = "CarrierID"
+        Me.GridColumn14.Name = "GridColumn14"
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "Sched Carrier"
+        Me.GridColumn15.FieldName = "ScheduledCarrierName"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 14
+        Me.GridColumn15.Width = 113
+        '
+        'colTotalSkids3
+        '
+        Me.colTotalSkids3.Caption = "Skids"
+        Me.colTotalSkids3.FieldName = "TotalSkids"
+        Me.colTotalSkids3.Name = "colTotalSkids3"
+        Me.colTotalSkids3.Visible = True
+        Me.colTotalSkids3.VisibleIndex = 15
+        '
+        'GridColumn16
+        '
+        Me.GridColumn16.FieldName = "Pallets"
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 16
+        Me.GridColumn16.Width = 60
+        '
+        'GridColumn17
+        '
+        Me.GridColumn17.FieldName = "GrossWt"
+        Me.GridColumn17.Name = "GridColumn17"
+        Me.GridColumn17.Visible = True
+        Me.GridColumn17.VisibleIndex = 17
+        Me.GridColumn17.Width = 86
+        '
+        'GridColumn72
+        '
+        Me.GridColumn72.Caption = "WO#"
+        Me.GridColumn72.FieldName = "WorkOrderNumbers"
+        Me.GridColumn72.Name = "GridColumn72"
+        Me.GridColumn72.Visible = True
+        Me.GridColumn72.VisibleIndex = 3
+        Me.GridColumn72.Width = 67
+        '
+        'RepositoryItemLookUpEdit2
+        '
+        Me.RepositoryItemLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemLookUpEdit2.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit2.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
+        Me.RepositoryItemLookUpEdit2.ValueMember = "Custname"
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.grScheduledLoads
+        Me.GridView2.Name = "GridView2"
+        '
+        'RibbonPanelControl3
+        '
+        Me.RibbonPanelControl3.Controls.Add(Me.GroupControl3)
+        Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
+        Me.RibbonPanelControl3.Padding = New System.Windows.Forms.Padding(6)
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1268, 600)
+        Me.RibbonPanelControl3.TabIndex = 1
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.PanelControl3)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl3.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(1252, 584)
+        Me.GroupControl3.TabIndex = 4
+        Me.GroupControl3.Text = "IN TRANSIT LOADS"
+        '
+        'PanelControl3
+        '
+        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl3.Controls.Add(Me.grInTransitLoads)
+        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl3.Location = New System.Drawing.Point(2, 20)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(1248, 562)
+        Me.PanelControl3.TabIndex = 0
+        '
+        'grInTransitLoads
+        '
+        Me.grInTransitLoads.DataSource = Me.bsInTransitLoads
+        Me.grInTransitLoads.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grInTransitLoads.Location = New System.Drawing.Point(0, 0)
+        Me.grInTransitLoads.MainView = Me.GridView5
+        Me.grInTransitLoads.Name = "grInTransitLoads"
+        Me.grInTransitLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit3})
+        Me.grInTransitLoads.Size = New System.Drawing.Size(1248, 562)
+        Me.grInTransitLoads.TabIndex = 0
+        Me.grInTransitLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5, Me.GridView6})
+        '
+        'bsInTransitLoads
+        '
+        Me.bsInTransitLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
+        '
+        'GridView5
+        '
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn18, Me.GridColumn19, Me.GridColumn20, Me.GridColumn73, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn22, Me.GridColumn21, Me.colTotalSkids2, Me.GridColumn33, Me.GridColumn34})
+        Me.GridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView5.GridControl = Me.grInTransitLoads
+        Me.GridView5.Name = "GridView5"
+        Me.GridView5.OptionsFilter.ShowAllTableValuesInFilterPopup = True
+        Me.GridView5.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView5.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
+        Me.GridView5.OptionsView.ShowAutoFilterRow = True
+        Me.GridView5.OptionsView.ShowGroupPanel = False
+        Me.GridView5.OptionsView.ShowIndicator = False
+        '
+        'GridColumn18
+        '
+        Me.GridColumn18.FieldName = "LoadID"
+        Me.GridColumn18.Name = "GridColumn18"
+        Me.GridColumn18.Visible = True
+        Me.GridColumn18.VisibleIndex = 0
+        Me.GridColumn18.Width = 45
+        '
+        'GridColumn19
+        '
+        Me.GridColumn19.FieldName = "LoadStatus"
+        Me.GridColumn19.Name = "GridColumn19"
+        Me.GridColumn19.Visible = True
+        Me.GridColumn19.VisibleIndex = 1
+        Me.GridColumn19.Width = 60
+        '
+        'GridColumn20
+        '
+        Me.GridColumn20.FieldName = "LoadType"
+        Me.GridColumn20.Name = "GridColumn20"
+        Me.GridColumn20.Visible = True
+        Me.GridColumn20.VisibleIndex = 2
+        Me.GridColumn20.Width = 56
+        '
+        'GridColumn73
+        '
+        Me.GridColumn73.Caption = "WO#"
+        Me.GridColumn73.FieldName = "WorkOrderNumbers"
+        Me.GridColumn73.Name = "GridColumn73"
+        Me.GridColumn73.Visible = True
+        Me.GridColumn73.VisibleIndex = 3
+        Me.GridColumn73.Width = 68
+        '
+        'GridColumn23
+        '
+        Me.GridColumn23.FieldName = "OriginType"
+        Me.GridColumn23.Name = "GridColumn23"
+        Me.GridColumn23.Visible = True
+        Me.GridColumn23.VisibleIndex = 4
+        Me.GridColumn23.Width = 77
+        '
+        'GridColumn24
+        '
+        Me.GridColumn24.FieldName = "OriginName"
+        Me.GridColumn24.Name = "GridColumn24"
+        Me.GridColumn24.Visible = True
+        Me.GridColumn24.VisibleIndex = 5
+        Me.GridColumn24.Width = 77
+        '
+        'GridColumn25
+        '
+        Me.GridColumn25.FieldName = "OriginCity"
+        Me.GridColumn25.Name = "GridColumn25"
+        Me.GridColumn25.Visible = True
+        Me.GridColumn25.VisibleIndex = 6
+        Me.GridColumn25.Width = 77
+        '
+        'GridColumn26
+        '
+        Me.GridColumn26.FieldName = "OriginState"
+        Me.GridColumn26.Name = "GridColumn26"
+        Me.GridColumn26.Visible = True
+        Me.GridColumn26.VisibleIndex = 7
+        Me.GridColumn26.Width = 77
+        '
+        'GridColumn27
+        '
+        Me.GridColumn27.FieldName = "DestType"
+        Me.GridColumn27.Name = "GridColumn27"
+        Me.GridColumn27.Visible = True
+        Me.GridColumn27.VisibleIndex = 8
+        Me.GridColumn27.Width = 77
+        '
+        'GridColumn28
+        '
+        Me.GridColumn28.FieldName = "DestName"
+        Me.GridColumn28.Name = "GridColumn28"
+        Me.GridColumn28.Visible = True
+        Me.GridColumn28.VisibleIndex = 9
+        Me.GridColumn28.Width = 77
+        '
+        'GridColumn29
+        '
+        Me.GridColumn29.FieldName = "DestCity"
+        Me.GridColumn29.Name = "GridColumn29"
+        Me.GridColumn29.Visible = True
+        Me.GridColumn29.VisibleIndex = 10
+        Me.GridColumn29.Width = 77
+        '
+        'GridColumn30
+        '
+        Me.GridColumn30.FieldName = "DestState"
+        Me.GridColumn30.Name = "GridColumn30"
+        Me.GridColumn30.Visible = True
+        Me.GridColumn30.VisibleIndex = 11
+        Me.GridColumn30.Width = 77
+        '
+        'GridColumn31
+        '
+        Me.GridColumn31.FieldName = "CarrierID"
+        Me.GridColumn31.Name = "GridColumn31"
+        '
+        'GridColumn32
+        '
+        Me.GridColumn32.Caption = "Sched Carrier"
+        Me.GridColumn32.FieldName = "ScheduledCarrierName"
+        Me.GridColumn32.Name = "GridColumn32"
+        Me.GridColumn32.Visible = True
+        Me.GridColumn32.VisibleIndex = 12
+        Me.GridColumn32.Width = 95
+        '
+        'GridColumn22
+        '
+        Me.GridColumn22.Caption = "Carrier Pro#"
+        Me.GridColumn22.FieldName = "CarrierProNumber"
+        Me.GridColumn22.Name = "GridColumn22"
+        Me.GridColumn22.Visible = True
+        Me.GridColumn22.VisibleIndex = 13
+        Me.GridColumn22.Width = 85
+        '
+        'GridColumn21
+        '
+        Me.GridColumn21.Caption = "Actual Ship"
+        Me.GridColumn21.FieldName = "ActualShipmentDate"
+        Me.GridColumn21.Name = "GridColumn21"
+        Me.GridColumn21.Visible = True
+        Me.GridColumn21.VisibleIndex = 14
+        Me.GridColumn21.Width = 80
+        '
+        'colTotalSkids2
+        '
+        Me.colTotalSkids2.Caption = "Skids"
+        Me.colTotalSkids2.FieldName = "TotalSkids"
+        Me.colTotalSkids2.Name = "colTotalSkids2"
+        Me.colTotalSkids2.Visible = True
+        Me.colTotalSkids2.VisibleIndex = 15
+        '
+        'GridColumn33
+        '
+        Me.GridColumn33.FieldName = "Pallets"
+        Me.GridColumn33.Name = "GridColumn33"
+        Me.GridColumn33.Visible = True
+        Me.GridColumn33.VisibleIndex = 16
+        Me.GridColumn33.Width = 64
+        '
+        'GridColumn34
+        '
+        Me.GridColumn34.FieldName = "GrossWt"
+        Me.GridColumn34.Name = "GridColumn34"
+        Me.GridColumn34.Visible = True
+        Me.GridColumn34.VisibleIndex = 17
+        Me.GridColumn34.Width = 77
+        '
+        'RepositoryItemLookUpEdit3
+        '
+        Me.RepositoryItemLookUpEdit3.AutoHeight = False
+        Me.RepositoryItemLookUpEdit3.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit3.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit3.Name = "RepositoryItemLookUpEdit3"
+        Me.RepositoryItemLookUpEdit3.ValueMember = "Custname"
+        '
+        'GridView6
+        '
+        Me.GridView6.GridControl = Me.grInTransitLoads
+        Me.GridView6.Name = "GridView6"
         '
         'RibbonPanelControl8
         '
@@ -1434,7 +2114,7 @@ Partial Class viewFreightDashboard
         Me.RibbonPanelControl8.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl8.Name = "RibbonPanelControl8"
         Me.RibbonPanelControl8.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl8.Size = New System.Drawing.Size(1268, 599)
+        Me.RibbonPanelControl8.Size = New System.Drawing.Size(1268, 600)
         Me.RibbonPanelControl8.TabIndex = 5
         '
         'GroupControl8
@@ -1443,7 +2123,7 @@ Partial Class viewFreightDashboard
         Me.GroupControl8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl8.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl8.Name = "GroupControl8"
-        Me.GroupControl8.Size = New System.Drawing.Size(1252, 583)
+        Me.GroupControl8.Size = New System.Drawing.Size(1252, 584)
         Me.GroupControl8.TabIndex = 4
         Me.GroupControl8.Text = "CUSTOMER SHIPPING HISTORY"
         '
@@ -1452,9 +2132,9 @@ Partial Class viewFreightDashboard
         Me.PanelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl6.Controls.Add(Me.GridControl1)
         Me.PanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl6.Location = New System.Drawing.Point(2, 22)
+        Me.PanelControl6.Location = New System.Drawing.Point(2, 20)
         Me.PanelControl6.Name = "PanelControl6"
-        Me.PanelControl6.Size = New System.Drawing.Size(1248, 559)
+        Me.PanelControl6.Size = New System.Drawing.Size(1248, 562)
         Me.PanelControl6.TabIndex = 0
         '
         'GridControl1
@@ -1465,7 +2145,7 @@ Partial Class viewFreightDashboard
         Me.GridControl1.MainView = Me.grvCustomerShipmentHistory
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit7})
-        Me.GridControl1.Size = New System.Drawing.Size(1248, 559)
+        Me.GridControl1.Size = New System.Drawing.Size(1248, 562)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCustomerShipmentHistory, Me.CustomDevExGridView2})
         '
@@ -1609,220 +2289,6 @@ Partial Class viewFreightDashboard
         Me.CustomDevExGridView2.GridControl = Me.GridControl1
         Me.CustomDevExGridView2.Name = "CustomDevExGridView2"
         '
-        'RibbonPanelControl1
-        '
-        Me.RibbonPanelControl1.Controls.Add(Me.GroupControl2)
-        Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
-        Me.RibbonPanelControl1.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1268, 599)
-        Me.RibbonPanelControl1.TabIndex = 2
-        '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.PanelControl1)
-        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl2.Location = New System.Drawing.Point(8, 8)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(1252, 583)
-        Me.GroupControl2.TabIndex = 3
-        Me.GroupControl2.Text = "PENDING LOADS"
-        '
-        'PanelControl1
-        '
-        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl1.Controls.Add(Me.grPendingLoads)
-        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(2, 22)
-        Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1248, 559)
-        Me.PanelControl1.TabIndex = 0
-        '
-        'grPendingLoads
-        '
-        Me.grPendingLoads.DataSource = Me.bsPendingLoads
-        Me.grPendingLoads.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grPendingLoads.Location = New System.Drawing.Point(0, 0)
-        Me.grPendingLoads.MainView = Me.grvPendingLoads
-        Me.grPendingLoads.Name = "grPendingLoads"
-        Me.grPendingLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.grPendingLoads.Size = New System.Drawing.Size(1248, 559)
-        Me.grPendingLoads.TabIndex = 0
-        Me.grPendingLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvPendingLoads, Me.GridView4})
-        '
-        'bsPendingLoads
-        '
-        Me.bsPendingLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
-        '
-        'grvPendingLoads
-        '
-        Me.grvPendingLoads.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLoadID, Me.colLoadStatus, Me.colLoadType, Me.colPlannedDepartureDate, Me.colPlannedDeliveryDate, Me.colOriginType, Me.colOriginName, Me.colOriginCity, Me.colOriginState, Me.colDestType, Me.colDestName, Me.colDestCity, Me.colDestState, Me.colCarrierID, Me.colCarrierName, Me.colPallets, Me.colGrossWt, Me.GridColumn71})
-        Me.grvPendingLoads.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.grvPendingLoads.GridControl = Me.grPendingLoads
-        Me.grvPendingLoads.Name = "grvPendingLoads"
-        Me.grvPendingLoads.OptionsFilter.ShowAllTableValuesInFilterPopup = True
-        Me.grvPendingLoads.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.grvPendingLoads.OptionsSelection.MultiSelect = True
-        Me.grvPendingLoads.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
-        Me.grvPendingLoads.OptionsView.ShowAutoFilterRow = True
-        Me.grvPendingLoads.OptionsView.ShowGroupPanel = False
-        Me.grvPendingLoads.OptionsView.ShowIndicator = False
-        '
-        'colLoadID
-        '
-        Me.colLoadID.FieldName = "LoadID"
-        Me.colLoadID.Name = "colLoadID"
-        Me.colLoadID.Visible = True
-        Me.colLoadID.VisibleIndex = 0
-        Me.colLoadID.Width = 50
-        '
-        'colLoadStatus
-        '
-        Me.colLoadStatus.FieldName = "LoadStatus"
-        Me.colLoadStatus.Name = "colLoadStatus"
-        Me.colLoadStatus.Visible = True
-        Me.colLoadStatus.VisibleIndex = 1
-        Me.colLoadStatus.Width = 66
-        '
-        'colLoadType
-        '
-        Me.colLoadType.FieldName = "LoadType"
-        Me.colLoadType.Name = "colLoadType"
-        Me.colLoadType.Visible = True
-        Me.colLoadType.VisibleIndex = 2
-        Me.colLoadType.Width = 62
-        '
-        'colPlannedDepartureDate
-        '
-        Me.colPlannedDepartureDate.FieldName = "PlannedDepartureDate"
-        Me.colPlannedDepartureDate.Name = "colPlannedDepartureDate"
-        Me.colPlannedDepartureDate.Visible = True
-        Me.colPlannedDepartureDate.VisibleIndex = 4
-        Me.colPlannedDepartureDate.Width = 85
-        '
-        'colPlannedDeliveryDate
-        '
-        Me.colPlannedDeliveryDate.FieldName = "PlannedDeliveryDate"
-        Me.colPlannedDeliveryDate.Name = "colPlannedDeliveryDate"
-        Me.colPlannedDeliveryDate.Visible = True
-        Me.colPlannedDeliveryDate.VisibleIndex = 5
-        Me.colPlannedDeliveryDate.Width = 85
-        '
-        'colOriginType
-        '
-        Me.colOriginType.FieldName = "OriginType"
-        Me.colOriginType.Name = "colOriginType"
-        Me.colOriginType.Visible = True
-        Me.colOriginType.VisibleIndex = 6
-        Me.colOriginType.Width = 85
-        '
-        'colOriginName
-        '
-        Me.colOriginName.FieldName = "OriginName"
-        Me.colOriginName.Name = "colOriginName"
-        Me.colOriginName.Visible = True
-        Me.colOriginName.VisibleIndex = 7
-        Me.colOriginName.Width = 85
-        '
-        'colOriginCity
-        '
-        Me.colOriginCity.FieldName = "OriginCity"
-        Me.colOriginCity.Name = "colOriginCity"
-        Me.colOriginCity.Visible = True
-        Me.colOriginCity.VisibleIndex = 8
-        Me.colOriginCity.Width = 85
-        '
-        'colOriginState
-        '
-        Me.colOriginState.FieldName = "OriginState"
-        Me.colOriginState.Name = "colOriginState"
-        Me.colOriginState.Visible = True
-        Me.colOriginState.VisibleIndex = 9
-        Me.colOriginState.Width = 85
-        '
-        'colDestType
-        '
-        Me.colDestType.FieldName = "DestType"
-        Me.colDestType.Name = "colDestType"
-        Me.colDestType.Visible = True
-        Me.colDestType.VisibleIndex = 10
-        Me.colDestType.Width = 85
-        '
-        'colDestName
-        '
-        Me.colDestName.FieldName = "DestName"
-        Me.colDestName.Name = "colDestName"
-        Me.colDestName.Visible = True
-        Me.colDestName.VisibleIndex = 11
-        Me.colDestName.Width = 85
-        '
-        'colDestCity
-        '
-        Me.colDestCity.FieldName = "DestCity"
-        Me.colDestCity.Name = "colDestCity"
-        Me.colDestCity.Visible = True
-        Me.colDestCity.VisibleIndex = 12
-        Me.colDestCity.Width = 85
-        '
-        'colDestState
-        '
-        Me.colDestState.FieldName = "DestState"
-        Me.colDestState.Name = "colDestState"
-        Me.colDestState.Visible = True
-        Me.colDestState.VisibleIndex = 13
-        Me.colDestState.Width = 85
-        '
-        'colCarrierID
-        '
-        Me.colCarrierID.FieldName = "CarrierID"
-        Me.colCarrierID.Name = "colCarrierID"
-        '
-        'colCarrierName
-        '
-        Me.colCarrierName.FieldName = "CarrierName"
-        Me.colCarrierName.Name = "colCarrierName"
-        Me.colCarrierName.Visible = True
-        Me.colCarrierName.VisibleIndex = 14
-        Me.colCarrierName.Width = 85
-        '
-        'colPallets
-        '
-        Me.colPallets.FieldName = "Pallets"
-        Me.colPallets.Name = "colPallets"
-        Me.colPallets.Visible = True
-        Me.colPallets.VisibleIndex = 15
-        Me.colPallets.Width = 85
-        '
-        'colGrossWt
-        '
-        Me.colGrossWt.FieldName = "GrossWt"
-        Me.colGrossWt.Name = "colGrossWt"
-        Me.colGrossWt.Visible = True
-        Me.colGrossWt.VisibleIndex = 16
-        Me.colGrossWt.Width = 106
-        '
-        'GridColumn71
-        '
-        Me.GridColumn71.Caption = "WO#"
-        Me.GridColumn71.FieldName = "WorkOrderNumbers"
-        Me.GridColumn71.Name = "GridColumn71"
-        Me.GridColumn71.Visible = True
-        Me.GridColumn71.VisibleIndex = 3
-        '
-        'RepositoryItemLookUpEdit1
-        '
-        Me.RepositoryItemLookUpEdit1.AutoHeight = False
-        Me.RepositoryItemLookUpEdit1.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.RepositoryItemLookUpEdit1.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
-        Me.RepositoryItemLookUpEdit1.ValueMember = "Custname"
-        '
-        'GridView4
-        '
-        Me.GridView4.GridControl = Me.grPendingLoads
-        Me.GridView4.Name = "GridView4"
-        '
         'RibbonPanelControl4
         '
         Me.RibbonPanelControl4.Controls.Add(Me.GroupControl4)
@@ -1830,7 +2296,7 @@ Partial Class viewFreightDashboard
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
         Me.RibbonPanelControl4.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1268, 599)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1268, 600)
         Me.RibbonPanelControl4.TabIndex = 1
         '
         'GroupControl4
@@ -1839,7 +2305,7 @@ Partial Class viewFreightDashboard
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1252, 583)
+        Me.GroupControl4.Size = New System.Drawing.Size(1252, 584)
         Me.GroupControl4.TabIndex = 4
         Me.GroupControl4.Text = "DELIVERED LOADS"
         '
@@ -1848,9 +2314,9 @@ Partial Class viewFreightDashboard
         Me.PanelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl4.Controls.Add(Me.grDeliveredLoads)
         Me.PanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl4.Location = New System.Drawing.Point(2, 22)
+        Me.PanelControl4.Location = New System.Drawing.Point(2, 20)
         Me.PanelControl4.Name = "PanelControl4"
-        Me.PanelControl4.Size = New System.Drawing.Size(1248, 559)
+        Me.PanelControl4.Size = New System.Drawing.Size(1248, 562)
         Me.PanelControl4.TabIndex = 0
         '
         'grDeliveredLoads
@@ -1861,7 +2327,7 @@ Partial Class viewFreightDashboard
         Me.grDeliveredLoads.MainView = Me.GridView7
         Me.grDeliveredLoads.Name = "grDeliveredLoads"
         Me.grDeliveredLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit4})
-        Me.grDeliveredLoads.Size = New System.Drawing.Size(1248, 559)
+        Me.grDeliveredLoads.Size = New System.Drawing.Size(1248, 562)
         Me.grDeliveredLoads.TabIndex = 0
         Me.grDeliveredLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView7, Me.GridView8})
         '
@@ -1871,7 +2337,7 @@ Partial Class viewFreightDashboard
         '
         'GridView7
         '
-        Me.GridView7.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn35, Me.GridColumn36, Me.GridColumn37, Me.GridColumn40, Me.GridColumn41, Me.GridColumn42, Me.GridColumn43, Me.GridColumn44, Me.GridColumn45, Me.GridColumn46, Me.GridColumn47, Me.GridColumn48, Me.GridColumn49, Me.GridColumn76, Me.GridColumn39, Me.GridColumn38, Me.GridColumn50, Me.GridColumn51, Me.GridColumn74})
+        Me.GridView7.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn35, Me.GridColumn36, Me.GridColumn37, Me.GridColumn40, Me.GridColumn41, Me.GridColumn42, Me.GridColumn43, Me.GridColumn44, Me.GridColumn45, Me.GridColumn46, Me.GridColumn47, Me.GridColumn48, Me.GridColumn49, Me.GridColumn76, Me.GridColumn39, Me.GridColumn38, Me.colTotalSkids1, Me.GridColumn50, Me.GridColumn51, Me.GridColumn74})
         Me.GridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView7.GridControl = Me.grDeliveredLoads
         Me.GridView7.Name = "GridView7"
@@ -2011,12 +2477,20 @@ Partial Class viewFreightDashboard
         Me.GridColumn38.VisibleIndex = 15
         Me.GridColumn38.Width = 65
         '
+        'colTotalSkids1
+        '
+        Me.colTotalSkids1.Caption = "Skids"
+        Me.colTotalSkids1.FieldName = "TotalSkids"
+        Me.colTotalSkids1.Name = "colTotalSkids1"
+        Me.colTotalSkids1.Visible = True
+        Me.colTotalSkids1.VisibleIndex = 16
+        '
         'GridColumn50
         '
         Me.GridColumn50.FieldName = "Pallets"
         Me.GridColumn50.Name = "GridColumn50"
         Me.GridColumn50.Visible = True
-        Me.GridColumn50.VisibleIndex = 16
+        Me.GridColumn50.VisibleIndex = 17
         Me.GridColumn50.Width = 55
         '
         'GridColumn51
@@ -2024,7 +2498,7 @@ Partial Class viewFreightDashboard
         Me.GridColumn51.FieldName = "GrossWt"
         Me.GridColumn51.Name = "GridColumn51"
         Me.GridColumn51.Visible = True
-        Me.GridColumn51.VisibleIndex = 17
+        Me.GridColumn51.VisibleIndex = 18
         Me.GridColumn51.Width = 79
         '
         'GridColumn74
@@ -2049,652 +2523,227 @@ Partial Class viewFreightDashboard
         Me.GridView8.GridControl = Me.grDeliveredLoads
         Me.GridView8.Name = "GridView8"
         '
-        'RibbonPanelControl3
-        '
-        Me.RibbonPanelControl3.Controls.Add(Me.GroupControl3)
-        Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
-        Me.RibbonPanelControl3.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1268, 599)
-        Me.RibbonPanelControl3.TabIndex = 1
-        '
-        'GroupControl3
-        '
-        Me.GroupControl3.Controls.Add(Me.PanelControl3)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(8, 8)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1252, 583)
-        Me.GroupControl3.TabIndex = 4
-        Me.GroupControl3.Text = "IN TRANSIT LOADS"
-        '
-        'PanelControl3
-        '
-        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl3.Controls.Add(Me.grInTransitLoads)
-        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl3.Location = New System.Drawing.Point(2, 22)
-        Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(1248, 559)
-        Me.PanelControl3.TabIndex = 0
-        '
-        'grInTransitLoads
-        '
-        Me.grInTransitLoads.DataSource = Me.bsInTransitLoads
-        Me.grInTransitLoads.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grInTransitLoads.Location = New System.Drawing.Point(0, 0)
-        Me.grInTransitLoads.MainView = Me.GridView5
-        Me.grInTransitLoads.Name = "grInTransitLoads"
-        Me.grInTransitLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit3})
-        Me.grInTransitLoads.Size = New System.Drawing.Size(1248, 559)
-        Me.grInTransitLoads.TabIndex = 0
-        Me.grInTransitLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5, Me.GridView6})
-        '
-        'bsInTransitLoads
-        '
-        Me.bsInTransitLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
-        '
-        'GridView5
-        '
-        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn18, Me.GridColumn19, Me.GridColumn20, Me.GridColumn73, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn22, Me.GridColumn21, Me.GridColumn33, Me.GridColumn34})
-        Me.GridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridView5.GridControl = Me.grInTransitLoads
-        Me.GridView5.Name = "GridView5"
-        Me.GridView5.OptionsFilter.ShowAllTableValuesInFilterPopup = True
-        Me.GridView5.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView5.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
-        Me.GridView5.OptionsView.ShowAutoFilterRow = True
-        Me.GridView5.OptionsView.ShowGroupPanel = False
-        Me.GridView5.OptionsView.ShowIndicator = False
-        '
-        'GridColumn18
-        '
-        Me.GridColumn18.FieldName = "LoadID"
-        Me.GridColumn18.Name = "GridColumn18"
-        Me.GridColumn18.Visible = True
-        Me.GridColumn18.VisibleIndex = 0
-        Me.GridColumn18.Width = 45
-        '
-        'GridColumn19
-        '
-        Me.GridColumn19.FieldName = "LoadStatus"
-        Me.GridColumn19.Name = "GridColumn19"
-        Me.GridColumn19.Visible = True
-        Me.GridColumn19.VisibleIndex = 1
-        Me.GridColumn19.Width = 60
-        '
-        'GridColumn20
-        '
-        Me.GridColumn20.FieldName = "LoadType"
-        Me.GridColumn20.Name = "GridColumn20"
-        Me.GridColumn20.Visible = True
-        Me.GridColumn20.VisibleIndex = 2
-        Me.GridColumn20.Width = 56
-        '
-        'GridColumn73
-        '
-        Me.GridColumn73.Caption = "WO#"
-        Me.GridColumn73.FieldName = "WorkOrderNumbers"
-        Me.GridColumn73.Name = "GridColumn73"
-        Me.GridColumn73.Visible = True
-        Me.GridColumn73.VisibleIndex = 3
-        Me.GridColumn73.Width = 68
-        '
-        'GridColumn23
-        '
-        Me.GridColumn23.FieldName = "OriginType"
-        Me.GridColumn23.Name = "GridColumn23"
-        Me.GridColumn23.Visible = True
-        Me.GridColumn23.VisibleIndex = 4
-        Me.GridColumn23.Width = 77
-        '
-        'GridColumn24
-        '
-        Me.GridColumn24.FieldName = "OriginName"
-        Me.GridColumn24.Name = "GridColumn24"
-        Me.GridColumn24.Visible = True
-        Me.GridColumn24.VisibleIndex = 5
-        Me.GridColumn24.Width = 77
+        'RibbonPanelControl1
+        '
+        Me.RibbonPanelControl1.Controls.Add(Me.GroupControl2)
+        Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
+        Me.RibbonPanelControl1.Padding = New System.Windows.Forms.Padding(6)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1268, 600)
+        Me.RibbonPanelControl1.TabIndex = 2
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.PanelControl1)
+        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl2.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(1252, 584)
+        Me.GroupControl2.TabIndex = 3
+        Me.GroupControl2.Text = "PENDING LOADS"
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl1.Controls.Add(Me.grPendingLoads)
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl1.Location = New System.Drawing.Point(2, 20)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(1248, 562)
+        Me.PanelControl1.TabIndex = 0
+        '
+        'grPendingLoads
+        '
+        Me.grPendingLoads.DataSource = Me.bsPendingLoads
+        Me.grPendingLoads.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grPendingLoads.Location = New System.Drawing.Point(0, 0)
+        Me.grPendingLoads.MainView = Me.grvPendingLoads
+        Me.grPendingLoads.Name = "grPendingLoads"
+        Me.grPendingLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
+        Me.grPendingLoads.Size = New System.Drawing.Size(1248, 562)
+        Me.grPendingLoads.TabIndex = 0
+        Me.grPendingLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvPendingLoads, Me.GridView4})
+        '
+        'bsPendingLoads
+        '
+        Me.bsPendingLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
+        '
+        'grvPendingLoads
+        '
+        Me.grvPendingLoads.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLoadID, Me.colLoadStatus, Me.colLoadType, Me.colPlannedDepartureDate, Me.colPlannedDeliveryDate, Me.colOriginType, Me.colOriginName, Me.colOriginCity, Me.colOriginState, Me.colDestType, Me.colDestName, Me.colDestCity, Me.colDestState, Me.colCarrierID, Me.colCarrierName, Me.colPallets, Me.colTotalSkids, Me.colGrossWt, Me.GridColumn71})
+        Me.grvPendingLoads.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.grvPendingLoads.GridControl = Me.grPendingLoads
+        Me.grvPendingLoads.Name = "grvPendingLoads"
+        Me.grvPendingLoads.OptionsFilter.ShowAllTableValuesInFilterPopup = True
+        Me.grvPendingLoads.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.grvPendingLoads.OptionsSelection.MultiSelect = True
+        Me.grvPendingLoads.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
+        Me.grvPendingLoads.OptionsView.ShowAutoFilterRow = True
+        Me.grvPendingLoads.OptionsView.ShowGroupPanel = False
+        Me.grvPendingLoads.OptionsView.ShowIndicator = False
+        '
+        'colLoadID
+        '
+        Me.colLoadID.FieldName = "LoadID"
+        Me.colLoadID.Name = "colLoadID"
+        Me.colLoadID.Visible = True
+        Me.colLoadID.VisibleIndex = 0
+        Me.colLoadID.Width = 50
+        '
+        'colLoadStatus
+        '
+        Me.colLoadStatus.FieldName = "LoadStatus"
+        Me.colLoadStatus.Name = "colLoadStatus"
+        Me.colLoadStatus.Visible = True
+        Me.colLoadStatus.VisibleIndex = 1
+        Me.colLoadStatus.Width = 66
+        '
+        'colLoadType
+        '
+        Me.colLoadType.FieldName = "LoadType"
+        Me.colLoadType.Name = "colLoadType"
+        Me.colLoadType.Visible = True
+        Me.colLoadType.VisibleIndex = 2
+        Me.colLoadType.Width = 62
+        '
+        'colPlannedDepartureDate
+        '
+        Me.colPlannedDepartureDate.FieldName = "PlannedDepartureDate"
+        Me.colPlannedDepartureDate.Name = "colPlannedDepartureDate"
+        Me.colPlannedDepartureDate.Visible = True
+        Me.colPlannedDepartureDate.VisibleIndex = 4
+        Me.colPlannedDepartureDate.Width = 85
+        '
+        'colPlannedDeliveryDate
+        '
+        Me.colPlannedDeliveryDate.FieldName = "PlannedDeliveryDate"
+        Me.colPlannedDeliveryDate.Name = "colPlannedDeliveryDate"
+        Me.colPlannedDeliveryDate.Visible = True
+        Me.colPlannedDeliveryDate.VisibleIndex = 5
+        Me.colPlannedDeliveryDate.Width = 85
+        '
+        'colOriginType
         '
-        'GridColumn25
-        '
-        Me.GridColumn25.FieldName = "OriginCity"
-        Me.GridColumn25.Name = "GridColumn25"
-        Me.GridColumn25.Visible = True
-        Me.GridColumn25.VisibleIndex = 6
-        Me.GridColumn25.Width = 77
+        Me.colOriginType.FieldName = "OriginType"
+        Me.colOriginType.Name = "colOriginType"
+        Me.colOriginType.Visible = True
+        Me.colOriginType.VisibleIndex = 6
+        Me.colOriginType.Width = 85
         '
-        'GridColumn26
+        'colOriginName
         '
-        Me.GridColumn26.FieldName = "OriginState"
-        Me.GridColumn26.Name = "GridColumn26"
-        Me.GridColumn26.Visible = True
-        Me.GridColumn26.VisibleIndex = 7
-        Me.GridColumn26.Width = 77
+        Me.colOriginName.FieldName = "OriginName"
+        Me.colOriginName.Name = "colOriginName"
+        Me.colOriginName.Visible = True
+        Me.colOriginName.VisibleIndex = 7
+        Me.colOriginName.Width = 85
         '
-        'GridColumn27
-        '
-        Me.GridColumn27.FieldName = "DestType"
-        Me.GridColumn27.Name = "GridColumn27"
-        Me.GridColumn27.Visible = True
-        Me.GridColumn27.VisibleIndex = 8
-        Me.GridColumn27.Width = 77
+        'colOriginCity
         '
-        'GridColumn28
-        '
-        Me.GridColumn28.FieldName = "DestName"
-        Me.GridColumn28.Name = "GridColumn28"
-        Me.GridColumn28.Visible = True
-        Me.GridColumn28.VisibleIndex = 9
-        Me.GridColumn28.Width = 77
+        Me.colOriginCity.FieldName = "OriginCity"
+        Me.colOriginCity.Name = "colOriginCity"
+        Me.colOriginCity.Visible = True
+        Me.colOriginCity.VisibleIndex = 8
+        Me.colOriginCity.Width = 85
         '
-        'GridColumn29
-        '
-        Me.GridColumn29.FieldName = "DestCity"
-        Me.GridColumn29.Name = "GridColumn29"
-        Me.GridColumn29.Visible = True
-        Me.GridColumn29.VisibleIndex = 10
-        Me.GridColumn29.Width = 77
-        '
-        'GridColumn30
-        '
-        Me.GridColumn30.FieldName = "DestState"
-        Me.GridColumn30.Name = "GridColumn30"
-        Me.GridColumn30.Visible = True
-        Me.GridColumn30.VisibleIndex = 11
-        Me.GridColumn30.Width = 77
-        '
-        'GridColumn31
-        '
-        Me.GridColumn31.FieldName = "CarrierID"
-        Me.GridColumn31.Name = "GridColumn31"
-        '
-        'GridColumn32
-        '
-        Me.GridColumn32.Caption = "Sched Carrier"
-        Me.GridColumn32.FieldName = "ScheduledCarrierName"
-        Me.GridColumn32.Name = "GridColumn32"
-        Me.GridColumn32.Visible = True
-        Me.GridColumn32.VisibleIndex = 12
-        Me.GridColumn32.Width = 95
-        '
-        'GridColumn22
-        '
-        Me.GridColumn22.Caption = "Carrier Pro#"
-        Me.GridColumn22.FieldName = "CarrierProNumber"
-        Me.GridColumn22.Name = "GridColumn22"
-        Me.GridColumn22.Visible = True
-        Me.GridColumn22.VisibleIndex = 13
-        Me.GridColumn22.Width = 85
-        '
-        'GridColumn21
-        '
-        Me.GridColumn21.Caption = "Actual Ship"
-        Me.GridColumn21.FieldName = "ActualShipmentDate"
-        Me.GridColumn21.Name = "GridColumn21"
-        Me.GridColumn21.Visible = True
-        Me.GridColumn21.VisibleIndex = 14
-        Me.GridColumn21.Width = 80
-        '
-        'GridColumn33
-        '
-        Me.GridColumn33.FieldName = "Pallets"
-        Me.GridColumn33.Name = "GridColumn33"
-        Me.GridColumn33.Visible = True
-        Me.GridColumn33.VisibleIndex = 15
-        Me.GridColumn33.Width = 64
-        '
-        'GridColumn34
-        '
-        Me.GridColumn34.FieldName = "GrossWt"
-        Me.GridColumn34.Name = "GridColumn34"
-        Me.GridColumn34.Visible = True
-        Me.GridColumn34.VisibleIndex = 16
-        Me.GridColumn34.Width = 77
-        '
-        'RepositoryItemLookUpEdit3
-        '
-        Me.RepositoryItemLookUpEdit3.AutoHeight = False
-        Me.RepositoryItemLookUpEdit3.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.RepositoryItemLookUpEdit3.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit3.Name = "RepositoryItemLookUpEdit3"
-        Me.RepositoryItemLookUpEdit3.ValueMember = "Custname"
-        '
-        'GridView6
-        '
-        Me.GridView6.GridControl = Me.grInTransitLoads
-        Me.GridView6.Name = "GridView6"
-        '
-        'RibbonPanelControl2
-        '
-        Me.RibbonPanelControl2.Controls.Add(Me.GroupControl1)
-        Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
-        Me.RibbonPanelControl2.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1268, 599)
-        Me.RibbonPanelControl2.TabIndex = 1
-        '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.PanelControl2)
-        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1252, 583)
-        Me.GroupControl1.TabIndex = 4
-        Me.GroupControl1.Text = "SCHEDULED LOADS"
-        '
-        'PanelControl2
-        '
-        Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl2.Controls.Add(Me.grScheduledLoads)
-        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl2.Location = New System.Drawing.Point(2, 22)
-        Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1248, 559)
-        Me.PanelControl2.TabIndex = 0
-        '
-        'grScheduledLoads
-        '
-        Me.grScheduledLoads.DataSource = Me.bsScheduledLoads
-        Me.grScheduledLoads.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grScheduledLoads.Location = New System.Drawing.Point(0, 0)
-        Me.grScheduledLoads.MainView = Me.GridView1
-        Me.grScheduledLoads.Name = "grScheduledLoads"
-        Me.grScheduledLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2})
-        Me.grScheduledLoads.Size = New System.Drawing.Size(1248, 559)
-        Me.grScheduledLoads.TabIndex = 0
-        Me.grScheduledLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView2})
-        '
-        'bsScheduledLoads
-        '
-        Me.bsScheduledLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
-        '
-        'GridView1
-        '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16, Me.GridColumn17, Me.GridColumn72})
-        Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridView1.GridControl = Me.grScheduledLoads
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsFilter.ShowAllTableValuesInFilterPopup = True
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView1.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
-        Me.GridView1.OptionsView.ShowAutoFilterRow = True
-        Me.GridView1.OptionsView.ShowGroupPanel = False
-        Me.GridView1.OptionsView.ShowIndicator = False
-        '
-        'GridColumn1
-        '
-        Me.GridColumn1.FieldName = "LoadID"
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 0
-        Me.GridColumn1.Width = 45
-        '
-        'GridColumn2
-        '
-        Me.GridColumn2.FieldName = "LoadStatus"
-        Me.GridColumn2.Name = "GridColumn2"
-        Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 1
-        Me.GridColumn2.Width = 59
-        '
-        'GridColumn3
-        '
-        Me.GridColumn3.FieldName = "LoadType"
-        Me.GridColumn3.Name = "GridColumn3"
-        Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 2
-        Me.GridColumn3.Width = 56
-        '
-        'GridColumn4
-        '
-        Me.GridColumn4.FieldName = "PlannedDepartureDate"
-        Me.GridColumn4.Name = "GridColumn4"
-        Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 4
-        Me.GridColumn4.Width = 76
-        '
-        'GridColumn5
-        '
-        Me.GridColumn5.FieldName = "PlannedDeliveryDate"
-        Me.GridColumn5.Name = "GridColumn5"
-        Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 5
-        Me.GridColumn5.Width = 76
-        '
-        'GridColumn6
-        '
-        Me.GridColumn6.FieldName = "OriginType"
-        Me.GridColumn6.Name = "GridColumn6"
-        Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 6
-        Me.GridColumn6.Width = 76
-        '
-        'GridColumn7
-        '
-        Me.GridColumn7.FieldName = "OriginName"
-        Me.GridColumn7.Name = "GridColumn7"
-        Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 7
-        Me.GridColumn7.Width = 76
-        '
-        'GridColumn8
-        '
-        Me.GridColumn8.FieldName = "OriginCity"
-        Me.GridColumn8.Name = "GridColumn8"
-        Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 8
-        Me.GridColumn8.Width = 76
-        '
-        'GridColumn9
-        '
-        Me.GridColumn9.FieldName = "OriginState"
-        Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 9
-        Me.GridColumn9.Width = 76
-        '
-        'GridColumn10
-        '
-        Me.GridColumn10.FieldName = "DestType"
-        Me.GridColumn10.Name = "GridColumn10"
-        Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 10
-        Me.GridColumn10.Width = 76
-        '
-        'GridColumn11
-        '
-        Me.GridColumn11.FieldName = "DestName"
-        Me.GridColumn11.Name = "GridColumn11"
-        Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 11
-        Me.GridColumn11.Width = 76
-        '
-        'GridColumn12
-        '
-        Me.GridColumn12.FieldName = "DestCity"
-        Me.GridColumn12.Name = "GridColumn12"
-        Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 12
-        Me.GridColumn12.Width = 76
-        '
-        'GridColumn13
-        '
-        Me.GridColumn13.FieldName = "DestState"
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 13
-        Me.GridColumn13.Width = 76
-        '
-        'GridColumn14
-        '
-        Me.GridColumn14.FieldName = "CarrierID"
-        Me.GridColumn14.Name = "GridColumn14"
-        '
-        'GridColumn15
-        '
-        Me.GridColumn15.Caption = "Sched Carrier"
-        Me.GridColumn15.FieldName = "ScheduledCarrierName"
-        Me.GridColumn15.Name = "GridColumn15"
-        Me.GridColumn15.Visible = True
-        Me.GridColumn15.VisibleIndex = 14
-        Me.GridColumn15.Width = 113
-        '
-        'GridColumn16
-        '
-        Me.GridColumn16.FieldName = "Pallets"
-        Me.GridColumn16.Name = "GridColumn16"
-        Me.GridColumn16.Visible = True
-        Me.GridColumn16.VisibleIndex = 15
-        Me.GridColumn16.Width = 60
-        '
-        'GridColumn17
-        '
-        Me.GridColumn17.FieldName = "GrossWt"
-        Me.GridColumn17.Name = "GridColumn17"
-        Me.GridColumn17.Visible = True
-        Me.GridColumn17.VisibleIndex = 16
-        Me.GridColumn17.Width = 86
-        '
-        'GridColumn72
-        '
-        Me.GridColumn72.Caption = "WO#"
-        Me.GridColumn72.FieldName = "WorkOrderNumbers"
-        Me.GridColumn72.Name = "GridColumn72"
-        Me.GridColumn72.Visible = True
-        Me.GridColumn72.VisibleIndex = 3
-        Me.GridColumn72.Width = 67
-        '
-        'RepositoryItemLookUpEdit2
-        '
-        Me.RepositoryItemLookUpEdit2.AutoHeight = False
-        Me.RepositoryItemLookUpEdit2.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.RepositoryItemLookUpEdit2.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
-        Me.RepositoryItemLookUpEdit2.ValueMember = "Custname"
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.grScheduledLoads
-        Me.GridView2.Name = "GridView2"
-        '
-        'RibbonPanelControl5
-        '
-        Me.RibbonPanelControl5.Controls.Add(Me.GroupControl5)
-        Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl5.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
-        Me.RibbonPanelControl5.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1268, 599)
-        Me.RibbonPanelControl5.TabIndex = 3
-        '
-        'GroupControl5
-        '
-        Me.GroupControl5.Controls.Add(Me.PanelControl5)
-        Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl5.Location = New System.Drawing.Point(8, 8)
-        Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(1252, 583)
-        Me.GroupControl5.TabIndex = 4
-        Me.GroupControl5.Text = "RETURNED / CANCELLED LOADS"
-        '
-        'PanelControl5
-        '
-        Me.PanelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl5.Controls.Add(Me.grCancelledLoads)
-        Me.PanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl5.Location = New System.Drawing.Point(2, 22)
-        Me.PanelControl5.Name = "PanelControl5"
-        Me.PanelControl5.Size = New System.Drawing.Size(1248, 559)
-        Me.PanelControl5.TabIndex = 0
-        '
-        'grCancelledLoads
-        '
-        Me.grCancelledLoads.DataSource = Me.bsCancelledLoads
-        Me.grCancelledLoads.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCancelledLoads.Location = New System.Drawing.Point(0, 0)
-        Me.grCancelledLoads.MainView = Me.GridView9
-        Me.grCancelledLoads.Name = "grCancelledLoads"
-        Me.grCancelledLoads.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5})
-        Me.grCancelledLoads.Size = New System.Drawing.Size(1248, 559)
-        Me.grCancelledLoads.TabIndex = 0
-        Me.grCancelledLoads.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView9, Me.GridView10})
-        '
-        'bsCancelledLoads
-        '
-        Me.bsCancelledLoads.DataSource = GetType(AOS.BusinessObjects.ViewLoadSummaryCollection)
-        '
-        'GridView9
-        '
-        Me.GridView9.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn52, Me.GridColumn53, Me.GridColumn54, Me.GridColumn55, Me.GridColumn56, Me.GridColumn57, Me.GridColumn58, Me.GridColumn59, Me.GridColumn60, Me.GridColumn61, Me.GridColumn62, Me.GridColumn63, Me.GridColumn64, Me.GridColumn65, Me.GridColumn66, Me.GridColumn67, Me.GridColumn68, Me.GridColumn75})
-        Me.GridView9.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridView9.GridControl = Me.grCancelledLoads
-        Me.GridView9.Name = "GridView9"
-        Me.GridView9.OptionsFilter.ShowAllTableValuesInFilterPopup = True
-        Me.GridView9.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView9.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
-        Me.GridView9.OptionsView.ShowAutoFilterRow = True
-        Me.GridView9.OptionsView.ShowGroupPanel = False
-        Me.GridView9.OptionsView.ShowIndicator = False
-        '
-        'GridColumn52
-        '
-        Me.GridColumn52.FieldName = "LoadID"
-        Me.GridColumn52.Name = "GridColumn52"
-        Me.GridColumn52.Visible = True
-        Me.GridColumn52.VisibleIndex = 0
-        Me.GridColumn52.Width = 45
-        '
-        'GridColumn53
-        '
-        Me.GridColumn53.FieldName = "LoadStatus"
-        Me.GridColumn53.Name = "GridColumn53"
-        Me.GridColumn53.Visible = True
-        Me.GridColumn53.VisibleIndex = 1
-        Me.GridColumn53.Width = 59
-        '
-        'GridColumn54
-        '
-        Me.GridColumn54.FieldName = "LoadType"
-        Me.GridColumn54.Name = "GridColumn54"
-        Me.GridColumn54.Visible = True
-        Me.GridColumn54.VisibleIndex = 2
-        Me.GridColumn54.Width = 56
-        '
-        'GridColumn55
-        '
-        Me.GridColumn55.FieldName = "PlannedDepartureDate"
-        Me.GridColumn55.Name = "GridColumn55"
-        Me.GridColumn55.Visible = True
-        Me.GridColumn55.VisibleIndex = 4
-        Me.GridColumn55.Width = 76
-        '
-        'GridColumn56
-        '
-        Me.GridColumn56.FieldName = "PlannedDeliveryDate"
-        Me.GridColumn56.Name = "GridColumn56"
-        Me.GridColumn56.Visible = True
-        Me.GridColumn56.VisibleIndex = 5
-        Me.GridColumn56.Width = 76
-        '
-        'GridColumn57
-        '
-        Me.GridColumn57.FieldName = "OriginType"
-        Me.GridColumn57.Name = "GridColumn57"
-        Me.GridColumn57.Visible = True
-        Me.GridColumn57.VisibleIndex = 6
-        Me.GridColumn57.Width = 76
-        '
-        'GridColumn58
-        '
-        Me.GridColumn58.FieldName = "OriginName"
-        Me.GridColumn58.Name = "GridColumn58"
-        Me.GridColumn58.Visible = True
-        Me.GridColumn58.VisibleIndex = 7
-        Me.GridColumn58.Width = 76
-        '
-        'GridColumn59
-        '
-        Me.GridColumn59.FieldName = "OriginCity"
-        Me.GridColumn59.Name = "GridColumn59"
-        Me.GridColumn59.Visible = True
-        Me.GridColumn59.VisibleIndex = 8
-        Me.GridColumn59.Width = 76
-        '
-        'GridColumn60
-        '
-        Me.GridColumn60.FieldName = "OriginState"
-        Me.GridColumn60.Name = "GridColumn60"
-        Me.GridColumn60.Visible = True
-        Me.GridColumn60.VisibleIndex = 9
-        Me.GridColumn60.Width = 76
-        '
-        'GridColumn61
-        '
-        Me.GridColumn61.FieldName = "DestType"
-        Me.GridColumn61.Name = "GridColumn61"
-        Me.GridColumn61.Visible = True
-        Me.GridColumn61.VisibleIndex = 10
-        Me.GridColumn61.Width = 76
-        '
-        'GridColumn62
-        '
-        Me.GridColumn62.FieldName = "DestName"
-        Me.GridColumn62.Name = "GridColumn62"
-        Me.GridColumn62.Visible = True
-        Me.GridColumn62.VisibleIndex = 11
-        Me.GridColumn62.Width = 76
-        '
-        'GridColumn63
-        '
-        Me.GridColumn63.FieldName = "DestCity"
-        Me.GridColumn63.Name = "GridColumn63"
-        Me.GridColumn63.Visible = True
-        Me.GridColumn63.VisibleIndex = 12
-        Me.GridColumn63.Width = 76
-        '
-        'GridColumn64
-        '
-        Me.GridColumn64.FieldName = "DestState"
-        Me.GridColumn64.Name = "GridColumn64"
-        Me.GridColumn64.Visible = True
-        Me.GridColumn64.VisibleIndex = 13
-        Me.GridColumn64.Width = 76
-        '
-        'GridColumn65
-        '
-        Me.GridColumn65.FieldName = "CarrierID"
-        Me.GridColumn65.Name = "GridColumn65"
-        '
-        'GridColumn66
-        '
-        Me.GridColumn66.Caption = "Sched Carrier"
-        Me.GridColumn66.FieldName = "ScheduledCarrierName"
-        Me.GridColumn66.Name = "GridColumn66"
-        Me.GridColumn66.Visible = True
-        Me.GridColumn66.VisibleIndex = 14
-        Me.GridColumn66.Width = 100
-        '
-        'GridColumn67
-        '
-        Me.GridColumn67.FieldName = "Pallets"
-        Me.GridColumn67.Name = "GridColumn67"
-        Me.GridColumn67.Visible = True
-        Me.GridColumn67.VisibleIndex = 15
-        Me.GridColumn67.Width = 64
-        '
-        'GridColumn68
-        '
-        Me.GridColumn68.FieldName = "GrossWt"
-        Me.GridColumn68.Name = "GridColumn68"
-        Me.GridColumn68.Visible = True
-        Me.GridColumn68.VisibleIndex = 16
-        Me.GridColumn68.Width = 95
-        '
-        'GridColumn75
-        '
-        Me.GridColumn75.Caption = "WO#"
-        Me.GridColumn75.FieldName = "WorkOrderNumbers"
-        Me.GridColumn75.Name = "GridColumn75"
-        Me.GridColumn75.Visible = True
-        Me.GridColumn75.VisibleIndex = 3
-        Me.GridColumn75.Width = 67
-        '
-        'RepositoryItemLookUpEdit5
-        '
-        Me.RepositoryItemLookUpEdit5.AutoHeight = False
-        Me.RepositoryItemLookUpEdit5.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.RepositoryItemLookUpEdit5.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit5.Name = "RepositoryItemLookUpEdit5"
-        Me.RepositoryItemLookUpEdit5.ValueMember = "Custname"
-        '
-        'GridView10
-        '
-        Me.GridView10.GridControl = Me.grCancelledLoads
-        Me.GridView10.Name = "GridView10"
+        'colOriginState
+        '
+        Me.colOriginState.FieldName = "OriginState"
+        Me.colOriginState.Name = "colOriginState"
+        Me.colOriginState.Visible = True
+        Me.colOriginState.VisibleIndex = 9
+        Me.colOriginState.Width = 85
+        '
+        'colDestType
+        '
+        Me.colDestType.FieldName = "DestType"
+        Me.colDestType.Name = "colDestType"
+        Me.colDestType.Visible = True
+        Me.colDestType.VisibleIndex = 10
+        Me.colDestType.Width = 85
+        '
+        'colDestName
+        '
+        Me.colDestName.FieldName = "DestName"
+        Me.colDestName.Name = "colDestName"
+        Me.colDestName.Visible = True
+        Me.colDestName.VisibleIndex = 11
+        Me.colDestName.Width = 85
+        '
+        'colDestCity
+        '
+        Me.colDestCity.FieldName = "DestCity"
+        Me.colDestCity.Name = "colDestCity"
+        Me.colDestCity.Visible = True
+        Me.colDestCity.VisibleIndex = 12
+        Me.colDestCity.Width = 85
+        '
+        'colDestState
+        '
+        Me.colDestState.FieldName = "DestState"
+        Me.colDestState.Name = "colDestState"
+        Me.colDestState.Visible = True
+        Me.colDestState.VisibleIndex = 13
+        Me.colDestState.Width = 85
+        '
+        'colCarrierID
+        '
+        Me.colCarrierID.FieldName = "CarrierID"
+        Me.colCarrierID.Name = "colCarrierID"
+        '
+        'colCarrierName
+        '
+        Me.colCarrierName.FieldName = "CarrierName"
+        Me.colCarrierName.Name = "colCarrierName"
+        Me.colCarrierName.Visible = True
+        Me.colCarrierName.VisibleIndex = 14
+        Me.colCarrierName.Width = 85
+        '
+        'colPallets
+        '
+        Me.colPallets.FieldName = "Pallets"
+        Me.colPallets.Name = "colPallets"
+        Me.colPallets.Visible = True
+        Me.colPallets.VisibleIndex = 16
+        Me.colPallets.Width = 85
+        '
+        'colTotalSkids
+        '
+        Me.colTotalSkids.Caption = "Skids"
+        Me.colTotalSkids.FieldName = "TotalSkids"
+        Me.colTotalSkids.Name = "colTotalSkids"
+        Me.colTotalSkids.Visible = True
+        Me.colTotalSkids.VisibleIndex = 15
+        '
+        'colGrossWt
+        '
+        Me.colGrossWt.FieldName = "GrossWt"
+        Me.colGrossWt.Name = "colGrossWt"
+        Me.colGrossWt.Visible = True
+        Me.colGrossWt.VisibleIndex = 17
+        Me.colGrossWt.Width = 106
+        '
+        'GridColumn71
+        '
+        Me.GridColumn71.Caption = "WO#"
+        Me.GridColumn71.FieldName = "WorkOrderNumbers"
+        Me.GridColumn71.Name = "GridColumn71"
+        Me.GridColumn71.Visible = True
+        Me.GridColumn71.VisibleIndex = 3
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", "State", 50, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcountry", "Country", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit1.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        Me.RepositoryItemLookUpEdit1.ValueMember = "Custname"
+        '
+        'GridView4
+        '
+        Me.GridView4.GridControl = Me.grPendingLoads
+        Me.GridView4.Name = "GridView4"
         '
         'RibbonPanelControl7
         '
@@ -2703,7 +2752,7 @@ Partial Class viewFreightDashboard
         Me.RibbonPanelControl7.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl7.Name = "RibbonPanelControl7"
         Me.RibbonPanelControl7.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1268, 599)
+        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1268, 600)
         Me.RibbonPanelControl7.TabIndex = 4
         '
         'GroupControl7
@@ -2751,7 +2800,7 @@ Partial Class viewFreightDashboard
         Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
         Me.RibbonPanelControl6.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1268, 599)
+        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1268, 600)
         Me.RibbonPanelControl6.TabIndex = 1
         '
         'gcCarriers
@@ -2760,7 +2809,7 @@ Partial Class viewFreightDashboard
         Me.gcCarriers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCarriers.Location = New System.Drawing.Point(8, 8)
         Me.gcCarriers.Name = "gcCarriers"
-        Me.gcCarriers.Size = New System.Drawing.Size(1252, 583)
+        Me.gcCarriers.Size = New System.Drawing.Size(1252, 584)
         Me.gcCarriers.TabIndex = 1
         Me.gcCarriers.Text = "CARRIERS"
         Me.gcCarriers.Visible = False
@@ -2769,10 +2818,10 @@ Partial Class viewFreightDashboard
         '
         Me.dgvCarrier.DataSource = Me.bsCarriers
         Me.dgvCarrier.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvCarrier.Location = New System.Drawing.Point(2, 22)
+        Me.dgvCarrier.Location = New System.Drawing.Point(2, 20)
         Me.dgvCarrier.MainView = Me.GridView12
         Me.dgvCarrier.Name = "dgvCarrier"
-        Me.dgvCarrier.Size = New System.Drawing.Size(1248, 559)
+        Me.dgvCarrier.Size = New System.Drawing.Size(1248, 562)
         Me.dgvCarrier.TabIndex = 1
         Me.dgvCarrier.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView12, Me.GridView13})
         '
@@ -2854,7 +2903,7 @@ Partial Class viewFreightDashboard
         Me.gcLogisticsProviders.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcLogisticsProviders.Location = New System.Drawing.Point(8, 8)
         Me.gcLogisticsProviders.Name = "gcLogisticsProviders"
-        Me.gcLogisticsProviders.Size = New System.Drawing.Size(1252, 583)
+        Me.gcLogisticsProviders.Size = New System.Drawing.Size(1252, 584)
         Me.gcLogisticsProviders.TabIndex = 2
         Me.gcLogisticsProviders.Text = "LOGISTICS PROVIDERS"
         Me.gcLogisticsProviders.Visible = False
@@ -2863,10 +2912,10 @@ Partial Class viewFreightDashboard
         '
         Me.dgLogistics.DataSource = Me.bsLogistics
         Me.dgLogistics.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgLogistics.Location = New System.Drawing.Point(2, 22)
+        Me.dgLogistics.Location = New System.Drawing.Point(2, 20)
         Me.dgLogistics.MainView = Me.GridView14
         Me.dgLogistics.Name = "dgLogistics"
-        Me.dgLogistics.Size = New System.Drawing.Size(1248, 559)
+        Me.dgLogistics.Size = New System.Drawing.Size(1248, 562)
         Me.dgLogistics.TabIndex = 1
         Me.dgLogistics.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView14, Me.GridView15})
         '
@@ -2976,7 +3025,7 @@ Partial Class viewFreightDashboard
         Me.gcCustomers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcCustomers.Location = New System.Drawing.Point(8, 8)
         Me.gcCustomers.Name = "gcCustomers"
-        Me.gcCustomers.Size = New System.Drawing.Size(1252, 583)
+        Me.gcCustomers.Size = New System.Drawing.Size(1252, 584)
         Me.gcCustomers.TabIndex = 0
         Me.gcCustomers.Text = "CUSTOMERS"
         Me.gcCustomers.Visible = False
@@ -2991,9 +3040,9 @@ Partial Class viewFreightDashboard
         Me.PanelControl9.Controls.Add(Me.GroupControl11)
         Me.PanelControl9.Controls.Add(Me.GroupControl10)
         Me.PanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl9.Location = New System.Drawing.Point(364, 22)
+        Me.PanelControl9.Location = New System.Drawing.Point(364, 20)
         Me.PanelControl9.Name = "PanelControl9"
-        Me.PanelControl9.Size = New System.Drawing.Size(886, 559)
+        Me.PanelControl9.Size = New System.Drawing.Size(886, 562)
         Me.PanelControl9.TabIndex = 4
         '
         'GroupControl15
@@ -3464,9 +3513,9 @@ Partial Class viewFreightDashboard
         '
         Me.GroupControl6.Controls.Add(Me.grCustomers)
         Me.GroupControl6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GroupControl6.Location = New System.Drawing.Point(2, 22)
+        Me.GroupControl6.Location = New System.Drawing.Point(2, 20)
         Me.GroupControl6.Name = "GroupControl6"
-        Me.GroupControl6.Size = New System.Drawing.Size(362, 559)
+        Me.GroupControl6.Size = New System.Drawing.Size(362, 562)
         Me.GroupControl6.TabIndex = 3
         Me.GroupControl6.Text = "Customer List"
         '
@@ -3474,11 +3523,11 @@ Partial Class viewFreightDashboard
         '
         Me.grCustomers.DataSource = Me.bsCustomers
         Me.grCustomers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grCustomers.Location = New System.Drawing.Point(2, 22)
+        Me.grCustomers.Location = New System.Drawing.Point(2, 20)
         Me.grCustomers.LookAndFeel.SkinName = "Money Twins"
         Me.grCustomers.MainView = Me.GridView11
         Me.grCustomers.Name = "grCustomers"
-        Me.grCustomers.Size = New System.Drawing.Size(358, 535)
+        Me.grCustomers.Size = New System.Drawing.Size(358, 540)
         Me.grCustomers.TabIndex = 0
         Me.grCustomers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView11})
         '
@@ -3551,7 +3600,7 @@ Partial Class viewFreightDashboard
         Me.RibbonPanelControl9.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl9.Name = "RibbonPanelControl9"
         Me.RibbonPanelControl9.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1268, 599)
+        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1268, 600)
         Me.RibbonPanelControl9.TabIndex = 6
         '
         'Timer1
@@ -3576,10 +3625,6 @@ Partial Class viewFreightDashboard
         'Timer2
         '
         '
-        'bsCustomers2
-        '
-        Me.bsCustomers2.DataSource = GetType(AOS.BusinessObjects.CustomerCollection)
-        '
         'viewFreightDashboard
         '
         Me.Controls.Add(Me.WorkPanelsHolder)
@@ -3596,64 +3641,10 @@ Partial Class viewFreightDashboard
         CType(Me.RepositoryItemDateEdit2.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemDateEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WorkPanelsHolder.ResumeLayout(False)
-        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl8.ResumeLayout(False)
-        CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl8.ResumeLayout(False)
-        CType(Me.PanelControl6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl6.ResumeLayout(False)
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grvCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CustomDevExGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl1.ResumeLayout(False)
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl1.ResumeLayout(False)
-        CType(Me.grPendingLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsPendingLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grvPendingLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl4.ResumeLayout(False)
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl4.ResumeLayout(False)
-        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl4.ResumeLayout(False)
-        CType(Me.grDeliveredLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsDeliveredLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl3.ResumeLayout(False)
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl3.ResumeLayout(False)
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl3.ResumeLayout(False)
-        CType(Me.grInTransitLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsInTransitLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl2.ResumeLayout(False)
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl2.ResumeLayout(False)
-        CType(Me.grScheduledLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsScheduledLoads, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl5.ResumeLayout(False)
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3665,6 +3656,61 @@ Partial Class viewFreightDashboard
         CType(Me.GridView9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl2.ResumeLayout(False)
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl2.ResumeLayout(False)
+        CType(Me.grScheduledLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsScheduledLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl3.ResumeLayout(False)
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        CType(Me.grInTransitLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsInTransitLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl8.ResumeLayout(False)
+        CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl8.ResumeLayout(False)
+        CType(Me.PanelControl6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl6.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvCustomerShipmentHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomDevExGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl4.ResumeLayout(False)
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl4.ResumeLayout(False)
+        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl4.ResumeLayout(False)
+        CType(Me.grDeliveredLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsDeliveredLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl1.ResumeLayout(False)
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
+        CType(Me.grPendingLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsPendingLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvPendingLoads, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl7.ResumeLayout(False)
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3747,7 +3793,6 @@ Partial Class viewFreightDashboard
         CType(Me.GridView11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageCollection2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsCustomers2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4056,4 +4101,9 @@ Partial Class viewFreightDashboard
     Friend WithEvents rBtnFetchShipmentHistory As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnExportHistory As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bsCustomers2 As BindingSource
+    Friend WithEvents colTotalSkids As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colTotalSkids3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colTotalSkids2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colTotalSkids1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colTotalSkids4 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

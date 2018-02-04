@@ -239,5 +239,10 @@
         End Select
     End Sub
 
+    Private Sub rbtnFreightChargesHistory_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnFreightChargesHistory.ItemClick
+        Dim frm As New frmFreightChargesHistory
+        frm.vLoadID = vLoadID
+        frm.ShowDialog()
 
+    End Sub
 End Class

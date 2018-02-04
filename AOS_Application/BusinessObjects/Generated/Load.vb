@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/11/2014 1:43:56 PM
+' Date Generated       : 1/4/2018 12:59:27 PM
 '===============================================================================
 
 Imports System
@@ -307,6 +307,12 @@ Namespace BusinessObjects
 												
 						Case "ActualDeliveryDate"
 							Me.str.ActualDeliveryDate = CType(value, string)
+												
+						Case "Freezeprotectflag"
+							Me.str.Freezeprotectflag = CType(value, string)
+												
+						Case "TotalSkids"
+							Me.str.TotalSkids = CType(value, string)
 					
 					End Select
 					
@@ -420,6 +426,18 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.DateTime" Then
 								Me.ActualDeliveryDate = CType(value, Nullable(Of System.DateTime))
+							End If
+						
+						Case "Freezeprotectflag"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.Freezeprotectflag = CType(value, Nullable(Of System.Boolean))
+							End If
+						
+						Case "TotalSkids"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
+								Me.TotalSkids = CType(value, Nullable(Of System.Int32))
 							End If
 						
 					
@@ -1045,6 +1063,32 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.DateTime))
 				MyBase.SetSystemDateTime(LoadMetadata.ColumnNames.ActualDeliveryDate, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to LOAD.FREEZEPROTECTFLAG
+		' </summary>
+		Public Overridable Property Freezeprotectflag As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(LoadMetadata.ColumnNames.Freezeprotectflag)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(LoadMetadata.ColumnNames.Freezeprotectflag, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to LOAD.TotalSkids
+		' </summary>
+		Public Overridable Property TotalSkids As Nullable(Of System.Int32)
+			Get
+				Return MyBase.GetSystemInt32(LoadMetadata.ColumnNames.TotalSkids)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Int32))
+				MyBase.SetSystemInt32(LoadMetadata.ColumnNames.TotalSkids, value)
 			End Set
 		End Property		
 		
@@ -2029,6 +2073,48 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Freezeprotectflag As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.Freezeprotectflag
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Freezeprotectflag = Nothing
+					Else
+						entity.Freezeprotectflag = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property TotalSkids As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Int32) = entity.TotalSkids
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.TotalSkids = Nothing
+					Else
+						entity.TotalSkids = Convert.ToInt32(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esLoad
@@ -2396,6 +2482,18 @@ Namespace BusinessObjects
 		Public ReadOnly Property ActualDeliveryDate As esQueryItem
 			Get
 				Return New esQueryItem(Me, LoadMetadata.ColumnNames.ActualDeliveryDate, esSystemType.DateTime)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Freezeprotectflag As esQueryItem
+			Get
+				Return New esQueryItem(Me, LoadMetadata.ColumnNames.Freezeprotectflag, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property TotalSkids As esQueryItem
+			Get
+				Return New esQueryItem(Me, LoadMetadata.ColumnNames.TotalSkids, esSystemType.Int32)
 			End Get
 		End Property 
 		
@@ -2864,6 +2962,17 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(LoadMetadata.ColumnNames.Freezeprotectflag, 47, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = LoadMetadata.PropertyNames.Freezeprotectflag
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(LoadMetadata.ColumnNames.TotalSkids, 48, GetType(System.Int32), esSystemType.Int32)	
+			c.PropertyName = LoadMetadata.PropertyNames.TotalSkids
+			c.NumericPrecision = 10
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -2939,6 +3048,8 @@ Namespace BusinessObjects
 			 Public Const CarrierProNumber As String = "CarrierProNumber"
 			 Public Const ActualShipmentDate As String = "ActualShipmentDate"
 			 Public Const ActualDeliveryDate As String = "ActualDeliveryDate"
+			 Public Const Freezeprotectflag As String = "FREEZEPROTECTFLAG"
+			 Public Const TotalSkids As String = "TotalSkids"
 		End Class
 #End Region	
 		
@@ -2991,6 +3102,8 @@ Namespace BusinessObjects
 			 Public Const CarrierProNumber As String = "CarrierProNumber"
 			 Public Const ActualShipmentDate As String = "ActualShipmentDate"
 			 Public Const ActualDeliveryDate As String = "ActualDeliveryDate"
+			 Public Const Freezeprotectflag As String = "Freezeprotectflag"
+			 Public Const TotalSkids As String = "TotalSkids"
 		End Class
 #End Region	
 
@@ -3084,7 +3197,9 @@ Namespace BusinessObjects
 				meta.AddTypeMap("QuoteID", new esTypeMap("int", "System.Int32"))
 				meta.AddTypeMap("CarrierProNumber", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("ActualShipmentDate", new esTypeMap("datetime", "System.DateTime"))
-				meta.AddTypeMap("ActualDeliveryDate", new esTypeMap("datetime", "System.DateTime"))			
+				meta.AddTypeMap("ActualDeliveryDate", new esTypeMap("datetime", "System.DateTime"))
+				meta.AddTypeMap("Freezeprotectflag", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("TotalSkids", new esTypeMap("int", "System.Int32"))			
 				
 				
 				 

@@ -386,6 +386,9 @@
     <Compile Include="BusinessObjects\Custom\CustomerpaymentCollection.vb" />
     <Compile Include="BusinessObjects\Custom\CustomerpaymentQuery.vb" />
     <Compile Include="BusinessObjects\Custom\CustomerQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\Emailparameters.vb" />
+    <Compile Include="BusinessObjects\Custom\EmailparametersCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\EmailparametersQuery.vb" />
     <Compile Include="BusinessObjects\Custom\Employee.vb" />
     <Compile Include="BusinessObjects\Custom\EmployeeCollection.vb" />
     <Compile Include="BusinessObjects\Custom\EmployeeQuery.vb" />
@@ -1345,6 +1348,7 @@
     <Compile Include="BusinessObjects\Generated\Customer.vb" />
     <Compile Include="BusinessObjects\Generated\Customerassignment.vb" />
     <Compile Include="BusinessObjects\Generated\Customerpayment.vb" />
+    <Compile Include="BusinessObjects\Generated\Emailparameters.vb" />
     <Compile Include="BusinessObjects\Generated\Employee.vb" />
     <Compile Include="BusinessObjects\Generated\Ghsmanualspecs.vb" />
     <Compile Include="BusinessObjects\Generated\Hazmatsymbol.vb" />
@@ -1790,6 +1794,12 @@
     <Compile Include="Forms\Customers\frmWorkOrdersToInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Freight\frmFreightChargesHistory.Designer.vb">
+      <DependentUpon>frmFreightChargesHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Freight\frmFreightChargesHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Inventory\frmAssignChemical.Designer.vb">
       <DependentUpon>frmAssignChemical.vb</DependentUpon>
     </Compile>
@@ -2161,6 +2171,12 @@
     </Compile>
     <Compile Include="Forms\Lab\viewLab.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Misc\frmEmail.Designer.vb">
+      <DependentUpon>frmEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Misc\frmEmail.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Misc\frmGetDateFromLookup.Designer.vb">
       <DependentUpon>frmGetDateFromLookup.vb</DependentUpon>
@@ -2852,6 +2868,12 @@
     <Compile Include="Reports\rptCustomerNotes.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptFreightChargeHistory.Designer.vb">
+      <DependentUpon>rptFreightChargeHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptFreightChargeHistory.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptGHSProductLabelLarge.Designer.vb">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>
     </Compile>
@@ -3299,6 +3321,9 @@
       <DependentUpon>frmWorkOrdersToInvoice.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Freight\frmFreightChargesHistory.resx">
+      <DependentUpon>frmFreightChargesHistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inventory\frmAssignChemical.resx">
       <DependentUpon>frmAssignChemical.vb</DependentUpon>
     </EmbeddedResource>
@@ -3529,6 +3554,9 @@
     <EmbeddedResource Include="Forms\Lab\viewLab.resx">
       <DependentUpon>viewLab.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Misc\frmEmail.resx">
+      <DependentUpon>frmEmail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Misc\frmGetDateFromLookup.resx">
       <DependentUpon>frmGetDateFromLookup.vb</DependentUpon>
@@ -3938,6 +3966,9 @@
     <EmbeddedResource Include="Reports\rptCustomerNotes.resx">
       <DependentUpon>rptCustomerNotes.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptFreightChargeHistory.resx">
+      <DependentUpon>rptFreightChargeHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptGHSProductLabelLarge.resx">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>

@@ -35,6 +35,7 @@ Partial Class frmLoadProcessing
         Dim Label17 As System.Windows.Forms.Label
         Dim Label16 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
+        Dim TotalSkidsLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLoadProcessing))
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.rbtnBack = New DevExpress.XtraBars.BarButtonItem()
@@ -46,6 +47,7 @@ Partial Class frmLoadProcessing
         Me.rbtnEditBillings = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnPrintLoadInfo = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnDeleteLoadBillingRecs = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnFreightChargesHistory = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -53,10 +55,12 @@ Partial Class frmLoadProcessing
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.History = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.lblTotalSkidsValue = New DevExpress.XtraEditors.LabelControl()
+        Me.bsLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSelectVendor = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
-        Me.bsLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
@@ -153,6 +157,7 @@ Partial Class frmLoadProcessing
         Label17 = New System.Windows.Forms.Label()
         Label16 = New System.Windows.Forms.Label()
         Label11 = New System.Windows.Forms.Label()
+        TotalSkidsLabel = New System.Windows.Forms.Label()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -318,19 +323,29 @@ Partial Class frmLoadProcessing
         Label11.TabIndex = 40
         Label11.Text = "Quote ID:"
         '
+        'TotalSkidsLabel
+        '
+        TotalSkidsLabel.AutoSize = True
+        TotalSkidsLabel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        TotalSkidsLabel.Location = New System.Drawing.Point(695, 26)
+        TotalSkidsLabel.Name = "TotalSkidsLabel"
+        TotalSkidsLabel.Size = New System.Drawing.Size(43, 16)
+        TotalSkidsLabel.TabIndex = 37
+        TotalSkidsLabel.Text = "Skids:"
+        '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnBack, Me.rbtnSchedule, Me.rbtnAddQuote, Me.rbtnEditQuote, Me.rbtnDeleteQuote, Me.rbtnEditCharges, Me.rbtnEditBillings, Me.rbtnPrintLoadInfo, Me.rbtnDeleteLoadBillingRecs})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnBack, Me.rbtnSchedule, Me.rbtnAddQuote, Me.rbtnEditQuote, Me.rbtnDeleteQuote, Me.rbtnEditCharges, Me.rbtnEditBillings, Me.rbtnPrintLoadInfo, Me.rbtnDeleteLoadBillingRecs, Me.rbtnFreightChargesHistory})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 10
+        Me.RibbonControl1.MaxItemId = 11
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowCategoryInCaption = False
+        Me.RibbonControl1.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
-        Me.RibbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
         Me.RibbonControl1.Size = New System.Drawing.Size(1200, 95)
@@ -342,7 +357,7 @@ Partial Class frmLoadProcessing
         Me.rbtnBack.Caption = "Go Back"
         Me.rbtnBack.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnBack.Id = 1
-        Me.rbtnBack.LargeImageIndex = 3
+        Me.rbtnBack.ImageOptions.LargeImageIndex = 3
         Me.rbtnBack.Name = "rbtnBack"
         '
         'rbtnSchedule
@@ -350,7 +365,7 @@ Partial Class frmLoadProcessing
         Me.rbtnSchedule.Caption = "Schedule Load"
         Me.rbtnSchedule.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnSchedule.Id = 2
-        Me.rbtnSchedule.LargeImageIndex = 4
+        Me.rbtnSchedule.ImageOptions.LargeImageIndex = 4
         Me.rbtnSchedule.Name = "rbtnSchedule"
         '
         'rbtnAddQuote
@@ -358,7 +373,7 @@ Partial Class frmLoadProcessing
         Me.rbtnAddQuote.Caption = "Add Quote"
         Me.rbtnAddQuote.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnAddQuote.Id = 3
-        Me.rbtnAddQuote.LargeImageIndex = 5
+        Me.rbtnAddQuote.ImageOptions.LargeImageIndex = 5
         Me.rbtnAddQuote.Name = "rbtnAddQuote"
         '
         'rbtnEditQuote
@@ -366,7 +381,7 @@ Partial Class frmLoadProcessing
         Me.rbtnEditQuote.Caption = "Edit Quote"
         Me.rbtnEditQuote.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnEditQuote.Id = 4
-        Me.rbtnEditQuote.LargeImageIndex = 6
+        Me.rbtnEditQuote.ImageOptions.LargeImageIndex = 6
         Me.rbtnEditQuote.Name = "rbtnEditQuote"
         '
         'rbtnDeleteQuote
@@ -374,7 +389,7 @@ Partial Class frmLoadProcessing
         Me.rbtnDeleteQuote.Caption = "DeleteQuote"
         Me.rbtnDeleteQuote.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnDeleteQuote.Id = 5
-        Me.rbtnDeleteQuote.LargeImageIndex = 7
+        Me.rbtnDeleteQuote.ImageOptions.LargeImageIndex = 7
         Me.rbtnDeleteQuote.Name = "rbtnDeleteQuote"
         '
         'rbtnEditCharges
@@ -382,7 +397,7 @@ Partial Class frmLoadProcessing
         Me.rbtnEditCharges.Caption = "Edit Freight Charges"
         Me.rbtnEditCharges.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnEditCharges.Id = 6
-        Me.rbtnEditCharges.LargeImageIndex = 10
+        Me.rbtnEditCharges.ImageOptions.LargeImageIndex = 10
         Me.rbtnEditCharges.Name = "rbtnEditCharges"
         '
         'rbtnEditBillings
@@ -390,7 +405,7 @@ Partial Class frmLoadProcessing
         Me.rbtnEditBillings.Caption = "Edit Customer Billings"
         Me.rbtnEditBillings.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnEditBillings.Id = 7
-        Me.rbtnEditBillings.LargeImageIndex = 13
+        Me.rbtnEditBillings.ImageOptions.LargeImageIndex = 13
         Me.rbtnEditBillings.Name = "rbtnEditBillings"
         '
         'rbtnPrintLoadInfo
@@ -398,7 +413,7 @@ Partial Class frmLoadProcessing
         Me.rbtnPrintLoadInfo.Caption = "Load Data Sheet"
         Me.rbtnPrintLoadInfo.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPrintLoadInfo.Id = 8
-        Me.rbtnPrintLoadInfo.LargeImageIndex = 15
+        Me.rbtnPrintLoadInfo.ImageOptions.LargeImageIndex = 15
         Me.rbtnPrintLoadInfo.Name = "rbtnPrintLoadInfo"
         '
         'rbtnDeleteLoadBillingRecs
@@ -406,8 +421,15 @@ Partial Class frmLoadProcessing
         Me.rbtnDeleteLoadBillingRecs.Caption = "Delete All Billing Records"
         Me.rbtnDeleteLoadBillingRecs.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnDeleteLoadBillingRecs.Id = 9
-        Me.rbtnDeleteLoadBillingRecs.LargeImageIndex = 11
+        Me.rbtnDeleteLoadBillingRecs.ImageOptions.LargeImageIndex = 11
         Me.rbtnDeleteLoadBillingRecs.Name = "rbtnDeleteLoadBillingRecs"
+        '
+        'rbtnFreightChargesHistory
+        '
+        Me.rbtnFreightChargesHistory.Caption = "Freight Charges History"
+        Me.rbtnFreightChargesHistory.Id = 10
+        Me.rbtnFreightChargesHistory.ImageOptions.LargeImageIndex = 4
+        Me.rbtnFreightChargesHistory.Name = "rbtnFreightChargesHistory"
         '
         'RibbonLargeImages
         '
@@ -416,7 +438,7 @@ Partial Class frmLoadProcessing
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3, Me.RibbonPageGroup4, Me.RibbonPageGroup5})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3, Me.RibbonPageGroup4, Me.RibbonPageGroup5, Me.History})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -469,8 +491,16 @@ Partial Class frmLoadProcessing
         Me.RibbonPageGroup5.ShowCaptionButton = False
         Me.RibbonPageGroup5.Text = "Scheduling"
         '
+        'History
+        '
+        Me.History.ItemLinks.Add(Me.rbtnFreightChargesHistory)
+        Me.History.Name = "History"
+        Me.History.Text = "History"
+        '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.lblTotalSkidsValue)
+        Me.GroupControl1.Controls.Add(TotalSkidsLabel)
         Me.GroupControl1.Controls.Add(Me.btnSelectVendor)
         Me.GroupControl1.Controls.Add(Me.LabelControl14)
         Me.GroupControl1.Controls.Add(Me.LabelControl13)
@@ -492,6 +522,22 @@ Partial Class frmLoadProcessing
         Me.GroupControl1.TabIndex = 1
         Me.GroupControl1.Text = "Load Information"
         '
+        'lblTotalSkidsValue
+        '
+        Me.lblTotalSkidsValue.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalSkidsValue.Appearance.Options.UseFont = True
+        Me.lblTotalSkidsValue.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
+        Me.lblTotalSkidsValue.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "Totalskids", True))
+        Me.lblTotalSkidsValue.Location = New System.Drawing.Point(736, 23)
+        Me.lblTotalSkidsValue.Name = "lblTotalSkidsValue"
+        Me.lblTotalSkidsValue.Size = New System.Drawing.Size(42, 20)
+        Me.lblTotalSkidsValue.TabIndex = 38
+        Me.lblTotalSkidsValue.Text = "Skids"
+        '
+        'bsLoadInfo
+        '
+        Me.bsLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfo)
+        '
         'btnSelectVendor
         '
         Me.btnSelectVendor.Location = New System.Drawing.Point(212, 23)
@@ -503,6 +549,8 @@ Partial Class frmLoadProcessing
         'LabelControl14
         '
         Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl14.Appearance.Options.UseFont = True
+        Me.LabelControl14.Appearance.Options.UseTextOptions = True
         Me.LabelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl14.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "LoadStatus", True))
@@ -512,13 +560,10 @@ Partial Class frmLoadProcessing
         Me.LabelControl14.TabIndex = 35
         Me.LabelControl14.Text = "Load Status"
         '
-        'bsLoadInfo
-        '
-        Me.bsLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfo)
-        '
         'LabelControl13
         '
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Appearance.Options.UseFont = True
         Me.LabelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl13.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "TotalGrossWeight", True))
         Me.LabelControl13.Location = New System.Drawing.Point(868, 26)
@@ -530,17 +575,19 @@ Partial Class frmLoadProcessing
         'LabelControl12
         '
         Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl12.Appearance.Options.UseFont = True
         Me.LabelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl12.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "TotalContainers", True))
         Me.LabelControl12.Location = New System.Drawing.Point(621, 26)
         Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(86, 16)
+        Me.LabelControl12.Size = New System.Drawing.Size(47, 20)
         Me.LabelControl12.TabIndex = 33
         Me.LabelControl12.Text = "Containers"
         '
         'LabelControl11
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl11.Appearance.Options.UseFont = True
         Me.LabelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl11.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "LoadType", True))
         Me.LabelControl11.Location = New System.Drawing.Point(286, 26)
@@ -552,6 +599,7 @@ Partial Class frmLoadProcessing
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl10.Appearance.Options.UseFont = True
         Me.LabelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl10.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "LoadID", True))
         Me.LabelControl10.Location = New System.Drawing.Point(12, 26)
@@ -976,11 +1024,11 @@ Partial Class frmLoadProcessing
         '
         Me.GridControl1.DataSource = Me.bsLoadItems
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 20)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1196, 284)
+        Me.GridControl1.Size = New System.Drawing.Size(1196, 286)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -1161,11 +1209,11 @@ Partial Class frmLoadProcessing
         '
         Me.GridControl2.DataSource = Me.bsLoadQuotes
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl2.Location = New System.Drawing.Point(2, 20)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1196, 91)
+        Me.GridControl2.Size = New System.Drawing.Size(1196, 93)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -1412,4 +1460,7 @@ Partial Class frmLoadProcessing
     Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents rbtnDeleteLoadBillingRecs As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnSelectVendor As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents lblTotalSkidsValue As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents rbtnFreightChargesHistory As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents History As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class
