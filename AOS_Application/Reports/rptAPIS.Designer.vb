@@ -53,6 +53,12 @@ Partial Public Class rptAPIS
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel47 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.bsKitComponents = New System.Windows.Forms.BindingSource(Me.components)
+        Me.XrLabel46 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel45 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel43 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel44 = New DevExpress.XtraReports.UI.XRLabel()
         Me.bsAPISMaterial = New System.Windows.Forms.BindingSource(Me.components)
         Me.APISInfo = New DevExpress.XtraReports.UI.GroupHeaderBand()
         Me.XrLabel41 = New DevExpress.XtraReports.UI.XRLabel()
@@ -95,6 +101,11 @@ Partial Public Class rptAPIS
         Me.bsAPISNotes = New System.Windows.Forms.BindingSource(Me.components)
         Me.APISInfo_Footer = New DevExpress.XtraReports.UI.GroupFooterBand()
         Me.bsAPIS = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KitContentsReport = New DevExpress.XtraReports.UI.DetailReportBand()
+        Me.Detail5 = New DevExpress.XtraReports.UI.DetailBand()
+        Me.ReportHeader4 = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrLine6 = New DevExpress.XtraReports.UI.XRLine()
+        CType(Me.bsKitComponents, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsAPISMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsAPISProcs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsAPISNotes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -203,7 +214,7 @@ Partial Public Class rptAPIS
         'Detail1
         '
         Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel22, Me.XrLabel21, Me.XrLabel11})
-        Me.Detail1.HeightF = 20.0!
+        Me.Detail1.HeightF = 23.95833!
         Me.Detail1.Name = "Detail1"
         '
         'XrLabel22
@@ -412,9 +423,69 @@ Partial Public Class rptAPIS
         Me.XrLabel23.Text = "Qty"
         Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
-        'bsAPISMaterial
+        'XrLabel47
         '
-        Me.bsAPISMaterial.DataSource = GetType(AOS.BusinessObjects.ViewAPISITEMDataCollection)
+        Me.XrLabel47.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Componentdesc")})
+        Me.XrLabel47.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel47.LocationFloat = New DevExpress.Utils.PointFloat(71.79165!, 0!)
+        Me.XrLabel47.Name = "XrLabel47"
+        Me.XrLabel47.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel47.SizeF = New System.Drawing.SizeF(668.2083!, 23.0!)
+        Me.XrLabel47.StylePriority.UseFont = False
+        Me.XrLabel47.StylePriority.UseTextAlignment = False
+        Me.XrLabel47.Text = "XrLabel47"
+        Me.XrLabel47.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'bsKitComponents
+        '
+        Me.bsKitComponents.DataSource = GetType(AOS.BusinessObjects.ViewKitComponentCollection)
+        '
+        'XrLabel46
+        '
+        Me.XrLabel46.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Componentqty")})
+        Me.XrLabel46.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel46.LocationFloat = New DevExpress.Utils.PointFloat(33.33333!, 0!)
+        Me.XrLabel46.Name = "XrLabel46"
+        Me.XrLabel46.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel46.SizeF = New System.Drawing.SizeF(26.67001!, 23.0!)
+        Me.XrLabel46.StylePriority.UseFont = False
+        Me.XrLabel46.StylePriority.UseTextAlignment = False
+        Me.XrLabel46.Text = "XrLabel46"
+        Me.XrLabel46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        '
+        'XrLabel45
+        '
+        Me.XrLabel45.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel45.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
+        Me.XrLabel45.Name = "XrLabel45"
+        Me.XrLabel45.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel45.SizeF = New System.Drawing.SizeF(138.2083!, 23.00002!)
+        Me.XrLabel45.Text = "Kit Components List"
+        Me.XrLabel45.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrLabel43
+        '
+        Me.XrLabel43.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel43.LocationFloat = New DevExpress.Utils.PointFloat(140.3331!, 0!)
+        Me.XrLabel43.Name = "XrLabel43"
+        Me.XrLabel43.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel43.SizeF = New System.Drawing.SizeF(42.66684!, 23.0!)
+        Me.XrLabel43.StylePriority.UseFont = False
+        Me.XrLabel43.StylePriority.UseTextAlignment = False
+        Me.XrLabel43.Text = "Kit #:"
+        Me.XrLabel43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrLabel44
+        '
+        Me.XrLabel44.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Kitid")})
+        Me.XrLabel44.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel44.LocationFloat = New DevExpress.Utils.PointFloat(183.0!, 0!)
+        Me.XrLabel44.Name = "XrLabel44"
+        Me.XrLabel44.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel44.SizeF = New System.Drawing.SizeF(38.62494!, 23.0!)
+        Me.XrLabel44.StylePriority.UseFont = False
+        Me.XrLabel44.StylePriority.UseTextAlignment = False
+        Me.XrLabel44.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'APISInfo
         '
@@ -684,7 +755,7 @@ Partial Public Class rptAPIS
         '
         Me.APISProcedures.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail2, Me.ReportHeader1})
         Me.APISProcedures.DataSource = Me.bsAPISProcs
-        Me.APISProcedures.Level = 1
+        Me.APISProcedures.Level = 2
         Me.APISProcedures.Name = "APISProcedures"
         '
         'Detail2
@@ -758,7 +829,7 @@ Partial Public Class rptAPIS
         '
         Me.APISNotes.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail3, Me.ReportHeader2})
         Me.APISNotes.DataSource = Me.bsAPISNotes
-        Me.APISNotes.Level = 2
+        Me.APISNotes.Level = 3
         Me.APISNotes.Name = "APISNotes"
         '
         'Detail3
@@ -831,12 +902,38 @@ Partial Public Class rptAPIS
         '
         Me.bsAPIS.DataSource = GetType(AOS.BusinessObjects.ViewAPISData)
         '
+        'KitContentsReport
+        '
+        Me.KitContentsReport.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail5, Me.ReportHeader4})
+        Me.KitContentsReport.DataSource = Me.bsKitComponents
+        Me.KitContentsReport.Level = 1
+        Me.KitContentsReport.Name = "KitContentsReport"
+        '
+        'Detail5
+        '
+        Me.Detail5.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel46, Me.XrLabel47})
+        Me.Detail5.HeightF = 23.0!
+        Me.Detail5.Name = "Detail5"
+        '
+        'ReportHeader4
+        '
+        Me.ReportHeader4.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLine6, Me.XrLabel44, Me.XrLabel43, Me.XrLabel45})
+        Me.ReportHeader4.HeightF = 28.125!
+        Me.ReportHeader4.Name = "ReportHeader4"
+        '
+        'XrLine6
+        '
+        Me.XrLine6.LocationFloat = New DevExpress.Utils.PointFloat(0!, 24.00002!)
+        Me.XrLine6.Name = "XrLine6"
+        Me.XrLine6.SizeF = New System.Drawing.SizeF(750.0!, 2.0!)
+        '
         'rptAPIS
         '
-        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.PageHeader, Me.PageFooter, Me.TopMarginBand1, Me.BottomMarginBand1, Me.APISMaterials, Me.APISInfo, Me.APISProcedures, Me.APISNotes, Me.APISInfo_Footer})
+        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.PageHeader, Me.PageFooter, Me.TopMarginBand1, Me.BottomMarginBand1, Me.APISMaterials, Me.APISInfo, Me.APISProcedures, Me.APISNotes, Me.APISInfo_Footer, Me.KitContentsReport})
         Me.DataSource = Me.bsAPIS
         Me.Margins = New System.Drawing.Printing.Margins(50, 50, 50, 25)
-        Me.Version = "15.2"
+        Me.Version = "17.1"
+        CType(Me.bsKitComponents, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsAPISMaterial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsAPISProcs, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsAPISNotes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -917,4 +1014,14 @@ Partial Public Class rptAPIS
     Friend WithEvents XrLabel40 As XRLabel
     Friend WithEvents XrLabel41 As XRLabel
     Friend WithEvents XrLabel42 As XRLabel
+    Friend WithEvents XrLabel45 As XRLabel
+    Friend WithEvents XrLabel43 As XRLabel
+    Friend WithEvents XrLabel44 As XRLabel
+    Friend WithEvents bsKitComponents As BindingSource
+    Friend WithEvents XrLabel47 As XRLabel
+    Friend WithEvents XrLabel46 As XRLabel
+    Friend WithEvents KitContentsReport As DetailReportBand
+    Friend WithEvents Detail5 As DetailBand
+    Friend WithEvents ReportHeader4 As ReportHeaderBand
+    Friend WithEvents XrLine6 As XRLine
 End Class

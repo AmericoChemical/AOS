@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 12/1/2017 3:00:53 PM
+' Date Generated       : 12/12/2017 9:41:02 AM
 '===============================================================================
 
 Imports System
@@ -2406,6 +2406,8 @@ Namespace BusinessObjects
 				
 			c = New esColumnMetadata(ChemicalMetadata.ColumnNames.Isautolabel, 36, GetType(System.Boolean), esSystemType.Boolean)	
 			c.PropertyName = ChemicalMetadata.PropertyNames.Isautolabel
+			c.HasDefault = True
+			c.Default = "((0))"
 			c.IsNullable = True
 			_columns.Add(c)
 				

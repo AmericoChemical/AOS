@@ -1255,5 +1255,8 @@ Public Class viewProduction
         viewPrintSDSDocumentByChemical(bsChemicals.Current.chemicalID)
     End Sub
 
-
+    Private Sub rbtnRelabeledProductsList_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnRelabeledProductsList.ItemClick
+        Dim frm As New frmRelabeledProductsList
+        frm.ShowDialog()
+    End Sub
 End Class

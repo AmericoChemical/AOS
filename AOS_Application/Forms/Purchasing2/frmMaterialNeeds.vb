@@ -91,10 +91,14 @@ Public Class frmMaterialNeeds
                 MsgBox("Cannot open database record for Product data", MsgBoxStyle.Critical, "Error - Update Failed")
                 Exit Sub
             End If
+
             Try
                 rItem.Inventoryclass = InventoryClass.INPROCESS
                 rItem.Unitsremaining = rProd.Units
-                rItem.Itemstatus = "IN PROCESS"
+                Select Case rItem.Itemstatus
+                    Case "AVAILABLE"
+                        rItem.Itemstatus = "IN PROCESS"
+                End Select
                 rItem.Save()
 
                 MsgBox("Inventory Item successfully converted", MsgBoxStyle.Information, "Conversion completed")
