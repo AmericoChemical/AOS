@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <configSections>
+    <sectionGroup name="EntitySpaces" type="EntitySpaces.Interfaces.esConfigSettings, EntitySpaces.Core">
+      <section name="connectionInfo" type="EntitySpaces.Interfaces.esConfigSettings, EntitySpaces.Interfaces" allowLocation="true" allowDefinition="Everywhere" restartOnExternalChanges="true" />
+    </sectionGroup>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="AOS.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="AOS.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+
+  <connectionStrings>
+    <add name="AOS.My.MySettings.AOSDataConnectionString" connectionString="Data Source=ACPI-SQL\AMERICO;Initial Catalog=AOSTest;Persist Security Info=True;User ID=AOSUser;Password=Chemica1"
+      providerName="System.Data.SqlClient" />
+    <add name="AOS.My.MySettings.AOSDataConnectionString1" connectionString="Data Source=ACPI-SQL\AMERICO;Initial Catalog=AOSTest;Persist Security Info=True;User ID=AOSUser;Password=Chemica1"
+      providerName="System.Data.SqlClient" />
+  </connectionStrings>
+
+  <EntitySpaces>
+    <connectionInfo default="SQL">
+      <connections>
+        <add name="SQL" providerMetadataKey="esDefault" sqlAccessType="DynamicSQL" provider="EntitySpaces.SqlClientProvider" providerClass="DataProvider" connectionString="User ID=AOSUser;Password=Chemica1;Initial Catalog=AOSTest;Data Source=ACPI-SQL\AMERICO" databaseVersion="2005" />
+	  </connections>
+    </connectionInfo>
+  </EntitySpaces>
+  
+  <userSettings>
+    <AOS.My.MySettings>
+      <setting name="UpdatesLocation" serializeAs="String">
+        <value>\\acpi-sql\aos\Updates4</value>
+      </setting>
+      <setting name="LastVersion" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="SkinName" serializeAs="String">
+        <value>Blue</value>
+      </setting>
+      <setting name="ApplicationVersion" serializeAs="String">
+        <value>13.01</value>
+      </setting>
+      <setting name="SQLDatabaseServerName" serializeAs="String">
+        <value>ACPI-SQL\AMERICO</value>
+      </setting>
+    </AOS.My.MySettings>
+  </userSettings>
+  <applicationSettings>
+    <AOS.My.MySettings>
+      <setting name="ApplicationName" serializeAs="String">
+        <value>AOS - Americo Operations System</value>
+      </setting>
+      <setting name="ClientName" serializeAs="String">
+        <value>Americo Chemical Products, Inc.</value>
+      </setting>
+      <setting name="DatabaseType" serializeAs="String">
+        <value>SQLSERVER</value>
+      </setting>
+      <setting name="MSAccessDatabasePassword" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="UseUpdates" serializeAs="String">
+        <value>True</value>
+      </setting>
+      <setting name="UseLoginSecurity" serializeAs="String">
+        <value>True</value>
+      </setting>
+      <setting name="LastUserLogin" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="UserTableName" serializeAs="String">
+        <value>APPUSER</value>
+      </setting>
+      <setting name="UserLoginFieldName" serializeAs="String">
+        <value>USERLOGIN</value>
+      </setting>
+      <setting name="UserFullNameFieldName" serializeAs="String">
+        <value>USERFULLNAME</value>
+      </setting>
+      <setting name="UserPasswordFieldName" serializeAs="String">
+        <value>USERPASSWORD</value>
+      </setting>
+      <setting name="UserSecurityLevelFieldName" serializeAs="String">
+        <value>USERSECURITYLEVEL</value>
+      </setting>
+      <setting name="ColorDark2" serializeAs="String">
+        <value>0, 51, 153</value>
+      </setting>
+      <setting name="ColorDark1" serializeAs="String">
+        <value>28, 74, 164</value>
+      </setting>
+      <setting name="ColorDark0" serializeAs="String">
+        <value>57, 96, 176</value>
+      </setting>
+      <setting name="ColorMedium2" serializeAs="String">
+        <value>85, 119, 187</value>
+      </setting>
+      <setting name="ColorMedium1" serializeAs="String">
+        <value>113, 142, 198</value>
+      </setting>
+      <setting name="ColorMedium0" serializeAs="String">
+        <value>142, 164, 210</value>
+      </setting>
+      <setting name="ColorLight2" serializeAs="String">
+        <value>170, 187, 221</value>
+      </setting>
+      <setting name="ColorLight1" serializeAs="String">
+        <value>198, 210, 232</value>
+      </setting>
+      <setting name="ColorLight0" serializeAs="String">
+        <value>227, 241, 254</value>
+      </setting>
+      <setting name="AOS_ProductionOrder_ProductionOrder" serializeAs="String">
+        <value>http://192.168.1.52:81/aos_mobile_webservices/ProductionOrder.asmx</value>
+      </setting>
+      <setting name="CopyrightYear" serializeAs="String">
+        <value>2007-2013</value>
+      </setting>
+      <setting name="SQLDatabaseUserName" serializeAs="String">
+        <value>AOSUser</value>
+      </setting>
+      <setting name="SQLDatabaseUserPassword" serializeAs="String">
+        <value>Chemica1</value>
+      </setting>
+      <setting name="DatabaseName" serializeAs="String">
+        <value>AOSTest</value>
+      </setting>
+    </AOS.My.MySettings>
+  </applicationSettings>
+	<runtime>
+		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<dependentAssembly>
+				<assemblyIdentity name="Npgsql" publicKeyToken="5D8B90D52F46FDA7" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-2.0.1.0" newVersion="2.0.1.0" />
+			</dependentAssembly>
+		</assemblyBinding>
+	</runtime>
+
+    <system.web>
+        <httpModules>
+            <add name="ASPxHttpHandlerModule" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        </httpModules>
+    </system.web>
+
+    <system.webServer>
+        <modules>
+            <add name="ASPxHttpHandlerModule" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        </modules>
+    </system.webServer>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /></startup></configuration>

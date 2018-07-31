@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="15.1.4.0" Ref="1" Name="rptPOItemList2" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" DataSource="#Ref-0" Version="15.1" PageWidth="850" PageHeight="1100" ScriptLanguage="VisualBasic" Margins="50, 50, 50, 50">
+  <Bands>
+    <Item1 Ref="2" ControlType="DetailBand" Name="Detail" TextAlignment="TopLeft" Padding="0,0,0,0,100" HeightF="18.62501">
+      <Controls>
+        <Item1 Ref="3" Name="XrLabel25" ControlType="XRLabel" SizeF="86.70831,18" LocationFloat="660.2917, 0" Font="Calibri, 8pt" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel25">
+          <DataBindings>
+            <Item1 Ref="4" PropertyName="Text" DataMember="Vendoritemnumber" />
+          </DataBindings>
+          <StylePriority Ref="5" UseFont="false" />
+        </Item1>
+        <Item2 Ref="6" Name="XrLabel33" ControlType="XRLabel" SizeF="68.87512,18" LocationFloat="516.9999, 0" Font="Calibri, 8pt" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel33">
+          <DataBindings>
+            <Item1 Ref="7" PropertyName="Text" DataMember="Container" />
+          </DataBindings>
+          <StylePriority Ref="8" UseFont="false" />
+        </Item2>
+        <Item3 Ref="9" Name="XrLabel32" ControlType="XRLabel" SizeF="316.9999,18" LocationFloat="200, 0" Font="Calibri, 8pt" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel32">
+          <DataBindings>
+            <Item1 Ref="10" PropertyName="Text" DataMember="Productdesc" />
+          </DataBindings>
+          <StylePriority Ref="11" UseFont="false" />
+        </Item3>
+        <Item4 Ref="12" Name="XrLabel31" ControlType="XRLabel" SizeF="50,18" LocationFloat="142, 0" Font="Calibri, 8pt" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel31">
+          <DataBindings>
+            <Item1 Ref="13" PropertyName="Text" DataMember="Productid" />
+          </DataBindings>
+          <StylePriority Ref="14" UseFont="false" />
+        </Item4>
+        <Item5 Ref="15" Name="XrLabel30" ControlType="XRLabel" SizeF="42,18" LocationFloat="92.00001, 0.6249745" Font="Calibri, 8pt" Padding="2,2,0,0,100" TextAlignment="MiddleCenter" Text="XrLabel30">
+          <DataBindings>
+            <Item1 Ref="16" PropertyName="Text" DataMember="Uom" />
+          </DataBindings>
+          <StylePriority Ref="17" UseFont="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="18" Name="XrLabel29" ControlType="XRLabel" SizeF="25,18" LocationFloat="58, 0" Font="Calibri, 8pt" Padding="2,2,0,0,100" TextAlignment="MiddleCenter" Text="XrLabel29">
+          <DataBindings>
+            <Item1 Ref="19" PropertyName="Text" DataMember="Unitorcontainer" />
+          </DataBindings>
+          <StylePriority Ref="20" UseFont="false" />
+        </Item6>
+        <Item7 Ref="21" Name="XrLabel28" ControlType="XRLabel" SizeF="50,18" LocationFloat="8, 0" Font="Calibri, 8pt" Padding="2,2,0,0,100" TextAlignment="MiddleRight" Text="XrLabel28">
+          <DataBindings>
+            <Item1 Ref="22" FormatString="{0:#.00}" PropertyName="Text" DataMember="Qtyordered" />
+          </DataBindings>
+          <StylePriority Ref="23" UseFont="false" />
+        </Item7>
+      </Controls>
+    </Item1>
+    <Item2 Ref="24" ControlType="PageHeaderBand" Name="PageHeader" TextAlignment="TopLeft" Padding="0,0,0,0,100" HeightF="307.9166">
+      <Controls>
+        <Item1 Ref="25" Name="XrLabel9" ControlType="XRLabel" WordWrap="false" SizeF="154.1249,25" LocationFloat="595.8751, 64.99999" Font="Calibri, 9.75pt" Padding="2,2,0,0,100" Borders="None" TextAlignment="MiddleLeft" CanGrow="false" Text="XrLabel9">
+          <DataBindings>
+            <Item1 Ref="26" FormatString="{0:MM/dd/yyyy}" PropertyName="Text" DataMember="Expectedindate" />
+          </DataBindings>
+          <StylePriority Ref="27" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="28" Name="XrLabel8" ControlType="XRLabel" SizeF="84,25" LocationFloat="511.875, 64.99999" Font="Calibri, 9pt" ForeColor="DimGray" BackColor="Transparent" Padding="2,10,0,0,100" Borders="None" TextAlignment="MiddleRight" Text="Exp. In Date">
+          <StylePriority Ref="29" UseFont="false" UsePadding="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="30" Name="XrLine1" ControlType="XRLine" SizeF="737.9583,9" LocationFloat="8, 298.9166" />
+        <Item4 Ref="31" Name="XrLabel52" ControlType="XRLabel" SizeF="125,18" LocationFloat="390.9583, 179.875" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Special Instructions">
+          <StylePriority Ref="32" UseFont="false" />
+        </Item4>
+        <Item5 Ref="33" Name="XrLabel6" ControlType="XRLabel" SizeF="342,71.99997" LocationFloat="390.9583, 197.875" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="TopLeft" Multiline="true" Text="XrLabel6">
+          <DataBindings>
+            <Item1 Ref="34" PropertyName="Text" DataMember="Instructions" />
+          </DataBindings>
+          <StylePriority Ref="35" UseFont="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="36" Name="XrLabel40" ControlType="XRLabel" SizeF="125,18" LocationFloat="6.958333, 95.49999" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Bill To">
+          <StylePriority Ref="37" UseFont="false" />
+        </Item6>
+        <Item7 Ref="38" Name="XrLabel22" ControlType="XRLabel" SizeF="342,18" LocationFloat="8, 149.5" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel22">
+          <DataBindings>
+            <Item1 Ref="39" PropertyName="Text" DataMember="Csz" />
+          </DataBindings>
+          <StylePriority Ref="40" UseFont="false" />
+        </Item7>
+        <Item8 Ref="41" Name="XrLabel21" ControlType="XRLabel" SizeF="342,18" LocationFloat="6.958326, 131.5" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel21">
+          <DataBindings>
+            <Item1 Ref="42" PropertyName="Text" DataMember="CompanyAddress" />
+          </DataBindings>
+          <StylePriority Ref="43" UseFont="false" />
+        </Item8>
+        <Item9 Ref="44" Name="XrLabel20" ControlType="XRLabel" SizeF="342,18" LocationFloat="6.958333, 113.5" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel20">
+          <DataBindings>
+            <Item1 Ref="45" PropertyName="Text" DataMember="CompanyName" />
+          </DataBindings>
+          <StylePriority Ref="46" UseFont="false" />
+        </Item9>
+        <Item10 Ref="47" Name="XrLabel48" ControlType="XRLabel" SizeF="85.66663,18" LocationFloat="660.2917, 280.9167" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Vendor Item #">
+          <StylePriority Ref="48" UseFont="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="49" Name="XrLabel46" ControlType="XRLabel" SizeF="69.91663,18" LocationFloat="515.9584, 280.9167" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Container">
+          <StylePriority Ref="50" UseFont="false" />
+        </Item11>
+        <Item12 Ref="51" Name="XrLabel45" ControlType="XRLabel" SizeF="317.0001,18" LocationFloat="198.9583, 280.9167" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Product Description">
+          <StylePriority Ref="52" UseFont="false" />
+        </Item12>
+        <Item13 Ref="53" Name="XrLabel44" ControlType="XRLabel" SizeF="50,18" LocationFloat="140.9583, 280.9167" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="ProdID">
+          <StylePriority Ref="54" UseFont="false" />
+        </Item13>
+        <Item14 Ref="55" Name="XrLabel43" ControlType="XRLabel" SizeF="42,18" LocationFloat="90.95834, 280.9167" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleCenter" Text="UOM">
+          <StylePriority Ref="56" UseFont="false" />
+        </Item14>
+        <Item15 Ref="57" Name="XrLabel42" ControlType="XRLabel" SizeF="33,18" LocationFloat="56.95832, 280.9167" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleCenter" Text="U/C">
+          <StylePriority Ref="58" UseFont="false" />
+        </Item15>
+        <Item16 Ref="59" Name="XrLabel41" ControlType="XRLabel" SizeF="50,18" LocationFloat="6.958326, 280.9167" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleCenter" Text="Qty">
+          <StylePriority Ref="60" UseFont="false" />
+        </Item16>
+        <Item17 Ref="61" Name="XrLabel38" ControlType="XRLabel" SizeF="125,18" LocationFloat="390.9583, 95.49999" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Vendor">
+          <StylePriority Ref="62" UseFont="false" />
+        </Item17>
+        <Item18 Ref="63" Name="XrLabel13" ControlType="XRLabel" SizeF="125,18" LocationFloat="6.958326, 179.875" Font="Calibri, 8.25pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Ship To">
+          <StylePriority Ref="64" UseFont="false" />
+        </Item18>
+        <Item19 Ref="65" Name="XrLabel37" ControlType="XRLabel" SizeF="84,25" LocationFloat="511.875, 40" Font="Calibri, 9pt" ForeColor="DimGray" BackColor="Transparent" Padding="2,10,0,0,100" Borders="None" TextAlignment="MiddleRight" Text="PO Date">
+          <StylePriority Ref="66" UseFont="false" UsePadding="false" UseBorders="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="67" Name="XrLabel36" ControlType="XRLabel" SizeF="84,33" LocationFloat="511.875, 7.000001" Font="Calibri, 9pt" ForeColor="DimGray" BackColor="Transparent" Padding="2,10,0,0,100" Borders="None" TextAlignment="MiddleRight" Text="PO Number">
+          <StylePriority Ref="68" UseFont="false" UsePadding="false" UseBorders="false" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="69" Name="XrLabel35" ControlType="XRLabel" SizeF="431.5833,18" LocationFloat="67.00001, 31" Font="Arial, 14.25pt, style=Bold, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="PURCHASE ORDER - Product List" />
+        <Item22 Ref="70" Name="XrLabel34" ControlType="XRLabel" SizeF="217,18" LocationFloat="67, 8" Font="Arial, 9.75pt, style=Bold, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="Americo Chemical Products, Inc." />
+        <Item23 Ref="71" Name="XrPictureBox2" ControlType="XRPictureBox" SizeF="50,50" LocationFloat="8, 0" Sizing="ZoomImage" Padding="0,0,0,0,100" Image="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" />
+        <Item24 Ref="72" Name="XrLabel19" ControlType="XRLabel" SizeF="267,18" LocationFloat="6.958326, 233.875" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel19">
+          <DataBindings>
+            <Item1 Ref="73" PropertyName="Text" DataMember="Shipaddress2" />
+          </DataBindings>
+          <StylePriority Ref="74" UseFont="false" />
+        </Item24>
+        <Item25 Ref="75" Name="XrLabel16" ControlType="XRLabel" SizeF="265.9584,18.00002" LocationFloat="8, 251.875" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel16">
+          <DataBindings>
+            <Item1 Ref="76" PropertyName="Text" DataMember="Shipcsz" />
+          </DataBindings>
+          <StylePriority Ref="77" UseFont="false" />
+        </Item25>
+        <Item26 Ref="78" Name="XrLabel15" ControlType="XRLabel" SizeF="267,18" LocationFloat="6.958326, 215.875" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel15">
+          <DataBindings>
+            <Item1 Ref="79" PropertyName="Text" DataMember="Shipaddress1" />
+          </DataBindings>
+          <StylePriority Ref="80" UseFont="false" />
+        </Item26>
+        <Item27 Ref="81" Name="XrLabel14" ControlType="XRLabel" SizeF="267,18" LocationFloat="6.958326, 197.875" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel14">
+          <DataBindings>
+            <Item1 Ref="82" PropertyName="Text" DataMember="Shipname" />
+          </DataBindings>
+          <StylePriority Ref="83" UseFont="false" />
+        </Item27>
+        <Item28 Ref="84" Name="XrLabel10" ControlType="XRLabel" WordWrap="false" SizeF="217,18" LocationFloat="531.9583, 95.49999" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleRight" CanGrow="false" Text="XrLabel10">
+          <DataBindings>
+            <Item1 Ref="85" PropertyName="Text" DataMember="Vendorfax" />
+          </DataBindings>
+          <StylePriority Ref="86" UseFont="false" UseTextAlignment="false" />
+        </Item28>
+        <Item29 Ref="87" Name="XrLabel7" ControlType="XRLabel" SizeF="284,18" LocationFloat="389.9583, 149.5" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel7">
+          <DataBindings>
+            <Item1 Ref="88" PropertyName="Text" DataMember="Vendorcsz" />
+          </DataBindings>
+          <StylePriority Ref="89" UseFont="false" />
+        </Item29>
+        <Item30 Ref="90" Name="XrLabel5" ControlType="XRLabel" SizeF="283,18" LocationFloat="390.9583, 131.5" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel5">
+          <DataBindings>
+            <Item1 Ref="91" PropertyName="Text" DataMember="Vendoraddress1" />
+          </DataBindings>
+          <StylePriority Ref="92" UseFont="false" />
+        </Item30>
+        <Item31 Ref="93" Name="XrLabel3" ControlType="XRLabel" SizeF="283.0001,18" LocationFloat="390.9583, 113.5" Font="Calibri, 8.25pt, charSet=0" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="XrLabel3">
+          <DataBindings>
+            <Item1 Ref="94" PropertyName="Text" DataMember="Vendorname" />
+          </DataBindings>
+          <StylePriority Ref="95" UseFont="false" />
+        </Item31>
+        <Item32 Ref="96" Name="XrLabel2" ControlType="XRLabel" WordWrap="false" SizeF="154.1249,25" LocationFloat="595.8751, 39.99999" Font="Calibri, 9.75pt" Padding="2,2,0,0,100" Borders="None" TextAlignment="MiddleLeft" CanGrow="false" Text="XrLabel2">
+          <DataBindings>
+            <Item1 Ref="97" FormatString="{0:MM/dd/yyyy}" PropertyName="Text" DataMember="Podate" />
+          </DataBindings>
+          <StylePriority Ref="98" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item32>
+        <Item33 Ref="99" Name="XrLabel1" ControlType="XRLabel" SizeF="154.125,33" LocationFloat="595.875, 7.000001" Font="Calibri, 14.25pt, style=Bold" Padding="2,2,0,0,100" Borders="None" TextAlignment="MiddleLeft" Text="XrLabel1">
+          <DataBindings>
+            <Item1 Ref="100" PropertyName="Text" DataMember="Changeableponumber" />
+          </DataBindings>
+          <StylePriority Ref="101" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item33>
+      </Controls>
+    </Item2>
+    <Item3 Ref="102" ControlType="PageFooterBand" Name="PageFooter" TextAlignment="TopLeft" Padding="0,0,0,0,100" HeightF="188.9167">
+      <Controls>
+        <Item1 Ref="103" Name="XrLabel24" ControlType="XRLabel" SizeF="355,75" LocationFloat="384.0001, 14" Font="Arial, 9.75pt, charSet=0" Padding="2,2,0,0,100" Borders="All" BorderWidth="2" TextAlignment="TopLeft" Multiline="true" Text="XrLabel24">
+          <DataBindings>
+            <Item1 Ref="104" PropertyName="Text" DataMember="COAText" />
+          </DataBindings>
+          <StylePriority Ref="105" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="106" Name="XrLabel12" ControlType="XRLabel" SizeF="742,25" LocationFloat="8, 142" Font="Tahoma, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100" TextAlignment="MiddleLeft" Text="If you have any questions concerning this PO, contact Americo staff @ 630.588.0830">
+          <StylePriority Ref="107" UseForeColor="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="108" Name="XrLabel11" ControlType="XRLabel" SizeF="125,25" LocationFloat="308, 108" Font="Tahoma, 9pt, charSet=0" ForeColor="DimGray" Padding="2,2,0,0,100" TextAlignment="MiddleCenter" Text="THANK YOU">
+          <StylePriority Ref="109" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="110" Name="XrLabel4" ControlType="XRLabel" SizeF="355,75" LocationFloat="18.00007, 14" Font="Arial, 9.75pt, charSet=0" Padding="2,2,0,0,100" Borders="All" BorderWidth="2" Multiline="true" Text="PLEASE CONFIRM PRICING &amp; DELIVERY &#xD;&#xA;AND ANY ADDITIONAL FEES (i.e. FREIGHT/FUEL)&#xD;&#xA;PLEASE FAX CONFIRMATION - 630.588.0930 &#xD;&#xA;THANK YOU">
+          <StylePriority Ref="111" UseFont="false" UseBorders="false" UseBorderWidth="false" />
+        </Item4>
+      </Controls>
+    </Item3>
+    <Item4 Ref="112" Name="TopMarginBand1" ControlType="TopMarginBand" HeightF="50" />
+    <Item5 Ref="113" Name="BottomMarginBand1" ControlType="BottomMarginBand" HeightF="50" />
+  </Bands>
+  <ObjectStorage>
+    <Item1 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v15.1" Ref="0" Content="~Xtra#NULL" Type="System.Windows.Forms.BindingSource" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>

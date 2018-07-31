@@ -1,0 +1,428 @@
+
+USE [AOSData]
+GO
+
+/****** Object:  StoredProcedure [dbo].[proc_INVOICELoadByPrimaryKey] Script Date: 12/10/2013 4:01:05 PM ******/
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[proc_INVOICELoadByPrimaryKey]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+    DROP PROCEDURE [dbo].[proc_INVOICELoadByPrimaryKey];
+GO
+
+CREATE PROCEDURE [dbo].[proc_INVOICELoadByPrimaryKey]
+(
+	@INVOICENUMBER int
+)
+AS
+BEGIN
+	SET NOCOUNT ON
+	DECLARE @Err int
+
+	SELECT
+		[INVOICENUMBER], 
+		[INVOICEDATE], 
+		[SHIPMENTNUMBER], 
+		[SHIPMENTDATE], 
+		[CUSTID], 
+		[BILLADDRESS1], 
+		[BILLADDRESS2], 
+		[BILLCITY], 
+		[BILLSTATEPROV], 
+		[BILLPOSTALCODE], 
+		[BILLCOUNTRY], 
+		[BILLPHONE], 
+		[BILLFAX], 
+		[BILLCONTACT], 
+		[SHIPADDRESS1], 
+		[SHIPADDRESS2], 
+		[SHIPCITY], 
+		[SHIPSTATEPROV], 
+		[SHIPPOSTALCODE], 
+		[SHIPCOUNTRY], 
+		[SHIPCONTACT], 
+		[FREIGHTCARRIER], 
+		[FOB], 
+		[CUSTOMERPO], 
+		[ORDERTERMS], 
+		[DELIVERYDATE], 
+		[SHIPPEDDATE], 
+		[SUBTOTAL], 
+		[SALESTAX], 
+		[TOTAL], 
+		[INVOICESTATUS], 
+		[INVNUMVIEW], 
+		[LOGISTICSID], 
+		[MODIFYBY], 
+		[MODIFYTIME], 
+		[CREATEDBY], 
+		[CREATEDTIME]
+	FROM [dbo].[INVOICE]
+	WHERE
+		([INVOICENUMBER] = @INVOICENUMBER)
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+GO	
+
+
+-- Display the status of Proc creation
+IF (@@Error = 0) PRINT 'Procedure Creation: proc_INVOICELoadByPrimaryKey Succeeded'
+ELSE PRINT 'Procedure Creation: proc_INVOICELoadByPrimaryKey Error on Creation'
+GO 
+
+
+/****** Object:  StoredProcedure [dbo].[proc_INVOICELoadAll] Script Date: 12/10/2013 4:01:05 PM ******/
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[proc_INVOICELoadAll]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+    DROP PROCEDURE [dbo].[proc_INVOICELoadAll];
+GO
+
+CREATE PROCEDURE [dbo].[proc_INVOICELoadAll]
+AS
+BEGIN
+
+	SET NOCOUNT ON
+	DECLARE @Err int
+
+	SELECT
+		[INVOICENUMBER], 
+		[INVOICEDATE], 
+		[SHIPMENTNUMBER], 
+		[SHIPMENTDATE], 
+		[CUSTID], 
+		[BILLADDRESS1], 
+		[BILLADDRESS2], 
+		[BILLCITY], 
+		[BILLSTATEPROV], 
+		[BILLPOSTALCODE], 
+		[BILLCOUNTRY], 
+		[BILLPHONE], 
+		[BILLFAX], 
+		[BILLCONTACT], 
+		[SHIPADDRESS1], 
+		[SHIPADDRESS2], 
+		[SHIPCITY], 
+		[SHIPSTATEPROV], 
+		[SHIPPOSTALCODE], 
+		[SHIPCOUNTRY], 
+		[SHIPCONTACT], 
+		[FREIGHTCARRIER], 
+		[FOB], 
+		[CUSTOMERPO], 
+		[ORDERTERMS], 
+		[DELIVERYDATE], 
+		[SHIPPEDDATE], 
+		[SUBTOTAL], 
+		[SALESTAX], 
+		[TOTAL], 
+		[INVOICESTATUS], 
+		[INVNUMVIEW], 
+		[LOGISTICSID], 
+		[MODIFYBY], 
+		[MODIFYTIME], 
+		[CREATEDBY], 
+		[CREATEDTIME]
+	FROM [dbo].[INVOICE]
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+GO
+
+
+-- Display the status of Proc creation
+IF (@@Error = 0) PRINT 'Procedure Creation: proc_INVOICELoadAll Succeeded'
+ELSE PRINT 'Procedure Creation: proc_INVOICELoadAll Error on Creation'
+GO 
+
+
+/****** Object:  StoredProcedure [dbo].[proc_INVOICEUpdate] Script Date: 12/10/2013 4:01:05 PM ******/
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[proc_INVOICEUpdate]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+    DROP PROCEDURE [dbo].[proc_INVOICEUpdate];
+GO
+
+CREATE PROCEDURE [dbo].[proc_INVOICEUpdate]
+(
+	@INVOICENUMBER int, 
+	@INVOICEDATE datetime = NULL, 
+	@SHIPMENTNUMBER int = NULL, 
+	@SHIPMENTDATE datetime = NULL, 
+	@CUSTID int = NULL, 
+	@BILLADDRESS1 varchar(50) = NULL, 
+	@BILLADDRESS2 varchar(50) = NULL, 
+	@BILLCITY varchar(50) = NULL, 
+	@BILLSTATEPROV varchar(50) = NULL, 
+	@BILLPOSTALCODE varchar(24) = NULL, 
+	@BILLCOUNTRY varchar(50) = NULL, 
+	@BILLPHONE varchar(50) = NULL, 
+	@BILLFAX varchar(50) = NULL, 
+	@BILLCONTACT varchar(50) = NULL, 
+	@SHIPADDRESS1 varchar(50) = NULL, 
+	@SHIPADDRESS2 varchar(50) = NULL, 
+	@SHIPCITY varchar(50) = NULL, 
+	@SHIPSTATEPROV varchar(50) = NULL, 
+	@SHIPPOSTALCODE varchar(24) = NULL, 
+	@SHIPCOUNTRY varchar(50) = NULL, 
+	@SHIPCONTACT varchar(50) = NULL, 
+	@FREIGHTCARRIER varchar(50) = NULL, 
+	@FOB varchar(24) = NULL, 
+	@CUSTOMERPO varchar(50) = NULL, 
+	@ORDERTERMS varchar(50) = NULL, 
+	@DELIVERYDATE datetime = NULL, 
+	@SHIPPEDDATE datetime = NULL, 
+	@SUBTOTAL money = NULL, 
+	@SALESTAX money = NULL, 
+	@TOTAL money = NULL, 
+	@INVOICESTATUS varchar(50) = NULL, 
+	@INVNUMVIEW int = NULL, 
+	@LOGISTICSID int = NULL, 
+	@MODIFYBY varchar(50) = NULL, 
+	@MODIFYTIME datetime = NULL, 
+	@CREATEDBY varchar(50) = NULL, 
+	@CREATEDTIME datetime = NULL
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+
+	UPDATE [INVOICE]
+	SET
+		[INVOICEDATE] = @INVOICEDATE, 
+		[SHIPMENTNUMBER] = @SHIPMENTNUMBER, 
+		[SHIPMENTDATE] = @SHIPMENTDATE, 
+		[CUSTID] = @CUSTID, 
+		[BILLADDRESS1] = @BILLADDRESS1, 
+		[BILLADDRESS2] = @BILLADDRESS2, 
+		[BILLCITY] = @BILLCITY, 
+		[BILLSTATEPROV] = @BILLSTATEPROV, 
+		[BILLPOSTALCODE] = @BILLPOSTALCODE, 
+		[BILLCOUNTRY] = @BILLCOUNTRY, 
+		[BILLPHONE] = @BILLPHONE, 
+		[BILLFAX] = @BILLFAX, 
+		[BILLCONTACT] = @BILLCONTACT, 
+		[SHIPADDRESS1] = @SHIPADDRESS1, 
+		[SHIPADDRESS2] = @SHIPADDRESS2, 
+		[SHIPCITY] = @SHIPCITY, 
+		[SHIPSTATEPROV] = @SHIPSTATEPROV, 
+		[SHIPPOSTALCODE] = @SHIPPOSTALCODE, 
+		[SHIPCOUNTRY] = @SHIPCOUNTRY, 
+		[SHIPCONTACT] = @SHIPCONTACT, 
+		[FREIGHTCARRIER] = @FREIGHTCARRIER, 
+		[FOB] = @FOB, 
+		[CUSTOMERPO] = @CUSTOMERPO, 
+		[ORDERTERMS] = @ORDERTERMS, 
+		[DELIVERYDATE] = @DELIVERYDATE, 
+		[SHIPPEDDATE] = @SHIPPEDDATE, 
+		[SUBTOTAL] = @SUBTOTAL, 
+		[SALESTAX] = @SALESTAX, 
+		[TOTAL] = @TOTAL, 
+		[INVOICESTATUS] = @INVOICESTATUS, 
+		[INVNUMVIEW] = @INVNUMVIEW, 
+		[LOGISTICSID] = @LOGISTICSID, 
+		[MODIFYBY] = @MODIFYBY, 
+		[MODIFYTIME] = @MODIFYTIME, 
+		[CREATEDBY] = @CREATEDBY, 
+		[CREATEDTIME] = @CREATEDTIME
+	WHERE
+		([INVOICENUMBER] = @INVOICENUMBER)
+
+	SET @Err = @@Error
+
+
+	RETURN @Err
+END
+GO
+
+
+
+-- Display the status of Proc creation
+IF (@@Error = 0) PRINT 'Procedure Creation: proc_INVOICEUpdate Succeeded'
+ELSE PRINT 'Procedure Creation: proc_INVOICEUpdate Error on Creation'
+GO 
+
+
+/****** Object:  StoredProcedure [dbo].[proc_INVOICEInsert] Script Date: 12/10/2013 4:01:05 PM ******/
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[proc_INVOICEInsert]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+    DROP PROCEDURE [dbo].[proc_INVOICEInsert];
+GO
+
+CREATE PROCEDURE [dbo].[proc_INVOICEInsert]
+(
+	@INVOICENUMBER int = NULL OUTPUT, 
+	@INVOICEDATE datetime = NULL, 
+	@SHIPMENTNUMBER int = NULL, 
+	@SHIPMENTDATE datetime = NULL, 
+	@CUSTID int = NULL, 
+	@BILLADDRESS1 varchar(50) = NULL, 
+	@BILLADDRESS2 varchar(50) = NULL, 
+	@BILLCITY varchar(50) = NULL, 
+	@BILLSTATEPROV varchar(50) = NULL, 
+	@BILLPOSTALCODE varchar(24) = NULL, 
+	@BILLCOUNTRY varchar(50) = NULL, 
+	@BILLPHONE varchar(50) = NULL, 
+	@BILLFAX varchar(50) = NULL, 
+	@BILLCONTACT varchar(50) = NULL, 
+	@SHIPADDRESS1 varchar(50) = NULL, 
+	@SHIPADDRESS2 varchar(50) = NULL, 
+	@SHIPCITY varchar(50) = NULL, 
+	@SHIPSTATEPROV varchar(50) = NULL, 
+	@SHIPPOSTALCODE varchar(24) = NULL, 
+	@SHIPCOUNTRY varchar(50) = NULL, 
+	@SHIPCONTACT varchar(50) = NULL, 
+	@FREIGHTCARRIER varchar(50) = NULL, 
+	@FOB varchar(24) = NULL, 
+	@CUSTOMERPO varchar(50) = NULL, 
+	@ORDERTERMS varchar(50) = NULL, 
+	@DELIVERYDATE datetime = NULL, 
+	@SHIPPEDDATE datetime = NULL, 
+	@SUBTOTAL money = NULL, 
+	@SALESTAX money = NULL, 
+	@TOTAL money = NULL, 
+	@INVOICESTATUS varchar(50) = NULL, 
+	@INVNUMVIEW int = NULL, 
+	@LOGISTICSID int = NULL, 
+	@MODIFYBY varchar(50) = NULL, 
+	@MODIFYTIME datetime = NULL, 
+	@CREATEDBY varchar(50) = NULL, 
+	@CREATEDTIME datetime = NULL
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+	
+
+	INSERT
+	INTO [INVOICE]
+	(
+		[INVOICEDATE], 
+		[SHIPMENTNUMBER], 
+		[SHIPMENTDATE], 
+		[CUSTID], 
+		[BILLADDRESS1], 
+		[BILLADDRESS2], 
+		[BILLCITY], 
+		[BILLSTATEPROV], 
+		[BILLPOSTALCODE], 
+		[BILLCOUNTRY], 
+		[BILLPHONE], 
+		[BILLFAX], 
+		[BILLCONTACT], 
+		[SHIPADDRESS1], 
+		[SHIPADDRESS2], 
+		[SHIPCITY], 
+		[SHIPSTATEPROV], 
+		[SHIPPOSTALCODE], 
+		[SHIPCOUNTRY], 
+		[SHIPCONTACT], 
+		[FREIGHTCARRIER], 
+		[FOB], 
+		[CUSTOMERPO], 
+		[ORDERTERMS], 
+		[DELIVERYDATE], 
+		[SHIPPEDDATE], 
+		[SUBTOTAL], 
+		[SALESTAX], 
+		[TOTAL], 
+		[INVOICESTATUS], 
+		[INVNUMVIEW], 
+		[LOGISTICSID], 
+		[MODIFYBY], 
+		[MODIFYTIME], 
+		[CREATEDBY], 
+		[CREATEDTIME]
+	)
+	
+	VALUES
+	(
+		@INVOICEDATE, 
+		@SHIPMENTNUMBER, 
+		@SHIPMENTDATE, 
+		@CUSTID, 
+		@BILLADDRESS1, 
+		@BILLADDRESS2, 
+		@BILLCITY, 
+		@BILLSTATEPROV, 
+		@BILLPOSTALCODE, 
+		@BILLCOUNTRY, 
+		@BILLPHONE, 
+		@BILLFAX, 
+		@BILLCONTACT, 
+		@SHIPADDRESS1, 
+		@SHIPADDRESS2, 
+		@SHIPCITY, 
+		@SHIPSTATEPROV, 
+		@SHIPPOSTALCODE, 
+		@SHIPCOUNTRY, 
+		@SHIPCONTACT, 
+		@FREIGHTCARRIER, 
+		@FOB, 
+		@CUSTOMERPO, 
+		@ORDERTERMS, 
+		@DELIVERYDATE, 
+		@SHIPPEDDATE, 
+		@SUBTOTAL, 
+		@SALESTAX, 
+		@TOTAL, 
+		@INVOICESTATUS, 
+		@INVNUMVIEW, 
+		@LOGISTICSID, 
+		@MODIFYBY, 
+		@MODIFYTIME, 
+		@CREATEDBY, 
+		@CREATEDTIME
+	)
+
+	SET @Err = @@Error
+
+		
+	SELECT @INVOICENUMBER = SCOPE_IDENTITY()
+
+	
+
+	RETURN @Err
+END
+GO
+
+
+-- Display the status of Proc creation
+IF (@@Error = 0) PRINT 'Procedure Creation: proc_INVOICEInsert Succeeded'
+ELSE PRINT 'Procedure Creation: proc_INVOICEInsert Error on Creation'
+GO 
+
+
+/****** Object:  StoredProcedure [dbo].[proc_INVOICEDelete] Script Date: 12/10/2013 4:01:05 PM ******/
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[proc_INVOICEDelete]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+    DROP PROCEDURE [dbo].[proc_INVOICEDelete];
+GO
+
+CREATE PROCEDURE [dbo].[proc_INVOICEDelete]
+(
+	@INVOICENUMBER int
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+
+	DELETE
+	FROM [dbo].[INVOICE]
+	WHERE
+		([INVOICENUMBER] = @INVOICENUMBER)
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+GO
+
+
+-- Display the status of Proc creation
+IF (@@Error = 0) PRINT 'Procedure Creation: proc_INVOICEDelete Succeeded'
+ELSE PRINT 'Procedure Creation: proc_INVOICEDelete Error on Creation'
+GO 
+
