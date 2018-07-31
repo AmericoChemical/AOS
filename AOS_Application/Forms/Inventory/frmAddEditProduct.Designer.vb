@@ -94,6 +94,7 @@ Partial Class frmAddEditProduct
         Me.rbtnChangeStandardCosts = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnProductSales = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnProductPurchases = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnProductApisCosts = New DevExpress.XtraBars.BarButtonItem()
         Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -146,7 +147,6 @@ Partial Class frmAddEditProduct
         Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
         Me.eReceivingNotes = New DevExpress.XtraEditors.MemoEdit()
         Me.eVendorNotes = New DevExpress.XtraEditors.MemoEdit()
-        Me.rbtnProductApisCosts = New DevExpress.XtraBars.BarButtonItem()
         ProductidLabel = New System.Windows.Forms.Label()
         ProductdescLabel = New System.Windows.Forms.Label()
         ContainerLabel = New System.Windows.Forms.Label()
@@ -873,7 +873,7 @@ Partial Class frmAddEditProduct
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemWeekOfMonth1, Me.RepositoryItemAppointmentLabel1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(926, 117)
+        Me.RibbonControl1.Size = New System.Drawing.Size(926, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -951,6 +951,13 @@ Partial Class frmAddEditProduct
         Me.rbtnProductPurchases.Id = 29
         Me.rbtnProductPurchases.ImageOptions.LargeImageIndex = 8
         Me.rbtnProductPurchases.Name = "rbtnProductPurchases"
+        '
+        'rbtnProductApisCosts
+        '
+        Me.rbtnProductApisCosts.Caption = "APIS Standard Cost"
+        Me.rbtnProductApisCosts.Id = 30
+        Me.rbtnProductApisCosts.ImageOptions.LargeImageIndex = 22
+        Me.rbtnProductApisCosts.Name = "rbtnProductApisCosts"
         '
         'LargeRibbonImages
         '
@@ -1528,13 +1535,6 @@ Partial Class frmAddEditProduct
         Me.eVendorNotes.Name = "eVendorNotes"
         Me.eVendorNotes.Size = New System.Drawing.Size(313, 74)
         Me.eVendorNotes.TabIndex = 0
-        '
-        'rbtnProductApisCosts
-        '
-        Me.rbtnProductApisCosts.Caption = "APIS Standard Costs"
-        Me.rbtnProductApisCosts.Id = 30
-        Me.rbtnProductApisCosts.ImageOptions.LargeImageIndex = 22
-        Me.rbtnProductApisCosts.Name = "rbtnProductApisCosts"
         '
         'frmAddEditProduct
         '

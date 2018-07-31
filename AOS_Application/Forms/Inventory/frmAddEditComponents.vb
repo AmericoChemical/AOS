@@ -26,6 +26,7 @@ Public Class frmAddEditComponents
     Dim oAltcomponent As Altcomponent
 
     Dim oComponentCollection As ViewAltComponentCollection
+    Dim orgUnitCost As Decimal
 
     Private Sub frmAddEdit_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If vEditType = "ADD" Then
@@ -67,7 +68,9 @@ Public Class frmAddEditComponents
             MsgBox("There is no Record ID selected", MsgBoxStyle.Critical, "Edit Failed")
             Exit Sub
         End If
-        oComponent.LoadByPrimaryKey(vID)
+        If oComponent.LoadByPrimaryKey(vID) Then
+            orgUnitCost = oComponent.Unitcost
+        End If
         Me.bsComponent.DataSource = oComponent
     End Sub
 
@@ -75,7 +78,18 @@ Public Class frmAddEditComponents
         bsComponent.EndEdit()
         oComponent.Vendorname = VendorItemLookUpEdit.Text
         oComponent.EndEdit()
-        oComponent.Save()
+        If orgUnitCost <> oComponent.Unitcost Then
+            If MsgBox("Are you sure you want to UPDATE the Unit COSTS for this component? This will Update Product Costs to CALCULATED APIS COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
+                Return False
+            End If
+
+            If MsgBox("If you make this change, it cannot be undone. ARE YOU SURE YOU WANT TO CONTINUE?", MsgBoxStyle.YesNo, "CONFIRM REQUEST") = MsgBoxResult.No Then
+                Return False
+            End If
+            oComponent.Save()
+
+            ProcessComponentCostChanges(vID, "COMPONENT CHNG - COMP " & vID, "STD COST", vID)
+        End If
         Return True
     End Function
 

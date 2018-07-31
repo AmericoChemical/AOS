@@ -19,11 +19,11 @@ Partial Class frmEmail
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim lblTo As System.Windows.Forms.Label
         Dim lblFrom As System.Windows.Forms.Label
         Dim lblSubject As System.Windows.Forms.Label
         Dim lblBody As System.Windows.Forms.Label
+        Dim Label1 As System.Windows.Forms.Label
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnNewCostRecord = New DevExpress.XtraBars.BarButtonItem()
         Me.btnEditCostRecord = New DevExpress.XtraBars.BarButtonItem()
@@ -34,21 +34,22 @@ Partial Class frmEmail
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.PalletPanelControl = New DevExpress.XtraEditors.PanelControl()
         Me.BodyStatementRichEditControl = New DevExpress.XtraRichEdit.RichEditControl()
-        Me.bsWorkOrderEmailPlan = New System.Windows.Forms.BindingSource(Me.components)
         Me.SubjectTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.SenderTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ReceiverTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.ccTextEdit = New DevExpress.XtraEditors.TextEdit()
         lblTo = New System.Windows.Forms.Label()
         lblFrom = New System.Windows.Forms.Label()
         lblSubject = New System.Windows.Forms.Label()
         lblBody = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PalletPanelControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PalletPanelControl.SuspendLayout()
-        CType(Me.bsWorkOrderEmailPlan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SubjectTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SenderTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReceiverTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ccTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTo
@@ -72,7 +73,7 @@ Partial Class frmEmail
         'lblSubject
         '
         lblSubject.AutoSize = True
-        lblSubject.Location = New System.Drawing.Point(16, 90)
+        lblSubject.Location = New System.Drawing.Point(16, 110)
         lblSubject.Name = "lblSubject"
         lblSubject.Size = New System.Drawing.Size(43, 13)
         lblSubject.TabIndex = 4
@@ -81,7 +82,7 @@ Partial Class frmEmail
         'lblBody
         '
         lblBody.AutoSize = True
-        lblBody.Location = New System.Drawing.Point(16, 120)
+        lblBody.Location = New System.Drawing.Point(16, 149)
         lblBody.Name = "lblBody"
         lblBody.Size = New System.Drawing.Size(31, 13)
         lblBody.TabIndex = 7
@@ -153,6 +154,8 @@ Partial Class frmEmail
         '
         'PalletPanelControl
         '
+        Me.PalletPanelControl.Controls.Add(Me.ccTextEdit)
+        Me.PalletPanelControl.Controls.Add(Label1)
         Me.PalletPanelControl.Controls.Add(Me.BodyStatementRichEditControl)
         Me.PalletPanelControl.Controls.Add(lblBody)
         Me.PalletPanelControl.Controls.Add(Me.SubjectTextEdit)
@@ -171,24 +174,18 @@ Partial Class frmEmail
         '
         Me.BodyStatementRichEditControl.Appearance.Text.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BodyStatementRichEditControl.Appearance.Text.Options.UseFont = True
-        Me.BodyStatementRichEditControl.DataBindings.Add(New System.Windows.Forms.Binding("HtmlText", Me.bsWorkOrderEmailPlan, "Bodytext", True))
-        Me.BodyStatementRichEditControl.Location = New System.Drawing.Point(70, 113)
+        Me.BodyStatementRichEditControl.Location = New System.Drawing.Point(70, 142)
         Me.BodyStatementRichEditControl.MenuManager = Me.RibbonControl1
         Me.BodyStatementRichEditControl.Name = "BodyStatementRichEditControl"
         Me.BodyStatementRichEditControl.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
         Me.BodyStatementRichEditControl.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
-        Me.BodyStatementRichEditControl.Size = New System.Drawing.Size(862, 500)
+        Me.BodyStatementRichEditControl.Size = New System.Drawing.Size(841, 468)
         Me.BodyStatementRichEditControl.TabIndex = 8
-        '
-        'bsWorkOrderEmailPlan
-        '
-        Me.bsWorkOrderEmailPlan.DataSource = GetType(AOS.BusinessObjects.Workorderemailplan)
         '
         'SubjectTextEdit
         '
-        Me.SubjectTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsWorkOrderEmailPlan, "Subjecttext", True))
         Me.SubjectTextEdit.EditValue = ""
-        Me.SubjectTextEdit.Location = New System.Drawing.Point(70, 87)
+        Me.SubjectTextEdit.Location = New System.Drawing.Point(70, 106)
         Me.SubjectTextEdit.Name = "SubjectTextEdit"
         Me.SubjectTextEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.SubjectTextEdit.Properties.MaxLength = 250
@@ -209,14 +206,32 @@ Partial Class frmEmail
         '
         'ReceiverTextEdit
         '
-        Me.ReceiverTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsWorkOrderEmailPlan, "Toemailid", True))
         Me.ReceiverTextEdit.EditValue = ""
-        Me.ReceiverTextEdit.Location = New System.Drawing.Point(70, 55)
+        Me.ReceiverTextEdit.Location = New System.Drawing.Point(70, 50)
         Me.ReceiverTextEdit.Name = "ReceiverTextEdit"
         Me.ReceiverTextEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.ReceiverTextEdit.Properties.MaxLength = 250
         Me.ReceiverTextEdit.Size = New System.Drawing.Size(412, 20)
         Me.ReceiverTextEdit.TabIndex = 3
+        '
+        'ccTextEdit
+        '
+        Me.ccTextEdit.EditValue = ""
+        Me.ccTextEdit.Location = New System.Drawing.Point(70, 78)
+        Me.ccTextEdit.Name = "ccTextEdit"
+        Me.ccTextEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
+        Me.ccTextEdit.Properties.MaxLength = 250
+        Me.ccTextEdit.Size = New System.Drawing.Size(412, 20)
+        Me.ccTextEdit.TabIndex = 10
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(16, 84)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(21, 13)
+        Label1.TabIndex = 9
+        Label1.Text = "CC"
         '
         'frmEmail
         '
@@ -235,10 +250,10 @@ Partial Class frmEmail
         CType(Me.PalletPanelControl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PalletPanelControl.ResumeLayout(False)
         Me.PalletPanelControl.PerformLayout()
-        CType(Me.bsWorkOrderEmailPlan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SubjectTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SenderTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReceiverTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ccTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -255,6 +270,6 @@ Partial Class frmEmail
     Friend WithEvents ReceiverTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SenderTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SubjectTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents bsWorkOrderEmailPlan As System.Windows.Forms.BindingSource
     Friend WithEvents BodyStatementRichEditControl As DevExpress.XtraRichEdit.RichEditControl
+    Friend WithEvents ccTextEdit As DevExpress.XtraEditors.TextEdit
 End Class
