@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/11/2014 1:36:09 PM
+' Date Generated       : 1/7/2018 10:53:20 AM
 '===============================================================================
 
 Imports System
@@ -209,6 +209,12 @@ Namespace BusinessObjects
 												
 						Case "ScheduledCarrierPhone"
 							Me.str.ScheduledCarrierPhone = CType(value, string)
+												
+						Case "TotalSkids"
+							Me.str.TotalSkids = CType(value, string)
+												
+						Case "Freezeprotectflag"
+							Me.str.Freezeprotectflag = CType(value, string)
 					
 					End Select
 					
@@ -280,6 +286,18 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.DateTime" Then
 								Me.ActualDeliveryDate = CType(value, Nullable(Of System.DateTime))
+							End If
+						
+						Case "TotalSkids"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
+								Me.TotalSkids = CType(value, Nullable(Of System.Int32))
+							End If
+						
+						Case "Freezeprotectflag"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.Freezeprotectflag = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -632,6 +650,32 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As System.String)
 				MyBase.SetSystemString(ViewLoadSummaryMetadata.ColumnNames.ScheduledCarrierPhone, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadSummary.TotalSkids
+		' </summary>
+		Public Overridable Property TotalSkids As Nullable(Of System.Int32)
+			Get
+				Return MyBase.GetSystemInt32(ViewLoadSummaryMetadata.ColumnNames.TotalSkids)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Int32))
+				MyBase.SetSystemInt32(ViewLoadSummaryMetadata.ColumnNames.TotalSkids, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadSummary.FREEZEPROTECTFLAG
+		' </summary>
+		Public Overridable Property Freezeprotectflag As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ViewLoadSummaryMetadata.ColumnNames.Freezeprotectflag)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ViewLoadSummaryMetadata.ColumnNames.Freezeprotectflag, value)
 			End Set
 		End Property		
 		
@@ -1189,6 +1233,48 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property TotalSkids As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Int32) = entity.TotalSkids
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.TotalSkids = Nothing
+					Else
+						entity.TotalSkids = Convert.ToInt32(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Freezeprotectflag As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.Freezeprotectflag
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Freezeprotectflag = Nothing
+					Else
+						entity.Freezeprotectflag = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewLoadSummary
@@ -1386,6 +1472,18 @@ Namespace BusinessObjects
 		Public ReadOnly Property ScheduledCarrierPhone As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewLoadSummaryMetadata.ColumnNames.ScheduledCarrierPhone, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property TotalSkids As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadSummaryMetadata.ColumnNames.TotalSkids, esSystemType.Int32)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Freezeprotectflag As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadSummaryMetadata.ColumnNames.Freezeprotectflag, esSystemType.Boolean)
 			End Get
 		End Property 
 		
@@ -1729,6 +1827,17 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewLoadSummaryMetadata.ColumnNames.TotalSkids, 26, GetType(System.Int32), esSystemType.Int32)	
+			c.PropertyName = ViewLoadSummaryMetadata.PropertyNames.TotalSkids
+			c.NumericPrecision = 10
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadSummaryMetadata.ColumnNames.Freezeprotectflag, 27, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ViewLoadSummaryMetadata.PropertyNames.Freezeprotectflag
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -1783,6 +1892,8 @@ Namespace BusinessObjects
 			 Public Const ActualDeliveryDate As String = "ActualDeliveryDate"
 			 Public Const ScheduledCarrierName As String = "ScheduledCarrierName"
 			 Public Const ScheduledCarrierPhone As String = "ScheduledCarrierPhone"
+			 Public Const TotalSkids As String = "TotalSkids"
+			 Public Const Freezeprotectflag As String = "FREEZEPROTECTFLAG"
 		End Class
 #End Region	
 		
@@ -1814,6 +1925,8 @@ Namespace BusinessObjects
 			 Public Const ActualDeliveryDate As String = "ActualDeliveryDate"
 			 Public Const ScheduledCarrierName As String = "ScheduledCarrierName"
 			 Public Const ScheduledCarrierPhone As String = "ScheduledCarrierPhone"
+			 Public Const TotalSkids As String = "TotalSkids"
+			 Public Const Freezeprotectflag As String = "Freezeprotectflag"
 		End Class
 #End Region	
 
@@ -1886,7 +1999,9 @@ Namespace BusinessObjects
 				meta.AddTypeMap("ActualShipmentDate", new esTypeMap("datetime", "System.DateTime"))
 				meta.AddTypeMap("ActualDeliveryDate", new esTypeMap("datetime", "System.DateTime"))
 				meta.AddTypeMap("ScheduledCarrierName", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("ScheduledCarrierPhone", new esTypeMap("varchar", "System.String"))			
+				meta.AddTypeMap("ScheduledCarrierPhone", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("TotalSkids", new esTypeMap("int", "System.Int32"))
+				meta.AddTypeMap("Freezeprotectflag", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 

@@ -18,5 +18,13 @@ Namespace My
             Return Nothing
         End Function
 
+        Public Function getEmailParameters(ByVal emailName As String) As Emailparameters
+            Dim oEmailparameters As New Emailparameters
+            If oEmailparameters.LoadByPrimaryKey(emailName) Then
+                Return oEmailparameters
+            End If
+            Return Nothing
+        End Function
+
     End Class
 End Namespace

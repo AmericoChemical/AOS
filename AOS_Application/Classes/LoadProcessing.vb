@@ -1,4 +1,7 @@
-﻿Module LoadProcessing
+﻿Imports EntitySpaces.Core
+Imports EntitySpaces.Interfaces
+
+Module LoadProcessing
 
     Public Enum LoadStatus
         PENDING
@@ -140,8 +143,8 @@
             End If
         Next
 
-        'finally, update the 
-
+        'finally, update the load summary data
+        UpdateLoadSummaryData(vLoadID)
 
         Return True
 
@@ -176,6 +179,8 @@
             oLoad.BillCustomer = oWO.Freightbillcustomer
             oLoad.AddToInvoice = oWO.Freightoninvoice
             oLoad.LoadType = oWO.Transporttype
+            oLoad.Freezeprotectflag = oWO.Freezeprotectflag
+
             Select Case oWO.Transporttype
                 Case "DIRECT"
                     oLoad.OriginType = "VENDOR"
@@ -582,6 +587,8 @@
             End If
         Next
 
+        UpdateLoadSummaryData(vLoadID)
+
     End Function
 
     Public Function createNewLoadForPurchaseOrder(vPurchaseOrderNum As Integer) As Integer
@@ -757,6 +764,9 @@
         oLoadItems.Save()
 
         addPurchaseOrderItemToLoad(oNewPurchase.Purchaseitemid, oLoadItems(0).LoadID)
+
+        UpdateLoadSummaryData(oLoadItems(0).LoadID)
+
     End Sub
 
 #End Region
@@ -798,6 +808,22 @@
 
         Return True
     End Function
+
+    Public Sub UpdateLoadSummaryData(vLoadID As Integer)
+        Dim oLoad As New Load
+        oLoad.LoadByPrimaryKey(vLoadID)
+        ' get calculaterd skids for load
+        Dim calculatedSkids As Integer
+        Dim es As New esUtility
+        Dim parameters As New esParameters
+        parameters.Add(New esParameter("LoadId", vLoadID))
+        calculatedSkids = es.ExecuteScalar(EntitySpaces.DynamicQuery.esQueryType.StoredProcedure, "GetCalculatedSkidsByLoad", parameters)
+        oLoad.Totalskids = calculatedSkids
+
+        ' add code for any other sumay items here
+
+        oLoad.Save()
+    End Sub
 
     Public Sub changeLoadStatus(vLoadID As Integer)
         Dim oLoaditems As New LoaditemCollection

@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/11/2014 1:36:08 PM
+' Date Generated       : 1/23/2018 12:07:19 PM
 '===============================================================================
 
 Imports System
@@ -296,6 +296,21 @@ Namespace BusinessObjects
 												
 						Case "CustID"
 							Me.str.CustID = CType(value, string)
+												
+						Case "Transportationnotes"
+							Me.str.Transportationnotes = CType(value, string)
+												
+						Case "Billofladingnotes"
+							Me.str.Billofladingnotes = CType(value, string)
+												
+						Case "TotalSkids"
+							Me.str.TotalSkids = CType(value, string)
+												
+						Case "FreezeProtectFlag"
+							Me.str.FreezeProtectFlag = CType(value, string)
+												
+						Case "Custname"
+							Me.str.Custname = CType(value, string)
 					
 					End Select
 					
@@ -433,6 +448,18 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
 								Me.CustID = CType(value, Nullable(Of System.Int32))
+							End If
+						
+						Case "TotalSkids"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
+								Me.TotalSkids = CType(value, Nullable(Of System.Int32))
+							End If
+						
+						Case "FreezeProtectFlag"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.FreezeProtectFlag = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -1162,6 +1189,71 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Int32))
 				MyBase.SetSystemInt32(ViewLoadInfoMetadata.ColumnNames.CustID, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadInfo.TRANSPORTATIONNOTES
+		' </summary>
+		Public Overridable Property Transportationnotes As System.String
+			Get
+				Return MyBase.GetSystemString(ViewLoadInfoMetadata.ColumnNames.Transportationnotes)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewLoadInfoMetadata.ColumnNames.Transportationnotes, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadInfo.BILLOFLADINGNOTES
+		' </summary>
+		Public Overridable Property Billofladingnotes As System.String
+			Get
+				Return MyBase.GetSystemString(ViewLoadInfoMetadata.ColumnNames.Billofladingnotes)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewLoadInfoMetadata.ColumnNames.Billofladingnotes, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadInfo.TotalSkids
+		' </summary>
+		Public Overridable Property TotalSkids As Nullable(Of System.Int32)
+			Get
+				Return MyBase.GetSystemInt32(ViewLoadInfoMetadata.ColumnNames.TotalSkids)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Int32))
+				MyBase.SetSystemInt32(ViewLoadInfoMetadata.ColumnNames.TotalSkids, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadInfo.FreezeProtectFlag
+		' </summary>
+		Public Overridable Property FreezeProtectFlag As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ViewLoadInfoMetadata.ColumnNames.FreezeProtectFlag)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ViewLoadInfoMetadata.ColumnNames.FreezeProtectFlag, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadInfo.CUSTNAME
+		' </summary>
+		Public Overridable Property Custname As System.String
+			Get
+				Return MyBase.GetSystemString(ViewLoadInfoMetadata.ColumnNames.Custname)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewLoadInfoMetadata.ColumnNames.Custname, value)
 			End Set
 		End Property		
 		
@@ -2310,6 +2402,108 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Transportationnotes As System.String 
+				Get
+					Dim data_ As System.String = entity.Transportationnotes
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Transportationnotes = Nothing
+					Else
+						entity.Transportationnotes = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Billofladingnotes As System.String 
+				Get
+					Dim data_ As System.String = entity.Billofladingnotes
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Billofladingnotes = Nothing
+					Else
+						entity.Billofladingnotes = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property TotalSkids As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Int32) = entity.TotalSkids
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.TotalSkids = Nothing
+					Else
+						entity.TotalSkids = Convert.ToInt32(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property FreezeProtectFlag As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.FreezeProtectFlag
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.FreezeProtectFlag = Nothing
+					Else
+						entity.FreezeProtectFlag = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Custname As System.String 
+				Get
+					Dim data_ As System.String = entity.Custname
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Custname = Nothing
+					Else
+						entity.Custname = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewLoadInfo
@@ -2681,6 +2875,36 @@ Namespace BusinessObjects
 		Public ReadOnly Property CustID As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.CustID, esSystemType.Int32)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Transportationnotes As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.Transportationnotes, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Billofladingnotes As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.Billofladingnotes, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property TotalSkids As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.TotalSkids, esSystemType.Int32)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property FreezeProtectFlag As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.FreezeProtectFlag, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Custname As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.Custname, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -3197,6 +3421,35 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewLoadInfoMetadata.ColumnNames.Transportationnotes, 55, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewLoadInfoMetadata.PropertyNames.Transportationnotes
+			c.CharacterMaxLength = 2147483647
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadInfoMetadata.ColumnNames.Billofladingnotes, 56, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewLoadInfoMetadata.PropertyNames.Billofladingnotes
+			c.CharacterMaxLength = 2147483647
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadInfoMetadata.ColumnNames.TotalSkids, 57, GetType(System.Int32), esSystemType.Int32)	
+			c.PropertyName = ViewLoadInfoMetadata.PropertyNames.TotalSkids
+			c.NumericPrecision = 10
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadInfoMetadata.ColumnNames.FreezeProtectFlag, 58, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ViewLoadInfoMetadata.PropertyNames.FreezeProtectFlag
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadInfoMetadata.ColumnNames.Custname, 59, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewLoadInfoMetadata.PropertyNames.Custname
+			c.CharacterMaxLength = 50
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -3280,6 +3533,11 @@ Namespace BusinessObjects
 			 Public Const ScheduledCarrierName As String = "ScheduledCarrierName"
 			 Public Const ScheduledLogisticsName As String = "ScheduledLogisticsName"
 			 Public Const CustID As String = "CustID"
+			 Public Const Transportationnotes As String = "TRANSPORTATIONNOTES"
+			 Public Const Billofladingnotes As String = "BILLOFLADINGNOTES"
+			 Public Const TotalSkids As String = "TotalSkids"
+			 Public Const FreezeProtectFlag As String = "FreezeProtectFlag"
+			 Public Const Custname As String = "CUSTNAME"
 		End Class
 #End Region	
 		
@@ -3340,6 +3598,11 @@ Namespace BusinessObjects
 			 Public Const ScheduledCarrierName As String = "ScheduledCarrierName"
 			 Public Const ScheduledLogisticsName As String = "ScheduledLogisticsName"
 			 Public Const CustID As String = "CustID"
+			 Public Const Transportationnotes As String = "Transportationnotes"
+			 Public Const Billofladingnotes As String = "Billofladingnotes"
+			 Public Const TotalSkids As String = "TotalSkids"
+			 Public Const FreezeProtectFlag As String = "FreezeProtectFlag"
+			 Public Const Custname As String = "Custname"
 		End Class
 #End Region	
 
@@ -3441,7 +3704,12 @@ Namespace BusinessObjects
 				meta.AddTypeMap("ScheduledShipmentDate", new esTypeMap("datetime", "System.DateTime"))
 				meta.AddTypeMap("ScheduledCarrierName", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("ScheduledLogisticsName", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("CustID", new esTypeMap("int", "System.Int32"))			
+				meta.AddTypeMap("CustID", new esTypeMap("int", "System.Int32"))
+				meta.AddTypeMap("Transportationnotes", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Billofladingnotes", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("TotalSkids", new esTypeMap("int", "System.Int32"))
+				meta.AddTypeMap("FreezeProtectFlag", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("Custname", new esTypeMap("varchar", "System.String"))			
 				
 				
 				 
