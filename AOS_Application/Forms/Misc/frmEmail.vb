@@ -18,8 +18,9 @@ Public Class frmEmail
         LoadEmail()
     End Sub
     Private Sub LoadEmail()
-        SenderTextEdit.EditValue = IIf(String.IsNullOrEmpty(vEmail.From), oSysparameters.WOEmailSender, vEmail.From)
-        ReceiverTextEdit.EditValue = IIf(String.IsNullOrEmpty(vEmail.From), oSysparameters.WOEmailReceiver, vEmail.To)
+        SenderTextEdit.EditValue = vEmail.From
+        ReceiverTextEdit.EditValue = vEmail.To
+        ccTextEdit.EditValue = vEmail.CC
         SubjectTextEdit.EditValue = vEmail.Subject
         BodyStatementRichEditControl.HtmlText = vEmail.MailBody
     End Sub
@@ -27,9 +28,12 @@ Public Class frmEmail
     Private Sub btnSend_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSend.ItemClick
         vEmail.From = SenderTextEdit.EditValue
         vEmail.To = ReceiverTextEdit.EditValue
+        vEmail.CC = ccTextEdit.EditValue
         vEmail.Subject = SubjectTextEdit.EditValue
         vEmail.MailBody = BodyStatementRichEditControl.HtmlText
-
+        If (Not String.IsNullOrEmpty(vEmail.CC)) Then
+            vEmail.To = String.Format("{0};{1}", vEmail.To, vEmail.CC)
+        End If
         If ValidateControls() Then
             vEmail.MailBody = BodyStatementRichEditControl.HtmlText
             vEmail.SendEmail(oSysparameters.WOEmailSender,

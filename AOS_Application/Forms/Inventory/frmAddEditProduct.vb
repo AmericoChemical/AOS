@@ -22,6 +22,7 @@ Public Class frmAddEditProduct
     Public vEditType As String  'operating mode (passed in by calling form)
     Public vChemID As Integer
     Dim vFlag As Boolean
+    Dim vAPISID As Integer
 
     'here is where you set the name of the object (i.e. Client, Contact, etc.)
     Friend vObjectName As String = "Product"
@@ -77,9 +78,11 @@ Public Class frmAddEditProduct
     Private Sub frmAddEdit_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         setRibbonOptions(vCurrentUserSecurityLevel)
         If vCurrentUserSecurityLevel >= 9 Then
-            rbtnProductApisCosts.Visibility = True
+            vAPISID = GetAPISID(vID)
+            rbtnProductApisCosts.Visibility = IIf(vAPISID <> 0, DevExpress.XtraBars.BarItemVisibility.Always, DevExpress.XtraBars.BarItemVisibility.Never)
+
         Else
-            rbtnProductApisCosts.Visibility = False
+            rbtnProductApisCosts.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         End If
         If vEditType = "ADD" Then
             Me.Text = "Adding New " & vObjectName
@@ -652,27 +655,35 @@ Public Class frmAddEditProduct
     End Sub
 
     Private Sub rbtnProductApisCosts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnProductApisCosts.ItemClick
-
-        Dim oAPIS As New ApisCollection
-        'check for ACTIVE ApisC record
-        oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("ACTIVE"), oAPIS.Query.Productid.Equal(vID))
-        If oAPIS.Query.Load Then
+        If vAPISID <> 0 Then
             Dim frm As New frmApisStandardCosts
-            frm.vAPISID = oAPIS(0).Apisnum
+            frm.vAPISID = vAPISID
             frm.ShowDialog()
             editObject(bs.Current.ProductID)
             Exit Sub
-        End If
 
-        'check for SINGLE USE Apis record
-        oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("SINGLE USE"), oAPIS.Query.Productid.Equal(vID))
-        If oAPIS.Query.Load Then
-            Dim frm As New frmApisStandardCosts
-            frm.vAPISID = oAPIS(0).Apisnum
-            frm.ShowDialog()
-            editObject(bs.Current.ProductID)
-            Exit Sub
         End If
 
     End Sub
+
+    Private Function GetAPISID(prodctId As Integer) As Integer
+        Dim oAPIS As New ApisCollection
+        'check for ACTIVE ApisC record
+        oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("ACTIVE"), oAPIS.Query.Productid.Equal(prodctId))
+        If oAPIS.Query.Load Then
+            GetAPISID = oAPIS(0).Apisnum
+            Exit Function
+        End If
+
+        'check for SINGLE USE Apis record
+        oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("SINGLE USE"), oAPIS.Query.Productid.Equal(prodctId))
+        If oAPIS.Query.Load Then
+            GetAPISID = oAPIS(0).Apisnum
+            Exit Function
+        End If
+        GetAPISID = 0
+    End Function
+
+
+
 End Class
