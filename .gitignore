@@ -14,3 +14,7 @@
 /AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CoreCompileInputs.cache
 /AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CopyComplete
 /AOS_Application/obj/Debug
+/AOS_Application/bin/Debug
+*.dtbcache
+/AOS_Application/.vs/AOS.WindowsApp/v15
+/AOS_Application/.vs/AOS.WindowsApp/config

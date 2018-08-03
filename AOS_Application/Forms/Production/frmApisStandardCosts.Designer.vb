@@ -129,7 +129,7 @@ Partial Class frmApisStandardCosts
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(770, 116)
+        Me.RibbonControl1.Size = New System.Drawing.Size(770, 145)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -184,11 +184,11 @@ Partial Class frmApisStandardCosts
         '
         Me.GridControl1.DataSource = Me.bsMaterialCosts
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 20)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 25)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(766, 139)
+        Me.GridControl1.Size = New System.Drawing.Size(766, 105)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -346,7 +346,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl18.Appearance.Options.UseFont = True
         Me.LabelControl18.Location = New System.Drawing.Point(477, 146)
         Me.LabelControl18.Name = "LabelControl18"
-        Me.LabelControl18.Size = New System.Drawing.Size(162, 13)
+        Me.LabelControl18.Size = New System.Drawing.Size(214, 17)
         Me.LabelControl18.TabIndex = 41
         Me.LabelControl18.Text = "CALCULATED MAKE UP COSTS"
         '
@@ -357,7 +357,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl9.Appearance.Options.UseFont = True
         Me.LabelControl9.Location = New System.Drawing.Point(10, 146)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(154, 13)
+        Me.LabelControl9.Size = New System.Drawing.Size(204, 17)
         Me.LabelControl9.TabIndex = 40
         Me.LabelControl9.Text = "CURRENT STANDARD COSTS"
         '
@@ -366,7 +366,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl13.Location = New System.Drawing.Point(33, 168)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl13.Size = New System.Drawing.Size(50, 16)
         Me.LabelControl13.TabIndex = 39
         Me.LabelControl13.Text = "Vol Units"
         '
@@ -380,7 +380,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit15.Properties.Appearance.Options.UseTextOptions = True
         Me.TextEdit15.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.TextEdit15.Properties.ReadOnly = True
-        Me.TextEdit15.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit15.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit15.TabIndex = 38
         '
         'LabelControl15
@@ -388,7 +388,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl15.Location = New System.Drawing.Point(13, 194)
         Me.LabelControl15.Name = "LabelControl15"
-        Me.LabelControl15.Size = New System.Drawing.Size(61, 13)
+        Me.LabelControl15.Size = New System.Drawing.Size(73, 16)
         Me.LabelControl15.TabIndex = 37
         Me.LabelControl15.Text = "Vol Unit Cost"
         '
@@ -404,7 +404,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit16.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit16.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit16.Properties.ReadOnly = True
-        Me.TextEdit16.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit16.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit16.TabIndex = 36
         '
         'LabelControl16
@@ -412,7 +412,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl16.Location = New System.Drawing.Point(170, 168)
         Me.LabelControl16.Name = "LabelControl16"
-        Me.LabelControl16.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl16.Size = New System.Drawing.Size(59, 16)
         Me.LabelControl16.TabIndex = 35
         Me.LabelControl16.Text = " Wgt Units"
         '
@@ -426,7 +426,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit17.Properties.Appearance.Options.UseTextOptions = True
         Me.TextEdit17.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.TextEdit17.Properties.ReadOnly = True
-        Me.TextEdit17.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit17.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit17.TabIndex = 34
         '
         'LabelControl17
@@ -434,7 +434,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl17.Location = New System.Drawing.Point(153, 194)
         Me.LabelControl17.Name = "LabelControl17"
-        Me.LabelControl17.Size = New System.Drawing.Size(67, 13)
+        Me.LabelControl17.Size = New System.Drawing.Size(78, 16)
         Me.LabelControl17.TabIndex = 33
         Me.LabelControl17.Text = "Wgt Unit Cost"
         '
@@ -450,7 +450,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit18.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit18.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit18.Properties.ReadOnly = True
-        Me.TextEdit18.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit18.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit18.TabIndex = 32
         '
         'LabelControl10
@@ -458,7 +458,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl10.Location = New System.Drawing.Point(497, 172)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl10.Size = New System.Drawing.Size(50, 16)
         Me.LabelControl10.TabIndex = 31
         Me.LabelControl10.Text = "Vol Units"
         '
@@ -472,7 +472,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit12.Properties.Appearance.Options.UseTextOptions = True
         Me.TextEdit12.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.TextEdit12.Properties.ReadOnly = True
-        Me.TextEdit12.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit12.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit12.TabIndex = 30
         '
         'LabelControl12
@@ -480,7 +480,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl12.Location = New System.Drawing.Point(477, 198)
         Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(61, 13)
+        Me.LabelControl12.Size = New System.Drawing.Size(73, 16)
         Me.LabelControl12.TabIndex = 29
         Me.LabelControl12.Text = "Vol Unit Cost"
         '
@@ -496,14 +496,14 @@ Partial Class frmApisStandardCosts
         Me.TextEdit13.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit13.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit13.Properties.ReadOnly = True
-        Me.TextEdit13.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit13.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit13.TabIndex = 28
         '
         'LabelControl14
         '
         Me.LabelControl14.Location = New System.Drawing.Point(10, 34)
         Me.LabelControl14.Name = "LabelControl14"
-        Me.LabelControl14.Size = New System.Drawing.Size(34, 13)
+        Me.LabelControl14.Size = New System.Drawing.Size(40, 16)
         Me.LabelControl14.TabIndex = 27
         Me.LabelControl14.Text = "APIS #"
         '
@@ -511,7 +511,7 @@ Partial Class frmApisStandardCosts
         '
         Me.LabelControl11.Location = New System.Drawing.Point(9, 60)
         Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(37, 13)
+        Me.LabelControl11.Size = New System.Drawing.Size(43, 16)
         Me.LabelControl11.TabIndex = 21
         Me.LabelControl11.Text = "Product"
         '
@@ -522,7 +522,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit14.MenuManager = Me.RibbonControl1
         Me.TextEdit14.Name = "TextEdit14"
         Me.TextEdit14.Properties.ReadOnly = True
-        Me.TextEdit14.Size = New System.Drawing.Size(51, 20)
+        Me.TextEdit14.Size = New System.Drawing.Size(51, 22)
         Me.TextEdit14.TabIndex = 26
         '
         'TextEdit11
@@ -532,7 +532,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit11.MenuManager = Me.RibbonControl1
         Me.TextEdit11.Name = "TextEdit11"
         Me.TextEdit11.Properties.ReadOnly = True
-        Me.TextEdit11.Size = New System.Drawing.Size(269, 20)
+        Me.TextEdit11.Size = New System.Drawing.Size(269, 22)
         Me.TextEdit11.TabIndex = 20
         '
         'TextEdit10
@@ -542,7 +542,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit10.MenuManager = Me.RibbonControl1
         Me.TextEdit10.Name = "TextEdit10"
         Me.TextEdit10.Properties.ReadOnly = True
-        Me.TextEdit10.Size = New System.Drawing.Size(51, 20)
+        Me.TextEdit10.Size = New System.Drawing.Size(51, 22)
         Me.TextEdit10.TabIndex = 18
         '
         'LabelControl8
@@ -550,7 +550,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl8.Location = New System.Drawing.Point(515, 60)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(23, 13)
+        Me.LabelControl8.Size = New System.Drawing.Size(27, 16)
         Me.LabelControl8.TabIndex = 15
         Me.LabelControl8.Text = "Kit #"
         '
@@ -562,7 +562,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit8.MenuManager = Me.RibbonControl1
         Me.TextEdit8.Name = "TextEdit8"
         Me.TextEdit8.Properties.ReadOnly = True
-        Me.TextEdit8.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit8.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit8.TabIndex = 14
         '
         'LabelControl7
@@ -570,7 +570,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl7.Location = New System.Drawing.Point(515, 86)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(16, 13)
+        Me.LabelControl7.Size = New System.Drawing.Size(19, 16)
         Me.LabelControl7.TabIndex = 13
         Me.LabelControl7.Text = "Hrs"
         '
@@ -582,7 +582,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit7.MenuManager = Me.RibbonControl1
         Me.TextEdit7.Name = "TextEdit7"
         Me.TextEdit7.Properties.ReadOnly = True
-        Me.TextEdit7.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit7.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit7.TabIndex = 12
         '
         'LabelControl6
@@ -590,7 +590,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl6.Location = New System.Drawing.Point(652, 172)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl6.Size = New System.Drawing.Size(59, 16)
         Me.LabelControl6.TabIndex = 11
         Me.LabelControl6.Text = " Wgt Units"
         '
@@ -604,7 +604,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit6.Properties.Appearance.Options.UseTextOptions = True
         Me.TextEdit6.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.TextEdit6.Properties.ReadOnly = True
-        Me.TextEdit6.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit6.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit6.TabIndex = 10
         '
         'LabelControl5
@@ -612,7 +612,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl5.Location = New System.Drawing.Point(635, 198)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(67, 13)
+        Me.LabelControl5.Size = New System.Drawing.Size(78, 16)
         Me.LabelControl5.TabIndex = 9
         Me.LabelControl5.Text = "Wgt Unit Cost"
         '
@@ -628,7 +628,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit5.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit5.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit5.Properties.ReadOnly = True
-        Me.TextEdit5.Size = New System.Drawing.Size(50, 20)
+        Me.TextEdit5.Size = New System.Drawing.Size(50, 22)
         Me.TextEdit5.TabIndex = 8
         '
         'LabelControl4
@@ -636,7 +636,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl4.Location = New System.Drawing.Point(628, 112)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl4.Size = New System.Drawing.Size(29, 16)
         Me.LabelControl4.TabIndex = 7
         Me.LabelControl4.Text = "Total"
         '
@@ -652,7 +652,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit4.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit4.Properties.ReadOnly = True
-        Me.TextEdit4.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit4.Size = New System.Drawing.Size(100, 22)
         Me.TextEdit4.TabIndex = 6
         '
         'LabelControl3
@@ -660,7 +660,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl3.Location = New System.Drawing.Point(625, 86)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(27, 13)
+        Me.LabelControl3.Size = New System.Drawing.Size(32, 16)
         Me.LabelControl3.TabIndex = 5
         Me.LabelControl3.Text = "Labor"
         '
@@ -676,7 +676,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit3.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit3.Properties.ReadOnly = True
-        Me.TextEdit3.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit3.Size = New System.Drawing.Size(100, 22)
         Me.TextEdit3.TabIndex = 4
         '
         'LabelControl2
@@ -684,7 +684,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl2.Location = New System.Drawing.Point(609, 34)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(43, 13)
+        Me.LabelControl2.Size = New System.Drawing.Size(52, 16)
         Me.LabelControl2.TabIndex = 3
         Me.LabelControl2.Text = "Materials"
         '
@@ -700,7 +700,7 @@ Partial Class frmApisStandardCosts
         Me.TextEdit2.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit2.Properties.ReadOnly = True
-        Me.TextEdit2.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit2.Size = New System.Drawing.Size(100, 22)
         Me.TextEdit2.TabIndex = 2
         '
         'LabelControl1
@@ -708,7 +708,7 @@ Partial Class frmApisStandardCosts
         Me.LabelControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl1.Location = New System.Drawing.Point(640, 60)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(12, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(14, 16)
         Me.LabelControl1.TabIndex = 1
         Me.LabelControl1.Text = "Kit"
         '
@@ -724,16 +724,16 @@ Partial Class frmApisStandardCosts
         Me.TextEdit1.Properties.DisplayFormat.FormatString = "n4"
         Me.TextEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TextEdit1.Properties.ReadOnly = True
-        Me.TextEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit1.Size = New System.Drawing.Size(100, 22)
         Me.TextEdit1.TabIndex = 0
         '
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 116)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 145)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(770, 161)
+        Me.GroupControl3.Size = New System.Drawing.Size(770, 132)
         Me.GroupControl3.TabIndex = 4
         Me.GroupControl3.Text = "Material Standard Costs"
         '

@@ -106,6 +106,26 @@ Partial Class viewProduction
         Me.lblRedDesc = New DevExpress.XtraEditors.LabelControl()
         Me.ceRed = New DevExpress.XtraEditors.ColorEdit()
         Me.WorkPanelsHolder = New DevExpress.XtraEditors.PanelControl()
+        Me.RibbonPanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.gcAPISList = New DevExpress.XtraEditors.GroupControl()
+        Me.grFormulas = New DevExpress.XtraGrid.GridControl()
+        Me.bsAPIS = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView5 = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colApisnum = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colApisdesc = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colContainer = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQtycontainers = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCustid = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colApisnote = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colStdlaborhours = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductdesc = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUnits = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colUom = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCustname = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit13 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPanelControl6 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.grRelabelOrders = New DevExpress.XtraGrid.GridControl()
@@ -172,26 +192,6 @@ Partial Class viewProduction
         Me.RibbonPanelControl8 = New DevExpress.XtraEditors.PanelControl()
         Me.RibbonPanelControl7 = New DevExpress.XtraEditors.PanelControl()
         Me.RibbonPanelControl4 = New DevExpress.XtraEditors.PanelControl()
-        Me.RibbonPanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.gcAPISList = New DevExpress.XtraEditors.GroupControl()
-        Me.grFormulas = New DevExpress.XtraGrid.GridControl()
-        Me.bsAPIS = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView5 = New AOS.CustomClasses.CustomDevExGridView()
-        Me.colApisnum = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colApisdesc = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colContainer = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colQtycontainers = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCustid = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colApisnote = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colStdlaborhours = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductdesc = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colUnits = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colUom = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCustname = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit13 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.bsMaterialProducts = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
@@ -215,6 +215,14 @@ Partial Class viewProduction
         CType(Me.ceRed.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WorkPanelsHolder.SuspendLayout()
+        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl2.SuspendLayout()
+        CType(Me.gcAPISList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gcAPISList.SuspendLayout()
+        CType(Me.grFormulas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsAPIS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl6.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,14 +261,6 @@ Partial Class viewProduction
         CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl2.SuspendLayout()
-        CType(Me.gcAPISList, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gcAPISList.SuspendLayout()
-        CType(Me.grFormulas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsAPIS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsMaterialProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -313,7 +313,7 @@ Partial Class viewProduction
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage5, Me.RibbonPage6})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemDateEdit3, Me.RepositoryItemDateEdit4})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1154, 116)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1154, 145)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnAddProductionOrder
@@ -978,7 +978,7 @@ Partial Class viewProduction
         Me.pnlLegend.Controls.Add(Me.lblRedDesc)
         Me.pnlLegend.Controls.Add(Me.ceRed)
         Me.pnlLegend.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlLegend.Location = New System.Drawing.Point(2, 22)
+        Me.pnlLegend.Location = New System.Drawing.Point(2, 25)
         Me.pnlLegend.Name = "pnlLegend"
         Me.pnlLegend.Size = New System.Drawing.Size(1146, 29)
         Me.pnlLegend.TabIndex = 1
@@ -987,7 +987,7 @@ Partial Class viewProduction
         '
         Me.lblColorMapping.Location = New System.Drawing.Point(12, 5)
         Me.lblColorMapping.Name = "lblColorMapping"
-        Me.lblColorMapping.Size = New System.Drawing.Size(72, 13)
+        Me.lblColorMapping.Size = New System.Drawing.Size(87, 16)
         Me.lblColorMapping.TabIndex = 5
         Me.lblColorMapping.Text = "Color Mapping:"
         '
@@ -995,7 +995,7 @@ Partial Class viewProduction
         '
         Me.lblRedDesc.Location = New System.Drawing.Point(130, 5)
         Me.lblRedDesc.Name = "lblRedDesc"
-        Me.lblRedDesc.Size = New System.Drawing.Size(51, 13)
+        Me.lblRedDesc.Size = New System.Drawing.Size(60, 16)
         Me.lblRedDesc.TabIndex = 10
         Me.lblRedDesc.Text = "Late Items"
         '
@@ -1009,7 +1009,7 @@ Partial Class viewProduction
         Me.ceRed.Properties.Appearance.Options.UseBackColor = True
         Me.ceRed.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.ceRed.Properties.ReadOnly = True
-        Me.ceRed.Size = New System.Drawing.Size(28, 18)
+        Me.ceRed.Size = New System.Drawing.Size(28, 20)
         Me.ceRed.TabIndex = 9
         Me.ceRed.TabStop = False
         '
@@ -1026,10 +1026,182 @@ Partial Class viewProduction
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl7)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 149)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 178)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1154, 577)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1154, 548)
         Me.WorkPanelsHolder.TabIndex = 7
+        '
+        'RibbonPanelControl2
+        '
+        Me.RibbonPanelControl2.Controls.Add(Me.gcAPISList)
+        Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1154, 548)
+        Me.RibbonPanelControl2.TabIndex = 1
+        '
+        'gcAPISList
+        '
+        Me.gcAPISList.Controls.Add(Me.grFormulas)
+        Me.gcAPISList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcAPISList.Location = New System.Drawing.Point(2, 2)
+        Me.gcAPISList.Name = "gcAPISList"
+        Me.gcAPISList.Size = New System.Drawing.Size(1150, 544)
+        Me.gcAPISList.TabIndex = 2
+        Me.gcAPISList.Text = "Production Instruction Sheet List"
+        '
+        'grFormulas
+        '
+        Me.grFormulas.DataSource = Me.bsAPIS
+        Me.grFormulas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grFormulas.Location = New System.Drawing.Point(2, 25)
+        Me.grFormulas.MainView = Me.GridView5
+        Me.grFormulas.Name = "grFormulas"
+        Me.grFormulas.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit13})
+        Me.grFormulas.Size = New System.Drawing.Size(1146, 517)
+        Me.grFormulas.TabIndex = 0
+        Me.grFormulas.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5})
+        '
+        'bsAPIS
+        '
+        Me.bsAPIS.DataSource = GetType(AOS.BusinessObjects.ViewAPISDataCollection)
+        '
+        'GridView5
+        '
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colApisnum, Me.colApisdesc, Me.colProductid, Me.colContainer, Me.colQtycontainers, Me.colCustid, Me.colApisnote, Me.colStdlaborhours, Me.colProductdesc, Me.colUnits, Me.colUom, Me.colCustname, Me.GridColumn3, Me.GridColumn1})
+        Me.GridView5.GridControl = Me.grFormulas
+        Me.GridView5.GroupPanelText = "Americo Production Instruction Sheets"
+        Me.GridView5.Name = "GridView5"
+        Me.GridView5.OptionsBehavior.Editable = False
+        Me.GridView5.OptionsView.ShowAutoFilterRow = True
+        Me.GridView5.ViewCaption = "OPEN Work Orders"
+        '
+        'colApisnum
+        '
+        Me.colApisnum.Caption = "APIS#"
+        Me.colApisnum.FieldName = "Apisnum"
+        Me.colApisnum.Name = "colApisnum"
+        Me.colApisnum.Visible = True
+        Me.colApisnum.VisibleIndex = 0
+        Me.colApisnum.Width = 45
+        '
+        'colApisdesc
+        '
+        Me.colApisdesc.Caption = "APIS Desc"
+        Me.colApisdesc.FieldName = "Apisdesc"
+        Me.colApisdesc.Name = "colApisdesc"
+        Me.colApisdesc.Width = 114
+        '
+        'colProductid
+        '
+        Me.colProductid.Caption = "Prod ID"
+        Me.colProductid.FieldName = "Productid"
+        Me.colProductid.Name = "colProductid"
+        Me.colProductid.Visible = True
+        Me.colProductid.VisibleIndex = 3
+        Me.colProductid.Width = 56
+        '
+        'colContainer
+        '
+        Me.colContainer.Caption = "Container"
+        Me.colContainer.FieldName = "Container"
+        Me.colContainer.Name = "colContainer"
+        Me.colContainer.Visible = True
+        Me.colContainer.VisibleIndex = 5
+        Me.colContainer.Width = 118
+        '
+        'colQtycontainers
+        '
+        Me.colQtycontainers.Caption = "Qty"
+        Me.colQtycontainers.FieldName = "Qtycontainers"
+        Me.colQtycontainers.Name = "colQtycontainers"
+        Me.colQtycontainers.Visible = True
+        Me.colQtycontainers.VisibleIndex = 2
+        Me.colQtycontainers.Width = 51
+        '
+        'colCustid
+        '
+        Me.colCustid.FieldName = "Custid"
+        Me.colCustid.Name = "colCustid"
+        Me.colCustid.Width = 51
+        '
+        'colApisnote
+        '
+        Me.colApisnote.Caption = "Note"
+        Me.colApisnote.FieldName = "Apisnote"
+        Me.colApisnote.Name = "colApisnote"
+        Me.colApisnote.Width = 135
+        '
+        'colStdlaborhours
+        '
+        Me.colStdlaborhours.Caption = "Labor"
+        Me.colStdlaborhours.FieldName = "Stdlaborhours"
+        Me.colStdlaborhours.Name = "colStdlaborhours"
+        Me.colStdlaborhours.Width = 65
+        '
+        'colProductdesc
+        '
+        Me.colProductdesc.Caption = "Product Description"
+        Me.colProductdesc.FieldName = "Productdesc"
+        Me.colProductdesc.Name = "colProductdesc"
+        Me.colProductdesc.Visible = True
+        Me.colProductdesc.VisibleIndex = 4
+        Me.colProductdesc.Width = 324
+        '
+        'colUnits
+        '
+        Me.colUnits.Caption = "Units"
+        Me.colUnits.FieldName = "Units"
+        Me.colUnits.Name = "colUnits"
+        Me.colUnits.Visible = True
+        Me.colUnits.VisibleIndex = 6
+        Me.colUnits.Width = 41
+        '
+        'colUom
+        '
+        Me.colUom.Caption = "UOM"
+        Me.colUom.FieldName = "Uom"
+        Me.colUom.Name = "colUom"
+        Me.colUom.Visible = True
+        Me.colUom.VisibleIndex = 7
+        Me.colUom.Width = 41
+        '
+        'colCustname
+        '
+        Me.colCustname.Caption = "Customer"
+        Me.colCustname.FieldName = "Custname"
+        Me.colCustname.Name = "colCustname"
+        Me.colCustname.Visible = True
+        Me.colCustname.VisibleIndex = 8
+        Me.colCustname.Width = 259
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.Caption = "Status"
+        Me.GridColumn3.FieldName = "Apisstatus"
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 9
+        Me.GridColumn3.Width = 100
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Rev"
+        Me.GridColumn1.FieldName = "Revision"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 1
+        Me.GridColumn1.Width = 39
+        '
+        'RepositoryItemLookUpEdit13
+        '
+        Me.RepositoryItemLookUpEdit13.AutoHeight = False
+        Me.RepositoryItemLookUpEdit13.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit13.DisplayMember = "Custname"
+        Me.RepositoryItemLookUpEdit13.Name = "RepositoryItemLookUpEdit13"
+        Me.RepositoryItemLookUpEdit13.NullText = ""
+        Me.RepositoryItemLookUpEdit13.ShowPopupShadow = False
+        Me.RepositoryItemLookUpEdit13.ValueMember = "Custid"
         '
         'RibbonPanelControl6
         '
@@ -1037,7 +1209,7 @@ Partial Class viewProduction
         Me.RibbonPanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
-        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl6.TabIndex = 1
         '
         'GroupControl3
@@ -1046,7 +1218,7 @@ Partial Class viewProduction
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl3.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1150, 573)
+        Me.GroupControl3.Size = New System.Drawing.Size(1150, 544)
         Me.GroupControl3.TabIndex = 1
         Me.GroupControl3.Text = "Relabel Orders"
         '
@@ -1054,11 +1226,11 @@ Partial Class viewProduction
         '
         Me.grRelabelOrders.DataSource = Me.bsRelabelOrders
         Me.grRelabelOrders.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grRelabelOrders.Location = New System.Drawing.Point(2, 22)
+        Me.grRelabelOrders.Location = New System.Drawing.Point(2, 25)
         Me.grRelabelOrders.MainView = Me.grvRelabelOrders
         Me.grRelabelOrders.Name = "grRelabelOrders"
         Me.grRelabelOrders.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit4})
-        Me.grRelabelOrders.Size = New System.Drawing.Size(1146, 549)
+        Me.grRelabelOrders.Size = New System.Drawing.Size(1146, 517)
         Me.grRelabelOrders.TabIndex = 1
         Me.grRelabelOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvRelabelOrders})
         '
@@ -1182,7 +1354,7 @@ Partial Class viewProduction
         Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
         Me.RibbonPanelControl3.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl3.TabIndex = 1
         '
         'PanelControl1
@@ -1192,7 +1364,7 @@ Partial Class viewProduction
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(8, 8)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1138, 561)
+        Me.PanelControl1.Size = New System.Drawing.Size(1138, 532)
         Me.PanelControl1.TabIndex = 4
         '
         'GroupControl1
@@ -1201,7 +1373,7 @@ Partial Class viewProduction
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1138, 561)
+        Me.GroupControl1.Size = New System.Drawing.Size(1138, 532)
         Me.GroupControl1.TabIndex = 3
         Me.GroupControl1.Text = "Materials List"
         '
@@ -1209,11 +1381,11 @@ Partial Class viewProduction
         '
         Me.GridControl1.DataSource = Me.bsMaterials
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 25)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(1134, 537)
+        Me.GridControl1.Size = New System.Drawing.Size(1134, 505)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -1353,7 +1525,7 @@ Partial Class viewProduction
         Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl5.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
-        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl5.TabIndex = 3
         '
         'GroupControl4
@@ -1362,7 +1534,7 @@ Partial Class viewProduction
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1150, 573)
+        Me.GroupControl4.Size = New System.Drawing.Size(1150, 544)
         Me.GroupControl4.TabIndex = 3
         Me.GroupControl4.Text = "Chemical List"
         '
@@ -1370,11 +1542,11 @@ Partial Class viewProduction
         '
         Me.GridControl3.DataSource = Me.bsChemicals
         Me.GridControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl3.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl3.Location = New System.Drawing.Point(2, 25)
         Me.GridControl3.MainView = Me.GridView2
         Me.GridControl3.Name = "GridControl3"
         Me.GridControl3.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit3})
-        Me.GridControl3.Size = New System.Drawing.Size(1146, 549)
+        Me.GridControl3.Size = New System.Drawing.Size(1146, 517)
         Me.GridControl3.TabIndex = 0
         Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -1441,7 +1613,7 @@ Partial Class viewProduction
         Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl1.TabIndex = 2
         '
         'GroupControl2
@@ -1451,7 +1623,7 @@ Partial Class viewProduction
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(1150, 573)
+        Me.GroupControl2.Size = New System.Drawing.Size(1150, 544)
         Me.GroupControl2.TabIndex = 0
         Me.GroupControl2.Text = "Production Orders"
         '
@@ -1459,11 +1631,11 @@ Partial Class viewProduction
         '
         Me.gvProductionOrders.DataSource = Me.bsProdOrders
         Me.gvProductionOrders.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gvProductionOrders.Location = New System.Drawing.Point(2, 51)
+        Me.gvProductionOrders.Location = New System.Drawing.Point(2, 54)
         Me.gvProductionOrders.MainView = Me.grvProductionOrders
         Me.gvProductionOrders.Name = "gvProductionOrders"
         Me.gvProductionOrders.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2})
-        Me.gvProductionOrders.Size = New System.Drawing.Size(1146, 520)
+        Me.gvProductionOrders.Size = New System.Drawing.Size(1146, 488)
         Me.gvProductionOrders.TabIndex = 1
         Me.gvProductionOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvProductionOrders})
         '
@@ -1639,7 +1811,7 @@ Partial Class viewProduction
         Me.RibbonPanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl9.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl9.Name = "RibbonPanelControl9"
-        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl9.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl9.TabIndex = 6
         '
         'RibbonPanelControl8
@@ -1647,7 +1819,7 @@ Partial Class viewProduction
         Me.RibbonPanelControl8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl8.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl8.Name = "RibbonPanelControl8"
-        Me.RibbonPanelControl8.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl8.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl8.TabIndex = 5
         '
         'RibbonPanelControl7
@@ -1655,7 +1827,7 @@ Partial Class viewProduction
         Me.RibbonPanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl7.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl7.Name = "RibbonPanelControl7"
-        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl7.TabIndex = 4
         '
         'RibbonPanelControl4
@@ -1663,180 +1835,8 @@ Partial Class viewProduction
         Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1154, 577)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1154, 548)
         Me.RibbonPanelControl4.TabIndex = 1
-        '
-        'RibbonPanelControl2
-        '
-        Me.RibbonPanelControl2.Controls.Add(Me.gcAPISList)
-        Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1154, 577)
-        Me.RibbonPanelControl2.TabIndex = 1
-        '
-        'gcAPISList
-        '
-        Me.gcAPISList.Controls.Add(Me.grFormulas)
-        Me.gcAPISList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcAPISList.Location = New System.Drawing.Point(2, 2)
-        Me.gcAPISList.Name = "gcAPISList"
-        Me.gcAPISList.Size = New System.Drawing.Size(1150, 573)
-        Me.gcAPISList.TabIndex = 2
-        Me.gcAPISList.Text = "Production Instruction Sheet List"
-        '
-        'grFormulas
-        '
-        Me.grFormulas.DataSource = Me.bsAPIS
-        Me.grFormulas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grFormulas.Location = New System.Drawing.Point(2, 22)
-        Me.grFormulas.MainView = Me.GridView5
-        Me.grFormulas.Name = "grFormulas"
-        Me.grFormulas.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit13})
-        Me.grFormulas.Size = New System.Drawing.Size(1146, 549)
-        Me.grFormulas.TabIndex = 0
-        Me.grFormulas.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5})
-        '
-        'bsAPIS
-        '
-        Me.bsAPIS.DataSource = GetType(AOS.BusinessObjects.ViewAPISDataCollection)
-        '
-        'GridView5
-        '
-        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colApisnum, Me.colApisdesc, Me.colProductid, Me.colContainer, Me.colQtycontainers, Me.colCustid, Me.colApisnote, Me.colStdlaborhours, Me.colProductdesc, Me.colUnits, Me.colUom, Me.colCustname, Me.GridColumn3, Me.GridColumn1})
-        Me.GridView5.GridControl = Me.grFormulas
-        Me.GridView5.GroupPanelText = "Americo Production Instruction Sheets"
-        Me.GridView5.Name = "GridView5"
-        Me.GridView5.OptionsBehavior.Editable = False
-        Me.GridView5.OptionsView.ShowAutoFilterRow = True
-        Me.GridView5.ViewCaption = "OPEN Work Orders"
-        '
-        'colApisnum
-        '
-        Me.colApisnum.Caption = "APIS#"
-        Me.colApisnum.FieldName = "Apisnum"
-        Me.colApisnum.Name = "colApisnum"
-        Me.colApisnum.Visible = True
-        Me.colApisnum.VisibleIndex = 0
-        Me.colApisnum.Width = 45
-        '
-        'colApisdesc
-        '
-        Me.colApisdesc.Caption = "APIS Desc"
-        Me.colApisdesc.FieldName = "Apisdesc"
-        Me.colApisdesc.Name = "colApisdesc"
-        Me.colApisdesc.Width = 114
-        '
-        'colProductid
-        '
-        Me.colProductid.Caption = "Prod ID"
-        Me.colProductid.FieldName = "Productid"
-        Me.colProductid.Name = "colProductid"
-        Me.colProductid.Visible = True
-        Me.colProductid.VisibleIndex = 3
-        Me.colProductid.Width = 56
-        '
-        'colContainer
-        '
-        Me.colContainer.Caption = "Container"
-        Me.colContainer.FieldName = "Container"
-        Me.colContainer.Name = "colContainer"
-        Me.colContainer.Visible = True
-        Me.colContainer.VisibleIndex = 5
-        Me.colContainer.Width = 118
-        '
-        'colQtycontainers
-        '
-        Me.colQtycontainers.Caption = "Qty"
-        Me.colQtycontainers.FieldName = "Qtycontainers"
-        Me.colQtycontainers.Name = "colQtycontainers"
-        Me.colQtycontainers.Visible = True
-        Me.colQtycontainers.VisibleIndex = 2
-        Me.colQtycontainers.Width = 51
-        '
-        'colCustid
-        '
-        Me.colCustid.FieldName = "Custid"
-        Me.colCustid.Name = "colCustid"
-        Me.colCustid.Width = 51
-        '
-        'colApisnote
-        '
-        Me.colApisnote.Caption = "Note"
-        Me.colApisnote.FieldName = "Apisnote"
-        Me.colApisnote.Name = "colApisnote"
-        Me.colApisnote.Width = 135
-        '
-        'colStdlaborhours
-        '
-        Me.colStdlaborhours.Caption = "Labor"
-        Me.colStdlaborhours.FieldName = "Stdlaborhours"
-        Me.colStdlaborhours.Name = "colStdlaborhours"
-        Me.colStdlaborhours.Width = 65
-        '
-        'colProductdesc
-        '
-        Me.colProductdesc.Caption = "Product Description"
-        Me.colProductdesc.FieldName = "Productdesc"
-        Me.colProductdesc.Name = "colProductdesc"
-        Me.colProductdesc.Visible = True
-        Me.colProductdesc.VisibleIndex = 4
-        Me.colProductdesc.Width = 324
-        '
-        'colUnits
-        '
-        Me.colUnits.Caption = "Units"
-        Me.colUnits.FieldName = "Units"
-        Me.colUnits.Name = "colUnits"
-        Me.colUnits.Visible = True
-        Me.colUnits.VisibleIndex = 6
-        Me.colUnits.Width = 41
-        '
-        'colUom
-        '
-        Me.colUom.Caption = "UOM"
-        Me.colUom.FieldName = "Uom"
-        Me.colUom.Name = "colUom"
-        Me.colUom.Visible = True
-        Me.colUom.VisibleIndex = 7
-        Me.colUom.Width = 41
-        '
-        'colCustname
-        '
-        Me.colCustname.Caption = "Customer"
-        Me.colCustname.FieldName = "Custname"
-        Me.colCustname.Name = "colCustname"
-        Me.colCustname.Visible = True
-        Me.colCustname.VisibleIndex = 8
-        Me.colCustname.Width = 259
-        '
-        'GridColumn3
-        '
-        Me.GridColumn3.Caption = "Status"
-        Me.GridColumn3.FieldName = "Apisstatus"
-        Me.GridColumn3.Name = "GridColumn3"
-        Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 9
-        Me.GridColumn3.Width = 100
-        '
-        'GridColumn1
-        '
-        Me.GridColumn1.Caption = "Rev"
-        Me.GridColumn1.FieldName = "Revision"
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 1
-        Me.GridColumn1.Width = 39
-        '
-        'RepositoryItemLookUpEdit13
-        '
-        Me.RepositoryItemLookUpEdit13.AutoHeight = False
-        Me.RepositoryItemLookUpEdit13.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit13.DisplayMember = "Custname"
-        Me.RepositoryItemLookUpEdit13.Name = "RepositoryItemLookUpEdit13"
-        Me.RepositoryItemLookUpEdit13.NullText = ""
-        Me.RepositoryItemLookUpEdit13.ShowPopupShadow = False
-        Me.RepositoryItemLookUpEdit13.ValueMember = "Custid"
         '
         'bsMaterialProducts
         '
@@ -1891,6 +1891,14 @@ Partial Class viewProduction
         CType(Me.ceRed.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WorkPanelsHolder.ResumeLayout(False)
+        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl2.ResumeLayout(False)
+        CType(Me.gcAPISList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gcAPISList.ResumeLayout(False)
+        CType(Me.grFormulas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsAPIS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl6.ResumeLayout(False)
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1929,14 +1937,6 @@ Partial Class viewProduction
         CType(Me.RibbonPanelControl8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl2.ResumeLayout(False)
-        CType(Me.gcAPISList, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gcAPISList.ResumeLayout(False)
-        CType(Me.grFormulas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsAPIS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsMaterialProducts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

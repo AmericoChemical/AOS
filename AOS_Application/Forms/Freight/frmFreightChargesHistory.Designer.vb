@@ -46,6 +46,7 @@ Partial Class frmFreightChargesHistory
         Me.rbtnSplitLoad = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnLoadFreightCharges = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtEmailFreightChargesHistory = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnPrint = New DevExpress.XtraBars.BarButtonItem()
         Me.LoadMgmt_Images = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -95,7 +96,6 @@ Partial Class frmFreightChargesHistory
         Me.Shipfromaddress2TextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ShipfromstateprovTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ShipfromcityTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.rbtnPrint = New DevExpress.XtraBars.BarButtonItem()
         lblShipmentnumber = New System.Windows.Forms.Label()
         ShipmentdateLabel = New System.Windows.Forms.Label()
         ShipfromidLabel = New System.Windows.Forms.Label()
@@ -162,7 +162,7 @@ Partial Class frmFreightChargesHistory
         lblShipmentnumber.AutoSize = True
         lblShipmentnumber.Location = New System.Drawing.Point(8, 31)
         lblShipmentnumber.Name = "lblShipmentnumber"
-        lblShipmentnumber.Size = New System.Drawing.Size(30, 13)
+        lblShipmentnumber.Size = New System.Drawing.Size(38, 17)
         lblShipmentnumber.TabIndex = 0
         lblShipmentnumber.Text = "Load"
         '
@@ -171,7 +171,7 @@ Partial Class frmFreightChargesHistory
         ShipmentdateLabel.AutoSize = True
         ShipmentdateLabel.Location = New System.Drawing.Point(8, 57)
         ShipmentdateLabel.Name = "ShipmentdateLabel"
-        ShipmentdateLabel.Size = New System.Drawing.Size(53, 13)
+        ShipmentdateLabel.Size = New System.Drawing.Size(67, 17)
         ShipmentdateLabel.TabIndex = 2
         ShipmentdateLabel.Text = "Ship Date"
         '
@@ -180,7 +180,7 @@ Partial Class frmFreightChargesHistory
         ShipfromidLabel.AutoSize = True
         ShipfromidLabel.Location = New System.Drawing.Point(10, 31)
         ShipfromidLabel.Name = "ShipfromidLabel"
-        ShipfromidLabel.Size = New System.Drawing.Size(52, 13)
+        ShipfromidLabel.Size = New System.Drawing.Size(68, 17)
         ShipfromidLabel.TabIndex = 14
         ShipfromidLabel.Text = "Company"
         '
@@ -189,7 +189,7 @@ Partial Class frmFreightChargesHistory
         Shipfromaddress1Label.AutoSize = True
         Shipfromaddress1Label.Location = New System.Drawing.Point(10, 57)
         Shipfromaddress1Label.Name = "Shipfromaddress1Label"
-        Shipfromaddress1Label.Size = New System.Drawing.Size(55, 13)
+        Shipfromaddress1Label.Size = New System.Drawing.Size(68, 17)
         Shipfromaddress1Label.TabIndex = 16
         Shipfromaddress1Label.Text = "Address 1"
         '
@@ -198,7 +198,7 @@ Partial Class frmFreightChargesHistory
         Shipfromaddress2Label.AutoSize = True
         Shipfromaddress2Label.Location = New System.Drawing.Point(10, 83)
         Shipfromaddress2Label.Name = "Shipfromaddress2Label"
-        Shipfromaddress2Label.Size = New System.Drawing.Size(55, 13)
+        Shipfromaddress2Label.Size = New System.Drawing.Size(68, 17)
         Shipfromaddress2Label.TabIndex = 18
         Shipfromaddress2Label.Text = "Address 2"
         '
@@ -207,7 +207,7 @@ Partial Class frmFreightChargesHistory
         ShipfromcityLabel.AutoSize = True
         ShipfromcityLabel.Location = New System.Drawing.Point(10, 109)
         ShipfromcityLabel.Name = "ShipfromcityLabel"
-        ShipfromcityLabel.Size = New System.Drawing.Size(72, 13)
+        ShipfromcityLabel.Size = New System.Drawing.Size(90, 17)
         ShipfromcityLabel.TabIndex = 20
         ShipfromcityLabel.Text = "City State Zip"
         '
@@ -216,7 +216,7 @@ Partial Class frmFreightChargesHistory
         Label2.AutoSize = True
         Label2.Location = New System.Drawing.Point(10, 31)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(52, 13)
+        Label2.Size = New System.Drawing.Size(68, 17)
         Label2.TabIndex = 14
         Label2.Text = "Company"
         '
@@ -225,7 +225,7 @@ Partial Class frmFreightChargesHistory
         Label4.AutoSize = True
         Label4.Location = New System.Drawing.Point(10, 57)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(55, 13)
+        Label4.Size = New System.Drawing.Size(68, 17)
         Label4.TabIndex = 16
         Label4.Text = "Address 1"
         '
@@ -234,7 +234,7 @@ Partial Class frmFreightChargesHistory
         Label5.AutoSize = True
         Label5.Location = New System.Drawing.Point(10, 83)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(55, 13)
+        Label5.Size = New System.Drawing.Size(68, 17)
         Label5.TabIndex = 18
         Label5.Text = "Address 2"
         '
@@ -243,7 +243,7 @@ Partial Class frmFreightChargesHistory
         Label6.AutoSize = True
         Label6.Location = New System.Drawing.Point(10, 109)
         Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(72, 13)
+        Label6.Size = New System.Drawing.Size(90, 17)
         Label6.TabIndex = 20
         Label6.Text = "City State Zip"
         '
@@ -252,7 +252,7 @@ Partial Class frmFreightChargesHistory
         Label7.AutoSize = True
         Label7.Location = New System.Drawing.Point(8, 109)
         Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(31, 13)
+        Label7.Size = New System.Drawing.Size(39, 17)
         Label7.TabIndex = 31
         Label7.Text = "Skids"
         '
@@ -261,7 +261,7 @@ Partial Class frmFreightChargesHistory
         Label8.AutoSize = True
         Label8.Location = New System.Drawing.Point(8, 83)
         Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(41, 13)
+        Label8.Size = New System.Drawing.Size(52, 17)
         Label8.TabIndex = 33
         Label8.Text = "Weight"
         '
@@ -270,7 +270,7 @@ Partial Class frmFreightChargesHistory
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(8, 129)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(78, 13)
+        Label1.Size = New System.Drawing.Size(96, 17)
         Label1.TabIndex = 35
         Label1.Text = "Freeze Protect"
         '
@@ -279,7 +279,7 @@ Partial Class frmFreightChargesHistory
         Label3.AutoSize = True
         Label3.Location = New System.Drawing.Point(180, 83)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(48, 13)
+        Label3.Size = New System.Drawing.Size(59, 17)
         Label3.TabIndex = 37
         Label3.Text = "Variance"
         '
@@ -288,7 +288,7 @@ Partial Class frmFreightChargesHistory
         Label9.AutoSize = True
         Label9.Location = New System.Drawing.Point(262, 83)
         Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(18, 13)
+        Label9.Size = New System.Drawing.Size(22, 17)
         Label9.TabIndex = 39
         Label9.Text = "%"
         '
@@ -307,7 +307,7 @@ Partial Class frmFreightChargesHistory
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.Size = New System.Drawing.Size(1382, 116)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1382, 145)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnSave
@@ -376,6 +376,13 @@ Partial Class frmFreightChargesHistory
         Me.rbtEmailFreightChargesHistory.ImageOptions.LargeImageIndex = 3
         Me.rbtEmailFreightChargesHistory.Name = "rbtEmailFreightChargesHistory"
         '
+        'rbtnPrint
+        '
+        Me.rbtnPrint.Caption = "Print"
+        Me.rbtnPrint.Id = 13
+        Me.rbtnPrint.ImageOptions.LargeImageIndex = 5
+        Me.rbtnPrint.Name = "rbtnPrint"
+        '
         'LoadMgmt_Images
         '
         Me.LoadMgmt_Images.ImageSize = New System.Drawing.Size(32, 32)
@@ -412,9 +419,9 @@ Partial Class frmFreightChargesHistory
         Me.PanelControl1.Controls.Add(Me.GroupControl4)
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 116)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 145)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1382, 678)
+        Me.PanelControl1.Size = New System.Drawing.Size(1382, 649)
         Me.PanelControl1.TabIndex = 1
         '
         'GroupControl4
@@ -424,7 +431,7 @@ Partial Class frmFreightChargesHistory
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(0, 216)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1382, 462)
+        Me.GroupControl4.Size = New System.Drawing.Size(1382, 433)
         Me.GroupControl4.TabIndex = 6
         Me.GroupControl4.Text = "Work Order Items"
         '
@@ -436,7 +443,7 @@ Partial Class frmFreightChargesHistory
         Me.grFreightChargeHistory.MainView = Me.grvFreightChargesHistory
         Me.grFreightChargeHistory.Name = "grFreightChargeHistory"
         Me.grFreightChargeHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.luProductDesc, Me.luContainer, Me.luStdgallons, Me.RepositoryItemCheckEdit1, Me.RepositoryItemLookUpEdit1})
-        Me.grFreightChargeHistory.Size = New System.Drawing.Size(1382, 462)
+        Me.grFreightChargeHistory.Size = New System.Drawing.Size(1382, 433)
         Me.grFreightChargeHistory.TabIndex = 4
         Me.grFreightChargeHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvFreightChargesHistory})
         '
@@ -471,7 +478,7 @@ Partial Class frmFreightChargesHistory
         '
         'colCarrierName
         '
-        Me.colCarrierName.FieldName = "CarrierName"
+        Me.colCarrierName.FieldName = "ScheduledCarrierName"
         Me.colCarrierName.Name = "colCarrierName"
         Me.colCarrierName.Visible = True
         Me.colCarrierName.VisibleIndex = 2
@@ -641,7 +648,7 @@ Partial Class frmFreightChargesHistory
         Me.txtVariance.Location = New System.Drawing.Point(234, 80)
         Me.txtVariance.MenuManager = Me.RibbonControl1
         Me.txtVariance.Name = "txtVariance"
-        Me.txtVariance.Size = New System.Drawing.Size(31, 20)
+        Me.txtVariance.Size = New System.Drawing.Size(31, 22)
         Me.txtVariance.TabIndex = 42
         '
         'txtSkids
@@ -649,7 +656,7 @@ Partial Class frmFreightChargesHistory
         Me.txtSkids.Location = New System.Drawing.Point(76, 102)
         Me.txtSkids.MenuManager = Me.RibbonControl1
         Me.txtSkids.Name = "txtSkids"
-        Me.txtSkids.Size = New System.Drawing.Size(80, 20)
+        Me.txtSkids.Size = New System.Drawing.Size(80, 22)
         Me.txtSkids.TabIndex = 41
         '
         'txtTotalWeight
@@ -657,7 +664,7 @@ Partial Class frmFreightChargesHistory
         Me.txtTotalWeight.Location = New System.Drawing.Point(76, 80)
         Me.txtTotalWeight.MenuManager = Me.RibbonControl1
         Me.txtTotalWeight.Name = "txtTotalWeight"
-        Me.txtTotalWeight.Size = New System.Drawing.Size(80, 20)
+        Me.txtTotalWeight.Size = New System.Drawing.Size(80, 22)
         Me.txtTotalWeight.TabIndex = 40
         '
         'ShipmentdateDateEdit
@@ -670,7 +677,7 @@ Partial Class frmFreightChargesHistory
         Me.ShipmentdateDateEdit.Name = "ShipmentdateDateEdit"
         Me.ShipmentdateDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ShipmentdateDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.ShipmentdateDateEdit.Size = New System.Drawing.Size(150, 20)
+        Me.ShipmentdateDateEdit.Size = New System.Drawing.Size(150, 22)
         Me.ShipmentdateDateEdit.TabIndex = 0
         '
         'bsLoadInfo
@@ -685,7 +692,7 @@ Partial Class frmFreightChargesHistory
         Me.LoadNumberTextEdit.MenuManager = Me.RibbonControl1
         Me.LoadNumberTextEdit.Name = "LoadNumberTextEdit"
         Me.LoadNumberTextEdit.Properties.ReadOnly = True
-        Me.LoadNumberTextEdit.Size = New System.Drawing.Size(150, 20)
+        Me.LoadNumberTextEdit.Size = New System.Drawing.Size(150, 22)
         Me.LoadNumberTextEdit.TabIndex = 1
         Me.LoadNumberTextEdit.TabStop = False
         '
@@ -715,7 +722,7 @@ Partial Class frmFreightChargesHistory
         Me.TextEdit3.Location = New System.Drawing.Point(94, 28)
         Me.TextEdit3.MenuManager = Me.RibbonControl1
         Me.TextEdit3.Name = "TextEdit3"
-        Me.TextEdit3.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit3.Size = New System.Drawing.Size(240, 22)
         Me.TextEdit3.TabIndex = 21
         '
         'TextEdit2
@@ -724,7 +731,7 @@ Partial Class frmFreightChargesHistory
         Me.TextEdit2.Location = New System.Drawing.Point(94, 54)
         Me.TextEdit2.MenuManager = Me.RibbonControl1
         Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit2.Size = New System.Drawing.Size(240, 22)
         Me.TextEdit2.TabIndex = 1
         '
         'TextEdit4
@@ -733,7 +740,7 @@ Partial Class frmFreightChargesHistory
         Me.TextEdit4.Location = New System.Drawing.Point(266, 106)
         Me.TextEdit4.MenuManager = Me.RibbonControl1
         Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Size = New System.Drawing.Size(68, 20)
+        Me.TextEdit4.Size = New System.Drawing.Size(68, 22)
         Me.TextEdit4.TabIndex = 5
         '
         'TextEdit5
@@ -742,7 +749,7 @@ Partial Class frmFreightChargesHistory
         Me.TextEdit5.Location = New System.Drawing.Point(94, 80)
         Me.TextEdit5.MenuManager = Me.RibbonControl1
         Me.TextEdit5.Name = "TextEdit5"
-        Me.TextEdit5.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit5.Size = New System.Drawing.Size(240, 22)
         Me.TextEdit5.TabIndex = 2
         '
         'TextEdit6
@@ -751,7 +758,7 @@ Partial Class frmFreightChargesHistory
         Me.TextEdit6.Location = New System.Drawing.Point(232, 106)
         Me.TextEdit6.MenuManager = Me.RibbonControl1
         Me.TextEdit6.Name = "TextEdit6"
-        Me.TextEdit6.Size = New System.Drawing.Size(28, 20)
+        Me.TextEdit6.Size = New System.Drawing.Size(28, 22)
         Me.TextEdit6.TabIndex = 4
         '
         'TextEdit7
@@ -760,7 +767,7 @@ Partial Class frmFreightChargesHistory
         Me.TextEdit7.Location = New System.Drawing.Point(94, 106)
         Me.TextEdit7.MenuManager = Me.RibbonControl1
         Me.TextEdit7.Name = "TextEdit7"
-        Me.TextEdit7.Size = New System.Drawing.Size(132, 20)
+        Me.TextEdit7.Size = New System.Drawing.Size(132, 22)
         Me.TextEdit7.TabIndex = 3
         '
         'GroupControl2
@@ -788,7 +795,7 @@ Partial Class frmFreightChargesHistory
         Me.TextEdit1.Location = New System.Drawing.Point(94, 28)
         Me.TextEdit1.MenuManager = Me.RibbonControl1
         Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit1.Size = New System.Drawing.Size(240, 22)
         Me.TextEdit1.TabIndex = 21
         '
         'Shipfromaddress1TextEdit
@@ -798,7 +805,7 @@ Partial Class frmFreightChargesHistory
         Me.Shipfromaddress1TextEdit.Location = New System.Drawing.Point(94, 54)
         Me.Shipfromaddress1TextEdit.MenuManager = Me.RibbonControl1
         Me.Shipfromaddress1TextEdit.Name = "Shipfromaddress1TextEdit"
-        Me.Shipfromaddress1TextEdit.Size = New System.Drawing.Size(240, 20)
+        Me.Shipfromaddress1TextEdit.Size = New System.Drawing.Size(240, 22)
         Me.Shipfromaddress1TextEdit.TabIndex = 1
         '
         'ShipfrompostalcodeTextEdit
@@ -808,7 +815,7 @@ Partial Class frmFreightChargesHistory
         Me.ShipfrompostalcodeTextEdit.Location = New System.Drawing.Point(266, 106)
         Me.ShipfrompostalcodeTextEdit.MenuManager = Me.RibbonControl1
         Me.ShipfrompostalcodeTextEdit.Name = "ShipfrompostalcodeTextEdit"
-        Me.ShipfrompostalcodeTextEdit.Size = New System.Drawing.Size(68, 20)
+        Me.ShipfrompostalcodeTextEdit.Size = New System.Drawing.Size(68, 22)
         Me.ShipfrompostalcodeTextEdit.TabIndex = 5
         '
         'Shipfromaddress2TextEdit
@@ -818,7 +825,7 @@ Partial Class frmFreightChargesHistory
         Me.Shipfromaddress2TextEdit.Location = New System.Drawing.Point(94, 80)
         Me.Shipfromaddress2TextEdit.MenuManager = Me.RibbonControl1
         Me.Shipfromaddress2TextEdit.Name = "Shipfromaddress2TextEdit"
-        Me.Shipfromaddress2TextEdit.Size = New System.Drawing.Size(240, 20)
+        Me.Shipfromaddress2TextEdit.Size = New System.Drawing.Size(240, 22)
         Me.Shipfromaddress2TextEdit.TabIndex = 2
         '
         'ShipfromstateprovTextEdit
@@ -828,7 +835,7 @@ Partial Class frmFreightChargesHistory
         Me.ShipfromstateprovTextEdit.Location = New System.Drawing.Point(232, 106)
         Me.ShipfromstateprovTextEdit.MenuManager = Me.RibbonControl1
         Me.ShipfromstateprovTextEdit.Name = "ShipfromstateprovTextEdit"
-        Me.ShipfromstateprovTextEdit.Size = New System.Drawing.Size(28, 20)
+        Me.ShipfromstateprovTextEdit.Size = New System.Drawing.Size(28, 22)
         Me.ShipfromstateprovTextEdit.TabIndex = 4
         '
         'ShipfromcityTextEdit
@@ -838,15 +845,8 @@ Partial Class frmFreightChargesHistory
         Me.ShipfromcityTextEdit.Location = New System.Drawing.Point(94, 106)
         Me.ShipfromcityTextEdit.MenuManager = Me.RibbonControl1
         Me.ShipfromcityTextEdit.Name = "ShipfromcityTextEdit"
-        Me.ShipfromcityTextEdit.Size = New System.Drawing.Size(132, 20)
+        Me.ShipfromcityTextEdit.Size = New System.Drawing.Size(132, 22)
         Me.ShipfromcityTextEdit.TabIndex = 3
-        '
-        'rbtnPrint
-        '
-        Me.rbtnPrint.Caption = "Print"
-        Me.rbtnPrint.Id = 13
-        Me.rbtnPrint.ImageOptions.LargeImageIndex = 5
-        Me.rbtnPrint.Name = "rbtnPrint"
         '
         'frmFreightChargesHistory
         '
