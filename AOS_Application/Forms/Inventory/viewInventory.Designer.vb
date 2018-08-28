@@ -141,6 +141,32 @@ Partial Class viewInventory
         Me.bsItems = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.WorkPanelsHolder = New DevExpress.XtraEditors.PanelControl()
+        Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.grpInventoryItems = New DevExpress.XtraEditors.GroupControl()
+        Me.grInventoryItems = New DevExpress.XtraGrid.GridControl()
+        Me.InventoryList = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colInvitemnumber1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colWarehousenumber1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEditWarehouse = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.bsWarehouse = New System.Windows.Forms.BindingSource(Me.components)
+        Me.colWarehouselocation2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductid3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductid4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.colContainer2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLotnumber2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colReceiveddate1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colAllocateddate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colShippeddate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colItemstatus = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit9 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.RepositoryItemLookUpEdit11 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.LayoutView1 = New DevExpress.XtraGrid.Views.Layout.LayoutView()
+        Me.GridView12 = New AOS.CustomClasses.CustomDevExGridView()
         Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcProducts = New DevExpress.XtraEditors.GroupControl()
@@ -217,30 +243,6 @@ Partial Class viewInventory
         Me.colAltUnitcost = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit16 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemLookUpEdit17 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.grpInventoryItems = New DevExpress.XtraEditors.GroupControl()
-        Me.grInventoryItems = New DevExpress.XtraGrid.GridControl()
-        Me.InventoryList = New AOS.CustomClasses.CustomDevExGridView()
-        Me.colInvitemnumber1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colWarehousenumber1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colWarehouselocation2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductid3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductid4 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.colContainer2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colLotnumber2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colReceiveddate1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colAllocateddate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colShippeddate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colItemstatus = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit9 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.RepositoryItemLookUpEdit11 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.LayoutView1 = New DevExpress.XtraGrid.Views.Layout.LayoutView()
-        Me.GridView12 = New AOS.CustomClasses.CustomDevExGridView()
         Me.RibbonPanelControl5 = New DevExpress.XtraEditors.PanelControl()
         Me.RibbonPanelControl4 = New DevExpress.XtraEditors.PanelControl()
         Me.RibbonPanelControl6 = New DevExpress.XtraEditors.PanelControl()
@@ -298,6 +300,20 @@ Partial Class viewInventory
         CType(Me.bsItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WorkPanelsHolder.SuspendLayout()
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl3.SuspendLayout()
+        CType(Me.grpInventoryItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpInventoryItems.SuspendLayout()
+        CType(Me.grInventoryItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InventoryList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEditWarehouse, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsWarehouse, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl1.SuspendLayout()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -354,18 +370,6 @@ Partial Class viewInventory
         CType(Me.GridView9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl3.SuspendLayout()
-        CType(Me.grpInventoryItems, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grpInventoryItems.SuspendLayout()
-        CType(Me.grInventoryItems, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.InventoryList, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -464,7 +468,7 @@ Partial Class viewInventory
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage6})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemTextEdit4, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemDateEdit3, Me.RepositoryItemCheckedComboBoxEdit1, Me.RepositoryItemLookUpEdit15})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1494, 117)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1494, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnAddProduct
@@ -1384,804 +1388,10 @@ Partial Class viewInventory
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl6)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl7)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 150)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 149)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1494, 582)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1494, 583)
         Me.WorkPanelsHolder.TabIndex = 5
-        '
-        'RibbonPanelControl1
-        '
-        Me.RibbonPanelControl1.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.RibbonPanelControl1.Appearance.Options.UseBackColor = True
-        Me.RibbonPanelControl1.Controls.Add(Me.SplitContainerControl1)
-        Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
-        Me.RibbonPanelControl1.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1494, 582)
-        Me.RibbonPanelControl1.TabIndex = 0
-        '
-        'SplitContainerControl1
-        '
-        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(8, 8)
-        Me.SplitContainerControl1.Name = "SplitContainerControl1"
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.gcProducts)
-        Me.SplitContainerControl1.Panel1.Text = "Panel1"
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.GroupControl2)
-        Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(1478, 566)
-        Me.SplitContainerControl1.SplitterPosition = 892
-        Me.SplitContainerControl1.TabIndex = 0
-        Me.SplitContainerControl1.Text = "SplitContainerControl1"
-        '
-        'gcProducts
-        '
-        Me.gcProducts.Controls.Add(Me.grProducts)
-        Me.gcProducts.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcProducts.Location = New System.Drawing.Point(0, 0)
-        Me.gcProducts.Name = "gcProducts"
-        Me.gcProducts.Size = New System.Drawing.Size(892, 566)
-        Me.gcProducts.TabIndex = 0
-        Me.gcProducts.Text = "Products"
-        '
-        'grProducts
-        '
-        Me.grProducts.DataSource = Me.bsProducts
-        Me.grProducts.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grProducts.Location = New System.Drawing.Point(2, 22)
-        Me.grProducts.MainView = Me.ProductsView
-        Me.grProducts.Name = "grProducts"
-        Me.grProducts.Size = New System.Drawing.Size(888, 542)
-        Me.grProducts.TabIndex = 0
-        Me.grProducts.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.ProductsView, Me.GridView15})
-        '
-        'ProductsView
-        '
-        Me.ProductsView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid, Me.colProductdesc, Me.colContainer, Me.GridColumn3, Me.colChemicalid, Me.colChemicalname, Me.colProductstatus})
-        Me.ProductsView.GridControl = Me.grProducts
-        Me.ProductsView.Name = "ProductsView"
-        Me.ProductsView.OptionsBehavior.Editable = False
-        Me.ProductsView.OptionsSelection.MultiSelect = True
-        Me.ProductsView.OptionsView.ShowAutoFilterRow = True
-        Me.ProductsView.OptionsView.ShowGroupPanel = False
-        Me.ProductsView.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colProductdesc, DevExpress.Data.ColumnSortOrder.Ascending)})
-        '
-        'colProductid
-        '
-        Me.colProductid.Caption = "Prod ID"
-        Me.colProductid.FieldName = "Productid"
-        Me.colProductid.Name = "colProductid"
-        Me.colProductid.OptionsColumn.AllowEdit = False
-        Me.colProductid.Visible = True
-        Me.colProductid.VisibleIndex = 0
-        Me.colProductid.Width = 81
-        '
-        'colProductdesc
-        '
-        Me.colProductdesc.Caption = "Product Description"
-        Me.colProductdesc.FieldName = "Productdesc"
-        Me.colProductdesc.Name = "colProductdesc"
-        Me.colProductdesc.OptionsColumn.AllowEdit = False
-        Me.colProductdesc.Visible = True
-        Me.colProductdesc.VisibleIndex = 1
-        Me.colProductdesc.Width = 228
-        '
-        'colContainer
-        '
-        Me.colContainer.Caption = "Container"
-        Me.colContainer.FieldName = "Container"
-        Me.colContainer.Name = "colContainer"
-        Me.colContainer.OptionsColumn.AllowEdit = False
-        Me.colContainer.Visible = True
-        Me.colContainer.VisibleIndex = 3
-        Me.colContainer.Width = 85
-        '
-        'GridColumn3
-        '
-        Me.GridColumn3.Caption = "Addn Desc"
-        Me.GridColumn3.FieldName = "Desc2"
-        Me.GridColumn3.Name = "GridColumn3"
-        Me.GridColumn3.OptionsColumn.AllowEdit = False
-        Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 2
-        Me.GridColumn3.Width = 142
-        '
-        'colChemicalid
-        '
-        Me.colChemicalid.Caption = "Chem ID"
-        Me.colChemicalid.FieldName = "Chemicalid"
-        Me.colChemicalid.Name = "colChemicalid"
-        Me.colChemicalid.Visible = True
-        Me.colChemicalid.VisibleIndex = 4
-        Me.colChemicalid.Width = 59
-        '
-        'colChemicalname
-        '
-        Me.colChemicalname.Caption = "Chemical Name"
-        Me.colChemicalname.FieldName = "Chemicalname"
-        Me.colChemicalname.Name = "colChemicalname"
-        Me.colChemicalname.Visible = True
-        Me.colChemicalname.VisibleIndex = 5
-        Me.colChemicalname.Width = 217
-        '
-        'colProductstatus
-        '
-        Me.colProductstatus.Caption = "Status"
-        Me.colProductstatus.FieldName = "Productstatus"
-        Me.colProductstatus.Name = "colProductstatus"
-        Me.colProductstatus.Visible = True
-        Me.colProductstatus.VisibleIndex = 6
-        Me.colProductstatus.Width = 61
-        '
-        'GridView15
-        '
-        Me.GridView15.GridControl = Me.grProducts
-        Me.GridView15.Name = "GridView15"
-        '
-        'GroupControl2
-        '
-        Me.GroupControl2.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.GroupControl2.AppearanceCaption.Options.UseBackColor = True
-        Me.GroupControl2.Controls.Add(Me.grItems)
-        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(580, 566)
-        Me.GroupControl2.TabIndex = 1
-        Me.GroupControl2.Text = "Inventory Items"
-        '
-        'grItems
-        '
-        Me.grItems.DataSource = Me.bsItems
-        Me.grItems.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grItems.Location = New System.Drawing.Point(2, 22)
-        Me.grItems.MainView = Me.InventoryItemsView
-        Me.grItems.Name = "grItems"
-        Me.grItems.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit8, Me.RepositoryItemLookUpEdit10})
-        Me.grItems.Size = New System.Drawing.Size(576, 542)
-        Me.grItems.TabIndex = 0
-        Me.grItems.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.InventoryItemsView, Me.GridView13})
-        '
-        'InventoryItemsView
-        '
-        Me.InventoryItemsView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colInvitemnumber, Me.colProductid1, Me.GridColumn1, Me.colWarehouselocation, Me.colLotnumber, Me.GridColumn4})
-        Me.InventoryItemsView.GridControl = Me.grItems
-        Me.InventoryItemsView.Name = "InventoryItemsView"
-        Me.InventoryItemsView.OptionsSelection.MultiSelect = True
-        Me.InventoryItemsView.OptionsView.ShowAutoFilterRow = True
-        Me.InventoryItemsView.OptionsView.ShowGroupPanel = False
-        '
-        'colInvitemnumber
-        '
-        Me.colInvitemnumber.Caption = "Item #"
-        Me.colInvitemnumber.FieldName = "Invitemnumber"
-        Me.colInvitemnumber.Name = "colInvitemnumber"
-        Me.colInvitemnumber.OptionsColumn.AllowEdit = False
-        Me.colInvitemnumber.Visible = True
-        Me.colInvitemnumber.VisibleIndex = 0
-        Me.colInvitemnumber.Width = 56
-        '
-        'colProductid1
-        '
-        Me.colProductid1.Caption = "Prod ID"
-        Me.colProductid1.FieldName = "Productid"
-        Me.colProductid1.Name = "colProductid1"
-        Me.colProductid1.OptionsColumn.AllowEdit = False
-        Me.colProductid1.Visible = True
-        Me.colProductid1.VisibleIndex = 1
-        Me.colProductid1.Width = 58
-        '
-        'GridColumn1
-        '
-        Me.GridColumn1.Caption = "Product Description"
-        Me.GridColumn1.ColumnEdit = Me.RepositoryItemLookUpEdit8
-        Me.GridColumn1.FieldName = "Productid"
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.OptionsColumn.AllowEdit = False
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 2
-        Me.GridColumn1.Width = 156
-        '
-        'RepositoryItemLookUpEdit8
-        '
-        Me.RepositoryItemLookUpEdit8.AutoHeight = False
-        Me.RepositoryItemLookUpEdit8.DataSource = Me.bsProducts
-        Me.RepositoryItemLookUpEdit8.DisplayMember = "Productdesc"
-        Me.RepositoryItemLookUpEdit8.Name = "RepositoryItemLookUpEdit8"
-        Me.RepositoryItemLookUpEdit8.NullText = ""
-        Me.RepositoryItemLookUpEdit8.ReadOnly = True
-        Me.RepositoryItemLookUpEdit8.ValueMember = "Productid"
-        '
-        'colWarehouselocation
-        '
-        Me.colWarehouselocation.Caption = "Warehouse"
-        Me.colWarehouselocation.FieldName = "Warehouselocation"
-        Me.colWarehouselocation.Name = "colWarehouselocation"
-        Me.colWarehouselocation.OptionsColumn.AllowEdit = False
-        Me.colWarehouselocation.Visible = True
-        Me.colWarehouselocation.VisibleIndex = 4
-        '
-        'colLotnumber
-        '
-        Me.colLotnumber.Caption = "Lot #"
-        Me.colLotnumber.FieldName = "Lotnumber"
-        Me.colLotnumber.Name = "colLotnumber"
-        Me.colLotnumber.OptionsColumn.AllowEdit = False
-        Me.colLotnumber.Visible = True
-        Me.colLotnumber.VisibleIndex = 5
-        Me.colLotnumber.Width = 76
-        '
-        'GridColumn4
-        '
-        Me.GridColumn4.Caption = "Addn Desc"
-        Me.GridColumn4.ColumnEdit = Me.RepositoryItemLookUpEdit10
-        Me.GridColumn4.FieldName = "Productid"
-        Me.GridColumn4.Name = "GridColumn4"
-        Me.GridColumn4.OptionsColumn.AllowEdit = False
-        Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 3
-        Me.GridColumn4.Width = 78
-        '
-        'RepositoryItemLookUpEdit10
-        '
-        Me.RepositoryItemLookUpEdit10.AutoHeight = False
-        Me.RepositoryItemLookUpEdit10.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit10.DataSource = Me.bsProducts
-        Me.RepositoryItemLookUpEdit10.DisplayMember = "Desc2"
-        Me.RepositoryItemLookUpEdit10.Name = "RepositoryItemLookUpEdit10"
-        Me.RepositoryItemLookUpEdit10.NullText = ""
-        Me.RepositoryItemLookUpEdit10.ValueMember = "Productid"
-        '
-        'GridView13
-        '
-        Me.GridView13.GridControl = Me.grItems
-        Me.GridView13.Name = "GridView13"
-        '
-        'RibbonPanelControl2
-        '
-        Me.RibbonPanelControl2.Controls.Add(Me.pnlKitHolder)
-        Me.RibbonPanelControl2.Controls.Add(Me.pnlComponentHolder)
-        Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1494, 582)
-        Me.RibbonPanelControl2.TabIndex = 2
-        '
-        'pnlKitHolder
-        '
-        Me.pnlKitHolder.Controls.Add(Me.gcKit)
-        Me.pnlKitHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlKitHolder.Location = New System.Drawing.Point(2, 2)
-        Me.pnlKitHolder.Name = "pnlKitHolder"
-        Me.pnlKitHolder.Size = New System.Drawing.Size(1490, 578)
-        Me.pnlKitHolder.TabIndex = 4
-        '
-        'gcKit
-        '
-        Me.gcKit.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.gcKit.Appearance.Options.UseBackColor = True
-        Me.gcKit.Controls.Add(Me.SplitContainerControl5)
-        Me.gcKit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcKit.Location = New System.Drawing.Point(2, 2)
-        Me.gcKit.Name = "gcKit"
-        Me.gcKit.Padding = New System.Windows.Forms.Padding(6)
-        Me.gcKit.Size = New System.Drawing.Size(1486, 574)
-        Me.gcKit.TabIndex = 2
-        '
-        'SplitContainerControl5
-        '
-        Me.SplitContainerControl5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl5.Location = New System.Drawing.Point(8, 8)
-        Me.SplitContainerControl5.Name = "SplitContainerControl5"
-        Me.SplitContainerControl5.Panel1.Controls.Add(Me.GroupControl13)
-        Me.SplitContainerControl5.Panel1.Text = "Panel1"
-        Me.SplitContainerControl5.Panel2.Controls.Add(Me.GroupControl12)
-        Me.SplitContainerControl5.Panel2.Text = "Panel2"
-        Me.SplitContainerControl5.Size = New System.Drawing.Size(1470, 558)
-        Me.SplitContainerControl5.SplitterPosition = 495
-        Me.SplitContainerControl5.TabIndex = 0
-        Me.SplitContainerControl5.Text = "SplitContainerControl5"
-        '
-        'GroupControl13
-        '
-        Me.GroupControl13.Controls.Add(Me.grKit)
-        Me.GroupControl13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl13.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl13.Name = "GroupControl13"
-        Me.GroupControl13.Size = New System.Drawing.Size(495, 558)
-        Me.GroupControl13.TabIndex = 1
-        Me.GroupControl13.Text = "Kits"
-        '
-        'grKit
-        '
-        Me.grKit.DataSource = Me.bsKit
-        Me.grKit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grKit.Location = New System.Drawing.Point(2, 22)
-        Me.grKit.MainView = Me.GridView11
-        Me.grKit.Name = "grKit"
-        Me.grKit.Size = New System.Drawing.Size(491, 534)
-        Me.grKit.TabIndex = 0
-        Me.grKit.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView11, Me.GridView7})
-        '
-        'bsKit
-        '
-        Me.bsKit.DataSource = GetType(AOS.BusinessObjects.ViewKitInfoCollection)
-        '
-        'GridView11
-        '
-        Me.GridView11.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKitid, Me.colKitname, Me.colKitCost})
-        Me.GridView11.CustomizationFormBounds = New System.Drawing.Rectangle(360, 473, 216, 185)
-        Me.GridView11.GridControl = Me.grKit
-        Me.GridView11.Name = "GridView11"
-        Me.GridView11.OptionsBehavior.Editable = False
-        Me.GridView11.OptionsSelection.MultiSelect = True
-        Me.GridView11.OptionsView.ShowAutoFilterRow = True
-        Me.GridView11.OptionsView.ShowGroupPanel = False
-        '
-        'colKitid
-        '
-        Me.colKitid.Caption = "Kit ID "
-        Me.colKitid.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colKitid.FieldName = "Kitid"
-        Me.colKitid.Name = "colKitid"
-        Me.colKitid.OptionsColumn.AllowEdit = False
-        Me.colKitid.OptionsColumn.FixedWidth = True
-        Me.colKitid.Visible = True
-        Me.colKitid.VisibleIndex = 0
-        Me.colKitid.Width = 49
-        '
-        'colKitname
-        '
-        Me.colKitname.Caption = "Kit Name "
-        Me.colKitname.FieldName = "Kitname"
-        Me.colKitname.Name = "colKitname"
-        Me.colKitname.OptionsColumn.AllowEdit = False
-        Me.colKitname.Visible = True
-        Me.colKitname.VisibleIndex = 1
-        Me.colKitname.Width = 358
-        '
-        'colKitCost
-        '
-        Me.colKitCost.Caption = "Kit Cost"
-        Me.colKitCost.DisplayFormat.FormatString = "c2"
-        Me.colKitCost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colKitCost.FieldName = "KitCost"
-        Me.colKitCost.Name = "colKitCost"
-        Me.colKitCost.OptionsColumn.FixedWidth = True
-        Me.colKitCost.Visible = True
-        Me.colKitCost.VisibleIndex = 2
-        Me.colKitCost.Width = 67
-        '
-        'GridView7
-        '
-        Me.GridView7.GridControl = Me.grKit
-        Me.GridView7.Name = "GridView7"
-        '
-        'GroupControl12
-        '
-        Me.GroupControl12.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.GroupControl12.AppearanceCaption.Options.UseBackColor = True
-        Me.GroupControl12.Controls.Add(Me.grKitItem)
-        Me.GroupControl12.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl12.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl12.Name = "GroupControl12"
-        Me.GroupControl12.Size = New System.Drawing.Size(969, 558)
-        Me.GroupControl12.TabIndex = 2
-        Me.GroupControl12.Text = "Kit Components"
-        '
-        'grKitItem
-        '
-        Me.grKitItem.DataSource = Me.bsKitItem
-        Me.grKitItem.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grKitItem.Location = New System.Drawing.Point(2, 22)
-        Me.grKitItem.MainView = Me.GridView10
-        Me.grKitItem.Name = "grKitItem"
-        Me.grKitItem.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit18, Me.RepositoryItemLookUpEdit19})
-        Me.grKitItem.Size = New System.Drawing.Size(965, 534)
-        Me.grKitItem.TabIndex = 0
-        Me.grKitItem.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView10, Me.GridView5})
-        '
-        'bsKitItem
-        '
-        Me.bsKitItem.DataSource = GetType(AOS.BusinessObjects.ViewKitComponentCollection)
-        '
-        'GridView10
-        '
-        Me.GridView10.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colComponentqty, Me.colComponentid1, Me.GridColumn18, Me.Vendordesc, Me.GridColumn20, Me.GridColumn21, Me.Unitcost})
-        Me.GridView10.GridControl = Me.grKitItem
-        Me.GridView10.Name = "GridView10"
-        Me.GridView10.OptionsSelection.MultiSelect = True
-        Me.GridView10.OptionsView.ShowAutoFilterRow = True
-        Me.GridView10.OptionsView.ShowGroupPanel = False
-        Me.GridView10.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumn21, DevExpress.Data.ColumnSortOrder.Descending)})
-        '
-        'colComponentqty
-        '
-        Me.colComponentqty.Caption = "Qty in Kit"
-        Me.colComponentqty.FieldName = "Componentqty"
-        Me.colComponentqty.Name = "colComponentqty"
-        Me.colComponentqty.OptionsColumn.FixedWidth = True
-        Me.colComponentqty.Visible = True
-        Me.colComponentqty.VisibleIndex = 0
-        Me.colComponentqty.Width = 64
-        '
-        'colComponentid1
-        '
-        Me.colComponentid1.Caption = "Comp ID"
-        Me.colComponentid1.FieldName = "Componentid"
-        Me.colComponentid1.Name = "colComponentid1"
-        Me.colComponentid1.OptionsColumn.FixedWidth = True
-        Me.colComponentid1.Visible = True
-        Me.colComponentid1.VisibleIndex = 1
-        Me.colComponentid1.Width = 62
-        '
-        'GridColumn18
-        '
-        Me.GridColumn18.Caption = "Americo Desc"
-        Me.GridColumn18.FieldName = "Componentdesc"
-        Me.GridColumn18.Name = "GridColumn18"
-        Me.GridColumn18.OptionsColumn.AllowEdit = False
-        Me.GridColumn18.OptionsColumn.ReadOnly = True
-        Me.GridColumn18.Visible = True
-        Me.GridColumn18.VisibleIndex = 2
-        Me.GridColumn18.Width = 235
-        '
-        'Vendordesc
-        '
-        Me.Vendordesc.Caption = "Vendor Desc"
-        Me.Vendordesc.FieldName = "Vendordesc"
-        Me.Vendordesc.Name = "Vendordesc"
-        Me.Vendordesc.OptionsColumn.AllowEdit = False
-        Me.Vendordesc.OptionsColumn.ReadOnly = True
-        Me.Vendordesc.Visible = True
-        Me.Vendordesc.VisibleIndex = 3
-        Me.Vendordesc.Width = 246
-        '
-        'GridColumn20
-        '
-        Me.GridColumn20.Caption = "Vendor Name "
-        Me.GridColumn20.FieldName = "Vendorname"
-        Me.GridColumn20.Name = "GridColumn20"
-        Me.GridColumn20.OptionsColumn.AllowEdit = False
-        Me.GridColumn20.OptionsColumn.ReadOnly = True
-        Me.GridColumn20.Visible = True
-        Me.GridColumn20.VisibleIndex = 4
-        Me.GridColumn20.Width = 172
-        '
-        'GridColumn21
-        '
-        Me.GridColumn21.Caption = "Vendor Item ID"
-        Me.GridColumn21.FieldName = "Vendoritemid"
-        Me.GridColumn21.Name = "GridColumn21"
-        Me.GridColumn21.OptionsColumn.AllowEdit = False
-        Me.GridColumn21.OptionsColumn.FixedWidth = True
-        Me.GridColumn21.OptionsColumn.ReadOnly = True
-        Me.GridColumn21.Visible = True
-        Me.GridColumn21.VisibleIndex = 5
-        Me.GridColumn21.Width = 99
-        '
-        'Unitcost
-        '
-        Me.Unitcost.AppearanceCell.Options.UseTextOptions = True
-        Me.Unitcost.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.Unitcost.AppearanceHeader.Options.UseTextOptions = True
-        Me.Unitcost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.Unitcost.Caption = "Unit Cost"
-        Me.Unitcost.DisplayFormat.FormatString = "c2"
-        Me.Unitcost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.Unitcost.FieldName = "Unitcost"
-        Me.Unitcost.Name = "Unitcost"
-        Me.Unitcost.OptionsColumn.AllowEdit = False
-        Me.Unitcost.OptionsColumn.FixedWidth = True
-        Me.Unitcost.OptionsColumn.ReadOnly = True
-        Me.Unitcost.Visible = True
-        Me.Unitcost.VisibleIndex = 6
-        Me.Unitcost.Width = 70
-        '
-        'RepositoryItemLookUpEdit18
-        '
-        Me.RepositoryItemLookUpEdit18.AutoHeight = False
-        Me.RepositoryItemLookUpEdit18.DataSource = Me.bsProducts
-        Me.RepositoryItemLookUpEdit18.DisplayMember = "Productdesc"
-        Me.RepositoryItemLookUpEdit18.Name = "RepositoryItemLookUpEdit18"
-        Me.RepositoryItemLookUpEdit18.NullText = ""
-        Me.RepositoryItemLookUpEdit18.ReadOnly = True
-        Me.RepositoryItemLookUpEdit18.ValueMember = "Productid"
-        '
-        'RepositoryItemLookUpEdit19
-        '
-        Me.RepositoryItemLookUpEdit19.AutoHeight = False
-        Me.RepositoryItemLookUpEdit19.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit19.DataSource = Me.bsProducts
-        Me.RepositoryItemLookUpEdit19.DisplayMember = "Desc2"
-        Me.RepositoryItemLookUpEdit19.Name = "RepositoryItemLookUpEdit19"
-        Me.RepositoryItemLookUpEdit19.NullText = ""
-        Me.RepositoryItemLookUpEdit19.ValueMember = "Productid"
-        '
-        'GridView5
-        '
-        Me.GridView5.GridControl = Me.grKitItem
-        Me.GridView5.Name = "GridView5"
-        '
-        'pnlComponentHolder
-        '
-        Me.pnlComponentHolder.Controls.Add(Me.gcComponent)
-        Me.pnlComponentHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlComponentHolder.Location = New System.Drawing.Point(2, 2)
-        Me.pnlComponentHolder.Name = "pnlComponentHolder"
-        Me.pnlComponentHolder.Size = New System.Drawing.Size(1490, 578)
-        Me.pnlComponentHolder.TabIndex = 3
-        '
-        'gcComponent
-        '
-        Me.gcComponent.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.gcComponent.Appearance.Options.UseBackColor = True
-        Me.gcComponent.Controls.Add(Me.SplitContainerControl4)
-        Me.gcComponent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcComponent.Location = New System.Drawing.Point(2, 2)
-        Me.gcComponent.Name = "gcComponent"
-        Me.gcComponent.Padding = New System.Windows.Forms.Padding(6)
-        Me.gcComponent.Size = New System.Drawing.Size(1486, 574)
-        Me.gcComponent.TabIndex = 2
-        '
-        'SplitContainerControl4
-        '
-        Me.SplitContainerControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl4.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2
-        Me.SplitContainerControl4.Horizontal = False
-        Me.SplitContainerControl4.Location = New System.Drawing.Point(8, 8)
-        Me.SplitContainerControl4.Name = "SplitContainerControl4"
-        Me.SplitContainerControl4.Panel1.Controls.Add(Me.GroupControl8)
-        Me.SplitContainerControl4.Panel1.Text = "Panel1"
-        Me.SplitContainerControl4.Panel2.Controls.Add(Me.GroupControl9)
-        Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(1470, 558)
-        Me.SplitContainerControl4.SplitterPosition = 201
-        Me.SplitContainerControl4.TabIndex = 0
-        Me.SplitContainerControl4.Text = "SplitContainerControl4"
-        '
-        'GroupControl8
-        '
-        Me.GroupControl8.Controls.Add(Me.grComponents)
-        Me.GroupControl8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl8.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl8.Name = "GroupControl8"
-        Me.GroupControl8.Size = New System.Drawing.Size(1470, 351)
-        Me.GroupControl8.TabIndex = 1
-        Me.GroupControl8.Text = "Components"
-        '
-        'grComponents
-        '
-        Me.grComponents.DataSource = Me.bsComponent
-        Me.grComponents.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grComponents.Location = New System.Drawing.Point(2, 22)
-        Me.grComponents.MainView = Me.GridView8
-        Me.grComponents.Name = "grComponents"
-        Me.grComponents.Size = New System.Drawing.Size(1466, 327)
-        Me.grComponents.TabIndex = 0
-        Me.grComponents.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView8})
-        '
-        'bsComponent
-        '
-        Me.bsComponent.DataSource = GetType(AOS.BusinessObjects.ComponentCollection)
-        '
-        'GridView8
-        '
-        Me.GridView8.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colComponentID, Me.colComponentdesc, Me.colVendordesc, Me.colVendorname, Me.colVendoritemid, Me.colUnitcost})
-        Me.GridView8.GridControl = Me.grComponents
-        Me.GridView8.Name = "GridView8"
-        Me.GridView8.OptionsBehavior.Editable = False
-        Me.GridView8.OptionsSelection.MultiSelect = True
-        Me.GridView8.OptionsView.ShowAutoFilterRow = True
-        Me.GridView8.OptionsView.ShowGroupPanel = False
-        Me.GridView8.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colVendordesc, DevExpress.Data.ColumnSortOrder.Ascending)})
-        '
-        'colComponentID
-        '
-        Me.colComponentID.Caption = "Comp ID "
-        Me.colComponentID.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colComponentID.FieldName = "Componentid"
-        Me.colComponentID.Name = "colComponentID"
-        Me.colComponentID.OptionsColumn.AllowEdit = False
-        Me.colComponentID.OptionsColumn.FixedWidth = True
-        Me.colComponentID.Visible = True
-        Me.colComponentID.VisibleIndex = 0
-        Me.colComponentID.Width = 55
-        '
-        'colComponentdesc
-        '
-        Me.colComponentdesc.Caption = "Americo Desc"
-        Me.colComponentdesc.FieldName = "Componentdesc"
-        Me.colComponentdesc.Name = "colComponentdesc"
-        Me.colComponentdesc.OptionsColumn.AllowEdit = False
-        Me.colComponentdesc.Visible = True
-        Me.colComponentdesc.VisibleIndex = 1
-        Me.colComponentdesc.Width = 411
-        '
-        'colVendordesc
-        '
-        Me.colVendordesc.Caption = "Vendor Desc"
-        Me.colVendordesc.FieldName = "Vendordesc"
-        Me.colVendordesc.Name = "colVendordesc"
-        Me.colVendordesc.OptionsColumn.AllowEdit = False
-        Me.colVendordesc.Visible = True
-        Me.colVendordesc.VisibleIndex = 2
-        Me.colVendordesc.Width = 344
-        '
-        'colVendorname
-        '
-        Me.colVendorname.Caption = "Vendor Name "
-        Me.colVendorname.FieldName = "Vendorname"
-        Me.colVendorname.Name = "colVendorname"
-        Me.colVendorname.OptionsColumn.AllowEdit = False
-        Me.colVendorname.Visible = True
-        Me.colVendorname.VisibleIndex = 3
-        Me.colVendorname.Width = 319
-        '
-        'colVendoritemid
-        '
-        Me.colVendoritemid.Caption = "Vendor Item ID"
-        Me.colVendoritemid.FieldName = "Vendoritemid"
-        Me.colVendoritemid.Name = "colVendoritemid"
-        Me.colVendoritemid.OptionsColumn.AllowEdit = False
-        Me.colVendoritemid.OptionsColumn.FixedWidth = True
-        Me.colVendoritemid.Visible = True
-        Me.colVendoritemid.VisibleIndex = 4
-        Me.colVendoritemid.Width = 85
-        '
-        'colUnitcost
-        '
-        Me.colUnitcost.AppearanceCell.Options.UseTextOptions = True
-        Me.colUnitcost.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.colUnitcost.AppearanceHeader.Options.UseTextOptions = True
-        Me.colUnitcost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.colUnitcost.Caption = "Unit Cost"
-        Me.colUnitcost.DisplayFormat.FormatString = "D4"
-        Me.colUnitcost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colUnitcost.FieldName = "Unitcost"
-        Me.colUnitcost.Name = "colUnitcost"
-        Me.colUnitcost.OptionsColumn.AllowEdit = False
-        Me.colUnitcost.OptionsColumn.FixedWidth = True
-        Me.colUnitcost.Visible = True
-        Me.colUnitcost.VisibleIndex = 5
-        Me.colUnitcost.Width = 60
-        '
-        'GroupControl9
-        '
-        Me.GroupControl9.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.GroupControl9.AppearanceCaption.Options.UseBackColor = True
-        Me.GroupControl9.Controls.Add(Me.grAltComponents)
-        Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl9.Name = "GroupControl9"
-        Me.GroupControl9.Size = New System.Drawing.Size(1470, 201)
-        Me.GroupControl9.TabIndex = 2
-        Me.GroupControl9.Text = "Component Alternate(s)"
-        '
-        'grAltComponents
-        '
-        Me.grAltComponents.DataSource = Me.bsAltComponent
-        Me.grAltComponents.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grAltComponents.Location = New System.Drawing.Point(2, 22)
-        Me.grAltComponents.MainView = Me.GridView9
-        Me.grAltComponents.Name = "grAltComponents"
-        Me.grAltComponents.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17})
-        Me.grAltComponents.Size = New System.Drawing.Size(1466, 177)
-        Me.grAltComponents.TabIndex = 0
-        Me.grAltComponents.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView9})
-        '
-        'bsAltComponent
-        '
-        Me.bsAltComponent.DataSource = GetType(AOS.BusinessObjects.ViewAltComponentCollection)
-        '
-        'GridView9
-        '
-        Me.GridView9.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colAltComponentid, Me.colAltComponentdesc, Me.colAltVendorname, Me.colAltVendordesc, Me.colAltVendoritemid, Me.colAltUnitcost})
-        Me.GridView9.GridControl = Me.grAltComponents
-        Me.GridView9.Name = "GridView9"
-        Me.GridView9.OptionsCustomization.AllowFilter = False
-        Me.GridView9.OptionsFilter.AllowFilterEditor = False
-        Me.GridView9.OptionsSelection.MultiSelect = True
-        Me.GridView9.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
-        Me.GridView9.OptionsView.ShowGroupPanel = False
-        Me.GridView9.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colAltComponentid, DevExpress.Data.ColumnSortOrder.Ascending)})
-        '
-        'colAltComponentid
-        '
-        Me.colAltComponentid.AppearanceCell.Options.UseTextOptions = True
-        Me.colAltComponentid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.colAltComponentid.Caption = "Comp ID"
-        Me.colAltComponentid.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colAltComponentid.FieldName = "Altcomponentid"
-        Me.colAltComponentid.Name = "colAltComponentid"
-        Me.colAltComponentid.OptionsColumn.AllowEdit = False
-        Me.colAltComponentid.OptionsColumn.FixedWidth = True
-        Me.colAltComponentid.OptionsColumn.ReadOnly = True
-        Me.colAltComponentid.Visible = True
-        Me.colAltComponentid.VisibleIndex = 0
-        Me.colAltComponentid.Width = 55
-        '
-        'colAltComponentdesc
-        '
-        Me.colAltComponentdesc.Caption = "Americo Desc"
-        Me.colAltComponentdesc.FieldName = "Componentdesc"
-        Me.colAltComponentdesc.Name = "colAltComponentdesc"
-        Me.colAltComponentdesc.OptionsColumn.AllowEdit = False
-        Me.colAltComponentdesc.OptionsColumn.ReadOnly = True
-        Me.colAltComponentdesc.Visible = True
-        Me.colAltComponentdesc.VisibleIndex = 1
-        Me.colAltComponentdesc.Width = 413
-        '
-        'colAltVendorname
-        '
-        Me.colAltVendorname.Caption = "Vendor Name "
-        Me.colAltVendorname.FieldName = "Vendorname"
-        Me.colAltVendorname.Name = "colAltVendorname"
-        Me.colAltVendorname.OptionsColumn.AllowEdit = False
-        Me.colAltVendorname.OptionsColumn.ReadOnly = True
-        Me.colAltVendorname.Visible = True
-        Me.colAltVendorname.VisibleIndex = 3
-        Me.colAltVendorname.Width = 319
-        '
-        'colAltVendordesc
-        '
-        Me.colAltVendordesc.Caption = "Vendor Desc"
-        Me.colAltVendordesc.FieldName = "Vendordesc"
-        Me.colAltVendordesc.Name = "colAltVendordesc"
-        Me.colAltVendordesc.OptionsColumn.AllowEdit = False
-        Me.colAltVendordesc.OptionsColumn.ReadOnly = True
-        Me.colAltVendordesc.Visible = True
-        Me.colAltVendordesc.VisibleIndex = 2
-        Me.colAltVendordesc.Width = 342
-        '
-        'colAltVendoritemid
-        '
-        Me.colAltVendoritemid.Caption = "Vendor Item ID"
-        Me.colAltVendoritemid.FieldName = "Vendoritemid"
-        Me.colAltVendoritemid.Name = "colAltVendoritemid"
-        Me.colAltVendoritemid.OptionsColumn.AllowEdit = False
-        Me.colAltVendoritemid.OptionsColumn.FixedWidth = True
-        Me.colAltVendoritemid.OptionsColumn.ReadOnly = True
-        Me.colAltVendoritemid.Visible = True
-        Me.colAltVendoritemid.VisibleIndex = 4
-        Me.colAltVendoritemid.Width = 85
-        '
-        'colAltUnitcost
-        '
-        Me.colAltUnitcost.AppearanceHeader.Options.UseTextOptions = True
-        Me.colAltUnitcost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.colAltUnitcost.Caption = "Unit Cost"
-        Me.colAltUnitcost.DisplayFormat.FormatString = "c4"
-        Me.colAltUnitcost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.colAltUnitcost.FieldName = "Unitcost"
-        Me.colAltUnitcost.Name = "colAltUnitcost"
-        Me.colAltUnitcost.OptionsColumn.AllowEdit = False
-        Me.colAltUnitcost.OptionsColumn.FixedWidth = True
-        Me.colAltUnitcost.OptionsColumn.ReadOnly = True
-        Me.colAltUnitcost.Visible = True
-        Me.colAltUnitcost.VisibleIndex = 5
-        Me.colAltUnitcost.Width = 60
-        '
-        'RepositoryItemLookUpEdit16
-        '
-        Me.RepositoryItemLookUpEdit16.AutoHeight = False
-        Me.RepositoryItemLookUpEdit16.DataSource = Me.bsProducts
-        Me.RepositoryItemLookUpEdit16.DisplayMember = "Productdesc"
-        Me.RepositoryItemLookUpEdit16.Name = "RepositoryItemLookUpEdit16"
-        Me.RepositoryItemLookUpEdit16.NullText = ""
-        Me.RepositoryItemLookUpEdit16.ReadOnly = True
-        Me.RepositoryItemLookUpEdit16.ValueMember = "Productid"
-        '
-        'RepositoryItemLookUpEdit17
-        '
-        Me.RepositoryItemLookUpEdit17.AutoHeight = False
-        Me.RepositoryItemLookUpEdit17.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit17.DataSource = Me.bsProducts
-        Me.RepositoryItemLookUpEdit17.DisplayMember = "Desc2"
-        Me.RepositoryItemLookUpEdit17.Name = "RepositoryItemLookUpEdit17"
-        Me.RepositoryItemLookUpEdit17.NullText = ""
-        Me.RepositoryItemLookUpEdit17.ValueMember = "Productid"
         '
         'RibbonPanelControl3
         '
@@ -2189,7 +1399,7 @@ Partial Class viewInventory
         Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1494, 582)
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1494, 583)
         Me.RibbonPanelControl3.TabIndex = 1
         '
         'grpInventoryItems
@@ -2198,7 +1408,7 @@ Partial Class viewInventory
         Me.grpInventoryItems.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpInventoryItems.Location = New System.Drawing.Point(2, 2)
         Me.grpInventoryItems.Name = "grpInventoryItems"
-        Me.grpInventoryItems.Size = New System.Drawing.Size(1490, 578)
+        Me.grpInventoryItems.Size = New System.Drawing.Size(1490, 579)
         Me.grpInventoryItems.TabIndex = 0
         Me.grpInventoryItems.Text = "Inventory Items"
         '
@@ -2206,11 +1416,11 @@ Partial Class viewInventory
         '
         Me.grInventoryItems.DataSource = Me.bsInventoryItems
         Me.grInventoryItems.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grInventoryItems.Location = New System.Drawing.Point(2, 22)
+        Me.grInventoryItems.Location = New System.Drawing.Point(2, 20)
         Me.grInventoryItems.MainView = Me.InventoryList
         Me.grInventoryItems.Name = "grInventoryItems"
-        Me.grInventoryItems.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemLookUpEdit11, Me.RepositoryItemLookUpEdit12})
-        Me.grInventoryItems.Size = New System.Drawing.Size(1486, 554)
+        Me.grInventoryItems.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemLookUpEdit11, Me.RepositoryItemLookUpEdit12, Me.RepositoryItemLookUpEditWarehouse})
+        Me.grInventoryItems.Size = New System.Drawing.Size(1486, 557)
         Me.grInventoryItems.TabIndex = 0
         Me.grInventoryItems.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.InventoryList, Me.LayoutView1, Me.GridView12})
         '
@@ -2247,12 +1457,29 @@ Partial Class viewInventory
         'colWarehousenumber1
         '
         Me.colWarehousenumber1.Caption = "WH"
+        Me.colWarehousenumber1.ColumnEdit = Me.RepositoryItemLookUpEditWarehouse
         Me.colWarehousenumber1.FieldName = "Warehousenumber"
         Me.colWarehousenumber1.Name = "colWarehousenumber1"
         Me.colWarehousenumber1.OptionsColumn.AllowEdit = False
         Me.colWarehousenumber1.Visible = True
         Me.colWarehousenumber1.VisibleIndex = 8
         Me.colWarehousenumber1.Width = 29
+        '
+        'RepositoryItemLookUpEditWarehouse
+        '
+        Me.RepositoryItemLookUpEditWarehouse.AutoHeight = False
+        Me.RepositoryItemLookUpEditWarehouse.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEditWarehouse.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Warehouseid", "Warehouseid", 86, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Warehouseshortname", "Warehouseshortname", 116, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Warehousecity", "Warehousecity", 82, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEditWarehouse.DataSource = Me.bsWarehouse
+        Me.RepositoryItemLookUpEditWarehouse.DisplayMember = "Warehouseshortname"
+        Me.RepositoryItemLookUpEditWarehouse.Name = "RepositoryItemLookUpEditWarehouse"
+        Me.RepositoryItemLookUpEditWarehouse.NullText = ""
+        Me.RepositoryItemLookUpEditWarehouse.NullValuePromptShowForEmptyValue = True
+        Me.RepositoryItemLookUpEditWarehouse.ValueMember = "Warehouseid"
+        '
+        'bsWarehouse
+        '
+        Me.bsWarehouse.DataSource = GetType(AOS.BusinessObjects.WarehouseCollection)
         '
         'colWarehouselocation2
         '
@@ -2438,12 +1665,806 @@ Partial Class viewInventory
         Me.GridView12.GridControl = Me.grInventoryItems
         Me.GridView12.Name = "GridView12"
         '
+        'RibbonPanelControl1
+        '
+        Me.RibbonPanelControl1.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.RibbonPanelControl1.Appearance.Options.UseBackColor = True
+        Me.RibbonPanelControl1.Controls.Add(Me.SplitContainerControl1)
+        Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
+        Me.RibbonPanelControl1.Padding = New System.Windows.Forms.Padding(6)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1494, 583)
+        Me.RibbonPanelControl1.TabIndex = 0
+        '
+        'SplitContainerControl1
+        '
+        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(8, 8)
+        Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.gcProducts)
+        Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.GroupControl2)
+        Me.SplitContainerControl1.Panel2.Text = "Panel2"
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1478, 567)
+        Me.SplitContainerControl1.SplitterPosition = 892
+        Me.SplitContainerControl1.TabIndex = 0
+        Me.SplitContainerControl1.Text = "SplitContainerControl1"
+        '
+        'gcProducts
+        '
+        Me.gcProducts.Controls.Add(Me.grProducts)
+        Me.gcProducts.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcProducts.Location = New System.Drawing.Point(0, 0)
+        Me.gcProducts.Name = "gcProducts"
+        Me.gcProducts.Size = New System.Drawing.Size(892, 567)
+        Me.gcProducts.TabIndex = 0
+        Me.gcProducts.Text = "Products"
+        '
+        'grProducts
+        '
+        Me.grProducts.DataSource = Me.bsProducts
+        Me.grProducts.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grProducts.Location = New System.Drawing.Point(2, 20)
+        Me.grProducts.MainView = Me.ProductsView
+        Me.grProducts.Name = "grProducts"
+        Me.grProducts.Size = New System.Drawing.Size(888, 545)
+        Me.grProducts.TabIndex = 0
+        Me.grProducts.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.ProductsView, Me.GridView15})
+        '
+        'ProductsView
+        '
+        Me.ProductsView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid, Me.colProductdesc, Me.colContainer, Me.GridColumn3, Me.colChemicalid, Me.colChemicalname, Me.colProductstatus})
+        Me.ProductsView.GridControl = Me.grProducts
+        Me.ProductsView.Name = "ProductsView"
+        Me.ProductsView.OptionsBehavior.Editable = False
+        Me.ProductsView.OptionsSelection.MultiSelect = True
+        Me.ProductsView.OptionsView.ShowAutoFilterRow = True
+        Me.ProductsView.OptionsView.ShowGroupPanel = False
+        Me.ProductsView.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colProductdesc, DevExpress.Data.ColumnSortOrder.Ascending)})
+        '
+        'colProductid
+        '
+        Me.colProductid.Caption = "Prod ID"
+        Me.colProductid.FieldName = "Productid"
+        Me.colProductid.Name = "colProductid"
+        Me.colProductid.OptionsColumn.AllowEdit = False
+        Me.colProductid.Visible = True
+        Me.colProductid.VisibleIndex = 0
+        Me.colProductid.Width = 81
+        '
+        'colProductdesc
+        '
+        Me.colProductdesc.Caption = "Product Description"
+        Me.colProductdesc.FieldName = "Productdesc"
+        Me.colProductdesc.Name = "colProductdesc"
+        Me.colProductdesc.OptionsColumn.AllowEdit = False
+        Me.colProductdesc.Visible = True
+        Me.colProductdesc.VisibleIndex = 1
+        Me.colProductdesc.Width = 228
+        '
+        'colContainer
+        '
+        Me.colContainer.Caption = "Container"
+        Me.colContainer.FieldName = "Container"
+        Me.colContainer.Name = "colContainer"
+        Me.colContainer.OptionsColumn.AllowEdit = False
+        Me.colContainer.Visible = True
+        Me.colContainer.VisibleIndex = 3
+        Me.colContainer.Width = 85
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.Caption = "Addn Desc"
+        Me.GridColumn3.FieldName = "Desc2"
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.OptionsColumn.AllowEdit = False
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.Width = 142
+        '
+        'colChemicalid
+        '
+        Me.colChemicalid.Caption = "Chem ID"
+        Me.colChemicalid.FieldName = "Chemicalid"
+        Me.colChemicalid.Name = "colChemicalid"
+        Me.colChemicalid.Visible = True
+        Me.colChemicalid.VisibleIndex = 4
+        Me.colChemicalid.Width = 59
+        '
+        'colChemicalname
+        '
+        Me.colChemicalname.Caption = "Chemical Name"
+        Me.colChemicalname.FieldName = "Chemicalname"
+        Me.colChemicalname.Name = "colChemicalname"
+        Me.colChemicalname.Visible = True
+        Me.colChemicalname.VisibleIndex = 5
+        Me.colChemicalname.Width = 217
+        '
+        'colProductstatus
+        '
+        Me.colProductstatus.Caption = "Status"
+        Me.colProductstatus.FieldName = "Productstatus"
+        Me.colProductstatus.Name = "colProductstatus"
+        Me.colProductstatus.Visible = True
+        Me.colProductstatus.VisibleIndex = 6
+        Me.colProductstatus.Width = 61
+        '
+        'GridView15
+        '
+        Me.GridView15.GridControl = Me.grProducts
+        Me.GridView15.Name = "GridView15"
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.GroupControl2.AppearanceCaption.Options.UseBackColor = True
+        Me.GroupControl2.Controls.Add(Me.grItems)
+        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(581, 567)
+        Me.GroupControl2.TabIndex = 1
+        Me.GroupControl2.Text = "Inventory Items"
+        '
+        'grItems
+        '
+        Me.grItems.DataSource = Me.bsItems
+        Me.grItems.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grItems.Location = New System.Drawing.Point(2, 20)
+        Me.grItems.MainView = Me.InventoryItemsView
+        Me.grItems.Name = "grItems"
+        Me.grItems.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit8, Me.RepositoryItemLookUpEdit10})
+        Me.grItems.Size = New System.Drawing.Size(577, 545)
+        Me.grItems.TabIndex = 0
+        Me.grItems.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.InventoryItemsView, Me.GridView13})
+        '
+        'InventoryItemsView
+        '
+        Me.InventoryItemsView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colInvitemnumber, Me.colProductid1, Me.GridColumn1, Me.colWarehouselocation, Me.colLotnumber, Me.GridColumn4})
+        Me.InventoryItemsView.GridControl = Me.grItems
+        Me.InventoryItemsView.Name = "InventoryItemsView"
+        Me.InventoryItemsView.OptionsSelection.MultiSelect = True
+        Me.InventoryItemsView.OptionsView.ShowAutoFilterRow = True
+        Me.InventoryItemsView.OptionsView.ShowGroupPanel = False
+        '
+        'colInvitemnumber
+        '
+        Me.colInvitemnumber.Caption = "Item #"
+        Me.colInvitemnumber.FieldName = "Invitemnumber"
+        Me.colInvitemnumber.Name = "colInvitemnumber"
+        Me.colInvitemnumber.OptionsColumn.AllowEdit = False
+        Me.colInvitemnumber.Visible = True
+        Me.colInvitemnumber.VisibleIndex = 0
+        Me.colInvitemnumber.Width = 56
+        '
+        'colProductid1
+        '
+        Me.colProductid1.Caption = "Prod ID"
+        Me.colProductid1.FieldName = "Productid"
+        Me.colProductid1.Name = "colProductid1"
+        Me.colProductid1.OptionsColumn.AllowEdit = False
+        Me.colProductid1.Visible = True
+        Me.colProductid1.VisibleIndex = 1
+        Me.colProductid1.Width = 58
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Product Description"
+        Me.GridColumn1.ColumnEdit = Me.RepositoryItemLookUpEdit8
+        Me.GridColumn1.FieldName = "Productid"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.OptionsColumn.AllowEdit = False
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 2
+        Me.GridColumn1.Width = 156
+        '
+        'RepositoryItemLookUpEdit8
+        '
+        Me.RepositoryItemLookUpEdit8.AutoHeight = False
+        Me.RepositoryItemLookUpEdit8.DataSource = Me.bsProducts
+        Me.RepositoryItemLookUpEdit8.DisplayMember = "Productdesc"
+        Me.RepositoryItemLookUpEdit8.Name = "RepositoryItemLookUpEdit8"
+        Me.RepositoryItemLookUpEdit8.NullText = ""
+        Me.RepositoryItemLookUpEdit8.ReadOnly = True
+        Me.RepositoryItemLookUpEdit8.ValueMember = "Productid"
+        '
+        'colWarehouselocation
+        '
+        Me.colWarehouselocation.Caption = "Warehouse"
+        Me.colWarehouselocation.FieldName = "Warehouselocation"
+        Me.colWarehouselocation.Name = "colWarehouselocation"
+        Me.colWarehouselocation.OptionsColumn.AllowEdit = False
+        Me.colWarehouselocation.Visible = True
+        Me.colWarehouselocation.VisibleIndex = 4
+        '
+        'colLotnumber
+        '
+        Me.colLotnumber.Caption = "Lot #"
+        Me.colLotnumber.FieldName = "Lotnumber"
+        Me.colLotnumber.Name = "colLotnumber"
+        Me.colLotnumber.OptionsColumn.AllowEdit = False
+        Me.colLotnumber.Visible = True
+        Me.colLotnumber.VisibleIndex = 5
+        Me.colLotnumber.Width = 76
+        '
+        'GridColumn4
+        '
+        Me.GridColumn4.Caption = "Addn Desc"
+        Me.GridColumn4.ColumnEdit = Me.RepositoryItemLookUpEdit10
+        Me.GridColumn4.FieldName = "Productid"
+        Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.OptionsColumn.AllowEdit = False
+        Me.GridColumn4.Visible = True
+        Me.GridColumn4.VisibleIndex = 3
+        Me.GridColumn4.Width = 78
+        '
+        'RepositoryItemLookUpEdit10
+        '
+        Me.RepositoryItemLookUpEdit10.AutoHeight = False
+        Me.RepositoryItemLookUpEdit10.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit10.DataSource = Me.bsProducts
+        Me.RepositoryItemLookUpEdit10.DisplayMember = "Desc2"
+        Me.RepositoryItemLookUpEdit10.Name = "RepositoryItemLookUpEdit10"
+        Me.RepositoryItemLookUpEdit10.NullText = ""
+        Me.RepositoryItemLookUpEdit10.ValueMember = "Productid"
+        '
+        'GridView13
+        '
+        Me.GridView13.GridControl = Me.grItems
+        Me.GridView13.Name = "GridView13"
+        '
+        'RibbonPanelControl2
+        '
+        Me.RibbonPanelControl2.Controls.Add(Me.pnlKitHolder)
+        Me.RibbonPanelControl2.Controls.Add(Me.pnlComponentHolder)
+        Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1494, 583)
+        Me.RibbonPanelControl2.TabIndex = 2
+        '
+        'pnlKitHolder
+        '
+        Me.pnlKitHolder.Controls.Add(Me.gcKit)
+        Me.pnlKitHolder.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlKitHolder.Location = New System.Drawing.Point(2, 2)
+        Me.pnlKitHolder.Name = "pnlKitHolder"
+        Me.pnlKitHolder.Size = New System.Drawing.Size(1490, 579)
+        Me.pnlKitHolder.TabIndex = 4
+        '
+        'gcKit
+        '
+        Me.gcKit.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.gcKit.Appearance.Options.UseBackColor = True
+        Me.gcKit.Controls.Add(Me.SplitContainerControl5)
+        Me.gcKit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcKit.Location = New System.Drawing.Point(2, 2)
+        Me.gcKit.Name = "gcKit"
+        Me.gcKit.Padding = New System.Windows.Forms.Padding(6)
+        Me.gcKit.Size = New System.Drawing.Size(1486, 575)
+        Me.gcKit.TabIndex = 2
+        '
+        'SplitContainerControl5
+        '
+        Me.SplitContainerControl5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl5.Location = New System.Drawing.Point(8, 8)
+        Me.SplitContainerControl5.Name = "SplitContainerControl5"
+        Me.SplitContainerControl5.Panel1.Controls.Add(Me.GroupControl13)
+        Me.SplitContainerControl5.Panel1.Text = "Panel1"
+        Me.SplitContainerControl5.Panel2.Controls.Add(Me.GroupControl12)
+        Me.SplitContainerControl5.Panel2.Text = "Panel2"
+        Me.SplitContainerControl5.Size = New System.Drawing.Size(1470, 559)
+        Me.SplitContainerControl5.SplitterPosition = 495
+        Me.SplitContainerControl5.TabIndex = 0
+        Me.SplitContainerControl5.Text = "SplitContainerControl5"
+        '
+        'GroupControl13
+        '
+        Me.GroupControl13.Controls.Add(Me.grKit)
+        Me.GroupControl13.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl13.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl13.Name = "GroupControl13"
+        Me.GroupControl13.Size = New System.Drawing.Size(495, 559)
+        Me.GroupControl13.TabIndex = 1
+        Me.GroupControl13.Text = "Kits"
+        '
+        'grKit
+        '
+        Me.grKit.DataSource = Me.bsKit
+        Me.grKit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grKit.Location = New System.Drawing.Point(2, 20)
+        Me.grKit.MainView = Me.GridView11
+        Me.grKit.Name = "grKit"
+        Me.grKit.Size = New System.Drawing.Size(491, 537)
+        Me.grKit.TabIndex = 0
+        Me.grKit.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView11, Me.GridView7})
+        '
+        'bsKit
+        '
+        Me.bsKit.DataSource = GetType(AOS.BusinessObjects.ViewKitInfoCollection)
+        '
+        'GridView11
+        '
+        Me.GridView11.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKitid, Me.colKitname, Me.colKitCost})
+        Me.GridView11.CustomizationFormBounds = New System.Drawing.Rectangle(360, 473, 216, 185)
+        Me.GridView11.GridControl = Me.grKit
+        Me.GridView11.Name = "GridView11"
+        Me.GridView11.OptionsBehavior.Editable = False
+        Me.GridView11.OptionsSelection.MultiSelect = True
+        Me.GridView11.OptionsView.ShowAutoFilterRow = True
+        Me.GridView11.OptionsView.ShowGroupPanel = False
+        '
+        'colKitid
+        '
+        Me.colKitid.Caption = "Kit ID "
+        Me.colKitid.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colKitid.FieldName = "Kitid"
+        Me.colKitid.Name = "colKitid"
+        Me.colKitid.OptionsColumn.AllowEdit = False
+        Me.colKitid.OptionsColumn.FixedWidth = True
+        Me.colKitid.Visible = True
+        Me.colKitid.VisibleIndex = 0
+        Me.colKitid.Width = 49
+        '
+        'colKitname
+        '
+        Me.colKitname.Caption = "Kit Name "
+        Me.colKitname.FieldName = "Kitname"
+        Me.colKitname.Name = "colKitname"
+        Me.colKitname.OptionsColumn.AllowEdit = False
+        Me.colKitname.Visible = True
+        Me.colKitname.VisibleIndex = 1
+        Me.colKitname.Width = 358
+        '
+        'colKitCost
+        '
+        Me.colKitCost.Caption = "Kit Cost"
+        Me.colKitCost.DisplayFormat.FormatString = "c2"
+        Me.colKitCost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colKitCost.FieldName = "KitCost"
+        Me.colKitCost.Name = "colKitCost"
+        Me.colKitCost.OptionsColumn.FixedWidth = True
+        Me.colKitCost.Visible = True
+        Me.colKitCost.VisibleIndex = 2
+        Me.colKitCost.Width = 67
+        '
+        'GridView7
+        '
+        Me.GridView7.GridControl = Me.grKit
+        Me.GridView7.Name = "GridView7"
+        '
+        'GroupControl12
+        '
+        Me.GroupControl12.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.GroupControl12.AppearanceCaption.Options.UseBackColor = True
+        Me.GroupControl12.Controls.Add(Me.grKitItem)
+        Me.GroupControl12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl12.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl12.Name = "GroupControl12"
+        Me.GroupControl12.Size = New System.Drawing.Size(970, 559)
+        Me.GroupControl12.TabIndex = 2
+        Me.GroupControl12.Text = "Kit Components"
+        '
+        'grKitItem
+        '
+        Me.grKitItem.DataSource = Me.bsKitItem
+        Me.grKitItem.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grKitItem.Location = New System.Drawing.Point(2, 20)
+        Me.grKitItem.MainView = Me.GridView10
+        Me.grKitItem.Name = "grKitItem"
+        Me.grKitItem.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit18, Me.RepositoryItemLookUpEdit19})
+        Me.grKitItem.Size = New System.Drawing.Size(966, 537)
+        Me.grKitItem.TabIndex = 0
+        Me.grKitItem.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView10, Me.GridView5})
+        '
+        'bsKitItem
+        '
+        Me.bsKitItem.DataSource = GetType(AOS.BusinessObjects.ViewKitComponentCollection)
+        '
+        'GridView10
+        '
+        Me.GridView10.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colComponentqty, Me.colComponentid1, Me.GridColumn18, Me.Vendordesc, Me.GridColumn20, Me.GridColumn21, Me.Unitcost})
+        Me.GridView10.GridControl = Me.grKitItem
+        Me.GridView10.Name = "GridView10"
+        Me.GridView10.OptionsSelection.MultiSelect = True
+        Me.GridView10.OptionsView.ShowAutoFilterRow = True
+        Me.GridView10.OptionsView.ShowGroupPanel = False
+        Me.GridView10.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumn21, DevExpress.Data.ColumnSortOrder.Descending)})
+        '
+        'colComponentqty
+        '
+        Me.colComponentqty.Caption = "Qty in Kit"
+        Me.colComponentqty.FieldName = "Componentqty"
+        Me.colComponentqty.Name = "colComponentqty"
+        Me.colComponentqty.OptionsColumn.FixedWidth = True
+        Me.colComponentqty.Visible = True
+        Me.colComponentqty.VisibleIndex = 0
+        Me.colComponentqty.Width = 64
+        '
+        'colComponentid1
+        '
+        Me.colComponentid1.Caption = "Comp ID"
+        Me.colComponentid1.FieldName = "Componentid"
+        Me.colComponentid1.Name = "colComponentid1"
+        Me.colComponentid1.OptionsColumn.FixedWidth = True
+        Me.colComponentid1.Visible = True
+        Me.colComponentid1.VisibleIndex = 1
+        Me.colComponentid1.Width = 62
+        '
+        'GridColumn18
+        '
+        Me.GridColumn18.Caption = "Americo Desc"
+        Me.GridColumn18.FieldName = "Componentdesc"
+        Me.GridColumn18.Name = "GridColumn18"
+        Me.GridColumn18.OptionsColumn.AllowEdit = False
+        Me.GridColumn18.OptionsColumn.ReadOnly = True
+        Me.GridColumn18.Visible = True
+        Me.GridColumn18.VisibleIndex = 2
+        Me.GridColumn18.Width = 235
+        '
+        'Vendordesc
+        '
+        Me.Vendordesc.Caption = "Vendor Desc"
+        Me.Vendordesc.FieldName = "Vendordesc"
+        Me.Vendordesc.Name = "Vendordesc"
+        Me.Vendordesc.OptionsColumn.AllowEdit = False
+        Me.Vendordesc.OptionsColumn.ReadOnly = True
+        Me.Vendordesc.Visible = True
+        Me.Vendordesc.VisibleIndex = 3
+        Me.Vendordesc.Width = 246
+        '
+        'GridColumn20
+        '
+        Me.GridColumn20.Caption = "Vendor Name "
+        Me.GridColumn20.FieldName = "Vendorname"
+        Me.GridColumn20.Name = "GridColumn20"
+        Me.GridColumn20.OptionsColumn.AllowEdit = False
+        Me.GridColumn20.OptionsColumn.ReadOnly = True
+        Me.GridColumn20.Visible = True
+        Me.GridColumn20.VisibleIndex = 4
+        Me.GridColumn20.Width = 172
+        '
+        'GridColumn21
+        '
+        Me.GridColumn21.Caption = "Vendor Item ID"
+        Me.GridColumn21.FieldName = "Vendoritemid"
+        Me.GridColumn21.Name = "GridColumn21"
+        Me.GridColumn21.OptionsColumn.AllowEdit = False
+        Me.GridColumn21.OptionsColumn.FixedWidth = True
+        Me.GridColumn21.OptionsColumn.ReadOnly = True
+        Me.GridColumn21.Visible = True
+        Me.GridColumn21.VisibleIndex = 5
+        Me.GridColumn21.Width = 99
+        '
+        'Unitcost
+        '
+        Me.Unitcost.AppearanceCell.Options.UseTextOptions = True
+        Me.Unitcost.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.Unitcost.AppearanceHeader.Options.UseTextOptions = True
+        Me.Unitcost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.Unitcost.Caption = "Unit Cost"
+        Me.Unitcost.DisplayFormat.FormatString = "c2"
+        Me.Unitcost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.Unitcost.FieldName = "Unitcost"
+        Me.Unitcost.Name = "Unitcost"
+        Me.Unitcost.OptionsColumn.AllowEdit = False
+        Me.Unitcost.OptionsColumn.FixedWidth = True
+        Me.Unitcost.OptionsColumn.ReadOnly = True
+        Me.Unitcost.Visible = True
+        Me.Unitcost.VisibleIndex = 6
+        Me.Unitcost.Width = 70
+        '
+        'RepositoryItemLookUpEdit18
+        '
+        Me.RepositoryItemLookUpEdit18.AutoHeight = False
+        Me.RepositoryItemLookUpEdit18.DataSource = Me.bsProducts
+        Me.RepositoryItemLookUpEdit18.DisplayMember = "Productdesc"
+        Me.RepositoryItemLookUpEdit18.Name = "RepositoryItemLookUpEdit18"
+        Me.RepositoryItemLookUpEdit18.NullText = ""
+        Me.RepositoryItemLookUpEdit18.ReadOnly = True
+        Me.RepositoryItemLookUpEdit18.ValueMember = "Productid"
+        '
+        'RepositoryItemLookUpEdit19
+        '
+        Me.RepositoryItemLookUpEdit19.AutoHeight = False
+        Me.RepositoryItemLookUpEdit19.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit19.DataSource = Me.bsProducts
+        Me.RepositoryItemLookUpEdit19.DisplayMember = "Desc2"
+        Me.RepositoryItemLookUpEdit19.Name = "RepositoryItemLookUpEdit19"
+        Me.RepositoryItemLookUpEdit19.NullText = ""
+        Me.RepositoryItemLookUpEdit19.ValueMember = "Productid"
+        '
+        'GridView5
+        '
+        Me.GridView5.GridControl = Me.grKitItem
+        Me.GridView5.Name = "GridView5"
+        '
+        'pnlComponentHolder
+        '
+        Me.pnlComponentHolder.Controls.Add(Me.gcComponent)
+        Me.pnlComponentHolder.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlComponentHolder.Location = New System.Drawing.Point(2, 2)
+        Me.pnlComponentHolder.Name = "pnlComponentHolder"
+        Me.pnlComponentHolder.Size = New System.Drawing.Size(1490, 579)
+        Me.pnlComponentHolder.TabIndex = 3
+        '
+        'gcComponent
+        '
+        Me.gcComponent.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.gcComponent.Appearance.Options.UseBackColor = True
+        Me.gcComponent.Controls.Add(Me.SplitContainerControl4)
+        Me.gcComponent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcComponent.Location = New System.Drawing.Point(2, 2)
+        Me.gcComponent.Name = "gcComponent"
+        Me.gcComponent.Padding = New System.Windows.Forms.Padding(6)
+        Me.gcComponent.Size = New System.Drawing.Size(1486, 575)
+        Me.gcComponent.TabIndex = 2
+        '
+        'SplitContainerControl4
+        '
+        Me.SplitContainerControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl4.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2
+        Me.SplitContainerControl4.Horizontal = False
+        Me.SplitContainerControl4.Location = New System.Drawing.Point(8, 8)
+        Me.SplitContainerControl4.Name = "SplitContainerControl4"
+        Me.SplitContainerControl4.Panel1.Controls.Add(Me.GroupControl8)
+        Me.SplitContainerControl4.Panel1.Text = "Panel1"
+        Me.SplitContainerControl4.Panel2.Controls.Add(Me.GroupControl9)
+        Me.SplitContainerControl4.Panel2.Text = "Panel2"
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(1470, 559)
+        Me.SplitContainerControl4.SplitterPosition = 201
+        Me.SplitContainerControl4.TabIndex = 0
+        Me.SplitContainerControl4.Text = "SplitContainerControl4"
+        '
+        'GroupControl8
+        '
+        Me.GroupControl8.Controls.Add(Me.grComponents)
+        Me.GroupControl8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl8.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl8.Name = "GroupControl8"
+        Me.GroupControl8.Size = New System.Drawing.Size(1470, 353)
+        Me.GroupControl8.TabIndex = 1
+        Me.GroupControl8.Text = "Components"
+        '
+        'grComponents
+        '
+        Me.grComponents.DataSource = Me.bsComponent
+        Me.grComponents.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grComponents.Location = New System.Drawing.Point(2, 20)
+        Me.grComponents.MainView = Me.GridView8
+        Me.grComponents.Name = "grComponents"
+        Me.grComponents.Size = New System.Drawing.Size(1466, 331)
+        Me.grComponents.TabIndex = 0
+        Me.grComponents.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView8})
+        '
+        'bsComponent
+        '
+        Me.bsComponent.DataSource = GetType(AOS.BusinessObjects.ComponentCollection)
+        '
+        'GridView8
+        '
+        Me.GridView8.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colComponentID, Me.colComponentdesc, Me.colVendordesc, Me.colVendorname, Me.colVendoritemid, Me.colUnitcost})
+        Me.GridView8.GridControl = Me.grComponents
+        Me.GridView8.Name = "GridView8"
+        Me.GridView8.OptionsBehavior.Editable = False
+        Me.GridView8.OptionsSelection.MultiSelect = True
+        Me.GridView8.OptionsView.ShowAutoFilterRow = True
+        Me.GridView8.OptionsView.ShowGroupPanel = False
+        Me.GridView8.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colVendordesc, DevExpress.Data.ColumnSortOrder.Ascending)})
+        '
+        'colComponentID
+        '
+        Me.colComponentID.Caption = "Comp ID "
+        Me.colComponentID.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colComponentID.FieldName = "Componentid"
+        Me.colComponentID.Name = "colComponentID"
+        Me.colComponentID.OptionsColumn.AllowEdit = False
+        Me.colComponentID.OptionsColumn.FixedWidth = True
+        Me.colComponentID.Visible = True
+        Me.colComponentID.VisibleIndex = 0
+        Me.colComponentID.Width = 55
+        '
+        'colComponentdesc
+        '
+        Me.colComponentdesc.Caption = "Americo Desc"
+        Me.colComponentdesc.FieldName = "Componentdesc"
+        Me.colComponentdesc.Name = "colComponentdesc"
+        Me.colComponentdesc.OptionsColumn.AllowEdit = False
+        Me.colComponentdesc.Visible = True
+        Me.colComponentdesc.VisibleIndex = 1
+        Me.colComponentdesc.Width = 411
+        '
+        'colVendordesc
+        '
+        Me.colVendordesc.Caption = "Vendor Desc"
+        Me.colVendordesc.FieldName = "Vendordesc"
+        Me.colVendordesc.Name = "colVendordesc"
+        Me.colVendordesc.OptionsColumn.AllowEdit = False
+        Me.colVendordesc.Visible = True
+        Me.colVendordesc.VisibleIndex = 2
+        Me.colVendordesc.Width = 344
+        '
+        'colVendorname
+        '
+        Me.colVendorname.Caption = "Vendor Name "
+        Me.colVendorname.FieldName = "Vendorname"
+        Me.colVendorname.Name = "colVendorname"
+        Me.colVendorname.OptionsColumn.AllowEdit = False
+        Me.colVendorname.Visible = True
+        Me.colVendorname.VisibleIndex = 3
+        Me.colVendorname.Width = 319
+        '
+        'colVendoritemid
+        '
+        Me.colVendoritemid.Caption = "Vendor Item ID"
+        Me.colVendoritemid.FieldName = "Vendoritemid"
+        Me.colVendoritemid.Name = "colVendoritemid"
+        Me.colVendoritemid.OptionsColumn.AllowEdit = False
+        Me.colVendoritemid.OptionsColumn.FixedWidth = True
+        Me.colVendoritemid.Visible = True
+        Me.colVendoritemid.VisibleIndex = 4
+        Me.colVendoritemid.Width = 85
+        '
+        'colUnitcost
+        '
+        Me.colUnitcost.AppearanceCell.Options.UseTextOptions = True
+        Me.colUnitcost.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colUnitcost.AppearanceHeader.Options.UseTextOptions = True
+        Me.colUnitcost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colUnitcost.Caption = "Unit Cost"
+        Me.colUnitcost.DisplayFormat.FormatString = "D4"
+        Me.colUnitcost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colUnitcost.FieldName = "Unitcost"
+        Me.colUnitcost.Name = "colUnitcost"
+        Me.colUnitcost.OptionsColumn.AllowEdit = False
+        Me.colUnitcost.OptionsColumn.FixedWidth = True
+        Me.colUnitcost.Visible = True
+        Me.colUnitcost.VisibleIndex = 5
+        Me.colUnitcost.Width = 60
+        '
+        'GroupControl9
+        '
+        Me.GroupControl9.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.GroupControl9.AppearanceCaption.Options.UseBackColor = True
+        Me.GroupControl9.Controls.Add(Me.grAltComponents)
+        Me.GroupControl9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl9.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl9.Name = "GroupControl9"
+        Me.GroupControl9.Size = New System.Drawing.Size(1470, 201)
+        Me.GroupControl9.TabIndex = 2
+        Me.GroupControl9.Text = "Component Alternate(s)"
+        '
+        'grAltComponents
+        '
+        Me.grAltComponents.DataSource = Me.bsAltComponent
+        Me.grAltComponents.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grAltComponents.Location = New System.Drawing.Point(2, 20)
+        Me.grAltComponents.MainView = Me.GridView9
+        Me.grAltComponents.Name = "grAltComponents"
+        Me.grAltComponents.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17})
+        Me.grAltComponents.Size = New System.Drawing.Size(1466, 179)
+        Me.grAltComponents.TabIndex = 0
+        Me.grAltComponents.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView9})
+        '
+        'bsAltComponent
+        '
+        Me.bsAltComponent.DataSource = GetType(AOS.BusinessObjects.ViewAltComponentCollection)
+        '
+        'GridView9
+        '
+        Me.GridView9.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colAltComponentid, Me.colAltComponentdesc, Me.colAltVendorname, Me.colAltVendordesc, Me.colAltVendoritemid, Me.colAltUnitcost})
+        Me.GridView9.GridControl = Me.grAltComponents
+        Me.GridView9.Name = "GridView9"
+        Me.GridView9.OptionsCustomization.AllowFilter = False
+        Me.GridView9.OptionsFilter.AllowFilterEditor = False
+        Me.GridView9.OptionsSelection.MultiSelect = True
+        Me.GridView9.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
+        Me.GridView9.OptionsView.ShowGroupPanel = False
+        Me.GridView9.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colAltComponentid, DevExpress.Data.ColumnSortOrder.Ascending)})
+        '
+        'colAltComponentid
+        '
+        Me.colAltComponentid.AppearanceCell.Options.UseTextOptions = True
+        Me.colAltComponentid.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colAltComponentid.Caption = "Comp ID"
+        Me.colAltComponentid.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colAltComponentid.FieldName = "Altcomponentid"
+        Me.colAltComponentid.Name = "colAltComponentid"
+        Me.colAltComponentid.OptionsColumn.AllowEdit = False
+        Me.colAltComponentid.OptionsColumn.FixedWidth = True
+        Me.colAltComponentid.OptionsColumn.ReadOnly = True
+        Me.colAltComponentid.Visible = True
+        Me.colAltComponentid.VisibleIndex = 0
+        Me.colAltComponentid.Width = 55
+        '
+        'colAltComponentdesc
+        '
+        Me.colAltComponentdesc.Caption = "Americo Desc"
+        Me.colAltComponentdesc.FieldName = "Componentdesc"
+        Me.colAltComponentdesc.Name = "colAltComponentdesc"
+        Me.colAltComponentdesc.OptionsColumn.AllowEdit = False
+        Me.colAltComponentdesc.OptionsColumn.ReadOnly = True
+        Me.colAltComponentdesc.Visible = True
+        Me.colAltComponentdesc.VisibleIndex = 1
+        Me.colAltComponentdesc.Width = 413
+        '
+        'colAltVendorname
+        '
+        Me.colAltVendorname.Caption = "Vendor Name "
+        Me.colAltVendorname.FieldName = "Vendorname"
+        Me.colAltVendorname.Name = "colAltVendorname"
+        Me.colAltVendorname.OptionsColumn.AllowEdit = False
+        Me.colAltVendorname.OptionsColumn.ReadOnly = True
+        Me.colAltVendorname.Visible = True
+        Me.colAltVendorname.VisibleIndex = 3
+        Me.colAltVendorname.Width = 319
+        '
+        'colAltVendordesc
+        '
+        Me.colAltVendordesc.Caption = "Vendor Desc"
+        Me.colAltVendordesc.FieldName = "Vendordesc"
+        Me.colAltVendordesc.Name = "colAltVendordesc"
+        Me.colAltVendordesc.OptionsColumn.AllowEdit = False
+        Me.colAltVendordesc.OptionsColumn.ReadOnly = True
+        Me.colAltVendordesc.Visible = True
+        Me.colAltVendordesc.VisibleIndex = 2
+        Me.colAltVendordesc.Width = 342
+        '
+        'colAltVendoritemid
+        '
+        Me.colAltVendoritemid.Caption = "Vendor Item ID"
+        Me.colAltVendoritemid.FieldName = "Vendoritemid"
+        Me.colAltVendoritemid.Name = "colAltVendoritemid"
+        Me.colAltVendoritemid.OptionsColumn.AllowEdit = False
+        Me.colAltVendoritemid.OptionsColumn.FixedWidth = True
+        Me.colAltVendoritemid.OptionsColumn.ReadOnly = True
+        Me.colAltVendoritemid.Visible = True
+        Me.colAltVendoritemid.VisibleIndex = 4
+        Me.colAltVendoritemid.Width = 85
+        '
+        'colAltUnitcost
+        '
+        Me.colAltUnitcost.AppearanceHeader.Options.UseTextOptions = True
+        Me.colAltUnitcost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colAltUnitcost.Caption = "Unit Cost"
+        Me.colAltUnitcost.DisplayFormat.FormatString = "c4"
+        Me.colAltUnitcost.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colAltUnitcost.FieldName = "Unitcost"
+        Me.colAltUnitcost.Name = "colAltUnitcost"
+        Me.colAltUnitcost.OptionsColumn.AllowEdit = False
+        Me.colAltUnitcost.OptionsColumn.FixedWidth = True
+        Me.colAltUnitcost.OptionsColumn.ReadOnly = True
+        Me.colAltUnitcost.Visible = True
+        Me.colAltUnitcost.VisibleIndex = 5
+        Me.colAltUnitcost.Width = 60
+        '
+        'RepositoryItemLookUpEdit16
+        '
+        Me.RepositoryItemLookUpEdit16.AutoHeight = False
+        Me.RepositoryItemLookUpEdit16.DataSource = Me.bsProducts
+        Me.RepositoryItemLookUpEdit16.DisplayMember = "Productdesc"
+        Me.RepositoryItemLookUpEdit16.Name = "RepositoryItemLookUpEdit16"
+        Me.RepositoryItemLookUpEdit16.NullText = ""
+        Me.RepositoryItemLookUpEdit16.ReadOnly = True
+        Me.RepositoryItemLookUpEdit16.ValueMember = "Productid"
+        '
+        'RepositoryItemLookUpEdit17
+        '
+        Me.RepositoryItemLookUpEdit17.AutoHeight = False
+        Me.RepositoryItemLookUpEdit17.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit17.DataSource = Me.bsProducts
+        Me.RepositoryItemLookUpEdit17.DisplayMember = "Desc2"
+        Me.RepositoryItemLookUpEdit17.Name = "RepositoryItemLookUpEdit17"
+        Me.RepositoryItemLookUpEdit17.NullText = ""
+        Me.RepositoryItemLookUpEdit17.ValueMember = "Productid"
+        '
         'RibbonPanelControl5
         '
         Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl5.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
-        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1494, 582)
+        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1494, 583)
         Me.RibbonPanelControl5.TabIndex = 1
         '
         'RibbonPanelControl4
@@ -2453,7 +2474,7 @@ Partial Class viewInventory
         Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1494, 582)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1494, 583)
         Me.RibbonPanelControl4.TabIndex = 1
         '
         'RibbonPanelControl6
@@ -2461,7 +2482,7 @@ Partial Class viewInventory
         Me.RibbonPanelControl6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl6.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl6.Name = "RibbonPanelControl6"
-        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1494, 582)
+        Me.RibbonPanelControl6.Size = New System.Drawing.Size(1494, 583)
         Me.RibbonPanelControl6.TabIndex = 1
         '
         'RibbonPanelControl7
@@ -2470,7 +2491,7 @@ Partial Class viewInventory
         Me.RibbonPanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl7.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl7.Name = "RibbonPanelControl7"
-        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1494, 582)
+        Me.RibbonPanelControl7.Size = New System.Drawing.Size(1494, 583)
         Me.RibbonPanelControl7.TabIndex = 1
         '
         'GroupControl7
@@ -2486,11 +2507,11 @@ Partial Class viewInventory
         '
         Me.grWorkOrders.DataSource = Me.bsWorkOrders
         Me.grWorkOrders.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grWorkOrders.Location = New System.Drawing.Point(2, 22)
+        Me.grWorkOrders.Location = New System.Drawing.Point(2, 20)
         Me.grWorkOrders.MainView = Me.GridView6
         Me.grWorkOrders.Name = "grWorkOrders"
         Me.grWorkOrders.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit6})
-        Me.grWorkOrders.Size = New System.Drawing.Size(1325, 554)
+        Me.grWorkOrders.Size = New System.Drawing.Size(1325, 556)
         Me.grWorkOrders.TabIndex = 0
         Me.grWorkOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView6})
         '
@@ -2678,6 +2699,20 @@ Partial Class viewInventory
         CType(Me.bsItems, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WorkPanelsHolder.ResumeLayout(False)
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl3.ResumeLayout(False)
+        CType(Me.grpInventoryItems, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpInventoryItems.ResumeLayout(False)
+        CType(Me.grInventoryItems, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEditWarehouse, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsWarehouse, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl1.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2734,18 +2769,6 @@ Partial Class viewInventory
         CType(Me.GridView9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl3.ResumeLayout(False)
-        CType(Me.grpInventoryItems, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grpInventoryItems.ResumeLayout(False)
-        CType(Me.grInventoryItems, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InventoryList, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl6, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3021,4 +3044,6 @@ Partial Class viewInventory
     Friend WithEvents rbtnAllItems As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnProductSalesHistory As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rbtnProductPurchaseHistory As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bsWarehouse As BindingSource
+    Friend WithEvents RepositoryItemLookUpEditWarehouse As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class

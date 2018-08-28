@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/11/2014 1:43:57 PM
+' Date Generated       : 8/28/2018 1:46:41 PM
 '===============================================================================
 
 Imports System
@@ -190,6 +190,9 @@ Namespace BusinessObjects
 												
 						Case "Warehousephone"
 							Me.str.Warehousephone = CType(value, string)
+												
+						Case "Warehouseshortname"
+							Me.str.Warehouseshortname = CType(value, string)
 					
 					End Select
 					
@@ -319,6 +322,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As System.String)
 				MyBase.SetSystemString(WarehouseMetadata.ColumnNames.Warehousephone, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to WAREHOUSE.WAREHOUSESHORTNAME
+		' </summary>
+		Public Overridable Property Warehouseshortname As System.String
+			Get
+				Return MyBase.GetSystemString(WarehouseMetadata.ColumnNames.Warehouseshortname)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(WarehouseMetadata.ColumnNames.Warehouseshortname, value)
 			End Set
 		End Property		
 		
@@ -506,6 +522,26 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Warehouseshortname As System.String 
+				Get
+					Dim data_ As System.String = entity.Warehouseshortname
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Warehouseshortname = Nothing
+					Else
+						entity.Warehouseshortname = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esWarehouse
@@ -639,6 +675,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property Warehousephone As esQueryItem
 			Get
 				Return New esQueryItem(Me, WarehouseMetadata.ColumnNames.Warehousephone, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Warehouseshortname As esQueryItem
+			Get
+				Return New esQueryItem(Me, WarehouseMetadata.ColumnNames.Warehouseshortname, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -882,6 +924,12 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(WarehouseMetadata.ColumnNames.Warehouseshortname, 8, GetType(System.String), esSystemType.String)	
+			c.PropertyName = WarehouseMetadata.PropertyNames.Warehouseshortname
+			c.CharacterMaxLength = 50
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -918,6 +966,7 @@ Namespace BusinessObjects
 			 Public Const Warehousestate As String = "WAREHOUSESTATE"
 			 Public Const Warehousezipcode As String = "WAREHOUSEZIPCODE"
 			 Public Const Warehousephone As String = "WAREHOUSEPHONE"
+			 Public Const Warehouseshortname As String = "WAREHOUSESHORTNAME"
 		End Class
 #End Region	
 		
@@ -931,6 +980,7 @@ Namespace BusinessObjects
 			 Public Const Warehousestate As String = "Warehousestate"
 			 Public Const Warehousezipcode As String = "Warehousezipcode"
 			 Public Const Warehousephone As String = "Warehousephone"
+			 Public Const Warehouseshortname As String = "Warehouseshortname"
 		End Class
 #End Region	
 
@@ -985,7 +1035,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Warehousecity", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Warehousestate", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Warehousezipcode", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("Warehousephone", new esTypeMap("varchar", "System.String"))			
+				meta.AddTypeMap("Warehousephone", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Warehouseshortname", new esTypeMap("varchar", "System.String"))			
 				
 				
 				 

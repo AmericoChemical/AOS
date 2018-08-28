@@ -193,6 +193,7 @@ Public Class viewInventory
         getWorkOrders(vWorkOrderStatus)
         getComponent()
         getKit()
+        getWarehouse()
         selectView("gcComponent", False)
 
     End Sub
@@ -213,6 +214,7 @@ Public Class viewInventory
         Me.grProducts.DataSource = bsProducts
         Me.grProducts.Refresh()
     End Sub
+
 
     Private Sub getItemStatusLookupList()
         Dim oItemStatus As New ListInvitemstatusCollection
@@ -292,6 +294,12 @@ Public Class viewInventory
         Dim oVendors As New VendorCollection
         oVendors.LoadAll()
         bsVendors.DataSource = oVendors
+    End Sub
+
+    Private Sub getWarehouse()
+        Dim oWarehouse As New WarehouseCollection
+        oWarehouse.LoadAll()
+        bsWarehouse.DataSource = oWarehouse
     End Sub
 
     Private Sub getCustomers()
