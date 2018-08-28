@@ -274,6 +274,9 @@ Partial Class viewInventory
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.GridView14 = New AOS.CustomClasses.CustomDevExGridView()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.filterWarehouse = New DevExpress.XtraBars.BarEditItem()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.RepositoryItemLookUpEditRbnWarehouse = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -389,6 +392,8 @@ Partial Class viewInventory
         CType(Me.bsWorkOrderItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsPurchaseOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEditRbnWarehouse, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RepositoryItemTextEdit1
@@ -460,13 +465,13 @@ Partial Class viewInventory
         '
         Me.RibbonControl1.ApplicationButtonText = Nothing
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddProduct, Me.btnEditProduct, Me.btnDeleteProduct, Me.btnPrintProductLabel, Me.btnPrintItemLabel, Me.eQtyAvailable, Me.eQtyAllocated, Me.eQtyOnOrder, Me.btnPrintMiniLabel, Me.stQtyOnHand, Me.BarStaticItem2, Me.BarStaticItem3, Me.btnRecalculateInventoryQuantities, Me.BarStaticItem1, Me.btnAddPO, Me.btnEditPO, Me.btnDeletePO, Me.btnAddReceiver, Me.btnEditReceiver, Me.btnDeleteReceiver, Me.btnPostReceiver, Me.btnPrintMiniLabel_Receiving, Me.btnPrintProductLabelBarcoded, Me.btnFetchFinishedGoods, Me.btnPrintMiniInventoryLabels, Me.BarButtonItem3, Me.btnViewAvailableInventory, Me.btnPrintAvailableInventory, Me.btnPrintAvailableInventoryByBin, Me.btnMaintainProducts, Me.btnCloseWorkOrders, Me.btnInventoryFloorReport, Me.BarButtonItem2, Me.eReportStartDate, Me.eReportEndDate, Me.btnPLReport, Me.btnRptInventoryDetail, Me.btnOnFloorValuationReport, Me.btnRptInventoryDetailAvailableOnly, Me.btnCopyProductToNew, Me.btnFetchRawMaterials, Me.BarButtonItem6, Me.filterItemStatus, Me.filterItemType, Me.btnItemDetails, Me.btnFixItems, Me.btnManageContainers, Me.btnProductFulfillment, Me.btnPrintWOSales, Me.btnPrintMaxItemsbyStatus, Me.btnPrintWOBarcodesReport, Me.rbtnPrintTotalInventoryByProduct, Me.rbtnInventoryAnalysisShortList, Me.btnRptInventoryAnalysisAll, Me.rbtnCurrentPhysicalInventory, Me.rbtnInventoryAnalysisNonShortList, Me.rbtnCurrentQuarantined, Me.btnPLNReport, Me.btnVIEWCOMPONENTS, Me.btnAddComponent, Me.btnEditComponent, Me.btnDeleteComponent, Me.btnVIEWKITS, Me.btnAddKit, Me.btnEditKit, Me.btnDeleteKit, Me.rRptStartDate, Me.rRptEndDate, Me.rbtnPrintRelabelOrdersSummary, Me.rbtnFilterFinishedGoods, Me.rbtnFilterRawMaterial, Me.rbtnFilterProductsActive, Me.rbtnFilterProductsInActive, Me.rbtnFilterProductsAll, Me.rbtnPrintGHSLabel, Me.rbtnPrintGHSLabelByProductOnly, Me.rbtnFilterProductsPending, Me.rbtnPrintSDSReport, Me.rbtnAllItems, Me.rbtnProductSalesHistory, Me.rbtnProductPurchaseHistory})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnAddProduct, Me.btnEditProduct, Me.btnDeleteProduct, Me.btnPrintProductLabel, Me.btnPrintItemLabel, Me.eQtyAvailable, Me.eQtyAllocated, Me.eQtyOnOrder, Me.btnPrintMiniLabel, Me.stQtyOnHand, Me.BarStaticItem2, Me.BarStaticItem3, Me.btnRecalculateInventoryQuantities, Me.BarStaticItem1, Me.btnAddPO, Me.btnEditPO, Me.btnDeletePO, Me.btnAddReceiver, Me.btnEditReceiver, Me.btnDeleteReceiver, Me.btnPostReceiver, Me.btnPrintMiniLabel_Receiving, Me.btnPrintProductLabelBarcoded, Me.btnFetchFinishedGoods, Me.btnPrintMiniInventoryLabels, Me.BarButtonItem3, Me.btnViewAvailableInventory, Me.btnPrintAvailableInventory, Me.btnPrintAvailableInventoryByBin, Me.btnMaintainProducts, Me.btnCloseWorkOrders, Me.btnInventoryFloorReport, Me.BarButtonItem2, Me.eReportStartDate, Me.eReportEndDate, Me.btnPLReport, Me.btnRptInventoryDetail, Me.btnOnFloorValuationReport, Me.btnRptInventoryDetailAvailableOnly, Me.btnCopyProductToNew, Me.btnFetchRawMaterials, Me.BarButtonItem6, Me.filterItemStatus, Me.filterItemType, Me.btnItemDetails, Me.btnFixItems, Me.btnManageContainers, Me.btnProductFulfillment, Me.btnPrintWOSales, Me.btnPrintMaxItemsbyStatus, Me.btnPrintWOBarcodesReport, Me.rbtnPrintTotalInventoryByProduct, Me.rbtnInventoryAnalysisShortList, Me.btnRptInventoryAnalysisAll, Me.rbtnCurrentPhysicalInventory, Me.rbtnInventoryAnalysisNonShortList, Me.rbtnCurrentQuarantined, Me.btnPLNReport, Me.btnVIEWCOMPONENTS, Me.btnAddComponent, Me.btnEditComponent, Me.btnDeleteComponent, Me.btnVIEWKITS, Me.btnAddKit, Me.btnEditKit, Me.btnDeleteKit, Me.rRptStartDate, Me.rRptEndDate, Me.rbtnPrintRelabelOrdersSummary, Me.rbtnFilterFinishedGoods, Me.rbtnFilterRawMaterial, Me.rbtnFilterProductsActive, Me.rbtnFilterProductsInActive, Me.rbtnFilterProductsAll, Me.rbtnPrintGHSLabel, Me.rbtnPrintGHSLabelByProductOnly, Me.rbtnFilterProductsPending, Me.rbtnPrintSDSReport, Me.rbtnAllItems, Me.rbtnProductSalesHistory, Me.rbtnProductPurchaseHistory, Me.filterWarehouse})
         Me.RibbonControl1.LargeImages = Me.Ribbon_LargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 161
+        Me.RibbonControl1.MaxItemId = 162
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage6})
-        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemTextEdit4, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemDateEdit3, Me.RepositoryItemCheckedComboBoxEdit1, Me.RepositoryItemLookUpEdit15})
+        Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemTextEdit4, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2, Me.RepositoryItemDateEdit3, Me.RepositoryItemCheckedComboBoxEdit1, Me.RepositoryItemLookUpEdit15, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemLookUpEditRbnWarehouse})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
         Me.RibbonControl1.Size = New System.Drawing.Size(1494, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
@@ -1254,6 +1259,7 @@ Partial Class viewInventory
         Me.RibbonPageGroup17.AllowTextClipping = False
         Me.RibbonPageGroup17.ItemLinks.Add(Me.filterItemType)
         Me.RibbonPageGroup17.ItemLinks.Add(Me.filterItemStatus)
+        Me.RibbonPageGroup17.ItemLinks.Add(Me.filterWarehouse)
         Me.RibbonPageGroup17.ItemLinks.Add(Me.btnFetchFinishedGoods, True)
         Me.RibbonPageGroup17.ItemLinks.Add(Me.btnFixItems, True)
         Me.RibbonPageGroup17.ItemLinks.Add(Me.rbtnAllItems)
@@ -2660,6 +2666,32 @@ Partial Class viewInventory
         '
         Me.GridView14.Name = "GridView14"
         '
+        'filterWarehouse
+        '
+        Me.filterWarehouse.Caption = "Warehouse "
+        Me.filterWarehouse.Edit = Me.RepositoryItemLookUpEditRbnWarehouse
+        Me.filterWarehouse.EditWidth = 150
+        Me.filterWarehouse.Id = 161
+        Me.filterWarehouse.Name = "filterWarehouse"
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        '
+        'RepositoryItemLookUpEditRbnWarehouse
+        '
+        Me.RepositoryItemLookUpEditRbnWarehouse.AutoHeight = False
+        Me.RepositoryItemLookUpEditRbnWarehouse.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEditRbnWarehouse.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Warehouseid", "Id", 60, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Warehouseshortname", "Code", 80, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Warehousecity", "City", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEditRbnWarehouse.DataSource = Me.bsWarehouse
+        Me.RepositoryItemLookUpEditRbnWarehouse.DisplayMember = "Warehouseshortname"
+        Me.RepositoryItemLookUpEditRbnWarehouse.Name = "RepositoryItemLookUpEditRbnWarehouse"
+        Me.RepositoryItemLookUpEditRbnWarehouse.NullText = ""
+        Me.RepositoryItemLookUpEditRbnWarehouse.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith
+        Me.RepositoryItemLookUpEditRbnWarehouse.ValueMember = "Warehouseid"
+        '
         'viewInventory
         '
         Me.Appearance.BackColor = System.Drawing.Color.Transparent
@@ -2788,6 +2820,8 @@ Partial Class viewInventory
         CType(Me.bsWorkOrderItems, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsPurchaseOrders, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEditRbnWarehouse, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3046,4 +3080,7 @@ Partial Class viewInventory
     Friend WithEvents rbtnProductPurchaseHistory As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bsWarehouse As BindingSource
     Friend WithEvents RepositoryItemLookUpEditWarehouse As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents filterWarehouse As DevExpress.XtraBars.BarEditItem
+    Friend WithEvents RepositoryItemLookUpEditRbnWarehouse As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class
