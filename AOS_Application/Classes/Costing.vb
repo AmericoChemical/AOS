@@ -149,7 +149,7 @@
         If oApisList.Query.Load Then
             For Each oApis As ViewMaterialAPISList In oApisList
                 'Loop through all related APIS products, updating standard costs
-                ProcessAPISProductStandardCostChanges(vProdID, vChangeType, oProductRecord, oApis)
+                ProcessAPISProductStandardCostChanges(vChangeType, oProductRecord, oApis)
             Next
 
             ''No need to iterate through since called recursively
@@ -195,7 +195,7 @@
 
     End Sub
 
-    Private Sub ProcessAPISProductStandardCostChanges(vProductID As Integer, vChangeType As String, oProductRecord As Product, oApis As ViewMaterialAPISList)
+    Private Sub ProcessAPISProductStandardCostChanges(vChangeType As String, oProductRecord As Product, oApis As ViewMaterialAPISList)
         Dim oApisCost As New ViewAPISProductsCostChanges
         oApisCost.Query.Where(oApisCost.Query.Productid.Equal(oApis.Productid))
         If oApisCost.Query.Load Then
@@ -209,8 +209,8 @@
             End If
 
             'add product change history record for the relabeled product
-            AddProductCostChangeHistoryRecord(oApisCost.Productid, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
-            ProcessProductStandardCostChanges(vProductID, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType, oApis.Apisnum)
+            'AddProductCostChangeHistoryRecord(oApisCost.Productid, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
+            ProcessProductStandardCostChanges(oApisCost.Productid, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vChangeType, oApis.Apisnum)
 
         End If
     End Sub
@@ -230,8 +230,8 @@
             End If
 
             'add product change history record for the relabeled product
-            AddProductCostChangeHistoryRecord(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
-            ProcessProductStandardCostChanges(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType, vProductID)
+            'AddProductCostChangeHistoryRecord(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
+            ProcessProductStandardCostChanges(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vChangeType, oProductRecord.Productid)
         End If
     End Sub
 
@@ -571,6 +571,77 @@
 
     End Sub
 
+
+    Public Sub updateStandardCostingFromVendorComponentCostChange(vComponentID As Integer, vUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer)
+
+        'change the standard cost data for the product
+        Dim oComponent As New Component
+        Dim vOldUnitCost As Decimal = 0.00
+        If oComponent.LoadByPrimaryKey(vComponentID) Then
+            'get old values
+            vOldUnitCost = IIf(IsDBNull(oComponent.Unitcost), 0, oComponent.Unitcost)
+
+            'set new values
+            oComponent.Unitcost = vUnitCost
+            oComponent.Save()
+        Else
+            Exit Sub
+        End If
+
+        'Process Component Cost Changes Across all Related hierarchy
+        ProcessComponentCostChanges(vComponentID, vReasonForChange, "STD COST", vChangeID)
+
+    End Sub
+
+
+    Public Function CompareStandardCostToComponentCostRecord(vComponentId As Integer, vCostRecordID As Integer) As Integer
+
+        'List of Return Values:
+        '0 - Standard Cost and Component Cost record values do NOT match
+        '1 - Standard Cost and Component Cost record values DO match
+        '2 - Data is missing and can't complete the comparison
+
+        If IsDBNull(vComponentId) Then
+            Return 2
+        End If
+
+        If IsDBNull(vCostRecordID) Then
+            Return 2
+        End If
+
+        Dim oComponent As New Component
+        Dim oCost As New Componentcost
+
+        If Not oComponent.LoadByPrimaryKey(vComponentId) Then
+            Return 2
+        End If
+
+        If Not oCost.LoadByPrimaryKey(vCostRecordID) Then
+            Return 2
+        End If
+
+        'Check for missing values in the cost fields
+        If IsDBNull(oComponent.Unitcost) Then
+            Return 2
+        End If
+
+        If IsDBNull(oCost.UnitCost) Then
+            Return 2
+        End If
+
+
+        'At this point we have two records to compare to each other
+        'We compare units in container and unit cost values 
+        'If any of the values do NOT match, then we return a 0 value, otherwise a 1 value
+        If oComponent.Unitcost <> oCost.UnitCost Then
+            Return 0
+        End If
+        'If we make it this far, all costing data matches between the Component and ComponentCOST records
+        Return 1
+
+    End Function
+
+
     Public Sub updateVendorProductCosting(vCostRecID As Integer, vCostMethod As String, vVolUnits As Decimal, vVolUOM As String, vVolUnitCost As Decimal, vWgtUnits As Decimal, vWgtUOM As String, vWgtUnitCost As Decimal, vReasonForChange As String, vProductID As Integer, vVendorID As Integer, vOrigVolCost As Decimal, vOrigWgtCost As Decimal)
 
         'change the standard cost data for the product
@@ -639,6 +710,46 @@
         vChg.Newvalue1 = vVolUnitCost
         vChg.Newvalue2 = vWgtUnitCost
         vChg.Datatablename = "PRODUCTCOST"
+        vChg.Datarecordid = vCostRecID
+        vChg.Recordstatus = "REVIEW"
+        vChg.Save()
+
+    End Sub
+
+    Public Sub updateVendorComponentCosting(vCostRecID As Integer, vUnitCost As Decimal, vReasonForChange As String, vComponentID As Integer, vVendorID As Integer, vOrigUnitCost As Decimal)
+
+        'change the standard cost data for the component
+        Dim oCOst As New Componentcost
+        Dim vOrgVendorId As Integer
+        If oCOst.LoadByPrimaryKey(vCostRecID) Then
+            'get old values
+            vOrgVendorId = oCOst.VendorId
+            'set new values
+            oCOst.UnitCost = vUnitCost
+            oCOst.VendorId = vVendorID
+
+            oCOst.ModifiedBy = vCurrentUserLogin
+            oCOst.ModifiedDateTime = Now
+            oCOst.Save()
+        Else
+            Exit Sub
+        End If
+
+        'record this VENDOR COST change even in the CHANGERECORD table
+        Dim vChg As Changerecord
+        vChg = New Changerecord
+        vChg.Changetype = "VENDOR COST"
+        vChg.Whatchanged = "VENDOR COSTING"
+        vChg.Whochanged = vCurrentUserLogin
+        vChg.Whenchanged = Now
+        vChg.Whychanged = vReasonForChange
+        vChg.Priorvalue1name = "UNIT COST"
+        vChg.Priorvalue1 = vOrigUnitCost
+        vChg.Priorvalue2name = "VENDOR ID"
+        vChg.Priorvalue2 = vOrgVendorID
+        vChg.Newvalue1 = vUnitCost
+        vChg.Newvalue2 = vVendorID
+        vChg.Datatablename = "COMPONENTCOST"
         vChg.Datarecordid = vCostRecID
         vChg.Recordstatus = "REVIEW"
         vChg.Save()
