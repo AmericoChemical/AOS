@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 8/6/2014 7:45:05 PM
+' Date Generated       : 8/29/2018 11:03:06 AM
 '===============================================================================
 
 Imports System
@@ -18,15 +18,9 @@ Imports EntitySpaces.Interfaces
 
 Namespace BusinessObjects
 
-	Partial Public Class Component 
-		Inherits esComponent
+	Partial Public Class Componentcost 
+		Inherits esComponentcost
 
-        Public Function getComponentByComponentID(ByVal vComponentId As Integer) As Component
-            Dim oComponent As New Component
-            oComponent.LoadByPrimaryKey(vComponentId)
-            Return oComponent
-        End Function
-
-    End Class
+	End Class
 
 End Namespace

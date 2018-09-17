@@ -26,8 +26,9 @@ Namespace BusinessObjects
 		
         Public Sub New()
 			' It is recommended that you do not put code in here
-        End Sub		
+        End Sub
 
-	End Class
+
+    End Class
 
 End Namespace

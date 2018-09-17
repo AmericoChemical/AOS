@@ -68,7 +68,7 @@ Public Class frmUpdateProductStandardCosts
             Return False
         End If
 
-        updateProductStandardCosting(oProduct.Productid, eVolUnits.EditValue, OrigVolCost, eVolUnitCost.EditValue, eWgtUnits.EditValue, OrigWgtCost, eWgtUnitCost.EditValue, eReason.EditValue, "STD COST", oProduct.Productid)
+        updateProductStandardCosting(oProduct.Productid, eVolUnits.EditValue, OrigVolCost, eVolUnitCost.EditValue, eWgtUnits.EditValue, OrigWgtCost, eWgtUnitCost.EditValue, eReason.EditValue, "STD COST", oProduct.Productid, "PROD STD COST - " & oProduct.Productid)
 
         If RaiseAuditEvent(vAuditRuleID, bsProduct, ProductInventoryMethod.VOLUME, vFlag) Then
             eVolUnitCost.Focus()

@@ -1,26 +1,30 @@
 ﻿Module Costing
-    Public Sub ProcessComponentCostChanges(vComponentID As Integer, vReasonForChange As String, vChangeType As String, vChangeId As Integer)
+    Public Sub ProcessComponentCostChanges(vComponentID As Integer, vReasonForChange As String, vChangeType As String, vChangeId As Integer, vWhatChanged As String)
 
         Dim oKitComponentCollection As New KitcomponentCollection
         oKitComponentCollection.Query.Where(oKitComponentCollection.Query.Componentid.Equal(vComponentID))
+        oKitComponentCollection.Query.OrderBy(oKitComponentCollection.Query.Kitid.Ascending)
         If oKitComponentCollection.Query.Load() Then
             For Each oKit As Kitcomponent In oKitComponentCollection
-                ProcessKitCostChanges(oKit.Kitid, vReasonForChange, vChangeType, vChangeId)
+                ProcessKitCostChanges(oKit.Kitid, vReasonForChange & "-" & oKit.Kitid, vChangeType, vChangeId, vWhatChanged)
             Next
         End If
 
     End Sub
 
-    Public Sub ProcessKitCostChanges(vKitID As Integer, vReasonForChange As String, vChangeType As String, vChangeId As Integer)
+    Public Sub ProcessKitCostChanges(vKitID As Integer, vReasonForChange As String, vChangeType As String, vChangeId As Integer, vWhatChanged As String)
 
         Dim oAPISCollection As New ViewAPISDataCollection
-        oAPISCollection.Query.Where(oAPISCollection.Query.Kitid.Equal(vKitID) And oAPISCollection.Query.Apisstatus.NotEqual("ARCHIVED"))
+        oAPISCollection.Query.Where(oAPISCollection.Query.Kitid.Equal(vKitID) And oAPISCollection.Query.Apisstatus.Equal("ACTIVE"))
+        oAPISCollection.Query.OrderBy(oAPISCollection.Query.Productid.Ascending)
         If oAPISCollection.Query.Load() Then
             For Each oAPIS As ViewAPISData In oAPISCollection
                 Dim oTotalCosts As New ViewCostingApisTotalCosts
                 oTotalCosts.Query.Where(oTotalCosts.Query.Apisnum.Equal(oAPIS.Apisnum))
                 If (oTotalCosts.Query.Load) Then
-                    updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, oTotalCosts.ApisVolUnitCost, oTotalCosts.Weight, oTotalCosts.ApisUnitCost, vReasonForChange, vChangeType, vChangeId)
+                    If getProductStandardCostSource(oAPIS.Productid).Equals("APIS") Then
+                        updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, oTotalCosts.ApisVolUnitCost, oTotalCosts.Weight, oTotalCosts.ApisUnitCost, vReasonForChange, vChangeType, vChangeId, vWhatChanged)
+                    End If
                 End If
 
             Next
@@ -107,21 +111,27 @@
     End Function
 
 
-    Public Sub ProcessProductStandardCostChanges(vProdID As Integer, vOldVolCost As Decimal, vOldWgtCost As Decimal, vNewVolCost As Decimal, vNewWgtCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer)
+    Public Sub ProcessProductStandardCostChanges(vProdID As Integer, vOldVolCost As Decimal, vOldWgtCost As Decimal, vNewVolCost As Decimal, vNewWgtCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer, vWhatChanged As String)
 
         Dim oProductRecord As New Product
         oProductRecord.LoadByPrimaryKey(vProdID)
 
         '1. Add Product Change History Record for Initial Product
-        AddProductCostChangeHistoryRecord(vProdID, vOldVolCost, vOldWgtCost, vNewVolCost, vNewWgtCost, vReasonForChange, vChangeType)
+        AddProductCostChangeHistoryRecord(vProdID, vOldVolCost, vOldWgtCost, vNewVolCost, vNewWgtCost, vReasonForChange, vChangeType, vWhatChanged)
 
-        '2. Update Related Relabel Product Records
+        '2. Update Related Relabel Product Records with Prodduct Status = ACTIVE
+        Dim rp As New ProductfulfillmentplanQuery("rp")
+        Dim p As New ProductQuery("p")
+        rp.InnerJoin(p).On(rp.Productid = p.Productid)
+        rp.Where(rp.Associatedproductid = vProdID And p.Productstatus = "ACTIVE")
+        rp.OrderBy(rp.Productid.Ascending)
         Dim oRelabelProds As New ProductfulfillmentplanCollection
-        oRelabelProds.Query.Where(oRelabelProds.Query.Associatedproductid.Equal(vProdID))
-        If oRelabelProds.Query.Load Then
+        If (oRelabelProds.Load(rp)) Then
             For Each obj As Productfulfillmentplan In oRelabelProds
                 'loop through Relabeled Products with same Origin ProductID and update standard costs
-                ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, oProductRecord)
+                If getProductStandardCostSource(obj.Productid) = "RELABEL" Then
+                    ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, oProductRecord, vWhatChanged)
+                End If
 
             Next
         End If
@@ -139,17 +149,19 @@
 
         'now find all APIS records linked to this MaterialID
         Dim oApisList As New ViewMaterialAPISListCollection
-        If vChangeType = "APIS" Then
-            'exclude the APIS that just produced the change
-            oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"), oApisList.Query.Apisnum.NotEqual(vChangeID), oApisList.Query.Productid.NotEqual(vProdID))
-        Else
-            oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"), oApisList.Query.Productid.NotEqual(vProdID))
-        End If
-
+        'If vChangeType = "APIS" Then
+        '    'exclude the APIS that just produced the change
+        '    oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"), oApisList.Query.Apisnum.NotEqual(vChangeID), oApisList.Query.Productid.NotEqual(vProdID))
+        'Else
+        oApisList.Query.Where(oApisList.Query.Materialid.Equal(vMatID), oApisList.Query.Apisstatus.Equal("ACTIVE"), oApisList.Query.Productid.NotEqual(vProdID))
+        '     End If
+        oApisList.Query.OrderBy(oApisList.Query.Productid.Ascending)
         If oApisList.Query.Load Then
             For Each oApis As ViewMaterialAPISList In oApisList
                 'Loop through all related APIS products, updating standard costs
-                ProcessAPISProductStandardCostChanges(vChangeType, oProductRecord, oApis)
+                If getProductStandardCostSource(oApis.Productid) = "APIS" Then
+                    ProcessAPISProductStandardCostChanges(oApis.Productid, vChangeType, oProductRecord, vWhatChanged)
+                End If
             Next
 
             ''No need to iterate through since called recursively
@@ -195,9 +207,9 @@
 
     End Sub
 
-    Private Sub ProcessAPISProductStandardCostChanges(vChangeType As String, oProductRecord As Product, oApis As ViewMaterialAPISList)
+    Private Sub ProcessAPISProductStandardCostChanges(vProductId As Integer, vChangeType As String, oProductRecord As Product, vWhatChanged As String)
         Dim oApisCost As New ViewAPISProductsCostChanges
-        oApisCost.Query.Where(oApisCost.Query.Productid.Equal(oApis.Productid))
+        oApisCost.Query.Where(oApisCost.Query.Productid.Equal(vProductId))
         If oApisCost.Query.Load Then
             'update APIS Product Standard Costs
             Dim oProduct As New Product
@@ -206,16 +218,15 @@
                 oProduct.Volumestandardcost = oApisCost.Newvolcost
                 oProduct.Weightstandardcost = oApisCost.Newwgtcost
                 oProduct.Save()
+                'add product change history record for the relabeled product
+                ProcessProductStandardCostChanges(oApisCost.Productid, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vChangeType, oApisCost.Apisnum, vWhatChanged)
             End If
 
-            'add product change history record for the relabeled product
-            'AddProductCostChangeHistoryRecord(oApisCost.Productid, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
-            ProcessProductStandardCostChanges(oApisCost.Productid, IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost), IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost), IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), "APIS CHNG - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vChangeType, oApis.Apisnum)
 
         End If
     End Sub
 
-    Private Sub ProcessRelabelProductStandardCostChanges(vProductID As Integer, vChangeType As String, oProductRecord As Product)
+    Public Sub ProcessRelabelProductStandardCostChanges(vProductID As Integer, vChangeType As String, oProductRecord As Product, vWhatchanged As String)
         'determine standard costs with new data from origin ProductID new standard costs
         Dim oRlbCosts As New ViewRelabelProductsCostChanges
         oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(vProductID))
@@ -227,19 +238,19 @@
                 oProduct.Volumestandardcost = oRlbCosts.Newvolcost
                 oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
                 oProduct.Save()
+                'add product change history record for the relabeled product
+                'AddProductCostChangeHistoryRecord(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
+                ProcessProductStandardCostChanges(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vChangeType, oProductRecord.Productid, vWhatchanged)
             End If
 
-            'add product change history record for the relabeled product
-            'AddProductCostChangeHistoryRecord(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
-            ProcessProductStandardCostChanges(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vChangeType, oProductRecord.Productid)
         End If
     End Sub
 
-    Public Sub AddProductCostChangeHistoryRecord(vProdID As Integer, vOldVolCost As Decimal, vOldWgtCost As Decimal, vNewVolCost As Decimal, vNewWgtCost As Decimal, vReasonForChange As String, vChangeType As String)
+    Public Sub AddProductCostChangeHistoryRecord(vProdID As Integer, vOldVolCost As Decimal, vOldWgtCost As Decimal, vNewVolCost As Decimal, vNewWgtCost As Decimal, vReasonForChange As String, vChangeType As String, vWhatChanged As String)
 
         Dim vChg As New Changerecord
         vChg.Changetype = vChangeType
-        vChg.Whatchanged = "PRODUCT STD COSTING"
+        vChg.Whatchanged = vWhatChanged '"PROD STD COSTING"
         vChg.Whochanged = vCurrentUserLogin
         vChg.Whenchanged = Now
         vChg.Whychanged = vReasonForChange
@@ -256,7 +267,7 @@
 
     End Sub
 
-    Public Sub updateProductStandardCosting(vProductID As Integer, vVolumeUnits As Decimal, vOldVolumeUnitCost As Decimal, vVolumeUnitCost As Decimal, vWeightUnits As Decimal, vOldWeightUnitCost As Decimal, vWeightUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer)
+    Public Sub updateProductStandardCosting(vProductID As Integer, vVolumeUnits As Decimal, vOldVolumeUnitCost As Decimal, vVolumeUnitCost As Decimal, vWeightUnits As Decimal, vOldWeightUnitCost As Decimal, vWeightUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer, vWhatChanged As String)
 
         'change the standard cost data for the product
         Dim oProduct As New Product
@@ -273,12 +284,13 @@
             oProduct.Weightunits = vWeightUnits
             oProduct.Weightstandardcost = vWeightUnitCost
             oProduct.Save()
+
+            'Process Product Cost Changes Across all Related Products
+            ProcessProductStandardCostChanges(vProductID, vOldVolumeUnitCost, vOldWeightUnitCost, vVolumeUnitCost, vWeightUnitCost, vReasonForChange, vChangeType, vChangeID, vWhatChanged)
         Else
             Exit Sub
         End If
 
-        'Process Product Cost Changes Across all Related Products
-        ProcessProductStandardCostChanges(vProductID, vOldVolumeUnitCost, vOldWeightUnitCost, vVolumeUnitCost, vWeightUnitCost, vReasonForChange, vChangeType, vChangeID)
 
 
 
@@ -340,7 +352,7 @@
     End Sub
 
 
-    Public Sub updateAPISStandardCosting(vProductID As Integer, vVolumeUnits As Decimal, vVolumeUnitCost As Decimal, vWeightUnits As Decimal, vWeightUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer)
+    Public Sub updateAPISStandardCosting(vProductID As Integer, vVolumeUnits As Decimal, vVolumeUnitCost As Decimal, vWeightUnits As Decimal, vWeightUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer, vWhatChanged As String)
 
         'change the standard cost data for the product
         Dim oProduct As New Product
@@ -363,12 +375,13 @@
             oProduct.Weightunits = vWeightUnits
             oProduct.Weightstandardcost = vWeightUnitCost
             oProduct.Save()
+
+            'Process Product Cost Changes Across all Related Products
+            ProcessProductStandardCostChanges(vProductID, vOldVolUnitCost, vOldWgtUnitCost, vVolumeUnitCost, vWeightUnitCost, vReasonForChange, vChangeType, vChangeID, vWhatChanged)
         Else
             Exit Sub
         End If
 
-        'Process Product Cost Changes Across all Related Products
-        ProcessProductStandardCostChanges(vProductID, vOldVolUnitCost, vOldWgtUnitCost, vVolumeUnitCost, vWeightUnitCost, vReasonForChange, vChangeType, vChangeID)
 
         ''record this APIS COST change even in the CHANGERECORD table
         'Dim vChg As Changerecord
@@ -435,54 +448,50 @@
 
     Public Sub updateStandardCostingFromStandardLaborRateChange()
 
-        Dim oTotalCosts As ViewCostingApisTotalCosts
+
+        '1. Update Related Relabel Product Records with Prodduct Status = ACTIVE RELABEL gets priority
+
+        Dim rp As New ProductfulfillmentplanQuery("rp")
+        Dim p As New ProductQuery("p")
+        rp.InnerJoin(p).On(rp.Productid = p.Productid)
+        rp.Where(rp.Stdlaborhrs.IsNotNull And p.Productstatus = "ACTIVE")
+        rp.OrderBy(rp.Productid.Ascending)
+        Dim oRelabelProds As New ProductfulfillmentplanCollection
+        If (oRelabelProds.Load(rp)) Then
+            For Each obj As Productfulfillmentplan In oRelabelProds
+                'loop through Relabeled Products with same Origin ProductID and update standard costs
+                If getProductStandardCostSource(obj.Productid) = "RELABEL" Then
+                    Dim oProd As New Product
+                    If oProd.LoadByPrimaryKey(obj.Productid) Then
+                        ProcessRelabelProductStandardCostChanges(obj.Productid, "STD COST", oProd, "STD LABOR RATE CHANGE")
+                    End If
+                End If
+
+            Next
+        End If
+
 
         'UPDATE ALL ACTIVE APIS RECORDS WITH NEW LABOR RATE
 
         'find all ACTIVE APIS records
         Dim oAPISList As New ApisCollection
-        oAPISList.Query.Where(oAPISList.Query.Apisstatus.NotEqual("ARCHIVED"))
-        If Not oAPISList.Query.Load Then
-            MsgBox("No ACTIVE/SINGLE USE APIS records found.", MsgBoxStyle.Critical, "No Data to Process")
-            Exit Sub
-        End If
+        oAPISList.Query.Where(oAPISList.Query.Apisstatus.Equal("ACTIVE"))
+        oAPISList.Query.OrderBy(oAPISList.Query.Productid.Ascending)
+        If oAPISList.Query.Load Then
 
-        'Loop through APIS records, pulling up APIS Cost View
-        For Each oAPIS As Apis In oAPISList
-            'get Total Costs for the current APIS in the list
-            oTotalCosts = New ViewCostingApisTotalCosts
-            oTotalCosts.Query.Where(oTotalCosts.Query.Apisnum.Equal(oAPIS.Apisnum))
-            oTotalCosts.Query.Load()
-            'update standard costs for product created from this APIS, as well as all related products
-            updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, IIf(IsDBNull(oTotalCosts.ApisVolUnitCost), 0, oTotalCosts.ApisVolUnitCost), oTotalCosts.Weight, IIf(IsDBNull(oTotalCosts.ApisUnitCost), 0, oTotalCosts.ApisUnitCost), "STD LABOR RATE CHANGE", "STD COST", oAPIS.Apisnum)
-        Next
-
-        'UPDATE ALL RELABEL PRODUCTS WITH NEW LABOR RATE
-        Dim oRelabelProds As New ProductfulfillmentplanCollection
-        oRelabelProds.Query.Where(oRelabelProds.Query.Fulfillmenttypeid.Equal(2))
-        If oRelabelProds.Query.Load Then
-            'loop through Relabeled Products and update standard costs
-            For Each obj As Productfulfillmentplan In oRelabelProds
-                'determine standard costs with new data from origin ProductID new standard costs
-                Dim oRlbCosts As New ViewRelabelProductsCostChanges
-                oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(obj.Productid))
-                If oRlbCosts.Query.Load Then
-                    'update Relabeled Product Standard Costs
-                    Dim oProduct As New Product
-                    If oProduct.LoadByPrimaryKey(obj.Productid) Then
-                        'set new values
-                        oProduct.Volumestandardcost = oRlbCosts.Newvolcost
-                        oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
-                        oProduct.Save()
+            'Loop through APIS records, pulling up APIS Cost View
+            For Each oAPIS As Apis In oAPISList
+                'get Total Costs for the current APIS in the list
+                'update standard costs for product created from this APIS, as well as all related products
+                If getProductStandardCostSource(oAPIS.Productid) = "APIS" Then
+                    Dim oProd As New Product
+                    If oProd.LoadByPrimaryKey(oAPIS.Productid) Then
+                        ProcessAPISProductStandardCostChanges(oAPIS.Productid, "STD COST", oProd, "STD LABOR RATE CHANGE")
                     End If
-
-                    'add product change history record for the relabeled product
-                    AddProductCostChangeHistoryRecord(obj.Productid, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL - LABOR RATE CHNG", "STD COST")
                 End If
+                'updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, IIf(IsDBNull(oTotalCosts.ApisVolUnitCost), 0, oTotalCosts.ApisVolUnitCost), oTotalCosts.Weight, IIf(IsDBNull(oTotalCosts.ApisUnitCost), 0, oTotalCosts.ApisUnitCost), "STD LABOR RATE CHANGE", "STD COST", oAPIS.Apisnum)
             Next
         End If
-
-
     End Sub
 
 
@@ -505,12 +514,14 @@
             oProduct.Weightuom = vWeightUOM
             oProduct.Weightstandardcost = vWeightUnitCost
             oProduct.Save()
+
+            'Process Product Cost Changes Across all Related Products
+            ProcessProductStandardCostChanges(vProductID, vOldVolUnitCost, vOldWgtUnitCost, vVolumeUnitCost, vWeightUnitCost, vReasonForChange, "STD COST", vChangeID, "VNDR COST CHNG-" & vProductID)
+
         Else
             Exit Sub
         End If
 
-        'Process Product Cost Changes Across all Related Products
-        ProcessProductStandardCostChanges(vProductID, vOldVolUnitCost, vOldWgtUnitCost, vVolumeUnitCost, vWeightUnitCost, vReasonForChange, "STD COST", vChangeID)
 
 
 
@@ -572,7 +583,7 @@
     End Sub
 
 
-    Public Sub updateStandardCostingFromVendorComponentCostChange(vComponentID As Integer, vUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer)
+    Public Sub updateStandardCostingFromVendorComponentCostChange(vComponentID As Integer, vUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer, vWhatChanged As String)
 
         'change the standard cost data for the product
         Dim oComponent As New Component
@@ -584,12 +595,13 @@
             'set new values
             oComponent.Unitcost = vUnitCost
             oComponent.Save()
+
+            'Process Component Cost Changes Across all Related hierarchy
+            ProcessComponentCostChanges(vComponentID, vReasonForChange, "STD COST", vChangeID, vWhatChanged)
         Else
             Exit Sub
         End If
 
-        'Process Component Cost Changes Across all Related hierarchy
-        ProcessComponentCostChanges(vComponentID, vReasonForChange, "STD COST", vChangeID)
 
     End Sub
 
@@ -755,5 +767,52 @@
         vChg.Save()
 
     End Sub
+
+    Public Function getProductStandardCostSource(ByVal vProductId As Integer) As String
+        Dim oAPISList As ApisCollection = getAPISByProductID(vProductId, "ACTIVE")
+        Dim oFulfillment As ViewProductFulfillmentCollection = getProductFulfillment(vProductId)
+        Dim StdCostSource As String = String.Empty
+
+        If Not (IsDBNull(oFulfillment) Or oFulfillment Is Nothing) Then
+            If oFulfillment.Count > 0 Then
+                'There are ProductFulfillment records - assume first record (0) is INV, look at second (1) record
+                Dim vFulfillmenttype As String
+                If oFulfillment.Count = 1 And oFulfillment(0).Fulfillmenttype <> "INV" Then
+                    vFulfillmenttype = oFulfillment(0).Fulfillmenttype
+                Else '- assume first record (0) is INV, look at second (1) record
+                    vFulfillmenttype = oFulfillment(1).Fulfillmenttype
+                End If
+                Select Case vFulfillmenttype
+                    Case "RLBL"
+                        StdCostSource = "RELABEL"
+                    Case "PORD"
+                        StdCostSource = "APIS"
+                    Case "PRCH"
+                        StdCostSource = "PURCHASE"
+                    Case Else
+                        StdCostSource = "PURCHASE"
+                End Select
+            End If
+        End If
+
+
+        If String.IsNullOrEmpty(StdCostSource) Then
+
+            If oAPISList.Count > 0 Then 'there is a default ACTIVE Apis for this product
+                StdCostSource = "APIS"
+            Else
+                StdCostSource = "PURCHASE"
+            End If
+        End If
+        If StdCostSource.Equals("PURCHASE", StringComparison.CurrentCultureIgnoreCase) Then
+            Dim oProduct As New Product
+            If (oProduct.LoadByPrimaryKey(vProductId) AndAlso oProduct.Standardcostoverride) Then
+                StdCostSource = "OVERRIDE"
+            End If
+        End If
+
+        Return StdCostSource
+    End Function
+
 
 End Module

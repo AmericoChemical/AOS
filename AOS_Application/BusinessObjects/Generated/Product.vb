@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 1/19/2017 12:41:17 PM
+' Date Generated       : 9/16/2018 11:00:33 AM
 '===============================================================================
 
 Imports System
@@ -373,6 +373,9 @@ Namespace BusinessObjects
 												
 						Case "Bulkinventory"
 							Me.str.Bulkinventory = CType(value, string)
+												
+						Case "Standardcostoverride"
+							Me.str.Standardcostoverride = CType(value, string)
 					
 					End Select
 					
@@ -618,6 +621,12 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
 								Me.Bulkinventory = CType(value, Nullable(Of System.Boolean))
+							End If
+						
+						Case "Standardcostoverride"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.Standardcostoverride = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -1529,6 +1538,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Boolean))
 				MyBase.SetSystemBoolean(ProductMetadata.ColumnNames.Bulkinventory, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to PRODUCT.STANDARDCOSTOVERRIDE
+		' </summary>
+		Public Overridable Property Standardcostoverride As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ProductMetadata.ColumnNames.Standardcostoverride)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ProductMetadata.ColumnNames.Standardcostoverride, value)
 			End Set
 		End Property		
 		
@@ -2975,6 +2997,27 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Standardcostoverride As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.Standardcostoverride
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Standardcostoverride = Nothing
+					Else
+						entity.Standardcostoverride = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esProduct
@@ -3477,6 +3520,12 @@ Namespace BusinessObjects
 			End Get
 		End Property 
 		
+		Public ReadOnly Property Standardcostoverride As esQueryItem
+			Get
+				Return New esQueryItem(Me, ProductMetadata.ColumnNames.Standardcostoverride, esSystemType.Boolean)
+			End Get
+		End Property 
+		
 	End Class
 
 
@@ -3684,14 +3733,14 @@ Namespace BusinessObjects
 			c = New esColumnMetadata(ProductMetadata.ColumnNames.Stdweight, 2, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ProductMetadata.PropertyNames.Stdweight
 			c.NumericPrecision = 18
-			c.NumericScale = 2
+			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
 			c = New esColumnMetadata(ProductMetadata.ColumnNames.Stdgallons, 3, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ProductMetadata.PropertyNames.Stdgallons
 			c.NumericPrecision = 18
-			c.NumericScale = 2
+			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
@@ -3817,7 +3866,7 @@ Namespace BusinessObjects
 			c = New esColumnMetadata(ProductMetadata.ColumnNames.Units, 24, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ProductMetadata.PropertyNames.Units
 			c.NumericPrecision = 18
-			c.NumericScale = 2
+			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
@@ -3880,7 +3929,7 @@ Namespace BusinessObjects
 			c = New esColumnMetadata(ProductMetadata.ColumnNames.Weightunits, 34, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ProductMetadata.PropertyNames.Weightunits
 			c.NumericPrecision = 18
-			c.NumericScale = 2
+			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
@@ -3893,7 +3942,7 @@ Namespace BusinessObjects
 			c = New esColumnMetadata(ProductMetadata.ColumnNames.Volumeunits, 36, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ProductMetadata.PropertyNames.Volumeunits
 			c.NumericPrecision = 18
-			c.NumericScale = 2
+			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
@@ -4099,6 +4148,13 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ProductMetadata.ColumnNames.Standardcostoverride, 69, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ProductMetadata.PropertyNames.Standardcostoverride
+			c.HasDefault = True
+			c.Default = "((0))"
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -4196,6 +4252,7 @@ Namespace BusinessObjects
 			 Public Const Rq As String = "RQ"
 			 Public Const Standardcostnotes As String = "STANDARDCOSTNOTES"
 			 Public Const Bulkinventory As String = "BULKINVENTORY"
+			 Public Const Standardcostoverride As String = "STANDARDCOSTOVERRIDE"
 		End Class
 #End Region	
 		
@@ -4270,6 +4327,7 @@ Namespace BusinessObjects
 			 Public Const Rq As String = "Rq"
 			 Public Const Standardcostnotes As String = "Standardcostnotes"
 			 Public Const Bulkinventory As String = "Bulkinventory"
+			 Public Const Standardcostoverride As String = "Standardcostoverride"
 		End Class
 #End Region	
 
@@ -4385,7 +4443,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Chemicalclarity", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Rq", new esTypeMap("bit", "System.Boolean"))
 				meta.AddTypeMap("Standardcostnotes", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("Bulkinventory", new esTypeMap("bit", "System.Boolean"))			
+				meta.AddTypeMap("Bulkinventory", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("Standardcostoverride", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 

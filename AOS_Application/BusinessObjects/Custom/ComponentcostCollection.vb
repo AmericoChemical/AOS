@@ -6,27 +6,34 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 8/6/2014 7:45:05 PM
+' Date Generated       : 8/29/2018 11:03:05 AM
 '===============================================================================
 
 Imports System
+Imports System.ComponentModel
 Imports System.Collections.Generic
 Imports System.Text
 Imports System.Data
+Imports System.Reflection
 
 Imports EntitySpaces.Interfaces
+Imports EntitySpaces.Core
 
 Namespace BusinessObjects
 
-	Partial Public Class Component 
-		Inherits esComponent
-
-        Public Function getComponentByComponentID(ByVal vComponentId As Integer) As Component
-            Dim oComponent As New Component
-            oComponent.LoadByPrimaryKey(vComponentId)
-            Return oComponent
+	Partial Public Class ComponentcostCollection
+		Inherits esComponentcostCollection
+		
+        Public Sub New()
+			' It is recommended that you do not put code in here
+        End Sub
+        Public Function GetComponentCostCollectionByComponentId(ByVal vComponentId As Integer) As ComponentcostCollection
+            Dim oCosts As New ComponentcostCollection
+            oCosts.Query.Where(oCosts.Query.ComponentId.Equal(vComponentId))
+            oCosts.Query.Load()
+            oCosts.Sort = "IsDefault Desc, IsActive DESC, EFFECTIVEDATE DESC"
+            Return oCosts
         End Function
-
     End Class
 
 End Namespace

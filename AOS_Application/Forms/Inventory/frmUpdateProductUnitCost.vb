@@ -298,6 +298,12 @@ Public Class frmUpdateProductUnitCost
     End Sub
 
     Private Sub rbtnUpdateProductStandardCosts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnUpdateProductStandardCosts.ItemClick
+        ' Check for OverRide
+        If Costing.getProductStandardCostSource(oProduct.Productid) = "OVERRIDE" Then
+            MsgBox("Standard Cost is set to OVERRIDE. Can not update with Vendor Cost", MsgBoxStyle.Critical, "ERROR - Update Not Allowed")
+            Exit Sub
+
+        End If
 
         'check to see if product is a liquid - if so, require a volume units/uom/unitcost
         If oProduct.Isliquid = True Then

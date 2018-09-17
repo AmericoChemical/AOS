@@ -88,7 +88,7 @@ Public Class frmAddEditComponents
             End If
             oComponent.Save()
 
-            ProcessComponentCostChanges(vID, "COMPONENT CHNG - COMP " & vID, "STD COST", vID)
+            ProcessComponentCostChanges(vID, "COMPONENT CHNG - COMP " & vID, "STD COST", vID, "COMP COST CHNG-" & vID)
         End If
         Return True
     End Function
@@ -209,5 +209,12 @@ Public Class frmAddEditComponents
             MsgBox("Error in deleting selected component alternate", MsgBoxStyle.Critical, "Delete Component Alternate - Error")
         End Try
         getComponent()
+    End Sub
+
+    Private Sub btnComponentCostRecords_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnComponentCostRecords.ItemClick
+        Dim frm As New frmViewComponentCostRecords
+        frm.vComponentID = oComponent.Componentid
+        frm.ShowDialog()
+        editObject(oComponent.Componentid)
     End Sub
 End Class

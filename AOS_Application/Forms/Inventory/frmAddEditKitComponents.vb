@@ -86,7 +86,7 @@ Public Class frmAddEditKitComponents
             Return False
         End If
         oKitComponent.Save()
-        ProcessKitCostChanges(vID, "KIT CHNG - KIT " & vID, "STD COST", vID)
+        ProcessKitCostChanges(vID, "KIT CHNG - KIT " & vID, "STD COST", vID, "KIT CHNG-" & vID)
 
         Return True
     End Function

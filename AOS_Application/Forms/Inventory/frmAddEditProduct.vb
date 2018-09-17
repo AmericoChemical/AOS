@@ -79,11 +79,12 @@ Public Class frmAddEditProduct
         setRibbonOptions(vCurrentUserSecurityLevel)
         If vCurrentUserSecurityLevel >= 9 Then
             vAPISID = GetAPISID(vID)
-            rbtnProductApisCosts.Visibility = IIf(vAPISID <> 0, DevExpress.XtraBars.BarItemVisibility.Always, DevExpress.XtraBars.BarItemVisibility.Never)
+            '       rbtnProductApisCosts.Visibility = IIf(vAPISID <> 0, DevExpress.XtraBars.BarItemVisibility.Always, DevExpress.XtraBars.BarItemVisibility.Never)
 
         Else
-            rbtnProductApisCosts.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+            '      rbtnProductApisCosts.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         End If
+
         If vEditType = "ADD" Then
             Me.Text = "Adding New " & vObjectName
         Else
@@ -123,51 +124,56 @@ Public Class frmAddEditProduct
         oChemicals.LoadAll()
         oChemicals.Sort = "CHEMICALNAME"
         bsChemicalList.DataSource = oChemicals
-
-        oFulFillment = getProductFulfillment(vID)
-        If IsDBNull(oFulFillment) Or oFulFillment Is Nothing Then
-            'vID was null, so no ProductFulfillmentRecords exists yet
+        eStdCostSource.EditValue = Costing.getProductStandardCostSource(vID)
+        If eStdCostSource.EditValue.ToString.Equals("APIS") AndAlso vCurrentUserSecurityLevel >= 9 Then
+            rbtnProductApisCosts.Enabled = True
         Else
-            'There is a Product ID
-            Select Case oFulFillment.Count
-                Case 0 'no product fulfillment records
-                    Dim oAPIS As New ApisCollection
-                    'check for ACTIVE ApisC record
-                    oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("ACTIVE"), oAPIS.Query.Productid.Equal(vID))
-                    If oAPIS.Query.Load Then
-                        eStdCostSource.EditValue = "APIS"
-                        rbtnProductApisCosts.Enabled = True
-                    Else
-                        rbtnProductApisCosts.Enabled = False
-                        eStdCostSource.EditValue = "PURCHASE"
-                    End If
-                Case 1 'only one product fulfillment record (most likely "INV")
-                    Select Case oFulFillment(0).Fulfillmenttype
-                        Case "RLBL"
-                            eStdCostSource.EditValue = "RELABEL"
-                        Case "PORD"
-                            eStdCostSource.EditValue = "APIS"
-                            rbtnProductApisCosts.Enabled = True
-                        Case "PRCH"
-                            eStdCostSource.EditValue = "PURCHASE"
-                        Case Else
-                            eStdCostSource.EditValue = "PURCHASE"
-                    End Select
-                Case Else 'More than one product fulfillment record - assume the first record is always INV, so we skip that one and move to the second record
-                    Select Case oFulFillment(1).Fulfillmenttype
-                        Case "RLBL"
-                            eStdCostSource.EditValue = "RELABEL"
-                        Case "PORD"
-                            eStdCostSource.EditValue = "APIS"
-                            rbtnProductApisCosts.Enabled = True
-                        Case "PRCH"
-                            eStdCostSource.EditValue = "PURCHASE"
-                        Case Else
-                            eStdCostSource.EditValue = "PURCHASE"
-                    End Select
-            End Select
-
+            rbtnProductApisCosts.Enabled = False
         End If
+        'oFulFillment = getProductFulfillment(vID)
+        'If IsDBNull(oFulFillment) Or oFulFillment Is Nothing Then
+        '    'vID was null, so no ProductFulfillmentRecords exists yet
+        'Else
+        '    'There is a Product ID
+        '    Select Case oFulFillment.Count
+        '        Case 0 'no product fulfillment records
+        '            Dim oAPIS As New ApisCollection
+        '            'check for ACTIVE ApisC record
+        '            oAPIS.Query.Where(oAPIS.Query.Apisstatus.Equal("ACTIVE"), oAPIS.Query.Productid.Equal(vID))
+        '            If oAPIS.Query.Load Then
+        '                eStdCostSource.EditValue = "APIS"
+        '                rbtnProductApisCosts.Enabled = True
+        '            Else
+        '                rbtnProductApisCosts.Enabled = False
+        '                eStdCostSource.EditValue = "PURCHASE"
+        '            End If
+        '        Case 1 'only one product fulfillment record (most likely "INV")
+        '            Select Case oFulFillment(0).Fulfillmenttype
+        '                Case "RLBL"
+        '                    eStdCostSource.EditValue = "RELABEL"
+        '                Case "PORD"
+        '                    eStdCostSource.EditValue = "APIS"
+        '                    rbtnProductApisCosts.Enabled = True
+        '                Case "PRCH"
+        '                    eStdCostSource.EditValue = "PURCHASE"
+        '                Case Else
+        '                    eStdCostSource.EditValue = "PURCHASE"
+        '            End Select
+        '        Case Else 'More than one product fulfillment record - assume the first record is always INV, so we skip that one and move to the second record
+        '            Select Case oFulFillment(1).Fulfillmenttype
+        '                Case "RLBL"
+        '                    eStdCostSource.EditValue = "RELABEL"
+        '                Case "PORD"
+        '                    eStdCostSource.EditValue = "APIS"
+        '                    rbtnProductApisCosts.Enabled = True
+        '                Case "PRCH"
+        '                    eStdCostSource.EditValue = "PURCHASE"
+        '                Case Else
+        '                    eStdCostSource.EditValue = "PURCHASE"
+        '            End Select
+        '    End Select
+
+        '  End If
 
 
     End Sub
@@ -572,7 +578,6 @@ Public Class frmAddEditProduct
                 'eWgtUOM.Properties.ReadOnly = False
                 'eWgtCost.Properties.ReadOnly = False
         End Select
-
     End Sub
 
     Private Sub rbtnChangeProductStatus_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnChangeProductStatus.ItemClick
@@ -684,6 +689,17 @@ Public Class frmAddEditProduct
         GetAPISID = 0
     End Function
 
+    'Private Sub CheckEdit3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit3.CheckedChanged
+    '    rbtnChangeStandardCosts.Enabled = CheckEdit3.Checked
+    'End Sub
 
+    'Private Sub CheckEdit3_CheckStateChanged(sender As Object, e As EventArgs) Handles CheckEdit3.CheckStateChanged
+    '    rbtnChangeStandardCosts.Enabled = CheckEdit3.Checked
 
+    'End Sub
+
+    Private Sub CheckEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles CheckEdit3.EditValueChanged
+        rbtnChangeStandardCosts.Enabled = CheckEdit3.Checked
+
+    End Sub
 End Class

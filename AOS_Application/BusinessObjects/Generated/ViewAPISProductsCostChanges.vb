@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 7/24/2017 8:30:35 AM
+' Date Generated       : 9/16/2018 8:05:04 PM
 '===============================================================================
 
 Imports System
@@ -158,6 +158,9 @@ Namespace BusinessObjects
 												
 						Case "Newvolcost"
 							Me.str.Newvolcost = CType(value, string)
+												
+						Case "Apisnum"
+							Me.str.Apisnum = CType(value, string)
 					
 					End Select
 					
@@ -205,6 +208,12 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
 								Me.Newvolcost = CType(value, Nullable(Of System.Decimal))
+							End If
+						
+						Case "Apisnum"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
+								Me.Apisnum = CType(value, Nullable(Of System.Int32))
 							End If
 						
 					
@@ -336,6 +345,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Decimal))
 				MyBase.SetSystemDecimal(ViewAPISProductsCostChangesMetadata.ColumnNames.Newvolcost, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewAPISProductsCostChanges.APISNUM
+		' </summary>
+		Public Overridable Property Apisnum As Nullable(Of System.Int32)
+			Get
+				Return MyBase.GetSystemInt32(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisnum)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Int32))
+				MyBase.SetSystemInt32(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisnum, value)
 			End Set
 		End Property		
 		
@@ -549,6 +571,27 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Apisnum As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Int32) = entity.Apisnum
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Apisnum = Nothing
+					Else
+						entity.Apisnum = Convert.ToInt32(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewAPISProductsCostChanges
@@ -644,6 +687,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property Newvolcost As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewAPISProductsCostChangesMetadata.ColumnNames.Newvolcost, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Apisnum As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewAPISProductsCostChangesMetadata.ColumnNames.Apisnum, esSystemType.Int32)
 			End Get
 		End Property 
 		
@@ -865,7 +914,7 @@ Namespace BusinessObjects
 			c = New esColumnMetadata(ViewAPISProductsCostChangesMetadata.ColumnNames.Volumeunits, 4, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ViewAPISProductsCostChangesMetadata.PropertyNames.Volumeunits
 			c.NumericPrecision = 18
-			c.NumericScale = 2
+			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
@@ -879,7 +928,7 @@ Namespace BusinessObjects
 			c = New esColumnMetadata(ViewAPISProductsCostChangesMetadata.ColumnNames.Weightunits, 6, GetType(System.Decimal), esSystemType.Decimal)	
 			c.PropertyName = ViewAPISProductsCostChangesMetadata.PropertyNames.Weightunits
 			c.NumericPrecision = 18
-			c.NumericScale = 2
+			c.NumericScale = 4
 			c.IsNullable = True
 			_columns.Add(c)
 				
@@ -895,6 +944,11 @@ Namespace BusinessObjects
 			c.NumericPrecision = 18
 			c.NumericScale = 4
 			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisnum, 9, GetType(System.Int32), esSystemType.Int32)	
+			c.PropertyName = ViewAPISProductsCostChangesMetadata.PropertyNames.Apisnum
+			c.NumericPrecision = 10
 			_columns.Add(c)
 				
 		End Sub
@@ -934,6 +988,7 @@ Namespace BusinessObjects
 			 Public Const Weightunits As String = "WEIGHTUNITS"
 			 Public Const Newwgtcost As String = "NEWWGTCOST"
 			 Public Const Newvolcost As String = "NEWVOLCOST"
+			 Public Const Apisnum As String = "APISNUM"
 		End Class
 #End Region	
 		
@@ -948,6 +1003,7 @@ Namespace BusinessObjects
 			 Public Const Weightunits As String = "Weightunits"
 			 Public Const Newwgtcost As String = "Newwgtcost"
 			 Public Const Newvolcost As String = "Newvolcost"
+			 Public Const Apisnum As String = "Apisnum"
 		End Class
 #End Region	
 
@@ -1003,7 +1059,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Oldwgtcost", new esTypeMap("decimal", "System.Decimal"))
 				meta.AddTypeMap("Weightunits", new esTypeMap("decimal", "System.Decimal"))
 				meta.AddTypeMap("Newwgtcost", new esTypeMap("decimal", "System.Decimal"))
-				meta.AddTypeMap("Newvolcost", new esTypeMap("decimal", "System.Decimal"))			
+				meta.AddTypeMap("Newvolcost", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Apisnum", new esTypeMap("int", "System.Int32"))			
 				
 				
 				 

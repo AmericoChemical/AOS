@@ -18,8 +18,6 @@ Public Class frmViewProductCostRecords
     Dim oProduct As New Product
     Public oCost As Productcost
     Public oVendors As VendorCollection
-    Dim oFulfillment As ViewProductFulfillmentCollection
-    Dim oAPISList As ApisCollection
     Dim vStdCostSource As String = Nothing
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
@@ -33,28 +31,41 @@ Public Class frmViewProductCostRecords
         getProductData()
     End Sub
 
-    Private Sub checkDefaultCostData()
-        Dim oCost As New ProductcostCollection
-        oCost.Query.Where(oCost.Query.Productid.Equal(vProductID), oCost.Query.Isdefaultcostrecord.Equal(1))
-        If oCost.Query.Load Then
-            If oCost.Count = 1 Then
-                Select Case CompareStandardCostToProductCostRecord(vProductID, oCost(0).Costrecid)
-                    Case 0 'Standard Costs do NOT match Default Costs
-                        rbtnUpdateStdCost.Enabled = True
-                    Case 1 'Standard Costs MATCH Default Costs
-                        rbtnUpdateStdCost.Enabled = False
-                    Case 2 'Missing data from Standard Costs and/or Default Costs
-                        MsgBox("There is missing data in the Product STANDARD COST and/or Default PRODUCT COST records", MsgBoxStyle.Critical, "WARNING!")
-                        rbtnUpdateStdCost.Enabled = True
-                    Case Else 'Something went wrong
-                        rbtnUpdateStdCost.Enabled = False
-                End Select
-            Else
-                MsgBox("There is more than one PRODUCT COST record marked as the DEFAULT. Can't compare to STANDARD COSTS", MsgBoxStyle.Critical, "DATA ERROR")
-            End If
-        Else
-            MsgBox("There is no PRODUCT COST record marked as the DEFAULT. Can't compare to STANDARD COSTS", MsgBoxStyle.Critical, "DATA ERROR")
-        End If
+    Private Sub checkDefaultCostData(ByVal vStdCostSource As String)
+
+        Dim oProduct As New Product
+
+        Select Case vStdCostSource
+            Case "OVERRIDE"
+                rbtnUpdateStdCost.Enabled = False
+                rbtnUpdateStdCost.Hint = "The Product STANDARD COST is marked Override. It cannot be overwritten by Vednor Cost"
+            Case Else
+                Dim oCost As New ProductcostCollection
+                oCost.Query.Where(oCost.Query.Productid.Equal(vProductID), oCost.Query.Isdefaultcostrecord.Equal(1))
+                If oCost.Query.Load Then
+                    If oCost.Count = 1 Then
+                        Select Case CompareStandardCostToProductCostRecord(vProductID, oCost(0).Costrecid)
+                            Case 0 'Standard Costs do NOT match Default Costs
+                                rbtnUpdateStdCost.Enabled = True
+                                rbtnUpdateStdCost.Hint = "The Product STANDARD COSTs Do Not Match Default costs. Click to Update."
+                            Case 1 'Standard Costs MATCH Default Costs
+                                rbtnUpdateStdCost.Enabled = False
+                                rbtnUpdateStdCost.Hint = "The Product STANDARD COSTs Match Default costs. Nothing to Update."
+                            Case 2 'Missing data from Standard Costs and/or Default Costs
+                                MsgBox("There is missing data in the Product STANDARD COST and/or Default PRODUCT COST records", MsgBoxStyle.Critical, "WARNING!")
+                                rbtnUpdateStdCost.Enabled = True
+                            Case Else 'Something went wrong
+                                rbtnUpdateStdCost.Enabled = False
+                                rbtnUpdateStdCost.Hint = "Something went wrong"
+                        End Select
+                    Else
+                        MsgBox("There is more than one PRODUCT COST record marked as the DEFAULT. Can't compare to STANDARD COSTS", MsgBoxStyle.Critical, "DATA ERROR")
+                    End If
+                Else
+                    MsgBox("There is no PRODUCT COST record marked as the DEFAULT. Can't compare to STANDARD COSTS", MsgBoxStyle.Critical, "DATA ERROR")
+                End If
+        End Select
+
     End Sub
 
 
@@ -78,31 +89,9 @@ Public Class frmViewProductCostRecords
     End Sub
 
     Private Sub getProductStandardCostSource()
-        oAPISList = getAPISByProductID(vProductID)
-        oFulfillment = getProductFulfillment(vProductID)
 
-        If oFulfillment.Count > 0 Then
-            'There are ProductFulfillment records - assume first record (0) is INV, look at second (1) record
-            Select Case oFulfillment(1).Fulfillmenttype
-                Case "RLBL"
-                    vStdCostSource = "RELABEL"
-                Case "PORD"
-                    vStdCostSource = "APIS"
-                Case "PRCH"
-                    vStdCostSource = "PURCHASE"
-                    checkDefaultCostData()
-                Case Else
-                    vStdCostSource = "PURCHASE"
-                    checkDefaultCostData()
-            End Select
-        Else
-            If oAPISList.Count > 0 Then 'there is a default ACTIVE Apis for this product
-                vStdCostSource = "APIS"
-            Else
-                vStdCostSource = "PURCHASE"
-                checkDefaultCostData()
-            End If
-        End If
+        vStdCostSource = Costing.getProductStandardCostSource(vProductID)
+        checkDefaultCostData(vStdCostSource)
         lblStdCostType.Caption = vStdCostSource
 
     End Sub

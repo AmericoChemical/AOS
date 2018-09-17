@@ -486,12 +486,17 @@ Module ProductionOrderProcessing
         Return oAPISList
     End Function
 
-    Public Function getAPISByProductID(vProductID As Integer) As ApisCollection
+    Public Function getAPISByProductID(vProductID As Integer, Optional ByVal vApisStatus As String = "ALL") As ApisCollection
         Dim oAPISList As New ApisCollection
         oAPISList.Query.Where(oAPISList.Query.Productid.Equal(vProductID))
+        If (Not vApisStatus.Equals("ALL", StringComparison.CurrentCultureIgnoreCase)) Then
+            oAPISList.Query.Where(oAPISList.Query.Apisstatus.Equal(vApisStatus))
+        End If
         oAPISList.Query.Load()
         Return oAPISList
     End Function
+
+
 
     Public Function getViewProductionOrderData(vWorkOrderID As Integer, vProductID As Integer, Optional fetchCanceledProdOrders As Boolean = False) As ViewProdOrderDataCollection
         Dim oProdOrders As New ViewProdOrderDataCollection

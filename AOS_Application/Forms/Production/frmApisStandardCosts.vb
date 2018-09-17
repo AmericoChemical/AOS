@@ -93,7 +93,7 @@ Public Class frmApisStandardCosts
             Exit Sub
         End If
 
-        updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, oTotalCosts.ApisVolUnitCost, oTotalCosts.Weight, oTotalCosts.ApisUnitCost, "APIS UPDATE - " & oAPIS.Apisnum.ToString, "STD COST", oAPIS.Apisnum)
+        updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, oTotalCosts.ApisVolUnitCost, oTotalCosts.Weight, oTotalCosts.ApisUnitCost, "APIS UPDATE - " & oAPIS.Apisnum.ToString, "STD COST", oAPIS.Apisnum, "APIS CHNG-" & oAPIS.Apisnum)
 
         editObject(vAPISID)
 
