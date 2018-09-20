@@ -21,6 +21,12 @@ Namespace BusinessObjects
 	Partial Public Class Component 
 		Inherits esComponent
 
-	End Class
+        Public Function getComponentByComponentID(ByVal vComponentId As Integer) As Component
+            Dim oComponent As New Component
+            oComponent.LoadByPrimaryKey(vComponentId)
+            Return oComponent
+        End Function
+
+    End Class
 
 End Namespace

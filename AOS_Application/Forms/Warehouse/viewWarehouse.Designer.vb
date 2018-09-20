@@ -204,7 +204,7 @@ Partial Class viewWarehouse
         '
         Me.btnRetrievePurchOrders.Caption = "Open Purchase Orders"
         Me.btnRetrievePurchOrders.Id = 55
-        Me.btnRetrievePurchOrders.LargeImageIndex = 1
+        Me.btnRetrievePurchOrders.ImageOptions.LargeImageIndex = 1
         Me.btnRetrievePurchOrders.Name = "btnRetrievePurchOrders"
         Me.btnRetrievePurchOrders.Tag = "320"
         '
@@ -212,7 +212,7 @@ Partial Class viewWarehouse
         '
         Me.btnReceiveOrder.Caption = "Receive Order Items"
         Me.btnReceiveOrder.Id = 56
-        Me.btnReceiveOrder.LargeImageIndex = 14
+        Me.btnReceiveOrder.ImageOptions.LargeImageIndex = 14
         Me.btnReceiveOrder.Name = "btnReceiveOrder"
         Me.btnReceiveOrder.Tag = "321"
         '
@@ -221,7 +221,7 @@ Partial Class viewWarehouse
         Me.rbtnOpenRelabelOrders.Caption = " Open  Orders"
         Me.rbtnOpenRelabelOrders.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnOpenRelabelOrders.Id = 57
-        Me.rbtnOpenRelabelOrders.LargeImageIndex = 35
+        Me.rbtnOpenRelabelOrders.ImageOptions.LargeImageIndex = 35
         Me.rbtnOpenRelabelOrders.Name = "rbtnOpenRelabelOrders"
         Me.rbtnOpenRelabelOrders.Tag = "318"
         '
@@ -230,7 +230,7 @@ Partial Class viewWarehouse
         Me.rbtnProcessRelabelOrder.Caption = "Process Order"
         Me.rbtnProcessRelabelOrder.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnProcessRelabelOrder.Id = 58
-        Me.rbtnProcessRelabelOrder.LargeImageIndex = 47
+        Me.rbtnProcessRelabelOrder.ImageOptions.LargeImageIndex = 47
         Me.rbtnProcessRelabelOrder.Name = "rbtnProcessRelabelOrder"
         Me.rbtnProcessRelabelOrder.Tag = "319"
         '
@@ -239,7 +239,7 @@ Partial Class viewWarehouse
         Me.rbtnAllRelabelOrders.Caption = "  All   Orders"
         Me.rbtnAllRelabelOrders.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnAllRelabelOrders.Id = 59
-        Me.rbtnAllRelabelOrders.LargeImageIndex = 42
+        Me.rbtnAllRelabelOrders.ImageOptions.LargeImageIndex = 42
         Me.rbtnAllRelabelOrders.Name = "rbtnAllRelabelOrders"
         '
         'rbtnReceivedHold
@@ -247,7 +247,7 @@ Partial Class viewWarehouse
         Me.rbtnReceivedHold.Caption = "Manage Received / Hold Items"
         Me.rbtnReceivedHold.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnReceivedHold.Id = 60
-        Me.rbtnReceivedHold.LargeImageIndex = 7
+        Me.rbtnReceivedHold.ImageOptions.LargeImageIndex = 7
         Me.rbtnReceivedHold.Name = "rbtnReceivedHold"
         Me.rbtnReceivedHold.Tag = "353"
         '
@@ -256,7 +256,7 @@ Partial Class viewWarehouse
         Me.rbtnAddNewReceiverItem.Caption = "Receive Misc Item(s)"
         Me.rbtnAddNewReceiverItem.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnAddNewReceiverItem.Id = 62
-        Me.rbtnAddNewReceiverItem.LargeImageIndex = 14
+        Me.rbtnAddNewReceiverItem.ImageOptions.LargeImageIndex = 14
         Me.rbtnAddNewReceiverItem.Name = "rbtnAddNewReceiverItem"
         Me.rbtnAddNewReceiverItem.Tag = "352"
         '
@@ -265,7 +265,7 @@ Partial Class viewWarehouse
         Me.rbtnReceivingHistory.Caption = "Receiving History"
         Me.rbtnReceivingHistory.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnReceivingHistory.Id = 63
-        Me.rbtnReceivingHistory.LargeImageIndex = 13
+        Me.rbtnReceivingHistory.ImageOptions.LargeImageIndex = 13
         Me.rbtnReceivingHistory.Name = "rbtnReceivingHistory"
         Me.rbtnReceivingHistory.Tag = "354"
         '
@@ -273,7 +273,7 @@ Partial Class viewWarehouse
         '
         Me.rbtnPrintProductList.Caption = "Print Product List"
         Me.rbtnPrintProductList.Id = 64
-        Me.rbtnPrintProductList.LargeImageIndex = 8
+        Me.rbtnPrintProductList.ImageOptions.LargeImageIndex = 8
         Me.rbtnPrintProductList.Name = "rbtnPrintProductList"
         Me.rbtnPrintProductList.Tag = "355"
         '
@@ -281,7 +281,7 @@ Partial Class viewWarehouse
         '
         Me.rbtnCloseOutPO.Caption = "Close Out Purchase Order"
         Me.rbtnCloseOutPO.Id = 65
-        Me.rbtnCloseOutPO.LargeImageIndex = 9
+        Me.rbtnCloseOutPO.ImageOptions.LargeImageIndex = 9
         Me.rbtnCloseOutPO.Name = "rbtnCloseOutPO"
         Me.rbtnCloseOutPO.Tag = "356"
         '
@@ -936,14 +936,14 @@ Partial Class viewWarehouse
         '
         Me.btnRetrivePurchaseItems.Caption = "Retrive Purchase Items"
         Me.btnRetrivePurchaseItems.Id = 1
-        Me.btnRetrivePurchaseItems.LargeGlyph = CType(resources.GetObject("btnRetrivePurchaseItems.LargeGlyph"), System.Drawing.Image)
+        Me.btnRetrivePurchaseItems.ImageOptions.LargeImage = CType(resources.GetObject("btnRetrivePurchaseItems.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnRetrivePurchaseItems.Name = "btnRetrivePurchaseItems"
         '
         'btnMarkAsReceived
         '
         Me.btnMarkAsReceived.Caption = "Mark As Received"
         Me.btnMarkAsReceived.Id = 2
-        Me.btnMarkAsReceived.LargeGlyph = CType(resources.GetObject("btnMarkAsReceived.LargeGlyph"), System.Drawing.Image)
+        Me.btnMarkAsReceived.ImageOptions.LargeImage = CType(resources.GetObject("btnMarkAsReceived.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnMarkAsReceived.Name = "btnMarkAsReceived"
         '
         'RibbonPage3

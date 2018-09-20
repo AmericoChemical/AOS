@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 11/11/2014 4:46:14 PM
+' Date Generated       : 6/27/2018 8:38:35 AM
 '===============================================================================
 
 Imports System
@@ -235,6 +235,9 @@ Namespace BusinessObjects
 												
 						Case "Costtype"
 							Me.str.Costtype = CType(value, string)
+												
+						Case "Isdefaultcostrecord"
+							Me.str.Isdefaultcostrecord = CType(value, string)
 					
 					End Select
 					
@@ -324,6 +327,12 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
 								Me.Restrictedtocustomerid = CType(value, Nullable(Of System.Int32))
+							End If
+						
+						Case "Isdefaultcostrecord"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.Isdefaultcostrecord = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -637,6 +646,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As System.String)
 				MyBase.SetSystemString(ProductcostMetadata.ColumnNames.Costtype, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to PRODUCTCOST.ISDEFAULTCOSTRECORD
+		' </summary>
+		Public Overridable Property Isdefaultcostrecord As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ProductcostMetadata.ColumnNames.Isdefaultcostrecord)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ProductcostMetadata.ColumnNames.Isdefaultcostrecord, value)
 			End Set
 		End Property		
 		
@@ -1137,6 +1159,27 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Isdefaultcostrecord As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.Isdefaultcostrecord
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Isdefaultcostrecord = Nothing
+					Else
+						entity.Isdefaultcostrecord = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esProductcost
@@ -1360,6 +1403,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property Costtype As esQueryItem
 			Get
 				Return New esQueryItem(Me, ProductcostMetadata.ColumnNames.Costtype, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Isdefaultcostrecord As esQueryItem
+			Get
+				Return New esQueryItem(Me, ProductcostMetadata.ColumnNames.Isdefaultcostrecord, esSystemType.Boolean)
 			End Get
 		End Property 
 		
@@ -1599,6 +1648,7 @@ Namespace BusinessObjects
 				
 			c = New esColumnMetadata(ProductcostMetadata.ColumnNames.Notes, 7, GetType(System.String), esSystemType.String)	
 			c.PropertyName = ProductcostMetadata.PropertyNames.Notes
+			c.CharacterMaxLength = 2147483647
 			c.IsNullable = True
 			_columns.Add(c)
 				
@@ -1701,6 +1751,12 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ProductcostMetadata.ColumnNames.Isdefaultcostrecord, 23, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ProductcostMetadata.PropertyNames.Isdefaultcostrecord
+			c.HasDefault = True
+			c.Default = "((0))"
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -1752,6 +1808,7 @@ Namespace BusinessObjects
 			 Public Const Costmethod As String = "COSTMETHOD"
 			 Public Const Restrictedtocustomerid As String = "RESTRICTEDTOCUSTOMERID"
 			 Public Const Costtype As String = "COSTTYPE"
+			 Public Const Isdefaultcostrecord As String = "ISDEFAULTCOSTRECORD"
 		End Class
 #End Region	
 		
@@ -1780,6 +1837,7 @@ Namespace BusinessObjects
 			 Public Const Costmethod As String = "Costmethod"
 			 Public Const Restrictedtocustomerid As String = "Restrictedtocustomerid"
 			 Public Const Costtype As String = "Costtype"
+			 Public Const Isdefaultcostrecord As String = "Isdefaultcostrecord"
 		End Class
 #End Region	
 
@@ -1849,7 +1907,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Volumestandardcost", new esTypeMap("decimal", "System.Decimal"))
 				meta.AddTypeMap("Costmethod", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Restrictedtocustomerid", new esTypeMap("int", "System.Int32"))
-				meta.AddTypeMap("Costtype", new esTypeMap("varchar", "System.String"))			
+				meta.AddTypeMap("Costtype", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Isdefaultcostrecord", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 

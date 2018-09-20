@@ -226,7 +226,7 @@ Public Class frmAddNewReceiverItem
                     Catch ex As Exception
                     End Try
                 End If
-                'oInv.Sourcedocument = eDocNum.EditValue.ToString
+                oInv.Sourcedocument = eDocNum.EditValue.ToString
                 oInv.Sourcetype = eDocType.EditValue
                 oInv.Inventoryclass = eInventoryClass.EditValue
                 oInv.Save()

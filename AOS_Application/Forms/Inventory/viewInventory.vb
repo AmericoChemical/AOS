@@ -193,6 +193,7 @@ Public Class viewInventory
         getWorkOrders(vWorkOrderStatus)
         getComponent()
         getKit()
+        getWarehouse()
         selectView("gcComponent", False)
 
     End Sub
@@ -213,6 +214,7 @@ Public Class viewInventory
         Me.grProducts.DataSource = bsProducts
         Me.grProducts.Refresh()
     End Sub
+
 
     Private Sub getItemStatusLookupList()
         Dim oItemStatus As New ListInvitemstatusCollection
@@ -249,7 +251,7 @@ Public Class viewInventory
         End Try
     End Sub
 
-    Private Sub getInventoryItems(ByVal vItemType As Integer, ByVal vItemStatus As String)
+    Private Sub getInventoryItems(ByVal vItemType As Integer, ByVal vItemStatus As String, ByVal vWhseId As Integer)
 
         vItemStatus = vItemStatus.Replace(", ", "', '")
 
@@ -257,6 +259,9 @@ Public Class viewInventory
 
         Dim oInventoryItems As New InvitemCollection
         oInventoryItems.Query.Where(oInventoryItems.Query.Inventoryclass.Equal(vItemType), oInventoryItems.Query.Itemstatus.In(vItemStatus))
+        If vWhseId <> 0 Then
+            oInventoryItems.Query.Where(oInventoryItems.Query.Warehousenumber.Equal(vWhseId))
+        End If
         oInventoryItems.Query.Load()
         Try
             bsInventoryItems.DataSource = oInventoryItems
@@ -271,18 +276,31 @@ Public Class viewInventory
 
     End Sub
 
-    Private Sub getInventoryItemsByCategory(vItemCategory As String)
+    Private Sub getInventoryItemsByCategory(vItemCategory As String, Optional ByVal vWhseId As Integer = 0)
         Dim oInventoryItems As New InvitemCollection
         Select Case vItemCategory
             Case "FINISHED GOODS"
                 oInventoryItems.Query.Where(oInventoryItems.Query.Inventoryclass.Equal(1), oInventoryItems.Query.Itemstatus.In("AVAILABLE", "ALLOCATED", "TESTING", "PENDING", "INPROD", "RCVDHOLD"))
+                If vWhseId <> 0 Then
+                    oInventoryItems.Query.Where(oInventoryItems.Query.Warehousenumber.Equal(vWhseId))
+                End If
                 oInventoryItems.Query.Load()
             Case "RAW MATERIALS"
                 oInventoryItems.Query.Where(oInventoryItems.Query.Inventoryclass.Equal(2), oInventoryItems.Query.Itemstatus.In("IN PROCESS", "PENDING", "TESTING", "INPROD", "RCVDHOLD"))
+                If vWhseId <> 0 Then
+                    oInventoryItems.Query.Where(oInventoryItems.Query.Warehousenumber.Equal(vWhseId))
+                End If
                 oInventoryItems.Query.Load()
             Case "ALL"
-                oInventoryItems.LoadAll()
+                If vWhseId <> 0 Then
+                    oInventoryItems.Query.Where(oInventoryItems.Query.Warehousenumber.Equal(vWhseId))
+                    oInventoryItems.Query.Load()
+                Else
+                    oInventoryItems.LoadAll()
+
+                End If
         End Select
+
         bsInventoryItems.DataSource = oInventoryItems
         grInventoryItems.DataSource = bsInventoryItems
         grInventoryItems.Refresh()
@@ -292,6 +310,12 @@ Public Class viewInventory
         Dim oVendors As New VendorCollection
         oVendors.LoadAll()
         bsVendors.DataSource = oVendors
+    End Sub
+
+    Private Sub getWarehouse()
+        Dim oWarehouse As New WarehouseCollection
+        oWarehouse.LoadAll()
+        bsWarehouse.DataSource = oWarehouse
     End Sub
 
     Private Sub getCustomers()
@@ -574,7 +598,7 @@ Public Class viewInventory
     End Sub
 
     Private Sub btnFetchFinishedGoods_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnFetchFinishedGoods.ItemClick
-        getInventoryItems(filterItemType.EditValue, filterItemStatus.EditValue)
+        getInventoryItems(filterItemType.EditValue, filterItemStatus.EditValue, filterWarehouse.EditValue)
     End Sub
 
     Private Sub btnPrintMiniInventoryLabels_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPrintMiniInventoryLabels.ItemClick
@@ -625,7 +649,7 @@ Public Class viewInventory
         frm.vID = Me.bsInventoryItems.Current.invItemNumber
         'frm.vEditType = "EDIT"
         frm.ShowDialog()
-        getInventoryItems(filterItemType.EditValue, filterItemStatus.EditValue)
+        getInventoryItems(filterItemType.EditValue, filterItemStatus.EditValue, filterWarehouse.EditValue)
     End Sub
 
 

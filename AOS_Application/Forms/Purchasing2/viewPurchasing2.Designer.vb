@@ -30,6 +30,7 @@ Partial Class viewPurchasing2
         Dim VendorcontactLabel As System.Windows.Forms.Label
         Dim VendorfaxLabel As System.Windows.Forms.Label
         Dim VendorphoneLabel As System.Windows.Forms.Label
+        Dim Label1 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(viewPurchasing2))
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
@@ -83,6 +84,8 @@ Partial Class viewPurchasing2
         Me.rbtnReceivedHold = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnRefreshPurchaseRequests = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnRefreshMaterialNeeds = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnFetchVendorsActive = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnFetchVendorsInActive = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -94,6 +97,7 @@ Partial Class viewPurchasing2
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage3 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup9 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup12 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -106,18 +110,21 @@ Partial Class viewPurchasing2
         Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl4 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl9 = New DevExpress.XtraEditors.PanelControl()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.grpVendorProduct_VendorMgmt = New DevExpress.XtraEditors.GroupControl()
         Me.grVendorProduct = New DevExpress.XtraGrid.GridControl()
         Me.bsVendorProducts = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.grvVendorProducts = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colProductid_VendorMgmt = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colProductdesc_VendorMgmt = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDesc2_VendorMgmt = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colContainer_VendorMgmt = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colProductstatus_VendorMgmt = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.TermsTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
         Me.bsVendors = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TermsTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.VendornameTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.Vendoraddress1TextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.VendoracctnumberTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -136,6 +143,7 @@ Partial Class viewPurchasing2
         Me.GridView4 = New AOS.CustomClasses.CustomDevExGridView()
         Me.colVendorid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVendorname = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colVendorstatus = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.grPurchaseItems = New DevExpress.XtraGrid.GridControl()
@@ -252,6 +260,7 @@ Partial Class viewPurchasing2
         VendorcontactLabel = New System.Windows.Forms.Label()
         VendorfaxLabel = New System.Windows.Forms.Label()
         VendorphoneLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemHyperLinkEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormCaption, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -266,15 +275,20 @@ Partial Class viewPurchasing2
         Me.PanelControl4.SuspendLayout()
         CType(Me.PanelControl9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl9.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
         CType(Me.grpVendorProduct_VendorMgmt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpVendorProduct_VendorMgmt.SuspendLayout()
         CType(Me.grVendorProduct, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsVendorProducts, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvVendorProducts, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
-        CType(Me.TermsTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsVendors, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TermsTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VendornameTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vendoraddress1TextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VendoracctnumberTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -341,7 +355,7 @@ Partial Class viewPurchasing2
         'TermsLabel
         '
         TermsLabel.AutoSize = True
-        TermsLabel.Location = New System.Drawing.Point(13, 293)
+        TermsLabel.Location = New System.Drawing.Point(360, 137)
         TermsLabel.Name = "TermsLabel"
         TermsLabel.Size = New System.Drawing.Size(36, 13)
         TermsLabel.TabIndex = 24
@@ -359,7 +373,7 @@ Partial Class viewPurchasing2
         'VendoracctnumberLabel
         '
         VendoracctnumberLabel.AutoSize = True
-        VendoracctnumberLabel.Location = New System.Drawing.Point(13, 267)
+        VendoracctnumberLabel.Location = New System.Drawing.Point(360, 111)
         VendoracctnumberLabel.Name = "VendoracctnumberLabel"
         VendoracctnumberLabel.Size = New System.Drawing.Size(57, 13)
         VendoracctnumberLabel.TabIndex = 22
@@ -377,7 +391,7 @@ Partial Class viewPurchasing2
         'VendorurlLabel
         '
         VendorurlLabel.AutoSize = True
-        VendorurlLabel.Location = New System.Drawing.Point(13, 241)
+        VendorurlLabel.Location = New System.Drawing.Point(360, 85)
         VendorurlLabel.Name = "VendorurlLabel"
         VendorurlLabel.Size = New System.Drawing.Size(78, 13)
         VendorurlLabel.TabIndex = 20
@@ -395,7 +409,7 @@ Partial Class viewPurchasing2
         'VendoremailLabel
         '
         VendoremailLabel.AutoSize = True
-        VendoremailLabel.Location = New System.Drawing.Point(13, 215)
+        VendoremailLabel.Location = New System.Drawing.Point(360, 59)
         VendoremailLabel.Name = "VendoremailLabel"
         VendoremailLabel.Size = New System.Drawing.Size(31, 13)
         VendoremailLabel.TabIndex = 18
@@ -413,7 +427,7 @@ Partial Class viewPurchasing2
         'VendorcontactLabel
         '
         VendorcontactLabel.AutoSize = True
-        VendorcontactLabel.Location = New System.Drawing.Point(13, 189)
+        VendorcontactLabel.Location = New System.Drawing.Point(360, 33)
         VendorcontactLabel.Name = "VendorcontactLabel"
         VendorcontactLabel.Size = New System.Drawing.Size(45, 13)
         VendorcontactLabel.TabIndex = 16
@@ -422,11 +436,11 @@ Partial Class viewPurchasing2
         'VendorfaxLabel
         '
         VendorfaxLabel.AutoSize = True
-        VendorfaxLabel.Location = New System.Drawing.Point(13, 163)
+        VendorfaxLabel.Location = New System.Drawing.Point(209, 137)
         VendorfaxLabel.Name = "VendorfaxLabel"
-        VendorfaxLabel.Size = New System.Drawing.Size(66, 13)
+        VendorfaxLabel.Size = New System.Drawing.Size(26, 13)
         VendorfaxLabel.TabIndex = 14
-        VendorfaxLabel.Text = "FAX Number"
+        VendorfaxLabel.Text = "FAX"
         '
         'VendorphoneLabel
         '
@@ -436,6 +450,15 @@ Partial Class viewPurchasing2
         VendorphoneLabel.Size = New System.Drawing.Size(77, 13)
         VendorphoneLabel.TabIndex = 12
         VendorphoneLabel.Text = "Phone Number"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(705, 33)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(35, 13)
+        Label1.TabIndex = 27
+        Label1.Text = "Notes"
         '
         'RepositoryItemLookUpEdit3
         '
@@ -514,7 +537,7 @@ Partial Class viewPurchasing2
         Me.FormCaption.LookAndFeel.SkinName = "Money Twins"
         Me.FormCaption.MainView = Me.GridView1
         Me.FormCaption.Name = "FormCaption"
-        Me.FormCaption.Size = New System.Drawing.Size(1378, 33)
+        Me.FormCaption.Size = New System.Drawing.Size(1433, 33)
         Me.FormCaption.TabIndex = 3
         Me.FormCaption.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -541,14 +564,14 @@ Partial Class viewPurchasing2
         '
         Me.RibbonControl1.ApplicationButtonText = Nothing
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnEditPurchaseItem, Me.btnSplitPurchaseItem, Me.btnRequested, Me.btnAll, Me.btnCreatePurchaseOrder, Me.btnPendingOrders, Me.btnOrderedOrders, Me.btnCompletedOrders, Me.btnEditPurchase, Me.btnCancelPurchase, Me.btnPrintPurchaseOrder, Me.btnRetriveMaterials, Me.btnAddVendor, Me.btnEditVendor, Me.btnDeleteVendor, Me.btnReceivedHold, Me.DWObtnPendingOrders, Me.DWObtnOpenOrders, Me.DWObtnClosedOrders, Me.DWObtnEditPurchase, Me.DWObtnCancelPurchase, Me.DWObtnPrintPurchaseOrder, Me.DWObtnRetriveMaterials, Me.btnOrdered, Me.BarButtonItem6, Me.btnApprovePurchase, Me.BarButtonItem5, Me.BarButtonItem7, Me.DWObtnApprovePO, Me.btnMaterialNeeds, Me.btnByVendor, Me.btnByItem, Me.btnCancelledOrders, Me.btnAllOrders, Me.btnAddPO, Me.btnPrintItemList, Me.btnAddToExistingPO, Me.btnAddPurchaseItem, Me.btnCancelPurchaseItem, Me.rbtnCancelledPurchaseItems, Me.rbtnReceivedHold, Me.rbtnRefreshPurchaseRequests, Me.rbtnRefreshMaterialNeeds})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnEditPurchaseItem, Me.btnSplitPurchaseItem, Me.btnRequested, Me.btnAll, Me.btnCreatePurchaseOrder, Me.btnPendingOrders, Me.btnOrderedOrders, Me.btnCompletedOrders, Me.btnEditPurchase, Me.btnCancelPurchase, Me.btnPrintPurchaseOrder, Me.btnRetriveMaterials, Me.btnAddVendor, Me.btnEditVendor, Me.btnDeleteVendor, Me.btnReceivedHold, Me.DWObtnPendingOrders, Me.DWObtnOpenOrders, Me.DWObtnClosedOrders, Me.DWObtnEditPurchase, Me.DWObtnCancelPurchase, Me.DWObtnPrintPurchaseOrder, Me.DWObtnRetriveMaterials, Me.btnOrdered, Me.BarButtonItem6, Me.btnApprovePurchase, Me.BarButtonItem5, Me.BarButtonItem7, Me.DWObtnApprovePO, Me.btnMaterialNeeds, Me.btnByVendor, Me.btnByItem, Me.btnCancelledOrders, Me.btnAllOrders, Me.btnAddPO, Me.btnPrintItemList, Me.btnAddToExistingPO, Me.btnAddPurchaseItem, Me.btnCancelPurchaseItem, Me.rbtnCancelledPurchaseItems, Me.rbtnReceivedHold, Me.rbtnRefreshPurchaseRequests, Me.rbtnRefreshMaterialNeeds, Me.rbtnFetchVendorsActive, Me.rbtnFetchVendorsInActive})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 139
+        Me.RibbonControl1.MaxItemId = 141
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4, Me.RibbonPage5})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1378, 116)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1433, 117)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnEditPurchaseItem
@@ -653,24 +676,21 @@ Partial Class viewPurchasing2
         '
         Me.btnAddVendor.Caption = "Add New Vendor"
         Me.btnAddVendor.Id = 95
-        Me.btnAddVendor.ImageOptions.Image = Global.AOS.My.Resources.Resources.NewRecord
-        Me.btnAddVendor.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnAddVendor.ImageOptions.LargeImageIndex = 2
         Me.btnAddVendor.Name = "btnAddVendor"
         '
         'btnEditVendor
         '
         Me.btnEditVendor.Caption = "Edit Vendor"
         Me.btnEditVendor.Id = 96
-        Me.btnEditVendor.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
-        Me.btnEditVendor.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Edit
+        Me.btnEditVendor.ImageOptions.LargeImageIndex = 3
         Me.btnEditVendor.Name = "btnEditVendor"
         '
         'btnDeleteVendor
         '
         Me.btnDeleteVendor.Caption = "Delete Vendor"
         Me.btnDeleteVendor.Id = 97
-        Me.btnDeleteVendor.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
-        Me.btnDeleteVendor.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Delete
+        Me.btnDeleteVendor.ImageOptions.LargeImageIndex = 4
         Me.btnDeleteVendor.Name = "btnDeleteVendor"
         '
         'btnReceivedHold
@@ -834,6 +854,20 @@ Partial Class viewPurchasing2
         Me.rbtnRefreshMaterialNeeds.ImageOptions.LargeImageIndex = 36
         Me.rbtnRefreshMaterialNeeds.Name = "rbtnRefreshMaterialNeeds"
         '
+        'rbtnFetchVendorsActive
+        '
+        Me.rbtnFetchVendorsActive.Caption = "Active Vendors"
+        Me.rbtnFetchVendorsActive.Id = 139
+        Me.rbtnFetchVendorsActive.ImageOptions.LargeImageIndex = 1
+        Me.rbtnFetchVendorsActive.Name = "rbtnFetchVendorsActive"
+        '
+        'rbtnFetchVendorsInActive
+        '
+        Me.rbtnFetchVendorsInActive.Caption = "Inactive Vendors"
+        Me.rbtnFetchVendorsInActive.Id = 140
+        Me.rbtnFetchVendorsInActive.ImageOptions.LargeImageIndex = 1
+        Me.rbtnFetchVendorsInActive.Name = "rbtnFetchVendorsInActive"
+        '
         'RibbonLargeImages
         '
         Me.RibbonLargeImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -924,10 +958,20 @@ Partial Class viewPurchasing2
         '
         'RibbonPage3
         '
-        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup12})
+        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup9, Me.RibbonPageGroup12})
         Me.RibbonPage3.Name = "RibbonPage3"
         Me.RibbonPage3.Tag = "131"
         Me.RibbonPage3.Text = "Vendor Mgmt"
+        '
+        'RibbonPageGroup9
+        '
+        Me.RibbonPageGroup9.AllowMinimize = False
+        Me.RibbonPageGroup9.AllowTextClipping = False
+        Me.RibbonPageGroup9.ItemLinks.Add(Me.rbtnFetchVendorsActive)
+        Me.RibbonPageGroup9.ItemLinks.Add(Me.rbtnFetchVendorsInActive)
+        Me.RibbonPageGroup9.Name = "RibbonPageGroup9"
+        Me.RibbonPageGroup9.ShowCaptionButton = False
+        Me.RibbonPageGroup9.Text = "Vendor Filter Options"
         '
         'RibbonPageGroup12
         '
@@ -994,9 +1038,9 @@ Partial Class viewPurchasing2
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl4)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 149)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 150)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1378, 475)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1433, 474)
         Me.WorkPanelsHolder.TabIndex = 4
         '
         'RibbonPanelControl3
@@ -1005,7 +1049,7 @@ Partial Class viewPurchasing2
         Me.RibbonPanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl3.Location = New System.Drawing.Point(2, 2)
         Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1374, 471)
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1429, 470)
         Me.RibbonPanelControl3.TabIndex = 4
         '
         'PanelControl4
@@ -1017,27 +1061,36 @@ Partial Class viewPurchasing2
         Me.PanelControl4.Location = New System.Drawing.Point(2, 2)
         Me.PanelControl4.Name = "PanelControl4"
         Me.PanelControl4.Padding = New System.Windows.Forms.Padding(6)
-        Me.PanelControl4.Size = New System.Drawing.Size(1370, 467)
+        Me.PanelControl4.Size = New System.Drawing.Size(1425, 466)
         Me.PanelControl4.TabIndex = 6
         '
         'PanelControl9
         '
         Me.PanelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl9.Controls.Add(Me.grpVendorProduct_VendorMgmt)
-        Me.PanelControl9.Controls.Add(Me.GroupControl3)
+        Me.PanelControl9.Controls.Add(Me.PanelControl3)
+        Me.PanelControl9.Controls.Add(Me.PanelControl1)
         Me.PanelControl9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl9.Location = New System.Drawing.Point(325, 8)
+        Me.PanelControl9.Location = New System.Drawing.Point(399, 8)
         Me.PanelControl9.Name = "PanelControl9"
-        Me.PanelControl9.Size = New System.Drawing.Size(1037, 451)
+        Me.PanelControl9.Size = New System.Drawing.Size(1018, 450)
         Me.PanelControl9.TabIndex = 2
+        '
+        'PanelControl3
+        '
+        Me.PanelControl3.Controls.Add(Me.grpVendorProduct_VendorMgmt)
+        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl3.Location = New System.Drawing.Point(0, 170)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(1018, 280)
+        Me.PanelControl3.TabIndex = 31
         '
         'grpVendorProduct_VendorMgmt
         '
         Me.grpVendorProduct_VendorMgmt.Controls.Add(Me.grVendorProduct)
-        Me.grpVendorProduct_VendorMgmt.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.grpVendorProduct_VendorMgmt.Location = New System.Drawing.Point(0, 0)
+        Me.grpVendorProduct_VendorMgmt.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grpVendorProduct_VendorMgmt.Location = New System.Drawing.Point(2, 2)
         Me.grpVendorProduct_VendorMgmt.Name = "grpVendorProduct_VendorMgmt"
-        Me.grpVendorProduct_VendorMgmt.Size = New System.Drawing.Size(1037, 451)
+        Me.grpVendorProduct_VendorMgmt.Size = New System.Drawing.Size(1014, 276)
         Me.grpVendorProduct_VendorMgmt.TabIndex = 29
         Me.grpVendorProduct_VendorMgmt.Text = "Products for Vendor"
         '
@@ -1045,24 +1098,26 @@ Partial Class viewPurchasing2
         '
         Me.grVendorProduct.DataSource = Me.bsVendorProducts
         Me.grVendorProduct.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grVendorProduct.Location = New System.Drawing.Point(2, 20)
+        Me.grVendorProduct.Location = New System.Drawing.Point(2, 22)
         Me.grVendorProduct.LookAndFeel.SkinName = "Money Twins"
-        Me.grVendorProduct.MainView = Me.GridView2
+        Me.grVendorProduct.MainView = Me.grvVendorProducts
         Me.grVendorProduct.Name = "grVendorProduct"
-        Me.grVendorProduct.Size = New System.Drawing.Size(1033, 429)
+        Me.grVendorProduct.Size = New System.Drawing.Size(1010, 252)
         Me.grVendorProduct.TabIndex = 29
-        Me.grVendorProduct.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        Me.grVendorProduct.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvVendorProducts})
         '
         'bsVendorProducts
         '
         Me.bsVendorProducts.DataSource = GetType(AOS.BusinessObjects.ViewVendorProductAllCollection)
         '
-        'GridView2
+        'grvVendorProducts
         '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid_VendorMgmt, Me.colProductdesc_VendorMgmt, Me.colDesc2_VendorMgmt, Me.colContainer_VendorMgmt, Me.colProductstatus_VendorMgmt})
-        Me.GridView2.GridControl = Me.grVendorProduct
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsView.ShowGroupPanel = False
+        Me.grvVendorProducts.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid_VendorMgmt, Me.colProductdesc_VendorMgmt, Me.colDesc2_VendorMgmt, Me.colContainer_VendorMgmt, Me.colProductstatus_VendorMgmt})
+        Me.grvVendorProducts.GridControl = Me.grVendorProduct
+        Me.grvVendorProducts.Name = "grvVendorProducts"
+        Me.grvVendorProducts.OptionsBehavior.Editable = False
+        Me.grvVendorProducts.OptionsView.ShowAutoFilterRow = True
+        Me.grvVendorProducts.OptionsView.ShowGroupPanel = False
         '
         'colProductid_VendorMgmt
         '
@@ -1071,6 +1126,7 @@ Partial Class viewPurchasing2
         Me.colProductid_VendorMgmt.Name = "colProductid_VendorMgmt"
         Me.colProductid_VendorMgmt.Visible = True
         Me.colProductid_VendorMgmt.VisibleIndex = 0
+        Me.colProductid_VendorMgmt.Width = 77
         '
         'colProductdesc_VendorMgmt
         '
@@ -1079,6 +1135,7 @@ Partial Class viewPurchasing2
         Me.colProductdesc_VendorMgmt.Name = "colProductdesc_VendorMgmt"
         Me.colProductdesc_VendorMgmt.Visible = True
         Me.colProductdesc_VendorMgmt.VisibleIndex = 1
+        Me.colProductdesc_VendorMgmt.Width = 338
         '
         'colDesc2_VendorMgmt
         '
@@ -1087,6 +1144,7 @@ Partial Class viewPurchasing2
         Me.colDesc2_VendorMgmt.Name = "colDesc2_VendorMgmt"
         Me.colDesc2_VendorMgmt.Visible = True
         Me.colDesc2_VendorMgmt.VisibleIndex = 2
+        Me.colDesc2_VendorMgmt.Width = 275
         '
         'colContainer_VendorMgmt
         '
@@ -1095,6 +1153,7 @@ Partial Class viewPurchasing2
         Me.colContainer_VendorMgmt.Name = "colContainer_VendorMgmt"
         Me.colContainer_VendorMgmt.Visible = True
         Me.colContainer_VendorMgmt.VisibleIndex = 3
+        Me.colContainer_VendorMgmt.Width = 137
         '
         'colProductstatus_VendorMgmt
         '
@@ -1103,9 +1162,21 @@ Partial Class viewPurchasing2
         Me.colProductstatus_VendorMgmt.Name = "colProductstatus_VendorMgmt"
         Me.colProductstatus_VendorMgmt.Visible = True
         Me.colProductstatus_VendorMgmt.VisibleIndex = 4
+        Me.colProductstatus_VendorMgmt.Width = 166
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.Controls.Add(Me.GroupControl3)
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(1018, 170)
+        Me.PanelControl1.TabIndex = 30
         '
         'GroupControl3
         '
+        Me.GroupControl3.Controls.Add(Me.MemoEdit1)
+        Me.GroupControl3.Controls.Add(Label1)
         Me.GroupControl3.Controls.Add(Me.TermsTextEdit)
         Me.GroupControl3.Controls.Add(TermsLabel)
         Me.GroupControl3.Controls.Add(Me.VendornameTextEdit)
@@ -1130,24 +1201,34 @@ Partial Class viewPurchasing2
         Me.GroupControl3.Controls.Add(Me.VendorphoneTextEdit)
         Me.GroupControl3.Controls.Add(Me.VendorfaxTextEdit)
         Me.GroupControl3.Controls.Add(VendorphoneLabel)
-        Me.GroupControl3.Location = New System.Drawing.Point(3, 3)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl3.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(364, 340)
+        Me.GroupControl3.Size = New System.Drawing.Size(1014, 167)
         Me.GroupControl3.TabIndex = 27
         Me.GroupControl3.Text = "Vendor Information"
         '
-        'TermsTextEdit
+        'MemoEdit1
         '
-        Me.TermsTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Terms", True))
-        Me.TermsTextEdit.Location = New System.Drawing.Point(97, 290)
-        Me.TermsTextEdit.Name = "TermsTextEdit"
-        Me.TermsTextEdit.Properties.ReadOnly = True
-        Me.TermsTextEdit.Size = New System.Drawing.Size(251, 20)
-        Me.TermsTextEdit.TabIndex = 25
+        Me.MemoEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Vendornotes", True))
+        Me.MemoEdit1.Location = New System.Drawing.Point(746, 31)
+        Me.MemoEdit1.Name = "MemoEdit1"
+        Me.MemoEdit1.Properties.ReadOnly = True
+        Me.MemoEdit1.Size = New System.Drawing.Size(250, 123)
+        Me.MemoEdit1.TabIndex = 54
         '
         'bsVendors
         '
         Me.bsVendors.DataSource = GetType(AOS.BusinessObjects.VendorCollection)
+        '
+        'TermsTextEdit
+        '
+        Me.TermsTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Terms", True))
+        Me.TermsTextEdit.Location = New System.Drawing.Point(444, 134)
+        Me.TermsTextEdit.Name = "TermsTextEdit"
+        Me.TermsTextEdit.Properties.ReadOnly = True
+        Me.TermsTextEdit.Size = New System.Drawing.Size(251, 20)
+        Me.TermsTextEdit.TabIndex = 25
         '
         'VendornameTextEdit
         '
@@ -1170,7 +1251,7 @@ Partial Class viewPurchasing2
         'VendoracctnumberTextEdit
         '
         Me.VendoracctnumberTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Vendoracctnumber", True))
-        Me.VendoracctnumberTextEdit.Location = New System.Drawing.Point(97, 264)
+        Me.VendoracctnumberTextEdit.Location = New System.Drawing.Point(444, 108)
         Me.VendoracctnumberTextEdit.Name = "VendoracctnumberTextEdit"
         Me.VendoracctnumberTextEdit.Properties.ReadOnly = True
         Me.VendoracctnumberTextEdit.Size = New System.Drawing.Size(251, 20)
@@ -1188,7 +1269,7 @@ Partial Class viewPurchasing2
         'VendorurlTextEdit
         '
         Me.VendorurlTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Vendorurl", True))
-        Me.VendorurlTextEdit.Location = New System.Drawing.Point(97, 238)
+        Me.VendorurlTextEdit.Location = New System.Drawing.Point(444, 82)
         Me.VendorurlTextEdit.Name = "VendorurlTextEdit"
         Me.VendorurlTextEdit.Properties.ReadOnly = True
         Me.VendorurlTextEdit.Size = New System.Drawing.Size(251, 20)
@@ -1206,7 +1287,7 @@ Partial Class viewPurchasing2
         'VendoremailTextEdit
         '
         Me.VendoremailTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Vendoremail", True))
-        Me.VendoremailTextEdit.Location = New System.Drawing.Point(97, 212)
+        Me.VendoremailTextEdit.Location = New System.Drawing.Point(444, 56)
         Me.VendoremailTextEdit.Name = "VendoremailTextEdit"
         Me.VendoremailTextEdit.Properties.ReadOnly = True
         Me.VendoremailTextEdit.Size = New System.Drawing.Size(251, 20)
@@ -1224,7 +1305,7 @@ Partial Class viewPurchasing2
         'VendorcontactTextEdit
         '
         Me.VendorcontactTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Vendorcontact", True))
-        Me.VendorcontactTextEdit.Location = New System.Drawing.Point(97, 186)
+        Me.VendorcontactTextEdit.Location = New System.Drawing.Point(444, 30)
         Me.VendorcontactTextEdit.Name = "VendorcontactTextEdit"
         Me.VendorcontactTextEdit.Properties.ReadOnly = True
         Me.VendorcontactTextEdit.Size = New System.Drawing.Size(251, 20)
@@ -1245,25 +1326,25 @@ Partial Class viewPurchasing2
         Me.VendorphoneTextEdit.Location = New System.Drawing.Point(97, 134)
         Me.VendorphoneTextEdit.Name = "VendorphoneTextEdit"
         Me.VendorphoneTextEdit.Properties.ReadOnly = True
-        Me.VendorphoneTextEdit.Size = New System.Drawing.Size(251, 20)
+        Me.VendorphoneTextEdit.Size = New System.Drawing.Size(107, 20)
         Me.VendorphoneTextEdit.TabIndex = 13
         '
         'VendorfaxTextEdit
         '
         Me.VendorfaxTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsVendors, "Vendorfax", True))
-        Me.VendorfaxTextEdit.Location = New System.Drawing.Point(97, 160)
+        Me.VendorfaxTextEdit.Location = New System.Drawing.Point(241, 134)
         Me.VendorfaxTextEdit.Name = "VendorfaxTextEdit"
         Me.VendorfaxTextEdit.Properties.ReadOnly = True
-        Me.VendorfaxTextEdit.Size = New System.Drawing.Size(251, 20)
+        Me.VendorfaxTextEdit.Size = New System.Drawing.Size(107, 20)
         Me.VendorfaxTextEdit.TabIndex = 15
         '
         'PanelControl8
         '
         Me.PanelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PanelControl8.Location = New System.Drawing.Point(319, 8)
+        Me.PanelControl8.Location = New System.Drawing.Point(389, 8)
         Me.PanelControl8.Name = "PanelControl8"
-        Me.PanelControl8.Size = New System.Drawing.Size(6, 451)
+        Me.PanelControl8.Size = New System.Drawing.Size(10, 450)
         Me.PanelControl8.TabIndex = 1
         '
         'GroupControl4
@@ -1272,18 +1353,19 @@ Partial Class viewPurchasing2
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupControl4.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(311, 451)
+        Me.GroupControl4.Size = New System.Drawing.Size(381, 450)
         Me.GroupControl4.TabIndex = 0
         Me.GroupControl4.Text = "Vendor List"
         '
         'grVendors
         '
+        Me.grVendors.DataSource = Me.bsVendors
         Me.grVendors.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grVendors.Location = New System.Drawing.Point(2, 20)
+        Me.grVendors.Location = New System.Drawing.Point(2, 22)
         Me.grVendors.LookAndFeel.SkinName = "Money Twins"
         Me.grVendors.MainView = Me.GridView4
         Me.grVendors.Name = "grVendors"
-        Me.grVendors.Size = New System.Drawing.Size(307, 429)
+        Me.grVendors.Size = New System.Drawing.Size(377, 426)
         Me.grVendors.TabIndex = 0
         Me.grVendors.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
@@ -1323,12 +1405,13 @@ Partial Class viewPurchasing2
         Me.GridView4.Appearance.SelectedRow.Options.UseBackColor = True
         Me.GridView4.Appearance.SelectedRow.Options.UseBorderColor = True
         Me.GridView4.Appearance.SelectedRow.Options.UseForeColor = True
-        Me.GridView4.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colVendorid, Me.colVendorname})
+        Me.GridView4.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colVendorid, Me.colVendorname, Me.colVendorstatus})
         Me.GridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None
         Me.GridView4.GridControl = Me.grVendors
         Me.GridView4.Name = "GridView4"
         Me.GridView4.OptionsBehavior.Editable = False
         Me.GridView4.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView4.OptionsView.ShowAutoFilterRow = True
         Me.GridView4.OptionsView.ShowGroupPanel = False
         Me.GridView4.OptionsView.ShowIndicator = False
         '
@@ -1339,7 +1422,7 @@ Partial Class viewPurchasing2
         Me.colVendorid.Name = "colVendorid"
         Me.colVendorid.Visible = True
         Me.colVendorid.VisibleIndex = 0
-        Me.colVendorid.Width = 53
+        Me.colVendorid.Width = 45
         '
         'colVendorname
         '
@@ -1348,7 +1431,16 @@ Partial Class viewPurchasing2
         Me.colVendorname.Name = "colVendorname"
         Me.colVendorname.Visible = True
         Me.colVendorname.VisibleIndex = 1
-        Me.colVendorname.Width = 301
+        Me.colVendorname.Width = 242
+        '
+        'colVendorstatus
+        '
+        Me.colVendorstatus.Caption = "Status"
+        Me.colVendorstatus.FieldName = "Vendorstatus"
+        Me.colVendorstatus.Name = "colVendorstatus"
+        Me.colVendorstatus.Visible = True
+        Me.colVendorstatus.VisibleIndex = 2
+        Me.colVendorstatus.Width = 88
         '
         'RibbonPanelControl1
         '
@@ -1356,7 +1448,7 @@ Partial Class viewPurchasing2
         Me.RibbonPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl1.Location = New System.Drawing.Point(2, 2)
         Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1374, 471)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1429, 470)
         Me.RibbonPanelControl1.TabIndex = 4
         '
         'GroupControl1
@@ -1366,7 +1458,7 @@ Partial Class viewPurchasing2
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1370, 467)
+        Me.GroupControl1.Size = New System.Drawing.Size(1425, 466)
         Me.GroupControl1.TabIndex = 2
         Me.GroupControl1.Text = "Purchase Items"
         '
@@ -1377,10 +1469,10 @@ Partial Class viewPurchasing2
         GridLevelNode1.RelationName = "Level1"
         GridLevelNode2.RelationName = "Level2"
         Me.grPurchaseItems.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1, GridLevelNode2})
-        Me.grPurchaseItems.Location = New System.Drawing.Point(2, 49)
+        Me.grPurchaseItems.Location = New System.Drawing.Point(2, 51)
         Me.grPurchaseItems.MainView = Me.grvPurchaseItems
         Me.grPurchaseItems.Name = "grPurchaseItems"
-        Me.grPurchaseItems.Size = New System.Drawing.Size(1366, 416)
+        Me.grPurchaseItems.Size = New System.Drawing.Size(1421, 413)
         Me.grPurchaseItems.TabIndex = 0
         Me.grPurchaseItems.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvPurchaseItems})
         '
@@ -1587,9 +1679,9 @@ Partial Class viewPurchasing2
         Me.pnlLegend.Controls.Add(Me.cePink)
         Me.pnlLegend.Controls.Add(Me.ceYellow)
         Me.pnlLegend.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlLegend.Location = New System.Drawing.Point(2, 20)
+        Me.pnlLegend.Location = New System.Drawing.Point(2, 22)
         Me.pnlLegend.Name = "pnlLegend"
-        Me.pnlLegend.Size = New System.Drawing.Size(1366, 29)
+        Me.pnlLegend.Size = New System.Drawing.Size(1421, 29)
         Me.pnlLegend.TabIndex = 1
         '
         'lblRedDesc
@@ -1673,7 +1765,7 @@ Partial Class viewPurchasing2
         Me.RibbonPanelControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl5.Location = New System.Drawing.Point(2, 2)
         Me.RibbonPanelControl5.Name = "RibbonPanelControl5"
-        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1374, 471)
+        Me.RibbonPanelControl5.Size = New System.Drawing.Size(1429, 470)
         Me.RibbonPanelControl5.TabIndex = 6
         '
         'GroupControl5
@@ -1683,7 +1775,7 @@ Partial Class viewPurchasing2
         Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl5.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(1370, 279)
+        Me.GroupControl5.Size = New System.Drawing.Size(1425, 278)
         Me.GroupControl5.TabIndex = 2
         Me.GroupControl5.Text = "Purchase Items"
         '
@@ -1694,10 +1786,10 @@ Partial Class viewPurchasing2
         GridLevelNode3.RelationName = "Level1"
         GridLevelNode4.RelationName = "Level2"
         Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode3, GridLevelNode4})
-        Me.GridControl1.Location = New System.Drawing.Point(2, 49)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 51)
         Me.GridControl1.MainView = Me.grvMonitorRequests
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1366, 228)
+        Me.GridControl1.Size = New System.Drawing.Size(1421, 225)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvMonitorRequests})
         '
@@ -1904,9 +1996,9 @@ Partial Class viewPurchasing2
         Me.PanelControl2.Controls.Add(Me.ColorEdit2)
         Me.PanelControl2.Controls.Add(Me.ColorEdit3)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl2.Location = New System.Drawing.Point(2, 20)
+        Me.PanelControl2.Location = New System.Drawing.Point(2, 22)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1366, 29)
+        Me.PanelControl2.Size = New System.Drawing.Size(1421, 29)
         Me.PanelControl2.TabIndex = 1
         '
         'LabelControl1
@@ -1987,9 +2079,9 @@ Partial Class viewPurchasing2
         '
         Me.GroupControl6.Controls.Add(Me.grMaterialPlanning)
         Me.GroupControl6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupControl6.Location = New System.Drawing.Point(2, 281)
+        Me.GroupControl6.Location = New System.Drawing.Point(2, 280)
         Me.GroupControl6.Name = "GroupControl6"
-        Me.GroupControl6.Size = New System.Drawing.Size(1370, 188)
+        Me.GroupControl6.Size = New System.Drawing.Size(1425, 188)
         Me.GroupControl6.TabIndex = 3
         Me.GroupControl6.Text = "Material Needs"
         '
@@ -1997,11 +2089,11 @@ Partial Class viewPurchasing2
         '
         Me.grMaterialPlanning.DataSource = Me.bsMaterialPlanning
         Me.grMaterialPlanning.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grMaterialPlanning.Location = New System.Drawing.Point(2, 20)
+        Me.grMaterialPlanning.Location = New System.Drawing.Point(2, 22)
         Me.grMaterialPlanning.LookAndFeel.SkinName = "Money Twins"
         Me.grMaterialPlanning.MainView = Me.grvMaterialPlanning
         Me.grMaterialPlanning.Name = "grMaterialPlanning"
-        Me.grMaterialPlanning.Size = New System.Drawing.Size(1366, 166)
+        Me.grMaterialPlanning.Size = New System.Drawing.Size(1421, 164)
         Me.grMaterialPlanning.TabIndex = 3
         Me.grMaterialPlanning.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvMaterialPlanning})
         '
@@ -2145,7 +2237,7 @@ Partial Class viewPurchasing2
         Me.RibbonPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl2.Location = New System.Drawing.Point(2, 2)
         Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1374, 471)
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1429, 470)
         Me.RibbonPanelControl2.TabIndex = 5
         '
         'GroupControl2
@@ -2155,7 +2247,7 @@ Partial Class viewPurchasing2
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(1370, 467)
+        Me.GroupControl2.Size = New System.Drawing.Size(1425, 466)
         Me.GroupControl2.TabIndex = 3
         Me.GroupControl2.Text = "Purchase Orders "
         '
@@ -2163,11 +2255,11 @@ Partial Class viewPurchasing2
         '
         Me.grPOs.DataSource = Me.bsPOs
         Me.grPOs.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grPOs.Location = New System.Drawing.Point(2, 49)
+        Me.grPOs.Location = New System.Drawing.Point(2, 51)
         Me.grPOs.MainView = Me.grvPurchaseOrders
         Me.grPOs.Name = "grPOs"
         Me.grPOs.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17, Me.RepositoryItemLookUpEdit1})
-        Me.grPOs.Size = New System.Drawing.Size(1366, 416)
+        Me.grPOs.Size = New System.Drawing.Size(1421, 413)
         Me.grPOs.TabIndex = 2
         Me.grPOs.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvPurchaseOrders})
         '
@@ -2238,6 +2330,10 @@ Partial Class viewPurchasing2
         Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
         Me.RepositoryItemLookUpEdit1.NullText = ""
         Me.RepositoryItemLookUpEdit1.ValueMember = "Vendorid"
+        '
+        'bsVendorList
+        '
+        Me.bsVendorList.DataSource = GetType(AOS.BusinessObjects.VendorCollection)
         '
         'GridColumn6
         '
@@ -2313,9 +2409,9 @@ Partial Class viewPurchasing2
         Me.pnlPOLegend.Controls.Add(Me.cePOPink)
         Me.pnlPOLegend.Controls.Add(Me.lblPOColorMapping)
         Me.pnlPOLegend.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlPOLegend.Location = New System.Drawing.Point(2, 20)
+        Me.pnlPOLegend.Location = New System.Drawing.Point(2, 22)
         Me.pnlPOLegend.Name = "pnlPOLegend"
-        Me.pnlPOLegend.Size = New System.Drawing.Size(1366, 29)
+        Me.pnlPOLegend.Size = New System.Drawing.Size(1421, 29)
         Me.pnlPOLegend.TabIndex = 3
         '
         'lblPOPinkDesc
@@ -2353,7 +2449,7 @@ Partial Class viewPurchasing2
         Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RibbonPanelControl4.Location = New System.Drawing.Point(2, 2)
         Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1374, 471)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1429, 470)
         Me.RibbonPanelControl4.TabIndex = 5
         '
         'BarButtonItem1
@@ -2423,7 +2519,7 @@ Partial Class viewPurchasing2
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.FormCaption)
         Me.Name = "viewPurchasing2"
-        Me.Size = New System.Drawing.Size(1378, 624)
+        Me.Size = New System.Drawing.Size(1433, 624)
         Me.Tag = "viewPurchasing"
         CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemHyperLinkEdit1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2439,16 +2535,21 @@ Partial Class viewPurchasing2
         Me.PanelControl4.ResumeLayout(False)
         CType(Me.PanelControl9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl9.ResumeLayout(False)
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
         CType(Me.grpVendorProduct_VendorMgmt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpVendorProduct_VendorMgmt.ResumeLayout(False)
         CType(Me.grVendorProduct, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsVendorProducts, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvVendorProducts, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         Me.GroupControl3.PerformLayout()
-        CType(Me.TermsTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsVendors, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TermsTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VendornameTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vendoraddress1TextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VendoracctnumberTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2596,8 +2697,6 @@ Partial Class viewPurchasing2
     Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents grVendors As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView4 As CustomDevExGridView
-    Friend WithEvents colVendorid As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colVendorname As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RibbonPageGroup10 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup12 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup11 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
@@ -2718,10 +2817,19 @@ Partial Class viewPurchasing2
     Friend WithEvents AppgroupCollection1 As AppgroupCollection
     Friend WithEvents grpVendorProduct_VendorMgmt As DevExpress.XtraEditors.GroupControl
     Friend WithEvents grVendorProduct As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents grvVendorProducts As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colProductid_VendorMgmt As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colProductdesc_VendorMgmt As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDesc2_VendorMgmt As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colContainer_VendorMgmt As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colProductstatus_VendorMgmt As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents colVendorid As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colVendorname As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colVendorstatus As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents rbtnFetchVendorsActive As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rbtnFetchVendorsInActive As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup9 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents MemoEdit1 As DevExpress.XtraEditors.MemoEdit
 End Class

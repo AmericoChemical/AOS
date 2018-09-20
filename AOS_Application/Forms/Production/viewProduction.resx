@@ -655,6 +655,12 @@
         SEAAAADAuRoQIAABnXhJQwAAAABJRU5ErkJgggs=
 </value>
   </data>
+  <metadata name="bsProdOrders.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>316, 15</value>
+  </metadata>
+  <metadata name="bsAPIS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>113, 15</value>
+  </metadata>
   <metadata name="bsRelabelOrders.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>110, 47</value>
   </metadata>
@@ -663,12 +669,6 @@
   </metadata>
   <metadata name="bsChemicals.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>764, 15</value>
-  </metadata>
-  <metadata name="bsProdOrders.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>316, 15</value>
-  </metadata>
-  <metadata name="bsAPIS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>113, 15</value>
   </metadata>
   <metadata name="bsMaterialProducts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>443, 15</value>

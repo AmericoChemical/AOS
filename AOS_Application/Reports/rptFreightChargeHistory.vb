@@ -30,7 +30,10 @@ Public Class rptFreightChargeHistory
         oMatchingLoads.Query.Load()
         bsMatchingLoadInfo.DataSource = oMatchingLoads
 
-
+        Dim oQuotes = New ViewLoadQuotesByLoadIDCollection
+        oQuotes.Query.Where(oQuotes.Query.LoadID.Equal(vLoadId))
+        oQuotes.Query.Load()
+        DetailReport.DataSource = oQuotes
     End Sub
 
 End Class

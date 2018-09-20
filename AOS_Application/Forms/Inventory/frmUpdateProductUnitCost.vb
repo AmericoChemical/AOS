@@ -81,6 +81,9 @@ Public Class frmUpdateProductUnitCost
         oCostMethod.LoadAll()
         bsCostMethod.DataSource = oCostMethod
 
+
+
+
     End Sub
 
     Private Sub loadData()
@@ -92,6 +95,16 @@ Public Class frmUpdateProductUnitCost
         End If
         oProduct.LoadByPrimaryKey(vProductID)
         Me.bs.DataSource = oProduct
+
+        'Check to see if there are any active APIS records for this product, and then prevent updates to Standard Costing from Product Cost records.
+        Dim oAPIS As New ApisCollection
+        oAPIS.Query.Where(oAPIS.Query.Productid.Equal(vProductID), oAPIS.Query.Apisstatus.Equal("ACTIVE"))
+        oAPIS.Query.Load()
+
+        If oAPIS.Count > 0 Then
+            'make the UPDATE STANDARD COST button disabled
+            rbtnUpdateProductStandardCosts.Enabled = False
+        End If
 
         If vAddtype = "NEW" Then
             addNewCost()
@@ -285,6 +298,12 @@ Public Class frmUpdateProductUnitCost
     End Sub
 
     Private Sub rbtnUpdateProductStandardCosts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnUpdateProductStandardCosts.ItemClick
+        ' Check for OverRide
+        If Costing.getProductStandardCostSource(oProduct.Productid) = "OVERRIDE" Then
+            MsgBox("Standard Cost is set to OVERRIDE. Can not update with Vendor Cost", MsgBoxStyle.Critical, "ERROR - Update Not Allowed")
+            Exit Sub
+
+        End If
 
         'check to see if product is a liquid - if so, require a volume units/uom/unitcost
         If oProduct.Isliquid = True Then

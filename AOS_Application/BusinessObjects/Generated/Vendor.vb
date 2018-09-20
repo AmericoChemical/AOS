@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/11/2014 1:43:57 PM
+' Date Generated       : 5/2/2018 9:09:53 AM
 '===============================================================================
 
 Imports System
@@ -226,6 +226,9 @@ Namespace BusinessObjects
 												
 						Case "Isactive"
 							Me.str.Isactive = CType(value, string)
+												
+						Case "Vendorstatus"
+							Me.str.Vendorstatus = CType(value, string)
 					
 					End Select
 					
@@ -529,6 +532,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Boolean))
 				MyBase.SetSystemBoolean(VendorMetadata.ColumnNames.Isactive, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to VENDOR.VENDORSTATUS
+		' </summary>
+		Public Overridable Property Vendorstatus As System.String
+			Get
+				Return MyBase.GetSystemString(VendorMetadata.ColumnNames.Vendorstatus)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(VendorMetadata.ColumnNames.Vendorstatus, value)
 			End Set
 		End Property		
 		
@@ -959,6 +975,26 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Vendorstatus As System.String 
+				Get
+					Dim data_ As System.String = entity.Vendorstatus
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Vendorstatus = Nothing
+					Else
+						entity.Vendorstatus = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esVendor
@@ -1164,6 +1200,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property Isactive As esQueryItem
 			Get
 				Return New esQueryItem(Me, VendorMetadata.ColumnNames.Isactive, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Vendorstatus As esQueryItem
+			Get
+				Return New esQueryItem(Me, VendorMetadata.ColumnNames.Vendorstatus, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -1478,6 +1520,12 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(VendorMetadata.ColumnNames.Vendorstatus, 20, GetType(System.String), esSystemType.String)	
+			c.PropertyName = VendorMetadata.PropertyNames.Vendorstatus
+			c.CharacterMaxLength = 50
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -1526,6 +1574,7 @@ Namespace BusinessObjects
 			 Public Const Modifyby As String = "MODIFYBY"
 			 Public Const Modifytime As String = "MODIFYTIME"
 			 Public Const Isactive As String = "ISACTIVE"
+			 Public Const Vendorstatus As String = "VENDORSTATUS"
 		End Class
 #End Region	
 		
@@ -1551,6 +1600,7 @@ Namespace BusinessObjects
 			 Public Const Modifyby As String = "Modifyby"
 			 Public Const Modifytime As String = "Modifytime"
 			 Public Const Isactive As String = "Isactive"
+			 Public Const Vendorstatus As String = "Vendorstatus"
 		End Class
 #End Region	
 
@@ -1617,7 +1667,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Createdtime", new esTypeMap("datetime", "System.DateTime"))
 				meta.AddTypeMap("Modifyby", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Modifytime", new esTypeMap("datetime", "System.DateTime"))
-				meta.AddTypeMap("Isactive", new esTypeMap("bit", "System.Boolean"))			
+				meta.AddTypeMap("Isactive", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("Vendorstatus", new esTypeMap("varchar", "System.String"))			
 				
 				
 				 

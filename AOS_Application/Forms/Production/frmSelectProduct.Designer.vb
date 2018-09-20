@@ -60,6 +60,7 @@ Partial Class frmSelectProduct
         Me.colWeightuom = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colWeightunits = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVolumeuom = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductstatus = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVolumeunits = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colInventorymethod = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colUnnumber = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -81,7 +82,6 @@ Partial Class frmSelectProduct
         Me.colIsinhazox = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.colProductstatus = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.grpTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpTitle.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,7 +107,7 @@ Partial Class frmSelectProduct
         '
         Me.PanelControl1.Controls.Add(Me.GridControl1)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(8, 28)
+        Me.PanelControl1.Location = New System.Drawing.Point(8, 31)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(951, 215)
         Me.PanelControl1.TabIndex = 3
@@ -334,6 +334,14 @@ Partial Class frmSelectProduct
         Me.colVolumeuom.FieldName = "Volumeuom"
         Me.colVolumeuom.Name = "colVolumeuom"
         '
+        'colProductstatus
+        '
+        Me.colProductstatus.Caption = "Status"
+        Me.colProductstatus.FieldName = "Productstatus"
+        Me.colProductstatus.Name = "colProductstatus"
+        Me.colProductstatus.Visible = True
+        Me.colProductstatus.VisibleIndex = 4
+        '
         'colVolumeunits
         '
         Me.colVolumeunits.FieldName = "Volumeunits"
@@ -441,14 +449,6 @@ Partial Class frmSelectProduct
         'Timer1
         '
         Me.Timer1.Enabled = True
-        '
-        'colProductstatus
-        '
-        Me.colProductstatus.Caption = "Status"
-        Me.colProductstatus.FieldName = "Productstatus"
-        Me.colProductstatus.Name = "colProductstatus"
-        Me.colProductstatus.Visible = True
-        Me.colProductstatus.VisibleIndex = 4
         '
         'frmSelectProduct
         '

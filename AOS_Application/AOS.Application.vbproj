@@ -557,6 +557,9 @@
     <Compile Include="BusinessObjects\Custom\ListShelflife.vb" />
     <Compile Include="BusinessObjects\Custom\ListShelflifeCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ListShelflifeQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ListStatusoptions.vb" />
+    <Compile Include="BusinessObjects\Custom\ListStatusoptionsCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ListStatusoptionsQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ListTransporttype.vb" />
     <Compile Include="BusinessObjects\Custom\ListTransporttypeCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ListTransporttypeQuery.vb" />
@@ -866,6 +869,12 @@
     <Compile Include="BusinessObjects\Custom\ViewDailyWorkorderList.vb" />
     <Compile Include="BusinessObjects\Custom\ViewDailyWorkorderListCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewDailyWorkorderListQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewGetYTDSalesAllCustomers.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewGetYTDSalesAllCustomersCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewGetYTDSalesAllCustomersQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewGetYTDSalesForJeffCustomers.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewGetYTDSalesForJeffCustomersCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewGetYTDSalesForJeffCustomersQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewInventoryAnalysisByProduct.vb" />
     <Compile Include="BusinessObjects\Custom\ViewInventoryAnalysisByProductCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewInventoryAnalysisByProductQuery.vb" />
@@ -989,6 +998,9 @@
     <Compile Include="BusinessObjects\Custom\ViewPricingMethod.vb" />
     <Compile Include="BusinessObjects\Custom\ViewPricingMethodCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewPricingMethodQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewPrimeList.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewPrimeListCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewPrimeListQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdcutionOrder2.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdcutionOrder2Collection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdcutionOrder2Query.vb" />
@@ -1411,6 +1423,7 @@
     <Compile Include="BusinessObjects\Generated\ListPurchaseordertype.vb" />
     <Compile Include="BusinessObjects\Generated\ListSalespersonstatus.vb" />
     <Compile Include="BusinessObjects\Generated\ListShelflife.vb" />
+    <Compile Include="BusinessObjects\Generated\ListStatusoptions.vb" />
     <Compile Include="BusinessObjects\Generated\ListTransporttype.vb" />
     <Compile Include="BusinessObjects\Generated\ListUom.vb" />
     <Compile Include="BusinessObjects\Generated\ListWarehouselocation.vb" />
@@ -1514,6 +1527,8 @@
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisMonthly.vb" />
     <Compile Include="BusinessObjects\Generated\ViewCustomerTrendAnalysisQuarterly.vb" />
     <Compile Include="BusinessObjects\Generated\ViewDailyWorkorderList.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewGetYTDSalesAllCustomers.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewGetYTDSalesForJeffCustomers.vb" />
     <Compile Include="BusinessObjects\Generated\ViewInventoryAnalysisByProduct.vb" />
     <Compile Include="BusinessObjects\Generated\ViewInvItemDetails.vb" />
     <Compile Include="BusinessObjects\Generated\ViewInvItemList.vb" />
@@ -1555,6 +1570,7 @@
     <Compile Include="BusinessObjects\Generated\ViewPriceListData.vb" />
     <Compile Include="BusinessObjects\Generated\ViewPriceListProducts.vb" />
     <Compile Include="BusinessObjects\Generated\ViewPricingMethod.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewPrimeList.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdcutionOrder2.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdItemData.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdItemDataWOEmail.vb" />
@@ -2894,6 +2910,12 @@
     <Compile Include="Reports\rptFreightChargeHistory.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptPrimeList.Designer.vb">
+      <DependentUpon>rptPrimeList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptPrimeList.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptGHSProductLabelLarge.Designer.vb">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>
     </Compile>
@@ -3998,6 +4020,9 @@
     <EmbeddedResource Include="Reports\rptFreightChargeHistory.resx">
       <DependentUpon>rptFreightChargeHistory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPrimeList.resx">
+      <DependentUpon>rptPrimeList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptGHSProductLabelLarge.resx">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -4277,6 +4302,8 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ListDocumenttypeCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ListProductstatusCollection2.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ListSalespersonstatusCollection.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ListStatusoptions.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ListStatusoptionsCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.Receivingevent.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ReceivingeventCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewChangeRecordAPISChanges.datasource" />
@@ -4305,6 +4332,10 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewCustomerShipmentTotalsCollection1.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewDailyWorkorderList.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewDailyWorkorderListCollection.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewGetYTDSalesAllCustomers.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewGetYTDSalesAllCustomersCollection.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewGetYTDSalesForJeffCustomers.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewGetYTDSalesForJeffCustomersCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewInvoice.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewInvoiceCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewMaterialProductsFullAvailableForMaterialNeedsCollection.datasource" />
@@ -4313,6 +4344,8 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewMaterialUsageProdOrderInfo.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewMaterialUsageProdOrderInfoCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewPriceListDataCollection.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewPrimeList.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewPrimeListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewProductBuyersListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewProductSellersListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewReceivedHoldItemsCollection1.datasource" />

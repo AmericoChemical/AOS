@@ -13,6 +13,7 @@ Public Class frmSalesDataAnalysis
 
     End Sub
 
+    Private vSalesGroup As String = "ALL"
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Timer1.Stop()
@@ -68,44 +69,44 @@ Public Class frmSalesDataAnalysis
 
     End Function
 
-    Private Sub rbtnGetQtrlyData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnGetQtrlyData.ItemClick
-        gcQrtlySalesSummary.BringToFront()
+    'Private Sub rbtnGetQtrlyData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnGetQtrlyData.ItemClick
+    '    gcQrtlySalesSummary.BringToFront()
 
-        If Not getInvoiceRawData() Then
-            Exit Sub
-        End If
+    '    If Not getInvoiceRawData() Then
+    '        Exit Sub
+    '    End If
 
-        Dim oQtrlyData As New ViewSalesQtrlyTotalsInvoiceDateRestrictedCollection
-        oQtrlyData.Query.Where(oQtrlyData.Query.Saleslevel.Equal(2), oQtrlyData.Query.Salesbycustomerreport.Equal(1))
-        If Not oQtrlyData.Query.Load Then
-            MsgBox("Error retrieving Qtrly Sales Totals", MsgBoxStyle.Critical, "Error")
-            Exit Sub
-        End If
-        If oQtrlyData.Count <= 0 Then
-            MsgBox("Error retrieving Qtrly Sales Totals", MsgBoxStyle.Critical, "Error - No Records found")
-            Exit Sub
-        End If
+    '    Dim oQtrlyData As New ViewSalesQtrlyTotalsInvoiceDateRestrictedCollection
+    '    oQtrlyData.Query.Where(oQtrlyData.Query.Saleslevel.Equal(2), oQtrlyData.Query.Salesbycustomerreport.Equal(1))
+    '    If Not oQtrlyData.Query.Load Then
+    '        MsgBox("Error retrieving Qtrly Sales Totals", MsgBoxStyle.Critical, "Error")
+    '        Exit Sub
+    '    End If
+    '    If oQtrlyData.Count <= 0 Then
+    '        MsgBox("Error retrieving Qtrly Sales Totals", MsgBoxStyle.Critical, "Error - No Records found")
+    '        Exit Sub
+    '    End If
 
-        oQtrlyData.Sort = "SalesID1"
-        bsQtrlyData.DataSource = oQtrlyData
+    '    oQtrlyData.Sort = "SalesID1"
+    '    bsQtrlyData.DataSource = oQtrlyData
 
 
-    End Sub
+    'End Sub
 
-    Private Sub rbtnSalespersonCustomerDetailedData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnSalespersonCustomerDetailedData.ItemClick
+    'Private Sub rbtnSalespersonCustomerDetailedData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnSalespersonCustomerDetailedData.ItemClick
 
-        gcSalespersonCustomerDetailedData.BringToFront()
+    '    gcSalespersonCustomerDetailedData.BringToFront()
 
-        If Not getInvoiceRawData() Then
-            Exit Sub
-        End If
+    '    If Not getInvoiceRawData() Then
+    '        Exit Sub
+    '    End If
 
-        Dim oData As New ViewSalespersonCustomerDetailedDataCollection
-        oData.LoadAll()
-        oData.Sort = "SalesID1, CustName"
-        bsCustomerSalesData.DataSource = oData
+    '    Dim oData As New ViewSalespersonCustomerDetailedDataCollection
+    '    oData.LoadAll()
+    '    oData.Sort = "SalesID1, CustName"
+    '    bsCustomerSalesData.DataSource = oData
 
-    End Sub
+    'End Sub
 
     Private Function validateDates() As Boolean
         If IsDBNull(eStartDate.EditValue) Then
@@ -132,25 +133,75 @@ Public Class frmSalesDataAnalysis
     End Function
 
 
-    Private Sub rbtnExportQtrlyData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportQtrlyData.ItemClick
+    'Private Sub rbtnExportQtrlyData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportQtrlyData.ItemClick
+    '    Try
+    '        Dim vDocfolderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+    '        Dim vFileName As String = vDocfolderPath + "\" + "SalespersonQtrlySummary.xls"
+    '        grvQtrlyTotals.ExportToXls(vFileName)
+    '        MsgBox("Salesperson Quarterly Summary Data successfully exported to " + vFileName, MsgBoxStyle.Information, "Export succeeded")
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Sub
+
+    'Private Sub rbtnExportCustomerData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportCustomerData.ItemClick
+    '    Try
+    '        Dim vDocfolderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+    '        Dim vFileName As String = vDocfolderPath + "\" + "CustomerMonthlySalesData.xls"
+    '        grvCustomerSalesData.ExportToXls(vFileName)
+    '        MsgBox("Customer Monthly Sales Analysis Data successfully exported to " + vFileName, MsgBoxStyle.Information, "Export succeeded")
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Sub
+
+    Private Sub rbtnYTDSalesAllCustomers_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnYTDSalesAllCustomers.ItemClick
+
+        vSalesGroup = "All"
+
+        If Not getInvoiceRawData() Then
+            Exit Sub
+        End If
+
+        Dim obj As New ViewGetYTDSalesAllCustomersCollection
+        obj.LoadAll()
+        obj.Sort = "CustName"
+        bsYTDSalesData.DataSource = obj
+
+
+    End Sub
+
+    Private Sub rbtnExportYTDSalesToExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportYTDSalesToExcel.ItemClick
         Try
+            Dim vFilename As String = ""
             Dim vDocfolderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-            Dim vFileName As String = vDocfolderPath + "\" + "SalespersonQtrlySummary.xls"
-            grvQtrlyTotals.ExportToXls(vFileName)
-            MsgBox("Salesperson Quarterly Summary Data successfully exported to " + vFileName, MsgBoxStyle.Information, "Export succeeded")
+            Select Case vSalesGroup
+                Case "ALL"
+                    vFilename = vDocfolderPath + "\" + "CustomerMonthlySalesData.xls"
+                Case "Jeff"
+                    vFilename = vDocfolderPath + "\" + "CustomerMonthlySalesData_JeffStudnickaOnly.xls"
+                Case Else
+                    vFilename = vDocfolderPath + "\" + "CustomerMonthlySalesData.xls"
+            End Select
+            grvCustomerSalesData.ExportToXls(vFilename)
+            MsgBox("Customer Monthly Sales Analysis Data successfully exported to " + vFileName, MsgBoxStyle.Information, "Export succeeded")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Private Sub rbtnExportCustomerData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnExportCustomerData.ItemClick
-        Try
-            Dim vDocfolderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-            Dim vFileName As String = vDocfolderPath + "\" + "CustomerMonthlySalesData.xls"
-            grvCustomerSalesData.ExportToXls(vFileName)
-            MsgBox("Customer Monthly Sales Analysis Data successfully exported to " + vFileName, MsgBoxStyle.Information, "Export succeeded")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+    Private Sub rbtnYTDKeffsCustomers_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnYTDKeffsCustomers.ItemClick
+
+        vSalesGroup = "Jeff"
+
+        If Not getInvoiceRawData() Then
+            Exit Sub
+        End If
+
+        Dim obj As New ViewGetYTDSalesForJeffCustomersCollection
+
+        obj.LoadAll()
+        obj.Sort = "CustName"
+        bsYTDSalesData.DataSource = obj
     End Sub
 End Class

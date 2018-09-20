@@ -25,6 +25,7 @@ Public Class frmAddEditVendor
 
     'here is where you dimension your object variables for the form
     Dim oItem As New Vendor
+    Dim oStatusOptions As New ListStatusoptionsCollection
 
     Private Sub frmAddEdit_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If vEditType = "ADD" Then
@@ -36,7 +37,14 @@ Public Class frmAddEditVendor
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Timer1.Stop()
+        loadStatusOptions()
         loadData()
+    End Sub
+
+    Private Sub loadStatusOptions()
+        Dim oStatusoptions As New ListStatusoptionsCollection
+        oStatusoptions.LoadAll()
+        bsStatusOptions.DataSource = oStatusoptions
     End Sub
 
     Private Sub updateTimeLabels()

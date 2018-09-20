@@ -103,20 +103,23 @@ Public Class frmAddEditProductFulfillment
             'based on the Associated Product and the Kit and Labor Hours required for relabeling, then process and resulting
             'effects on other products' standard costs (though this should not be likely)
             If oProductfulfillmentplan.Fulfillmenttypeid = 2 Then
-                Dim oRlbCosts As New ViewRelabelProductsCostChanges
-                oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(oProductfulfillmentplan.Productid))
-                If oRlbCosts.Query.Load Then
-                    'update Relabeled Product Standard Costs
-                    Dim oProduct As New Product
-                    If oProduct.LoadByPrimaryKey(oProductfulfillmentplan.Productid) Then
-                        'set new values
-                        oProduct.Volumestandardcost = oRlbCosts.Newvolcost
-                        oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
-                        oProduct.Save()
-                    End If
 
-                    'add product change history record for the relabeled product
-                    AddProductCostChangeHistoryRecord(oProductfulfillmentplan.Productid, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & oProduct.Productid & " " & oProduct.Productdesc, "STD COST")
+                Dim oProduct As New Product
+                If oProduct.LoadByPrimaryKey(oProductfulfillmentplan.Productid) Then
+                    ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", oProduct, "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid)
+
+                    '    Dim oRlbCosts As New ViewRelabelProductsCostChanges
+                    'oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(oProductfulfillmentplan.Productid))
+                    'If oRlbCosts.Query.Load Then
+                    '    'update Relabeled Product Standard Costs
+                    '    'set new values
+                    '    oProduct.Volumestandardcost = oRlbCosts.Newvolcost
+                    '        oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
+                    '        oProduct.Save()
+                    '    End If
+
+                    '    'add product change history record for the relabeled product
+                    '    AddProductCostChangeHistoryRecord(oProductfulfillmentplan.Productid, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & oProduct.Productid & " " & oProduct.Productdesc, "STD COST")
 
                 End If
             End If

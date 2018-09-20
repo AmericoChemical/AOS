@@ -78,7 +78,16 @@ Public Class frmAddEditKitComponents
     Private Function changesSaved() As Boolean
         bsKitComponent.EndEdit()
         oKitComponent.EndEdit()
+        If MsgBox("Are you sure you want to make kit changes? This will Update Product Costs to CALCULATED APIS COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
+            Return False
+        End If
+
+        If MsgBox("If you make this change, it cannot be undone. ARE YOU SURE YOU WANT TO CONTINUE?", MsgBoxStyle.YesNo, "CONFIRM REQUEST") = MsgBoxResult.No Then
+            Return False
+        End If
         oKitComponent.Save()
+        ProcessKitCostChanges(vID, "KIT CHNG - KIT " & vID, "STD COST", vID, "KIT CHNG-" & vID)
+
         Return True
     End Function
     Private Function changesCancelled() As Boolean

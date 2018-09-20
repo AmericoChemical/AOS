@@ -129,7 +129,7 @@ Partial Class frmApisStandardCosts
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(770, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(770, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -137,28 +137,28 @@ Partial Class frmApisStandardCosts
         '
         Me.btnNewCostRecord.Caption = "New Cost Record"
         Me.btnNewCostRecord.Id = 0
-        Me.btnNewCostRecord.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnNewCostRecord.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnNewCostRecord.Name = "btnNewCostRecord"
         '
         'btnEditCostRecord
         '
         Me.btnEditCostRecord.Caption = "Edit Cost Record"
-        Me.btnEditCostRecord.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Id = 1
+        Me.btnEditCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Name = "btnEditCostRecord"
         '
         'btnDeleteCostRecord
         '
         Me.btnDeleteCostRecord.Caption = "Delete Cost Record"
-        Me.btnDeleteCostRecord.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Id = 2
+        Me.btnDeleteCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Name = "btnDeleteCostRecord"
         '
         'btnSave
         '
         Me.btnSave.Caption = "Close"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeImageIndex = 0
+        Me.btnSave.ImageOptions.LargeImageIndex = 0
         Me.btnSave.Name = "btnSave"
         '
         'LargeRibbonImages
@@ -184,11 +184,11 @@ Partial Class frmApisStandardCosts
         '
         Me.GridControl1.DataSource = Me.bsMaterialCosts
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 20)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(766, 158)
+        Me.GridControl1.Size = New System.Drawing.Size(766, 139)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -343,6 +343,7 @@ Partial Class frmApisStandardCosts
         '
         Me.LabelControl18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl18.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl18.Appearance.Options.UseFont = True
         Me.LabelControl18.Location = New System.Drawing.Point(477, 146)
         Me.LabelControl18.Name = "LabelControl18"
         Me.LabelControl18.Size = New System.Drawing.Size(162, 13)
@@ -353,6 +354,7 @@ Partial Class frmApisStandardCosts
         '
         Me.LabelControl9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl9.Appearance.Options.UseFont = True
         Me.LabelControl9.Location = New System.Drawing.Point(10, 146)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(154, 13)
@@ -729,9 +731,9 @@ Partial Class frmApisStandardCosts
         '
         Me.GroupControl3.Controls.Add(Me.GridControl1)
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 116)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(770, 182)
+        Me.GroupControl3.Size = New System.Drawing.Size(770, 161)
         Me.GroupControl3.TabIndex = 4
         Me.GroupControl3.Text = "Material Standard Costs"
         '

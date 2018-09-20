@@ -14,8 +14,7 @@
 /AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CoreCompileInputs.cache
 /AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CopyComplete
 /AOS_Application/obj/Debug
-/AOS_Application/.vs/AOS.WindowsApp/v15/Server/sqlite3
-/AOS_Application/obj/Release
-/AOS_Application/Services/EmailService/obj/Debug
-/AOS_Application/Services/EmailService/obj/Release/EmailService.csproj.CoreCompileInputs.cache
-/.vs/CodeRepository-PullOnly/v15
+/AOS_Application/bin/Debug
+*.dtbcache
+/AOS_Application/.vs/AOS.WindowsApp/v15
+/AOS_Application/.vs/AOS.WindowsApp/config

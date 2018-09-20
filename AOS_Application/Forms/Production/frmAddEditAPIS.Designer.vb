@@ -21,7 +21,6 @@ Partial Class frmAddEditAPIS
         Me.components = New System.ComponentModel.Container()
         Dim FormulaidLabel As System.Windows.Forms.Label
         Dim FormuladescLabel As System.Windows.Forms.Label
-        Dim QtycontainersLabel As System.Windows.Forms.Label
         Dim StdlaborhoursLabel As System.Windows.Forms.Label
         Dim FormulanotesLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
@@ -139,7 +138,6 @@ Partial Class frmAddEditAPIS
         Me.FormulanotesTextEdit = New DevExpress.XtraEditors.MemoEdit()
         FormulaidLabel = New System.Windows.Forms.Label()
         FormuladescLabel = New System.Windows.Forms.Label()
-        QtycontainersLabel = New System.Windows.Forms.Label()
         StdlaborhoursLabel = New System.Windows.Forms.Label()
         FormulanotesLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -238,15 +236,6 @@ Partial Class frmAddEditAPIS
         FormuladescLabel.Size = New System.Drawing.Size(51, 13)
         FormuladescLabel.TabIndex = 2
         FormuladescLabel.Text = "Revision:"
-        '
-        'QtycontainersLabel
-        '
-        QtycontainersLabel.AutoSize = True
-        QtycontainersLabel.Location = New System.Drawing.Point(5, 87)
-        QtycontainersLabel.Name = "QtycontainersLabel"
-        QtycontainersLabel.Size = New System.Drawing.Size(97, 13)
-        QtycontainersLabel.TabIndex = 8
-        QtycontainersLabel.Text = "Qty of Containers:"
         '
         'StdlaborhoursLabel
         '
@@ -366,98 +355,98 @@ Partial Class frmAddEditAPIS
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.Size = New System.Drawing.Size(1018, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1014, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnSave
         '
         Me.btnSave.Caption = "Save"
         Me.btnSave.Id = 0
-        Me.btnSave.LargeImageIndex = 5
+        Me.btnSave.ImageOptions.LargeImageIndex = 5
         Me.btnSave.Name = "btnSave"
         '
         'btnCancel
         '
         Me.btnCancel.Caption = "Cancel"
         Me.btnCancel.Id = 1
-        Me.btnCancel.LargeImageIndex = 6
+        Me.btnCancel.ImageOptions.LargeImageIndex = 6
         Me.btnCancel.Name = "btnCancel"
         '
         'btnAddNewInput
         '
         Me.btnAddNewInput.Caption = "Add New Input"
         Me.btnAddNewInput.Id = 2
-        Me.btnAddNewInput.LargeImageIndex = 11
+        Me.btnAddNewInput.ImageOptions.LargeImageIndex = 11
         Me.btnAddNewInput.Name = "btnAddNewInput"
         '
         'btnEditInput
         '
         Me.btnEditInput.Caption = " Edit  Input"
         Me.btnEditInput.Id = 3
-        Me.btnEditInput.LargeImageIndex = 12
+        Me.btnEditInput.ImageOptions.LargeImageIndex = 12
         Me.btnEditInput.Name = "btnEditInput"
         '
         'btnDeleteInput
         '
         Me.btnDeleteInput.Caption = "Delete Input"
         Me.btnDeleteInput.Id = 4
-        Me.btnDeleteInput.LargeImageIndex = 13
+        Me.btnDeleteInput.ImageOptions.LargeImageIndex = 13
         Me.btnDeleteInput.Name = "btnDeleteInput"
         '
         'rbtnAddNewProcessStep
         '
         Me.rbtnAddNewProcessStep.Caption = "Add New Process Step"
         Me.rbtnAddNewProcessStep.Id = 8
-        Me.rbtnAddNewProcessStep.LargeImageIndex = 17
+        Me.rbtnAddNewProcessStep.ImageOptions.LargeImageIndex = 17
         Me.rbtnAddNewProcessStep.Name = "rbtnAddNewProcessStep"
         '
         'rbtnEditProcessStep
         '
         Me.rbtnEditProcessStep.Caption = " Edit  Process Step"
         Me.rbtnEditProcessStep.Id = 9
-        Me.rbtnEditProcessStep.LargeImageIndex = 18
+        Me.rbtnEditProcessStep.ImageOptions.LargeImageIndex = 18
         Me.rbtnEditProcessStep.Name = "rbtnEditProcessStep"
         '
         'rbtnDeleteProcessStep
         '
         Me.rbtnDeleteProcessStep.Caption = "Delete Process Step"
         Me.rbtnDeleteProcessStep.Id = 10
-        Me.rbtnDeleteProcessStep.LargeImageIndex = 19
+        Me.rbtnDeleteProcessStep.ImageOptions.LargeImageIndex = 19
         Me.rbtnDeleteProcessStep.Name = "rbtnDeleteProcessStep"
         '
         'rbtnPrintFormulaSheet
         '
         Me.rbtnPrintFormulaSheet.Caption = "Print APIS Sheet"
         Me.rbtnPrintFormulaSheet.Id = 12
-        Me.rbtnPrintFormulaSheet.LargeImageIndex = 7
+        Me.rbtnPrintFormulaSheet.ImageOptions.LargeImageIndex = 7
         Me.rbtnPrintFormulaSheet.Name = "rbtnPrintFormulaSheet"
         '
         'rbtnAddAPISNote
         '
         Me.rbtnAddAPISNote.Caption = "Add New Note"
         Me.rbtnAddAPISNote.Id = 13
-        Me.rbtnAddAPISNote.LargeImageIndex = 14
+        Me.rbtnAddAPISNote.ImageOptions.LargeImageIndex = 14
         Me.rbtnAddAPISNote.Name = "rbtnAddAPISNote"
         '
         'rbtnEditAPISNote
         '
         Me.rbtnEditAPISNote.Caption = " Edit  Note"
         Me.rbtnEditAPISNote.Id = 14
-        Me.rbtnEditAPISNote.LargeImageIndex = 15
+        Me.rbtnEditAPISNote.ImageOptions.LargeImageIndex = 15
         Me.rbtnEditAPISNote.Name = "rbtnEditAPISNote"
         '
         'rbtnDeleteAPISNote
         '
         Me.rbtnDeleteAPISNote.Caption = "Delete Note"
         Me.rbtnDeleteAPISNote.Id = 15
-        Me.rbtnDeleteAPISNote.LargeImageIndex = 16
+        Me.rbtnDeleteAPISNote.ImageOptions.LargeImageIndex = 16
         Me.rbtnDeleteAPISNote.Name = "rbtnDeleteAPISNote"
         '
         'rbtnMarkAPISAsActive
         '
         Me.rbtnMarkAPISAsActive.Caption = "Mark as Active"
         Me.rbtnMarkAPISAsActive.Id = 16
-        Me.rbtnMarkAPISAsActive.LargeImageIndex = 8
+        Me.rbtnMarkAPISAsActive.ImageOptions.LargeImageIndex = 8
         Me.rbtnMarkAPISAsActive.Name = "rbtnMarkAPISAsActive"
         '
         'rbtnMarkAsSingleUse
@@ -465,7 +454,7 @@ Partial Class frmAddEditAPIS
         Me.rbtnMarkAsSingleUse.Caption = "Mark as Single Use"
         Me.rbtnMarkAsSingleUse.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnMarkAsSingleUse.Id = 17
-        Me.rbtnMarkAsSingleUse.LargeImageIndex = 8
+        Me.rbtnMarkAsSingleUse.ImageOptions.LargeImageIndex = 8
         Me.rbtnMarkAsSingleUse.Name = "rbtnMarkAsSingleUse"
         '
         'rbtnMarkAsArchived
@@ -473,14 +462,14 @@ Partial Class frmAddEditAPIS
         Me.rbtnMarkAsArchived.Caption = "Mark as Archived"
         Me.rbtnMarkAsArchived.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnMarkAsArchived.Id = 18
-        Me.rbtnMarkAsArchived.LargeImageIndex = 8
+        Me.rbtnMarkAsArchived.ImageOptions.LargeImageIndex = 8
         Me.rbtnMarkAsArchived.Name = "rbtnMarkAsArchived"
         '
         'rbtnReviewCosts
         '
         Me.rbtnReviewCosts.Caption = "Standard Cost Calculation"
         Me.rbtnReviewCosts.Id = 19
-        Me.rbtnReviewCosts.LargeImageIndex = 9
+        Me.rbtnReviewCosts.ImageOptions.LargeImageIndex = 9
         Me.rbtnReviewCosts.Name = "rbtnReviewCosts"
         '
         'ImageCollection1
@@ -568,9 +557,9 @@ Partial Class frmAddEditAPIS
         Me.PanelControl1.Controls.Add(Me.pnlFormulaInputs)
         Me.PanelControl1.Controls.Add(Me.pnlFormulaInfo)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 95)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 116)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1018, 647)
+        Me.PanelControl1.Size = New System.Drawing.Size(1014, 622)
         Me.PanelControl1.TabIndex = 1
         '
         'pnlAPISProcessesNotes
@@ -580,7 +569,7 @@ Partial Class frmAddEditAPIS
         Me.pnlAPISProcessesNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlAPISProcessesNotes.Location = New System.Drawing.Point(0, 335)
         Me.pnlAPISProcessesNotes.Name = "pnlAPISProcessesNotes"
-        Me.pnlAPISProcessesNotes.Size = New System.Drawing.Size(1018, 312)
+        Me.pnlAPISProcessesNotes.Size = New System.Drawing.Size(1014, 287)
         Me.pnlAPISProcessesNotes.TabIndex = 8
         '
         'gcAPISNotes
@@ -590,7 +579,7 @@ Partial Class frmAddEditAPIS
         Me.gcAPISNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcAPISNotes.Location = New System.Drawing.Point(504, 2)
         Me.gcAPISNotes.Name = "gcAPISNotes"
-        Me.gcAPISNotes.Size = New System.Drawing.Size(512, 308)
+        Me.gcAPISNotes.Size = New System.Drawing.Size(508, 283)
         Me.gcAPISNotes.TabIndex = 2
         Me.gcAPISNotes.Text = "APIS Notes"
         '
@@ -602,7 +591,7 @@ Partial Class frmAddEditAPIS
         Me.grAPISNotes.MainView = Me.GridView3
         Me.grAPISNotes.Name = "grAPISNotes"
         Me.grAPISNotes.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit7, Me.RepositoryItemLookUpEdit8, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemCheckEdit3, Me.RepositoryItemLookUpEdit10})
-        Me.grAPISNotes.Size = New System.Drawing.Size(508, 251)
+        Me.grAPISNotes.Size = New System.Drawing.Size(504, 226)
         Me.grAPISNotes.TabIndex = 5
         Me.grAPISNotes.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
@@ -709,9 +698,9 @@ Partial Class frmAddEditAPIS
         Me.PanelControl2.Controls.Add(Me.eTotalVolume)
         Me.PanelControl2.Controls.Add(Label8)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl2.Location = New System.Drawing.Point(2, 273)
+        Me.PanelControl2.Location = New System.Drawing.Point(2, 248)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(508, 33)
+        Me.PanelControl2.Size = New System.Drawing.Size(504, 33)
         Me.PanelControl2.TabIndex = 6
         '
         'eTotalWeight
@@ -736,7 +725,7 @@ Partial Class frmAddEditAPIS
         Me.gcAPISProcesses.Dock = System.Windows.Forms.DockStyle.Left
         Me.gcAPISProcesses.Location = New System.Drawing.Point(2, 2)
         Me.gcAPISProcesses.Name = "gcAPISProcesses"
-        Me.gcAPISProcesses.Size = New System.Drawing.Size(502, 308)
+        Me.gcAPISProcesses.Size = New System.Drawing.Size(502, 283)
         Me.gcAPISProcesses.TabIndex = 1
         Me.gcAPISProcesses.Text = "APIS Processes"
         '
@@ -748,7 +737,7 @@ Partial Class frmAddEditAPIS
         Me.grAPISProcesses.MainView = Me.GridView2
         Me.grAPISProcesses.Name = "grAPISProcesses"
         Me.grAPISProcesses.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit3, Me.RepositoryItemLookUpEdit5, Me.RepositoryItemCheckEdit2, Me.RepositoryItemLookUpEdit4})
-        Me.grAPISProcesses.Size = New System.Drawing.Size(498, 284)
+        Me.grAPISProcesses.Size = New System.Drawing.Size(498, 259)
         Me.grAPISProcesses.TabIndex = 5
         Me.grAPISProcesses.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -853,7 +842,7 @@ Partial Class frmAddEditAPIS
         Me.pnlFormulaInputs.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlFormulaInputs.Location = New System.Drawing.Point(0, 141)
         Me.pnlFormulaInputs.Name = "pnlFormulaInputs"
-        Me.pnlFormulaInputs.Size = New System.Drawing.Size(1018, 194)
+        Me.pnlFormulaInputs.Size = New System.Drawing.Size(1014, 194)
         Me.pnlFormulaInputs.TabIndex = 6
         '
         'grFormulaInputs
@@ -862,7 +851,7 @@ Partial Class frmAddEditAPIS
         Me.grFormulaInputs.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grFormulaInputs.Location = New System.Drawing.Point(2, 2)
         Me.grFormulaInputs.Name = "grFormulaInputs"
-        Me.grFormulaInputs.Size = New System.Drawing.Size(1014, 190)
+        Me.grFormulaInputs.Size = New System.Drawing.Size(1010, 190)
         Me.grFormulaInputs.TabIndex = 0
         Me.grFormulaInputs.Text = "APIS Inputs"
         '
@@ -874,7 +863,7 @@ Partial Class frmAddEditAPIS
         Me.grAPISInputs.MainView = Me.GridView1
         Me.grAPISInputs.Name = "grAPISInputs"
         Me.grAPISInputs.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.luProductDesc, Me.luContainer, Me.luStdgallons, Me.RepositoryItemCheckEdit1, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemLookUpEdit6, Me.RepositoryItemLookUpEdit11, Me.RepositoryItemLookUpEdit12})
-        Me.grAPISInputs.Size = New System.Drawing.Size(1010, 166)
+        Me.grAPISInputs.Size = New System.Drawing.Size(1006, 166)
         Me.grAPISInputs.TabIndex = 5
         Me.grAPISInputs.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -1065,7 +1054,7 @@ Partial Class frmAddEditAPIS
         Me.pnlFormulaInfo.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlFormulaInfo.Location = New System.Drawing.Point(0, 0)
         Me.pnlFormulaInfo.Name = "pnlFormulaInfo"
-        Me.pnlFormulaInfo.Size = New System.Drawing.Size(1018, 141)
+        Me.pnlFormulaInfo.Size = New System.Drawing.Size(1014, 141)
         Me.pnlFormulaInfo.TabIndex = 5
         '
         'GroupControl1
@@ -1095,13 +1084,12 @@ Partial Class frmAddEditAPIS
         Me.GroupControl1.Controls.Add(FormulaidLabel)
         Me.GroupControl1.Controls.Add(StdlaborhoursLabel)
         Me.GroupControl1.Controls.Add(FormuladescLabel)
-        Me.GroupControl1.Controls.Add(QtycontainersLabel)
         Me.GroupControl1.Controls.Add(Me.eContainer)
         Me.GroupControl1.Controls.Add(Me.FormulanotesTextEdit)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1018, 141)
+        Me.GroupControl1.Size = New System.Drawing.Size(1014, 141)
         Me.GroupControl1.TabIndex = 14
         Me.GroupControl1.Text = "APIS Information"
         '
@@ -1148,6 +1136,7 @@ Partial Class frmAddEditAPIS
         '
         'lblModified
         '
+        Me.lblModified.Appearance.Options.UseTextOptions = True
         Me.lblModified.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lblModified.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical
         Me.lblModified.Location = New System.Drawing.Point(587, 141)
@@ -1200,6 +1189,7 @@ Partial Class frmAddEditAPIS
         Me.TextEdit2.Name = "TextEdit2"
         Me.TextEdit2.Size = New System.Drawing.Size(73, 20)
         Me.TextEdit2.TabIndex = 19
+        Me.TextEdit2.Visible = False
         '
         'TextEdit1
         '
@@ -1292,7 +1282,7 @@ Partial Class frmAddEditAPIS
         '
         'frmAddEditAPIS
         '
-        Me.ClientSize = New System.Drawing.Size(1018, 742)
+        Me.ClientSize = New System.Drawing.Size(1014, 738)
         Me.ControlBox = False
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonControl1)

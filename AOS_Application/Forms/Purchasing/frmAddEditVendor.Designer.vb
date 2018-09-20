@@ -34,6 +34,7 @@ Partial Class frmAddEditVendor
         Dim Label2 As System.Windows.Forms.Label
         Dim IsactiveLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddEditVendor))
+        Dim Label3 As System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TermsTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.bs = New System.Windows.Forms.BindingSource(Me.components)
@@ -65,7 +66,7 @@ Partial Class frmAddEditVendor
         Me.lblCreated = New DevExpress.XtraEditors.LabelControl()
         Me.grVendorTestingMatrix = New DevExpress.XtraGrid.GridControl()
         Me.bsVendorTestingMatrix = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView1 = New CustomDevExGridView()
+        Me.GridView1 = New AOS.CustomClasses.CustomDevExGridView()
         Me.colChemicalcategory = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colProductid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colProductdesc = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -89,6 +90,8 @@ Partial Class frmAddEditVendor
         Me.GroupControl8 = New DevExpress.XtraEditors.GroupControl()
         Me.AppgroupCollection1 = New AOS.BusinessObjects.AppgroupCollection()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bsStatusOptions = New System.Windows.Forms.BindingSource(Me.components)
         TermsLabel = New System.Windows.Forms.Label()
         VendornameLabel = New System.Windows.Forms.Label()
         VendoracctnumberLabel = New System.Windows.Forms.Label()
@@ -103,6 +106,7 @@ Partial Class frmAddEditVendor
         Label1 = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         IsactiveLabel = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
         CType(Me.TermsTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VendornameTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,6 +134,8 @@ Partial Class frmAddEditVendor
         Me.GroupControl8.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsStatusOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TermsLabel
@@ -252,11 +258,12 @@ Partial Class frmAddEditVendor
         'IsactiveLabel
         '
         IsactiveLabel.AutoSize = True
-        IsactiveLabel.Location = New System.Drawing.Point(301, 36)
+        IsactiveLabel.Location = New System.Drawing.Point(293, 33)
         IsactiveLabel.Name = "IsactiveLabel"
         IsactiveLabel.Size = New System.Drawing.Size(37, 13)
         IsactiveLabel.TabIndex = 56
         IsactiveLabel.Text = "Active"
+        IsactiveLabel.Visible = False
         '
         'Timer1
         '
@@ -387,7 +394,6 @@ Partial Class frmAddEditVendor
         Me.MemoEdit1.Name = "MemoEdit1"
         Me.MemoEdit1.Size = New System.Drawing.Size(250, 69)
         Me.MemoEdit1.TabIndex = 53
-        Me.MemoEdit1.UseOptimizedRendering = True
         '
         'RibbonControl1
         '
@@ -401,7 +407,7 @@ Partial Class frmAddEditVendor
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(797, 93)
+        Me.RibbonControl1.Size = New System.Drawing.Size(817, 117)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -414,35 +420,35 @@ Partial Class frmAddEditVendor
         '
         Me.btnNewCostRecord.Caption = "New Cost Record"
         Me.btnNewCostRecord.Id = 0
-        Me.btnNewCostRecord.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnNewCostRecord.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnNewCostRecord.Name = "btnNewCostRecord"
         '
         'btnEditCostRecord
         '
         Me.btnEditCostRecord.Caption = "Edit Cost Record"
-        Me.btnEditCostRecord.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Id = 1
+        Me.btnEditCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Name = "btnEditCostRecord"
         '
         'btnDeleteCostRecord
         '
         Me.btnDeleteCostRecord.Caption = "Delete Cost Record"
-        Me.btnDeleteCostRecord.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Id = 2
+        Me.btnDeleteCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Name = "btnDeleteCostRecord"
         '
         'rbtnSave
         '
         Me.rbtnSave.Caption = "Save"
         Me.rbtnSave.Id = 4
-        Me.rbtnSave.LargeImageIndex = 0
+        Me.rbtnSave.ImageOptions.LargeImageIndex = 0
         Me.rbtnSave.Name = "rbtnSave"
         '
         'rbtnCancel
         '
         Me.rbtnCancel.Caption = "Cancel"
         Me.rbtnCancel.Id = 5
-        Me.rbtnCancel.LargeImageIndex = 1
+        Me.rbtnCancel.ImageOptions.LargeImageIndex = 1
         Me.rbtnCancel.Name = "rbtnCancel"
         '
         'RibbonPage1
@@ -463,12 +469,13 @@ Partial Class frmAddEditVendor
         'IsactiveCheckEdit
         '
         Me.IsactiveCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Isactive", True))
-        Me.IsactiveCheckEdit.Location = New System.Drawing.Point(344, 33)
+        Me.IsactiveCheckEdit.Location = New System.Drawing.Point(336, 30)
         Me.IsactiveCheckEdit.MenuManager = Me.RibbonControl1
         Me.IsactiveCheckEdit.Name = "IsactiveCheckEdit"
         Me.IsactiveCheckEdit.Properties.Caption = ""
         Me.IsactiveCheckEdit.Size = New System.Drawing.Size(24, 19)
         Me.IsactiveCheckEdit.TabIndex = 57
+        Me.IsactiveCheckEdit.Visible = False
         '
         'lblModified
         '
@@ -488,11 +495,11 @@ Partial Class frmAddEditVendor
         '
         Me.grVendorTestingMatrix.DataSource = Me.bsVendorTestingMatrix
         Me.grVendorTestingMatrix.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grVendorTestingMatrix.Location = New System.Drawing.Point(2, 120)
+        Me.grVendorTestingMatrix.Location = New System.Drawing.Point(2, 139)
         Me.grVendorTestingMatrix.MainView = Me.GridView1
         Me.grVendorTestingMatrix.MenuManager = Me.RibbonControl1
         Me.grVendorTestingMatrix.Name = "grVendorTestingMatrix"
-        Me.grVendorTestingMatrix.Size = New System.Drawing.Size(793, 144)
+        Me.grVendorTestingMatrix.Size = New System.Drawing.Size(813, 182)
         Me.grVendorTestingMatrix.TabIndex = 0
         Me.grVendorTestingMatrix.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -619,13 +626,13 @@ Partial Class frmAddEditVendor
         Me.ComponentRibbonControl1.ApplicationButtonText = Nothing
         Me.ComponentRibbonControl1.ExpandCollapseItem.Id = 0
         Me.ComponentRibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ComponentRibbonControl1.ExpandCollapseItem, Me.AddVendTestingMatrix, Me.btnAlterAdd, Me.btnAlterEdit, Me.btnAlterDelete, Me.EditVendTestingMatrix, Me.DeleteVendTestingMatrix})
-        Me.ComponentRibbonControl1.Location = New System.Drawing.Point(2, 27)
+        Me.ComponentRibbonControl1.Location = New System.Drawing.Point(2, 22)
         Me.ComponentRibbonControl1.MaxItemId = 30
         Me.ComponentRibbonControl1.Name = "ComponentRibbonControl1"
         Me.ComponentRibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage2})
         Me.ComponentRibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.ComponentRibbonControl1.ShowToolbarCustomizeItem = False
-        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(793, 93)
+        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(813, 117)
         Me.ComponentRibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.ComponentRibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -633,7 +640,7 @@ Partial Class frmAddEditVendor
         '
         Me.AddVendTestingMatrix.Caption = "Add"
         Me.AddVendTestingMatrix.Id = 4
-        Me.AddVendTestingMatrix.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.AddVendTestingMatrix.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.AddVendTestingMatrix.Name = "AddVendTestingMatrix"
         Me.AddVendTestingMatrix.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
@@ -641,35 +648,35 @@ Partial Class frmAddEditVendor
         '
         Me.btnAlterAdd.Caption = "Add New Comp Alternate"
         Me.btnAlterAdd.Id = 24
-        Me.btnAlterAdd.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnAlterAdd.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnAlterAdd.Name = "btnAlterAdd"
         '
         'btnAlterEdit
         '
         Me.btnAlterEdit.Caption = "Edit Comp Alternate"
-        Me.btnAlterEdit.Glyph = Global.AOS.My.Resources.Resources.document_edit__2_
         Me.btnAlterEdit.Id = 25
+        Me.btnAlterEdit.ImageOptions.Image = Global.AOS.My.Resources.Resources.document_edit__2_
         Me.btnAlterEdit.Name = "btnAlterEdit"
         '
         'btnAlterDelete
         '
         Me.btnAlterDelete.Caption = "Delete Comp alternate"
-        Me.btnAlterDelete.Glyph = CType(resources.GetObject("btnAlterDelete.Glyph"), System.Drawing.Image)
         Me.btnAlterDelete.Id = 26
+        Me.btnAlterDelete.ImageOptions.Image = CType(resources.GetObject("btnAlterDelete.ImageOptions.Image"), System.Drawing.Image)
         Me.btnAlterDelete.Name = "btnAlterDelete"
         '
         'EditVendTestingMatrix
         '
         Me.EditVendTestingMatrix.Caption = "Edit"
         Me.EditVendTestingMatrix.Id = 28
-        Me.EditVendTestingMatrix.LargeGlyph = Global.AOS.My.Resources.Resources.EditData
+        Me.EditVendTestingMatrix.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.EditData
         Me.EditVendTestingMatrix.Name = "EditVendTestingMatrix"
         '
         'DeleteVendTestingMatrix
         '
         Me.DeleteVendTestingMatrix.Caption = "Delete"
         Me.DeleteVendTestingMatrix.Id = 29
-        Me.DeleteVendTestingMatrix.LargeGlyph = Global.AOS.My.Resources.Resources.Delete
+        Me.DeleteVendTestingMatrix.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Delete
         Me.DeleteVendTestingMatrix.Name = "DeleteVendTestingMatrix"
         '
         'RibbonPage2
@@ -694,9 +701,9 @@ Partial Class frmAddEditVendor
         Me.GroupControl8.Controls.Add(Me.grVendorTestingMatrix)
         Me.GroupControl8.Controls.Add(Me.ComponentRibbonControl1)
         Me.GroupControl8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl8.Location = New System.Drawing.Point(0, 347)
+        Me.GroupControl8.Location = New System.Drawing.Point(0, 371)
         Me.GroupControl8.Name = "GroupControl8"
-        Me.GroupControl8.Size = New System.Drawing.Size(797, 266)
+        Me.GroupControl8.Size = New System.Drawing.Size(817, 323)
         Me.GroupControl8.TabIndex = 1
         Me.GroupControl8.Text = "Vendor Testing Matrix"
         '
@@ -713,6 +720,8 @@ Partial Class frmAddEditVendor
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Label3)
+        Me.GroupControl1.Controls.Add(Me.LookUpEdit1)
         Me.GroupControl1.Controls.Add(Me.TextEdit1)
         Me.GroupControl1.Controls.Add(VendorphoneLabel)
         Me.GroupControl1.Controls.Add(Me.VendorfaxTextEdit)
@@ -744,15 +753,42 @@ Partial Class frmAddEditVendor
         Me.GroupControl1.Controls.Add(Vendoraddress1Label)
         Me.GroupControl1.Controls.Add(Me.VendoracctnumberTextEdit)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 93)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 117)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(797, 254)
+        Me.GroupControl1.Size = New System.Drawing.Size(817, 254)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Vendor Information"
         '
+        'LookUpEdit1
+        '
+        Me.LookUpEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Vendorstatus", True))
+        Me.LookUpEdit1.Location = New System.Drawing.Point(665, 33)
+        Me.LookUpEdit1.MenuManager = Me.RibbonControl1
+        Me.LookUpEdit1.Name = "LookUpEdit1"
+        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LookUpEdit1.Properties.DataSource = Me.bsStatusOptions
+        Me.LookUpEdit1.Properties.DisplayMember = "Status"
+        Me.LookUpEdit1.Properties.NullText = ""
+        Me.LookUpEdit1.Properties.ValueMember = "Status"
+        Me.LookUpEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.LookUpEdit1.TabIndex = 58
+        '
+        'bsStatusOptions
+        '
+        Me.bsStatusOptions.DataSource = GetType(AOS.BusinessObjects.ListStatusoptionsCollection)
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Location = New System.Drawing.Point(584, 36)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(75, 13)
+        Label3.TabIndex = 59
+        Label3.Text = "Vendor Status"
+        '
         'frmAddEditVendor
         '
-        Me.ClientSize = New System.Drawing.Size(797, 613)
+        Me.ClientSize = New System.Drawing.Size(817, 694)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupControl8)
         Me.Controls.Add(Me.GroupControl1)
@@ -791,9 +827,12 @@ Partial Class frmAddEditVendor
         CType(Me.ComponentRibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl8.ResumeLayout(False)
+        Me.GroupControl8.PerformLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsStatusOptions, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -853,4 +892,6 @@ Partial Class frmAddEditVendor
     Friend WithEvents bsVendorTestingMatrix As System.Windows.Forms.BindingSource
     Friend WithEvents AppgroupCollection1 As AOS.BusinessObjects.AppgroupCollection
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents bsStatusOptions As BindingSource
 End Class

@@ -37,7 +37,6 @@ Partial Class frmUpdateProductUnitCost
         Dim Label2 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
         Dim Label12 As System.Windows.Forms.Label
-        Dim IsactiveLabel As System.Windows.Forms.Label
         Dim Label13 As System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ProductidTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -45,16 +44,8 @@ Partial Class frmUpdateProductUnitCost
         Me.ProductdescTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.eReason = New DevExpress.XtraEditors.TextEdit()
-        Me.IsActiveCheckEdit = New DevExpress.XtraEditors.CheckEdit()
-        Me.bsProductCost = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        Me.rbtnSave = New DevExpress.XtraBars.BarButtonItem()
-        Me.rbtnCancel = New DevExpress.XtraBars.BarButtonItem()
-        Me.rbtnUpdateProductStandardCosts = New DevExpress.XtraBars.BarButtonItem()
-        Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.CostTypeLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bsProductCost = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsCostType = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomerLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.bsCustomers = New System.Windows.Forms.BindingSource(Me.components)
@@ -74,6 +65,13 @@ Partial Class frmUpdateProductUnitCost
         Me.eVendor = New DevExpress.XtraEditors.LookUpEdit()
         Me.bsVendors = New System.Windows.Forms.BindingSource(Me.components)
         Me.eCostMethod = New DevExpress.XtraEditors.LookUpEdit()
+        Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.rbtnSave = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnCancel = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnUpdateProductStandardCosts = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.bsCostMethod = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
@@ -95,7 +93,6 @@ Partial Class frmUpdateProductUnitCost
         Label2 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
         Label12 = New System.Windows.Forms.Label()
-        IsactiveLabel = New System.Windows.Forms.Label()
         Label13 = New System.Windows.Forms.Label()
         CType(Me.ProductidTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bs, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,10 +100,8 @@ Partial Class frmUpdateProductUnitCost
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.eReason.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IsActiveCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsProductCost, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CostTypeLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsProductCost, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCostType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +120,7 @@ Partial Class frmUpdateProductUnitCost
         CType(Me.eVendor.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsVendors, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eCostMethod.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCostMethod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -295,15 +291,6 @@ Partial Class frmUpdateProductUnitCost
         Label12.TabIndex = 2
         Label12.Text = "Cost Type"
         '
-        'IsactiveLabel
-        '
-        IsactiveLabel.AutoSize = True
-        IsactiveLabel.Location = New System.Drawing.Point(313, 86)
-        IsactiveLabel.Name = "IsactiveLabel"
-        IsactiveLabel.Size = New System.Drawing.Size(37, 13)
-        IsactiveLabel.TabIndex = 6
-        IsactiveLabel.Text = "Active"
-        '
         'Label13
         '
         Label13.AutoSize = True
@@ -343,8 +330,6 @@ Partial Class frmUpdateProductUnitCost
         '
         Me.GroupControl2.Controls.Add(Label13)
         Me.GroupControl2.Controls.Add(Me.eReason)
-        Me.GroupControl2.Controls.Add(IsactiveLabel)
-        Me.GroupControl2.Controls.Add(Me.IsActiveCheckEdit)
         Me.GroupControl2.Controls.Add(Me.CostTypeLookUpEdit)
         Me.GroupControl2.Controls.Add(Label12)
         Me.GroupControl2.Controls.Add(Me.CustomerLookUpEdit)
@@ -376,9 +361,9 @@ Partial Class frmUpdateProductUnitCost
         Me.GroupControl2.Controls.Add(Label3)
         Me.GroupControl2.Controls.Add(Me.eCostMethod)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 171)
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 192)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(388, 435)
+        Me.GroupControl2.Size = New System.Drawing.Size(380, 406)
         Me.GroupControl2.TabIndex = 1
         Me.GroupControl2.Text = "Product Cost Information"
         '
@@ -388,84 +373,6 @@ Partial Class frmUpdateProductUnitCost
         Me.eReason.Name = "eReason"
         Me.eReason.Size = New System.Drawing.Size(355, 20)
         Me.eReason.TabIndex = 32
-        '
-        'IsActiveCheckEdit
-        '
-        Me.IsActiveCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsProductCost, "Isactive", True))
-        Me.IsActiveCheckEdit.Location = New System.Drawing.Point(352, 84)
-        Me.IsActiveCheckEdit.MenuManager = Me.RibbonControl1
-        Me.IsActiveCheckEdit.Name = "IsActiveCheckEdit"
-        Me.IsActiveCheckEdit.Properties.Caption = ""
-        Me.IsActiveCheckEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.IsActiveCheckEdit.Size = New System.Drawing.Size(24, 19)
-        Me.IsActiveCheckEdit.TabIndex = 7
-        '
-        'bsProductCost
-        '
-        Me.bsProductCost.DataSource = GetType(AOS.BusinessObjects.Productcost)
-        '
-        'RibbonControl1
-        '
-        Me.RibbonControl1.ApplicationButtonText = Nothing
-        Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnSave, Me.rbtnCancel, Me.rbtnUpdateProductStandardCosts})
-        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 29
-        Me.RibbonControl1.Name = "RibbonControl1"
-        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(388, 95)
-        Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
-        Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
-        '
-        'rbtnSave
-        '
-        Me.rbtnSave.Caption = "Save"
-        Me.rbtnSave.Id = 4
-        Me.rbtnSave.LargeGlyph = Global.AOS.My.Resources.Resources.SaveChanges
-        Me.rbtnSave.Name = "rbtnSave"
-        Me.rbtnSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
-        '
-        'rbtnCancel
-        '
-        Me.rbtnCancel.Caption = "Cancel"
-        Me.rbtnCancel.Id = 5
-        Me.rbtnCancel.LargeGlyph = Global.AOS.My.Resources.Resources.CancelChanges
-        Me.rbtnCancel.Name = "rbtnCancel"
-        Me.rbtnCancel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
-        '
-        'rbtnUpdateProductStandardCosts
-        '
-        Me.rbtnUpdateProductStandardCosts.Caption = "Set Product Standard Costs"
-        Me.rbtnUpdateProductStandardCosts.Id = 28
-        Me.rbtnUpdateProductStandardCosts.LargeGlyph = Global.AOS.My.Resources.Resources.document_text_edit
-        Me.rbtnUpdateProductStandardCosts.Name = "rbtnUpdateProductStandardCosts"
-        '
-        'RibbonPage1
-        '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2, Me.RibbonPageGroup1})
-        Me.RibbonPage1.Name = "RibbonPage1"
-        Me.RibbonPage1.Text = "RibbonPage1"
-        '
-        'RibbonPageGroup2
-        '
-        Me.RibbonPageGroup2.AllowMinimize = False
-        Me.RibbonPageGroup2.AllowTextClipping = False
-        Me.RibbonPageGroup2.ItemLinks.Add(Me.rbtnSave)
-        Me.RibbonPageGroup2.ItemLinks.Add(Me.rbtnCancel)
-        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.ShowCaptionButton = False
-        Me.RibbonPageGroup2.Text = "Actions"
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.AllowMinimize = False
-        Me.RibbonPageGroup1.AllowTextClipping = False
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnUpdateProductStandardCosts)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.ShowCaptionButton = False
-        Me.RibbonPageGroup1.Text = "Standard Costs"
         '
         'CostTypeLookUpEdit
         '
@@ -480,6 +387,10 @@ Partial Class frmUpdateProductUnitCost
         Me.CostTypeLookUpEdit.Properties.ValueMember = "Costtype"
         Me.CostTypeLookUpEdit.Size = New System.Drawing.Size(232, 20)
         Me.CostTypeLookUpEdit.TabIndex = 3
+        '
+        'bsProductCost
+        '
+        Me.bsProductCost.DataSource = GetType(AOS.BusinessObjects.Productcost)
         '
         'bsCostType
         '
@@ -679,6 +590,70 @@ Partial Class frmUpdateProductUnitCost
         Me.eCostMethod.Size = New System.Drawing.Size(144, 20)
         Me.eCostMethod.TabIndex = 9
         '
+        'RibbonControl1
+        '
+        Me.RibbonControl1.ApplicationButtonText = Nothing
+        Me.RibbonControl1.ExpandCollapseItem.Id = 0
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnSave, Me.rbtnCancel, Me.rbtnUpdateProductStandardCosts})
+        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl1.MaxItemId = 29
+        Me.RibbonControl1.Name = "RibbonControl1"
+        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
+        Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
+        Me.RibbonControl1.ShowToolbarCustomizeItem = False
+        Me.RibbonControl1.Size = New System.Drawing.Size(380, 116)
+        Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
+        Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
+        '
+        'rbtnSave
+        '
+        Me.rbtnSave.Caption = "Save"
+        Me.rbtnSave.Id = 4
+        Me.rbtnSave.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.SaveChanges
+        Me.rbtnSave.Name = "rbtnSave"
+        Me.rbtnSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+        '
+        'rbtnCancel
+        '
+        Me.rbtnCancel.Caption = "Cancel"
+        Me.rbtnCancel.Id = 5
+        Me.rbtnCancel.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.CancelChanges
+        Me.rbtnCancel.Name = "rbtnCancel"
+        Me.rbtnCancel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+        '
+        'rbtnUpdateProductStandardCosts
+        '
+        Me.rbtnUpdateProductStandardCosts.Caption = "Set Product Standard Costs"
+        Me.rbtnUpdateProductStandardCosts.Id = 28
+        Me.rbtnUpdateProductStandardCosts.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.document_text_edit
+        Me.rbtnUpdateProductStandardCosts.Name = "rbtnUpdateProductStandardCosts"
+        '
+        'RibbonPage1
+        '
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2, Me.RibbonPageGroup1})
+        Me.RibbonPage1.Name = "RibbonPage1"
+        Me.RibbonPage1.Text = "RibbonPage1"
+        '
+        'RibbonPageGroup2
+        '
+        Me.RibbonPageGroup2.AllowMinimize = False
+        Me.RibbonPageGroup2.AllowTextClipping = False
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.rbtnSave)
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.rbtnCancel)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.ShowCaptionButton = False
+        Me.RibbonPageGroup2.Text = "Actions"
+        '
+        'RibbonPageGroup1
+        '
+        Me.RibbonPageGroup1.AllowMinimize = False
+        Me.RibbonPageGroup1.AllowTextClipping = False
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnUpdateProductStandardCosts)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.ShowCaptionButton = False
+        Me.RibbonPageGroup1.Text = "Standard Costs"
+        Me.RibbonPageGroup1.Visible = False
+        '
         'bsCostMethod
         '
         Me.bsCostMethod.DataSource = GetType(AOS.BusinessObjects.ListCostmethodCollection)
@@ -701,15 +676,15 @@ Partial Class frmUpdateProductUnitCost
         Me.GroupControl1.Controls.Add(Me.TextEdit2)
         Me.GroupControl1.Controls.Add(ProductdescLabel)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 116)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(388, 76)
+        Me.GroupControl1.Size = New System.Drawing.Size(380, 76)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Product Information"
         '
         'frmUpdateProductUnitCost
         '
-        Me.ClientSize = New System.Drawing.Size(388, 606)
+        Me.ClientSize = New System.Drawing.Size(380, 598)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
@@ -728,10 +703,8 @@ Partial Class frmUpdateProductUnitCost
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
         CType(Me.eReason.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IsActiveCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsProductCost, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CostTypeLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsProductCost, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsCostType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsCustomers, System.ComponentModel.ISupportInitialize).EndInit()
@@ -750,6 +723,7 @@ Partial Class frmUpdateProductUnitCost
         CType(Me.eVendor.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsVendors, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eCostMethod.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsCostMethod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -793,7 +767,6 @@ Partial Class frmUpdateProductUnitCost
     Friend WithEvents bsCostType As System.Windows.Forms.BindingSource
     Friend WithEvents bsCostMethod As System.Windows.Forms.BindingSource
     Friend WithEvents eCostMethod As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents IsActiveCheckEdit As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents eReason As DevExpress.XtraEditors.TextEdit
     Friend WithEvents rbtnUpdateProductStandardCosts As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup

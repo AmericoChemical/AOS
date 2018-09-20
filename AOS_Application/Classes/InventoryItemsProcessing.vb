@@ -875,6 +875,18 @@ Module InventoryItemsProcessing
         Return oVendors
     End Function
 
+    Public Function getVendorCollection(vStatus As String) As VendorCollection
+        Dim oVendors As New VendorCollection
+        If vStatus = "" Then
+            oVendors.LoadAll()
+        Else
+            oVendors.Query.Where(oVendors.Query.Vendorstatus.Equal(vStatus))
+            oVendors.Query.Load()
+        End If
+        oVendors.Sort = "VENDORNAME"
+        Return oVendors
+    End Function
+
     Public Function getProductByProductID(ByVal vProductID As Integer) As Product
         Dim oProduct As New Product
         oProduct.LoadByPrimaryKey(vProductID)

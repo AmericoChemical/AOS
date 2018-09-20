@@ -38,6 +38,7 @@ Partial Class frmEditParameters
         Dim AdditionalDefaultSendToAddressLabel As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
+        Dim Label5 As System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.bsItem = New System.Windows.Forms.BindingSource(Me.components)
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
@@ -69,6 +70,7 @@ Partial Class frmEditParameters
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit()
         CompanyNameLabel = New System.Windows.Forms.Label()
         CompanyAddressLabel = New System.Windows.Forms.Label()
         CompanyCityLabel = New System.Windows.Forms.Label()
@@ -88,6 +90,7 @@ Partial Class frmEditParameters
         AdditionalDefaultSendToAddressLabel = New System.Windows.Forms.Label()
         Label3 = New System.Windows.Forms.Label()
         Label4 = New System.Windows.Forms.Label()
+        Label5 = New System.Windows.Forms.Label()
         CType(Me.bsItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +113,7 @@ Partial Class frmEditParameters
         CType(Me.AdditionalDefaultSendToAddressTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CompanyNameLabel
@@ -169,7 +173,7 @@ Partial Class frmEditParameters
         'DefaultsalestaxrateLabel
         '
         DefaultsalestaxrateLabel.AutoSize = True
-        DefaultsalestaxrateLabel.Location = New System.Drawing.Point(72, 483)
+        DefaultsalestaxrateLabel.Location = New System.Drawing.Point(72, 504)
         DefaultsalestaxrateLabel.Name = "DefaultsalestaxrateLabel"
         DefaultsalestaxrateLabel.Size = New System.Drawing.Size(121, 13)
         DefaultsalestaxrateLabel.TabIndex = 26
@@ -178,7 +182,7 @@ Partial Class frmEditParameters
         'FreezeWarningLabel
         '
         FreezeWarningLabel.AutoSize = True
-        FreezeWarningLabel.Location = New System.Drawing.Point(106, 535)
+        FreezeWarningLabel.Location = New System.Drawing.Point(106, 556)
         FreezeWarningLabel.Name = "FreezeWarningLabel"
         FreezeWarningLabel.Size = New System.Drawing.Size(87, 13)
         FreezeWarningLabel.TabIndex = 30
@@ -187,7 +191,7 @@ Partial Class frmEditParameters
         'StdlaborhourcostLabel
         '
         StdlaborhourcostLabel.AutoSize = True
-        StdlaborhourcostLabel.Location = New System.Drawing.Point(100, 509)
+        StdlaborhourcostLabel.Location = New System.Drawing.Point(100, 530)
         StdlaborhourcostLabel.Name = "StdlaborhourcostLabel"
         StdlaborhourcostLabel.Size = New System.Drawing.Size(93, 13)
         StdlaborhourcostLabel.TabIndex = 28
@@ -195,7 +199,7 @@ Partial Class frmEditParameters
         '
         'Label1
         '
-        Label1.Location = New System.Drawing.Point(229, 535)
+        Label1.Location = New System.Drawing.Point(229, 556)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(300, 37)
         Label1.TabIndex = 32
@@ -250,7 +254,7 @@ Partial Class frmEditParameters
         'ProdOrdEstCompDateCheckLabel
         '
         ProdOrdEstCompDateCheckLabel.AutoSize = True
-        ProdOrdEstCompDateCheckLabel.Location = New System.Drawing.Point(34, 565)
+        ProdOrdEstCompDateCheckLabel.Location = New System.Drawing.Point(34, 586)
         ProdOrdEstCompDateCheckLabel.Name = "ProdOrdEstCompDateCheckLabel"
         ProdOrdEstCompDateCheckLabel.Size = New System.Drawing.Size(159, 13)
         ProdOrdEstCompDateCheckLabel.TabIndex = 33
@@ -432,7 +436,7 @@ Partial Class frmEditParameters
         'DefaultsalestaxrateTextEdit
         '
         Me.DefaultsalestaxrateTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsItem, "Defaultsalestaxrate", True))
-        Me.DefaultsalestaxrateTextEdit.Location = New System.Drawing.Point(199, 480)
+        Me.DefaultsalestaxrateTextEdit.Location = New System.Drawing.Point(199, 501)
         Me.DefaultsalestaxrateTextEdit.MenuManager = Me.RibbonControl1
         Me.DefaultsalestaxrateTextEdit.Name = "DefaultsalestaxrateTextEdit"
         Me.DefaultsalestaxrateTextEdit.Properties.DisplayFormat.FormatString = "p2"
@@ -443,7 +447,7 @@ Partial Class frmEditParameters
         'FreezeWarningCheckEdit
         '
         Me.FreezeWarningCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsItem, "FreezeWarning", True))
-        Me.FreezeWarningCheckEdit.Location = New System.Drawing.Point(197, 532)
+        Me.FreezeWarningCheckEdit.Location = New System.Drawing.Point(197, 553)
         Me.FreezeWarningCheckEdit.MenuManager = Me.RibbonControl1
         Me.FreezeWarningCheckEdit.Name = "FreezeWarningCheckEdit"
         Me.FreezeWarningCheckEdit.Properties.Caption = ""
@@ -455,7 +459,7 @@ Partial Class frmEditParameters
         'eStdlaborhourcost
         '
         Me.eStdlaborhourcost.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsItem, "Stdlaborhourcost", True))
-        Me.eStdlaborhourcost.Location = New System.Drawing.Point(199, 506)
+        Me.eStdlaborhourcost.Location = New System.Drawing.Point(199, 527)
         Me.eStdlaborhourcost.MenuManager = Me.RibbonControl1
         Me.eStdlaborhourcost.Name = "eStdlaborhourcost"
         Me.eStdlaborhourcost.Properties.DisplayFormat.FormatString = "c2"
@@ -521,7 +525,7 @@ Partial Class frmEditParameters
         '
         Me.ProdOrdEstCompDateCheckEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ProdOrdEstCompDateCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsItem, "Setprodordestcompdate", True))
-        Me.ProdOrdEstCompDateCheckEdit.Location = New System.Drawing.Point(197, 562)
+        Me.ProdOrdEstCompDateCheckEdit.Location = New System.Drawing.Point(197, 583)
         Me.ProdOrdEstCompDateCheckEdit.MenuManager = Me.RibbonControl1
         Me.ProdOrdEstCompDateCheckEdit.Name = "ProdOrdEstCompDateCheckEdit"
         Me.ProdOrdEstCompDateCheckEdit.Properties.Caption = ""
@@ -562,16 +566,38 @@ Partial Class frmEditParameters
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(270, 504)
+        Me.SimpleButton1.Location = New System.Drawing.Point(270, 525)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(109, 23)
         Me.SimpleButton1.TabIndex = 42
         Me.SimpleButton1.Text = "Change Labor Rate"
         '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.Location = New System.Drawing.Point(33, 478)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(136, 13)
+        Label5.TabIndex = 44
+        Label5.Text = "Purchase Order COA Text:"
+        '
+        'TextEdit3
+        '
+        Me.TextEdit3.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsItem, "COAText", True))
+        Me.TextEdit3.Location = New System.Drawing.Point(199, 475)
+        Me.TextEdit3.MenuManager = Me.RibbonControl1
+        Me.TextEdit3.Name = "TextEdit3"
+        Me.TextEdit3.Properties.DisplayFormat.FormatString = "n2"
+        Me.TextEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TextEdit3.Size = New System.Drawing.Size(330, 20)
+        Me.TextEdit3.TabIndex = 45
+        '
         'frmEditParameters
         '
         Me.ClientSize = New System.Drawing.Size(543, 653)
         Me.ControlBox = False
+        Me.Controls.Add(Label5)
+        Me.Controls.Add(Me.TextEdit3)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Label4)
         Me.Controls.Add(Me.TextEdit2)
@@ -642,6 +668,7 @@ Partial Class frmEditParameters
         CType(Me.AdditionalDefaultSendToAddressTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -677,4 +704,5 @@ Partial Class frmEditParameters
     Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
 End Class

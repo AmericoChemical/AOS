@@ -137,7 +137,7 @@ Partial Class frmRelabeledProductsList
         '
         'colRlblid
         '
-        Me.colRlblid.Caption = "Relabeled ID"
+        Me.colRlblid.Caption = "Raw Matl ID"
         Me.colRlblid.FieldName = "Rlblid"
         Me.colRlblid.Name = "colRlblid"
         Me.colRlblid.Visible = True
@@ -146,7 +146,7 @@ Partial Class frmRelabeledProductsList
         '
         'colRlbldesc
         '
-        Me.colRlbldesc.Caption = "Relabeled Description"
+        Me.colRlbldesc.Caption = "Raw Material"
         Me.colRlbldesc.FieldName = "Rlbldesc"
         Me.colRlbldesc.Name = "colRlbldesc"
         Me.colRlbldesc.Visible = True

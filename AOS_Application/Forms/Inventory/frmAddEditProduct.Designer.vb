@@ -62,6 +62,7 @@ Partial Class frmAddEditProduct
         Dim Label17 As System.Windows.Forms.Label
         Dim Label18 As System.Windows.Forms.Label
         Dim Label19 As System.Windows.Forms.Label
+        Dim Label20 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddEditProduct))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.eProductID = New DevExpress.XtraEditors.TextEdit()
@@ -94,6 +95,7 @@ Partial Class frmAddEditProduct
         Me.rbtnChangeStandardCosts = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnProductSales = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnProductPurchases = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnProductApisCosts = New DevExpress.XtraBars.BarButtonItem()
         Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -125,6 +127,8 @@ Partial Class frmAddEditProduct
         Me.bsChemicalList = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsProductStatusCodes = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.CheckEdit3 = New DevExpress.XtraEditors.CheckEdit()
+        Me.eStdCostSource = New DevExpress.XtraEditors.TextEdit()
         Me.eWgtCost = New DevExpress.XtraEditors.TextEdit()
         Me.eVolCost = New DevExpress.XtraEditors.TextEdit()
         Me.eWgtUOM = New DevExpress.XtraEditors.LookUpEdit()
@@ -146,7 +150,6 @@ Partial Class frmAddEditProduct
         Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
         Me.eReceivingNotes = New DevExpress.XtraEditors.MemoEdit()
         Me.eVendorNotes = New DevExpress.XtraEditors.MemoEdit()
-        Me.rbtnProductApisCosts = New DevExpress.XtraBars.BarButtonItem()
         ProductidLabel = New System.Windows.Forms.Label()
         ProductdescLabel = New System.Windows.Forms.Label()
         ContainerLabel = New System.Windows.Forms.Label()
@@ -190,6 +193,7 @@ Partial Class frmAddEditProduct
         Label17 = New System.Windows.Forms.Label()
         Label18 = New System.Windows.Forms.Label()
         Label19 = New System.Windows.Forms.Label()
+        Label20 = New System.Windows.Forms.Label()
         CType(Me.eProductID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eProductDesc.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,6 +239,8 @@ Partial Class frmAddEditProduct
         CType(Me.bsProductStatusCodes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eStdCostSource.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eWgtCost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eVolCost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eWgtUOM.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,7 +312,7 @@ Partial Class frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(StdweightLabel, DevExpress.Utils.DefaultBoolean.[Default])
         StdweightLabel.AutoSize = True
-        StdweightLabel.Location = New System.Drawing.Point(21, 59)
+        StdweightLabel.Location = New System.Drawing.Point(22, 31)
         StdweightLabel.Name = "StdweightLabel"
         StdweightLabel.Size = New System.Drawing.Size(69, 13)
         StdweightLabel.TabIndex = 2
@@ -486,7 +492,7 @@ Partial Class frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(VolumeunitsLabel, DevExpress.Utils.DefaultBoolean.[Default])
         VolumeunitsLabel.AutoSize = True
-        VolumeunitsLabel.Location = New System.Drawing.Point(21, 113)
+        VolumeunitsLabel.Location = New System.Drawing.Point(20, 141)
         VolumeunitsLabel.Name = "VolumeunitsLabel"
         VolumeunitsLabel.Size = New System.Drawing.Size(92, 13)
         VolumeunitsLabel.TabIndex = 9
@@ -496,7 +502,7 @@ Partial Class frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(VolumeuomLabel, DevExpress.Utils.DefaultBoolean.[Default])
         VolumeuomLabel.AutoSize = True
-        VolumeuomLabel.Location = New System.Drawing.Point(21, 138)
+        VolumeuomLabel.Location = New System.Drawing.Point(20, 166)
         VolumeuomLabel.Name = "VolumeuomLabel"
         VolumeuomLabel.Size = New System.Drawing.Size(30, 13)
         VolumeuomLabel.TabIndex = 11
@@ -506,7 +512,7 @@ Partial Class frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(WeightunitsLabel, DevExpress.Utils.DefaultBoolean.[Default])
         WeightunitsLabel.AutoSize = True
-        WeightunitsLabel.Location = New System.Drawing.Point(255, 114)
+        WeightunitsLabel.Location = New System.Drawing.Point(254, 142)
         WeightunitsLabel.Name = "WeightunitsLabel"
         WeightunitsLabel.Size = New System.Drawing.Size(92, 13)
         WeightunitsLabel.TabIndex = 17
@@ -516,7 +522,7 @@ Partial Class frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(WeightuomLabel, DevExpress.Utils.DefaultBoolean.[Default])
         WeightuomLabel.AutoSize = True
-        WeightuomLabel.Location = New System.Drawing.Point(255, 139)
+        WeightuomLabel.Location = New System.Drawing.Point(254, 167)
         WeightuomLabel.Name = "WeightuomLabel"
         WeightuomLabel.Size = New System.Drawing.Size(30, 13)
         WeightuomLabel.TabIndex = 19
@@ -557,7 +563,7 @@ Partial Class frmAddEditProduct
         Me.DefaultToolTipController1.SetAllowHtmlText(Label8, DevExpress.Utils.DefaultBoolean.[Default])
         Label8.AutoSize = True
         Label8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Label8.Location = New System.Drawing.Point(81, 90)
+        Label8.Location = New System.Drawing.Point(80, 118)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(69, 13)
         Label8.TabIndex = 8
@@ -568,7 +574,7 @@ Partial Class frmAddEditProduct
         Me.DefaultToolTipController1.SetAllowHtmlText(Label9, DevExpress.Utils.DefaultBoolean.[Default])
         Label9.AutoSize = True
         Label9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Label9.Location = New System.Drawing.Point(305, 90)
+        Label9.Location = New System.Drawing.Point(304, 118)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(69, 13)
         Label9.TabIndex = 16
@@ -578,7 +584,7 @@ Partial Class frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(Label10, DevExpress.Utils.DefaultBoolean.[Default])
         Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(21, 165)
+        Label10.Location = New System.Drawing.Point(20, 193)
         Label10.Name = "Label10"
         Label10.Size = New System.Drawing.Size(48, 13)
         Label10.TabIndex = 13
@@ -588,7 +594,7 @@ Partial Class frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(Label11, DevExpress.Utils.DefaultBoolean.[Default])
         Label11.AutoSize = True
-        Label11.Location = New System.Drawing.Point(255, 165)
+        Label11.Location = New System.Drawing.Point(254, 193)
         Label11.Name = "Label11"
         Label11.Size = New System.Drawing.Size(48, 13)
         Label11.TabIndex = 21
@@ -695,6 +701,16 @@ Partial Class frmAddEditProduct
         Label19.TabIndex = 27
         Label19.Text = "Bulk Inventory"
         '
+        'Label20
+        '
+        Me.DefaultToolTipController1.SetAllowHtmlText(Label20, DevExpress.Utils.DefaultBoolean.[Default])
+        Label20.AutoSize = True
+        Label20.Location = New System.Drawing.Point(45, 63)
+        Label20.Name = "Label20"
+        Label20.Size = New System.Drawing.Size(49, 13)
+        Label20.TabIndex = 27
+        Label20.Text = "Override"
+        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -755,7 +771,7 @@ Partial Class frmAddEditProduct
         'eLblWeight
         '
         Me.eLblWeight.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Stdweight", True))
-        Me.eLblWeight.Location = New System.Drawing.Point(128, 58)
+        Me.eLblWeight.Location = New System.Drawing.Point(129, 30)
         Me.eLblWeight.Name = "eLblWeight"
         Me.eLblWeight.Properties.Mask.EditMask = "n"
         Me.eLblWeight.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
@@ -873,7 +889,7 @@ Partial Class frmAddEditProduct
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemWeekOfMonth1, Me.RepositoryItemAppointmentLabel1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(926, 117)
+        Me.RibbonControl1.Size = New System.Drawing.Size(922, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -897,7 +913,7 @@ Partial Class frmAddEditProduct
         '
         Me.btnViewProductCost.Caption = "Product Cost Records"
         Me.btnViewProductCost.Id = 22
-        Me.btnViewProductCost.ImageOptions.LargeImageIndex = 12
+        Me.btnViewProductCost.ImageOptions.LargeImageIndex = 8
         Me.btnViewProductCost.Name = "btnViewProductCost"
         '
         'btnProductFulfillment
@@ -952,6 +968,14 @@ Partial Class frmAddEditProduct
         Me.rbtnProductPurchases.ImageOptions.LargeImageIndex = 8
         Me.rbtnProductPurchases.Name = "rbtnProductPurchases"
         '
+        'rbtnProductApisCosts
+        '
+        Me.rbtnProductApisCosts.Caption = "APIS Standard Costs"
+        Me.rbtnProductApisCosts.Enabled = False
+        Me.rbtnProductApisCosts.Id = 30
+        Me.rbtnProductApisCosts.ImageOptions.LargeImageIndex = 22
+        Me.rbtnProductApisCosts.Name = "rbtnProductApisCosts"
+        '
         'LargeRibbonImages
         '
         Me.LargeRibbonImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -989,6 +1013,7 @@ Partial Class frmAddEditProduct
         Me.RibbonPageGroup1.AllowMinimize = False
         Me.RibbonPageGroup1.AllowTextClipping = False
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnViewProductCost)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnProductApisCosts)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnChangeStandardCosts)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.ShowCaptionButton = False
@@ -1008,7 +1033,6 @@ Partial Class frmAddEditProduct
         '
         Me.rpgHistory.ItemLinks.Add(Me.rbtnProductSales)
         Me.rpgHistory.ItemLinks.Add(Me.rbtnProductPurchases)
-        Me.rpgHistory.ItemLinks.Add(Me.rbtnProductApisCosts)
         Me.rpgHistory.Name = "rpgHistory"
         Me.rpgHistory.Text = "History"
         '
@@ -1195,9 +1219,9 @@ Partial Class frmAddEditProduct
         Me.PanelControl1.Controls.Add(Me.lblModified)
         Me.PanelControl1.Controls.Add(Me.lblCreated)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 700)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 696)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(926, 29)
+        Me.PanelControl1.Size = New System.Drawing.Size(922, 29)
         Me.PanelControl1.TabIndex = 66
         '
         'lblModified
@@ -1230,6 +1254,9 @@ Partial Class frmAddEditProduct
         '
         'GroupControl2
         '
+        Me.GroupControl2.Controls.Add(Label20)
+        Me.GroupControl2.Controls.Add(Me.CheckEdit3)
+        Me.GroupControl2.Controls.Add(Me.eStdCostSource)
         Me.GroupControl2.Controls.Add(Label11)
         Me.GroupControl2.Controls.Add(Label10)
         Me.GroupControl2.Controls.Add(Me.eWgtCost)
@@ -1259,11 +1286,31 @@ Partial Class frmAddEditProduct
         Me.GroupControl2.Text = "Physical Specifications / Standard Costing"
         Me.GroupControl2.ToolTipController = Me.DefaultToolTipController1.DefaultController
         '
+        'CheckEdit3
+        '
+        Me.CheckEdit3.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Standardcostoverride", True))
+        Me.CheckEdit3.Location = New System.Drawing.Point(127, 60)
+        Me.CheckEdit3.MenuManager = Me.RibbonControl1
+        Me.CheckEdit3.Name = "CheckEdit3"
+        Me.CheckEdit3.Properties.Caption = ""
+        Me.CheckEdit3.Size = New System.Drawing.Size(22, 19)
+        Me.CheckEdit3.TabIndex = 28
+        '
+        'eStdCostSource
+        '
+        Me.eStdCostSource.Location = New System.Drawing.Point(196, 115)
+        Me.eStdCostSource.Name = "eStdCostSource"
+        Me.eStdCostSource.Properties.Mask.EditMask = "n"
+        Me.eStdCostSource.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.eStdCostSource.Properties.ReadOnly = True
+        Me.eStdCostSource.Size = New System.Drawing.Size(88, 20)
+        Me.eStdCostSource.TabIndex = 24
+        '
         'eWgtCost
         '
         Me.eWgtCost.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Weightstandardcost", True))
         Me.eWgtCost.EditValue = ""
-        Me.eWgtCost.Location = New System.Drawing.Point(352, 162)
+        Me.eWgtCost.Location = New System.Drawing.Point(351, 190)
         Me.eWgtCost.MenuManager = Me.RibbonControl1
         Me.eWgtCost.Name = "eWgtCost"
         Me.eWgtCost.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
@@ -1279,7 +1326,7 @@ Partial Class frmAddEditProduct
         '
         Me.eVolCost.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Volumestandardcost", True))
         Me.eVolCost.EditValue = ""
-        Me.eVolCost.Location = New System.Drawing.Point(129, 162)
+        Me.eVolCost.Location = New System.Drawing.Point(128, 190)
         Me.eVolCost.MenuManager = Me.RibbonControl1
         Me.eVolCost.Name = "eVolCost"
         Me.eVolCost.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
@@ -1294,7 +1341,7 @@ Partial Class frmAddEditProduct
         'eWgtUOM
         '
         Me.eWgtUOM.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Weightuom", True))
-        Me.eWgtUOM.Location = New System.Drawing.Point(352, 136)
+        Me.eWgtUOM.Location = New System.Drawing.Point(351, 164)
         Me.eWgtUOM.MenuManager = Me.RibbonControl1
         Me.eWgtUOM.Name = "eWgtUOM"
         Me.eWgtUOM.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1317,7 +1364,7 @@ Partial Class frmAddEditProduct
         'eWgtUnits
         '
         Me.eWgtUnits.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Weightunits", True))
-        Me.eWgtUnits.Location = New System.Drawing.Point(352, 110)
+        Me.eWgtUnits.Location = New System.Drawing.Point(351, 138)
         Me.eWgtUnits.MenuManager = Me.RibbonControl1
         Me.eWgtUnits.Name = "eWgtUnits"
         Me.eWgtUnits.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
@@ -1328,7 +1375,7 @@ Partial Class frmAddEditProduct
         'eVolUOM
         '
         Me.eVolUOM.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Volumeuom", True))
-        Me.eVolUOM.Location = New System.Drawing.Point(129, 136)
+        Me.eVolUOM.Location = New System.Drawing.Point(128, 164)
         Me.eVolUOM.MenuManager = Me.RibbonControl1
         Me.eVolUOM.Name = "eVolUOM"
         Me.eVolUOM.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1352,7 +1399,7 @@ Partial Class frmAddEditProduct
         '
         Me.eVolUnits.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Volumeunits", True))
         Me.eVolUnits.EditValue = ""
-        Me.eVolUnits.Location = New System.Drawing.Point(129, 110)
+        Me.eVolUnits.Location = New System.Drawing.Point(128, 138)
         Me.eVolUnits.MenuManager = Me.RibbonControl1
         Me.eVolUnits.Name = "eVolUnits"
         Me.eVolUnits.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
@@ -1529,17 +1576,10 @@ Partial Class frmAddEditProduct
         Me.eVendorNotes.Size = New System.Drawing.Size(313, 74)
         Me.eVendorNotes.TabIndex = 0
         '
-        'rbtnProductApisCosts
-        '
-        Me.rbtnProductApisCosts.Caption = "APIS Standard Costs"
-        Me.rbtnProductApisCosts.Id = 30
-        Me.rbtnProductApisCosts.ImageOptions.LargeImageIndex = 22
-        Me.rbtnProductApisCosts.Name = "rbtnProductApisCosts"
-        '
         'frmAddEditProduct
         '
         Me.DefaultToolTipController1.SetAllowHtmlText(Me, DevExpress.Utils.DefaultBoolean.[Default])
-        Me.ClientSize = New System.Drawing.Size(926, 729)
+        Me.ClientSize = New System.Drawing.Size(922, 725)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupControl5)
         Me.Controls.Add(Me.PanelControl1)
@@ -1602,6 +1642,8 @@ Partial Class frmAddEditProduct
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eStdCostSource.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eWgtCost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eVolCost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eWgtUOM.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1717,4 +1759,6 @@ Partial Class frmAddEditProduct
     Friend WithEvents rbtnProductPurchases As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpgHistory As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents rbtnProductApisCosts As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents eStdCostSource As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents CheckEdit3 As DevExpress.XtraEditors.CheckEdit
 End Class

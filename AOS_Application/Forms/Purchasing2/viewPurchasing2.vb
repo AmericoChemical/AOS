@@ -17,10 +17,11 @@ Public Class viewPurchasing2
     Dim vItemStatus As String = PurchaseItemsStatus.REQUESTED.ToString()
     Dim vPurchaseStatus As String = PurchaseStatus.PENDING.ToString()
     Dim vSelectedVendorName As String
+    Dim vVendorStatus As String = ""
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
-        loadVendors()
+        'loadVendors()
         loadVendorList()
         refreshPurchaseOrders(vPurchaseStatus)
         refreshMonitorGrids()
@@ -554,11 +555,9 @@ Public Class viewPurchasing2
 
 #Region "Vendor"
 
-    Private Sub loadVendors()
+    Private Sub loadVendors(vStatus As String)
         oVendors = New VendorCollection
-        oVendors.es.Connection.ConnectionString = sqlcnn.ConnectionString & ";password=" & My.Settings.SQLDatabaseUserPassword
-        oVendors.LoadAll()
-        oVendors.Filter = ""
+        oVendors = getVendorCollection(vStatus)
         oVendors.Sort = "VENDORNAME ASC"
         bsVendors.DataSource = oVendors
         Me.grVendors.DataSource = bsVendors
@@ -580,7 +579,7 @@ Public Class viewPurchasing2
         frm.vID = Me.bsVendors.Current.VendorID
         frm.vEditType = "EDIT"
         frm.ShowDialog()
-        loadVendors()
+        loadVendors(vVendorStatus)
     End Sub
 
     Private Sub addVendor()
@@ -588,7 +587,7 @@ Public Class viewPurchasing2
         Dim vResult As DialogResult
         frm.vEditType = "ADD"
         vResult = frm.ShowDialog()
-        loadVendors()
+        loadVendors(vVendorStatus)
     End Sub
 
     Private Sub deleteVendor()
@@ -611,7 +610,7 @@ Public Class viewPurchasing2
         Catch ex As Exception
             MsgBox("Error in deleting selected record", MsgBoxStyle.Critical, "Error - Delete Failed")
         End Try
-        loadVendors()
+        loadVendors(vVendorStatus)
     End Sub
 
     Private Sub btnAddVendor_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddVendor.ItemClick
@@ -957,6 +956,34 @@ Public Class viewPurchasing2
         bsVendorProducts.DataSource = oVendorProducts
         Me.grVendorProduct.Refresh()
 
+    End Sub
+
+    Private Sub rbtnFetchVendorsActive_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnFetchVendorsActive.ItemClick
+        vVendorStatus = "ACTIVE"
+        loadVendors(vVendorStatus)
+    End Sub
+
+    Private Sub rbtnFetchVendorsInActive_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnFetchVendorsInActive.ItemClick
+        vVendorStatus = "INACTIVE"
+        loadVendors(vVendorStatus)
+    End Sub
+
+    Private Sub getProductInfo(vProdID As Integer)
+        Dim frm As New frmAddEditProduct
+        frm.vID = vProdID
+        frm.vEditType = "EDIT"
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub grVendorProduct_DoubleClick(sender As Object, e As EventArgs) Handles grVendorProduct.DoubleClick
+        If vCurrentUserSecurityLevel < 8 Then
+            Exit Sub
+        End If
+        If bsVendorProducts.Count <= 0 Then
+            Exit Sub
+        End If
+        getProductInfo(bsVendorProducts.Current.ProductID)
+        loadVendorProducts(bsVendors.Current.VendorId)
     End Sub
 
 

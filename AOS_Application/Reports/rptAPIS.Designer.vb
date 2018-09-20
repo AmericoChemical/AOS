@@ -22,6 +22,7 @@ Partial Public Class rptAPIS
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rptAPIS))
         Dim ShapeRectangle1 As DevExpress.XtraPrinting.Shape.ShapeRectangle = New DevExpress.XtraPrinting.Shape.ShapeRectangle()
+        Dim ShapeRectangle2 As DevExpress.XtraPrinting.Shape.ShapeRectangle = New DevExpress.XtraPrinting.Shape.ShapeRectangle()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
@@ -53,13 +54,13 @@ Partial Public Class rptAPIS
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.bsAPISMaterial = New System.Windows.Forms.BindingSource(Me.components)
         Me.XrLabel47 = New DevExpress.XtraReports.UI.XRLabel()
         Me.bsKitComponents = New System.Windows.Forms.BindingSource(Me.components)
         Me.XrLabel46 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel45 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel43 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel44 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.bsAPISMaterial = New System.Windows.Forms.BindingSource(Me.components)
         Me.APISInfo = New DevExpress.XtraReports.UI.GroupHeaderBand()
         Me.XrLabel41 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel42 = New DevExpress.XtraReports.UI.XRLabel()
@@ -105,8 +106,9 @@ Partial Public Class rptAPIS
         Me.Detail5 = New DevExpress.XtraReports.UI.DetailBand()
         Me.ReportHeader4 = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLine6 = New DevExpress.XtraReports.UI.XRLine()
-        CType(Me.bsKitComponents, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XrShape2 = New DevExpress.XtraReports.UI.XRShape()
         CType(Me.bsAPISMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsKitComponents, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsAPISProcs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsAPISNotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsAPIS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -911,7 +913,7 @@ Partial Public Class rptAPIS
         '
         'Detail5
         '
-        Me.Detail5.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel46, Me.XrLabel47})
+        Me.Detail5.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrShape2, Me.XrLabel46, Me.XrLabel47})
         Me.Detail5.HeightF = 23.0!
         Me.Detail5.Name = "Detail5"
         '
@@ -927,14 +929,21 @@ Partial Public Class rptAPIS
         Me.XrLine6.Name = "XrLine6"
         Me.XrLine6.SizeF = New System.Drawing.SizeF(750.0!, 2.0!)
         '
+        'XrShape2
+        '
+        Me.XrShape2.LocationFloat = New DevExpress.Utils.PointFloat(1.66685!, 0!)
+        Me.XrShape2.Name = "XrShape2"
+        Me.XrShape2.Shape = ShapeRectangle2
+        Me.XrShape2.SizeF = New System.Drawing.SizeF(20.0!, 20.0!)
+        '
         'rptAPIS
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.PageHeader, Me.PageFooter, Me.TopMarginBand1, Me.BottomMarginBand1, Me.APISMaterials, Me.APISInfo, Me.APISProcedures, Me.APISNotes, Me.APISInfo_Footer, Me.KitContentsReport})
         Me.DataSource = Me.bsAPIS
         Me.Margins = New System.Drawing.Printing.Margins(50, 50, 50, 25)
         Me.Version = "17.1"
-        CType(Me.bsKitComponents, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsAPISMaterial, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsKitComponents, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsAPISProcs, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsAPISNotes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsAPIS, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1024,4 +1033,5 @@ Partial Public Class rptAPIS
     Friend WithEvents Detail5 As DetailBand
     Friend WithEvents ReportHeader4 As ReportHeaderBand
     Friend WithEvents XrLine6 As XRLine
+    Friend WithEvents XrShape2 As XRShape
 End Class

@@ -116,7 +116,7 @@ Public Class frmFreightChargesHistory
         historyEmail.MailBody = emailBody
         If (oEmailparameters Is Nothing) Then
             historyEmail.From = "custserv@americochemical.com"
-            historyEmail.To = "vsharma@americochemical.com"
+            '            historyEmail.To = "vsharma@americochemical.com"
             'historyEmail.To = "JDeFlorio@Americochemical.com"
             'historyEmail.CC = "CBerry@Americochemical.com"
         Else
