@@ -58,6 +58,7 @@ Partial Class viewAdministration
         Me.RepositoryItemDateEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.rbtnGetCostChangePriceListData = New DevExpress.XtraBars.BarButtonItem()
         Me.rBtnExportCostPriceEffectsToExcel = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -73,6 +74,29 @@ Partial Class viewAdministration
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.WorkPanelsHolder = New DevExpress.XtraEditors.PanelControl()
+        Me.RibbonPanelControl4 = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.bsCostPricingEffects = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvCostPricingEffects = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colProductID2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProductdesc3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colChangetype1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colChangedate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colWhychanged1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOldcost = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colNewcost = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCostdelta = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colVolOld = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colVolNew = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colWgtOld = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colWgtNew = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCustname = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colSalesprice = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPricingmethod = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPer = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colContainer2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RibbonPanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.gcChangeRecords = New DevExpress.XtraGrid.GridControl()
@@ -99,28 +123,6 @@ Partial Class viewAdministration
         Me.colContainer1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVendorname = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colRecordstatus = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RibbonPanelControl4 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.bsCostPricingEffects = New System.Windows.Forms.BindingSource(Me.components)
-        Me.grvCostPricingEffects = New AOS.CustomClasses.CustomDevExGridView()
-        Me.colProductID2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProductdesc3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colChangetype1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colChangedate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colWhychanged1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colOldcost = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colNewcost = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCostdelta = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colVolOld = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colVolNew = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colWgtOld = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colWgtNew = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCustname = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colSalesprice = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPricingmethod = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPer = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colContainer2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RibbonPanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.tabParameters = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
@@ -153,7 +155,6 @@ Partial Class viewAdministration
         Me.AuditLogView1 = New AOS.CustomClasses.CustomDevExGridView()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CompanyNameLabel = New System.Windows.Forms.Label()
         CompanyAddressLabel = New System.Windows.Forms.Label()
         CompanyCityLabel = New System.Windows.Forms.Label()
@@ -182,13 +183,6 @@ Partial Class viewAdministration
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WorkPanelsHolder.SuspendLayout()
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RibbonPanelControl3.SuspendLayout()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.gcChangeRecords, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsChangeRecords, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CustomDevExGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl4.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,6 +190,13 @@ Partial Class viewAdministration
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCostPricingEffects, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grvCostPricingEffects, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonPanelControl3.SuspendLayout()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.gcChangeRecords, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsChangeRecords, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomDevExGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RibbonPanelControl1.SuspendLayout()
         CType(Me.tabParameters, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -416,15 +417,15 @@ Partial Class viewAdministration
         Me.RibbonControl1.ApplicationCaption = "dsadsdsa"
         Me.RibbonControl1.ApplicationDocumentCaption = "dsdsadsa"
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnSaveParms, Me.btnCancelParms, Me.rbtnEditParameters, Me.btnEditAuditLog, Me.rbtnEditRelabelTemplateInstructions, Me.rbtnPallets, Me.rbtnContainers, Me.rbtnStandardCostReview, Me.rbtnVendorCostReview, Me.rbtnStandardCostApprovals, Me.rbtnAPISApprovals, Me.rbtnVendorCostApprovals, Me.rStartDate, Me.rEndDate, Me.rbtnGetCostChangePriceListData, Me.rBtnExportCostPriceEffectsToExcel})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.btnSaveParms, Me.btnCancelParms, Me.rbtnEditParameters, Me.btnEditAuditLog, Me.rbtnEditRelabelTemplateInstructions, Me.rbtnPallets, Me.rbtnContainers, Me.rbtnStandardCostReview, Me.rbtnVendorCostReview, Me.rbtnStandardCostApprovals, Me.rbtnAPISApprovals, Me.rbtnVendorCostApprovals, Me.rStartDate, Me.rEndDate, Me.rbtnGetCostChangePriceListData, Me.rBtnExportCostPriceEffectsToExcel, Me.BarButtonItem1})
         Me.RibbonControl1.LargeImages = Me.LargeRibbonImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 33)
-        Me.RibbonControl1.MaxItemId = 69
+        Me.RibbonControl1.MaxItemId = 70
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemDateEdit2})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show
-        Me.RibbonControl1.Size = New System.Drawing.Size(1336, 117)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1336, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnSaveParms
@@ -561,6 +562,13 @@ Partial Class viewAdministration
         Me.rBtnExportCostPriceEffectsToExcel.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.export_excel
         Me.rBtnExportCostPriceEffectsToExcel.Name = "rBtnExportCostPriceEffectsToExcel"
         '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "Prime List"
+        Me.BarButtonItem1.Id = 69
+        Me.BarButtonItem1.ImageOptions.LargeImageIndex = 10
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
         'LargeRibbonImages
         '
         Me.LargeRibbonImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -577,6 +585,7 @@ Partial Class viewAdministration
         '
         Me.RibbonPageGroup1.AllowTextClipping = False
         Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnEditParameters)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.ShowCaptionButton = False
         Me.RibbonPageGroup1.Text = "Parameters"
@@ -680,10 +689,189 @@ Partial Class viewAdministration
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl1)
         Me.WorkPanelsHolder.Controls.Add(Me.RibbonPanelControl2)
         Me.WorkPanelsHolder.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 150)
+        Me.WorkPanelsHolder.Location = New System.Drawing.Point(0, 149)
         Me.WorkPanelsHolder.Name = "WorkPanelsHolder"
-        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1336, 571)
+        Me.WorkPanelsHolder.Size = New System.Drawing.Size(1336, 572)
         Me.WorkPanelsHolder.TabIndex = 7
+        '
+        'RibbonPanelControl4
+        '
+        Me.RibbonPanelControl4.Controls.Add(Me.GroupControl3)
+        Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
+        Me.RibbonPanelControl4.Padding = New System.Windows.Forms.Padding(6)
+        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1336, 572)
+        Me.RibbonPanelControl4.TabIndex = 3
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.GridControl1)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl3.Location = New System.Drawing.Point(8, 8)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(1320, 556)
+        Me.GroupControl3.TabIndex = 1
+        Me.GroupControl3.Text = "Records Changed"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.DataSource = Me.bsCostPricingEffects
+        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
+        Me.GridControl1.MainView = Me.grvCostPricingEffects
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(1316, 532)
+        Me.GridControl1.TabIndex = 1
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCostPricingEffects})
+        '
+        'bsCostPricingEffects
+        '
+        Me.bsCostPricingEffects.DataSource = GetType(AOS.BusinessObjects.ViewCostPriceEffects2Collection)
+        '
+        'grvCostPricingEffects
+        '
+        Me.grvCostPricingEffects.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductID2, Me.colProductdesc3, Me.colChangetype1, Me.colChangedate, Me.colWhychanged1, Me.colOldcost, Me.colNewcost, Me.colCostdelta, Me.colVolOld, Me.colVolNew, Me.colWgtOld, Me.colWgtNew, Me.colCustname, Me.colSalesprice, Me.colPricingmethod, Me.colPer, Me.colContainer2, Me.GridColumn1})
+        Me.grvCostPricingEffects.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
+        Me.grvCostPricingEffects.GridControl = Me.GridControl1
+        Me.grvCostPricingEffects.Name = "grvCostPricingEffects"
+        Me.grvCostPricingEffects.OptionsBehavior.Editable = False
+        Me.grvCostPricingEffects.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.grvCostPricingEffects.OptionsView.ShowAutoFilterRow = True
+        Me.grvCostPricingEffects.OptionsView.ShowGroupPanel = False
+        Me.grvCostPricingEffects.OptionsView.ShowIndicator = False
+        '
+        'colProductID2
+        '
+        Me.colProductID2.FieldName = "ProductID"
+        Me.colProductID2.Name = "colProductID2"
+        Me.colProductID2.Visible = True
+        Me.colProductID2.VisibleIndex = 0
+        Me.colProductID2.Width = 65
+        '
+        'colProductdesc3
+        '
+        Me.colProductdesc3.FieldName = "Productdesc"
+        Me.colProductdesc3.Name = "colProductdesc3"
+        Me.colProductdesc3.Visible = True
+        Me.colProductdesc3.VisibleIndex = 1
+        Me.colProductdesc3.Width = 240
+        '
+        'colChangetype1
+        '
+        Me.colChangetype1.FieldName = "Changetype"
+        Me.colChangetype1.Name = "colChangetype1"
+        Me.colChangetype1.Visible = True
+        Me.colChangetype1.VisibleIndex = 3
+        Me.colChangetype1.Width = 100
+        '
+        'colChangedate
+        '
+        Me.colChangedate.FieldName = "Changedate"
+        Me.colChangedate.Name = "colChangedate"
+        Me.colChangedate.Visible = True
+        Me.colChangedate.VisibleIndex = 4
+        Me.colChangedate.Width = 71
+        '
+        'colWhychanged1
+        '
+        Me.colWhychanged1.FieldName = "Whychanged"
+        Me.colWhychanged1.Name = "colWhychanged1"
+        Me.colWhychanged1.Visible = True
+        Me.colWhychanged1.VisibleIndex = 5
+        Me.colWhychanged1.Width = 103
+        '
+        'colOldcost
+        '
+        Me.colOldcost.FieldName = "Oldcost"
+        Me.colOldcost.Name = "colOldcost"
+        Me.colOldcost.Visible = True
+        Me.colOldcost.VisibleIndex = 8
+        Me.colOldcost.Width = 73
+        '
+        'colNewcost
+        '
+        Me.colNewcost.FieldName = "Newcost"
+        Me.colNewcost.Name = "colNewcost"
+        Me.colNewcost.Visible = True
+        Me.colNewcost.VisibleIndex = 9
+        Me.colNewcost.Width = 73
+        '
+        'colCostdelta
+        '
+        Me.colCostdelta.FieldName = "Costdelta"
+        Me.colCostdelta.Name = "colCostdelta"
+        Me.colCostdelta.Visible = True
+        Me.colCostdelta.VisibleIndex = 10
+        Me.colCostdelta.Width = 72
+        '
+        'colVolOld
+        '
+        Me.colVolOld.FieldName = "VolOld"
+        Me.colVolOld.Name = "colVolOld"
+        '
+        'colVolNew
+        '
+        Me.colVolNew.FieldName = "VolNew"
+        Me.colVolNew.Name = "colVolNew"
+        '
+        'colWgtOld
+        '
+        Me.colWgtOld.FieldName = "WgtOld"
+        Me.colWgtOld.Name = "colWgtOld"
+        '
+        'colWgtNew
+        '
+        Me.colWgtNew.FieldName = "WgtNew"
+        Me.colWgtNew.Name = "colWgtNew"
+        '
+        'colCustname
+        '
+        Me.colCustname.FieldName = "Custname"
+        Me.colCustname.Name = "colCustname"
+        Me.colCustname.Visible = True
+        Me.colCustname.VisibleIndex = 12
+        Me.colCustname.Width = 292
+        '
+        'colSalesprice
+        '
+        Me.colSalesprice.FieldName = "Salesprice"
+        Me.colSalesprice.Name = "colSalesprice"
+        Me.colSalesprice.Visible = True
+        Me.colSalesprice.VisibleIndex = 11
+        Me.colSalesprice.Width = 94
+        '
+        'colPricingmethod
+        '
+        Me.colPricingmethod.FieldName = "Pricingmethod"
+        Me.colPricingmethod.Name = "colPricingmethod"
+        Me.colPricingmethod.Width = 187
+        '
+        'colPer
+        '
+        Me.colPer.FieldName = "Per"
+        Me.colPer.Name = "colPer"
+        Me.colPer.Visible = True
+        Me.colPer.VisibleIndex = 6
+        Me.colPer.Width = 26
+        '
+        'colContainer2
+        '
+        Me.colContainer2.FieldName = "Container"
+        Me.colContainer2.Name = "colContainer2"
+        Me.colContainer2.Visible = True
+        Me.colContainer2.VisibleIndex = 2
+        Me.colContainer2.Width = 66
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "UOM"
+        Me.GridColumn1.FieldName = "Uom"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 7
+        Me.GridColumn1.Width = 39
         '
         'RibbonPanelControl3
         '
@@ -692,7 +880,7 @@ Partial Class viewAdministration
         Me.RibbonPanelControl3.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl3.Name = "RibbonPanelControl3"
         Me.RibbonPanelControl3.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1336, 571)
+        Me.RibbonPanelControl3.Size = New System.Drawing.Size(1336, 572)
         Me.RibbonPanelControl3.TabIndex = 2
         '
         'GroupControl1
@@ -701,7 +889,7 @@ Partial Class viewAdministration
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(8, 8)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1320, 555)
+        Me.GroupControl1.Size = New System.Drawing.Size(1320, 556)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Records Changed"
         '
@@ -713,7 +901,7 @@ Partial Class viewAdministration
         Me.gcChangeRecords.MainView = Me.CustomDevExGridView1
         Me.gcChangeRecords.MenuManager = Me.RibbonControl1
         Me.gcChangeRecords.Name = "gcChangeRecords"
-        Me.gcChangeRecords.Size = New System.Drawing.Size(1316, 531)
+        Me.gcChangeRecords.Size = New System.Drawing.Size(1316, 532)
         Me.gcChangeRecords.TabIndex = 1
         Me.gcChangeRecords.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.CustomDevExGridView1})
         '
@@ -899,176 +1087,6 @@ Partial Class viewAdministration
         Me.colRecordstatus.VisibleIndex = 14
         Me.colRecordstatus.Width = 96
         '
-        'RibbonPanelControl4
-        '
-        Me.RibbonPanelControl4.Controls.Add(Me.GroupControl3)
-        Me.RibbonPanelControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanelControl4.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanelControl4.Name = "RibbonPanelControl4"
-        Me.RibbonPanelControl4.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl4.Size = New System.Drawing.Size(1336, 571)
-        Me.RibbonPanelControl4.TabIndex = 3
-        '
-        'GroupControl3
-        '
-        Me.GroupControl3.Controls.Add(Me.GridControl1)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl3.Location = New System.Drawing.Point(8, 8)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1320, 555)
-        Me.GroupControl3.TabIndex = 1
-        Me.GroupControl3.Text = "Records Changed"
-        '
-        'GridControl1
-        '
-        Me.GridControl1.DataSource = Me.bsCostPricingEffects
-        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(2, 22)
-        Me.GridControl1.MainView = Me.grvCostPricingEffects
-        Me.GridControl1.MenuManager = Me.RibbonControl1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1316, 531)
-        Me.GridControl1.TabIndex = 1
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvCostPricingEffects})
-        '
-        'bsCostPricingEffects
-        '
-        Me.bsCostPricingEffects.DataSource = GetType(AOS.BusinessObjects.ViewCostPriceEffects2Collection)
-        '
-        'grvCostPricingEffects
-        '
-        Me.grvCostPricingEffects.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductID2, Me.colProductdesc3, Me.colChangetype1, Me.colChangedate, Me.colWhychanged1, Me.colOldcost, Me.colNewcost, Me.colCostdelta, Me.colVolOld, Me.colVolNew, Me.colWgtOld, Me.colWgtNew, Me.colCustname, Me.colSalesprice, Me.colPricingmethod, Me.colPer, Me.colContainer2, Me.GridColumn1})
-        Me.grvCostPricingEffects.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
-        Me.grvCostPricingEffects.GridControl = Me.GridControl1
-        Me.grvCostPricingEffects.Name = "grvCostPricingEffects"
-        Me.grvCostPricingEffects.OptionsBehavior.Editable = False
-        Me.grvCostPricingEffects.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.grvCostPricingEffects.OptionsView.ShowAutoFilterRow = True
-        Me.grvCostPricingEffects.OptionsView.ShowGroupPanel = False
-        Me.grvCostPricingEffects.OptionsView.ShowIndicator = False
-        '
-        'colProductID2
-        '
-        Me.colProductID2.FieldName = "ProductID"
-        Me.colProductID2.Name = "colProductID2"
-        Me.colProductID2.Visible = True
-        Me.colProductID2.VisibleIndex = 0
-        Me.colProductID2.Width = 65
-        '
-        'colProductdesc3
-        '
-        Me.colProductdesc3.FieldName = "Productdesc"
-        Me.colProductdesc3.Name = "colProductdesc3"
-        Me.colProductdesc3.Visible = True
-        Me.colProductdesc3.VisibleIndex = 1
-        Me.colProductdesc3.Width = 240
-        '
-        'colChangetype1
-        '
-        Me.colChangetype1.FieldName = "Changetype"
-        Me.colChangetype1.Name = "colChangetype1"
-        Me.colChangetype1.Visible = True
-        Me.colChangetype1.VisibleIndex = 3
-        Me.colChangetype1.Width = 100
-        '
-        'colChangedate
-        '
-        Me.colChangedate.FieldName = "Changedate"
-        Me.colChangedate.Name = "colChangedate"
-        Me.colChangedate.Visible = True
-        Me.colChangedate.VisibleIndex = 4
-        Me.colChangedate.Width = 71
-        '
-        'colWhychanged1
-        '
-        Me.colWhychanged1.FieldName = "Whychanged"
-        Me.colWhychanged1.Name = "colWhychanged1"
-        Me.colWhychanged1.Visible = True
-        Me.colWhychanged1.VisibleIndex = 5
-        Me.colWhychanged1.Width = 103
-        '
-        'colOldcost
-        '
-        Me.colOldcost.FieldName = "Oldcost"
-        Me.colOldcost.Name = "colOldcost"
-        Me.colOldcost.Visible = True
-        Me.colOldcost.VisibleIndex = 8
-        Me.colOldcost.Width = 73
-        '
-        'colNewcost
-        '
-        Me.colNewcost.FieldName = "Newcost"
-        Me.colNewcost.Name = "colNewcost"
-        Me.colNewcost.Visible = True
-        Me.colNewcost.VisibleIndex = 9
-        Me.colNewcost.Width = 73
-        '
-        'colCostdelta
-        '
-        Me.colCostdelta.FieldName = "Costdelta"
-        Me.colCostdelta.Name = "colCostdelta"
-        Me.colCostdelta.Visible = True
-        Me.colCostdelta.VisibleIndex = 10
-        Me.colCostdelta.Width = 72
-        '
-        'colVolOld
-        '
-        Me.colVolOld.FieldName = "VolOld"
-        Me.colVolOld.Name = "colVolOld"
-        '
-        'colVolNew
-        '
-        Me.colVolNew.FieldName = "VolNew"
-        Me.colVolNew.Name = "colVolNew"
-        '
-        'colWgtOld
-        '
-        Me.colWgtOld.FieldName = "WgtOld"
-        Me.colWgtOld.Name = "colWgtOld"
-        '
-        'colWgtNew
-        '
-        Me.colWgtNew.FieldName = "WgtNew"
-        Me.colWgtNew.Name = "colWgtNew"
-        '
-        'colCustname
-        '
-        Me.colCustname.FieldName = "Custname"
-        Me.colCustname.Name = "colCustname"
-        Me.colCustname.Visible = True
-        Me.colCustname.VisibleIndex = 12
-        Me.colCustname.Width = 292
-        '
-        'colSalesprice
-        '
-        Me.colSalesprice.FieldName = "Salesprice"
-        Me.colSalesprice.Name = "colSalesprice"
-        Me.colSalesprice.Visible = True
-        Me.colSalesprice.VisibleIndex = 11
-        Me.colSalesprice.Width = 94
-        '
-        'colPricingmethod
-        '
-        Me.colPricingmethod.FieldName = "Pricingmethod"
-        Me.colPricingmethod.Name = "colPricingmethod"
-        Me.colPricingmethod.Width = 187
-        '
-        'colPer
-        '
-        Me.colPer.FieldName = "Per"
-        Me.colPer.Name = "colPer"
-        Me.colPer.Visible = True
-        Me.colPer.VisibleIndex = 6
-        Me.colPer.Width = 26
-        '
-        'colContainer2
-        '
-        Me.colContainer2.FieldName = "Container"
-        Me.colContainer2.Name = "colContainer2"
-        Me.colContainer2.Visible = True
-        Me.colContainer2.VisibleIndex = 2
-        Me.colContainer2.Width = 66
-        '
         'RibbonPanelControl1
         '
         Me.RibbonPanelControl1.Controls.Add(Me.tabParameters)
@@ -1076,7 +1094,7 @@ Partial Class viewAdministration
         Me.RibbonPanelControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl1.Name = "RibbonPanelControl1"
         Me.RibbonPanelControl1.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1336, 571)
+        Me.RibbonPanelControl1.Size = New System.Drawing.Size(1336, 572)
         Me.RibbonPanelControl1.TabIndex = 0
         '
         'tabParameters
@@ -1126,7 +1144,7 @@ Partial Class viewAdministration
         Me.XtraTabPage1.Controls.Add(CompanyNameLabel)
         Me.XtraTabPage1.Controls.Add(Me.CompanyNameTextEdit)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(484, 443)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(485, 444)
         Me.XtraTabPage1.Text = "Company Info"
         '
         'AdditionalDefaultSendToAddressTextEdit
@@ -1312,7 +1330,7 @@ Partial Class viewAdministration
         Me.RibbonPanelControl2.Location = New System.Drawing.Point(0, 0)
         Me.RibbonPanelControl2.Name = "RibbonPanelControl2"
         Me.RibbonPanelControl2.Padding = New System.Windows.Forms.Padding(6)
-        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1336, 571)
+        Me.RibbonPanelControl2.Size = New System.Drawing.Size(1336, 572)
         Me.RibbonPanelControl2.TabIndex = 1
         '
         'bsReviewRecords
@@ -1346,15 +1364,6 @@ Partial Class viewAdministration
         'Timer2
         '
         '
-        'GridColumn1
-        '
-        Me.GridColumn1.Caption = "UOM"
-        Me.GridColumn1.FieldName = "Uom"
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 7
-        Me.GridColumn1.Width = 39
-        '
         'viewAdministration
         '
         Me.Controls.Add(Me.WorkPanelsHolder)
@@ -1374,13 +1383,6 @@ Partial Class viewAdministration
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WorkPanelsHolder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WorkPanelsHolder.ResumeLayout(False)
-        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RibbonPanelControl3.ResumeLayout(False)
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        CType(Me.gcChangeRecords, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsChangeRecords, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CustomDevExGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl4.ResumeLayout(False)
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1388,6 +1390,13 @@ Partial Class viewAdministration
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsCostPricingEffects, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grvCostPricingEffects, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RibbonPanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RibbonPanelControl3.ResumeLayout(False)
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        CType(Me.gcChangeRecords, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsChangeRecords, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomDevExGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonPanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RibbonPanelControl1.ResumeLayout(False)
         CType(Me.tabParameters, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1539,4 +1548,5 @@ Partial Class viewAdministration
     Friend WithEvents colContainer2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colWhenChanged As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
 End Class

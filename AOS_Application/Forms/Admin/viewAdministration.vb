@@ -414,4 +414,9 @@ Public Class viewAdministration
         bsCostPricingEffects.DataSource = oCostPriceList
 
     End Sub
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        Dim oRpt As New rptPrimeList
+        oRpt.ShowPreviewDialog
+    End Sub
 End Class

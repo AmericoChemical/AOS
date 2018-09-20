@@ -3665,4 +3665,10 @@ C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmWorkOrdersDailyL
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptCustomerNotes.resources
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptCommissionAssignmentByCustomer.resources
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmRelabeledProductsList.resources
-C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbprojResolveAssemblyReference.cache
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbprojAssemblyReference.cache
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmFreightChargesHistory.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmEmail.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptFreightChargeHistory.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbproj.CoreCompileInputs.cache
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbproj.CopyComplete
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptPrimeList.resources
