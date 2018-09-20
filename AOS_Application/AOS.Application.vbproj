@@ -1001,6 +1001,9 @@
     <Compile Include="BusinessObjects\Custom\ViewPricingMethod.vb" />
     <Compile Include="BusinessObjects\Custom\ViewPricingMethodCollection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewPricingMethodQuery.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewPrimeList.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewPrimeListCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ViewPrimeListQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdcutionOrder2.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdcutionOrder2Collection.vb" />
     <Compile Include="BusinessObjects\Custom\ViewProdcutionOrder2Query.vb" />
@@ -1571,6 +1574,7 @@
     <Compile Include="BusinessObjects\Generated\ViewPriceListData.vb" />
     <Compile Include="BusinessObjects\Generated\ViewPriceListProducts.vb" />
     <Compile Include="BusinessObjects\Generated\ViewPricingMethod.vb" />
+    <Compile Include="BusinessObjects\Generated\ViewPrimeList.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdcutionOrder2.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdItemData.vb" />
     <Compile Include="BusinessObjects\Generated\ViewProdItemDataWOEmail.vb" />
@@ -2922,6 +2926,12 @@
     <Compile Include="Reports\rptFreightChargeHistory.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptPrimeList.Designer.vb">
+      <DependentUpon>rptPrimeList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptPrimeList.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptGHSProductLabelLarge.Designer.vb">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>
     </Compile>
@@ -4034,6 +4044,9 @@
     <EmbeddedResource Include="Reports\rptFreightChargeHistory.resx">
       <DependentUpon>rptFreightChargeHistory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPrimeList.resx">
+      <DependentUpon>rptPrimeList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptGHSProductLabelLarge.resx">
       <DependentUpon>rptGHSProductLabelLarge.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -4355,6 +4368,8 @@
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewMaterialUsageProdOrderInfo.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewMaterialUsageProdOrderInfoCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewPriceListDataCollection.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewPrimeList.datasource" />
+    <None Include="My Project\DataSources\AOS.BusinessObjects.ViewPrimeListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewProductBuyersListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewProductSellersListCollection.datasource" />
     <None Include="My Project\DataSources\AOS.BusinessObjects.ViewReceivedHoldItemsCollection1.datasource" />
