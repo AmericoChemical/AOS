@@ -19,7 +19,6 @@ Partial Class frmUpdateProductStandardCosts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim ProductidLabel As System.Windows.Forms.Label
         Dim ProductdescLabel As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
@@ -33,9 +32,9 @@ Partial Class frmUpdateProductStandardCosts
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUpdateProductStandardCosts))
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer()
         Me.ProductidTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.bsProduct = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsProduct = New System.Windows.Forms.BindingSource()
         Me.ProductdescTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.eReason = New DevExpress.XtraEditors.TextEdit()
@@ -44,10 +43,10 @@ Partial Class frmUpdateProductStandardCosts
         Me.eWgtUnitCost = New DevExpress.XtraEditors.TextEdit()
         Me.eVolUnitCost = New DevExpress.XtraEditors.TextEdit()
         Me.eWgtUOM = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsUOMWeight = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsUOMWeight = New System.Windows.Forms.BindingSource()
         Me.eWgtUnits = New DevExpress.XtraEditors.TextEdit()
         Me.eVolUOM = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsUOMVolume = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsUOMVolume = New System.Windows.Forms.BindingSource()
         Me.eVolUnits = New DevExpress.XtraEditors.TextEdit()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.rbtnSave = New DevExpress.XtraBars.BarButtonItem()

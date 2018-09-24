@@ -18,7 +18,6 @@ Partial Class frmUpdateProductUnitCost
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim ProductidLabel As System.Windows.Forms.Label
         Dim ProductdescLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
@@ -38,32 +37,32 @@ Partial Class frmUpdateProductUnitCost
         Dim Label5 As System.Windows.Forms.Label
         Dim Label12 As System.Windows.Forms.Label
         Dim Label13 As System.Windows.Forms.Label
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer()
         Me.ProductidTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.bs = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bs = New System.Windows.Forms.BindingSource()
         Me.ProductdescTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.eReason = New DevExpress.XtraEditors.TextEdit()
         Me.CostTypeLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsProductCost = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsCostType = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsProductCost = New System.Windows.Forms.BindingSource()
+        Me.bsCostType = New System.Windows.Forms.BindingSource()
         Me.CustomerLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsCustomers = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsCustomers = New System.Windows.Forms.BindingSource()
         Me.btnRecalcWeightCost = New DevExpress.XtraEditors.SimpleButton()
         Me.btnRecalcVolumeCost = New DevExpress.XtraEditors.SimpleButton()
         Me.eWgtUnitCost = New DevExpress.XtraEditors.TextEdit()
         Me.eVolUnitCost = New DevExpress.XtraEditors.TextEdit()
         Me.eWgtUOM = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsUOMWeight = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsUOMWeight = New System.Windows.Forms.BindingSource()
         Me.eWgtUnits = New DevExpress.XtraEditors.TextEdit()
         Me.eVolUOM = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsUOMVolume = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsUOMVolume = New System.Windows.Forms.BindingSource()
         Me.eVolUnits = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.eChangeDate = New DevExpress.XtraEditors.DateEdit()
         Me.eVendorItemKey = New DevExpress.XtraEditors.TextEdit()
         Me.eVendor = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsVendors = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsVendors = New System.Windows.Forms.BindingSource()
         Me.eCostMethod = New DevExpress.XtraEditors.LookUpEdit()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.rbtnSave = New DevExpress.XtraBars.BarButtonItem()
@@ -72,7 +71,7 @@ Partial Class frmUpdateProductUnitCost
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.bsCostMethod = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsCostMethod = New System.Windows.Forms.BindingSource()
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         ProductidLabel = New System.Windows.Forms.Label()

@@ -37,9 +37,12 @@ Partial Class frmAddEditComponents
         Me.btnAlterAdd = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAlterEdit = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAlterDelete = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnComponentCostRecords = New DevExpress.XtraBars.BarButtonItem()
+        Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemWeekOfMonth1 = New DevExpress.XtraScheduler.UI.RepositoryItemWeekOfMonth()
         Me.RepositoryItemAppointmentLabel1 = New DevExpress.XtraScheduler.UI.RepositoryItemAppointmentLabel()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
@@ -50,7 +53,7 @@ Partial Class frmAddEditComponents
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.grComponents = New DevExpress.XtraGrid.GridControl()
         Me.bsAltComponents = New System.Windows.Forms.BindingSource(Me.components)
-        Me.viewComponent = New CustomDevExGridView()
+        Me.viewComponent = New AOS.CustomClasses.CustomDevExGridView()
         Me.RECID = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ComponentID = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.AmericoDesc = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -58,7 +61,6 @@ Partial Class frmAddEditComponents
         Me.RepositoryItemLookUpEdit16 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemLookUpEdit17 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         ComponentidLabel = New System.Windows.Forms.Label()
         AmericoDescLabel = New System.Windows.Forms.Label()
         VendorNameLabel = New System.Windows.Forms.Label()
@@ -70,6 +72,7 @@ Partial Class frmAddEditComponents
         CType(Me.VendorItemLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsVendor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComponentRibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemWeekOfMonth1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemAppointmentLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,7 +88,6 @@ Partial Class frmAddEditComponents
         CType(Me.viewComponent, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComponentidLabel
@@ -185,16 +187,16 @@ Partial Class frmAddEditComponents
         '
         Me.ComponentRibbonControl1.ApplicationButtonText = Nothing
         Me.ComponentRibbonControl1.ExpandCollapseItem.Id = 0
-        Me.ComponentRibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ComponentRibbonControl1.ExpandCollapseItem, Me.btnSave, Me.btnCancel, Me.btnAlterAdd, Me.btnAlterEdit, Me.btnAlterDelete})
+        Me.ComponentRibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ComponentRibbonControl1.ExpandCollapseItem, Me.btnSave, Me.btnCancel, Me.btnAlterAdd, Me.btnAlterEdit, Me.btnAlterDelete, Me.btnComponentCostRecords})
         Me.ComponentRibbonControl1.LargeImages = Me.LargeRibbonImages
         Me.ComponentRibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ComponentRibbonControl1.MaxItemId = 28
+        Me.ComponentRibbonControl1.MaxItemId = 29
         Me.ComponentRibbonControl1.Name = "ComponentRibbonControl1"
         Me.ComponentRibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ComponentRibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemWeekOfMonth1, Me.RepositoryItemAppointmentLabel1})
         Me.ComponentRibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.ComponentRibbonControl1.ShowToolbarCustomizeItem = False
-        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(581, 95)
+        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(581, 116)
         Me.ComponentRibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.ComponentRibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -202,7 +204,7 @@ Partial Class frmAddEditComponents
         '
         Me.btnSave.Caption = "Save  Comp"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeImageIndex = 3
+        Me.btnSave.ImageOptions.LargeImageIndex = 3
         Me.btnSave.LargeWidth = 50
         Me.btnSave.Name = "btnSave"
         Me.btnSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
@@ -211,7 +213,7 @@ Partial Class frmAddEditComponents
         '
         Me.btnCancel.Caption = "Cancel Comp"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeImageIndex = 4
+        Me.btnCancel.ImageOptions.LargeImageIndex = 4
         Me.btnCancel.LargeWidth = 50
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
@@ -220,29 +222,42 @@ Partial Class frmAddEditComponents
         '
         Me.btnAlterAdd.Caption = "Add New Alternate"
         Me.btnAlterAdd.Id = 24
-        Me.btnAlterAdd.LargeImageIndex = 0
+        Me.btnAlterAdd.ImageOptions.LargeImageIndex = 0
         Me.btnAlterAdd.Name = "btnAlterAdd"
         '
         'btnAlterEdit
         '
         Me.btnAlterEdit.Caption = " Edit   Alternate"
         Me.btnAlterEdit.Id = 25
-        Me.btnAlterEdit.LargeImageIndex = 1
+        Me.btnAlterEdit.ImageOptions.LargeImageIndex = 1
         Me.btnAlterEdit.Name = "btnAlterEdit"
         Me.btnAlterEdit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
         'btnAlterDelete
         '
         Me.btnAlterDelete.Caption = "Delete Alternate"
-        Me.btnAlterDelete.Glyph = CType(resources.GetObject("btnAlterDelete.Glyph"), System.Drawing.Image)
         Me.btnAlterDelete.Id = 26
-        Me.btnAlterDelete.LargeImageIndex = 2
+        Me.btnAlterDelete.ImageOptions.Image = CType(resources.GetObject("btnAlterDelete.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAlterDelete.ImageOptions.LargeImageIndex = 2
         Me.btnAlterDelete.Name = "btnAlterDelete"
         Me.btnAlterDelete.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
+        'btnComponentCostRecords
+        '
+        Me.btnComponentCostRecords.Caption = "Component Cost Records"
+        Me.btnComponentCostRecords.Id = 28
+        Me.btnComponentCostRecords.ImageOptions.LargeImageIndex = 11
+        Me.btnComponentCostRecords.Name = "btnComponentCostRecords"
+        Me.btnComponentCostRecords.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'LargeRibbonImages
+        '
+        Me.LargeRibbonImages.ImageSize = New System.Drawing.Size(32, 32)
+        Me.LargeRibbonImages.ImageStream = CType(resources.GetObject("LargeRibbonImages.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
+        '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2, Me.RibbonPageGroup3})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2, Me.RibbonPageGroup3, Me.RibbonPageGroup4})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -266,6 +281,12 @@ Partial Class frmAddEditComponents
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         Me.RibbonPageGroup3.ShowCaptionButton = False
         Me.RibbonPageGroup3.Text = "Component Alternate"
+        '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.btnComponentCostRecords)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        Me.RibbonPageGroup4.Text = "Costing"
         '
         'RepositoryItemWeekOfMonth1
         '
@@ -350,11 +371,11 @@ Partial Class frmAddEditComponents
         '
         Me.grComponents.DataSource = Me.bsAltComponents
         Me.grComponents.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grComponents.Location = New System.Drawing.Point(2, 21)
+        Me.grComponents.Location = New System.Drawing.Point(2, 20)
         Me.grComponents.MainView = Me.viewComponent
         Me.grComponents.Name = "grComponents"
         Me.grComponents.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17})
-        Me.grComponents.Size = New System.Drawing.Size(571, 142)
+        Me.grComponents.Size = New System.Drawing.Size(571, 143)
         Me.grComponents.TabIndex = 0
         Me.grComponents.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewComponent})
         '
@@ -430,11 +451,6 @@ Partial Class frmAddEditComponents
         Me.RibbonPageGroup1.ShowCaptionButton = False
         Me.RibbonPageGroup1.Tag = "8"
         '
-        'LargeRibbonImages
-        '
-        Me.LargeRibbonImages.ImageSize = New System.Drawing.Size(32, 32)
-        Me.LargeRibbonImages.ImageStream = CType(resources.GetObject("LargeRibbonImages.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
-        '
         'frmAddEditComponents
         '
         Me.ClientSize = New System.Drawing.Size(581, 519)
@@ -454,6 +470,7 @@ Partial Class frmAddEditComponents
         CType(Me.VendorItemLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsVendor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComponentRibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemWeekOfMonth1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemAppointmentLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -470,8 +487,8 @@ Partial Class frmAddEditComponents
         CType(Me.viewComponent, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LargeRibbonImages, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
@@ -507,4 +524,6 @@ Partial Class frmAddEditComponents
     Friend WithEvents UnitCostTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents VendorItemIDTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LargeRibbonImages As DevExpress.Utils.ImageCollection
+    Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btnComponentCostRecords As DevExpress.XtraBars.BarButtonItem
 End Class
