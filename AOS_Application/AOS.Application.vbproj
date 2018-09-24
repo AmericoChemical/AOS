@@ -373,6 +373,9 @@
     <Compile Include="BusinessObjects\Custom\CommissionQuery.vb" />
     <Compile Include="BusinessObjects\Custom\Component.vb" />
     <Compile Include="BusinessObjects\Custom\ComponentCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\Componentcost.vb" />
+    <Compile Include="BusinessObjects\Custom\ComponentcostCollection.vb" />
+    <Compile Include="BusinessObjects\Custom\ComponentcostQuery.vb" />
     <Compile Include="BusinessObjects\Custom\ComponentQuery.vb" />
     <Compile Include="BusinessObjects\Custom\Container.vb" />
     <Compile Include="BusinessObjects\Custom\ContainerCollection.vb" />
@@ -1362,6 +1365,7 @@
     <Compile Include="BusinessObjects\Generated\Commissionexception.vb" />
     <Compile Include="BusinessObjects\Generated\Commissionpmt.vb" />
     <Compile Include="BusinessObjects\Generated\Component.vb" />
+    <Compile Include="BusinessObjects\Generated\Componentcost.vb" />
     <Compile Include="BusinessObjects\Generated\Container.vb" />
     <Compile Include="BusinessObjects\Generated\Customer.vb" />
     <Compile Include="BusinessObjects\Generated\Customerassignment.vb" />

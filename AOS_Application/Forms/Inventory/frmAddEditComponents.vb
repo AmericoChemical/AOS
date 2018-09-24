@@ -211,10 +211,10 @@ Public Class frmAddEditComponents
         getComponent()
     End Sub
 
-    Private Sub btnComponentCostRecords_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnComponentCostRecords.ItemClick
-        Dim frm As New frmViewComponentCostRecords
-        frm.vComponentID = oComponent.Componentid
-        frm.ShowDialog()
-        editObject(oComponent.Componentid)
-    End Sub
+    'Private Sub btnComponentCostRecords_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnComponentCostRecords.ItemClick
+    '    Dim frm As New frmViewComponentCostRecords
+    '    frm.vComponentID = oComponent.Componentid
+    '    frm.ShowDialog()
+    '    editObject(oComponent.Componentid)
+    'End Sub
 End Class
