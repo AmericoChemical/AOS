@@ -106,7 +106,7 @@ Public Class frmAddEditProductFulfillment
 
                 Dim oProduct As New Product
                 If oProduct.LoadByPrimaryKey(oProductfulfillmentplan.Productid) Then
-                    ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", oProduct, "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid)
+                    ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid, "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid)
 
                     '    Dim oRlbCosts As New ViewRelabelProductsCostChanges
                     'oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(oProductfulfillmentplan.Productid))
