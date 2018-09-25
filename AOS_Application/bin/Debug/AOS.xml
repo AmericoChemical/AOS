@@ -1541,6 +1541,29 @@ AOS
  during hierarchical PostOneSave.
  </summary>
 </member>
+<member name="M:AOS.BusinessObjects.Emailparameters.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Emailparameters.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Emailparameters.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.Emailparameters.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
 <member name="M:AOS.BusinessObjects.Employee.GetHierarchicalProperties">
  <summary>
  Used internally by the entity's hierarchical properties.
@@ -2801,6 +2824,29 @@ AOS
  </summary>
 </member>
 <member name="M:AOS.BusinessObjects.ListShelflife.ApplyPostOneSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostOneSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListStatusoptions.GetHierarchicalProperties">
+ <summary>
+ Used internally by the entity's hierarchical properties.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListStatusoptions.ApplyPreSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PreSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListStatusoptions.ApplyPostSaveKeys">
+ <summary>
+ Used internally for retrieving AutoIncrementing keys
+ during hierarchical PostSave.
+ </summary>
+</member>
+<member name="M:AOS.BusinessObjects.ListStatusoptions.ApplyPostOneSaveKeys">
  <summary>
  Used internally for retrieving AutoIncrementing keys
  during hierarchical PostOneSave.

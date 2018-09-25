@@ -3671,3 +3671,6 @@ C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptFreightChargeHis
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbproj.CoreCompileInputs.cache
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbproj.CopyComplete
 C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.rptPrimeList.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.Application.vbprojAssemblyReference.cache
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmUpdateComponentUnitCost.resources
+C:\Data\Americo\CodeRepository\AOS_Application\obj\Debug\AOS.frmViewComponentCostRecords.resources

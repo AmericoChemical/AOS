@@ -277,8 +277,18 @@
             Dim oProduct As New Product
             If oProduct.LoadByPrimaryKey(vProductID) Then
                 'set old values 
-                Dim vOldVolCost As Decimal = oRlbCosts.Oldvolcost
-                Dim vOldWtCost As Decimal = oRlbCosts.Oldwgtcost
+                Dim vOldVolCost As Decimal = 0.00
+                If (IsDBNull(oRlbCosts.Oldvolcost) Or oRlbCosts.Oldvolcost Is Nothing) Then
+                    vOldVolCost = 0.00
+                Else
+                    vOldVolCost = oRlbCosts.Oldvolcost
+                End If
+                Dim vOldWtCost As Decimal = 0.00
+                If (IsDBNull(oRlbCosts.Oldwgtcost) Or oRlbCosts.Oldwgtcost Is Nothing) Then
+                    vOldWtCost = 0.00
+                Else
+                    vOldWtCost = oRlbCosts.Oldwgtcost
+                End If
 
                 'Save and process cacading only if value was updated
                 If vOldVolCost <> oRlbCosts.Newvolcost Or

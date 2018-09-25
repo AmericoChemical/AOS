@@ -51,3 +51,4 @@ C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\E
 C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.pdb
 C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.csproj.CoreCompileInputs.cache
 C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.csproj.CopyComplete
+C:\Data\Americo\CodeRepository\AOS_Application\Services\EmailService\obj\Debug\EmailService.csprojAssemblyReference.cache
