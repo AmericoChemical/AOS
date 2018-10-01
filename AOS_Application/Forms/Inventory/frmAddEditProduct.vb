@@ -1,5 +1,7 @@
 Imports AOS.BusinessObjects
 Imports System.Text
+Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.ViewInfo
 
 Public Class frmAddEditProduct
     Inherits DevExpress.XtraEditors.XtraForm
@@ -40,7 +42,7 @@ Public Class frmAddEditProduct
     Dim oProductStatusCodes As New ListProductstatusCollection
     Dim vAuditRuleID As Integer = AuditLogProcessing.cAUDITRULEIDPRICING
     Dim oFulFillment As ViewProductFulfillmentCollection
-
+    Dim vWhatChanged As String
 #Region " SECURITY - RIBBON FUNCTIONS "
 
     Private Sub setRibbonOptions(ByVal vLevel As Integer)
@@ -129,6 +131,11 @@ Public Class frmAddEditProduct
             rbtnProductApisCosts.Enabled = True
         Else
             rbtnProductApisCosts.Enabled = False
+        End If
+        If eStdCostSource.EditValue.ToString.Equals("OVERRIDE") Or eStdCostSource.EditValue.ToString.Equals("PURCHASE") Then
+            CheckEditOverride.Enabled = True
+        Else
+            CheckEditOverride.Enabled = False
         End If
         'oFulFillment = getProductFulfillment(vID)
         'If IsDBNull(oFulFillment) Or oFulFillment Is Nothing Then
@@ -221,7 +228,7 @@ Public Class frmAddEditProduct
         oEntity.LoadByPrimaryKey(vID)
 
         Me.bs.DataSource = oEntity
-        
+
         updateDataHistory()
         getLinkedData(vID)
         setAllFields(oEntity.Productstatus)
@@ -253,7 +260,19 @@ Public Class frmAddEditProduct
             oEntity.Modifytime = Now
         End If
         oEntity.EndEdit()
+        Dim oProduct As New Product
+        Dim bCostChanged As Boolean = False
+        If (oProduct.LoadByPrimaryKey(oEntity.Productid)) Then
+            If oProduct.Volumestandardcost <> oEntity.Volumestandardcost Or oProduct.Weightstandardcost <> oEntity.Weightstandardcost Then
+                bCostChanged = True
+            End If
+        End If
+
         oEntity.Save()
+        If bCostChanged Then
+            ProcessProductStandardCostChanges(oEntity.Productid, oProduct.Volumestandardcost, oProduct.Weightstandardcost, oEntity.Volumestandardcost, oEntity.Weightstandardcost, vWhatChanged & "-" & oEntity.Productid, "STD COST", oEntity.Productid, "STD COST CHNG-" & oEntity.Productid)
+
+        End If
         Return True
     End Function
 
@@ -270,6 +289,8 @@ Public Class frmAddEditProduct
                         Case "IDNUMBER"
                         Case "HAZMATDESC"
                         Case "UNLINE"
+                        Case "VOLUMESTANDARDCOST"
+                        Case "WEIGHTSTANDARDCOST"
                         Case Else
                             vFlag = True
                     End Select
@@ -300,7 +321,7 @@ Public Class frmAddEditProduct
         bs.EndEdit()
         oEntity.EndEdit()
 
-        If bs.Current.Inventorymethod Is Nothing OrElse _
+        If bs.Current.Inventorymethod Is Nothing OrElse
            String.IsNullOrEmpty(bs.Current.Inventorymethod) Then
             MsgBox("Inventory Method is required", MsgBoxStyle.Critical, "Save Product - Error")
             eInvMethod.Focus()
@@ -359,7 +380,7 @@ Public Class frmAddEditProduct
     End Sub
 
     Private Sub btnViewProductCost_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnViewProductCost.ItemClick
-        'changesSaved()
+        changesSaved()
         Dim frm As New frmViewProductCostRecords
         frm.vProductID = oEntity.Productid
         frm.ShowDialog()
@@ -698,8 +719,42 @@ Public Class frmAddEditProduct
 
     'End Sub
 
-    Private Sub CheckEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles CheckEdit3.EditValueChanged
-        rbtnChangeStandardCosts.Enabled = CheckEdit3.Checked
+    Private Sub CheckEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles CheckEditOverride.EditValueChanged
+        rbtnChangeStandardCosts.Enabled = CheckEditOverride.Checked
+        If CheckEditOverride.Checked Then
+            eStdCostSource.Text = "OVERRIDE"
+        Else
+            eStdCostSource.Text = "PURCHASE"
+        End If
 
+    End Sub
+
+    Private Sub CheckEditOverride_Click(sender As Object, e As EventArgs) Handles CheckEditOverride.Click
+        ' Check against the original below before click
+        ''TODO: How to get the new value after click
+        Dim chkEdit As CheckEdit = sender
+        If chkEdit.Checked Then
+            If MsgBox("Std Costs will be overwritten with Vendor Costs, Continue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                '        'Dim vOldVolCost As Decimal = IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost)
+                '        'Dim vOldWtCost As Decimal = IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost)
+
+                If (SetStandardCostToVendorCost(oEntity)) Then
+                    eVolUnits.Text = oEntity.Volumeunits
+                    eVolUOM.Text = oEntity.Volumeuom
+                    eVolCost.Text = oEntity.Volumestandardcost
+                    eWgtUnits.Text = oEntity.Weightunits
+                    eWgtUOM.Text = oEntity.Weightuom
+                    eWgtCost.Text = oEntity.Weightstandardcost
+                    vWhatChanged = "Override Unchecked"
+                    CheckEditOverride.Checked = False
+                Else
+                    MsgBox("Std Cost could not be set to Vendor Costs, Continue?", MsgBoxStyle.OkOnly)
+                    CheckEditOverride.Checked = True
+                End If
+            Else
+                CheckEditOverride.Checked = True
+            End If
+        End If
+        '  Me.bs.DataSource = oEntity
     End Sub
 End Class

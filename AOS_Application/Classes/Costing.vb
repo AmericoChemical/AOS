@@ -648,6 +648,28 @@
     End Sub
 
 
+    Public Function SetStandardCostToVendorCost(ByRef oProduct As Product) As Boolean
+
+        'Set the standard cost data for the product
+        Dim oProductCosts As New ProductcostCollection
+
+        oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isactive = True)
+        oProductCosts.Query.OrderBy(oProductCosts.Query.Isdefaultcostrecord.Descending)
+        If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
+            Dim oProductcost As Productcost = oProductCosts(0)
+            'set new values
+            oProduct.Volumeunits = oProductcost.Volumeunits
+            oProduct.Volumeuom = oProductcost.Volumeuom
+            oProduct.Volumestandardcost = oProductcost.Volumestandardcost
+            oProduct.Weightunits = oProductcost.Weightunits
+            oProduct.Weightuom = oProductcost.Weightuom
+            oProduct.Weightstandardcost = oProductcost.Weightstandardcost
+            Return True
+        End If
+        Return False
+    End Function
+
+
     Public Sub updateStandardCostingFromVendorComponentCostChange(vComponentID As Integer, vUnitCost As Decimal, vReasonForChange As String, vChangeType As String, vChangeID As Integer, vWhatChanged As String)
 
         'change the standard cost data for the product
@@ -771,12 +793,16 @@
             oCost.Modifyby = vCurrentUserLogin
             oCost.Modifytime = Now
             oCost.Save()
+            'record this VENDOR COST change even in the CHANGERECORD table
+            AddChangeHistoryRecord("PRODUCTCOST", vCostRecID, "VOL COST", vOldVolUnitCost, vVolUnitCost, "WGT COST", vOldWgtUnitCost, vWgtUnitCost, vReasonForChange, "VENDOR COST", "VENDOR COSTING")
+            If (oCOst.Isdefaultcostrecord AndAlso (vOldVolUnitCost <> vVolUnitCost Or vOldWgtUnitCost <> vWgtUnitCost)) Then
+                updateStandardCostingFromVendorCostChange(oCOst.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCOst.Productid)
+            End If
+
         Else
-            Exit Sub
+                Exit Sub
         End If
 
-        'record this VENDOR COST change even in the CHANGERECORD table
-        AddChangeHistoryRecord("PRODUCTCOST", vCostRecID, "VOL COST", vOldVolUnitCost, vVolUnitCost, "WGT COST", vOldWgtUnitCost, vWgtUnitCost, vReasonForChange, "VENDOR COST", "VENDOR COSTING")
 
         'Dim vChg As Changerecord
         'vChg = New Changerecord

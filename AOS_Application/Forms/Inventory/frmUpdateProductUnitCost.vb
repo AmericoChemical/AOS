@@ -140,6 +140,11 @@ Public Class frmUpdateProductUnitCost
 
     Private Function changesSaved() As Boolean
         bsProductCost.EndEdit()
+        Dim productCosts As New ProductcostCollection
+        productCosts.Query.Where(productCosts.Query.Productid = oCost.Productid And productCosts.Query.Isactive = True And productCosts.Query.Isdefaultcostrecord = True)
+        If Not (productCosts.Query.Load() AndAlso productCosts.Count > 0) Then
+            oCost.Isdefaultcostrecord = True
+        End If
         oCost.Save()
 
         'Dim vVolUnits As Decimal = IIf(IsDBNull(eVolUnits.EditValue) Or eVolUnits.EditValue = Nothing, 0, eVolUnits.EditValue)
@@ -430,5 +435,15 @@ Public Class frmUpdateProductUnitCost
 
 
 
+    End Sub
+
+    Private Sub CheckEditActive_Click(sender As Object, e As EventArgs) Handles CheckEditActive.Click
+        If CheckEditActive.Checked Then
+            ' when changed tounchecked
+            If CheckEditDefault.CheckState Then
+                MsgBox("Default vendor cost cannot be set inactive.", MsgBoxStyle.OkOnly)
+                CheckEditActive.Checked = True
+            End If
+        End If
     End Sub
 End Class
