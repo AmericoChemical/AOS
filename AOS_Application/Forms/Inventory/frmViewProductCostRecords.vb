@@ -1,4 +1,5 @@
 Imports AOS.BusinessObjects
+Imports DevExpress.Data
 
 Public Class frmViewProductCostRecords
     Inherits DevExpress.XtraEditors.XtraForm
@@ -223,6 +224,14 @@ Public Class frmViewProductCostRecords
 
         getProductCostData()
         getProductStandardCostSource()
+
+    End Sub
+
+    Private Sub bs_CurrentChanged(sender As Object, e As EventArgs) Handles bs.CurrentChanged
+        If Not bs.Current Is Nothing Then
+            Dim oProductCost As Productcost = bs.Current
+            rbtnMakeCostRecordDefault.Enabled = Not oProductCost.Isdefaultcostrecord
+        End If
 
     End Sub
 End Class
