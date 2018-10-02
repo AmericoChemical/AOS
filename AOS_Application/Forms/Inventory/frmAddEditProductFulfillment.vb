@@ -87,6 +87,27 @@ Public Class frmAddEditProductFulfillment
         Me.bsProductFulfillmentPlan.DataSource = oProductfulfillmentplan
     End Sub
 
+    Private Function ModifiedColumns() As List(Of String)
+
+        Dim vModifiedColumns As New List(Of String)
+        If oProductfulfillmentplan.es.IsDirty Then
+            For Each obj As String In oProductfulfillmentplan.es.ModifiedColumns
+
+                Select Case obj.ToString
+                    Case "FULFILMENTTYPEID",
+                            "PRIORITY",
+                          "KITID",
+                          "STDLABORHRS",
+                         "ASSOCIATEDPRODUCTID"
+                        vModifiedColumns.Add(obj.ToString)
+                End Select
+            Next
+        End If
+
+        Return vModifiedColumns
+
+    End Function
+
     Private Function changesSaved() As Boolean
         If ValidateControls() Then
             bsProductFulfillmentPlan.EndEdit()
@@ -94,8 +115,13 @@ Public Class frmAddEditProductFulfillment
             'If updateProductRelabelInstructions(oProductfulfillmentplan.Fulfillmentplanid, oProductfulfillmentplan.Fulfillmenttypeid) = False Then
             '    Return False
             'End If
-            oProductfulfillmentplan.Modifytime = Now
-            oProductfulfillmentplan.Modifyby = vCurrentUserLogin
+            Dim vmodifedColumns As List(Of String) = ModifiedColumns()
+            If vmodifedColumns.Count Then
+                oProductfulfillmentplan.Modifytime = Now
+                oProductfulfillmentplan.Modifyby = vCurrentUserLogin
+            End If
+
+
             oProductfulfillmentplan.EndEdit()
             oProductfulfillmentplan.Save()
 
@@ -104,24 +130,25 @@ Public Class frmAddEditProductFulfillment
             'effects on other products' standard costs (though this should not be likely)
             If oProductfulfillmentplan.Fulfillmenttypeid = 2 Then
 
-                Dim oProduct As New Product
-                If oProduct.LoadByPrimaryKey(oProductfulfillmentplan.Productid) Then
-                    ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid, "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid)
+                'Dim oProduct As New Product
+                'If oProduct.LoadByPrimaryKey(oProductfulfillmentplan.Productid) Then
+                If getProductStandardCostSource(oProductfulfillmentplan.Productid) = "RELABEL" Then
+                        ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", String.Join(",", vmodifedColumns.ToArray()), "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid)
+                    End If
+                '    Dim oRlbCosts As New ViewRelabelProductsCostChanges
+                'oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(oProductfulfillmentplan.Productid))
+                'If oRlbCosts.Query.Load Then
+                '    'update Relabeled Product Standard Costs
+                '    'set new values
+                '    oProduct.Volumestandardcost = oRlbCosts.Newvolcost
+                '        oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
+                '        oProduct.Save()
+                '    End If
 
-                    '    Dim oRlbCosts As New ViewRelabelProductsCostChanges
-                    'oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(oProductfulfillmentplan.Productid))
-                    'If oRlbCosts.Query.Load Then
-                    '    'update Relabeled Product Standard Costs
-                    '    'set new values
-                    '    oProduct.Volumestandardcost = oRlbCosts.Newvolcost
-                    '        oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
-                    '        oProduct.Save()
-                    '    End If
+                '    'add product change history record for the relabeled product
+                '    AddProductCostChangeHistoryRecord(oProductfulfillmentplan.Productid, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & oProduct.Productid & " " & oProduct.Productdesc, "STD COST")
 
-                    '    'add product change history record for the relabeled product
-                    '    AddProductCostChangeHistoryRecord(oProductfulfillmentplan.Productid, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & oProduct.Productid & " " & oProduct.Productdesc, "STD COST")
-
-                End If
+                ' End If
             End If
             Return True
         End If

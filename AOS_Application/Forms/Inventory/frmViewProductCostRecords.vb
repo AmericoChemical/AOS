@@ -120,10 +120,10 @@ Public Class frmViewProductCostRecords
         If bs.Count <= 0 Then
             Exit Sub
         End If
-        'If bs.Count = 1 Then
-        '    MsgBox("You cannot delete the only cost record for a product. Edit the existing cost record or add a new cost record.", MsgBoxStyle.Critical, "Error")
-        '    Exit Sub
-        'End If
+        If bs.Count = 1 Then
+            MsgBox("You cannot delete the only cost record for a product. Edit the existing cost record or add a new cost record.", MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        End If
 
         DeleteCostRecord(bs.Current.costRecID)
         getProductCostData()
@@ -182,7 +182,7 @@ Public Class frmViewProductCostRecords
         vVolUOM = IIf(IsDBNull(oCost.Volumeuom), "", oCost.Volumeuom)
         vWgtUOM = IIf(IsDBNull(oCost.Weightuom), "", oCost.Weightuom)
 
-        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid)
+        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid, "VNDR COST CHNG-" & vProductID)
 
         getProductStandardCostSource()
 
@@ -219,6 +219,7 @@ Public Class frmViewProductCostRecords
             oDefCost.Isdefaultcostrecord = 1
             oDefCost.Save()
         End If
+        SetProductStatndardCosts(vProductID, "Default Vendor Cost changed. PROD ID-" & vProductID)
 
         getProductCostData()
         getProductStandardCostSource()

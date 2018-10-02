@@ -102,7 +102,7 @@ Partial Class frmViewProductCostRecords
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(938, 116)
+        Me.RibbonControl1.Size = New System.Drawing.Size(938, 145)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -226,6 +226,7 @@ Partial Class frmViewProductCostRecords
         Me.rbtnUpdateStdCost.Id = 21
         Me.rbtnUpdateStdCost.ImageOptions.LargeImageIndex = 1
         Me.rbtnUpdateStdCost.Name = "rbtnUpdateStdCost"
+        Me.rbtnUpdateStdCost.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'LargeImages
         '
@@ -300,10 +301,10 @@ Partial Class frmViewProductCostRecords
         Me.PanelControl2.Controls.Add(Me.grProductCosts)
         Me.PanelControl2.Controls.Add(Me.PanelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl2.Location = New System.Drawing.Point(0, 116)
+        Me.PanelControl2.Location = New System.Drawing.Point(0, 145)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Padding = New System.Windows.Forms.Padding(6)
-        Me.PanelControl2.Size = New System.Drawing.Size(938, 194)
+        Me.PanelControl2.Size = New System.Drawing.Size(938, 165)
         Me.PanelControl2.TabIndex = 41
         '
         'grProductCosts
@@ -315,7 +316,7 @@ Partial Class frmViewProductCostRecords
         Me.grProductCosts.MainView = Me.GridView1
         Me.grProductCosts.Name = "grProductCosts"
         Me.grProductCosts.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.grProductCosts.Size = New System.Drawing.Size(926, 159)
+        Me.grProductCosts.Size = New System.Drawing.Size(926, 130)
         Me.grProductCosts.TabIndex = 41
         Me.grProductCosts.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '

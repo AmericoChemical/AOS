@@ -430,6 +430,8 @@ Public Class frmAddEditProduct
         Dim frm As New frmviewProductFulfillment
         frm.vPID = Me.bs.Current.productID
         frm.ShowDialog()
+        editObject(oEntity.Productid)
+
     End Sub
 
     Private Sub eChemID_EditValueChanged(sender As Object, e As EventArgs) Handles eChemID.EditValueChanged
@@ -721,10 +723,13 @@ Public Class frmAddEditProduct
 
     Private Sub CheckEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles CheckEditOverride.EditValueChanged
         rbtnChangeStandardCosts.Enabled = CheckEditOverride.Checked
-        If CheckEditOverride.Checked Then
-            eStdCostSource.Text = "OVERRIDE"
-        Else
-            eStdCostSource.Text = "PURCHASE"
+        If (eStdCostSource.Text.Equals("PURCHASE") Or eStdCostSource.Text.Equals("OVERRIDE")) Then
+
+            If CheckEditOverride.Checked Then
+                eStdCostSource.Text = "OVERRIDE"
+            Else
+                eStdCostSource.Text = "PURCHASE"
+            End If
         End If
 
     End Sub

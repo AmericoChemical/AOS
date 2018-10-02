@@ -169,9 +169,35 @@ Public Class frmAddEditAPIS
         bsAPIS.EndEdit()
         oAPIS.Modifyby = vCurrentUserLogin
         oAPIS.Modifytime = Now
+        Dim vModifiedCostColumns As List(Of String) = ModifiedCostColumns()
+
         oAPIS.Save()
+        If oAPIS.Productid.HasValue Then
+            If getProductStandardCostSource(oAPIS.Productid.Value) = "APIS" Then
+                ProcessAPISProductStandardCostChanges(oAPIS.Productid.Value, "STD COST", "APIS CHNG-" & oAPIS.Apisnum & "[" + String.Join(",", vModifiedCostColumns.ToArray()) + "]", "APIS-" & oAPIS.Apisnum)
+            End If
+        End If
+
         Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub
+
+    Private Function ModifiedCostColumns() As List(Of String)
+
+        Dim vModifiedCostColumns As New List(Of String)
+        If oAPIS.es.IsDirty Then
+            For Each obj As String In oAPIS.es.ModifiedColumns
+
+                Select Case obj.ToString
+                    Case "STDLABORHOURS",
+                            "KITID"
+                        vModifiedCostColumns.Add(obj.ToString)
+                End Select
+            Next
+        End If
+
+        Return vModifiedCostColumns
+
+    End Function
 
     Private Sub cancelChanges()
         oAPIS.CancelEdit()
@@ -321,6 +347,12 @@ Public Class frmAddEditAPIS
         If oInput.LoadByPrimaryKey(vInputID) Then
             oInput.MarkAsDeleted()
             oInput.Save()
+        End If
+        Dim APIS As New Apis
+        If APIS.LoadByPrimaryKey(bsAPIS.Current.APISNum) AndAlso APIS.Productid.HasValue Then
+            If getProductStandardCostSource(APIS.Productid) = "APIS" Then
+                ProcessAPISProductStandardCostChanges(APIS.Productid.Value, "STD COST", "APIS INPUT DELETED-" & vInputID, "APIS-" & APIS.Apisnum)
+            End If
         End If
         getAPISDetails(bsAPIS.Current.APISNum)
     End Sub

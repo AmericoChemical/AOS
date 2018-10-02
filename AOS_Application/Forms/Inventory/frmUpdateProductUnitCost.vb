@@ -401,7 +401,7 @@ Public Class frmUpdateProductUnitCost
         vVolUOM = oCost.Volumeuom
         vWgtUOM = oCost.Weightuom
 
-        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid)
+        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid, "VNDR COST CHNG-" & vProductID)
 
         If RaiseAuditEvent(vAuditRuleID, bsProductCost, PricingMethod.VOLUME, vFlag) Then
             eVolUnitCost.Focus()

@@ -388,6 +388,7 @@ Module ProductProcessing
             Select Case vStatus
                 Case "ACTIVE"
                     oProduct.Productstatus = "ACTIVE"
+                    SetProductStatndardCosts(vProductID, "Status Changed To ACTIVE. PROD ID-" & vProductID)
                     '                    updateActiveProductRelatedRecords(vProductID)
                     oProduct.Save()
                 Case "INACTIVE"
@@ -402,45 +403,6 @@ Module ProductProcessing
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error Updating Product Status")
             Exit Sub
         End Try
-    End Sub
-
-    Public Sub updateActiveProductRelatedRecords(vProductID As Integer)
-        If IsDBNull(vProductID) Or vProductID = Nothing Then
-            Exit Sub
-        End If
-
-        'APIS - search for any APIS records that are not already ARCHIVED 
-        Dim oAPISList As New ApisCollection
-        oAPISList.Query.Where(oAPISList.Query.Productid.Equal(vProductID), oAPISList.Query.Apisstatus.NotEqual("ACTIVE"))
-        If oAPISList.Query.Load Then
-            'found one or more APIS records for the selected ProductID that need to be ARCHIVED
-            For Each oApis As Apis In oAPISList
-                markAPISStatus(oApis.Apisnum, "ACTIVE")
-            Next
-        End If
-
-        'PRICE LIST - search for any PRICE LIST records that are linked to the PRODUCTID and mark them as INACTIVE
-        Dim oPriceLists As New PricelistCollection
-        oPriceLists.Query.Where(oPriceLists.Query.Productid.Equal(vProductID), oPriceLists.Query.Priceliststatus.NotEqual("INACTIVE"))
-        If oPriceLists.Query.Load Then
-            Dim vCustList As String = Nothing
-            For Each oPriceList As Pricelist In oPriceLists
-                Dim oCust As New Customer
-                oCust.LoadByPrimaryKey(oPriceList.Custid)
-                If vCustList = Nothing Then
-                    vCustList = vCustList + oCust.Custname
-                Else
-                    vCustList = vCustList + ", " + oCust.Custname
-                End If
-            Next
-            MsgBox("Price List records for Product " + vProductID.ToString + " for the following customers will be marked as INACTIVE: " + vCustList, MsgBoxStyle.Information, "PRICE LIST CHANGES")
-            For Each oPriceList As Pricelist In oPriceLists
-                oPriceList.Priceliststatus = "INACTIVE"
-            Next
-            oPriceLists.Save()
-        End If
-
-
     End Sub
 
 

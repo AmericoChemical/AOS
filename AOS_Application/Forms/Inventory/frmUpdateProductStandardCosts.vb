@@ -169,8 +169,11 @@ Public Class frmUpdateProductStandardCosts
         End If
 
         If eWgtUnits.EditValue <> oProduct.Stdweight Then
-            MsgBox("The WEIGHT units do not match the LABEL WEIGHT for the Product", MsgBoxStyle.Critical, "ERROR")
-            Return False
+            'MsgBox("The WEIGHT units do not match the LABEL WEIGHT for the Product", MsgBoxStyle.Critical, "ERROR")
+            'Return False
+            If MsgBox("The Label Weight is not the same as the Standard Weight Units. Do want to save anyway?", MsgBoxStyle.YesNo, "Warning!") = MsgBoxResult.No Then
+                Return False
+            End If
         End If
 
 

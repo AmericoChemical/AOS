@@ -850,6 +850,10 @@ Module InventoryItemsProcessing
             End Using
 
             oCostRec.LoadByPrimaryKey(costRecID)
+            If (oCostRec.Isdefaultcostrecord = True) Then
+                MsgBox("You cannot delete the DEFAULT cost record for a product. Edit the existing cost record or Mark another as default", MsgBoxStyle.Critical, "Error - Delete Failed")
+                Exit Sub
+            End If
             oCostRec.MarkAsDeleted()
             oCostRec.Save()
         Catch ex As Exception
