@@ -75,18 +75,36 @@ Public Class frmAddEditKitComponents
         oKitComponent.LoadByPrimaryKey(vKitComponentID)
         Me.bsKitComponent.DataSource = oKitComponent
     End Sub
+    Private Function ModifiedCostColumns() As List(Of String)
+
+        Dim vModifiedCostColumns As New List(Of String)
+        If oKitComponent.es.IsDirty Then
+            For Each obj As String In oKitComponent.es.ModifiedColumns
+
+                Select Case obj.ToString
+                    Case "COMPONENTID",
+                            "COMPONENTQTY"
+                        vModifiedCostColumns.Add(obj.ToString)
+                End Select
+            Next
+        End If
+        Return vModifiedCostColumns
+
+    End Function
     Private Function changesSaved() As Boolean
         bsKitComponent.EndEdit()
         oKitComponent.EndEdit()
-        If MsgBox("Are you sure you want to make kit changes? This will Update Product Costs to CALCULATED APIS COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
+        If MsgBox("Are you sure you want to make kit changes? This will Update STD Costs to CALCULATED APIS/RELABEL COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
             Return False
         End If
 
         If MsgBox("If you make this change, it cannot be undone. ARE YOU SURE YOU WANT TO CONTINUE?", MsgBoxStyle.YesNo, "CONFIRM REQUEST") = MsgBoxResult.No Then
             Return False
         End If
+        Dim vModifiedCostColumns As List(Of String) = ModifiedCostColumns()
+
         oKitComponent.Save()
-        ProcessKitCostChanges(vID, "KIT CHNG - KIT " & vID, "STD COST", vID, "KIT CHNG-" & vID)
+        ProcessKitCostChanges(vID, "KIT CHNG-" & vID & " [" & String.Join(",", vModifiedCostColumns.ToArray()) & "]", "STD COST", vID, "KIT CHNG - KIT " & vID)
 
         Return True
     End Function

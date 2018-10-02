@@ -88,7 +88,7 @@ Public Class frmAddEditComponents
             End If
             oComponent.Save()
 
-            ProcessComponentCostChanges(vID, orgUnitCost, oComponent.Unitcost, "COMPONENT CHNG - COMP " & vID, "STD COST", vID, "COMP COST CHNG-" & vID)
+            ProcessComponentCostChanges(vID, orgUnitCost, oComponent.Unitcost, "COMP COST CHNG-" & vID, "STD COST", vID, "COMPONENT CHNG - COMP " & vID)
         End If
         Return True
     End Function

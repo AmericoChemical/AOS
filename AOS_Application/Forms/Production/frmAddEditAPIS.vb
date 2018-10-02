@@ -174,7 +174,7 @@ Public Class frmAddEditAPIS
         oAPIS.Save()
         If oAPIS.Productid.HasValue Then
             If getProductStandardCostSource(oAPIS.Productid.Value) = "APIS" Then
-                ProcessAPISProductStandardCostChanges(oAPIS.Productid.Value, "STD COST", "APIS CHNG-" & oAPIS.Apisnum & "[" + String.Join(",", vModifiedCostColumns.ToArray()) + "]", "APIS-" & oAPIS.Apisnum)
+                ProcessAPISProductStandardCostChanges(oAPIS.Productid.Value, "STD COST", "APIS CHNG-" & oAPIS.Apisnum & " [" + String.Join(",", vModifiedCostColumns.ToArray()) + "]", "APIS-" & oAPIS.Apisnum)
             End If
         End If
 
