@@ -662,21 +662,35 @@
 
         'Set the standard cost data for the product
         Dim oProductCosts As New ProductcostCollection
-
-        oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isactive = True)
-        oProductCosts.Query.OrderBy(oProductCosts.Query.Isdefaultcostrecord.Descending)
+        Dim oProductcost As Productcost
+        oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isactive = True And oProductCosts.Query.Isdefaultcostrecord = True)
+        oProductCosts.Query.OrderBy(oProductCosts.Query.Costrecid.Descending)
         If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
-            Dim oProductcost As Productcost = oProductCosts(0)
-            'set new values
-            oProduct.Volumeunits = oProductcost.Volumeunits
-            oProduct.Volumeuom = oProductcost.Volumeuom
-            oProduct.Volumestandardcost = oProductcost.Volumestandardcost
-            oProduct.Weightunits = oProductcost.Weightunits
-            oProduct.Weightuom = oProductcost.Weightuom
-            oProduct.Weightstandardcost = oProductcost.Weightstandardcost
-            Return True
+            oProductcost = oProductCosts(0)        ' check if default cost record found 
+        Else
+            oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isactive = True)
+            oProductCosts.Query.OrderBy(oProductCosts.Query.Isdefaultcostrecord.Descending, oProductCosts.Query.Costrecid.Descending)
+            If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
+                oProductcost = oProductCosts(0)        ' check if active record found 
+            Else
+                oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isactive = True)
+                oProductCosts.Query.OrderBy(oProductCosts.Query.Isdefaultcostrecord.Descending, oProductCosts.Query.Costrecid.Descending)
+                If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
+                    oProductcost = oProductCosts(0) ' checkif any cost record exists
+                Else
+                    Return False
+                End If
+            End If
         End If
-        Return False
+
+        'set new values
+        oProduct.Volumeunits = oProductcost.Volumeunits
+        oProduct.Volumeuom = oProductcost.Volumeuom
+        oProduct.Volumestandardcost = oProductcost.Volumestandardcost
+        oProduct.Weightunits = oProductcost.Weightunits
+        oProduct.Weightuom = oProductcost.Weightuom
+        oProduct.Weightstandardcost = oProductcost.Weightstandardcost
+        Return True
     End Function
 
 
@@ -754,6 +768,26 @@
     End Function
 
 
+    Public Sub MarkVendorProductCostAsDefault(vCostRecId As Integer)
+
+        'Clear all default settings for the current Product ID
+        Dim oDefCost As New Productcost
+        If oDefCost.LoadByPrimaryKey(vCostRecId) Then
+            Dim oCosts As New ProductcostCollection
+            oCosts.Query.Where(oCosts.Query.Productid.Equal(oDefCost.Productid))
+            If oCosts.Query.Load Then
+                For Each oCost As Productcost In oCosts
+                    oCost.Isdefaultcostrecord = 0
+                Next
+                oCosts.Save()
+            End If
+
+            oDefCost.Isdefaultcostrecord = 1
+            oDefCost.Save()
+            SetProductStatndardCosts(oDefCost.Productid, "Default Vendor Cost changed. PROD ID-" & oDefCost.Productid)
+
+        End If
+    End Sub
     Public Sub updateVendorProductCosting(vCostRecID As Integer, vCostMethod As String, vVolUnits As Decimal, vVolUOM As String, vVolUnitCost As Decimal, vWgtUnits As Decimal, vWgtUOM As String, vWgtUnitCost As Decimal, vReasonForChange As String, vProductID As Integer, vVendorID As Integer, vOrigVolCost As Decimal, vOrigWgtCost As Decimal)
 
         'change the standard cost data for the product

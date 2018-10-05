@@ -148,6 +148,7 @@ Public Class frmViewProductCostRecords
         Me.DialogResult = Windows.Forms.DialogResult.Cancel
     End Sub
 
+    ' This should never be called, button should be disabled 
     Private Sub rbtnUpdateStdCost_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnUpdateStdCost.ItemClick
 
         Dim oCost As New Productcost
@@ -205,22 +206,24 @@ Public Class frmViewProductCostRecords
         'get selected Cost Record ID
         Dim vRecID As Integer = bs.Current.CostRecID
 
-        'Clear all default settings for the current Product ID
-        Dim oCosts As New ProductcostCollection
-        oCosts.Query.Where(oCosts.Query.Productid.Equal(vProductID))
-        If oCosts.Query.Load Then
-            For Each oCost As Productcost In oCosts
-                oCost.Isdefaultcostrecord = 0
-            Next
-            oCosts.Save()
-        End If
+        ''Clear all default settings for the current Product ID
+        'Dim oCosts As New ProductcostCollection
+        'oCosts.Query.Where(oCosts.Query.Productid.Equal(vProductID))
+        'If oCosts.Query.Load Then
+        '    For Each oCost As Productcost In oCosts
+        '        oCost.Isdefaultcostrecord = 0
+        '    Next
+        '    oCosts.Save()
+        'End If
 
-        Dim oDefCost As New Productcost
-        If oDefCost.LoadByPrimaryKey(vRecID) Then
-            oDefCost.Isdefaultcostrecord = 1
-            oDefCost.Save()
-        End If
-        SetProductStatndardCosts(vProductID, "Default Vendor Cost changed. PROD ID-" & vProductID)
+        'Dim oDefCost As New Productcost
+        'If oDefCost.LoadByPrimaryKey(vRecID) Then
+        '    oDefCost.Isdefaultcostrecord = 1
+        '    oDefCost.Save()
+        'End If
+        'SetProductStatndardCosts(vProductID, "Default Vendor Cost changed. PROD ID-" & vProductID)
+
+        MarkVendorProductCostAsDefault(vRecID)
 
         getProductCostData()
         getProductStandardCostSource()
