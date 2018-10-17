@@ -273,7 +273,7 @@ Partial Class frmAddEditProduct
         ProductidLabel.AutoSize = True
         ProductidLabel.Location = New System.Drawing.Point(45, 33)
         ProductidLabel.Name = "ProductidLabel"
-        ProductidLabel.Size = New System.Drawing.Size(75, 17)
+        ProductidLabel.Size = New System.Drawing.Size(58, 13)
         ProductidLabel.TabIndex = 0
         ProductidLabel.Text = "Product ID"
         '
@@ -283,7 +283,7 @@ Partial Class frmAddEditProduct
         ProductdescLabel.AutoSize = True
         ProductdescLabel.Location = New System.Drawing.Point(45, 63)
         ProductdescLabel.Name = "ProductdescLabel"
-        ProductdescLabel.Size = New System.Drawing.Size(76, 17)
+        ProductdescLabel.Size = New System.Drawing.Size(60, 13)
         ProductdescLabel.TabIndex = 2
         ProductdescLabel.Text = "Description"
         '
@@ -293,7 +293,7 @@ Partial Class frmAddEditProduct
         ContainerLabel.AutoSize = True
         ContainerLabel.Location = New System.Drawing.Point(51, 112)
         ContainerLabel.Name = "ContainerLabel"
-        ContainerLabel.Size = New System.Drawing.Size(67, 17)
+        ContainerLabel.Size = New System.Drawing.Size(54, 13)
         ContainerLabel.TabIndex = 6
         ContainerLabel.Text = "Container"
         '
@@ -303,7 +303,7 @@ Partial Class frmAddEditProduct
         StdgallonsLabel.AutoSize = True
         StdgallonsLabel.Location = New System.Drawing.Point(21, 33)
         StdgallonsLabel.Name = "StdgallonsLabel"
-        StdgallonsLabel.Size = New System.Drawing.Size(85, 17)
+        StdgallonsLabel.Size = New System.Drawing.Size(69, 13)
         StdgallonsLabel.TabIndex = 0
         StdgallonsLabel.Text = "Label Gallons"
         StdgallonsLabel.Visible = False
@@ -314,7 +314,7 @@ Partial Class frmAddEditProduct
         StdweightLabel.AutoSize = True
         StdweightLabel.Location = New System.Drawing.Point(22, 31)
         StdweightLabel.Name = "StdweightLabel"
-        StdweightLabel.Size = New System.Drawing.Size(87, 17)
+        StdweightLabel.Size = New System.Drawing.Size(69, 13)
         StdweightLabel.TabIndex = 2
         StdweightLabel.Text = "Label Weight"
         '
@@ -324,7 +324,7 @@ Partial Class frmAddEditProduct
         ClassrateLabel.AutoSize = True
         ClassrateLabel.Location = New System.Drawing.Point(311, 112)
         ClassrateLabel.Name = "ClassrateLabel"
-        ClassrateLabel.Size = New System.Drawing.Size(70, 17)
+        ClassrateLabel.Size = New System.Drawing.Size(58, 13)
         ClassrateLabel.TabIndex = 10
         ClassrateLabel.Text = "Class Rate"
         '
@@ -334,7 +334,7 @@ Partial Class frmAddEditProduct
         DotdescLabel.AutoSize = True
         DotdescLabel.Location = New System.Drawing.Point(21, 112)
         DotdescLabel.Name = "DotdescLabel"
-        DotdescLabel.Size = New System.Drawing.Size(108, 17)
+        DotdescLabel.Size = New System.Drawing.Size(84, 13)
         DotdescLabel.TabIndex = 12
         DotdescLabel.Text = "DOT Description"
         '
@@ -344,7 +344,7 @@ Partial Class frmAddEditProduct
         HazmatdescLabel.AutoSize = True
         HazmatdescLabel.Location = New System.Drawing.Point(6, 138)
         HazmatdescLabel.Name = "HazmatdescLabel"
-        HazmatdescLabel.Size = New System.Drawing.Size(126, 17)
+        HazmatdescLabel.Size = New System.Drawing.Size(99, 13)
         HazmatdescLabel.TabIndex = 14
         HazmatdescLabel.Text = "Hazmat Description"
         '
@@ -354,7 +354,7 @@ Partial Class frmAddEditProduct
         UnlineLabel.AutoSize = True
         UnlineLabel.Location = New System.Drawing.Point(62, 164)
         UnlineLabel.Name = "UnlineLabel"
-        UnlineLabel.Size = New System.Drawing.Size(54, 17)
+        UnlineLabel.Size = New System.Drawing.Size(43, 13)
         UnlineLabel.TabIndex = 16
         UnlineLabel.Text = "UN Line"
         '
@@ -364,7 +364,7 @@ Partial Class frmAddEditProduct
         HazmatidLabel.AutoSize = True
         HazmatidLabel.Location = New System.Drawing.Point(48, 86)
         HazmatidLabel.Name = "HazmatidLabel"
-        HazmatidLabel.Size = New System.Drawing.Size(72, 17)
+        HazmatidLabel.Size = New System.Drawing.Size(57, 13)
         HazmatidLabel.TabIndex = 4
         HazmatidLabel.Text = "Hazmat ID"
         '
@@ -374,7 +374,7 @@ Partial Class frmAddEditProduct
         ReactivityLabel.AutoSize = True
         ReactivityLabel.Location = New System.Drawing.Point(335, 34)
         ReactivityLabel.Name = "ReactivityLabel"
-        ReactivityLabel.Size = New System.Drawing.Size(68, 17)
+        ReactivityLabel.Size = New System.Drawing.Size(55, 13)
         ReactivityLabel.TabIndex = 6
         ReactivityLabel.Text = "Reactivity"
         '
@@ -384,7 +384,7 @@ Partial Class frmAddEditProduct
         PersonalprotectionLabel.AutoSize = True
         PersonalprotectionLabel.Location = New System.Drawing.Point(290, 60)
         PersonalprotectionLabel.Name = "PersonalprotectionLabel"
-        PersonalprotectionLabel.Size = New System.Drawing.Size(126, 17)
+        PersonalprotectionLabel.Size = New System.Drawing.Size(100, 13)
         PersonalprotectionLabel.TabIndex = 8
         PersonalprotectionLabel.Text = "Personal Protection"
         '
@@ -394,7 +394,7 @@ Partial Class frmAddEditProduct
         QtyminonhandLabel.AutoSize = True
         QtyminonhandLabel.Location = New System.Drawing.Point(246, 60)
         QtyminonhandLabel.Name = "QtyminonhandLabel"
-        QtyminonhandLabel.Size = New System.Drawing.Size(120, 17)
+        QtyminonhandLabel.Size = New System.Drawing.Size(92, 13)
         QtyminonhandLabel.TabIndex = 6
         QtyminonhandLabel.Text = "Minimum On Hand"
         '
@@ -404,7 +404,7 @@ Partial Class frmAddEditProduct
         ReorderqtyLabel.AutoSize = True
         ReorderqtyLabel.Location = New System.Drawing.Point(271, 34)
         ReorderqtyLabel.Name = "ReorderqtyLabel"
-        ReorderqtyLabel.Size = New System.Drawing.Size(84, 17)
+        ReorderqtyLabel.Size = New System.Drawing.Size(67, 13)
         ReorderqtyLabel.TabIndex = 4
         ReorderqtyLabel.Text = "Reorder Qty"
         '
@@ -414,7 +414,7 @@ Partial Class frmAddEditProduct
         FireLabel.AutoSize = True
         FireLabel.Location = New System.Drawing.Point(80, 60)
         FireLabel.Name = "FireLabel"
-        FireLabel.Size = New System.Drawing.Size(29, 17)
+        FireLabel.Size = New System.Drawing.Size(25, 13)
         FireLabel.TabIndex = 2
         FireLabel.Text = "Fire"
         '
@@ -424,7 +424,7 @@ Partial Class frmAddEditProduct
         HealthLabel.AutoSize = True
         HealthLabel.Location = New System.Drawing.Point(67, 34)
         HealthLabel.Name = "HealthLabel"
-        HealthLabel.Size = New System.Drawing.Size(46, 17)
+        HealthLabel.Size = New System.Drawing.Size(38, 13)
         HealthLabel.TabIndex = 0
         HealthLabel.Text = "Health"
         '
@@ -434,7 +434,7 @@ Partial Class frmAddEditProduct
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(25, 87)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(100, 17)
+        Label1.Size = New System.Drawing.Size(80, 13)
         Label1.TabIndex = 4
         Label1.Text = "Additional Desc"
         '
@@ -444,7 +444,7 @@ Partial Class frmAddEditProduct
         Label5.AutoSize = True
         Label5.Location = New System.Drawing.Point(21, 112)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(132, 17)
+        Label5.Size = New System.Drawing.Size(102, 13)
         Label5.TabIndex = 9
         Label5.Text = "Limited to Customer"
         '
@@ -454,7 +454,7 @@ Partial Class frmAddEditProduct
         Label3.AutoSize = True
         Label3.Location = New System.Drawing.Point(255, 59)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(54, 17)
+        Label3.Size = New System.Drawing.Size(45, 13)
         Label3.TabIndex = 6
         Label3.Text = "Fill UOM"
         '
@@ -464,7 +464,7 @@ Partial Class frmAddEditProduct
         Label4.AutoSize = True
         Label4.Location = New System.Drawing.Point(255, 33)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(55, 17)
+        Label4.Size = New System.Drawing.Size(46, 13)
         Label4.TabIndex = 4
         Label4.Text = "Fill Units"
         '
@@ -474,7 +474,7 @@ Partial Class frmAddEditProduct
         Label6.AutoSize = True
         Label6.Location = New System.Drawing.Point(21, 60)
         Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(129, 17)
+        Label6.Size = New System.Drawing.Size(101, 13)
         Label6.TabIndex = 2
         Label6.Text = "Inventory Grouping"
         '
@@ -484,7 +484,7 @@ Partial Class frmAddEditProduct
         UnlineLabel1.AutoSize = True
         UnlineLabel1.Location = New System.Drawing.Point(47, 190)
         UnlineLabel1.Name = "UnlineLabel1"
-        UnlineLabel1.Size = New System.Drawing.Size(75, 17)
+        UnlineLabel1.Size = New System.Drawing.Size(58, 13)
         UnlineLabel1.TabIndex = 18
         UnlineLabel1.Text = "ID Number"
         '
@@ -494,7 +494,7 @@ Partial Class frmAddEditProduct
         VolumeunitsLabel.AutoSize = True
         VolumeunitsLabel.Location = New System.Drawing.Point(20, 141)
         VolumeunitsLabel.Name = "VolumeunitsLabel"
-        VolumeunitsLabel.Size = New System.Drawing.Size(115, 17)
+        VolumeunitsLabel.Size = New System.Drawing.Size(92, 13)
         VolumeunitsLabel.TabIndex = 9
         VolumeunitsLabel.Text = "Units in Container"
         '
@@ -504,7 +504,7 @@ Partial Class frmAddEditProduct
         VolumeuomLabel.AutoSize = True
         VolumeuomLabel.Location = New System.Drawing.Point(20, 166)
         VolumeuomLabel.Name = "VolumeuomLabel"
-        VolumeuomLabel.Size = New System.Drawing.Size(37, 17)
+        VolumeuomLabel.Size = New System.Drawing.Size(30, 13)
         VolumeuomLabel.TabIndex = 11
         VolumeuomLabel.Text = "UOM"
         '
@@ -514,7 +514,7 @@ Partial Class frmAddEditProduct
         WeightunitsLabel.AutoSize = True
         WeightunitsLabel.Location = New System.Drawing.Point(254, 142)
         WeightunitsLabel.Name = "WeightunitsLabel"
-        WeightunitsLabel.Size = New System.Drawing.Size(115, 17)
+        WeightunitsLabel.Size = New System.Drawing.Size(92, 13)
         WeightunitsLabel.TabIndex = 17
         WeightunitsLabel.Text = "Units in Container"
         '
@@ -524,7 +524,7 @@ Partial Class frmAddEditProduct
         WeightuomLabel.AutoSize = True
         WeightuomLabel.Location = New System.Drawing.Point(254, 167)
         WeightuomLabel.Name = "WeightuomLabel"
-        WeightuomLabel.Size = New System.Drawing.Size(37, 17)
+        WeightuomLabel.Size = New System.Drawing.Size(30, 13)
         WeightuomLabel.TabIndex = 19
         WeightuomLabel.Text = "UOM"
         '
@@ -534,7 +534,7 @@ Partial Class frmAddEditProduct
         IsactiveLabel.AutoSize = True
         IsactiveLabel.Location = New System.Drawing.Point(393, 33)
         IsactiveLabel.Name = "IsactiveLabel"
-        IsactiveLabel.Size = New System.Drawing.Size(45, 17)
+        IsactiveLabel.Size = New System.Drawing.Size(37, 13)
         IsactiveLabel.TabIndex = 8
         IsactiveLabel.Text = "Active"
         '
@@ -544,7 +544,7 @@ Partial Class frmAddEditProduct
         Label2.AutoSize = True
         Label2.Location = New System.Drawing.Point(180, 190)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(78, 17)
+        Label2.Size = New System.Drawing.Size(64, 13)
         Label2.TabIndex = 20
         Label2.Text = "Haz Class #"
         '
@@ -554,7 +554,7 @@ Partial Class frmAddEditProduct
         Label7.AutoSize = True
         Label7.Location = New System.Drawing.Point(311, 190)
         Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(101, 17)
+        Label7.Size = New System.Drawing.Size(79, 13)
         Label7.TabIndex = 22
         Label7.Text = "Package Group"
         '
@@ -565,7 +565,7 @@ Partial Class frmAddEditProduct
         Label8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
         Label8.Location = New System.Drawing.Point(80, 118)
         Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(91, 17)
+        Label8.Size = New System.Drawing.Size(69, 13)
         Label8.TabIndex = 8
         Label8.Text = "BY VOLUME"
         '
@@ -576,7 +576,7 @@ Partial Class frmAddEditProduct
         Label9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
         Label9.Location = New System.Drawing.Point(304, 118)
         Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(91, 17)
+        Label9.Size = New System.Drawing.Size(69, 13)
         Label9.TabIndex = 16
         Label9.Text = "BY WEIGHT"
         '
@@ -586,7 +586,7 @@ Partial Class frmAddEditProduct
         Label10.AutoSize = True
         Label10.Location = New System.Drawing.Point(20, 193)
         Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(61, 17)
+        Label10.Size = New System.Drawing.Size(48, 13)
         Label10.TabIndex = 13
         Label10.Text = "Std Cost"
         '
@@ -596,7 +596,7 @@ Partial Class frmAddEditProduct
         Label11.AutoSize = True
         Label11.Location = New System.Drawing.Point(254, 193)
         Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(61, 17)
+        Label11.Size = New System.Drawing.Size(48, 13)
         Label11.TabIndex = 21
         Label11.Text = "Std Cost"
         '
@@ -606,7 +606,7 @@ Partial Class frmAddEditProduct
         Label12.AutoSize = True
         Label12.Location = New System.Drawing.Point(332, 33)
         Label12.Name = "Label12"
-        Label12.Size = New System.Drawing.Size(47, 17)
+        Label12.Size = New System.Drawing.Size(38, 13)
         Label12.TabIndex = 25
         Label12.Text = "Status"
         '
@@ -616,7 +616,7 @@ Partial Class frmAddEditProduct
         Label13.AutoSize = True
         Label13.Location = New System.Drawing.Point(33, 141)
         Label13.Name = "Label13"
-        Label13.Size = New System.Drawing.Size(90, 17)
+        Label13.Size = New System.Drawing.Size(72, 13)
         Label13.TabIndex = 29
         Label13.Text = "Chemical Info"
         '
@@ -626,7 +626,7 @@ Partial Class frmAddEditProduct
         InventorymethodLabel.AutoSize = True
         InventorymethodLabel.Location = New System.Drawing.Point(21, 34)
         InventorymethodLabel.Name = "InventorymethodLabel"
-        InventorymethodLabel.Size = New System.Drawing.Size(119, 17)
+        InventorymethodLabel.Size = New System.Drawing.Size(94, 13)
         InventorymethodLabel.TabIndex = 0
         InventorymethodLabel.Text = "Inventory Method"
         '
@@ -636,7 +636,7 @@ Partial Class frmAddEditProduct
         Label14.AutoSize = True
         Label14.Location = New System.Drawing.Point(39, 167)
         Label14.Name = "Label14"
-        Label14.Size = New System.Drawing.Size(81, 17)
+        Label14.Size = New System.Drawing.Size(66, 13)
         Label14.TabIndex = 31
         Label14.Text = "Material Link"
         '
@@ -646,7 +646,7 @@ Partial Class frmAddEditProduct
         Label15.AutoSize = True
         Label15.Location = New System.Drawing.Point(6, 31)
         Label15.Name = "Label15"
-        Label15.Size = New System.Drawing.Size(91, 17)
+        Label15.Size = New System.Drawing.Size(72, 13)
         Label15.TabIndex = 19
         Label15.Text = "Vendor Notes"
         '
@@ -656,7 +656,7 @@ Partial Class frmAddEditProduct
         Label16.AutoSize = True
         Label16.Location = New System.Drawing.Point(325, 31)
         Label16.Name = "Label16"
-        Label16.Size = New System.Drawing.Size(105, 17)
+        Label16.Size = New System.Drawing.Size(84, 13)
         Label16.TabIndex = 20
         Label16.Text = "Receiving Notes"
         AddHandler Label16.Click, AddressOf Me.Label16_Click
@@ -667,7 +667,7 @@ Partial Class frmAddEditProduct
         RqLabel.AutoSize = True
         RqLabel.Location = New System.Drawing.Point(250, 113)
         RqLabel.Name = "RqLabel"
-        RqLabel.Size = New System.Drawing.Size(27, 17)
+        RqLabel.Size = New System.Drawing.Size(22, 13)
         RqLabel.TabIndex = 23
         RqLabel.Text = "RQ"
         '
@@ -677,7 +677,7 @@ Partial Class frmAddEditProduct
         Label17.AutoSize = True
         Label17.Location = New System.Drawing.Point(76, 86)
         Label17.Name = "Label17"
-        Label17.Size = New System.Drawing.Size(57, 17)
+        Label17.Size = New System.Drawing.Size(46, 13)
         Label17.TabIndex = 25
         Label17.Text = "Is Liquid"
         '
@@ -687,7 +687,7 @@ Partial Class frmAddEditProduct
         Label18.AutoSize = True
         Label18.Location = New System.Drawing.Point(637, 31)
         Label18.Name = "Label18"
-        Label18.Size = New System.Drawing.Size(135, 17)
+        Label18.Size = New System.Drawing.Size(107, 13)
         Label18.TabIndex = 22
         Label18.Text = "Standard Cost Notes"
         '
@@ -697,7 +697,7 @@ Partial Class frmAddEditProduct
         Label19.AutoSize = True
         Label19.Location = New System.Drawing.Point(261, 86)
         Label19.Name = "Label19"
-        Label19.Size = New System.Drawing.Size(98, 17)
+        Label19.Size = New System.Drawing.Size(77, 13)
         Label19.TabIndex = 27
         Label19.Text = "Bulk Inventory"
         '
@@ -707,7 +707,7 @@ Partial Class frmAddEditProduct
         Label20.AutoSize = True
         Label20.Location = New System.Drawing.Point(45, 63)
         Label20.Name = "Label20"
-        Label20.Size = New System.Drawing.Size(60, 17)
+        Label20.Size = New System.Drawing.Size(49, 13)
         Label20.TabIndex = 27
         Label20.Text = "Override"
         '
@@ -721,7 +721,7 @@ Partial Class frmAddEditProduct
         Me.eProductID.Location = New System.Drawing.Point(111, 30)
         Me.eProductID.Name = "eProductID"
         Me.eProductID.Properties.ReadOnly = True
-        Me.eProductID.Size = New System.Drawing.Size(51, 22)
+        Me.eProductID.Size = New System.Drawing.Size(51, 20)
         Me.eProductID.TabIndex = 1
         Me.eProductID.TabStop = False
         '
@@ -734,7 +734,7 @@ Partial Class frmAddEditProduct
         Me.eProductDesc.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Productdesc", True))
         Me.eProductDesc.Location = New System.Drawing.Point(111, 58)
         Me.eProductDesc.Name = "eProductDesc"
-        Me.eProductDesc.Size = New System.Drawing.Size(336, 22)
+        Me.eProductDesc.Size = New System.Drawing.Size(336, 20)
         Me.eProductDesc.TabIndex = 3
         '
         'eContainer
@@ -750,7 +750,7 @@ Partial Class frmAddEditProduct
         Me.eContainer.Properties.PopupWidth = 200
         Me.eContainer.Properties.ShowFooter = False
         Me.eContainer.Properties.ValueMember = "Container"
-        Me.eContainer.Size = New System.Drawing.Size(84, 22)
+        Me.eContainer.Size = New System.Drawing.Size(84, 20)
         Me.eContainer.TabIndex = 7
         '
         'bsContainers
@@ -764,7 +764,7 @@ Partial Class frmAddEditProduct
         Me.eLblGallons.Name = "eLblGallons"
         Me.eLblGallons.Properties.Mask.EditMask = "n"
         Me.eLblGallons.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.eLblGallons.Size = New System.Drawing.Size(64, 22)
+        Me.eLblGallons.Size = New System.Drawing.Size(64, 20)
         Me.eLblGallons.TabIndex = 1
         Me.eLblGallons.Visible = False
         '
@@ -775,7 +775,7 @@ Partial Class frmAddEditProduct
         Me.eLblWeight.Name = "eLblWeight"
         Me.eLblWeight.Properties.Mask.EditMask = "n"
         Me.eLblWeight.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.eLblWeight.Size = New System.Drawing.Size(64, 22)
+        Me.eLblWeight.Size = New System.Drawing.Size(64, 20)
         Me.eLblWeight.TabIndex = 3
         '
         'eClassRate
@@ -783,7 +783,7 @@ Partial Class frmAddEditProduct
         Me.eClassRate.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Classrate", True))
         Me.eClassRate.Location = New System.Drawing.Point(376, 109)
         Me.eClassRate.Name = "eClassRate"
-        Me.eClassRate.Size = New System.Drawing.Size(71, 22)
+        Me.eClassRate.Size = New System.Drawing.Size(71, 20)
         Me.eClassRate.TabIndex = 11
         '
         'eDOTDesc
@@ -791,7 +791,7 @@ Partial Class frmAddEditProduct
         Me.eDOTDesc.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Dotdesc", True))
         Me.eDOTDesc.Location = New System.Drawing.Point(111, 109)
         Me.eDOTDesc.Name = "eDOTDesc"
-        Me.eDOTDesc.Size = New System.Drawing.Size(336, 22)
+        Me.eDOTDesc.Size = New System.Drawing.Size(336, 20)
         Me.eDOTDesc.TabIndex = 13
         '
         'eHazmatDesc
@@ -799,7 +799,7 @@ Partial Class frmAddEditProduct
         Me.eHazmatDesc.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Hazmatdesc", True))
         Me.eHazmatDesc.Location = New System.Drawing.Point(111, 135)
         Me.eHazmatDesc.Name = "eHazmatDesc"
-        Me.eHazmatDesc.Size = New System.Drawing.Size(336, 22)
+        Me.eHazmatDesc.Size = New System.Drawing.Size(336, 20)
         Me.eHazmatDesc.TabIndex = 15
         '
         'eUNLine
@@ -807,7 +807,7 @@ Partial Class frmAddEditProduct
         Me.eUNLine.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Unline", True))
         Me.eUNLine.Location = New System.Drawing.Point(111, 161)
         Me.eUNLine.Name = "eUNLine"
-        Me.eUNLine.Size = New System.Drawing.Size(336, 22)
+        Me.eUNLine.Size = New System.Drawing.Size(336, 20)
         Me.eUNLine.TabIndex = 17
         '
         'eHazmatID
@@ -821,7 +821,7 @@ Partial Class frmAddEditProduct
         Me.eHazmatID.Properties.DisplayMember = "SymbolDesc"
         Me.eHazmatID.Properties.NullText = ""
         Me.eHazmatID.Properties.ValueMember = "HazMatID"
-        Me.eHazmatID.Size = New System.Drawing.Size(145, 22)
+        Me.eHazmatID.Size = New System.Drawing.Size(145, 20)
         Me.eHazmatID.TabIndex = 5
         '
         'bsHazmat
@@ -833,7 +833,7 @@ Partial Class frmAddEditProduct
         Me.eReactivity.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Reactivity", True))
         Me.eReactivity.Location = New System.Drawing.Point(396, 31)
         Me.eReactivity.Name = "eReactivity"
-        Me.eReactivity.Size = New System.Drawing.Size(51, 22)
+        Me.eReactivity.Size = New System.Drawing.Size(51, 20)
         Me.eReactivity.TabIndex = 7
         '
         'ePersonalProtection
@@ -841,7 +841,7 @@ Partial Class frmAddEditProduct
         Me.ePersonalProtection.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Personalprotection", True))
         Me.ePersonalProtection.Location = New System.Drawing.Point(396, 57)
         Me.ePersonalProtection.Name = "ePersonalProtection"
-        Me.ePersonalProtection.Size = New System.Drawing.Size(51, 22)
+        Me.ePersonalProtection.Size = New System.Drawing.Size(51, 20)
         Me.ePersonalProtection.TabIndex = 9
         '
         'eMinimumOnHand
@@ -849,7 +849,7 @@ Partial Class frmAddEditProduct
         Me.eMinimumOnHand.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Qtyminonhand", True))
         Me.eMinimumOnHand.Location = New System.Drawing.Point(352, 57)
         Me.eMinimumOnHand.Name = "eMinimumOnHand"
-        Me.eMinimumOnHand.Size = New System.Drawing.Size(64, 22)
+        Me.eMinimumOnHand.Size = New System.Drawing.Size(64, 20)
         Me.eMinimumOnHand.TabIndex = 7
         '
         'eReorderQty
@@ -857,7 +857,7 @@ Partial Class frmAddEditProduct
         Me.eReorderQty.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Reorderqty", True))
         Me.eReorderQty.Location = New System.Drawing.Point(352, 31)
         Me.eReorderQty.Name = "eReorderQty"
-        Me.eReorderQty.Size = New System.Drawing.Size(64, 22)
+        Me.eReorderQty.Size = New System.Drawing.Size(64, 20)
         Me.eReorderQty.TabIndex = 5
         '
         'eFire
@@ -865,7 +865,7 @@ Partial Class frmAddEditProduct
         Me.eFire.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Fire", True))
         Me.eFire.Location = New System.Drawing.Point(111, 57)
         Me.eFire.Name = "eFire"
-        Me.eFire.Size = New System.Drawing.Size(51, 22)
+        Me.eFire.Size = New System.Drawing.Size(51, 20)
         Me.eFire.TabIndex = 3
         '
         'eHealth
@@ -873,7 +873,7 @@ Partial Class frmAddEditProduct
         Me.eHealth.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Health", True))
         Me.eHealth.Location = New System.Drawing.Point(111, 31)
         Me.eHealth.Name = "eHealth"
-        Me.eHealth.Size = New System.Drawing.Size(51, 22)
+        Me.eHealth.Size = New System.Drawing.Size(51, 20)
         Me.eHealth.TabIndex = 1
         '
         'RibbonControl1
@@ -889,7 +889,7 @@ Partial Class frmAddEditProduct
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemWeekOfMonth1, Me.RepositoryItemAppointmentLabel1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(922, 145)
+        Me.RibbonControl1.Size = New System.Drawing.Size(922, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -1053,7 +1053,7 @@ Partial Class frmAddEditProduct
         Me.eAddnDesc.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Desc2", True))
         Me.eAddnDesc.Location = New System.Drawing.Point(111, 84)
         Me.eAddnDesc.Name = "eAddnDesc"
-        Me.eAddnDesc.Size = New System.Drawing.Size(336, 22)
+        Me.eAddnDesc.Size = New System.Drawing.Size(336, 20)
         Me.eAddnDesc.TabIndex = 5
         '
         'bsInventoryClass
@@ -1080,7 +1080,7 @@ Partial Class frmAddEditProduct
         Me.luCustomers.Properties.ShowFooter = False
         Me.luCustomers.Properties.ShowLines = False
         Me.luCustomers.Properties.ValueMember = "Custid"
-        Me.luCustomers.Size = New System.Drawing.Size(287, 22)
+        Me.luCustomers.Size = New System.Drawing.Size(287, 20)
         Me.luCustomers.TabIndex = 10
         '
         'eLblUOM
@@ -1088,7 +1088,7 @@ Partial Class frmAddEditProduct
         Me.eLblUOM.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Uom", True))
         Me.eLblUOM.Location = New System.Drawing.Point(352, 56)
         Me.eLblUOM.Name = "eLblUOM"
-        Me.eLblUOM.Size = New System.Drawing.Size(64, 22)
+        Me.eLblUOM.Size = New System.Drawing.Size(64, 20)
         Me.eLblUOM.TabIndex = 7
         '
         'eLblUnits
@@ -1098,7 +1098,7 @@ Partial Class frmAddEditProduct
         Me.eLblUnits.Name = "eLblUnits"
         Me.eLblUnits.Properties.Mask.EditMask = "n"
         Me.eLblUnits.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.eLblUnits.Size = New System.Drawing.Size(64, 22)
+        Me.eLblUnits.Size = New System.Drawing.Size(64, 20)
         Me.eLblUnits.TabIndex = 5
         '
         'eInvGroup
@@ -1106,7 +1106,7 @@ Partial Class frmAddEditProduct
         Me.eInvGroup.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Inventorygrouping", True))
         Me.eInvGroup.Location = New System.Drawing.Point(129, 57)
         Me.eInvGroup.Name = "eInvGroup"
-        Me.eInvGroup.Size = New System.Drawing.Size(64, 22)
+        Me.eInvGroup.Size = New System.Drawing.Size(64, 20)
         Me.eInvGroup.TabIndex = 3
         '
         'GroupControl1
@@ -1145,7 +1145,7 @@ Partial Class frmAddEditProduct
         Me.eChemName.Location = New System.Drawing.Point(200, 138)
         Me.eChemName.Name = "eChemName"
         Me.eChemName.Properties.ReadOnly = True
-        Me.eChemName.Size = New System.Drawing.Size(247, 22)
+        Me.eChemName.Size = New System.Drawing.Size(247, 20)
         Me.eChemName.TabIndex = 35
         '
         'eChemID
@@ -1154,7 +1154,7 @@ Partial Class frmAddEditProduct
         Me.eChemID.Location = New System.Drawing.Point(111, 138)
         Me.eChemID.Name = "eChemID"
         Me.eChemID.Properties.ReadOnly = True
-        Me.eChemID.Size = New System.Drawing.Size(84, 22)
+        Me.eChemID.Size = New System.Drawing.Size(84, 20)
         Me.eChemID.TabIndex = 34
         Me.eChemID.TabStop = False
         '
@@ -1163,7 +1163,7 @@ Partial Class frmAddEditProduct
         Me.eMaterialDesc.Location = New System.Drawing.Point(200, 164)
         Me.eMaterialDesc.Name = "eMaterialDesc"
         Me.eMaterialDesc.Properties.ReadOnly = True
-        Me.eMaterialDesc.Size = New System.Drawing.Size(247, 22)
+        Me.eMaterialDesc.Size = New System.Drawing.Size(247, 20)
         Me.eMaterialDesc.TabIndex = 33
         '
         'eRQ
@@ -1181,7 +1181,7 @@ Partial Class frmAddEditProduct
         Me.eMatID.Location = New System.Drawing.Point(111, 164)
         Me.eMatID.Name = "eMatID"
         Me.eMatID.Properties.ReadOnly = True
-        Me.eMatID.Size = New System.Drawing.Size(84, 22)
+        Me.eMatID.Size = New System.Drawing.Size(84, 20)
         Me.eMatID.TabIndex = 32
         Me.eMatID.TabStop = False
         '
@@ -1192,7 +1192,7 @@ Partial Class frmAddEditProduct
         Me.eStatus.Name = "eStatus"
         Me.eStatus.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.eStatus.Properties.ReadOnly = True
-        Me.eStatus.Size = New System.Drawing.Size(71, 22)
+        Me.eStatus.Size = New System.Drawing.Size(71, 20)
         Me.eStatus.TabIndex = 30
         '
         'IsactiveCheckEdit
@@ -1303,7 +1303,7 @@ Partial Class frmAddEditProduct
         Me.eStdCostSource.Properties.Mask.EditMask = "n"
         Me.eStdCostSource.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.eStdCostSource.Properties.ReadOnly = True
-        Me.eStdCostSource.Size = New System.Drawing.Size(88, 22)
+        Me.eStdCostSource.Size = New System.Drawing.Size(88, 20)
         Me.eStdCostSource.TabIndex = 24
         '
         'eWgtCost
@@ -1319,7 +1319,7 @@ Partial Class frmAddEditProduct
         Me.eWgtCost.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.eWgtCost.Properties.MaxLength = 19
         Me.eWgtCost.Properties.ReadOnly = True
-        Me.eWgtCost.Size = New System.Drawing.Size(64, 22)
+        Me.eWgtCost.Size = New System.Drawing.Size(64, 20)
         Me.eWgtCost.TabIndex = 22
         '
         'eVolCost
@@ -1335,7 +1335,7 @@ Partial Class frmAddEditProduct
         Me.eVolCost.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.eVolCost.Properties.MaxLength = 19
         Me.eVolCost.Properties.ReadOnly = True
-        Me.eVolCost.Size = New System.Drawing.Size(64, 22)
+        Me.eVolCost.Size = New System.Drawing.Size(64, 20)
         Me.eVolCost.TabIndex = 14
         '
         'eWgtUOM
@@ -1354,7 +1354,7 @@ Partial Class frmAddEditProduct
         Me.eWgtUOM.Properties.ShowFooter = False
         Me.eWgtUOM.Properties.ShowHeader = False
         Me.eWgtUOM.Properties.ValueMember = "Uom"
-        Me.eWgtUOM.Size = New System.Drawing.Size(64, 22)
+        Me.eWgtUOM.Size = New System.Drawing.Size(64, 20)
         Me.eWgtUOM.TabIndex = 20
         '
         'bsUOMWeight
@@ -1369,7 +1369,7 @@ Partial Class frmAddEditProduct
         Me.eWgtUnits.Name = "eWgtUnits"
         Me.eWgtUnits.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.eWgtUnits.Properties.ReadOnly = True
-        Me.eWgtUnits.Size = New System.Drawing.Size(64, 22)
+        Me.eWgtUnits.Size = New System.Drawing.Size(64, 20)
         Me.eWgtUnits.TabIndex = 18
         '
         'eVolUOM
@@ -1388,7 +1388,7 @@ Partial Class frmAddEditProduct
         Me.eVolUOM.Properties.ShowFooter = False
         Me.eVolUOM.Properties.ShowHeader = False
         Me.eVolUOM.Properties.ValueMember = "Uom"
-        Me.eVolUOM.Size = New System.Drawing.Size(64, 22)
+        Me.eVolUOM.Size = New System.Drawing.Size(64, 20)
         Me.eVolUOM.TabIndex = 12
         '
         'bsUOMVolume
@@ -1405,7 +1405,7 @@ Partial Class frmAddEditProduct
         Me.eVolUnits.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.eVolUnits.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.eVolUnits.Properties.ReadOnly = True
-        Me.eVolUnits.Size = New System.Drawing.Size(64, 22)
+        Me.eVolUnits.Size = New System.Drawing.Size(64, 20)
         Me.eVolUnits.TabIndex = 10
         '
         'GroupControl3
@@ -1455,7 +1455,7 @@ Partial Class frmAddEditProduct
         Me.ePkgGroup.Properties.ShowFooter = False
         Me.ePkgGroup.Properties.ShowHeader = False
         Me.ePkgGroup.Properties.ValueMember = "PackageGroup"
-        Me.ePkgGroup.Size = New System.Drawing.Size(51, 22)
+        Me.ePkgGroup.Size = New System.Drawing.Size(51, 20)
         Me.ePkgGroup.TabIndex = 23
         '
         'bsPkgGroups
@@ -1468,7 +1468,7 @@ Partial Class frmAddEditProduct
         Me.eHazMatClassNumber.Location = New System.Drawing.Point(250, 187)
         Me.eHazMatClassNumber.MenuManager = Me.RibbonControl1
         Me.eHazMatClassNumber.Name = "eHazMatClassNumber"
-        Me.eHazMatClassNumber.Size = New System.Drawing.Size(51, 22)
+        Me.eHazMatClassNumber.Size = New System.Drawing.Size(51, 20)
         Me.eHazMatClassNumber.TabIndex = 21
         '
         'eIDNumber
@@ -1477,7 +1477,7 @@ Partial Class frmAddEditProduct
         Me.eIDNumber.Location = New System.Drawing.Point(111, 187)
         Me.eIDNumber.MenuManager = Me.RibbonControl1
         Me.eIDNumber.Name = "eIDNumber"
-        Me.eIDNumber.Size = New System.Drawing.Size(51, 22)
+        Me.eIDNumber.Size = New System.Drawing.Size(51, 20)
         Me.eIDNumber.TabIndex = 19
         '
         'GroupControl4
@@ -1531,7 +1531,7 @@ Partial Class frmAddEditProduct
         Me.eInvMethod.Name = "eInvMethod"
         Me.eInvMethod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.eInvMethod.Properties.Items.AddRange(New Object() {"WEIGHT", "VOLUME"})
-        Me.eInvMethod.Size = New System.Drawing.Size(64, 22)
+        Me.eInvMethod.Size = New System.Drawing.Size(64, 20)
         Me.eInvMethod.TabIndex = 1
         '
         'GroupControl5

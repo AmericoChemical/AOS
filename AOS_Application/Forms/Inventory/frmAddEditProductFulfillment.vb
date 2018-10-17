@@ -132,9 +132,11 @@ Public Class frmAddEditProductFulfillment
 
                 'Dim oProduct As New Product
                 'If oProduct.LoadByPrimaryKey(oProductfulfillmentplan.Productid) Then
-                If getProductStandardCostSource(oProductfulfillmentplan.Productid) = "RELABEL" Then
-                        ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", String.Join(",", vmodifedColumns.ToArray()), "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid)
-                    End If
+                SetProductStatndardCosts(oProductfulfillmentplan.Productid, "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid, "FULFILMENT PLAN-" & String.Join(",", vmodifedColumns.ToArray()))
+
+                'If getProductStandardCostSource(oProductfulfillmentplan.Productid) = "RELABEL" Then
+                '    ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", , )
+                'End If
                 '    Dim oRlbCosts As New ViewRelabelProductsCostChanges
                 'oRlbCosts.Query.Where(oRlbCosts.Query.Productid.Equal(oProductfulfillmentplan.Productid))
                 'If oRlbCosts.Query.Load Then

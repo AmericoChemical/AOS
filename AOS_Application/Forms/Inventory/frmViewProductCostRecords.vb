@@ -223,10 +223,11 @@ Public Class frmViewProductCostRecords
         'End If
         'SetProductStatndardCosts(vProductID, "Default Vendor Cost changed. PROD ID-" & vProductID)
 
-        MarkVendorProductCostAsDefault(vRecID)
+        If MarkVendorProductCostAsDefault(vRecID) Then
 
-        getProductCostData()
-        getProductStandardCostSource()
+            getProductCostData()
+            getProductStandardCostSource()
+        End If
 
     End Sub
 

@@ -745,10 +745,10 @@ Public Class frmAddEditProduct
 
                 If (SetStandardCostToVendorCost(oEntity)) Then
                     eVolUnits.Text = oEntity.Volumeunits
-                    eVolUOM.Text = oEntity.Volumeuom
+                    eVolUOM.EditValue = oEntity.Volumeuom
                     eVolCost.Text = oEntity.Volumestandardcost
                     eWgtUnits.Text = oEntity.Weightunits
-                    eWgtUOM.Text = oEntity.Weightuom
+                    eWgtUOM.EditValue = oEntity.Weightuom
                     eWgtCost.Text = oEntity.Weightstandardcost
                     vWhatChanged = "Override Unchecked"
                     CheckEditOverride.Checked = False
@@ -762,4 +762,6 @@ Public Class frmAddEditProduct
         End If
         '  Me.bs.DataSource = oEntity
     End Sub
+
+
 End Class

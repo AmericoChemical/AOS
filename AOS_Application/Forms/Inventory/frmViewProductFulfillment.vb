@@ -64,7 +64,6 @@ Public Class frmviewProductFulfillment
     End Sub
 
     Private Sub btnProductFulfillmentdelete_itemclick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnProductFulfillmentDelete.ItemClick
-
         If bsProductFulfillment.Count <= 0 Then
             Exit Sub
         End If
@@ -79,9 +78,12 @@ Public Class frmviewProductFulfillment
             ' Delete the Kit Component based on the selected row in the Grid
             Dim oProductfulfillmentplan As New Productfulfillmentplan
             If oProductfulfillmentplan.LoadByPrimaryKey(bsProductFulfillment.Current.FULFILLMENTPLANID) Then
+                Dim productId As Integer = oProductfulfillmentplan.Productid
                 oProductfulfillmentplan.MarkAsDeleted()
                 oProductfulfillmentplan.Save()
                 MsgBox("Record successfully deleted", MsgBoxStyle.Information, "Delete Product Fulfillment - Success")
+                SetProductStatndardCosts(productId, "Product Fulfillment Plan deleted. PROD ID-" & productId)
+
             Else
                 MsgBox("Could not delete selected kit item", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
             End If

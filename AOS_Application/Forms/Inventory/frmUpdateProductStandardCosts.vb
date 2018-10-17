@@ -68,7 +68,12 @@ Public Class frmUpdateProductStandardCosts
             Return False
         End If
 
-        updateProductStandardCosting(oProduct.Productid, eVolUnits.EditValue, OrigVolCost, eVolUnitCost.EditValue, eWgtUnits.EditValue, OrigWgtCost, eWgtUnitCost.EditValue, eReason.EditValue, "STD COST", oProduct.Productid, "PROD STD COST - " & oProduct.Productid)
+        'Costs, units and UOM has already updated as a part of .Save in ValidateCost No need to call save again Just need to cascade
+        'updateProductStandardCosting(oProduct.Productid, eVolUnits.EditValue, OrigVolCost, eVolUnitCost.EditValue, eWgtUnits.EditValue, OrigWgtCost, eWgtUnitCost.EditValue, eReason.EditValue, "STD COST", oProduct.Productid, "PROD STD COST - " & oProduct.Productid)
+        If OrigVolCost <> eVolUnitCost.EditValue Or OrigWgtCost <> eWgtUnitCost.EditValue Then
+            'Process Product Cost Changes Across all Related Products
+            ProcessProductStandardCostChanges(vProductID, OrigVolCost, OrigWgtCost, eVolUnitCost.EditValue, eWgtUnitCost.EditValue, eReason.EditValue, "STD COST", oProduct.Productid, "PROD STD COST - " & oProduct.Productid)
+        End If
 
         If RaiseAuditEvent(vAuditRuleID, bsProduct, ProductInventoryMethod.VOLUME, vFlag) Then
             eVolUnitCost.Focus()

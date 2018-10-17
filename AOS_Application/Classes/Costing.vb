@@ -258,14 +258,24 @@
                 Dim vOldVolCost As Decimal = IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost)
                 Dim vOldWtCost As Decimal = IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost)
 
+
+                'set new values
+                If IsDBNull(oProduct.Volumeuom) Or oProduct.Volumeuom = Nothing Then
+                    oProduct.Volumeuom = "GAL"
+                End If
+                If IsDBNull(oProduct.Weightuom) Or oProduct.Weightuom = Nothing Then
+                    oProduct.Weightuom = "LB"
+                End If
+
+                oProduct.Volumeunits = oApisCost.Apisvolumeunits
+                oProduct.Volumestandardcost = IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost)
+                oProduct.Weightunits = oApisCost.Apisweightunits
+                oProduct.Weightstandardcost = IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost)
+                oProduct.Save()
+
                 'Save and process cacading only if value was updated
                 If vOldVolCost <> IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost) Or
-                        vOldWtCost <> IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost) Then
-
-                    'set new values
-                    oProduct.Volumestandardcost = oApisCost.Newvolcost
-                    oProduct.Weightstandardcost = oApisCost.Newwgtcost
-                    oProduct.Save()
+                         vOldWtCost <> IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost) Then
 
                     'add product change history record for the relabeled product
                     ProcessProductStandardCostChanges(oApisCost.Productid, vOldVolCost, vOldWtCost, IIf(IsDBNull(oApisCost.Newvolcost), 0, oApisCost.Newvolcost), IIf(IsDBNull(oApisCost.Newwgtcost), 0, oApisCost.Newwgtcost), vReasonForChange, vChangeType, oApisCost.Apisnum, vWhatChanged)
@@ -285,29 +295,25 @@
             Dim oProduct As New Product
             If oProduct.LoadByPrimaryKey(vProductID) Then
                 'set old values 
-                Dim vOldVolCost As Decimal = 0.00
-                If (IsDBNull(oRlbCosts.Oldvolcost) Or oRlbCosts.Oldvolcost Is Nothing) Then
-                    vOldVolCost = 0.00
-                Else
-                    vOldVolCost = oRlbCosts.Oldvolcost
-                End If
-                Dim vOldWtCost As Decimal = 0.00
-                If (IsDBNull(oRlbCosts.Oldwgtcost) Or oRlbCosts.Oldwgtcost Is Nothing) Then
-                    vOldWtCost = 0.00
-                Else
-                    vOldWtCost = oRlbCosts.Oldwgtcost
-                End If
+                Dim vOldVolCost As Decimal = IIf(IsDBNull(oRlbCosts.Oldvolcost) OrElse oRlbCosts.Oldvolcost Is Nothing, 0, oRlbCosts.Oldvolcost)
+                Dim vOldWtCost As Decimal = IIf(IsDBNull(oRlbCosts.Oldwgtcost) Or oRlbCosts.Oldwgtcost Is Nothing, 0, oRlbCosts.Oldwgtcost)
+
 
                 'Save and process cacading only if value was updated
+                'set new values
+                oProduct.Volumeunits = oRlbCosts.Origvolunits
+                oProduct.Volumeuom = oRlbCosts.Origvolumeuom
+                oProduct.Volumestandardcost = oRlbCosts.Newvolcost
+                oProduct.Weightunits = oRlbCosts.Origwgtunits
+                oProduct.Weightuom = oRlbCosts.Origweightuom
+                oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
+
+                oProduct.Save()
                 If vOldVolCost <> oRlbCosts.Newvolcost Or
                         vOldWtCost <> oRlbCosts.Newwgtcost Then
-
-                    'set new values
-                    oProduct.Volumestandardcost = oRlbCosts.Newvolcost
-                    oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
-                    oProduct.Save()
                     'add product change history record for the relabeled product
                     'AddProductCostChangeHistoryRecord(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
+
                     ProcessProductStandardCostChanges(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, vReasonForChange, vChangeType, oProduct.Productid, vWhatchanged)
                 End If
             End If
@@ -668,13 +674,15 @@
         If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
             oProductcost = oProductCosts(0)        ' check if default cost record found 
         Else
-            oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isactive = True)
-            oProductCosts.Query.OrderBy(oProductCosts.Query.Isdefaultcostrecord.Descending, oProductCosts.Query.Costrecid.Descending)
+            oProductCosts = New ProductcostCollection
+            oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isdefaultcostrecord = True)
+            oProductCosts.Query.OrderBy(oProductCosts.Query.Isactive.Descending, oProductCosts.Query.Costrecid.Descending)
             If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
                 oProductcost = oProductCosts(0)        ' check if active record found 
             Else
-                oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid And oProductCosts.Query.Isactive = True)
-                oProductCosts.Query.OrderBy(oProductCosts.Query.Isdefaultcostrecord.Descending, oProductCosts.Query.Costrecid.Descending)
+                oProductCosts = New ProductcostCollection
+                oProductCosts.Query.Where(oProductCosts.Query.Productid = oProduct.Productid)
+                oProductCosts.Query.OrderBy(oProductCosts.Query.Isdefaultcostrecord.Descending, oProductCosts.Query.Isactive.Descending, oProductCosts.Query.Costrecid.Descending)
                 If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
                     oProductcost = oProductCosts(0) ' checkif any cost record exists
                 Else
@@ -768,11 +776,15 @@
     End Function
 
 
-    Public Sub MarkVendorProductCostAsDefault(vCostRecId As Integer)
+    Public Function MarkVendorProductCostAsDefault(vCostRecId As Integer)
 
         'Clear all default settings for the current Product ID
         Dim oDefCost As New Productcost
         If oDefCost.LoadByPrimaryKey(vCostRecId) Then
+            If Not oDefCost.Isactive.HasValue OrElse Not oDefCost.Isactive.Value Then
+                MsgBox("Inactive cost record can not be marked as default. Please edit cost record to set it active", vbOKOnly)
+                Return False
+            End If
             Dim oCosts As New ProductcostCollection
             oCosts.Query.Where(oCosts.Query.Productid.Equal(oDefCost.Productid))
             If oCosts.Query.Load Then
@@ -785,9 +797,10 @@
             oDefCost.Isdefaultcostrecord = 1
             oDefCost.Save()
             SetProductStatndardCosts(oDefCost.Productid, "Default Vendor Cost changed. PROD ID-" & oDefCost.Productid)
-
+            Return True
         End If
-    End Sub
+        Return False
+    End Function
     Public Sub updateVendorProductCosting(vCostRecID As Integer, vCostMethod As String, vVolUnits As Decimal, vVolUOM As String, vVolUnitCost As Decimal, vWgtUnits As Decimal, vWgtUOM As String, vWgtUnitCost As Decimal, vReasonForChange As String, vProductID As Integer, vVendorID As Integer, vOrigVolCost As Decimal, vOrigWgtCost As Decimal)
 
         'change the standard cost data for the product
@@ -915,23 +928,23 @@
 
         If Not (IsDBNull(oFulfillment) Or oFulfillment Is Nothing) Then
             If oFulfillment.Count > 0 Then
-                'There are ProductFulfillment records - assume first record (0) is INV, look at second (1) record
-                Dim vFulfillmenttype As String
-                If oFulfillment.Count = 1 And oFulfillment(0).Fulfillmenttype <> "INV" Then
+                'There are ProductFulfillment records -  Get the first non "INV' record
+                Dim vFulfillmenttype As String = String.Empty
+                If oFulfillment(0).Fulfillmenttype <> "INV" Then
                     vFulfillmenttype = oFulfillment(0).Fulfillmenttype
-                Else '- assume first record (0) is INV, look at second (1) record
-                    vFulfillmenttype = oFulfillment(1).Fulfillmenttype
+                Else
+                    If oFulfillment.Count > 1 Then
+                        vFulfillmenttype = oFulfillment(1).Fulfillmenttype
+                    End If
+                    Select Case vFulfillmenttype
+                        Case "RLBL"
+                            StdCostSource = "RELABEL"
+                        Case "PORD"
+                            StdCostSource = "APIS"
+                        Case "PRCH"
+                            StdCostSource = "PURCHASE"
+                    End Select
                 End If
-                Select Case vFulfillmenttype
-                    Case "RLBL"
-                        StdCostSource = "RELABEL"
-                    Case "PORD"
-                        StdCostSource = "APIS"
-                    Case "PRCH"
-                        StdCostSource = "PURCHASE"
-                    Case Else
-                        StdCostSource = "PURCHASE"
-                End Select
             End If
         End If
 
@@ -954,17 +967,20 @@
         Return StdCostSource
     End Function
 
-    Public Sub SetProductStatndardCosts(vProductId As Integer, vWhatChanged As String)
+    Public Sub SetProductStatndardCosts(vProductId As Integer, vWhatChanged As String, Optional vReasonForChange As String = "")
+        If vReasonForChange = String.Empty Then
+            vReasonForChange = vWhatChanged
+        End If
         Dim vProductStandardCostSource = getProductStandardCostSource(vProductId)
         Select Case vProductStandardCostSource
             Case "RELABEL"
-                ProcessRelabelProductStandardCostChanges(vProductId, "STD COST", vWhatChanged, vWhatChanged)
+                ProcessRelabelProductStandardCostChanges(vProductId, "STD COST", vReasonForChange, vWhatChanged)
             Case "APIS"
-                ProcessAPISProductStandardCostChanges(vProductId, "STD COST", vWhatChanged, vWhatChanged)
-            Case "OVERRRIDE"
+                ProcessAPISProductStandardCostChanges(vProductId, "STD COST", vReasonForChange, vWhatChanged)
+            Case "OVERRIDE"
                 'Do nothing keep costs as they are
             Case Else 'PURCHASE
-                ProcessPurchaseProductStandardCostChanges(vProductId, "STD COST", vWhatChanged, vWhatChanged)
+                ProcessPurchaseProductStandardCostChanges(vProductId, "STD COST", vReasonForChange, vWhatChanged)
         End Select
     End Sub
 
