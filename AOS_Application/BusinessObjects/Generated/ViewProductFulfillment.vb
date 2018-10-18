@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 3/25/2016 10:31:04 AM
+' Date Generated       : 10/18/2018 12:05:09 PM
 '===============================================================================
 
 Imports System
@@ -155,6 +155,9 @@ Namespace BusinessObjects
 												
 						Case "Stdlaborhrs"
 							Me.str.Stdlaborhrs = CType(value, string)
+												
+						Case "Associatedproductcontainer"
+							Me.str.Associatedproductcontainer = CType(value, string)
 					
 					End Select
 					
@@ -314,6 +317,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Decimal))
 				MyBase.SetSystemDecimal(ViewProductFulfillmentMetadata.ColumnNames.Stdlaborhrs, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewProductFulfillment.ASSOCIATEDPRODUCTCONTAINER
+		' </summary>
+		Public Overridable Property Associatedproductcontainer As System.String
+			Get
+				Return MyBase.GetSystemString(ViewProductFulfillmentMetadata.ColumnNames.Associatedproductcontainer)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewProductFulfillmentMetadata.ColumnNames.Associatedproductcontainer, value)
 			End Set
 		End Property		
 		
@@ -506,6 +522,26 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Associatedproductcontainer As System.String 
+				Get
+					Dim data_ As System.String = entity.Associatedproductcontainer
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Associatedproductcontainer = Nothing
+					Else
+						entity.Associatedproductcontainer = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewProductFulfillment
@@ -595,6 +631,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property Stdlaborhrs As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewProductFulfillmentMetadata.ColumnNames.Stdlaborhrs, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Associatedproductcontainer As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewProductFulfillmentMetadata.ColumnNames.Associatedproductcontainer, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -835,6 +877,12 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewProductFulfillmentMetadata.ColumnNames.Associatedproductcontainer, 8, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewProductFulfillmentMetadata.PropertyNames.Associatedproductcontainer
+			c.CharacterMaxLength = 200
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -871,6 +919,7 @@ Namespace BusinessObjects
 			 Public Const Productid As String = "PRODUCTID"
 			 Public Const Kitid As String = "KITID"
 			 Public Const Stdlaborhrs As String = "STDLABORHRS"
+			 Public Const Associatedproductcontainer As String = "ASSOCIATEDPRODUCTCONTAINER"
 		End Class
 #End Region	
 		
@@ -884,6 +933,7 @@ Namespace BusinessObjects
 			 Public Const Productid As String = "Productid"
 			 Public Const Kitid As String = "Kitid"
 			 Public Const Stdlaborhrs As String = "Stdlaborhrs"
+			 Public Const Associatedproductcontainer As String = "Associatedproductcontainer"
 		End Class
 #End Region	
 
@@ -938,7 +988,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Fulfillmentplanid", new esTypeMap("int", "System.Int32"))
 				meta.AddTypeMap("Productid", new esTypeMap("int", "System.Int32"))
 				meta.AddTypeMap("Kitid", new esTypeMap("int", "System.Int32"))
-				meta.AddTypeMap("Stdlaborhrs", new esTypeMap("decimal", "System.Decimal"))			
+				meta.AddTypeMap("Stdlaborhrs", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Associatedproductcontainer", new esTypeMap("varchar", "System.String"))			
 				
 				
 				 

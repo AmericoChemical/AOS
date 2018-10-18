@@ -153,7 +153,7 @@ Partial Class frmAddEditProductFulfillment
         Me.ComponentRibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemWeekOfMonth1, Me.RepositoryItemAppointmentLabel1})
         Me.ComponentRibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.ComponentRibbonControl1.ShowToolbarCustomizeItem = False
-        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(463, 117)
+        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(463, 116)
         Me.ComponentRibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.ComponentRibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -218,9 +218,9 @@ Partial Class frmAddEditProductFulfillment
         Me.GroupControl1.Controls.Add(Me.PriorityTextEdit)
         Me.GroupControl1.Controls.Add(FulfillmentypeLabel)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 117)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 116)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(463, 202)
+        Me.GroupControl1.Size = New System.Drawing.Size(463, 203)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Product Fulfillment Information"
         '
@@ -290,7 +290,7 @@ Partial Class frmAddEditProductFulfillment
         Me.AssociateProductLookUpEdit.Location = New System.Drawing.Point(120, 132)
         Me.AssociateProductLookUpEdit.Name = "AssociateProductLookUpEdit"
         Me.AssociateProductLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.AssociateProductLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productid", "ID", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productdesc", "Description", 200, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.AssociateProductLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productid", "ID", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Productdesc", "Description", 120, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Container", 60, "Container")})
         Me.AssociateProductLookUpEdit.Properties.DataSource = Me.bsAssociateProducts
         Me.AssociateProductLookUpEdit.Properties.DisplayMember = "Productdesc"
         Me.AssociateProductLookUpEdit.Properties.NullText = ""
