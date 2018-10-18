@@ -132,7 +132,7 @@ Public Class frmAddEditProductFulfillment
 
                 'Dim oProduct As New Product
                 'If oProduct.LoadByPrimaryKey(oProductfulfillmentplan.Productid) Then
-                SetProductStatndardCosts(oProductfulfillmentplan.Productid, "FULFILMENT PLAN-" & oProductfulfillmentplan.Productid, "FULFILMENT PLAN-" & String.Join(",", vmodifedColumns.ToArray()))
+                SetProductStatndardCosts(oProductfulfillmentplan.Productid, "FulFillment Plan Change-" & oProductfulfillmentplan.Productid, "FulFillment Plan Change-" & String.Join(",", vmodifedColumns.ToArray()))
 
                 'If getProductStandardCostSource(oProductfulfillmentplan.Productid) = "RELABEL" Then
                 '    ProcessRelabelProductStandardCostChanges(oProductfulfillmentplan.Productid, "STD COST", , )

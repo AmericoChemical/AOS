@@ -31,7 +31,7 @@
                 For Each obj As Productfulfillmentplan In oRelabelProds
                     'loop through Relabeled Products with same Origin ProductID and update standard costs
                     If getProductStandardCostSource(obj.Productid) = "RELABEL" Then
-                        ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "KIT CHNG - KIT " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
+                        ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "Kit Change - KIT " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
                     End If
 
                 Next
@@ -43,7 +43,7 @@
             If oAPISCollection.Query.Load() Then
                 For Each oAPIS As ViewAPISData In oAPISCollection
                     If getProductStandardCostSource(oAPIS.Productid) = "APIS" Then
-                        ProcessAPISProductStandardCostChanges(oAPIS.Productid, vChangeType, "KIT CHNG - KIT " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
+                        ProcessAPISProductStandardCostChanges(oAPIS.Productid, vChangeType, "Kit Change - KIT " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
                     End If
 
                     'Dim oTotalCosts As New ViewCostingApisTotalCosts
@@ -161,7 +161,7 @@
             For Each obj As Productfulfillmentplan In oRelabelProds
                 'loop through Relabeled Products with same Origin ProductID and update standard costs
                 If getProductStandardCostSource(obj.Productid) = "RELABEL" Then
-                    ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "RELABEL CHNG - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vWhatChanged)
+                    ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "FulFillment Plan Change - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vWhatChanged)
                 End If
 
             Next
@@ -305,7 +305,7 @@
                 oProduct.Volumeuom = oRlbCosts.Origvolumeuom
                 oProduct.Volumestandardcost = oRlbCosts.Newvolcost
                 oProduct.Weightunits = oRlbCosts.Origwgtunits
-                oProduct.Weightuom = oRlbCosts.Origweightuom
+                oProduct.Weightuom = oRlbCosts.Origwgtunits
                 oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
 
                 oProduct.Save()
@@ -544,7 +544,7 @@
                 'loop through Relabeled Products with same Origin ProductID and update standard costs
                 If getProductStandardCostSource(obj.Productid) = "RELABEL" Then
 
-                    ProcessRelabelProductStandardCostChanges(obj.Productid, "STD COST", "STD LABOR RATE CHANGE", "STD LABOR RATE CHANGE")
+                    ProcessRelabelProductStandardCostChanges(obj.Productid, "STD COST", "Labor Rate Change", "Labor Rate Change")
 
                 End If
 

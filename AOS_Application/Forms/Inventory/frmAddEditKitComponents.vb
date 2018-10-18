@@ -104,7 +104,7 @@ Public Class frmAddEditKitComponents
         Dim vModifiedCostColumns As List(Of String) = ModifiedCostColumns()
 
         oKitComponent.Save()
-        ProcessKitCostChanges(vID, "KIT CHNG-" & vID & " [" & String.Join(",", vModifiedCostColumns.ToArray()) & "]", "STD COST", vID, "KIT CHNG - KIT " & vID)
+        ProcessKitCostChanges(vID, "Kit Change-" & vID & " [" & String.Join(",", vModifiedCostColumns.ToArray()) & "]", "STD COST", vID, "Kit Change - KIT " & vID)
 
         Return True
     End Function

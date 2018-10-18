@@ -82,7 +82,7 @@ Public Class frmviewProductFulfillment
                 oProductfulfillmentplan.MarkAsDeleted()
                 oProductfulfillmentplan.Save()
                 MsgBox("Record successfully deleted", MsgBoxStyle.Information, "Delete Product Fulfillment - Success")
-                SetProductStatndardCosts(productId, "Product Fulfillment Plan deleted. PROD ID-" & productId)
+                SetProductStatndardCosts(productId, "FulFillment Plan Change-Delete. PROD ID-" & productId)
 
             Else
                 MsgBox("Could not delete selected kit item", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
