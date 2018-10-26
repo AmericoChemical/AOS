@@ -108,6 +108,7 @@ Module MaterialProcessing
     End Function
 
     Public Sub markAPISStatus(vAPISNum As Integer, vStatus As String)
+        Dim vProductID As Integer = 0
 
         Select Case vStatus
 
@@ -115,7 +116,6 @@ Module MaterialProcessing
 
                 'first, get ProductID linked to the current APIS record by instantiating a reference to current APIS record
                 Dim oAPISNew As New Apis
-                Dim vProductID As Integer = 0
 
                 If Not oAPISNew.LoadByPrimaryKey(vAPISNum) Then
                     MsgBox("Serious Error retrieving APIS Record", MsgBoxStyle.Critical, "Error")
@@ -151,6 +151,8 @@ Module MaterialProcessing
                     MsgBox("Serious Error retrieving APIS Record", MsgBoxStyle.Critical, "Error")
                     Exit Sub
                 End If
+                vProductID = oAPISNew.Productid
+
                 oAPISNew.Apisstatus = "SINGLE USE"
                 oAPISNew.Save()
                 markMaterialStatusFromAPISStatus(vAPISNum, "ACTIVE")
@@ -161,12 +163,16 @@ Module MaterialProcessing
                     MsgBox("Serious Error retrieving APIS Record", MsgBoxStyle.Critical, "Error")
                     Exit Sub
                 End If
+                vProductID = oAPISNew.Productid
+
                 oAPISNew.Apisstatus = "ARCHIVED"
                 oAPISNew.Save()
                 markMaterialStatusFromAPISStatus(vAPISNum, "ARCHIVED")
 
         End Select
-
+        If vProductID <> 0 Then
+            SetProductStatndardCosts(vProductID, "APIS Change. PROD ID-" & vProductID, "APIS Change-Apisstatus. PROD ID" & vProductID)
+        End If
     End Sub
 
     Public Sub markMaterialStatusFromAPISStatus(vAPISNum As Integer, vStatus As String)

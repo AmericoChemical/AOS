@@ -122,12 +122,21 @@ Public Class frmViewProductCostRecords
             Exit Sub
         End If
         If bs.Count = 1 Then
-            MsgBox("You cannot delete the only cost record for a product. Edit the existing cost record or add a new cost record.", MsgBoxStyle.Critical, "Error")
-            Exit Sub
+            If MsgBox("This is the only cost record for a product. Continue with delete?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                Exit Sub
+            End If
+        Else
+            If bs.Current.Isdefaultcostrecord Then
+                If MsgBox("This is the default cost record for a product. Continue with delete?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
         End If
 
         DeleteCostRecord(bs.Current.costRecID)
         getProductCostData()
+
+
     End Sub
 
     Private Sub btnSelect_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSelect.ItemClick
@@ -222,6 +231,11 @@ Public Class frmViewProductCostRecords
         '    oDefCost.Save()
         'End If
         'SetProductStatndardCosts(vProductID, "Default Vendor Cost changed. PROD ID-" & vProductID)
+
+        'If Not bs.Current.Isactive.HasValue OrElse Not bs.Current.Isactive.Value Then
+        '    MsgBox("Inactive cost record can not be marked as default. Please edit cost record to set it active", vbOKOnly)
+        '    Exit Sub
+        'End If
 
         If MarkVendorProductCostAsDefault(vRecID) Then
 

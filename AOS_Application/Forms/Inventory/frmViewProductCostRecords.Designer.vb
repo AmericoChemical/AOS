@@ -64,7 +64,6 @@ Partial Class frmViewProductCostRecords
         Me.bsVendors = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDatecostchanged = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colIsactive = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIsdefaultcostrecord = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.lblproductInfo = New System.Windows.Forms.Label()
@@ -102,7 +101,7 @@ Partial Class frmViewProductCostRecords
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(938, 145)
+        Me.RibbonControl1.Size = New System.Drawing.Size(938, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -301,10 +300,10 @@ Partial Class frmViewProductCostRecords
         Me.PanelControl2.Controls.Add(Me.grProductCosts)
         Me.PanelControl2.Controls.Add(Me.PanelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl2.Location = New System.Drawing.Point(0, 145)
+        Me.PanelControl2.Location = New System.Drawing.Point(0, 116)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Padding = New System.Windows.Forms.Padding(6)
-        Me.PanelControl2.Size = New System.Drawing.Size(938, 165)
+        Me.PanelControl2.Size = New System.Drawing.Size(938, 194)
         Me.PanelControl2.TabIndex = 41
         '
         'grProductCosts
@@ -316,13 +315,13 @@ Partial Class frmViewProductCostRecords
         Me.grProductCosts.MainView = Me.GridView1
         Me.grProductCosts.Name = "grProductCosts"
         Me.grProductCosts.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.grProductCosts.Size = New System.Drawing.Size(926, 130)
+        Me.grProductCosts.Size = New System.Drawing.Size(926, 159)
         Me.grProductCosts.TabIndex = 41
         Me.grProductCosts.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colVUnits, Me.colVUom, Me.colVcost, Me.colWUnits, Me.colWUom, Me.colWcost, Me.GridColumn1, Me.GridColumn2, Me.colDatecostchanged, Me.colIsactive, Me.colIsdefaultcostrecord})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colVUnits, Me.colVUom, Me.colVcost, Me.colWUnits, Me.colWUom, Me.colWcost, Me.GridColumn1, Me.GridColumn2, Me.colDatecostchanged, Me.colIsdefaultcostrecord})
         Me.GridView1.GridControl = Me.grProductCosts
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
@@ -460,15 +459,6 @@ Partial Class frmViewProductCostRecords
         Me.colDatecostchanged.VisibleIndex = 9
         Me.colDatecostchanged.Width = 78
         '
-        'colIsactive
-        '
-        Me.colIsactive.Caption = "Active"
-        Me.colIsactive.FieldName = "Isactive"
-        Me.colIsactive.Name = "colIsactive"
-        Me.colIsactive.Visible = True
-        Me.colIsactive.VisibleIndex = 10
-        Me.colIsactive.Width = 39
-        '
         'colIsdefaultcostrecord
         '
         Me.colIsdefaultcostrecord.Caption = "Default"
@@ -573,7 +563,6 @@ Partial Class frmViewProductCostRecords
     Friend WithEvents colWUnits As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colWUom As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colWcost As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colIsactive As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents rbtnMakeCostRecordDefault As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents lblStdCostType As DevExpress.XtraBars.BarStaticItem
     Friend WithEvents LargeImages As DevExpress.Utils.ImageCollection

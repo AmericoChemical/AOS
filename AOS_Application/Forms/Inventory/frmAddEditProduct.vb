@@ -2,6 +2,7 @@ Imports AOS.BusinessObjects
 Imports System.Text
 Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.ViewInfo
+Imports DevExpress.XtraEditors.Controls
 
 Public Class frmAddEditProduct
     Inherits DevExpress.XtraEditors.XtraForm
@@ -92,6 +93,7 @@ Public Class frmAddEditProduct
         Else
             Me.Text = "Editing " & vObjectName & " Information"
         End If
+
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
@@ -126,17 +128,7 @@ Public Class frmAddEditProduct
         oChemicals.LoadAll()
         oChemicals.Sort = "CHEMICALNAME"
         bsChemicalList.DataSource = oChemicals
-        eStdCostSource.EditValue = Costing.getProductStandardCostSource(vID)
-        If eStdCostSource.EditValue.ToString.Equals("APIS") AndAlso vCurrentUserSecurityLevel >= 9 Then
-            rbtnProductApisCosts.Enabled = True
-        Else
-            rbtnProductApisCosts.Enabled = False
-        End If
-        If eStdCostSource.EditValue.ToString.Equals("OVERRIDE") Or eStdCostSource.EditValue.ToString.Equals("PURCHASE") Then
-            CheckEditOverride.Enabled = True
-        Else
-            CheckEditOverride.Enabled = False
-        End If
+
         'oFulFillment = getProductFulfillment(vID)
         'If IsDBNull(oFulFillment) Or oFulFillment Is Nothing Then
         '    'vID was null, so no ProductFulfillmentRecords exists yet
@@ -229,9 +221,26 @@ Public Class frmAddEditProduct
 
         Me.bs.DataSource = oEntity
 
+        getCalculatedData(vID)
+
+
         updateDataHistory()
         getLinkedData(vID)
         setAllFields(oEntity.Productstatus)
+    End Sub
+
+    Public Sub getCalculatedData(vID As Integer)
+        eStdCostSource.EditValue = Costing.getProductStandardCostSource(vID)
+        If eStdCostSource.EditValue.ToString.Equals("APIS") AndAlso vCurrentUserSecurityLevel >= 9 Then
+            rbtnProductApisCosts.Enabled = True
+        Else
+            rbtnProductApisCosts.Enabled = False
+        End If
+        If eStdCostSource.EditValue.ToString.Equals("OVERRIDE") Or eStdCostSource.EditValue.ToString.Equals("PURCHASE") Or eStdCostSource.EditValue.ToString.Equals("NONE") Then
+            CheckEditOverride.Enabled = True
+        Else
+            CheckEditOverride.Enabled = False
+        End If
     End Sub
 
     Private Sub getLinkedData(vID As Integer)
@@ -680,6 +689,7 @@ Public Class frmAddEditProduct
         Dim frm As New frmProductSellersList
         frm.vID = vID
         frm.ShowDialog()
+
     End Sub
 
     Private Sub rbtnProductApisCosts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnProductApisCosts.ItemClick
@@ -723,45 +733,100 @@ Public Class frmAddEditProduct
 
     Private Sub CheckEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles CheckEditOverride.EditValueChanged
         rbtnChangeStandardCosts.Enabled = CheckEditOverride.Checked
-        If (eStdCostSource.Text.Equals("PURCHASE") Or eStdCostSource.Text.Equals("OVERRIDE")) Then
+        'If (eStdCostSource.Text.Equals("PURCHASE") Or eStdCostSource.Text.Equals("NONE") Or eStdCostSource.Text.Equals("OVERRIDE")) Then
 
-            If CheckEditOverride.Checked Then
+        '    If CheckEditOverride.Checked Then
+        '        eStdCostSource.Text = "OVERRIDE"
+        '    Else
+
+        '    End If
+        'End If
+
+    End Sub
+
+    'Private Sub CheckEditOverride_Click(sender As Object, e As EventArgs) Handles CheckEditOverride.Click
+    '    ' Check against the original below before click
+    '    ''TODO: How to get the new value after click
+    '    Dim chkEdit As CheckEdit = sender
+    '    If chkEdit.Checked Then
+    '        If MsgBox("Std Costs will be overwritten with Vendor Costs, Continue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+    '            '        'Dim vOldVolCost As Decimal = IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost)
+    '            '        'Dim vOldWtCost As Decimal = IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost)
+
+    '            If (SetStandardCostToVendorCost(oEntity)) Then
+    '                eVolUnits.Text = oEntity.Volumeunits
+    '                eVolUOM.EditValue = oEntity.Volumeuom
+    '                eVolCost.Text = oEntity.Volumestandardcost
+    '                eWgtUnits.Text = oEntity.Weightunits
+    '                eWgtUOM.EditValue = oEntity.Weightuom
+    '                eWgtCost.Text = oEntity.Weightstandardcost
+    '                vWhatChanged = "Override Unchecked"
+    '                CheckEditOverride.Checked = False
+    '            Else
+    '                MsgBox("Std Cost could not be set to Vendor Costs, Continue?", MsgBoxStyle.OkOnly)
+    '                CheckEditOverride.Checked = True
+    '            End If
+    '        Else
+    '            CheckEditOverride.Checked = True
+    '        End If
+    '    End If
+    '    '  Me.bs.DataSource = oEntity
+    'End Sub
+
+    Private Sub eStdCostSource_EditValueChanging(sender As Object, e As ChangingEventArgs) Handles eStdCostSource.EditValueChanging
+        If e.OldValue <> e.NewValue And e.NewValue = "NONE" Then
+            MsgBox("NO standard costing set for the product.", MsgBoxStyle.OkOnly, "Warning")
+        End If
+
+    End Sub
+
+    Private Sub CheckEditOverride_EditValueChanging(sender As Object, e As ChangingEventArgs) Handles CheckEditOverride.EditValueChanging
+        If e.NewValue <> e.OldValue Then
+            If e.NewValue Then ' checked 
                 eStdCostSource.Text = "OVERRIDE"
             Else
-                eStdCostSource.Text = "PURCHASE"
-            End If
-        End If
 
-    End Sub
+                Dim productcosts As New ProductcostCollection
+                productcosts.Query.Where(productcosts.Query.Productid = vID)
+                If Not productcosts.Query.Load() OrElse productcosts.Count = 0 Then
+                    If MsgBox("NO standard costing set for the product. Costs will be set to 0, Continue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                        eStdCostSource.Text = "NONE"
+                        eVolUnits.Text = 0
+                        eVolUOM.EditValue = oEntity.Volumeuom
+                        eVolCost.Text = 0
+                        eWgtUnits.Text = 0
+                        eWgtUOM.EditValue = oEntity.Weightuom
+                        eWgtCost.Text = 0
+                        vWhatChanged = "Override Unchecked"
+                    Else
+                        e.Cancel = True
+                    End If
 
-    Private Sub CheckEditOverride_Click(sender As Object, e As EventArgs) Handles CheckEditOverride.Click
-        ' Check against the original below before click
-        ''TODO: How to get the new value after click
-        Dim chkEdit As CheckEdit = sender
-        If chkEdit.Checked Then
-            If MsgBox("Std Costs will be overwritten with Vendor Costs, Continue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                '        'Dim vOldVolCost As Decimal = IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost)
-                '        'Dim vOldWtCost As Decimal = IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost)
-
-                If (SetStandardCostToVendorCost(oEntity)) Then
-                    eVolUnits.Text = oEntity.Volumeunits
-                    eVolUOM.EditValue = oEntity.Volumeuom
-                    eVolCost.Text = oEntity.Volumestandardcost
-                    eWgtUnits.Text = oEntity.Weightunits
-                    eWgtUOM.EditValue = oEntity.Weightuom
-                    eWgtCost.Text = oEntity.Weightstandardcost
-                    vWhatChanged = "Override Unchecked"
-                    CheckEditOverride.Checked = False
                 Else
-                    MsgBox("Std Cost could not be set to Vendor Costs, Continue?", MsgBoxStyle.OkOnly)
-                    CheckEditOverride.Checked = True
+                        If MsgBox("Std Costs will be overwritten with Vendor Costs, Continue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                            '        'Dim vOldVolCost As Decimal = IIf(IsDBNull(oApisCost.Oldvolcost), 0, oApisCost.Oldvolcost)
+                            '        'Dim vOldWtCost As Decimal = IIf(IsDBNull(oApisCost.Oldwgtcost), 0, oApisCost.Oldwgtcost)
+                            eStdCostSource.Text = "PURCHASE"
+
+                            If (SetStandardCostToVendorCost(oEntity)) Then
+                                eVolUnits.Text = oEntity.Volumeunits
+                                eVolUOM.EditValue = oEntity.Volumeuom
+                                eVolCost.Text = oEntity.Volumestandardcost
+                                eWgtUnits.Text = oEntity.Weightunits
+                                eWgtUOM.EditValue = oEntity.Weightuom
+                                eWgtCost.Text = oEntity.Weightstandardcost
+                                vWhatChanged = "Override Unchecked"
+                                '                            CheckEditOverride.Checked = False
+                            Else
+                                MsgBox("Std Cost could not be set to Vendor Costs, Continue?", MsgBoxStyle.OkOnly)
+                                e.Cancel = True
+                            End If
+                        Else
+                            e.Cancel = True
+                    End If
                 End If
-            Else
-                CheckEditOverride.Checked = True
+
             End If
         End If
-        '  Me.bs.DataSource = oEntity
     End Sub
-
-
 End Class

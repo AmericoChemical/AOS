@@ -38,7 +38,6 @@ Partial Class frmUpdateProductUnitCost
         Dim Label5 As System.Windows.Forms.Label
         Dim Label12 As System.Windows.Forms.Label
         Dim Label13 As System.Windows.Forms.Label
-        Dim lblActive As System.Windows.Forms.Label
         Dim lblDefault As System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ProductidTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -54,7 +53,6 @@ Partial Class frmUpdateProductUnitCost
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.CheckEditActive = New DevExpress.XtraEditors.CheckEdit()
         Me.eReason = New DevExpress.XtraEditors.TextEdit()
         Me.CostTypeLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.bsCostType = New System.Windows.Forms.BindingSource(Me.components)
@@ -98,7 +96,6 @@ Partial Class frmUpdateProductUnitCost
         Label5 = New System.Windows.Forms.Label()
         Label12 = New System.Windows.Forms.Label()
         Label13 = New System.Windows.Forms.Label()
-        lblActive = New System.Windows.Forms.Label()
         lblDefault = New System.Windows.Forms.Label()
         CType(Me.ProductidTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bs, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,7 +105,6 @@ Partial Class frmUpdateProductUnitCost
         CType(Me.CheckEditDefault.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsProductCost, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CheckEditActive.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eReason.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CostTypeLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCostType, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -308,19 +304,10 @@ Partial Class frmUpdateProductUnitCost
         Label13.TabIndex = 33
         Label13.Text = "Reason for Vendor Cost Change"
         '
-        'lblActive
-        '
-        lblActive.AutoSize = True
-        lblActive.Location = New System.Drawing.Point(56, 135)
-        lblActive.Name = "lblActive"
-        lblActive.Size = New System.Drawing.Size(37, 13)
-        lblActive.TabIndex = 34
-        lblActive.Text = "Active"
-        '
         'lblDefault
         '
         lblDefault.AutoSize = True
-        lblDefault.Location = New System.Drawing.Point(56, 161)
+        lblDefault.Location = New System.Drawing.Point(61, 141)
         lblDefault.Name = "lblDefault"
         lblDefault.Size = New System.Drawing.Size(42, 13)
         lblDefault.TabIndex = 36
@@ -356,8 +343,6 @@ Partial Class frmUpdateProductUnitCost
         '
         Me.GroupControl2.Controls.Add(lblDefault)
         Me.GroupControl2.Controls.Add(Me.CheckEditDefault)
-        Me.GroupControl2.Controls.Add(lblActive)
-        Me.GroupControl2.Controls.Add(Me.CheckEditActive)
         Me.GroupControl2.Controls.Add(Label13)
         Me.GroupControl2.Controls.Add(Me.eReason)
         Me.GroupControl2.Controls.Add(Me.CostTypeLookUpEdit)
@@ -401,7 +386,7 @@ Partial Class frmUpdateProductUnitCost
         '
         Me.CheckEditDefault.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsProductCost, "Isdefaultcostrecord", True))
         Me.CheckEditDefault.Enabled = False
-        Me.CheckEditDefault.Location = New System.Drawing.Point(138, 158)
+        Me.CheckEditDefault.Location = New System.Drawing.Point(138, 135)
         Me.CheckEditDefault.MenuManager = Me.RibbonControl1
         Me.CheckEditDefault.Name = "CheckEditDefault"
         Me.CheckEditDefault.Properties.Caption = ""
@@ -475,16 +460,6 @@ Partial Class frmUpdateProductUnitCost
         Me.RibbonPageGroup1.ShowCaptionButton = False
         Me.RibbonPageGroup1.Text = "Standard Costs"
         Me.RibbonPageGroup1.Visible = False
-        '
-        'CheckEditActive
-        '
-        Me.CheckEditActive.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsProductCost, "Isactive", True))
-        Me.CheckEditActive.Location = New System.Drawing.Point(138, 132)
-        Me.CheckEditActive.MenuManager = Me.RibbonControl1
-        Me.CheckEditActive.Name = "CheckEditActive"
-        Me.CheckEditActive.Properties.Caption = ""
-        Me.CheckEditActive.Size = New System.Drawing.Size(22, 19)
-        Me.CheckEditActive.TabIndex = 35
         '
         'eReason
         '
@@ -756,7 +731,6 @@ Partial Class frmUpdateProductUnitCost
         CType(Me.CheckEditDefault.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsProductCost, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CheckEditActive.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eReason.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CostTypeLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsCostType, System.ComponentModel.ISupportInitialize).EndInit()
@@ -823,6 +797,5 @@ Partial Class frmUpdateProductUnitCost
     Friend WithEvents eReason As DevExpress.XtraEditors.TextEdit
     Friend WithEvents rbtnUpdateProductStandardCosts As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents CheckEditActive As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents CheckEditDefault As DevExpress.XtraEditors.CheckEdit
 End Class

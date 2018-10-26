@@ -166,7 +166,7 @@ Public Class frmAddEditProductFulfillment
             End If
         Catch ex As Exception
         End Try
-        Return True 
+        Return True
     End Function
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.ItemClick
@@ -187,6 +187,26 @@ Public Class frmAddEditProductFulfillment
         If String.IsNullOrEmpty(Me.eFulfillmentType.Text) Then
             MsgBox("Fulfillment Type is required.", MsgBoxStyle.Critical, "Error")
             eFulfillmentType.Focus()
+            Return False
+        End If
+
+        If String.IsNullOrEmpty(Me.PriorityTextEdit.Text) Then
+            MsgBox("Priority is required", MsgBoxStyle.Critical, "Error")
+            PriorityTextEdit.Focus()
+            Return False
+        End If
+
+        Dim priority As Integer = 0
+        Integer.TryParse(PriorityTextEdit.Text, priority)
+        If priority = 0 Then
+            MsgBox("Priority can not be 0", MsgBoxStyle.Critical, "Error")
+            PriorityTextEdit.Focus()
+            Return False
+        End If
+
+        If priority = "1" And eFulfillmentType.Text <> FulfillmentType.INV.ToString() Then
+            MsgBox("Priority 1 must be INV", MsgBoxStyle.Critical, "Error")
+            PriorityTextEdit.Focus()
             Return False
         End If
 

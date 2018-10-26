@@ -73,11 +73,31 @@ Public Class frmAddEditMaterialItem
         Me.bsItem.DataSource = oItem
     End Sub
 
+    Private Function ModifiedColumns() As List(Of String)
+
+        Dim vModifiedColumns As New List(Of String)
+        If oItem.es.IsDirty Then
+            For Each obj As String In oItem.es.ModifiedColumns
+
+                Select Case obj.ToString
+                    Case "MATERIALSTATUS"
+                        vModifiedColumns.Add(obj.ToString)
+                End Select
+            Next
+        End If
+
+        Return vModifiedColumns
+
+    End Function
     Private Function changesSaved() As Boolean
         Try
             bsItem.EndEdit()
             oItem.EndEdit()
+            Dim vmodifedColumns As List(Of String) = ModifiedColumns()
+            oItem.Modifytime = Now
+            oItem.Modifyby = vCurrentUserLogin
             oItem.Save()
+            ProcessMaterialCostChanges(oItem.Materialid, "Material Change-" & String.Join(",", vmodifedColumns.ToArray()), "STD COST", "Material Change-ID" & oItem.Materialid)
         Catch ex As Exception
             MsgBox(ex.Message)
             MsgBox("Error saving changes", MsgBoxStyle.Critical, "Error")
@@ -145,10 +165,12 @@ Public Class frmAddEditMaterialItem
         End If
 
         Dim obj As New Materialproduct
-
+        Dim materialId As Integer
         If obj.LoadByPrimaryKey(bsProducts.Current.MPID) Then
+            materialId = obj.Materialid
             obj.MarkAsDeleted()
             obj.Save()
+            ProcessMaterialCostChanges(materialId, "Material Change-Delete Link", "STD COST", "Material Change-ID" & materialId)
         End If
 
         loadProducts()

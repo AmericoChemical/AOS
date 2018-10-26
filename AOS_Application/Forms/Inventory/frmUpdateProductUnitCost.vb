@@ -143,15 +143,15 @@ Public Class frmUpdateProductUnitCost
         bsProductCost.EndEdit()
 
 
-        If oCost.Isactive = False Then
-            Dim productCosts As New ProductcostCollection
-            productCosts.Query.Where(productCosts.Query.Productid = oCost.Productid And productCosts.Query.Isactive = True And productCosts.Query.Costrecid <> oCost.Costrecid)
-            If Not (productCosts.Query.Load() AndAlso productCosts.Count > 0) Then
-                MsgBox("Must have atleast one active record")
-                Return False
-            End If
-        End If
-        oCost.Save()
+        'If oCost.Isactive = False Then
+        '    Dim productCosts As New ProductcostCollection
+        '    productCosts.Query.Where(productCosts.Query.Productid = oCost.Productid And productCosts.Query.Isactive = True And productCosts.Query.Costrecid <> oCost.Costrecid)
+        '    If Not (productCosts.Query.Load() AndAlso productCosts.Count > 0) Then
+        '        MsgBox("Must have atleast one active record")
+        '        Return False
+        '    End If
+        'End If
+        '  oCost.Save()
 
         'Dim productCosts As New ProductcostCollection
         'productCosts.Query.Where(productCosts.Query.Productid = oCost.Productid And productCosts.Query.Isactive = True And productCosts.Query.Isdefaultcostrecord = True)
@@ -210,7 +210,7 @@ Public Class frmUpdateProductUnitCost
         updateVendorProductCosting(bsProductCost.Current.Costrecid, eCostMethod.EditValue, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, eReason.EditValue, bsProductCost.Current.ProductID, eVendor.EditValue, OrigVolCost, OrigWgtCost)
 
         Dim productCostsDefault As New ProductcostCollection
-        productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isactive = True And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
+        productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
         If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
             If oCost.Isdefaultcostrecord <> True Then
                 MarkVendorProductCostAsDefault(oCost.Costrecid)
@@ -459,15 +459,15 @@ Public Class frmUpdateProductUnitCost
 
     End Sub
 
-    Private Sub CheckEditActive_Click(sender As Object, e As EventArgs) Handles CheckEditActive.Click
-        If CheckEditActive.Checked Then
-            ' when changed tounchecked
-            If CheckEditDefault.CheckState Then
-                MsgBox("Default vendor cost cannot be set inactive.", MsgBoxStyle.OkOnly)
-                CheckEditActive.Checked = True
-            End If
-        End If
-    End Sub
+    'Private Sub CheckEditActive_Click(sender As Object, e As EventArgs) 
+    '    If CheckEditActive.Checked Then
+    '        ' when changed tounchecked
+    '        If CheckEditDefault.CheckState Then
+    '            MsgBox("Default vendor cost cannot be set inactive.", MsgBoxStyle.OkOnly)
+    '            CheckEditActive.Checked = True
+    '        End If
+    '    End If
+    'End Sub
 
 
 

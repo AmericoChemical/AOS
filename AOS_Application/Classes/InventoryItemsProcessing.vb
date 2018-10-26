@@ -843,6 +843,10 @@ Module InventoryItemsProcessing
 
     Public Sub DeleteCostRecord(ByVal costRecID As Integer)
         Try
+
+            Dim changeDefault As Boolean
+            Dim productId As Integer
+
             Dim oCostRec As Productcost = New Productcost
 
             Using updateTransaction As New Transactions.TransactionScope
@@ -850,16 +854,25 @@ Module InventoryItemsProcessing
             End Using
 
             oCostRec.LoadByPrimaryKey(costRecID)
-            If (oCostRec.Isdefaultcostrecord = True) Then
-                MsgBox("You cannot delete the DEFAULT cost record for a product. Edit the existing cost record or Mark another as default", MsgBoxStyle.Critical, "Error - Delete Failed")
-                Exit Sub
-            End If
+            changeDefault = oCostRec.Isdefaultcostrecord
+            productId = oCostRec.Productid
+
             oCostRec.MarkAsDeleted()
             oCostRec.Save()
+            If changeDefault Then
+                Dim nextDefaultcost As Productcost = GetVendorCostForStdCost(productId)
+                If Not nextDefaultcost Is Nothing Then
+                    MarkVendorProductCostAsDefault(nextDefaultcost.Costrecid)
+                Else ' NO standard costing set for the product 
+                    SetProductStatndardCosts(productId, "Vendor Cost Change-Delete. PROD ID-" & productId)
+                End If
+            End If
+
         Catch ex As Exception
             MsgBox("Error in deleting selected record", MsgBoxStyle.Critical, "Error - Delete Failed")
             Exit Sub
         End Try
+
         MsgBox("Product Cost record successfully deleted.")
     End Sub
 

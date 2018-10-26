@@ -703,9 +703,21 @@ Public Class frmAddEditPurchaseItem
         If bs.Count <= 0 Then
             Exit Sub
         End If
+        'If bs.Count = 1 Then
+        '    MsgBox("You cannot delete the only cost record for a product. Edit the existing cost record or add a new cost record.", MsgBoxStyle.Critical, "Error")
+        '    Exit Sub
+        'End If
+
         If bs.Count = 1 Then
-            MsgBox("You cannot delete the only cost record for a product. Edit the existing cost record or add a new cost record.", MsgBoxStyle.Critical, "Error")
-            Exit Sub
+            If MsgBox("This is the only cost record for a product. Continue with delete?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                Exit Sub
+            End If
+        Else
+            If bs.Current.Isdefaultcostrecord Then
+                If MsgBox("This is the default cost record for a product. Continue with delete?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
         End If
 
         DeleteCostRecord(bs.Current.costRecID)

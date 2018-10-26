@@ -85,11 +85,33 @@ Public Class frmAddEditMaterialProductLink
         Me.bsItem.DataSource = oItem
     End Sub
 
+    Private Function ModifiedColumns() As List(Of String)
+
+        Dim vModifiedColumns As New List(Of String)
+        If oItem.es.IsDirty Then
+            For Each obj As String In oItem.es.ModifiedColumns
+
+                Select Case obj.ToString
+                    Case "PRODUCTID",
+                        "PRIORITY"
+                        vModifiedColumns.Add(obj.ToString)
+                End Select
+            Next
+        End If
+
+        Return vModifiedColumns
+
+    End Function
+
     Private Function changesSaved() As Boolean
         Try
             bsItem.EndEdit()
+            Dim vmodifedColumns As List(Of String) = ModifiedColumns()
+
             oItem.EndEdit()
             oItem.Save()
+            ProcessMaterialCostChanges(oItem.Materialid, "Material Change-" & String.Join(",", vmodifedColumns.ToArray()), "STD COST", "Material Change-ID" & oItem.Materialid)
+
         Catch ex As Exception
             MsgBox(ex.Message)
             MsgBox("Error saving changes", MsgBoxStyle.Critical, "Error")
