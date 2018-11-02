@@ -385,7 +385,6 @@ Partial Class frmUpdateProductUnitCost
         'CheckEditDefault
         '
         Me.CheckEditDefault.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsProductCost, "Isdefaultcostrecord", True))
-        Me.CheckEditDefault.Enabled = False
         Me.CheckEditDefault.Location = New System.Drawing.Point(138, 135)
         Me.CheckEditDefault.MenuManager = Me.RibbonControl1
         Me.CheckEditDefault.Name = "CheckEditDefault"

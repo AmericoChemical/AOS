@@ -173,7 +173,7 @@ Public Class frmAddEditAPIS
 
         oAPIS.Save()
         If oAPIS.Productid.HasValue Then
-            SetProductStatndardCosts(oAPIS.Productid.Value, "APIS Change. PROD ID-" & oAPIS.Productid, "APIS Change-" & oAPIS.Apisnum & " [" + String.Join(",", vModifiedCostColumns.ToArray()) + "]")
+            Dim vProductStandardCostSource = SetProductStatndardCosts(oAPIS.Productid.Value, "APIS Change. PROD ID-" & oAPIS.Productid, "APIS Change - " & oAPIS.Apisnum & " [" + String.Join(",", vModifiedCostColumns.ToArray()) + "]")
         End If
 
         Me.DialogResult = Windows.Forms.DialogResult.OK
@@ -348,7 +348,7 @@ Public Class frmAddEditAPIS
         End If
         Dim APIS As New Apis
         If APIS.LoadByPrimaryKey(bsAPIS.Current.APISNum) AndAlso APIS.Productid.HasValue Then
-            SetProductStatndardCosts(APIS.Productid, "APIS Change.PROD ID-" & APIS.Productid, "APIS Change-Input Deleted.APID ID-" & APIS.Apisnum)
+            SetProductStatndardCosts(APIS.Productid, "APIS Change - ProdId" & APIS.Productid, "APIS Change - APISId" & APIS.Apisnum & "[Input Deleted]")
         End If
         getAPISDetails(bsAPIS.Current.APISNum)
     End Sub

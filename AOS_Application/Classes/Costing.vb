@@ -31,7 +31,7 @@
                 For Each obj As Productfulfillmentplan In oRelabelProds
                     'loop through Relabeled Products with same Origin ProductID and update standard costs
                     If getProductStandardCostSource(obj.Productid) = "RELABEL" Then
-                        ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "Kit Change - KIT " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
+                        ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "Kit Change - KitId " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
                     End If
 
                 Next
@@ -43,7 +43,7 @@
             If oAPISCollection.Query.Load() Then
                 For Each oAPIS As ViewAPISData In oAPISCollection
                     If getProductStandardCostSource(oAPIS.Productid) = "APIS" Then
-                        ProcessAPISProductStandardCostChanges(oAPIS.Productid, vChangeType, "Kit Change - KIT " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
+                        ProcessAPISProductStandardCostChanges(oAPIS.Productid, vChangeType, "Kit Change - KitId " & oKitInfo.Kitid & " " & oKitInfo.Kitname, vWhatChanged)
                     End If
 
                     'Dim oTotalCosts As New ViewCostingApisTotalCosts
@@ -182,7 +182,7 @@
             For Each obj As Productfulfillmentplan In oRelabelProds
                 'loop through Relabeled Products with same Origin ProductID and update standard costs
                 If getProductStandardCostSource(obj.Productid) = "RELABEL" Then
-                    ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "FulFillment Plan Change - PROD " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vWhatChanged)
+                    ProcessRelabelProductStandardCostChanges(obj.Productid, vChangeType, "FulFillment Plan Change - ProdId " & oProductRecord.Productid & " " & oProductRecord.Productdesc, vWhatChanged)
                 End If
 
             Next
@@ -213,7 +213,7 @@
         If materialDefaultProducts.Query.Load Then
 
             For Each obj As ViewCostingMaterialDefaultProduct In materialDefaultProducts
-                ProcessMaterialCostChanges(obj.Materialid, "APIS Change. PROD ID-" & oProductRecord.Productid & " " & oProductRecord.Productdesc, vChangeType, vWhatChanged)
+                ProcessMaterialCostChanges(obj.Materialid, "Material Change - MatId " & obj.Materialid, vChangeType, vWhatChanged)
 
             Next
         End If
@@ -346,7 +346,7 @@
                     'add product change history record for the relabeled product
                     'AddProductCostChangeHistoryRecord(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, "RELABEL CHNG - PROD " & vProductID & " " & oProductRecord.Productdesc, vChangeType)
 
-                    ProcessProductStandardCostChanges(vProductID, oRlbCosts.Oldvolcost, oRlbCosts.Oldwgtcost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, vReasonForChange, vChangeType, oProduct.Productid, vWhatchanged)
+                    ProcessProductStandardCostChanges(vProductID, vOldVolCost, vOldWtCost, oRlbCosts.Newvolcost, oRlbCosts.Newwgtcost, vReasonForChange, vChangeType, oProduct.Productid, vWhatchanged)
                 End If
             End If
 
@@ -815,7 +815,7 @@
         If oDefCost.LoadByPrimaryKey(vCostRecId) Then
 
             Dim oCosts As New ProductcostCollection
-            oCosts.Query.Where(oCosts.Query.Productid.Equal(oDefCost.Productid))
+            oCosts.Query.Where(oCosts.Query.Productid.Equal(oDefCost.Productid) And oCosts.Query.Costrecid.NotEqual(oDefCost.Costrecid))
             If oCosts.Query.Load Then
                 For Each oCost As Productcost In oCosts
                     oCost.Isdefaultcostrecord = 0
@@ -825,7 +825,7 @@
 
             oDefCost.Isdefaultcostrecord = 1
             oDefCost.Save()
-            SetProductStatndardCosts(oDefCost.Productid, "Vendor Cost Change-Default. PROD ID-" & oDefCost.Productid)
+            SetProductStatndardCosts(oDefCost.Productid, "Vendor Cost Change - ProdId " & oDefCost.Productid & "[Default]")
             Return True
         End If
         Return False
@@ -1002,7 +1002,7 @@
         Return StdCostSource
     End Function
 
-    Public Sub SetProductStatndardCosts(vProductId As Integer, vWhatChanged As String, Optional vReasonForChange As String = "")
+    Public Function SetProductStatndardCosts(vProductId As Integer, vWhatChanged As String, Optional vReasonForChange As String = "") As String
         If vReasonForChange = String.Empty Then
             vReasonForChange = vWhatChanged
         End If
@@ -1020,7 +1020,8 @@
                 ProcessNoneProductStandardCostChanges(vProductId, "STD COST", vReasonForChange, vWhatChanged)
             Case Else 'PURCHASE
         End Select
-    End Sub
+        Return vProductStandardCostSource
+    End Function
 
     Public Sub ProcessNoneProductStandardCostChanges(vProductID As Integer, vChangeType As String, vReasonForChange As String, vWhatchanged As String)
         'determine standard costs with new data from origin ProductID new standard costs

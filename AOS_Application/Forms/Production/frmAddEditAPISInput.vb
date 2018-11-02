@@ -112,7 +112,7 @@ Public Class frmAddEditAPISInput
             oItem.Save()
             Dim APIS As New Apis
             If APIS.LoadByPrimaryKey(oItem.Apisnum) AndAlso APIS.Productid.HasValue Then
-                SetProductStatndardCosts(APIS.Productid, "APIS Change.PROD ID-" & APIS.Productid, "APIS Change-Input " & oItem.Apisitemnum & "[" + String.Join(",", vModifiedColumns.ToArray()) + "]")
+                SetProductStatndardCosts(APIS.Productid, "APIS Change - ProdId-" & APIS.Productid, "APIS Change - ApidId " & APIS.Apisnum & "[Input " & oItem.Apisitemnum & ":" + String.Join(",", vModifiedColumns.ToArray()) + "]")
             End If
 
         Catch ex As Exception

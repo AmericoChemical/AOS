@@ -171,7 +171,11 @@ Module MaterialProcessing
 
         End Select
         If vProductID <> 0 Then
-            SetProductStatndardCosts(vProductID, "APIS Change. PROD ID-" & vProductID, "APIS Change-Apisstatus. PROD ID" & vProductID)
+            Dim vProductStandardCostSource As String = SetProductStatndardCosts(vProductID, "APIS Change - ProdId " & vProductID, "APIS Change - APISId " & vAPISNum & " [" & vStatus & "]")
+            If (vProductStandardCostSource = "NONE") Then
+                MsgBox("NO standard costing set for the product.", MsgBoxStyle.OkOnly, "Warning")
+            End If
+
         End If
     End Sub
 

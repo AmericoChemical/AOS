@@ -141,6 +141,7 @@ Public Class frmUpdateProductUnitCost
 
     Private Function changesSaved() As Boolean
         bsProductCost.EndEdit()
+        oCost.Save()
 
 
         'If oCost.Isactive = False Then
@@ -209,13 +210,18 @@ Public Class frmUpdateProductUnitCost
 
         updateVendorProductCosting(bsProductCost.Current.Costrecid, eCostMethod.EditValue, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, eReason.EditValue, bsProductCost.Current.ProductID, eVendor.EditValue, OrigVolCost, OrigWgtCost)
 
-        Dim productCostsDefault As New ProductcostCollection
-        productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
-        If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
-            If oCost.Isdefaultcostrecord <> True Then
-                MarkVendorProductCostAsDefault(oCost.Costrecid)
-            End If
+
+        If CheckEditDefault.Checked Then
+            MarkVendorProductCostAsDefault(oCost.Costrecid)
         End If
+
+        'Dim productCostsDefault As New ProductcostCollection
+        'productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
+        'If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
+        '    If oCost.Isdefaultcostrecord <> True Then
+        '        MarkVendorProductCostAsDefault(oCost.Costrecid)
+        '    End If
+        'End If
 
         Return True
     End Function
@@ -425,6 +431,8 @@ Public Class frmUpdateProductUnitCost
 
         updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid, "VNDR COST CHNG-" & vProductID)
 
+
+
         If RaiseAuditEvent(vAuditRuleID, bsProductCost, PricingMethod.VOLUME, vFlag) Then
             eVolUnitCost.Focus()
             Exit Sub
@@ -458,6 +466,7 @@ Public Class frmUpdateProductUnitCost
 
 
     End Sub
+
 
     'Private Sub CheckEditActive_Click(sender As Object, e As EventArgs) 
     '    If CheckEditActive.Checked Then

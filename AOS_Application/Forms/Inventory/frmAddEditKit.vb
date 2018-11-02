@@ -164,7 +164,7 @@ Public Class frmAddEditKit
             If oKitComponents.LoadByPrimaryKey(bsKitComponents.Current.kitComponentid) Then
                 oKitComponents.MarkAsDeleted()
                 oKitComponents.Save()
-                ProcessKitCostChanges(bsKitComponents.Current.Kitid, "Kit Change COMPONENT DELETED-" & bsKitComponents.Current.Componentid, "STD COST", bsKitComponents.Current.Kitid, "KIT CHNG-" & bsKitComponents.Current.Kitid)
+                ProcessKitCostChanges(bsKitComponents.Current.Kitid, "Kit Change - KitId " & bsKitComponents.Current.Kitid & "[COMPONENT DELETED-" & bsKitComponents.Current.Componentid & "]", "STD COST", bsKitComponents.Current.Kitid, "KIT CHNG-" & bsKitComponents.Current.Kitid)
                 MsgBox("Record successfully deleted", MsgBoxStyle.Information, "Delete Kit Component - Success")
             Else
                 MsgBox("Could not delete selected kit item", MsgBoxStyle.Critical, "Delete Kit Component - Error")

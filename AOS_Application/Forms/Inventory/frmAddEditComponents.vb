@@ -211,6 +211,10 @@ Public Class frmAddEditComponents
         getComponent()
     End Sub
 
+    Private Sub btnSave_Click(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSave.ItemClick
+
+    End Sub
+
     'Private Sub btnComponentCostRecords_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnComponentCostRecords.ItemClick
     '    Dim frm As New frmViewComponentCostRecords
     '    frm.vComponentID = oComponent.Componentid

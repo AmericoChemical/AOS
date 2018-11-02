@@ -75,17 +75,17 @@ Public Class frmviewProductFulfillment
         Try
             deleteProductRelabelInstructionsByFulfillmentPlanID(bsProductFulfillment.Current.FULFILLMENTPLANID)
 
-            ' Delete the Kit Component based on the selected row in the Grid
+            ' Delete the product fulfilment plan based on the selected row in the Grid
             Dim oProductfulfillmentplan As New Productfulfillmentplan
             If oProductfulfillmentplan.LoadByPrimaryKey(bsProductFulfillment.Current.FULFILLMENTPLANID) Then
                 Dim productId As Integer = oProductfulfillmentplan.Productid
                 oProductfulfillmentplan.MarkAsDeleted()
                 oProductfulfillmentplan.Save()
                 MsgBox("Record successfully deleted", MsgBoxStyle.Information, "Delete Product Fulfillment - Success")
-                SetProductStatndardCosts(productId, "FulFillment Plan Change-Delete. PROD ID-" & productId)
+                SetProductStatndardCosts(productId, "FulFillment Plan Change - ProdId " & productId & "[Delete]")
 
             Else
-                MsgBox("Could not delete selected kit item", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
+                MsgBox("Could not delete selected product fulfilment plan", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
             End If
         Catch ex As Exception
             MsgBox("Error in deleting selected record", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")

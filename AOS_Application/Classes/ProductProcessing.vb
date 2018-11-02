@@ -388,7 +388,7 @@ Module ProductProcessing
             Select Case vStatus
                 Case "ACTIVE"
                     oProduct.Productstatus = "ACTIVE"
-                    SetProductStatndardCosts(vProductID, "Status Changed To ACTIVE. PROD ID-" & vProductID)
+                    SetProductStatndardCosts(vProductID, "Product Change - ProdId " & vProductID, "Product Change - ProdId " & vProductID & "[" & vStatus & "]")
                     '                    updateActiveProductRelatedRecords(vProductID)
                     oProduct.Save()
                 Case "INACTIVE"

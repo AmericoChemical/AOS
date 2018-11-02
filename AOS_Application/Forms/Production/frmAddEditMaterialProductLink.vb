@@ -110,7 +110,7 @@ Public Class frmAddEditMaterialProductLink
 
             oItem.EndEdit()
             oItem.Save()
-            ProcessMaterialCostChanges(oItem.Materialid, "Material Change-" & String.Join(",", vmodifedColumns.ToArray()), "STD COST", "Material Change-ID" & oItem.Materialid)
+            ProcessMaterialCostChanges(oItem.Materialid, "Material Change - MatId " & oItem.Materialid & "[" & String.Join(",", vmodifedColumns.ToArray()) & "]", "STD COST", "Material Change-ID" & oItem.Materialid)
 
         Catch ex As Exception
             MsgBox(ex.Message)

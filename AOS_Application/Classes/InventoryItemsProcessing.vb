@@ -864,7 +864,7 @@ Module InventoryItemsProcessing
                 If Not nextDefaultcost Is Nothing Then
                     MarkVendorProductCostAsDefault(nextDefaultcost.Costrecid)
                 Else ' NO standard costing set for the product 
-                    SetProductStatndardCosts(productId, "Vendor Cost Change-Delete. PROD ID-" & productId)
+                    SetProductStatndardCosts(productId, "Vendor Cost Change - ProdId " & productId & "[Delete]")
                 End If
             End If
 

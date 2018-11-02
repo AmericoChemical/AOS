@@ -92,7 +92,8 @@ Public Class frmViewProductCostRecords
     Private Sub getProductStandardCostSource()
 
         vStdCostSource = Costing.getProductStandardCostSource(vProductID)
-        checkDefaultCostData(vStdCostSource)
+        ' Update Cost Button is invisible so check is not needed
+        'checkDefaultCostData(vStdCostSource)
         lblStdCostType.Caption = vStdCostSource
 
     End Sub

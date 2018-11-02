@@ -97,7 +97,7 @@ Public Class frmAddEditMaterialItem
             oItem.Modifytime = Now
             oItem.Modifyby = vCurrentUserLogin
             oItem.Save()
-            ProcessMaterialCostChanges(oItem.Materialid, "Material Change-" & String.Join(",", vmodifedColumns.ToArray()), "STD COST", "Material Change-ID" & oItem.Materialid)
+            ProcessMaterialCostChanges(oItem.Materialid, "Material Change - MatId " & oItem.Materialid & "[" & String.Join(",", vmodifedColumns.ToArray()) & "]", "STD COST", "Material Change-ID" & oItem.Materialid)
         Catch ex As Exception
             MsgBox(ex.Message)
             MsgBox("Error saving changes", MsgBoxStyle.Critical, "Error")
@@ -170,7 +170,7 @@ Public Class frmAddEditMaterialItem
             materialId = obj.Materialid
             obj.MarkAsDeleted()
             obj.Save()
-            ProcessMaterialCostChanges(materialId, "Material Change-Delete Link", "STD COST", "Material Change-ID" & materialId)
+            ProcessMaterialCostChanges(materialId, "Material Change - MatId " & materialId & "[Delete Link]", "STD COST", "Material Change-ID" & materialId)
         End If
 
         loadProducts()

@@ -340,6 +340,7 @@ Partial Class frmApisStandardCosts
         Me.btnUpdateStandardCosts.TabIndex = 42
         Me.btnUpdateStandardCosts.Text = "<-- Update Standard Costs"
         Me.btnUpdateStandardCosts.ToolTip = "Std Cost update is automatic. No need of button"
+        Me.btnUpdateStandardCosts.Visible = False
         '
         'LabelControl18
         '
