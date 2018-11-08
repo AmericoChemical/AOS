@@ -125,7 +125,7 @@ Public Class frmUpdateProductUnitCost
         oCost.Modifytime = Now
         oCost.Modifyby = vCurrentUserLogin
         oCost.Isactive = True
-        oCost.Isdefaultcostrecord = False
+        oCost.Isdefaultcostrecord = True
         oCost.Save()
         Me.bsProductCost.DataSource = oCost
     End Sub
@@ -213,6 +213,13 @@ Public Class frmUpdateProductUnitCost
 
         If CheckEditDefault.Checked Then
             MarkVendorProductCostAsDefault(oCost.Costrecid)
+        Else
+            Dim productCostsDefault As New ProductcostCollection
+            productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
+            If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
+                MsgBox("Must have atleast one default record. Setting current record to default.")
+                MarkVendorProductCostAsDefault(oCost.Costrecid)
+            End If
         End If
 
         'Dim productCostsDefault As New ProductcostCollection
