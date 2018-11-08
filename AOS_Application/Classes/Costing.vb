@@ -695,25 +695,25 @@
 
     End Sub
 
-    Public Function GetVendorCostForStdCost(productId As Integer) As Productcost
+    Public Function GetVendorCostForStdCost(productId As Integer, Optional excludeCostRecId As Integer = 0) As Productcost
         Dim oProductCosts As New ProductcostCollection
         Dim oProductcost As Productcost
-        oProductCosts.Query.Where(oProductCosts.Query.Productid = productId And oProductCosts.Query.Isdefaultcostrecord = True And (oProductCosts.Query.Effectivedate.IsNull Or oProductCosts.Query.Effectivedate <= Today))
+        oProductCosts.Query.Where(oProductCosts.Query.Productid = productId And oProductCosts.Query.Costrecid <> excludeCostRecId And oProductCosts.Query.Isdefaultcostrecord = True And (oProductCosts.Query.Effectivedate.IsNull Or oProductCosts.Query.Effectivedate <= Today))
         oProductCosts.Query.OrderBy(oProductCosts.Query.Effectivedate.Descending, oProductCosts.Query.Costrecid.Descending)
         If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
-            oProductcost = oProductCosts(0)        ' check if default cost record found 
-        Else
-            oProductCosts = New ProductcostCollection
-            oProductCosts.Query.Where(oProductCosts.Query.Productid = productId And (oProductCosts.Query.Effectivedate.IsNull Or oProductCosts.Query.Effectivedate <= Today))
-            oProductCosts.Query.OrderBy(oProductCosts.Query.Effectivedate.Descending, oProductCosts.Query.Costrecid.Descending)
-            If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
-                oProductcost = oProductCosts(0)        ' check if active record found 
+                oProductcost = oProductCosts(0)        ' check if default cost record found 
             Else
+                oProductCosts = New ProductcostCollection
+            oProductCosts.Query.Where(oProductCosts.Query.Productid = productId And oProductCosts.Query.Costrecid <> excludeCostRecId And (oProductCosts.Query.Effectivedate.IsNull Or oProductCosts.Query.Effectivedate <= Today))
+            oProductCosts.Query.OrderBy(oProductCosts.Query.Effectivedate.Descending, oProductCosts.Query.Costrecid.Descending)
+                If (oProductCosts.Query.Load() AndAlso oProductCosts.Count > 0) Then
+                    oProductcost = oProductCosts(0)        ' check if active record found 
+                Else
 
-                Return Nothing
+                    Return Nothing
+                End If
             End If
-        End If
-        Return oProductcost
+            Return oProductcost
     End Function
     Public Function SetStandardCostToVendorCost(ByRef oProduct As Product) As Boolean
 

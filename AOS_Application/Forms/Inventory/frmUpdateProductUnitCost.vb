@@ -214,12 +214,20 @@ Public Class frmUpdateProductUnitCost
         If CheckEditDefault.Checked Then
             MarkVendorProductCostAsDefault(oCost.Costrecid)
         Else
-            Dim productCostsDefault As New ProductcostCollection
-            productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
-            If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
-                MsgBox("Must have atleast one default record. Setting current record to default.")
+            Dim nextDefaultCost As Productcost = GetVendorCostForStdCost(oCost.Productid, oCost.Costrecid)
+            If nextDefaultCost Is Nothing Then
+                MsgBox("Must have a default record. Setting current record to default.")
                 MarkVendorProductCostAsDefault(oCost.Costrecid)
+            Else
+                MarkVendorProductCostAsDefault(nextDefaultCost.Costrecid)
             End If
+            'Dim productCostsDefault As New ProductcostCollection
+            'productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
+            'If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
+
+            '    MsgBox("Must have atleast one default record. Setting current record to default.")
+            '    MarkVendorProductCostAsDefault(oCost.Costrecid)
+            'End If
         End If
 
         'Dim productCostsDefault As New ProductcostCollection
