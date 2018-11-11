@@ -337,7 +337,7 @@
                 oProduct.Volumeuom = oRlbCosts.Origvolumeuom
                 oProduct.Volumestandardcost = oRlbCosts.Newvolcost
                 oProduct.Weightunits = oRlbCosts.Origwgtunits
-                oProduct.Weightuom = oRlbCosts.Origwgtunits
+                oProduct.Weightuom = oRlbCosts.Origweightuom
                 oProduct.Weightstandardcost = oRlbCosts.Newwgtcost
 
                 oProduct.Save()
