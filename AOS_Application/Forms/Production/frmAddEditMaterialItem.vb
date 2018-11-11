@@ -170,6 +170,7 @@ Public Class frmAddEditMaterialItem
             materialId = obj.Materialid
             obj.MarkAsDeleted()
             obj.Save()
+            frmAddEditMaterialProductLink.SetMaterialProductPriorityOne(materialId)
             ProcessMaterialCostChanges(materialId, "Material Change - MatId " & materialId & "[Delete Link]", "STD COST", "Material Change-ID" & materialId)
         End If
 

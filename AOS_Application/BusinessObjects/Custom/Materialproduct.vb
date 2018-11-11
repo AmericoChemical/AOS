@@ -21,6 +21,14 @@ Namespace BusinessObjects
 	Partial Public Class Materialproduct 
 		Inherits esMaterialproduct
 
-	End Class
+        Public Function LoadByPriority(materialId As Integer, priority As Integer) As Boolean
+            Dim materialProducts As New MaterialproductCollection
+            materialProducts.Query.Where(materialProducts.Query.Materialid = materialId And materialProducts.Query.Priority = priority)
+            If materialProducts.Query.Load() AndAlso materialProducts.Count > 0 Then
+                Return Me.LoadByPrimaryKey(materialProducts(0).Mpid)
+            End If
+            Return False
+        End Function
+    End Class
 
 End Namespace
