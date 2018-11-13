@@ -197,6 +197,22 @@ Public Class frmAddEditMaterialProductLink
 
 
     Private Function ValidateData()
+        PriorityTextEdit.Focus() 'change focus to set value of dropdown
+        Dim productId As Integer? = bsItem.Current.Productid
+        If productId Is Nothing OrElse productId = 0 Then
+            MsgBox("Must specifiy product", MsgBoxStyle.Critical, "Error")
+            eProduct.Focus()
+            Return False
+            'Else ' no need to code for it as its managed in dropdown
+            '    Dim materialProducts As New MaterialproductCollection
+            '    materialProducts.Query.Where(materialProducts.Query.Materialid = vMaterialID And materialProducts.Query.Productid = productId)
+            '    If materialProducts.Query.Load() AndAlso materialProducts.Count > 0 Then
+            '        MsgBox("Product can be linked to material only once. Please edit existing product link.", MsgBoxStyle.Critical, "Error")
+            '        eProduct.Focus()
+            '        Return False
+            '    End If
+        End If
+
         If String.IsNullOrEmpty(Me.PriorityTextEdit.Text) Then
             MsgBox("Must specifiy priority", MsgBoxStyle.Critical, "Error")
             PriorityTextEdit.Focus()
