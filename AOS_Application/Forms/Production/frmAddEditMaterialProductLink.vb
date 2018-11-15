@@ -234,7 +234,7 @@ Public Class frmAddEditMaterialProductLink
 
         If priority <> 0 Then
             Dim materialProduct As New Materialproduct
-            If materialProduct.LoadByPriority(vMaterialID, priority) Then
+            If materialProduct.LoadByPriority(vMaterialID, priority) AndAlso materialProduct.Mpid <> oItem.Mpid Then
                 If MsgBox("Priority already exists. Auto adjust priorities?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
                     PriorityTextEdit.Focus()
                     Return False

@@ -125,7 +125,14 @@ Public Class frmUpdateProductUnitCost
         oCost.Modifytime = Now
         oCost.Modifyby = vCurrentUserLogin
         oCost.Isactive = True
-        oCost.Isdefaultcostrecord = True
+        ' set default to true onlyif its a first cost otherwise set it to false 
+        Dim productCosts As New ProductcostCollection
+        productCosts.Query.Where(productCosts.Query.Productid = vProductID)
+        If (productCosts.Query.Load AndAlso productCosts.Count > 0) Then
+            oCost.Isdefaultcostrecord = False
+        Else
+            oCost.Isdefaultcostrecord = True
+        End If
         oCost.Save()
         Me.bsProductCost.DataSource = oCost
     End Sub
