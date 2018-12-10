@@ -72,7 +72,12 @@ Module LoadProcessing
                             rLoad.LoadType = "INTERNAL"
                     End Select
                     rLoad.LoadNotes = oWO.Transportationnotes
+                    rLoad.Freezeprotectflag = oWO.Freezeprotectflag
+                    rLoad.OrSoonerFlag = oWO.Orsoonerflag
                     rLoad.Save()
+
+                    'finally, update the load summary data
+                    UpdateLoadSummaryData(rLoad.LoadID)
                 End If
             Next
         End If
@@ -180,6 +185,7 @@ Module LoadProcessing
             oLoad.AddToInvoice = oWO.Freightoninvoice
             oLoad.LoadType = oWO.Transporttype
             oLoad.Freezeprotectflag = oWO.Freezeprotectflag
+            oLoad.OrSoonerFlag = oWO.Orsoonerflag
 
             Select Case oWO.Transporttype
                 Case "DIRECT"
@@ -587,7 +593,9 @@ Module LoadProcessing
             End If
         Next
 
+        'finally, update the load summary data
         UpdateLoadSummaryData(vLoadID)
+
 
     End Function
 
@@ -806,23 +814,24 @@ Module LoadProcessing
             Return False
         End Try
 
+
         Return True
     End Function
 
     Public Sub UpdateLoadSummaryData(vLoadID As Integer)
-        Dim oLoad As New Load
-        oLoad.LoadByPrimaryKey(vLoadID)
+        Dim sLoad As New Load
+        sLoad.LoadByPrimaryKey(vLoadID)
         ' get calculaterd skids for load
         Dim calculatedSkids As Integer
         Dim es As New esUtility
         Dim parameters As New esParameters
         parameters.Add(New esParameter("LoadId", vLoadID))
         calculatedSkids = es.ExecuteScalar(EntitySpaces.DynamicQuery.esQueryType.StoredProcedure, "GetCalculatedSkidsByLoad", parameters)
-        oLoad.Totalskids = calculatedSkids
+        sLoad.TotalSkids = calculatedSkids
 
         ' add code for any other sumay items here
 
-        oLoad.Save()
+        sLoad.Save()
     End Sub
 
     Public Sub changeLoadStatus(vLoadID As Integer)
@@ -835,6 +844,8 @@ Module LoadProcessing
                 oLoad.MarkAsDeleted()
                 oLoad.Save()
             End If
+        Else
+            UpdateLoadSummaryData(vLoadID)
         End If
 
     End Sub

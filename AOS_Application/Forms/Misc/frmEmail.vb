@@ -36,7 +36,7 @@ Public Class frmEmail
         End If
         If ValidateControls() Then
             vEmail.MailBody = BodyStatementRichEditControl.HtmlText
-            vEmail.SendEmail(oSysparameters.WOEmailSender,
+            vEmail.SendEmail(vEmail.From,
                                String.Format("{0};{1}",
                                              vEmail.To,
                                              oSysparameters.Additionaldefaultsendtoaddress),

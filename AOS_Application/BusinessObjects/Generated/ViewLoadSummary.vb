@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 1/7/2018 10:53:20 AM
+' Date Generated       : 12/10/2018 12:04:43 PM
 '===============================================================================
 
 Imports System
@@ -215,6 +215,12 @@ Namespace BusinessObjects
 												
 						Case "Freezeprotectflag"
 							Me.str.Freezeprotectflag = CType(value, string)
+												
+						Case "WorkOrderStatus"
+							Me.str.WorkOrderStatus = CType(value, string)
+												
+						Case "OrSoonerFlag"
+							Me.str.OrSoonerFlag = CType(value, string)
 					
 					End Select
 					
@@ -298,6 +304,12 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
 								Me.Freezeprotectflag = CType(value, Nullable(Of System.Boolean))
+							End If
+						
+						Case "OrSoonerFlag"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.OrSoonerFlag = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -676,6 +688,32 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Boolean))
 				MyBase.SetSystemBoolean(ViewLoadSummaryMetadata.ColumnNames.Freezeprotectflag, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadSummary.WorkOrderStatus
+		' </summary>
+		Public Overridable Property WorkOrderStatus As System.String
+			Get
+				Return MyBase.GetSystemString(ViewLoadSummaryMetadata.ColumnNames.WorkOrderStatus)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewLoadSummaryMetadata.ColumnNames.WorkOrderStatus, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadSummary.OrSoonerFlag
+		' </summary>
+		Public Overridable Property OrSoonerFlag As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ViewLoadSummaryMetadata.ColumnNames.OrSoonerFlag)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ViewLoadSummaryMetadata.ColumnNames.OrSoonerFlag, value)
 			End Set
 		End Property		
 		
@@ -1275,6 +1313,47 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property WorkOrderStatus As System.String 
+				Get
+					Dim data_ As System.String = entity.WorkOrderStatus
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.WorkOrderStatus = Nothing
+					Else
+						entity.WorkOrderStatus = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property OrSoonerFlag As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.OrSoonerFlag
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.OrSoonerFlag = Nothing
+					Else
+						entity.OrSoonerFlag = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewLoadSummary
@@ -1484,6 +1563,18 @@ Namespace BusinessObjects
 		Public ReadOnly Property Freezeprotectflag As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewLoadSummaryMetadata.ColumnNames.Freezeprotectflag, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property WorkOrderStatus As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadSummaryMetadata.ColumnNames.WorkOrderStatus, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property OrSoonerFlag As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadSummaryMetadata.ColumnNames.OrSoonerFlag, esSystemType.Boolean)
 			End Get
 		End Property 
 		
@@ -1838,6 +1929,16 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewLoadSummaryMetadata.ColumnNames.WorkOrderStatus, 28, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewLoadSummaryMetadata.PropertyNames.WorkOrderStatus
+			c.CharacterMaxLength = 1
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadSummaryMetadata.ColumnNames.OrSoonerFlag, 29, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ViewLoadSummaryMetadata.PropertyNames.OrSoonerFlag
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -1894,6 +1995,8 @@ Namespace BusinessObjects
 			 Public Const ScheduledCarrierPhone As String = "ScheduledCarrierPhone"
 			 Public Const TotalSkids As String = "TotalSkids"
 			 Public Const Freezeprotectflag As String = "FREEZEPROTECTFLAG"
+			 Public Const WorkOrderStatus As String = "WorkOrderStatus"
+			 Public Const OrSoonerFlag As String = "OrSoonerFlag"
 		End Class
 #End Region	
 		
@@ -1927,6 +2030,8 @@ Namespace BusinessObjects
 			 Public Const ScheduledCarrierPhone As String = "ScheduledCarrierPhone"
 			 Public Const TotalSkids As String = "TotalSkids"
 			 Public Const Freezeprotectflag As String = "Freezeprotectflag"
+			 Public Const WorkOrderStatus As String = "WorkOrderStatus"
+			 Public Const OrSoonerFlag As String = "OrSoonerFlag"
 		End Class
 #End Region	
 
@@ -2001,7 +2106,9 @@ Namespace BusinessObjects
 				meta.AddTypeMap("ScheduledCarrierName", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("ScheduledCarrierPhone", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("TotalSkids", new esTypeMap("int", "System.Int32"))
-				meta.AddTypeMap("Freezeprotectflag", new esTypeMap("bit", "System.Boolean"))			
+				meta.AddTypeMap("Freezeprotectflag", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("WorkOrderStatus", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("OrSoonerFlag", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 
