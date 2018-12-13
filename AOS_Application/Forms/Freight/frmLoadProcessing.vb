@@ -245,4 +245,13 @@
         frm.ShowDialog()
 
     End Sub
+
+    Private Sub rbtnEditLoad_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnEditLoad.ItemClick
+        Dim frm As New frmAddEditLoad
+        frm.vEditType = "EDIT"
+        frm.vLoadID = vLoadID
+        frm.ShowDialog()
+        getLoadData(vLoadID)
+
+    End Sub
 End Class

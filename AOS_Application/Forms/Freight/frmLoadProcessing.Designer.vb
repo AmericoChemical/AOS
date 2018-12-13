@@ -37,6 +37,8 @@ Partial Class frmLoadProcessing
         Dim Label11 As System.Windows.Forms.Label
         Dim TotalSkidsLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLoadProcessing))
+        Dim Label18 As System.Windows.Forms.Label
+        Dim Label19 As System.Windows.Forms.Label
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.rbtnBack = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnSchedule = New DevExpress.XtraBars.BarButtonItem()
@@ -48,6 +50,7 @@ Partial Class frmLoadProcessing
         Me.rbtnPrintLoadInfo = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnDeleteLoadBillingRecs = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnFreightChargesHistory = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnEditLoad = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -142,6 +145,8 @@ Partial Class frmLoadProcessing
         Me.colQuoteDate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCarrierQuoteNumber = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.FreezeProtectCheckEdit = New DevExpress.XtraEditors.CheckEdit()
+        Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
         PlannedDeliveryDateLabel = New System.Windows.Forms.Label()
         PlannedDepartureDateLabel = New System.Windows.Forms.Label()
         TotalBilledLabel = New System.Windows.Forms.Label()
@@ -158,6 +163,8 @@ Partial Class frmLoadProcessing
         Label16 = New System.Windows.Forms.Label()
         Label11 = New System.Windows.Forms.Label()
         TotalSkidsLabel = New System.Windows.Forms.Label()
+        Label18 = New System.Windows.Forms.Label()
+        Label19 = New System.Windows.Forms.Label()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -184,6 +191,8 @@ Partial Class frmLoadProcessing
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FreezeProtectCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PlannedDeliveryDateLabel
@@ -336,10 +345,10 @@ Partial Class frmLoadProcessing
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnBack, Me.rbtnSchedule, Me.rbtnAddQuote, Me.rbtnEditQuote, Me.rbtnDeleteQuote, Me.rbtnEditCharges, Me.rbtnEditBillings, Me.rbtnPrintLoadInfo, Me.rbtnDeleteLoadBillingRecs, Me.rbtnFreightChargesHistory})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnBack, Me.rbtnSchedule, Me.rbtnAddQuote, Me.rbtnEditQuote, Me.rbtnDeleteQuote, Me.rbtnEditCharges, Me.rbtnEditBillings, Me.rbtnPrintLoadInfo, Me.rbtnDeleteLoadBillingRecs, Me.rbtnFreightChargesHistory, Me.rbtnEditLoad})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 11
+        Me.RibbonControl1.MaxItemId = 12
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -431,6 +440,13 @@ Partial Class frmLoadProcessing
         Me.rbtnFreightChargesHistory.ImageOptions.LargeImageIndex = 4
         Me.rbtnFreightChargesHistory.Name = "rbtnFreightChargesHistory"
         '
+        'rbtnEditLoad
+        '
+        Me.rbtnEditLoad.Caption = "Edit Load"
+        Me.rbtnEditLoad.Id = 11
+        Me.rbtnEditLoad.ImageOptions.LargeImageIndex = 6
+        Me.rbtnEditLoad.Name = "rbtnEditLoad"
+        '
         'RibbonLargeImages
         '
         Me.RibbonLargeImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -448,6 +464,7 @@ Partial Class frmLoadProcessing
         Me.RibbonPageGroup1.AllowTextClipping = False
         Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnBack)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnPrintLoadInfo, True)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnEditLoad)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.ShowCaptionButton = False
         Me.RibbonPageGroup1.Text = "Load Mgmt"
@@ -685,6 +702,10 @@ Partial Class frmLoadProcessing
         '
         'GroupControl6
         '
+        Me.GroupControl6.Controls.Add(Label18)
+        Me.GroupControl6.Controls.Add(Me.FreezeProtectCheckEdit)
+        Me.GroupControl6.Controls.Add(Label19)
+        Me.GroupControl6.Controls.Add(Me.CheckEdit2)
         Me.GroupControl6.Controls.Add(Me.LabelControl7)
         Me.GroupControl6.Controls.Add(Label14)
         Me.GroupControl6.Controls.Add(Me.LabelControl4)
@@ -760,7 +781,7 @@ Partial Class frmLoadProcessing
         Me.BillCustomerCheckEdit.Name = "BillCustomerCheckEdit"
         Me.BillCustomerCheckEdit.Properties.Caption = ""
         Me.BillCustomerCheckEdit.Properties.ReadOnly = True
-        Me.BillCustomerCheckEdit.Size = New System.Drawing.Size(75, 19)
+        Me.BillCustomerCheckEdit.Size = New System.Drawing.Size(16, 19)
         Me.BillCustomerCheckEdit.TabIndex = 27
         Me.BillCustomerCheckEdit.TabStop = False
         '
@@ -772,7 +793,7 @@ Partial Class frmLoadProcessing
         Me.AddToInvoiceCheckEdit.Name = "AddToInvoiceCheckEdit"
         Me.AddToInvoiceCheckEdit.Properties.Caption = ""
         Me.AddToInvoiceCheckEdit.Properties.ReadOnly = True
-        Me.AddToInvoiceCheckEdit.Size = New System.Drawing.Size(75, 19)
+        Me.AddToInvoiceCheckEdit.Size = New System.Drawing.Size(16, 19)
         Me.AddToInvoiceCheckEdit.TabIndex = 25
         Me.AddToInvoiceCheckEdit.TabStop = False
         '
@@ -1312,6 +1333,48 @@ Partial Class frmLoadProcessing
         '
         Me.Timer1.Enabled = True
         '
+        'Label18
+        '
+        Label18.AutoSize = True
+        Label18.Location = New System.Drawing.Point(121, 105)
+        Label18.Name = "Label18"
+        Label18.Size = New System.Drawing.Size(82, 13)
+        Label18.TabIndex = 40
+        Label18.Text = "Freeze Protect:"
+        '
+        'FreezeProtectCheckEdit
+        '
+        Me.FreezeProtectCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "FreezeProtectFlag", True))
+        Me.FreezeProtectCheckEdit.Location = New System.Drawing.Point(209, 102)
+        Me.FreezeProtectCheckEdit.MenuManager = Me.RibbonControl1
+        Me.FreezeProtectCheckEdit.Name = "FreezeProtectCheckEdit"
+        Me.FreezeProtectCheckEdit.Properties.Caption = ""
+        Me.FreezeProtectCheckEdit.Properties.ReadOnly = True
+        Me.FreezeProtectCheckEdit.Size = New System.Drawing.Size(16, 19)
+        Me.FreezeProtectCheckEdit.TabIndex = 41
+        Me.FreezeProtectCheckEdit.TabStop = False
+        '
+        'Label19
+        '
+        Label19.AutoSize = True
+        Label19.Location = New System.Drawing.Point(143, 121)
+        Label19.Name = "Label19"
+        Label19.Size = New System.Drawing.Size(60, 13)
+        Label19.TabIndex = 38
+        Label19.Text = "Or Sooner:"
+        '
+        'CheckEdit2
+        '
+        Me.CheckEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OrSoonerFlag", True))
+        Me.CheckEdit2.Location = New System.Drawing.Point(209, 118)
+        Me.CheckEdit2.MenuManager = Me.RibbonControl1
+        Me.CheckEdit2.Name = "CheckEdit2"
+        Me.CheckEdit2.Properties.Caption = ""
+        Me.CheckEdit2.Properties.ReadOnly = True
+        Me.CheckEdit2.Size = New System.Drawing.Size(16, 19)
+        Me.CheckEdit2.TabIndex = 39
+        Me.CheckEdit2.TabStop = False
+        '
         'frmLoadProcessing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1354,6 +1417,8 @@ Partial Class frmLoadProcessing
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FreezeProtectCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1463,4 +1528,7 @@ Partial Class frmLoadProcessing
     Friend WithEvents lblTotalSkidsValue As DevExpress.XtraEditors.LabelControl
     Friend WithEvents rbtnFreightChargesHistory As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents History As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents rbtnEditLoad As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents FreezeProtectCheckEdit As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CheckEdit2 As DevExpress.XtraEditors.CheckEdit
 End Class

@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 12/10/2018 12:04:27 PM
+' Date Generated       : 12/11/2018 6:33:45 PM
 '===============================================================================
 
 Imports System
@@ -316,6 +316,9 @@ Namespace BusinessObjects
 												
 						Case "OrSoonerFlag"
 							Me.str.OrSoonerFlag = CType(value, string)
+												
+						Case "OverrideSkids"
+							Me.str.OverrideSkids = CType(value, string)
 					
 					End Select
 					
@@ -447,6 +450,12 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
 								Me.OrSoonerFlag = CType(value, Nullable(Of System.Boolean))
+							End If
+						
+						Case "OverrideSkids"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.OverrideSkids = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -1111,6 +1120,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Boolean))
 				MyBase.SetSystemBoolean(LoadMetadata.ColumnNames.OrSoonerFlag, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to LOAD.OverrideSkids
+		' </summary>
+		Public Overridable Property OverrideSkids As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(LoadMetadata.ColumnNames.OverrideSkids)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(LoadMetadata.ColumnNames.OverrideSkids, value)
 			End Set
 		End Property		
 		
@@ -2158,6 +2180,27 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property OverrideSkids As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.OverrideSkids
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.OverrideSkids = Nothing
+					Else
+						entity.OverrideSkids = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esLoad
@@ -2543,6 +2586,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property OrSoonerFlag As esQueryItem
 			Get
 				Return New esQueryItem(Me, LoadMetadata.ColumnNames.OrSoonerFlag, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property OverrideSkids As esQueryItem
+			Get
+				Return New esQueryItem(Me, LoadMetadata.ColumnNames.OverrideSkids, esSystemType.Boolean)
 			End Get
 		End Property 
 		
@@ -3028,6 +3077,12 @@ Namespace BusinessObjects
 			c.Default = "((0))"
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(LoadMetadata.ColumnNames.OverrideSkids, 50, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = LoadMetadata.PropertyNames.OverrideSkids
+			c.HasDefault = True
+			c.Default = "((0))"
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -3106,6 +3161,7 @@ Namespace BusinessObjects
 			 Public Const Freezeprotectflag As String = "FREEZEPROTECTFLAG"
 			 Public Const TotalSkids As String = "TotalSkids"
 			 Public Const OrSoonerFlag As String = "OrSoonerFlag"
+			 Public Const OverrideSkids As String = "OverrideSkids"
 		End Class
 #End Region	
 		
@@ -3161,6 +3217,7 @@ Namespace BusinessObjects
 			 Public Const Freezeprotectflag As String = "Freezeprotectflag"
 			 Public Const TotalSkids As String = "TotalSkids"
 			 Public Const OrSoonerFlag As String = "OrSoonerFlag"
+			 Public Const OverrideSkids As String = "OverrideSkids"
 		End Class
 #End Region	
 
@@ -3257,7 +3314,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("ActualDeliveryDate", new esTypeMap("datetime", "System.DateTime"))
 				meta.AddTypeMap("Freezeprotectflag", new esTypeMap("bit", "System.Boolean"))
 				meta.AddTypeMap("TotalSkids", new esTypeMap("int", "System.Int32"))
-				meta.AddTypeMap("OrSoonerFlag", new esTypeMap("bit", "System.Boolean"))			
+				meta.AddTypeMap("OrSoonerFlag", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("OverrideSkids", new esTypeMap("bit", "System.Boolean"))			
 				
 				
 				 
