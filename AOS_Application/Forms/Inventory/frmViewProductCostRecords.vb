@@ -1,4 +1,5 @@
 Imports AOS.BusinessObjects
+Imports DevExpress.Data
 
 Public Class frmViewProductCostRecords
     Inherits DevExpress.XtraEditors.XtraForm
@@ -91,7 +92,8 @@ Public Class frmViewProductCostRecords
     Private Sub getProductStandardCostSource()
 
         vStdCostSource = Costing.getProductStandardCostSource(vProductID)
-        checkDefaultCostData(vStdCostSource)
+        ' Update Cost Button is invisible so check is not needed
+        'checkDefaultCostData(vStdCostSource)
         lblStdCostType.Caption = vStdCostSource
 
     End Sub
@@ -120,13 +122,22 @@ Public Class frmViewProductCostRecords
         If bs.Count <= 0 Then
             Exit Sub
         End If
-        'If bs.Count = 1 Then
-        '    MsgBox("You cannot delete the only cost record for a product. Edit the existing cost record or add a new cost record.", MsgBoxStyle.Critical, "Error")
-        '    Exit Sub
-        'End If
+        If bs.Count = 1 Then
+            If MsgBox("This is the only cost record for a product. Continue with delete?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                Exit Sub
+            End If
+        Else
+            If bs.Current.Isdefaultcostrecord Then
+                If MsgBox("This is the default cost record for a product. Continue with delete?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
+        End If
 
         DeleteCostRecord(bs.Current.costRecID)
         getProductCostData()
+
+
     End Sub
 
     Private Sub btnSelect_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSelect.ItemClick
@@ -147,6 +158,7 @@ Public Class frmViewProductCostRecords
         Me.DialogResult = Windows.Forms.DialogResult.Cancel
     End Sub
 
+    ' This should never be called, button should be disabled 
     Private Sub rbtnUpdateStdCost_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnUpdateStdCost.ItemClick
 
         Dim oCost As New Productcost
@@ -182,7 +194,7 @@ Public Class frmViewProductCostRecords
         vVolUOM = IIf(IsDBNull(oCost.Volumeuom), "", oCost.Volumeuom)
         vWgtUOM = IIf(IsDBNull(oCost.Weightuom), "", oCost.Weightuom)
 
-        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid)
+        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid, "VNDR COST CHNG-" & vProductID)
 
         getProductStandardCostSource()
 
@@ -204,24 +216,41 @@ Public Class frmViewProductCostRecords
         'get selected Cost Record ID
         Dim vRecID As Integer = bs.Current.CostRecID
 
-        'Clear all default settings for the current Product ID
-        Dim oCosts As New ProductcostCollection
-        oCosts.Query.Where(oCosts.Query.Productid.Equal(vProductID))
-        If oCosts.Query.Load Then
-            For Each oCost As Productcost In oCosts
-                oCost.Isdefaultcostrecord = 0
-            Next
-            oCosts.Save()
+        ''Clear all default settings for the current Product ID
+        'Dim oCosts As New ProductcostCollection
+        'oCosts.Query.Where(oCosts.Query.Productid.Equal(vProductID))
+        'If oCosts.Query.Load Then
+        '    For Each oCost As Productcost In oCosts
+        '        oCost.Isdefaultcostrecord = 0
+        '    Next
+        '    oCosts.Save()
+        'End If
+
+        'Dim oDefCost As New Productcost
+        'If oDefCost.LoadByPrimaryKey(vRecID) Then
+        '    oDefCost.Isdefaultcostrecord = 1
+        '    oDefCost.Save()
+        'End If
+        'SetProductStatndardCosts(vProductID, "Default Vendor Cost changed. PROD ID-" & vProductID)
+
+        'If Not bs.Current.Isactive.HasValue OrElse Not bs.Current.Isactive.Value Then
+        '    MsgBox("Inactive cost record can not be marked as default. Please edit cost record to set it active", vbOKOnly)
+        '    Exit Sub
+        'End If
+
+        If MarkVendorProductCostAsDefault(vRecID) Then
+
+            getProductCostData()
+            getProductStandardCostSource()
         End If
 
-        Dim oDefCost As New Productcost
-        If oDefCost.LoadByPrimaryKey(vRecID) Then
-            oDefCost.Isdefaultcostrecord = 1
-            oDefCost.Save()
-        End If
+    End Sub
 
-        getProductCostData()
-        getProductStandardCostSource()
+    Private Sub bs_CurrentChanged(sender As Object, e As EventArgs) Handles bs.CurrentChanged
+        If Not bs.Current Is Nothing Then
+            Dim oProductCost As Productcost = bs.Current
+            rbtnMakeCostRecordDefault.Enabled = Not oProductCost.Isdefaultcostrecord
+        End If
 
     End Sub
 End Class

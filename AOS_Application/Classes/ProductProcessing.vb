@@ -388,6 +388,8 @@ Module ProductProcessing
             Select Case vStatus
                 Case "ACTIVE"
                     oProduct.Productstatus = "ACTIVE"
+                    SetProductStatndardCosts(vProductID, "Product Change - ProdId " & vProductID, "Product Change - ProdId " & vProductID & "[" & vStatus & "]")
+                    '                    updateActiveProductRelatedRecords(vProductID)
                     oProduct.Save()
                 Case "INACTIVE"
                     oProduct.Productstatus = "INACTIVE"
@@ -402,6 +404,7 @@ Module ProductProcessing
             Exit Sub
         End Try
     End Sub
+
 
     Public Sub updateInactiveProductRelatedRecords(vProductID As Integer)
         If IsDBNull(vProductID) Or vProductID = Nothing Then

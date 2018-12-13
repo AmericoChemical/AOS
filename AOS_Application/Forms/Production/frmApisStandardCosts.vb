@@ -75,27 +75,29 @@ Public Class frmApisStandardCosts
         Me.DialogResult = Windows.Forms.DialogResult.Yes
     End Sub
 
-    Private Sub btnUpdateStandardCosts_Click(sender As Object, e As EventArgs) Handles btnUpdateStandardCosts.Click
+    ' VS-- STD cost update should be automatic
 
-        If Not IsDBNull(oProduct.Stdweight) Then
-            If oTotalCosts.Weight <> oProduct.Stdweight Then
-                If MsgBox("The Label Weight does not match the Standard Weight Units. Do you want to save anyway?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
-                    Exit Sub
-                End If
-            End If
-        End If
+    'Private Sub btnUpdateStandardCosts_Click(sender As Object, e As EventArgs) Handles btnUpdateStandardCosts.Click
 
-        If MsgBox("Are you sure you want to UPDATE the existing STANDARD COSTS for this product to the CALCULATED APIS COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
-            Exit Sub
-        End If
+    '    If Not IsDBNull(oProduct.Stdweight) Then
+    '        If oTotalCosts.Weight <> oProduct.Stdweight Then
+    '            If MsgBox("The Label Weight does not match the Standard Weight Units. Do you want to save anyway?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+    '                Exit Sub
+    '            End If
+    '        End If
+    '    End If
 
-        If MsgBox("If you make this change, it cannot be undone. ARE YOU SURE YOU WANT TO CONTINUE?", MsgBoxStyle.YesNo, "CONFIRM REQUEST") = MsgBoxResult.No Then
-            Exit Sub
-        End If
+    '    If MsgBox("Are you sure you want to UPDATE the existing STANDARD COSTS for this product to the CALCULATED APIS COSTS?", MsgBoxStyle.YesNo, "Confirm") = MsgBoxResult.No Then
+    '        Exit Sub
+    '    End If
 
-        updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, oTotalCosts.ApisVolUnitCost, oTotalCosts.Weight, oTotalCosts.ApisUnitCost, "APIS UPDATE - " & oAPIS.Apisnum.ToString, "STD COST", oAPIS.Apisnum, "APIS CHNG-" & oAPIS.Apisnum)
+    '    If MsgBox("If you make this change, it cannot be undone. ARE YOU SURE YOU WANT TO CONTINUE?", MsgBoxStyle.YesNo, "CONFIRM REQUEST") = MsgBoxResult.No Then
+    '        Exit Sub
+    '    End If
 
-        editObject(vAPISID)
+    '    updateAPISStandardCosting(oAPIS.Productid, oTotalCosts.Volume, oTotalCosts.ApisVolUnitCost, oTotalCosts.Weight, oTotalCosts.ApisUnitCost, "APIS UPDATE - " & oAPIS.Apisnum.ToString, "STD COST", oAPIS.Apisnum, "APIS CHNG-" & oAPIS.Apisnum)
 
-    End Sub
+    '    editObject(vAPISID)
+
+    'End Sub
 End Class

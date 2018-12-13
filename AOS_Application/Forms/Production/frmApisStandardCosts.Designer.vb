@@ -333,11 +333,14 @@ Partial Class frmApisStandardCosts
         '
         'btnUpdateStandardCosts
         '
+        Me.btnUpdateStandardCosts.Enabled = False
         Me.btnUpdateStandardCosts.Location = New System.Drawing.Point(305, 168)
         Me.btnUpdateStandardCosts.Name = "btnUpdateStandardCosts"
         Me.btnUpdateStandardCosts.Size = New System.Drawing.Size(150, 39)
         Me.btnUpdateStandardCosts.TabIndex = 42
         Me.btnUpdateStandardCosts.Text = "<-- Update Standard Costs"
+        Me.btnUpdateStandardCosts.ToolTip = "Std Cost update is automatic. No need of button"
+        Me.btnUpdateStandardCosts.Visible = False
         '
         'LabelControl18
         '

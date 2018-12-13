@@ -125,6 +125,14 @@ Public Class frmUpdateProductUnitCost
         oCost.Modifytime = Now
         oCost.Modifyby = vCurrentUserLogin
         oCost.Isactive = True
+        ' set default to true onlyif its a first cost otherwise set it to false 
+        Dim productCosts As New ProductcostCollection
+        productCosts.Query.Where(productCosts.Query.Productid = vProductID)
+        If (productCosts.Query.Load AndAlso productCosts.Count > 0) Then
+            oCost.Isdefaultcostrecord = False
+        Else
+            oCost.Isdefaultcostrecord = True
+        End If
         oCost.Save()
         Me.bsProductCost.DataSource = oCost
     End Sub
@@ -141,6 +149,23 @@ Public Class frmUpdateProductUnitCost
     Private Function changesSaved() As Boolean
         bsProductCost.EndEdit()
         oCost.Save()
+
+
+        'If oCost.Isactive = False Then
+        '    Dim productCosts As New ProductcostCollection
+        '    productCosts.Query.Where(productCosts.Query.Productid = oCost.Productid And productCosts.Query.Isactive = True And productCosts.Query.Costrecid <> oCost.Costrecid)
+        '    If Not (productCosts.Query.Load() AndAlso productCosts.Count > 0) Then
+        '        MsgBox("Must have atleast one active record")
+        '        Return False
+        '    End If
+        'End If
+        '  oCost.Save()
+
+        'Dim productCosts As New ProductcostCollection
+        'productCosts.Query.Where(productCosts.Query.Productid = oCost.Productid And productCosts.Query.Isactive = True And productCosts.Query.Isdefaultcostrecord = True)
+        'If Not (productCosts.Query.Load() AndAlso productCosts.Count > 0) Then
+        '    oCost.Isdefaultcostrecord = True
+        'End If
 
         'Dim vVolUnits As Decimal = IIf(IsDBNull(eVolUnits.EditValue) Or eVolUnits.EditValue = Nothing, 0, eVolUnits.EditValue)
         'Dim vVolUOM As String = IIf(eVolUOM.EditValue = Nothing, "", eVolUOM.EditValue)
@@ -189,7 +214,36 @@ Public Class frmUpdateProductUnitCost
             vWgtUnitCost = eWgtUnitCost.EditValue
         End If
 
+
         updateVendorProductCosting(bsProductCost.Current.Costrecid, eCostMethod.EditValue, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, eReason.EditValue, bsProductCost.Current.ProductID, eVendor.EditValue, OrigVolCost, OrigWgtCost)
+
+
+        If CheckEditDefault.Checked Then
+            MarkVendorProductCostAsDefault(oCost.Costrecid)
+        Else
+            Dim nextDefaultCost As Productcost = GetVendorCostForStdCost(oCost.Productid, oCost.Costrecid)
+            If nextDefaultCost Is Nothing Then
+                MsgBox("Must have a default record. Setting current record to default.")
+                MarkVendorProductCostAsDefault(oCost.Costrecid)
+            Else
+                MarkVendorProductCostAsDefault(nextDefaultCost.Costrecid)
+            End If
+            'Dim productCostsDefault As New ProductcostCollection
+            'productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
+            'If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
+
+            '    MsgBox("Must have atleast one default record. Setting current record to default.")
+            '    MarkVendorProductCostAsDefault(oCost.Costrecid)
+            'End If
+        End If
+
+        'Dim productCostsDefault As New ProductcostCollection
+        'productCostsDefault.Query.Where(productCostsDefault.Query.Productid = oCost.Productid And productCostsDefault.Query.Isdefaultcostrecord = True And productCostsDefault.Query.Costrecid <> oCost.Costrecid)
+        'If Not (productCostsDefault.Query.Load() AndAlso productCostsDefault.Count > 0) Then
+        '    If oCost.Isdefaultcostrecord <> True Then
+        '        MarkVendorProductCostAsDefault(oCost.Costrecid)
+        '    End If
+        'End If
 
         Return True
     End Function
@@ -297,6 +351,7 @@ Public Class frmUpdateProductUnitCost
         End If
     End Sub
 
+    ' This should not execute buttin is invisible by setting group pane  RibbonPageGroup1 invisible
     Private Sub rbtnUpdateProductStandardCosts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnUpdateProductStandardCosts.ItemClick
         ' Check for OverRide
         If Costing.getProductStandardCostSource(oProduct.Productid) = "OVERRIDE" Then
@@ -396,7 +451,9 @@ Public Class frmUpdateProductUnitCost
         vVolUOM = oCost.Volumeuom
         vWgtUOM = oCost.Weightuom
 
-        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid)
+        updateStandardCostingFromVendorCostChange(oCost.Productid, vVolUnits, vVolUOM, vVolUnitCost, vWgtUnits, vWgtUOM, vWgtUnitCost, "Vendor Cost Updated", "STANDARD COST", oCost.Productid, "VNDR COST CHNG-" & vProductID)
+
+
 
         If RaiseAuditEvent(vAuditRuleID, bsProductCost, PricingMethod.VOLUME, vFlag) Then
             eVolUnitCost.Focus()
@@ -431,4 +488,26 @@ Public Class frmUpdateProductUnitCost
 
 
     End Sub
+
+
+    'Private Sub CheckEditActive_Click(sender As Object, e As EventArgs) 
+    '    If CheckEditActive.Checked Then
+    '        ' when changed tounchecked
+    '        If CheckEditDefault.CheckState Then
+    '            MsgBox("Default vendor cost cannot be set inactive.", MsgBoxStyle.OkOnly)
+    '            CheckEditActive.Checked = True
+    '        End If
+    '    End If
+    'End Sub
+
+
+
+    'Private Sub RecalculateVolumeCost(sender As Object, e As EventArgs) Handles eWgtUnitCost.Leave, eWgtUnits.Leave
+    '    If IsInitializing = False Then
+    '        AuditCheckPriceForLowPrice(eWgtUnitCost, PricingMethod.WEIGHT, eVolUnits, eVolUnitCost, eWgtUnits, eWgtUnitCost, bsProductCost, vAuditRuleID, vFlag, CalledFrom.PRODUCTCOST)
+    '        '            AuditCheckPriceForLowPrice(eVolUnitCost, PricingMethod.VOLUME, eVolUnits, eVolUnitCost, eWgtUnits, eWgtUnitCost, bsProductCost, vAuditRuleID, vFlag, CalledFrom.PRODUCTCOST)
+
+    '    End If
+    'End Sub
+
 End Class

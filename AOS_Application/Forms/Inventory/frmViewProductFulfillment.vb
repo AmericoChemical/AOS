@@ -64,7 +64,6 @@ Public Class frmviewProductFulfillment
     End Sub
 
     Private Sub btnProductFulfillmentdelete_itemclick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnProductFulfillmentDelete.ItemClick
-
         If bsProductFulfillment.Count <= 0 Then
             Exit Sub
         End If
@@ -73,17 +72,32 @@ Public Class frmviewProductFulfillment
             Exit Sub
         End If
 
+
         Try
             deleteProductRelabelInstructionsByFulfillmentPlanID(bsProductFulfillment.Current.FULFILLMENTPLANID)
 
-            ' Delete the Kit Component based on the selected row in the Grid
+            ' Delete the product fulfilment plan based on the selected row in the Grid
             Dim oProductfulfillmentplan As New Productfulfillmentplan
             If oProductfulfillmentplan.LoadByPrimaryKey(bsProductFulfillment.Current.FULFILLMENTPLANID) Then
+                Dim productId As Integer = oProductfulfillmentplan.Productid
+                'do not allow to delete priority 1 until its the last fulfilmentplan record
+                If oProductfulfillmentplan.Priority = 1 Then
+                    Dim productPlans As New ProductfulfillmentplanCollection
+                    productPlans.Query.Where(productPlans.Query.Productid = productId And productPlans.Query.Fulfillmentplanid <> oProductfulfillmentplan.Fulfillmentplanid)
+                    If productPlans.Query.Load() AndAlso productPlans.Count > 0 Then
+                        MsgBox("Product fulfillment plan with priority 1 - INV must exist.", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
+                        Exit Sub
+                    End If
+                End If
                 oProductfulfillmentplan.MarkAsDeleted()
                 oProductfulfillmentplan.Save()
                 MsgBox("Record successfully deleted", MsgBoxStyle.Information, "Delete Product Fulfillment - Success")
+
+                'frmAddEditProductFulfillment.SetProductFulfilmentPlanOne(productId)
+                SetProductStatndardCosts(productId, "FulFillment Plan Change - ProdId " & productId & "[Delete]")
+
             Else
-                MsgBox("Could not delete selected kit item", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
+                MsgBox("Could not delete selected product fulfilment plan", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
             End If
         Catch ex As Exception
             MsgBox("Error in deleting selected record", MsgBoxStyle.Critical, "Delete Product Fulfillment - Error")
@@ -123,10 +137,10 @@ Public Class frmviewProductFulfillment
     End Sub
 
     Private Sub enableRelabelInstruction()
-        btnRelabelInstructions.Enabled = IIf((bsProductFulfillment.Count > 0 AndAlso _
+        btnRelabelInstructions.Enabled = IIf((bsProductFulfillment.Count > 0 AndAlso
                                              bsProductFulfillment.Current.Fulfillmenttype = FulfillmentType.RLBL.ToString()) _
                                              , True, False)
     End Sub
 
-   
+
 End Class

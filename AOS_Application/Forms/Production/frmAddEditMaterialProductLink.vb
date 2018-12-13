@@ -85,11 +85,34 @@ Public Class frmAddEditMaterialProductLink
         Me.bsItem.DataSource = oItem
     End Sub
 
+    Private Function ModifiedColumns() As List(Of String)
+
+        Dim vModifiedColumns As New List(Of String)
+        If oItem.es.IsDirty Then
+            For Each obj As String In oItem.es.ModifiedColumns
+
+                Select Case obj.ToString
+                    Case "PRODUCTID",
+                        "PRIORITY"
+                        vModifiedColumns.Add(obj.ToString)
+                End Select
+            Next
+        End If
+
+        Return vModifiedColumns
+
+    End Function
+
     Private Function changesSaved() As Boolean
         Try
             bsItem.EndEdit()
+            Dim vmodifedColumns As List(Of String) = ModifiedColumns()
+
             oItem.EndEdit()
             oItem.Save()
+            SetMaterialProductPriority(oItem.Mpid)
+            ProcessMaterialCostChanges(oItem.Materialid, "Material Change - MatId " & oItem.Materialid & "[" & String.Join(",", vmodifedColumns.ToArray()) & "]", "STD COST", "Material Change-ID" & oItem.Materialid)
+
         Catch ex As Exception
             MsgBox(ex.Message)
             MsgBox("Error saving changes", MsgBoxStyle.Critical, "Error")
@@ -115,11 +138,111 @@ Public Class frmAddEditMaterialProductLink
     End Function
 
     Private Sub btnSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSave.ItemClick
+        If ValidateData() = False Then
+            'SetFocustoFirstNullFieldinPricingMethod()
+            Exit Sub
+        End If
+
         If changesSaved() Then
             Me.DialogResult = Windows.Forms.DialogResult.Yes
         End If
     End Sub
+    Public Shared Sub SetMaterialProductPriorityOne(ByVal materialId As Integer)
+        Dim materialProductOne As New Materialproduct
+        If Not materialProductOne.LoadByPriority(materialId, 1) Then
+            Dim oMatProducts As New MaterialproductCollection
+            oMatProducts.Query.Where(oMatProducts.Query.Materialid = materialId And oMatProducts.Query.Priority > 1)
+            oMatProducts.Query.OrderBy(oMatProducts.Query.Priority.Ascending)
+            If oMatProducts.Query.Load AndAlso oMatProducts.Count > 0 Then
+                oMatProducts(0).Priority = 1
+                oMatProducts.Save()
+                Exit Sub
+            Else
+                Dim oMatProductAll As New MaterialproductCollection
+                oMatProductAll.Query.Where(oMatProductAll.Query.Materialid = materialId)
+                oMatProductAll.Query.OrderBy(oMatProductAll.Query.Priority.Ascending)
+                If oMatProductAll.Query.Load AndAlso oMatProductAll.Count > 0 Then
+                    oMatProductAll(0).Priority = 1
+                    oMatProductAll.Save()
+                    Exit Sub
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub SetMaterialProductPriority(ByVal materialProductId As Integer)
+        Dim oCurrentMaterialProduct As New Materialproduct
+        If oCurrentMaterialProduct.LoadByPrimaryKey(materialProductId) Then
+            Dim materialId As Integer = oCurrentMaterialProduct.Materialid
+            Dim priority As Integer = oCurrentMaterialProduct.Priority
+            If priority = 0 Then
+                Exit Sub
+            End If
+            If priority <> 1 Then
+                SetMaterialProductPriorityOne(materialId)
+            End If
+            ' Check if duplicates
+            Dim oMaterialDupProducts As New MaterialproductCollection
+            oMaterialDupProducts.Query.Where(oMaterialDupProducts.Query.Materialid = materialId And oMaterialDupProducts.Query.Priority >= priority And oMaterialDupProducts.Query.Mpid <> materialProductId)
+            oMaterialDupProducts.Query.OrderBy(oMaterialDupProducts.Query.Priority.Ascending)
+            If oMaterialDupProducts.Query.Load AndAlso oMaterialDupProducts.Count > 0 Then
+                If oMaterialDupProducts(0).Priority = priority Then
+                    oMaterialDupProducts(0).Priority = oMaterialDupProducts(0).Priority + 1
+                    oMaterialDupProducts.Save()
+                    SetMaterialProductPriority(oMaterialDupProducts(0).Mpid)
+                End If
 
+            End If
+        End If
+    End Sub
+
+
+    Private Function ValidateData()
+        PriorityTextEdit.Focus() 'change focus to set value of dropdown
+        Dim productId As Integer? = bsItem.Current.Productid
+        If productId Is Nothing OrElse productId = 0 Then
+            MsgBox("Must specifiy product", MsgBoxStyle.Critical, "Error")
+            eProduct.Focus()
+            Return False
+            'Else ' no need to code for it as its managed in dropdown
+            '    Dim materialProducts As New MaterialproductCollection
+            '    materialProducts.Query.Where(materialProducts.Query.Materialid = vMaterialID And materialProducts.Query.Productid = productId)
+            '    If materialProducts.Query.Load() AndAlso materialProducts.Count > 0 Then
+            '        MsgBox("Product can be linked to material only once. Please edit existing product link.", MsgBoxStyle.Critical, "Error")
+            '        eProduct.Focus()
+            '        Return False
+            '    End If
+        End If
+
+        If String.IsNullOrEmpty(Me.PriorityTextEdit.Text) Then
+            MsgBox("Must specifiy priority", MsgBoxStyle.Critical, "Error")
+            PriorityTextEdit.Focus()
+            Return False
+        End If
+        Dim priority As Integer
+        Integer.TryParse(Me.PriorityTextEdit.Text, priority)
+        If priority <> 1 Then
+            Dim materialProductOne As New Materialproduct
+            If Not materialProductOne.LoadByPriority(vMaterialID, 1) OrElse materialProductOne.Mpid = oItem.Mpid Then
+                If MsgBox("Must have a priority 1 record. Set  priority to 1?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                    PriorityTextEdit.Focus()
+                    Return False
+                Else
+                    PriorityTextEdit.Text = "1"
+                End If
+            End If
+        End If
+
+        If priority <> 0 Then
+            Dim materialProduct As New Materialproduct
+            If materialProduct.LoadByPriority(vMaterialID, priority) AndAlso materialProduct.Mpid <> oItem.Mpid Then
+                If MsgBox("Priority already exists. Auto adjust priorities?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.No Then
+                    PriorityTextEdit.Focus()
+                    Return False
+                End If
+            End If
+        End If
+        Return True
+    End Function
     Private Sub btnCancel_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCancel.ItemClick
         If changesCancelled() Then
             Me.DialogResult = Windows.Forms.DialogResult.Cancel

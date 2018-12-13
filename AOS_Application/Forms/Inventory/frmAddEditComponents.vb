@@ -88,7 +88,7 @@ Public Class frmAddEditComponents
             End If
             oComponent.Save()
 
-            ProcessComponentCostChanges(vID, orgUnitCost, oComponent.Unitcost, "COMPONENT CHNG - COMP " & vID, "STD COST", vID, "COMP COST CHNG-" & vID)
+            ProcessComponentCostChanges(vID, orgUnitCost, oComponent.Unitcost, "Component Cost Change-" & vID, "STD COST", vID, "Component Cost Change - COMP " & vID)
         End If
         Return True
     End Function
@@ -211,10 +211,14 @@ Public Class frmAddEditComponents
         getComponent()
     End Sub
 
-    Private Sub btnComponentCostRecords_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnComponentCostRecords.ItemClick
-        Dim frm As New frmViewComponentCostRecords
-        frm.vComponentID = oComponent.Componentid
-        frm.ShowDialog()
-        editObject(oComponent.Componentid)
+    Private Sub btnSave_Click(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSave.ItemClick
+
     End Sub
+
+    'Private Sub btnComponentCostRecords_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnComponentCostRecords.ItemClick
+    '    Dim frm As New frmViewComponentCostRecords
+    '    frm.vComponentID = oComponent.Componentid
+    '    frm.ShowDialog()
+    '    editObject(oComponent.Componentid)
+    'End Sub
 End Class

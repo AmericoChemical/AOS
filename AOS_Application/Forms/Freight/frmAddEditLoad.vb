@@ -1,5 +1,7 @@
 
 Imports AOS.BusinessObjects
+Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
 
 Public Class frmAddEditLoad
     Inherits DevExpress.XtraEditors.XtraForm
@@ -59,6 +61,7 @@ Public Class frmAddEditLoad
             Me.Close()
         End If
         bsLoad.DataSource = oLoad
+        txtTotalSkids.Text = IIf(oLoad.TotalSkids.HasValue, oLoad.TotalSkids, 0)
         getLoadItems(vID)
     End Sub
 
@@ -128,8 +131,11 @@ Public Class frmAddEditLoad
             MsgBox("You must enter at least one Load Item to save the Load", MsgBoxStyle.Critical, "Error - No items")
             Exit Sub
         End If
+        oLoad.TotalSkids = txtTotalSkids.Text
         oLoad.Save()
         oLoadItems.Save()
+        updateWorkOrderFromLoadInfo(oLoad.LoadID, "LOAD UPDATE")
+
         Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub
 
@@ -476,5 +482,24 @@ Public Class frmAddEditLoad
         Dim frm As New frmFreightCharges
         frm.vLoadID = oLoad.LoadID
         frm.ShowDialog()
+    End Sub
+
+
+
+    Private Sub chkEditOverrideSkids_EditValueChanging(sender As Object, e As ChangingEventArgs) Handles chkEditOverrideSkids.EditValueChanging
+
+        If e.NewValue <> e.OldValue Then
+            If e.NewValue Then ' checked 
+                ' txtTotalSkids.ReadOnly = False
+            Else
+                Dim chkOverride As CheckEdit = CType(sender, CheckEdit)
+                txtTotalSkids.Text = GetCalculatedSkidsByLoad(vLoadID)
+
+            End If
+        End If
+    End Sub
+
+    Private Sub chkEditOverrideSkids_EditValueChanged(sender As Object, e As EventArgs) Handles chkEditOverrideSkids.EditValueChanged
+        txtTotalSkids.ReadOnly = Not chkEditOverrideSkids.Checked
     End Sub
 End Class

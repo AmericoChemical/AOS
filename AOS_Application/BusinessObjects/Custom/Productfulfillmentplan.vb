@@ -21,6 +21,15 @@ Namespace BusinessObjects
 	Partial Public Class Productfulfillmentplan 
 		Inherits esProductfulfillmentplan
 
-	End Class
+        Public Function LoadByPriority(productId As Integer, priority As Integer) As Boolean
+            Dim productPlans As New ProductfulfillmentplanCollection
+            productPlans.Query.Where(productPlans.Query.Productid = productId And productPlans.Query.Priority = priority)
+            If productPlans.Query.Load() AndAlso productPlans.Count > 0 Then
+                Return Me.LoadByPrimaryKey(productPlans(0).Fulfillmentplanid)
+            End If
+            Return False
+        End Function
+
+    End Class
 
 End Namespace

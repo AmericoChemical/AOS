@@ -11,6 +11,8 @@
 /AOS_Application/obj/Debug/AOS.frmInvoiceChangeReason.resources
 /AOS_Application/obj/Debug/AOS.Application.vbprojResolveAssemblyReference.cache
 /AOS_Application/obj/Debug/AOS.Application.vbproj.CopyComplete
+/AOS_Application/Services/EmailService/bin
+/AOS_Application/Services/EmailService/obj/Debug
 /AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CoreCompileInputs.cache
 /AOS_Application/Services/EmailService/obj/Debug/EmailService.csproj.CopyComplete
 /AOS_Application/obj/Debug

@@ -1,4 +1,6 @@
 Imports AOS.BusinessObjects
+Imports DevExpress.XtraGrid.Views.Base
+Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class viewFreightDashboard
 
@@ -376,6 +378,7 @@ Public Class viewFreightDashboard
             oLoadWOs.Query.Where(oLoadWOs.Query.LoadID.Equal(oLoad.LoadID))
             If oLoadWOs.Query.Load() Then
                 For Each obj As ViewLoadWorkorders In oLoadWOs
+                    oLoad.WorkOrderStatus = GetOrderOrderStatus(obj.Workordernumber)
                     If oLoad.WorkOrderNumbers = "" Then
                         oLoad.WorkOrderNumbers = obj.Workordernumber.ToString
                     Else
@@ -795,4 +798,109 @@ Public Class viewFreightDashboard
             MsgBox(ex.Message)
         End Try
     End Sub
+
+
+
+    Private Sub grvPendingLoads_RowCellClick(sender As Object, e As RowCellClickEventArgs) Handles grvPendingLoads.RowCellClick
+
+        If (e.Column.Name <> "colWONumber") Then
+            Exit Sub
+        End If
+        If ((Not String.IsNullOrEmpty(e.CellValue)) OrElse (e.CellValue > 0)) Then
+            printWorkOrder(bsPendingLoads.Current.workOrderNumbers)
+
+
+        End If
+        'refreshPurchaseOrders(vPurchaseStatus)
+        'refreshTab(vItemStatus)
+    End Sub
+
+    Private Sub grvPendingLoads_RowStyle(sender As Object, e As RowStyleEventArgs) Handles grvPendingLoads.RowStyle
+        If (e.RowHandle >= 0) Then
+
+            Dim woStatus As String = grvPendingLoads.GetRowCellDisplayText(e.RowHandle, grvPendingLoads.Columns("WorkOrderStatus"))
+
+            Select Case woStatus
+                Case "Order On Hold"
+                    e.Appearance.BackColor = Color.Yellow
+                    e.Appearance.BackColor2 = Color.Yellow
+                    e.Appearance.ForeColor = Color.Black
+                Case "Late Items"
+                    e.Appearance.BackColor = Color.Red
+                    e.Appearance.BackColor2 = Color.Red
+                    e.Appearance.ForeColor = Color.Black
+                Case "Open Purchase Items"
+                    e.Appearance.BackColor = Color.Pink
+                    e.Appearance.BackColor2 = Color.Pink
+                    e.Appearance.ForeColor = Color.Black
+                Case "Open Production Orders"
+                    e.Appearance.BackColor = Color.LightBlue
+                    e.Appearance.BackColor2 = Color.LightBlue
+                    e.Appearance.ForeColor = Color.Black
+                Case "Items Needing Allocation"
+                    e.Appearance.BackColor = Color.LightGreen
+                    e.Appearance.BackColor2 = Color.LightGreen
+                    e.Appearance.ForeColor = Color.Black
+
+            End Select
+
+        End If
+    End Sub
+
+    Private Sub grvPendingLoads_EndGrouping(sender As Object, e As EventArgs) Handles grvPendingLoads.EndGrouping
+        grvPendingLoads.ExpandAllGroups()
+
+    End Sub
+
+    Private Sub grvPendingLoads_GroupRowCollapsing(sender As Object, e As RowAllowEventArgs) Handles grvPendingLoads.GroupRowCollapsing
+        e.Allow = False
+    End Sub
+
+    Function GetOrderOrderStatus(WONumber As String) As String
+
+        Dim workOrder As New ViewWorkOrdersInProcess2
+        workOrder.Query.es.Top = 1
+        workOrder.Query.Where(workOrder.Query.Workordernumber = WONumber)
+        If (workOrder.Query.Load()) Then
+            ''Check to see if order is marked as On Hold
+            Dim vHold As String = workOrder.OnHold
+            If vHold = "X" Then
+                Return "Order On Hold"
+            End If
+
+            'Check to see Items expected in after date needed is greater than zero
+            Dim vItemsExp As Integer = workOrder.Itemsexpectedafterdateneeded
+            If vItemsExp > 0 Then
+                Return "Late Items"
+            End If
+
+            'check to see if there are any items on open Purchase Requisitions - EXCLUDE DIRECT WORKORDERS
+            Dim vTransportType As String = workOrder.Transporttype
+            If vTransportType <> "DIRECT" Then
+                Dim vPur As Integer = workOrder.OpenReqQty
+                If vPur > 0 Then
+                    Return "Open Purchase Items"
+                End If
+            End If
+
+            Dim vPurPending As Integer = workOrder.OpenPurchPendingQty
+            If vPurPending > 0 Then
+                Return "Open Purchase Items"
+            End If
+
+            'check to see if there are any items on open Production Orders
+            Dim vProd As Integer = workOrder.OpenProdOrderQty
+            If vProd > 0 Then
+                Return "Open Production Orders"
+            End If
+
+            'check to see if there are any unallocated items on the work order (not on Production orders or Purchase Reqs)
+            Dim vAlloc As Integer = workOrder.UnAllocatedQty
+            If vAlloc > 0 And workOrder.Transporttype <> "DIRECT" Then
+                Return "Items Needing Allocation"
+            End If
+
+        End If
+        Return String.Empty
+    End Function
 End Class

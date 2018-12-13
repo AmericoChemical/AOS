@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 7/23/2017 4:21:09 PM
+' Date Generated       : 10/17/2018 10:57:21 AM
 '===============================================================================
 
 Imports System
@@ -155,6 +155,18 @@ Namespace BusinessObjects
 												
 						Case "Origprodid"
 							Me.str.Origprodid = CType(value, string)
+												
+						Case "Origvolunits"
+							Me.str.Origvolunits = CType(value, string)
+												
+						Case "Origvolumeuom"
+							Me.str.Origvolumeuom = CType(value, string)
+												
+						Case "Origwgtunits"
+							Me.str.Origwgtunits = CType(value, string)
+												
+						Case "Origweightuom"
+							Me.str.Origweightuom = CType(value, string)
 					
 					End Select
 					
@@ -196,6 +208,18 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
 								Me.Origprodid = CType(value, Nullable(Of System.Int32))
+							End If
+						
+						Case "Origvolunits"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.Origvolunits = CType(value, Nullable(Of System.Decimal))
+							End If
+						
+						Case "Origwgtunits"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.Origwgtunits = CType(value, Nullable(Of System.Decimal))
 							End If
 						
 					
@@ -314,6 +338,58 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Int32))
 				MyBase.SetSystemInt32(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origprodid, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewRelabelProductsCostChanges.ORIGVOLUNITS
+		' </summary>
+		Public Overridable Property Origvolunits As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolunits)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolunits, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewRelabelProductsCostChanges.ORIGVOLUMEUOM
+		' </summary>
+		Public Overridable Property Origvolumeuom As System.String
+			Get
+				Return MyBase.GetSystemString(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolumeuom)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolumeuom, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewRelabelProductsCostChanges.ORIGWGTUNITS
+		' </summary>
+		Public Overridable Property Origwgtunits As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origwgtunits)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origwgtunits, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewRelabelProductsCostChanges.ORIGWEIGHTUOM
+		' </summary>
+		Public Overridable Property Origweightuom As System.String
+			Get
+				Return MyBase.GetSystemString(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origweightuom)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origweightuom, value)
 			End Set
 		End Property		
 		
@@ -506,6 +582,88 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Origvolunits As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Decimal) = entity.Origvolunits
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Origvolunits = Nothing
+					Else
+						entity.Origvolunits = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Origvolumeuom As System.String 
+				Get
+					Dim data_ As System.String = entity.Origvolumeuom
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Origvolumeuom = Nothing
+					Else
+						entity.Origvolumeuom = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Origwgtunits As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Decimal) = entity.Origwgtunits
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Origwgtunits = Nothing
+					Else
+						entity.Origwgtunits = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Origweightuom As System.String 
+				Get
+					Dim data_ As System.String = entity.Origweightuom
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Origweightuom = Nothing
+					Else
+						entity.Origweightuom = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewRelabelProductsCostChanges
@@ -595,6 +753,30 @@ Namespace BusinessObjects
 		Public ReadOnly Property Origprodid As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewRelabelProductsCostChangesMetadata.ColumnNames.Origprodid, esSystemType.Int32)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Origvolunits As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolunits, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Origvolumeuom As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolumeuom, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Origwgtunits As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewRelabelProductsCostChangesMetadata.ColumnNames.Origwgtunits, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Origweightuom As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewRelabelProductsCostChangesMetadata.ColumnNames.Origweightuom, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -839,6 +1021,32 @@ Namespace BusinessObjects
 			c.NumericPrecision = 10
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolunits, 8, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewRelabelProductsCostChangesMetadata.PropertyNames.Origvolunits
+			c.NumericPrecision = 18
+			c.NumericScale = 4
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origvolumeuom, 9, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewRelabelProductsCostChangesMetadata.PropertyNames.Origvolumeuom
+			c.CharacterMaxLength = 50
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origwgtunits, 10, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewRelabelProductsCostChangesMetadata.PropertyNames.Origwgtunits
+			c.NumericPrecision = 18
+			c.NumericScale = 4
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewRelabelProductsCostChangesMetadata.ColumnNames.Origweightuom, 11, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewRelabelProductsCostChangesMetadata.PropertyNames.Origweightuom
+			c.CharacterMaxLength = 50
+			c.IsNullable = True
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -875,6 +1083,10 @@ Namespace BusinessObjects
 			 Public Const Oldwgtcost As String = "OLDWGTCOST"
 			 Public Const Newwgtcost As String = "NEWWGTCOST"
 			 Public Const Origprodid As String = "ORIGPRODID"
+			 Public Const Origvolunits As String = "ORIGVOLUNITS"
+			 Public Const Origvolumeuom As String = "ORIGVOLUMEUOM"
+			 Public Const Origwgtunits As String = "ORIGWGTUNITS"
+			 Public Const Origweightuom As String = "ORIGWEIGHTUOM"
 		End Class
 #End Region	
 		
@@ -888,6 +1100,10 @@ Namespace BusinessObjects
 			 Public Const Oldwgtcost As String = "Oldwgtcost"
 			 Public Const Newwgtcost As String = "Newwgtcost"
 			 Public Const Origprodid As String = "Origprodid"
+			 Public Const Origvolunits As String = "Origvolunits"
+			 Public Const Origvolumeuom As String = "Origvolumeuom"
+			 Public Const Origwgtunits As String = "Origwgtunits"
+			 Public Const Origweightuom As String = "Origweightuom"
 		End Class
 #End Region	
 
@@ -942,7 +1158,11 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Newvolcost", new esTypeMap("numeric", "System.Decimal"))
 				meta.AddTypeMap("Oldwgtcost", new esTypeMap("decimal", "System.Decimal"))
 				meta.AddTypeMap("Newwgtcost", new esTypeMap("numeric", "System.Decimal"))
-				meta.AddTypeMap("Origprodid", new esTypeMap("int", "System.Int32"))			
+				meta.AddTypeMap("Origprodid", new esTypeMap("int", "System.Int32"))
+				meta.AddTypeMap("Origvolunits", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Origvolumeuom", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("Origwgtunits", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Origweightuom", new esTypeMap("varchar", "System.String"))			
 				
 				
 				 

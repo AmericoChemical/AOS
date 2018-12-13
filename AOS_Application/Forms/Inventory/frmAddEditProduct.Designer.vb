@@ -18,6 +18,7 @@ Partial Class frmAddEditProduct
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim ProductidLabel As System.Windows.Forms.Label
         Dim ProductdescLabel As System.Windows.Forms.Label
         Dim ContainerLabel As System.Windows.Forms.Label
@@ -63,12 +64,12 @@ Partial Class frmAddEditProduct
         Dim Label19 As System.Windows.Forms.Label
         Dim Label20 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddEditProduct))
-        Me.Timer1 = New System.Windows.Forms.Timer()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.eProductID = New DevExpress.XtraEditors.TextEdit()
-        Me.bs = New System.Windows.Forms.BindingSource()
+        Me.bs = New System.Windows.Forms.BindingSource(Me.components)
         Me.eProductDesc = New DevExpress.XtraEditors.TextEdit()
         Me.eContainer = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsContainers = New System.Windows.Forms.BindingSource()
+        Me.bsContainers = New System.Windows.Forms.BindingSource(Me.components)
         Me.eLblGallons = New DevExpress.XtraEditors.TextEdit()
         Me.eLblWeight = New DevExpress.XtraEditors.TextEdit()
         Me.eClassRate = New DevExpress.XtraEditors.TextEdit()
@@ -76,7 +77,7 @@ Partial Class frmAddEditProduct
         Me.eHazmatDesc = New DevExpress.XtraEditors.TextEdit()
         Me.eUNLine = New DevExpress.XtraEditors.TextEdit()
         Me.eHazmatID = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsHazmat = New System.Windows.Forms.BindingSource()
+        Me.bsHazmat = New System.Windows.Forms.BindingSource(Me.components)
         Me.eReactivity = New DevExpress.XtraEditors.TextEdit()
         Me.ePersonalProtection = New DevExpress.XtraEditors.TextEdit()
         Me.eMinimumOnHand = New DevExpress.XtraEditors.TextEdit()
@@ -95,7 +96,7 @@ Partial Class frmAddEditProduct
         Me.rbtnProductSales = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnProductPurchases = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnProductApisCosts = New DevExpress.XtraBars.BarButtonItem()
-        Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection()
+        Me.LargeRibbonImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -105,8 +106,8 @@ Partial Class frmAddEditProduct
         Me.RepositoryItemWeekOfMonth1 = New DevExpress.XtraScheduler.UI.RepositoryItemWeekOfMonth()
         Me.RepositoryItemAppointmentLabel1 = New DevExpress.XtraScheduler.UI.RepositoryItemAppointmentLabel()
         Me.eAddnDesc = New DevExpress.XtraEditors.TextEdit()
-        Me.bsInventoryClass = New System.Windows.Forms.BindingSource()
-        Me.bsCustomers = New System.Windows.Forms.BindingSource()
+        Me.bsInventoryClass = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsCustomers = New System.Windows.Forms.BindingSource(Me.components)
         Me.luCustomers = New DevExpress.XtraEditors.LookUpEdit()
         Me.eLblUOM = New DevExpress.XtraEditors.TextEdit()
         Me.eLblUnits = New DevExpress.XtraEditors.TextEdit()
@@ -119,26 +120,26 @@ Partial Class frmAddEditProduct
         Me.eMatID = New DevExpress.XtraEditors.TextEdit()
         Me.eStatus = New DevExpress.XtraEditors.TextEdit()
         Me.IsactiveCheckEdit = New DevExpress.XtraEditors.CheckEdit()
-        Me.DefaultToolTipController1 = New DevExpress.Utils.DefaultToolTipController()
+        Me.DefaultToolTipController1 = New DevExpress.Utils.DefaultToolTipController(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.lblModified = New DevExpress.XtraEditors.LabelControl()
         Me.lblCreated = New DevExpress.XtraEditors.LabelControl()
-        Me.bsChemicalList = New System.Windows.Forms.BindingSource()
-        Me.bsProductStatusCodes = New System.Windows.Forms.BindingSource()
+        Me.bsChemicalList = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bsProductStatusCodes = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.CheckEdit3 = New DevExpress.XtraEditors.CheckEdit()
+        Me.CheckEditOverride = New DevExpress.XtraEditors.CheckEdit()
         Me.eStdCostSource = New DevExpress.XtraEditors.TextEdit()
         Me.eWgtCost = New DevExpress.XtraEditors.TextEdit()
         Me.eVolCost = New DevExpress.XtraEditors.TextEdit()
         Me.eWgtUOM = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsUOMWeight = New System.Windows.Forms.BindingSource()
+        Me.bsUOMWeight = New System.Windows.Forms.BindingSource(Me.components)
         Me.eWgtUnits = New DevExpress.XtraEditors.TextEdit()
         Me.eVolUOM = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsUOMVolume = New System.Windows.Forms.BindingSource()
+        Me.bsUOMVolume = New System.Windows.Forms.BindingSource(Me.components)
         Me.eVolUnits = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.ePkgGroup = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsPkgGroups = New System.Windows.Forms.BindingSource()
+        Me.bsPkgGroups = New System.Windows.Forms.BindingSource(Me.components)
         Me.eHazMatClassNumber = New DevExpress.XtraEditors.TextEdit()
         Me.eIDNumber = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
@@ -238,7 +239,7 @@ Partial Class frmAddEditProduct
         CType(Me.bsProductStatusCodes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckEditOverride.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eStdCostSource.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eWgtCost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eVolCost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1254,7 +1255,7 @@ Partial Class frmAddEditProduct
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Label20)
-        Me.GroupControl2.Controls.Add(Me.CheckEdit3)
+        Me.GroupControl2.Controls.Add(Me.CheckEditOverride)
         Me.GroupControl2.Controls.Add(Me.eStdCostSource)
         Me.GroupControl2.Controls.Add(Label11)
         Me.GroupControl2.Controls.Add(Label10)
@@ -1285,15 +1286,15 @@ Partial Class frmAddEditProduct
         Me.GroupControl2.Text = "Physical Specifications / Standard Costing"
         Me.GroupControl2.ToolTipController = Me.DefaultToolTipController1.DefaultController
         '
-        'CheckEdit3
+        'CheckEditOverride
         '
-        Me.CheckEdit3.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Standardcostoverride", True))
-        Me.CheckEdit3.Location = New System.Drawing.Point(127, 60)
-        Me.CheckEdit3.MenuManager = Me.RibbonControl1
-        Me.CheckEdit3.Name = "CheckEdit3"
-        Me.CheckEdit3.Properties.Caption = ""
-        Me.CheckEdit3.Size = New System.Drawing.Size(22, 19)
-        Me.CheckEdit3.TabIndex = 28
+        Me.CheckEditOverride.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bs, "Standardcostoverride", True))
+        Me.CheckEditOverride.Location = New System.Drawing.Point(127, 60)
+        Me.CheckEditOverride.MenuManager = Me.RibbonControl1
+        Me.CheckEditOverride.Name = "CheckEditOverride"
+        Me.CheckEditOverride.Properties.Caption = ""
+        Me.CheckEditOverride.Size = New System.Drawing.Size(22, 19)
+        Me.CheckEditOverride.TabIndex = 28
         '
         'eStdCostSource
         '
@@ -1641,7 +1642,7 @@ Partial Class frmAddEditProduct
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.CheckEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckEditOverride.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eStdCostSource.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eWgtCost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eVolCost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1759,5 +1760,5 @@ Partial Class frmAddEditProduct
     Friend WithEvents rpgHistory As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents rbtnProductApisCosts As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents eStdCostSource As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents CheckEdit3 As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CheckEditOverride As DevExpress.XtraEditors.CheckEdit
 End Class

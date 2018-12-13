@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 9/16/2018 8:05:04 PM
+' Date Generated       : 10/17/2018 9:56:21 AM
 '===============================================================================
 
 Imports System
@@ -161,6 +161,12 @@ Namespace BusinessObjects
 												
 						Case "Apisnum"
 							Me.str.Apisnum = CType(value, string)
+												
+						Case "Apisvolumeunits"
+							Me.str.Apisvolumeunits = CType(value, string)
+												
+						Case "Apisweightunits"
+							Me.str.Apisweightunits = CType(value, string)
 					
 					End Select
 					
@@ -214,6 +220,18 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.Int32" Then
 								Me.Apisnum = CType(value, Nullable(Of System.Int32))
+							End If
+						
+						Case "Apisvolumeunits"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.Apisvolumeunits = CType(value, Nullable(Of System.Decimal))
+							End If
+						
+						Case "Apisweightunits"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.Apisweightunits = CType(value, Nullable(Of System.Decimal))
 							End If
 						
 					
@@ -358,6 +376,32 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Int32))
 				MyBase.SetSystemInt32(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisnum, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewAPISProductsCostChanges.APISVOLUMEUNITS
+		' </summary>
+		Public Overridable Property Apisvolumeunits As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisvolumeunits)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisvolumeunits, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewAPISProductsCostChanges.APISWEIGHTUNITS
+		' </summary>
+		Public Overridable Property Apisweightunits As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisweightunits)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisweightunits, value)
 			End Set
 		End Property		
 		
@@ -592,6 +636,48 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property Apisvolumeunits As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Decimal) = entity.Apisvolumeunits
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Apisvolumeunits = Nothing
+					Else
+						entity.Apisvolumeunits = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property Apisweightunits As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Decimal) = entity.Apisweightunits
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.Apisweightunits = Nothing
+					Else
+						entity.Apisweightunits = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewAPISProductsCostChanges
@@ -693,6 +779,18 @@ Namespace BusinessObjects
 		Public ReadOnly Property Apisnum As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewAPISProductsCostChangesMetadata.ColumnNames.Apisnum, esSystemType.Int32)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Apisvolumeunits As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewAPISProductsCostChangesMetadata.ColumnNames.Apisvolumeunits, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property Apisweightunits As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewAPISProductsCostChangesMetadata.ColumnNames.Apisweightunits, esSystemType.Decimal)
 			End Get
 		End Property 
 		
@@ -951,6 +1049,18 @@ Namespace BusinessObjects
 			c.NumericPrecision = 10
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisvolumeunits, 10, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewAPISProductsCostChangesMetadata.PropertyNames.Apisvolumeunits
+			c.NumericPrecision = 38
+			c.NumericScale = 2
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewAPISProductsCostChangesMetadata.ColumnNames.Apisweightunits, 11, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewAPISProductsCostChangesMetadata.PropertyNames.Apisweightunits
+			c.NumericPrecision = 38
+			c.NumericScale = 2
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -989,6 +1099,8 @@ Namespace BusinessObjects
 			 Public Const Newwgtcost As String = "NEWWGTCOST"
 			 Public Const Newvolcost As String = "NEWVOLCOST"
 			 Public Const Apisnum As String = "APISNUM"
+			 Public Const Apisvolumeunits As String = "APISVOLUMEUNITS"
+			 Public Const Apisweightunits As String = "APISWEIGHTUNITS"
 		End Class
 #End Region	
 		
@@ -1004,6 +1116,8 @@ Namespace BusinessObjects
 			 Public Const Newwgtcost As String = "Newwgtcost"
 			 Public Const Newvolcost As String = "Newvolcost"
 			 Public Const Apisnum As String = "Apisnum"
+			 Public Const Apisvolumeunits As String = "Apisvolumeunits"
+			 Public Const Apisweightunits As String = "Apisweightunits"
 		End Class
 #End Region	
 
@@ -1060,7 +1174,9 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Weightunits", new esTypeMap("decimal", "System.Decimal"))
 				meta.AddTypeMap("Newwgtcost", new esTypeMap("decimal", "System.Decimal"))
 				meta.AddTypeMap("Newvolcost", new esTypeMap("decimal", "System.Decimal"))
-				meta.AddTypeMap("Apisnum", new esTypeMap("int", "System.Int32"))			
+				meta.AddTypeMap("Apisnum", new esTypeMap("int", "System.Int32"))
+				meta.AddTypeMap("Apisvolumeunits", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("Apisweightunits", new esTypeMap("decimal", "System.Decimal"))			
 				
 				
 				 

@@ -1169,14 +1169,19 @@ Public Class viewInventory
         Me.grKit.DataSource = bsKit
         Me.grKit.Refresh()
     End Sub
+    Private Sub RefreshComponent()
+        getComponent()
+        getKit()
 
+    End Sub
     Private Sub btnAddComponent_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddComponent.ItemClick
         Using frm As New frmAddEditComponents() With
             {.vEditType = "ADD"}
             frm.ShowDialog()
         End Using
-        getComponent()
+        RefreshComponent()
     End Sub
+
 
     Private Sub btnEditComponent_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEditComponent.ItemClick
 
@@ -1190,11 +1195,12 @@ Public Class viewInventory
             }
             frm.ShowDialog()
         End Using
-        getComponent()
+        RefreshComponent()
     End Sub
 
     Private Sub btnDeleteComponent_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnDeleteComponent.ItemClick
         deleteComponent()
+        RefreshComponent()
     End Sub
 
     Private Sub deleteComponent()
@@ -1248,7 +1254,6 @@ Public Class viewInventory
         Catch ex As Exception
             MsgBox("Error in deleting selected component record", MsgBoxStyle.Critical, "Delete Component - Error")
         End Try
-        getComponent()
     End Sub
 
 

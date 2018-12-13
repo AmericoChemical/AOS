@@ -64,7 +64,6 @@ Partial Class frmViewProductCostRecords
         Me.bsVendors = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDatecostchanged = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colIsactive = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIsdefaultcostrecord = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.lblproductInfo = New System.Windows.Forms.Label()
@@ -226,6 +225,7 @@ Partial Class frmViewProductCostRecords
         Me.rbtnUpdateStdCost.Id = 21
         Me.rbtnUpdateStdCost.ImageOptions.LargeImageIndex = 1
         Me.rbtnUpdateStdCost.Name = "rbtnUpdateStdCost"
+        Me.rbtnUpdateStdCost.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'LargeImages
         '
@@ -321,7 +321,7 @@ Partial Class frmViewProductCostRecords
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colVUnits, Me.colVUom, Me.colVcost, Me.colWUnits, Me.colWUom, Me.colWcost, Me.GridColumn1, Me.GridColumn2, Me.colDatecostchanged, Me.colIsactive, Me.colIsdefaultcostrecord})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colVUnits, Me.colVUom, Me.colVcost, Me.colWUnits, Me.colWUom, Me.colWcost, Me.GridColumn1, Me.GridColumn2, Me.colDatecostchanged, Me.colIsdefaultcostrecord})
         Me.GridView1.GridControl = Me.grProductCosts
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
@@ -459,15 +459,6 @@ Partial Class frmViewProductCostRecords
         Me.colDatecostchanged.VisibleIndex = 9
         Me.colDatecostchanged.Width = 78
         '
-        'colIsactive
-        '
-        Me.colIsactive.Caption = "Active"
-        Me.colIsactive.FieldName = "Isactive"
-        Me.colIsactive.Name = "colIsactive"
-        Me.colIsactive.Visible = True
-        Me.colIsactive.VisibleIndex = 10
-        Me.colIsactive.Width = 39
-        '
         'colIsdefaultcostrecord
         '
         Me.colIsdefaultcostrecord.Caption = "Default"
@@ -572,7 +563,6 @@ Partial Class frmViewProductCostRecords
     Friend WithEvents colWUnits As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colWUom As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colWcost As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colIsactive As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents rbtnMakeCostRecordDefault As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents lblStdCostType As DevExpress.XtraBars.BarStaticItem
     Friend WithEvents LargeImages As DevExpress.Utils.ImageCollection

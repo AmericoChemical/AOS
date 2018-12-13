@@ -84,11 +84,37 @@ Public Class frmAddEditAPISInput
         Me.bsItem.DataSource = oItem
     End Sub
 
+    Private Function ModifiedColumns() As List(Of String)
+
+        Dim vModifiedColumns As New List(Of String)
+        If oItem.es.IsDirty Then
+            For Each obj As String In oItem.es.ModifiedColumns
+
+                Select Case obj.ToString
+                    Case "MATERIALID",
+                            "QTYUNITS",
+                          "VOLUMEQTY",
+                          "WEIGHTQTY"
+                        vModifiedColumns.Add(obj.ToString)
+                End Select
+            Next
+        End If
+
+        Return vModifiedColumns
+
+    End Function
+
     Private Function changesSaved() As Boolean
         Try
             bsItem.EndEdit()
             oItem.EndEdit()
+            Dim vModifiedColumns As List(Of String) = ModifiedColumns()
             oItem.Save()
+            Dim APIS As New Apis
+            If APIS.LoadByPrimaryKey(oItem.Apisnum) AndAlso APIS.Productid.HasValue Then
+                SetProductStatndardCosts(APIS.Productid, "APIS Change - ProdId-" & APIS.Productid, "APIS Change - ApidId " & APIS.Apisnum & "[Input " & oItem.Apisitemnum & ":" + String.Join(",", vModifiedColumns.ToArray()) + "]")
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
             MsgBox("Error saving changes", MsgBoxStyle.Critical, "Error")

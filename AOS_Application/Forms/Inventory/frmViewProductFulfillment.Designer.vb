@@ -50,12 +50,13 @@ Partial Class frmviewProductFulfillment
         Me.colPriority = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAssociateProductID = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAssociateProductDescription = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colAssociatedproductcontainer = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colKitid = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colStdlaborhrs = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit16 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemLookUpEdit17 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.btnSave = New DevExpress.XtraBars.BarButtonItem()
-        Me.colKitid = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colStdlaborhrs = New DevExpress.XtraGrid.Columns.GridColumn()
         ProductidLabel = New System.Windows.Forms.Label()
         ProductDescriptionLabel = New System.Windows.Forms.Label()
         CType(Me.eProductID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,7 +124,7 @@ Partial Class frmviewProductFulfillment
         Me.ComponentRibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemWeekOfMonth1, Me.RepositoryItemAppointmentLabel1})
         Me.ComponentRibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.ComponentRibbonControl1.ShowToolbarCustomizeItem = False
-        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(757, 95)
+        Me.ComponentRibbonControl1.Size = New System.Drawing.Size(757, 116)
         Me.ComponentRibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.ComponentRibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -131,7 +132,7 @@ Partial Class frmviewProductFulfillment
         '
         Me.btnClose.Caption = "Close"
         Me.btnClose.Id = 5
-        Me.btnClose.LargeGlyph = Global.AOS.My.Resources.Resources.Close
+        Me.btnClose.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.Close
         Me.btnClose.Name = "btnClose"
         Me.btnClose.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
@@ -139,22 +140,22 @@ Partial Class frmviewProductFulfillment
         '
         Me.btnProductFulfillmentAdd.Caption = "Add New Product Fulfillment"
         Me.btnProductFulfillmentAdd.Id = 24
-        Me.btnProductFulfillmentAdd.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnProductFulfillmentAdd.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnProductFulfillmentAdd.Name = "btnProductFulfillmentAdd"
         '
         'btnProductFulfillmentEdit
         '
         Me.btnProductFulfillmentEdit.Caption = "Edit Product Fulfillment"
         Me.btnProductFulfillmentEdit.Id = 25
-        Me.btnProductFulfillmentEdit.LargeGlyph = Global.AOS.My.Resources.Resources.EditData
+        Me.btnProductFulfillmentEdit.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.EditData
         Me.btnProductFulfillmentEdit.Name = "btnProductFulfillmentEdit"
         Me.btnProductFulfillmentEdit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
         'btnProductFulfillmentDelete
         '
         Me.btnProductFulfillmentDelete.Caption = "Delete Product Fulfillment"
-        Me.btnProductFulfillmentDelete.Glyph = CType(resources.GetObject("btnProductFulfillmentDelete.Glyph"), System.Drawing.Image)
         Me.btnProductFulfillmentDelete.Id = 26
+        Me.btnProductFulfillmentDelete.ImageOptions.Image = CType(resources.GetObject("btnProductFulfillmentDelete.ImageOptions.Image"), System.Drawing.Image)
         Me.btnProductFulfillmentDelete.Name = "btnProductFulfillmentDelete"
         Me.btnProductFulfillmentDelete.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
@@ -162,7 +163,7 @@ Partial Class frmviewProductFulfillment
         '
         Me.btnRelabelInstructions.Caption = "Relabel Instructions"
         Me.btnRelabelInstructions.Id = 28
-        Me.btnRelabelInstructions.LargeGlyph = CType(resources.GetObject("btnRelabelInstructions.LargeGlyph"), System.Drawing.Image)
+        Me.btnRelabelInstructions.ImageOptions.LargeImage = CType(resources.GetObject("btnRelabelInstructions.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnRelabelInstructions.Name = "btnRelabelInstructions"
         '
         'RibbonPage1
@@ -249,11 +250,11 @@ Partial Class frmviewProductFulfillment
         Me.grProductFulfillmentList.Dock = System.Windows.Forms.DockStyle.Fill
         GridLevelNode1.RelationName = "Level1"
         Me.grProductFulfillmentList.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
-        Me.grProductFulfillmentList.Location = New System.Drawing.Point(2, 22)
+        Me.grProductFulfillmentList.Location = New System.Drawing.Point(2, 20)
         Me.grProductFulfillmentList.MainView = Me.viewProductFulfillment
         Me.grProductFulfillmentList.Name = "grProductFulfillmentList"
         Me.grProductFulfillmentList.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit16, Me.RepositoryItemLookUpEdit17})
-        Me.grProductFulfillmentList.Size = New System.Drawing.Size(745, 192)
+        Me.grProductFulfillmentList.Size = New System.Drawing.Size(745, 194)
         Me.grProductFulfillmentList.TabIndex = 0
         Me.grProductFulfillmentList.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.viewProductFulfillment})
         '
@@ -263,7 +264,7 @@ Partial Class frmviewProductFulfillment
         '
         'viewProductFulfillment
         '
-        Me.viewProductFulfillment.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid, Me.colProdcutDescription, Me.colFulfillmenttype, Me.colPriority, Me.colAssociateProductID, Me.colAssociateProductDescription, Me.colKitid, Me.colStdlaborhrs})
+        Me.viewProductFulfillment.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colProductid, Me.colProdcutDescription, Me.colFulfillmenttype, Me.colPriority, Me.colAssociateProductID, Me.colAssociateProductDescription, Me.colAssociatedproductcontainer, Me.colKitid, Me.colStdlaborhrs})
         Me.viewProductFulfillment.GridControl = Me.grProductFulfillmentList
         Me.viewProductFulfillment.Name = "viewProductFulfillment"
         Me.viewProductFulfillment.OptionsBehavior.Editable = False
@@ -323,6 +324,30 @@ Partial Class frmviewProductFulfillment
         Me.colAssociateProductDescription.VisibleIndex = 3
         Me.colAssociateProductDescription.Width = 391
         '
+        'colAssociatedproductcontainer
+        '
+        Me.colAssociatedproductcontainer.Caption = "Container"
+        Me.colAssociatedproductcontainer.FieldName = "Associatedproductcontainer"
+        Me.colAssociatedproductcontainer.Name = "colAssociatedproductcontainer"
+        Me.colAssociatedproductcontainer.Visible = True
+        Me.colAssociatedproductcontainer.VisibleIndex = 4
+        '
+        'colKitid
+        '
+        Me.colKitid.Caption = "Kit"
+        Me.colKitid.FieldName = "Kitid"
+        Me.colKitid.Name = "colKitid"
+        Me.colKitid.Visible = True
+        Me.colKitid.VisibleIndex = 5
+        '
+        'colStdlaborhrs
+        '
+        Me.colStdlaborhrs.Caption = "Labor Hrs"
+        Me.colStdlaborhrs.FieldName = "Stdlaborhrs"
+        Me.colStdlaborhrs.Name = "colStdlaborhrs"
+        Me.colStdlaborhrs.Visible = True
+        Me.colStdlaborhrs.VisibleIndex = 6
+        '
         'RepositoryItemLookUpEdit16
         '
         Me.RepositoryItemLookUpEdit16.AutoHeight = False
@@ -353,25 +378,9 @@ Partial Class frmviewProductFulfillment
         '
         Me.btnSave.Caption = " Save Product Fulfillment"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeGlyph = Global.AOS.My.Resources.Resources.SaveChanges
+        Me.btnSave.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.SaveChanges
         Me.btnSave.Name = "btnSave"
         Me.btnSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
-        '
-        'colKitid
-        '
-        Me.colKitid.Caption = "Kit"
-        Me.colKitid.FieldName = "Kitid"
-        Me.colKitid.Name = "colKitid"
-        Me.colKitid.Visible = True
-        Me.colKitid.VisibleIndex = 4
-        '
-        'colStdlaborhrs
-        '
-        Me.colStdlaborhrs.Caption = "Labor Hrs"
-        Me.colStdlaborhrs.FieldName = "Stdlaborhrs"
-        Me.colStdlaborhrs.Name = "colStdlaborhrs"
-        Me.colStdlaborhrs.Visible = True
-        Me.colStdlaborhrs.VisibleIndex = 5
         '
         'frmviewProductFulfillment
         '
@@ -440,4 +449,5 @@ Partial Class frmviewProductFulfillment
     Friend WithEvents btnRelabelInstructions As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents colKitid As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colStdlaborhrs As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colAssociatedproductcontainer As DevExpress.XtraGrid.Columns.GridColumn
 End Class
