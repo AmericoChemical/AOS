@@ -32,16 +32,20 @@ Public Class frmFreightChargesHistory
         bsLoadInfo.DataSource = oLoadInfo
         txtVariance.Text = 10
         txtTotalWeight.Text = oLoadInfo.TotalGrossWeight
-        If (oLoadInfo.TotalSkids.HasValue) Then
-            txtSkids.Text = oLoadInfo.TotalSkids.Value.ToString()
-        Else
-            txtSkids.Text = ""
-        End If
-        If (oLoadInfo.FreezeProtectFlag.HasValue) Then
-            chkFreezeProtect.Checked = oLoadInfo.FreezeProtectFlag
-        Else
-            chkFreezeProtect.Checked = False
-        End If
+
+        txtSkids.Text = ""
+        'If (oLoadInfo.TotalSkids.HasValue) Then
+        '    txtSkids.Text = oLoadInfo.TotalSkids.Value.ToString()
+        'Else
+        '    txtSkids.Text = ""
+        'End If
+
+        chkFreezeProtect.Checked = False
+        'If (oLoadInfo.FreezeProtectFlag.HasValue) Then
+        '    chkFreezeProtect.Checked = oLoadInfo.FreezeProtectFlag
+        'Else
+        '    chkFreezeProtect.Checked = False
+        'End If
 
 
     End Sub

@@ -43,6 +43,10 @@ Partial Public Class rptFreightChargeHistory
         Me.XrCurrentTotalSkids = New DevExpress.XtraReports.UI.XRLabel()
         Me.calcFreezeProtectionValue = New DevExpress.XtraReports.UI.CalculatedField()
         Me.Detail1 = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel21 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel20 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel19 = New DevExpress.XtraReports.UI.XRLabel()
@@ -56,8 +60,6 @@ Partial Public Class rptFreightChargeHistory
         Me.ReportHeader1 = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
-        Me.bsMatchingLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
         Me.DetailReport1 = New DevExpress.XtraReports.UI.DetailReportBand()
         Me.Detail2 = New DevExpress.XtraReports.UI.DetailBand()
         Me.XrLabel39 = New DevExpress.XtraReports.UI.XRLabel()
@@ -82,9 +84,12 @@ Partial Public Class rptFreightChargeHistory
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportHeader2 = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLabel44 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.bsMatchingLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
+        Me.calcQuoteFreezeProtect = New DevExpress.XtraReports.UI.CalculatedField()
+        Me.bsLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsMatchingLoadInfo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -298,9 +303,63 @@ Partial Public Class rptFreightChargeHistory
         '
         'Detail1
         '
-        Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel21, Me.XrLabel20, Me.XrLabel19, Me.xrCurrentCarrierName, Me.XrLabel15, Me.XrLabel14, Me.XrLabel10, Me.XrLabel9, Me.XrLabel6})
-        Me.Detail1.HeightF = 120.0001!
+        Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel26, Me.XrLabel25, Me.XrLabel24, Me.XrLabel22, Me.XrLabel21, Me.XrLabel20, Me.XrLabel19, Me.xrCurrentCarrierName, Me.XrLabel15, Me.XrLabel14, Me.XrLabel10, Me.XrLabel9, Me.XrLabel6})
+        Me.Detail1.HeightF = 141.6668!
         Me.Detail1.Name = "Detail1"
+        '
+        'XrLabel26
+        '
+        Me.XrLabel26.CanGrow = False
+        Me.XrLabel26.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "FreezeProtectDesc", "{0:#,#}")})
+        Me.XrLabel26.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(136.4793!, 111.5337!)
+        Me.XrLabel26.Name = "XrLabel26"
+        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel26.SizeF = New System.Drawing.SizeF(292.2917!, 21.20046!)
+        Me.XrLabel26.StylePriority.UseFont = False
+        Me.XrLabel26.StylePriority.UseTextAlignment = False
+        Me.XrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel26.WordWrap = False
+        '
+        'XrLabel25
+        '
+        Me.XrLabel25.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(11.5625!, 111.5337!)
+        Me.XrLabel25.Name = "XrLabel25"
+        Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel25.SizeF = New System.Drawing.SizeF(120.7502!, 21.20046!)
+        Me.XrLabel25.StylePriority.UseFont = False
+        Me.XrLabel25.StylePriority.UseTextAlignment = False
+        Me.XrLabel25.Text = "Freeze Protect:"
+        Me.XrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        '
+        'XrLabel24
+        '
+        Me.XrLabel24.CanGrow = False
+        Me.XrLabel24.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "EquipmentCost", "{0:#,#}")})
+        Me.XrLabel24.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(138.0418!, 88.9504!)
+        Me.XrLabel24.Name = "XrLabel24"
+        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel24.SizeF = New System.Drawing.SizeF(292.2917!, 21.20046!)
+        Me.XrLabel24.StylePriority.UseFont = False
+        Me.XrLabel24.StylePriority.UseTextAlignment = False
+        Me.XrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel24.WordWrap = False
+        '
+        'XrLabel22
+        '
+        Me.XrLabel22.CanGrow = False
+        Me.XrLabel22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "EmptyCost", "{0:#,#}")})
+        Me.XrLabel22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(136.4793!, 67.74994!)
+        Me.XrLabel22.Name = "XrLabel22"
+        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel22.SizeF = New System.Drawing.SizeF(292.2917!, 21.20046!)
+        Me.XrLabel22.StylePriority.UseFont = False
+        Me.XrLabel22.StylePriority.UseTextAlignment = False
+        Me.XrLabel22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel22.WordWrap = False
         '
         'XrLabel21
         '
@@ -452,14 +511,6 @@ Partial Public Class rptFreightChargeHistory
         'BindingSource1
         '
         Me.BindingSource1.DataSource = GetType(AOS.BusinessObjects.ViewLoadQuoteDataCollection)
-        '
-        'bsLoadInfo
-        '
-        Me.bsLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfoCollection)
-        '
-        'bsMatchingLoadInfo
-        '
-        Me.bsMatchingLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfo)
         '
         'DetailReport1
         '
@@ -761,17 +812,32 @@ Partial Public Class rptFreightChargeHistory
         Me.XrLabel44.Text = "Similar Load(s)"
         Me.XrLabel44.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
+        'bsMatchingLoadInfo
+        '
+        Me.bsMatchingLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfo)
+        '
+        'calcQuoteFreezeProtect
+        '
+        Me.calcQuoteFreezeProtect.DataSource = Me.BindingSource1
+        Me.calcQuoteFreezeProtect.Expression = "'Yes'"
+        Me.calcQuoteFreezeProtect.FieldType = DevExpress.XtraReports.UI.FieldType.[String]
+        Me.calcQuoteFreezeProtect.Name = "calcQuoteFreezeProtect"
+        '
+        'bsLoadInfo
+        '
+        Me.bsLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfoCollection)
+        '
         'rptFreightChargeHistory
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.PageHeader, Me.PageFooter, Me.ReportFooter, Me.DetailReport, Me.DetailReport1})
-        Me.CalculatedFields.AddRange(New DevExpress.XtraReports.UI.CalculatedField() {Me.calcFreezeProtectionValue})
+        Me.CalculatedFields.AddRange(New DevExpress.XtraReports.UI.CalculatedField() {Me.calcFreezeProtectionValue, Me.calcQuoteFreezeProtect})
         Me.DataSource = Me.bsLoadInfo
         Me.Margins = New System.Drawing.Printing.Margins(50, 312, 50, 50)
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.Version = "17.1"
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsMatchingLoadInfo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -835,4 +901,9 @@ Partial Public Class rptFreightChargeHistory
     Friend WithEvents XrLabel5 As XRLabel
     Friend WithEvents ReportHeader2 As ReportHeaderBand
     Public WithEvents XrLabel44 As XRLabel
+    Friend WithEvents XrLabel25 As XRLabel
+    Friend WithEvents XrLabel24 As XRLabel
+    Friend WithEvents XrLabel22 As XRLabel
+    Friend WithEvents calcQuoteFreezeProtect As CalculatedField
+    Friend WithEvents XrLabel26 As XRLabel
 End Class

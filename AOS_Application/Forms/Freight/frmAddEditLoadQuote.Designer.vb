@@ -25,6 +25,9 @@ Partial Class frmAddEditLoadQuote
         Dim QuoteAmountLabel As System.Windows.Forms.Label
         Dim QuoteDateLabel As System.Windows.Forms.Label
         Dim CarrierQuoteNumberLabel As System.Windows.Forms.Label
+        Dim Label1 As System.Windows.Forms.Label
+        Dim Label2 As System.Windows.Forms.Label
+        Dim Label18 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddEditLoadQuote))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.bsQuote = New System.Windows.Forms.BindingSource(Me.components)
@@ -45,12 +48,18 @@ Partial Class frmAddEditLoadQuote
         Me.QuoteAmountTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.QuoteDateDateEdit = New DevExpress.XtraEditors.DateEdit()
         Me.CarrierQuoteNumberTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
+        Me.FreezeProtectCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         LoadIDLabel = New System.Windows.Forms.Label()
         CarrierIDLabel = New System.Windows.Forms.Label()
         LogisticsProviderIDLabel = New System.Windows.Forms.Label()
         QuoteAmountLabel = New System.Windows.Forms.Label()
         QuoteDateLabel = New System.Windows.Forms.Label()
         CarrierQuoteNumberLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
+        Label18 = New System.Windows.Forms.Label()
         CType(Me.bsQuote, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,9 +69,12 @@ Partial Class frmAddEditLoadQuote
         CType(Me.CarrierIDLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogisticsProviderIDLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuoteAmountTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.QuoteDateDateEdit.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.QuoteDateDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuoteDateDateEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CarrierQuoteNumberTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FreezeProtectCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LoadIDLabel
@@ -119,6 +131,33 @@ Partial Class frmAddEditLoadQuote
         CarrierQuoteNumberLabel.TabIndex = 11
         CarrierQuoteNumberLabel.Text = "Carrier Quote Number"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(290, 214)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(62, 13)
+        Label1.TabIndex = 14
+        Label1.Text = "Empty Cost"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Location = New System.Drawing.Point(270, 240)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(82, 13)
+        Label2.TabIndex = 16
+        Label2.Text = "Equipment Cost"
+        '
+        'Label18
+        '
+        Label18.AutoSize = True
+        Label18.Location = New System.Drawing.Point(270, 266)
+        Label18.Name = "Label18"
+        Label18.Size = New System.Drawing.Size(78, 13)
+        Label18.TabIndex = 42
+        Label18.Text = "Freeze Protect"
+        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -138,7 +177,7 @@ Partial Class frmAddEditLoadQuote
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(478, 94)
+        Me.RibbonControl1.Size = New System.Drawing.Size(508, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -146,35 +185,35 @@ Partial Class frmAddEditLoadQuote
         '
         Me.btnNewCostRecord.Caption = "New Cost Record"
         Me.btnNewCostRecord.Id = 0
-        Me.btnNewCostRecord.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnNewCostRecord.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnNewCostRecord.Name = "btnNewCostRecord"
         '
         'btnEditCostRecord
         '
         Me.btnEditCostRecord.Caption = "Edit Cost Record"
-        Me.btnEditCostRecord.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Id = 1
+        Me.btnEditCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Name = "btnEditCostRecord"
         '
         'btnDeleteCostRecord
         '
         Me.btnDeleteCostRecord.Caption = "Delete Cost Record"
-        Me.btnDeleteCostRecord.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Id = 2
+        Me.btnDeleteCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Name = "btnDeleteCostRecord"
         '
         'btnSave
         '
         Me.btnSave.Caption = "Save"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeImageIndex = 1
+        Me.btnSave.ImageOptions.LargeImageIndex = 1
         Me.btnSave.Name = "btnSave"
         '
         'btnCancel
         '
         Me.btnCancel.Caption = "Cancel"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeImageIndex = 2
+        Me.btnCancel.ImageOptions.LargeImageIndex = 2
         Me.btnCancel.Name = "btnCancel"
         '
         'ImageCollection1
@@ -265,7 +304,7 @@ Partial Class frmAddEditLoadQuote
         Me.QuoteDateDateEdit.MenuManager = Me.RibbonControl1
         Me.QuoteDateDateEdit.Name = "QuoteDateDateEdit"
         Me.QuoteDateDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.QuoteDateDateEdit.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.QuoteDateDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.QuoteDateDateEdit.Size = New System.Drawing.Size(100, 20)
         Me.QuoteDateDateEdit.TabIndex = 10
         '
@@ -278,10 +317,49 @@ Partial Class frmAddEditLoadQuote
         Me.CarrierQuoteNumberTextEdit.Size = New System.Drawing.Size(100, 20)
         Me.CarrierQuoteNumberTextEdit.TabIndex = 12
         '
+        'TextEdit1
+        '
+        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsQuote, "EmptyCost", True))
+        Me.TextEdit1.Location = New System.Drawing.Point(358, 211)
+        Me.TextEdit1.MenuManager = Me.RibbonControl1
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Properties.DisplayFormat.FormatString = "c2"
+        Me.TextEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TextEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit1.TabIndex = 15
+        '
+        'TextEdit2
+        '
+        Me.TextEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsQuote, "EquipmentCost", True))
+        Me.TextEdit2.Location = New System.Drawing.Point(358, 237)
+        Me.TextEdit2.MenuManager = Me.RibbonControl1
+        Me.TextEdit2.Name = "TextEdit2"
+        Me.TextEdit2.Properties.DisplayFormat.FormatString = "c2"
+        Me.TextEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TextEdit2.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit2.TabIndex = 17
+        '
+        'FreezeProtectCheckEdit
+        '
+        Me.FreezeProtectCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsQuote, "FreezeProtect", True))
+        Me.FreezeProtectCheckEdit.Location = New System.Drawing.Point(358, 263)
+        Me.FreezeProtectCheckEdit.MenuManager = Me.RibbonControl1
+        Me.FreezeProtectCheckEdit.Name = "FreezeProtectCheckEdit"
+        Me.FreezeProtectCheckEdit.Properties.Caption = ""
+        Me.FreezeProtectCheckEdit.Size = New System.Drawing.Size(16, 19)
+        Me.FreezeProtectCheckEdit.TabIndex = 43
+        Me.FreezeProtectCheckEdit.TabStop = False
+        '
         'frmAddEditLoadQuote
         '
-        Me.ClientSize = New System.Drawing.Size(478, 314)
+        Me.ClientSize = New System.Drawing.Size(508, 312)
         Me.ControlBox = False
+        Me.Controls.Add(Label18)
+        Me.Controls.Add(Me.FreezeProtectCheckEdit)
+        Me.Controls.Add(Label2)
+        Me.Controls.Add(Me.TextEdit2)
+        Me.Controls.Add(Label1)
+        Me.Controls.Add(Me.TextEdit1)
         Me.Controls.Add(CarrierQuoteNumberLabel)
         Me.Controls.Add(Me.CarrierQuoteNumberTextEdit)
         Me.Controls.Add(QuoteDateLabel)
@@ -311,9 +389,12 @@ Partial Class frmAddEditLoadQuote
         CType(Me.CarrierIDLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogisticsProviderIDLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuoteAmountTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.QuoteDateDateEdit.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.QuoteDateDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuoteDateDateEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CarrierQuoteNumberTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FreezeProtectCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -337,4 +418,7 @@ Partial Class frmAddEditLoadQuote
     Friend WithEvents QuoteAmountTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents QuoteDateDateEdit As DevExpress.XtraEditors.DateEdit
     Friend WithEvents CarrierQuoteNumberTextEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents FreezeProtectCheckEdit As DevExpress.XtraEditors.CheckEdit
 End Class

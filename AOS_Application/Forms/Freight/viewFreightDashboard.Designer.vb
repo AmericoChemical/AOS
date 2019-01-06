@@ -1522,7 +1522,7 @@ Partial Class viewFreightDashboard
         Me.grvPendingLoads.OptionsSelection.EnableAppearanceFocusedRow = False
         Me.grvPendingLoads.OptionsView.ShowAutoFilterRow = True
         Me.grvPendingLoads.OptionsView.ShowGroupPanel = False
-        Me.grvPendingLoads.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colWorkOrderStatus, DevExpress.Data.ColumnSortOrder.Ascending)})
+        Me.grvPendingLoads.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colPlannedDepartureDate, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'colLoadID
         '
@@ -1550,7 +1550,11 @@ Partial Class viewFreightDashboard
         '
         'colPlannedDepartureDate
         '
+        Me.colPlannedDepartureDate.DisplayFormat.FormatString = "D"
+        Me.colPlannedDepartureDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.colPlannedDepartureDate.FieldName = "PlannedDepartureDate"
+        Me.colPlannedDepartureDate.GroupFormat.FormatString = "D"
+        Me.colPlannedDepartureDate.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.colPlannedDepartureDate.Name = "colPlannedDepartureDate"
         Me.colPlannedDepartureDate.Visible = True
         Me.colPlannedDepartureDate.VisibleIndex = 4
@@ -1561,7 +1565,7 @@ Partial Class viewFreightDashboard
         Me.colPlannedDeliveryDate.FieldName = "PlannedDeliveryDate"
         Me.colPlannedDeliveryDate.Name = "colPlannedDeliveryDate"
         Me.colPlannedDeliveryDate.Visible = True
-        Me.colPlannedDeliveryDate.VisibleIndex = 5
+        Me.colPlannedDeliveryDate.VisibleIndex = 4
         Me.colPlannedDeliveryDate.Width = 85
         '
         'colOriginType
@@ -1569,7 +1573,7 @@ Partial Class viewFreightDashboard
         Me.colOriginType.FieldName = "OriginType"
         Me.colOriginType.Name = "colOriginType"
         Me.colOriginType.Visible = True
-        Me.colOriginType.VisibleIndex = 6
+        Me.colOriginType.VisibleIndex = 5
         Me.colOriginType.Width = 85
         '
         'colOriginName
@@ -1577,7 +1581,7 @@ Partial Class viewFreightDashboard
         Me.colOriginName.FieldName = "OriginName"
         Me.colOriginName.Name = "colOriginName"
         Me.colOriginName.Visible = True
-        Me.colOriginName.VisibleIndex = 7
+        Me.colOriginName.VisibleIndex = 6
         Me.colOriginName.Width = 85
         '
         'colOriginCity
@@ -1585,7 +1589,7 @@ Partial Class viewFreightDashboard
         Me.colOriginCity.FieldName = "OriginCity"
         Me.colOriginCity.Name = "colOriginCity"
         Me.colOriginCity.Visible = True
-        Me.colOriginCity.VisibleIndex = 8
+        Me.colOriginCity.VisibleIndex = 7
         Me.colOriginCity.Width = 85
         '
         'colOriginState
@@ -1593,7 +1597,7 @@ Partial Class viewFreightDashboard
         Me.colOriginState.FieldName = "OriginState"
         Me.colOriginState.Name = "colOriginState"
         Me.colOriginState.Visible = True
-        Me.colOriginState.VisibleIndex = 9
+        Me.colOriginState.VisibleIndex = 8
         Me.colOriginState.Width = 85
         '
         'colDestType
@@ -1601,7 +1605,7 @@ Partial Class viewFreightDashboard
         Me.colDestType.FieldName = "DestType"
         Me.colDestType.Name = "colDestType"
         Me.colDestType.Visible = True
-        Me.colDestType.VisibleIndex = 10
+        Me.colDestType.VisibleIndex = 9
         Me.colDestType.Width = 85
         '
         'colDestName
@@ -1609,7 +1613,7 @@ Partial Class viewFreightDashboard
         Me.colDestName.FieldName = "DestName"
         Me.colDestName.Name = "colDestName"
         Me.colDestName.Visible = True
-        Me.colDestName.VisibleIndex = 11
+        Me.colDestName.VisibleIndex = 10
         Me.colDestName.Width = 85
         '
         'colDestCity
@@ -1617,7 +1621,7 @@ Partial Class viewFreightDashboard
         Me.colDestCity.FieldName = "DestCity"
         Me.colDestCity.Name = "colDestCity"
         Me.colDestCity.Visible = True
-        Me.colDestCity.VisibleIndex = 12
+        Me.colDestCity.VisibleIndex = 11
         Me.colDestCity.Width = 85
         '
         'colDestState
@@ -1625,7 +1629,7 @@ Partial Class viewFreightDashboard
         Me.colDestState.FieldName = "DestState"
         Me.colDestState.Name = "colDestState"
         Me.colDestState.Visible = True
-        Me.colDestState.VisibleIndex = 13
+        Me.colDestState.VisibleIndex = 12
         Me.colDestState.Width = 85
         '
         'colCarrierID
@@ -1633,14 +1637,14 @@ Partial Class viewFreightDashboard
         Me.colCarrierID.FieldName = "CarrierID"
         Me.colCarrierID.Name = "colCarrierID"
         Me.colCarrierID.Visible = True
-        Me.colCarrierID.VisibleIndex = 14
+        Me.colCarrierID.VisibleIndex = 13
         '
         'colCarrierName
         '
         Me.colCarrierName.FieldName = "CarrierName"
         Me.colCarrierName.Name = "colCarrierName"
         Me.colCarrierName.Visible = True
-        Me.colCarrierName.VisibleIndex = 15
+        Me.colCarrierName.VisibleIndex = 14
         Me.colCarrierName.Width = 85
         '
         'colPallets
@@ -1648,7 +1652,7 @@ Partial Class viewFreightDashboard
         Me.colPallets.FieldName = "Pallets"
         Me.colPallets.Name = "colPallets"
         Me.colPallets.Visible = True
-        Me.colPallets.VisibleIndex = 16
+        Me.colPallets.VisibleIndex = 15
         Me.colPallets.Width = 85
         '
         'colTotalSkids
@@ -1657,14 +1661,14 @@ Partial Class viewFreightDashboard
         Me.colTotalSkids.FieldName = "TotalSkids"
         Me.colTotalSkids.Name = "colTotalSkids"
         Me.colTotalSkids.Visible = True
-        Me.colTotalSkids.VisibleIndex = 17
+        Me.colTotalSkids.VisibleIndex = 16
         '
         'colGrossWt
         '
         Me.colGrossWt.FieldName = "GrossWt"
         Me.colGrossWt.Name = "colGrossWt"
         Me.colGrossWt.Visible = True
-        Me.colGrossWt.VisibleIndex = 18
+        Me.colGrossWt.VisibleIndex = 17
         Me.colGrossWt.Width = 106
         '
         'colWONumber
@@ -1688,14 +1692,14 @@ Partial Class viewFreightDashboard
         Me.colFreezeprotectflag.FieldName = "Freezeprotectflag"
         Me.colFreezeprotectflag.Name = "colFreezeprotectflag"
         Me.colFreezeprotectflag.Visible = True
-        Me.colFreezeprotectflag.VisibleIndex = 20
+        Me.colFreezeprotectflag.VisibleIndex = 19
         '
         'colOrSoonerFlag
         '
         Me.colOrSoonerFlag.FieldName = "OrSoonerFlag"
         Me.colOrSoonerFlag.Name = "colOrSoonerFlag"
         Me.colOrSoonerFlag.Visible = True
-        Me.colOrSoonerFlag.VisibleIndex = 19
+        Me.colOrSoonerFlag.VisibleIndex = 18
         '
         'GridView4
         '

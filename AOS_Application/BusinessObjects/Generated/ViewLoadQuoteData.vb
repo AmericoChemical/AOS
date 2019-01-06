@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 2/11/2014 1:36:09 PM
+' Date Generated       : 1/6/2019 4:54:12 PM
 '===============================================================================
 
 Imports System
@@ -212,6 +212,18 @@ Namespace BusinessObjects
 												
 						Case "Logisticsermail"
 							Me.str.Logisticsermail = CType(value, string)
+												
+						Case "EmptyCost"
+							Me.str.EmptyCost = CType(value, string)
+												
+						Case "EquipmentCost"
+							Me.str.EquipmentCost = CType(value, string)
+												
+						Case "FreezeProtect"
+							Me.str.FreezeProtect = CType(value, string)
+												
+						Case "FreezeProtectDesc"
+							Me.str.FreezeProtectDesc = CType(value, string)
 					
 					End Select
 					
@@ -253,6 +265,24 @@ Namespace BusinessObjects
 						
 							If value Is Nothing Or value.GetType().ToString() = "System.DateTime" Then
 								Me.QuoteDate = CType(value, Nullable(Of System.DateTime))
+							End If
+						
+						Case "EmptyCost"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.EmptyCost = CType(value, Nullable(Of System.Decimal))
+							End If
+						
+						Case "EquipmentCost"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Decimal" Then
+								Me.EquipmentCost = CType(value, Nullable(Of System.Decimal))
+							End If
+						
+						Case "FreezeProtect"
+						
+							If value Is Nothing Or value.GetType().ToString() = "System.Boolean" Then
+								Me.FreezeProtect = CType(value, Nullable(Of System.Boolean))
 							End If
 						
 					
@@ -618,6 +648,58 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As System.String)
 				MyBase.SetSystemString(ViewLoadQuoteDataMetadata.ColumnNames.Logisticsermail, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadQuoteData.EmptyCost
+		' </summary>
+		Public Overridable Property EmptyCost As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewLoadQuoteDataMetadata.ColumnNames.EmptyCost)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewLoadQuoteDataMetadata.ColumnNames.EmptyCost, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadQuoteData.EquipmentCost
+		' </summary>
+		Public Overridable Property EquipmentCost As Nullable(Of System.Decimal)
+			Get
+				Return MyBase.GetSystemDecimal(ViewLoadQuoteDataMetadata.ColumnNames.EquipmentCost)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Decimal))
+				MyBase.SetSystemDecimal(ViewLoadQuoteDataMetadata.ColumnNames.EquipmentCost, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadQuoteData.FreezeProtect
+		' </summary>
+		Public Overridable Property FreezeProtect As Nullable(Of System.Boolean)
+			Get
+				Return MyBase.GetSystemBoolean(ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtect)
+			End Get
+			
+			Set(ByVal value As Nullable(Of System.Boolean))
+				MyBase.SetSystemBoolean(ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtect, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadQuoteData.FreezeProtectDesc
+		' </summary>
+		Public Overridable Property FreezeProtectDesc As System.String
+			Get
+				Return MyBase.GetSystemString(ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtectDesc)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtectDesc, value)
 			End Set
 		End Property		
 		
@@ -1190,6 +1272,89 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property EmptyCost As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Decimal) = entity.EmptyCost
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.EmptyCost = Nothing
+					Else
+						entity.EmptyCost = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property EquipmentCost As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Decimal) = entity.EquipmentCost
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.EquipmentCost = Nothing
+					Else
+						entity.EquipmentCost = Convert.ToDecimal(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property FreezeProtect As System.String 
+				Get
+					Dim data_ As Nullable(Of System.Boolean) = entity.FreezeProtect
+					
+					If Not data_.HasValue Then
+					
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.FreezeProtect = Nothing
+					Else
+						entity.FreezeProtect = Convert.ToBoolean(Value)
+					End If
+				End Set
+			End Property
+		  	
+			Public Property FreezeProtectDesc As System.String 
+				Get
+					Dim data_ As System.String = entity.FreezeProtectDesc
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.FreezeProtectDesc = Nothing
+					Else
+						entity.FreezeProtectDesc = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewLoadQuoteData
@@ -1393,6 +1558,30 @@ Namespace BusinessObjects
 		Public ReadOnly Property Logisticsermail As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewLoadQuoteDataMetadata.ColumnNames.Logisticsermail, esSystemType.String)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property EmptyCost As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadQuoteDataMetadata.ColumnNames.EmptyCost, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property EquipmentCost As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadQuoteDataMetadata.ColumnNames.EquipmentCost, esSystemType.Decimal)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property FreezeProtect As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtect, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property FreezeProtectDesc As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtectDesc, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -1748,6 +1937,29 @@ Namespace BusinessObjects
 			c.IsNullable = True
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewLoadQuoteDataMetadata.ColumnNames.EmptyCost, 27, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewLoadQuoteDataMetadata.PropertyNames.EmptyCost
+			c.NumericPrecision = 18
+			c.NumericScale = 2
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadQuoteDataMetadata.ColumnNames.EquipmentCost, 28, GetType(System.Decimal), esSystemType.Decimal)	
+			c.PropertyName = ViewLoadQuoteDataMetadata.PropertyNames.EquipmentCost
+			c.NumericPrecision = 18
+			c.NumericScale = 2
+			c.IsNullable = True
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtect, 29, GetType(System.Boolean), esSystemType.Boolean)	
+			c.PropertyName = ViewLoadQuoteDataMetadata.PropertyNames.FreezeProtect
+			_columns.Add(c)
+				
+			c = New esColumnMetadata(ViewLoadQuoteDataMetadata.ColumnNames.FreezeProtectDesc, 30, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewLoadQuoteDataMetadata.PropertyNames.FreezeProtectDesc
+			c.CharacterMaxLength = 9
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -1803,6 +2015,10 @@ Namespace BusinessObjects
 			 Public Const Logisticsfax As String = "LOGISTICSFAX"
 			 Public Const Logisticscontact As String = "LOGISTICSCONTACT"
 			 Public Const Logisticsermail As String = "LOGISTICSERMAIL"
+			 Public Const EmptyCost As String = "EmptyCost"
+			 Public Const EquipmentCost As String = "EquipmentCost"
+			 Public Const FreezeProtect As String = "FreezeProtect"
+			 Public Const FreezeProtectDesc As String = "FreezeProtectDesc"
 		End Class
 #End Region	
 		
@@ -1835,6 +2051,10 @@ Namespace BusinessObjects
 			 Public Const Logisticsfax As String = "Logisticsfax"
 			 Public Const Logisticscontact As String = "Logisticscontact"
 			 Public Const Logisticsermail As String = "Logisticsermail"
+			 Public Const EmptyCost As String = "EmptyCost"
+			 Public Const EquipmentCost As String = "EquipmentCost"
+			 Public Const FreezeProtect As String = "FreezeProtect"
+			 Public Const FreezeProtectDesc As String = "FreezeProtectDesc"
 		End Class
 #End Region	
 
@@ -1908,7 +2128,11 @@ Namespace BusinessObjects
 				meta.AddTypeMap("Logisticsphone", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Logisticsfax", new esTypeMap("varchar", "System.String"))
 				meta.AddTypeMap("Logisticscontact", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("Logisticsermail", new esTypeMap("varchar", "System.String"))			
+				meta.AddTypeMap("Logisticsermail", new esTypeMap("varchar", "System.String"))
+				meta.AddTypeMap("EmptyCost", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("EquipmentCost", new esTypeMap("decimal", "System.Decimal"))
+				meta.AddTypeMap("FreezeProtect", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("FreezeProtectDesc", new esTypeMap("varchar", "System.String"))			
 				
 				
 				 
