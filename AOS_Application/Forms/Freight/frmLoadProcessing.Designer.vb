@@ -59,7 +59,7 @@ Partial Class frmLoadProcessing
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.History = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControlLPHeader = New DevExpress.XtraEditors.GroupControl()
         Me.lblTotalSkidsValue = New DevExpress.XtraEditors.LabelControl()
         Me.bsLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSelectVendor = New DevExpress.XtraEditors.SimpleButton()
@@ -109,7 +109,7 @@ Partial Class frmLoadProcessing
         Me.OriginContactLabel1 = New System.Windows.Forms.Label()
         Me.OriginZipLabel1 = New System.Windows.Forms.Label()
         Me.OriginCountryLabel1 = New System.Windows.Forms.Label()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControlLPLoad = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.bsLoadItems = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New AOS.CustomClasses.CustomDevExGridView()
@@ -133,7 +133,7 @@ Partial Class frmLoadProcessing
         Me.colHazclassnumber = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPackagegroup = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdnumber = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControlLPQuote = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.bsLoadQuotes = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView2 = New AOS.CustomClasses.CustomDevExGridView()
@@ -146,10 +146,10 @@ Partial Class frmLoadProcessing
         Me.colQuoteAmount = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colQuoteDate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCarrierQuoteNumber = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.colEmptyCost = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colEquipmentCost = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFreezeProtect = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         PlannedDeliveryDateLabel = New System.Windows.Forms.Label()
         PlannedDepartureDateLabel = New System.Windows.Forms.Label()
         TotalBilledLabel = New System.Windows.Forms.Label()
@@ -170,8 +170,8 @@ Partial Class frmLoadProcessing
         Label19 = New System.Windows.Forms.Label()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
+        CType(Me.GroupControlLPHeader, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlLPHeader.SuspendLayout()
         CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl7.SuspendLayout()
@@ -186,13 +186,13 @@ Partial Class frmLoadProcessing
         Me.GroupControl5.SuspendLayout()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
+        CType(Me.GroupControlLPLoad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlLPLoad.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsLoadItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl3.SuspendLayout()
+        CType(Me.GroupControlLPQuote, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlLPQuote.SuspendLayout()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -201,36 +201,36 @@ Partial Class frmLoadProcessing
         'PlannedDeliveryDateLabel
         '
         PlannedDeliveryDateLabel.AutoSize = True
-        PlannedDeliveryDateLabel.Location = New System.Drawing.Point(17, 52)
+        PlannedDeliveryDateLabel.Location = New System.Drawing.Point(15, 42)
         PlannedDeliveryDateLabel.Name = "PlannedDeliveryDateLabel"
-        PlannedDeliveryDateLabel.Size = New System.Drawing.Size(95, 17)
+        PlannedDeliveryDateLabel.Size = New System.Drawing.Size(76, 13)
         PlannedDeliveryDateLabel.TabIndex = 12
         PlannedDeliveryDateLabel.Text = "Delivery Date:"
         '
         'PlannedDepartureDateLabel
         '
         PlannedDepartureDateLabel.AutoSize = True
-        PlannedDepartureDateLabel.Location = New System.Drawing.Point(6, 32)
+        PlannedDepartureDateLabel.Location = New System.Drawing.Point(5, 26)
         PlannedDepartureDateLabel.Name = "PlannedDepartureDateLabel"
-        PlannedDepartureDateLabel.Size = New System.Drawing.Size(108, 17)
+        PlannedDepartureDateLabel.Size = New System.Drawing.Size(86, 13)
         PlannedDepartureDateLabel.TabIndex = 14
         PlannedDepartureDateLabel.Text = "Departure Date:"
         '
         'TotalBilledLabel
         '
         TotalBilledLabel.AutoSize = True
-        TotalBilledLabel.Location = New System.Drawing.Point(278, 52)
+        TotalBilledLabel.Location = New System.Drawing.Point(238, 42)
         TotalBilledLabel.Name = "TotalBilledLabel"
-        TotalBilledLabel.Size = New System.Drawing.Size(106, 17)
+        TotalBilledLabel.Size = New System.Drawing.Size(84, 13)
         TotalBilledLabel.TabIndex = 16
         TotalBilledLabel.Text = "Customer Billed:"
         '
         'TotalChargedLabel
         '
         TotalChargedLabel.AutoSize = True
-        TotalChargedLabel.Location = New System.Drawing.Point(274, 32)
+        TotalChargedLabel.Location = New System.Drawing.Point(235, 26)
         TotalChargedLabel.Name = "TotalChargedLabel"
-        TotalChargedLabel.Size = New System.Drawing.Size(107, 17)
+        TotalChargedLabel.Size = New System.Drawing.Size(87, 13)
         TotalChargedLabel.TabIndex = 18
         TotalChargedLabel.Text = "Carrier Charges:"
         '
@@ -238,9 +238,9 @@ Partial Class frmLoadProcessing
         '
         TotalContainersLabel.AutoSize = True
         TotalContainersLabel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TotalContainersLabel.Location = New System.Drawing.Point(637, 32)
+        TotalContainersLabel.Location = New System.Drawing.Point(546, 26)
         TotalContainersLabel.Name = "TotalContainersLabel"
-        TotalContainersLabel.Size = New System.Drawing.Size(95, 21)
+        TotalContainersLabel.Size = New System.Drawing.Size(74, 16)
         TotalContainersLabel.TabIndex = 20
         TotalContainersLabel.Text = "Containers:"
         '
@@ -248,90 +248,90 @@ Partial Class frmLoadProcessing
         '
         TotalGrossWeightLabel.AutoSize = True
         TotalGrossWeightLabel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TotalGrossWeightLabel.Location = New System.Drawing.Point(922, 32)
+        TotalGrossWeightLabel.Location = New System.Drawing.Point(790, 26)
         TotalGrossWeightLabel.Name = "TotalGrossWeightLabel"
-        TotalGrossWeightLabel.Size = New System.Drawing.Size(93, 21)
+        TotalGrossWeightLabel.Size = New System.Drawing.Size(72, 16)
         TotalGrossWeightLabel.TabIndex = 22
         TotalGrossWeightLabel.Text = "Gross Wgt:"
         '
         'AddToInvoiceLabel
         '
         AddToInvoiceLabel.AutoSize = True
-        AddToInvoiceLabel.Location = New System.Drawing.Point(9, 149)
+        AddToInvoiceLabel.Location = New System.Drawing.Point(8, 121)
         AddToInvoiceLabel.Name = "AddToInvoiceLabel"
-        AddToInvoiceLabel.Size = New System.Drawing.Size(105, 17)
+        AddToInvoiceLabel.Size = New System.Drawing.Size(83, 13)
         AddToInvoiceLabel.TabIndex = 24
         AddToInvoiceLabel.Text = "Add To Invoice:"
         '
         'BillCustomerLabel
         '
         BillCustomerLabel.AutoSize = True
-        BillCustomerLabel.Location = New System.Drawing.Point(22, 129)
+        BillCustomerLabel.Location = New System.Drawing.Point(19, 105)
         BillCustomerLabel.Name = "BillCustomerLabel"
-        BillCustomerLabel.Size = New System.Drawing.Size(91, 17)
+        BillCustomerLabel.Size = New System.Drawing.Size(72, 13)
         BillCustomerLabel.TabIndex = 26
         BillCustomerLabel.Text = "Bill Customer:"
         '
         'Label12
         '
         Label12.AutoSize = True
-        Label12.Location = New System.Drawing.Point(29, 90)
+        Label12.Location = New System.Drawing.Point(25, 73)
         Label12.Name = "Label12"
-        Label12.Size = New System.Drawing.Size(81, 17)
+        Label12.Size = New System.Drawing.Size(66, 13)
         Label12.TabIndex = 32
         Label12.Text = "Req Carrier:"
         '
         'Label13
         '
         Label13.AutoSize = True
-        Label13.Location = New System.Drawing.Point(21, 110)
+        Label13.Location = New System.Drawing.Point(18, 89)
         Label13.Name = "Label13"
-        Label13.Size = New System.Drawing.Size(92, 17)
+        Label13.Size = New System.Drawing.Size(73, 13)
         Label13.TabIndex = 33
         Label13.Text = "Req Logistics:"
         '
         'Label14
         '
         Label14.AutoSize = True
-        Label14.Location = New System.Drawing.Point(70, 70)
+        Label14.Location = New System.Drawing.Point(60, 57)
         Label14.Name = "Label14"
-        Label14.Size = New System.Drawing.Size(38, 17)
+        Label14.Size = New System.Drawing.Size(31, 13)
         Label14.TabIndex = 36
         Label14.Text = "FOB:"
         '
         'Label15
         '
         Label15.AutoSize = True
-        Label15.Location = New System.Drawing.Point(6, 52)
+        Label15.Location = New System.Drawing.Point(5, 42)
         Label15.Name = "Label15"
-        Label15.Size = New System.Drawing.Size(95, 17)
+        Label15.Size = New System.Drawing.Size(76, 13)
         Label15.TabIndex = 34
         Label15.Text = "Sched Carrier:"
         '
         'Label17
         '
         Label17.AutoSize = True
-        Label17.Location = New System.Drawing.Point(6, 32)
+        Label17.Location = New System.Drawing.Point(5, 26)
         Label17.Name = "Label17"
-        Label17.Size = New System.Drawing.Size(95, 17)
+        Label17.Size = New System.Drawing.Size(73, 13)
         Label17.TabIndex = 38
         Label17.Text = "Sched Pickup:"
         '
         'Label16
         '
         Label16.AutoSize = True
-        Label16.Location = New System.Drawing.Point(6, 70)
+        Label16.Location = New System.Drawing.Point(5, 57)
         Label16.Name = "Label16"
-        Label16.Size = New System.Drawing.Size(82, 17)
+        Label16.Size = New System.Drawing.Size(65, 13)
         Label16.TabIndex = 39
         Label16.Text = "Load Notes:"
         '
         'Label11
         '
         Label11.AutoSize = True
-        Label11.Location = New System.Drawing.Point(311, 70)
+        Label11.Location = New System.Drawing.Point(267, 57)
         Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(69, 17)
+        Label11.Size = New System.Drawing.Size(55, 13)
         Label11.TabIndex = 40
         Label11.Text = "Quote ID:"
         '
@@ -339,27 +339,27 @@ Partial Class frmLoadProcessing
         '
         TotalSkidsLabel.AutoSize = True
         TotalSkidsLabel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TotalSkidsLabel.Location = New System.Drawing.Point(811, 32)
+        TotalSkidsLabel.Location = New System.Drawing.Point(695, 26)
         TotalSkidsLabel.Name = "TotalSkidsLabel"
-        TotalSkidsLabel.Size = New System.Drawing.Size(54, 21)
+        TotalSkidsLabel.Size = New System.Drawing.Size(43, 16)
         TotalSkidsLabel.TabIndex = 37
         TotalSkidsLabel.Text = "Skids:"
         '
         'Label18
         '
         Label18.AutoSize = True
-        Label18.Location = New System.Drawing.Point(141, 129)
+        Label18.Location = New System.Drawing.Point(121, 105)
         Label18.Name = "Label18"
-        Label18.Size = New System.Drawing.Size(101, 17)
+        Label18.Size = New System.Drawing.Size(82, 13)
         Label18.TabIndex = 40
         Label18.Text = "Freeze Protect:"
         '
         'Label19
         '
         Label19.AutoSize = True
-        Label19.Location = New System.Drawing.Point(167, 149)
+        Label19.Location = New System.Drawing.Point(143, 121)
         Label19.Name = "Label19"
-        Label19.Size = New System.Drawing.Size(76, 17)
+        Label19.Size = New System.Drawing.Size(60, 13)
         Label19.TabIndex = 38
         Label19.Text = "Or Sooner:"
         '
@@ -369,7 +369,6 @@ Partial Class frmLoadProcessing
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnBack, Me.rbtnSchedule, Me.rbtnAddQuote, Me.rbtnEditQuote, Me.rbtnDeleteQuote, Me.rbtnEditCharges, Me.rbtnEditBillings, Me.rbtnPrintLoadInfo, Me.rbtnDeleteLoadBillingRecs, Me.rbtnFreightChargesHistory, Me.rbtnEditLoad})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl1.MaxItemId = 12
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
@@ -379,7 +378,7 @@ Partial Class frmLoadProcessing
         Me.RibbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(1400, 118)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1200, 95)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -536,31 +535,30 @@ Partial Class frmLoadProcessing
         Me.History.Name = "History"
         Me.History.Text = "History"
         '
-        'GroupControl1
+        'GroupControlLPHeader
         '
-        Me.GroupControl1.Controls.Add(Me.lblTotalSkidsValue)
-        Me.GroupControl1.Controls.Add(TotalSkidsLabel)
-        Me.GroupControl1.Controls.Add(Me.btnSelectVendor)
-        Me.GroupControl1.Controls.Add(Me.LabelControl14)
-        Me.GroupControl1.Controls.Add(Me.LabelControl13)
-        Me.GroupControl1.Controls.Add(Me.LabelControl12)
-        Me.GroupControl1.Controls.Add(Me.LabelControl11)
-        Me.GroupControl1.Controls.Add(Me.LabelControl10)
-        Me.GroupControl1.Controls.Add(Me.GroupControl7)
-        Me.GroupControl1.Controls.Add(Me.GroupControl6)
-        Me.GroupControl1.Controls.Add(TotalContainersLabel)
-        Me.GroupControl1.Controls.Add(Me.ModifiedTimeLabel1)
-        Me.GroupControl1.Controls.Add(Me.ModifiedByLabel1)
-        Me.GroupControl1.Controls.Add(Me.GroupControl5)
-        Me.GroupControl1.Controls.Add(Me.GroupControl4)
-        Me.GroupControl1.Controls.Add(TotalGrossWeightLabel)
-        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 118)
-        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1400, 276)
-        Me.GroupControl1.TabIndex = 1
-        Me.GroupControl1.Text = "Load Information"
+        Me.GroupControlLPHeader.Controls.Add(Me.lblTotalSkidsValue)
+        Me.GroupControlLPHeader.Controls.Add(TotalSkidsLabel)
+        Me.GroupControlLPHeader.Controls.Add(Me.btnSelectVendor)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl14)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl13)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl12)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl11)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl10)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl7)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl6)
+        Me.GroupControlLPHeader.Controls.Add(TotalContainersLabel)
+        Me.GroupControlLPHeader.Controls.Add(Me.ModifiedTimeLabel1)
+        Me.GroupControlLPHeader.Controls.Add(Me.ModifiedByLabel1)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl5)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl4)
+        Me.GroupControlLPHeader.Controls.Add(TotalGrossWeightLabel)
+        Me.GroupControlLPHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControlLPHeader.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControlLPHeader.Name = "GroupControlLPHeader"
+        Me.GroupControlLPHeader.Size = New System.Drawing.Size(1200, 224)
+        Me.GroupControlLPHeader.TabIndex = 1
+        Me.GroupControlLPHeader.Text = "Load Information"
         '
         'lblTotalSkidsValue
         '
@@ -568,10 +566,9 @@ Partial Class frmLoadProcessing
         Me.lblTotalSkidsValue.Appearance.Options.UseFont = True
         Me.lblTotalSkidsValue.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lblTotalSkidsValue.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "Totalskids", True))
-        Me.lblTotalSkidsValue.Location = New System.Drawing.Point(859, 28)
-        Me.lblTotalSkidsValue.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.lblTotalSkidsValue.Location = New System.Drawing.Point(736, 23)
         Me.lblTotalSkidsValue.Name = "lblTotalSkidsValue"
-        Me.lblTotalSkidsValue.Size = New System.Drawing.Size(49, 25)
+        Me.lblTotalSkidsValue.Size = New System.Drawing.Size(42, 20)
         Me.lblTotalSkidsValue.TabIndex = 38
         Me.lblTotalSkidsValue.Text = "Skids"
         '
@@ -581,10 +578,9 @@ Partial Class frmLoadProcessing
         '
         'btnSelectVendor
         '
-        Me.btnSelectVendor.Location = New System.Drawing.Point(247, 28)
-        Me.btnSelectVendor.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnSelectVendor.Location = New System.Drawing.Point(212, 23)
         Me.btnSelectVendor.Name = "btnSelectVendor"
-        Me.btnSelectVendor.Size = New System.Drawing.Size(70, 28)
+        Me.btnSelectVendor.Size = New System.Drawing.Size(60, 23)
         Me.btnSelectVendor.TabIndex = 36
         Me.btnSelectVendor.Text = "Vendor"
         '
@@ -596,10 +592,9 @@ Partial Class frmLoadProcessing
         Me.LabelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl14.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "LoadStatus", True))
-        Me.LabelControl14.Location = New System.Drawing.Point(1230, 32)
-        Me.LabelControl14.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl14.Location = New System.Drawing.Point(1054, 26)
         Me.LabelControl14.Name = "LabelControl14"
-        Me.LabelControl14.Size = New System.Drawing.Size(150, 20)
+        Me.LabelControl14.Size = New System.Drawing.Size(129, 16)
         Me.LabelControl14.TabIndex = 35
         Me.LabelControl14.Text = "Load Status"
         '
@@ -609,10 +604,9 @@ Partial Class frmLoadProcessing
         Me.LabelControl13.Appearance.Options.UseFont = True
         Me.LabelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl13.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "TotalGrossWeight", True))
-        Me.LabelControl13.Location = New System.Drawing.Point(1013, 32)
-        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl13.Location = New System.Drawing.Point(868, 26)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(100, 20)
+        Me.LabelControl13.Size = New System.Drawing.Size(86, 16)
         Me.LabelControl13.TabIndex = 34
         Me.LabelControl13.Text = "Gross Wgt"
         '
@@ -622,10 +616,9 @@ Partial Class frmLoadProcessing
         Me.LabelControl12.Appearance.Options.UseFont = True
         Me.LabelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl12.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "TotalContainers", True))
-        Me.LabelControl12.Location = New System.Drawing.Point(724, 32)
-        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl12.Location = New System.Drawing.Point(621, 26)
         Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(55, 25)
+        Me.LabelControl12.Size = New System.Drawing.Size(47, 20)
         Me.LabelControl12.TabIndex = 33
         Me.LabelControl12.Text = "Containers"
         '
@@ -635,10 +628,9 @@ Partial Class frmLoadProcessing
         Me.LabelControl11.Appearance.Options.UseFont = True
         Me.LabelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl11.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "LoadType", True))
-        Me.LabelControl11.Location = New System.Drawing.Point(334, 32)
-        Me.LabelControl11.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl11.Location = New System.Drawing.Point(286, 26)
         Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(100, 20)
+        Me.LabelControl11.Size = New System.Drawing.Size(86, 16)
         Me.LabelControl11.TabIndex = 32
         Me.LabelControl11.Text = "Load Type"
         '
@@ -648,10 +640,9 @@ Partial Class frmLoadProcessing
         Me.LabelControl10.Appearance.Options.UseFont = True
         Me.LabelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl10.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "LoadID", True))
-        Me.LabelControl10.Location = New System.Drawing.Point(14, 32)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl10.Location = New System.Drawing.Point(12, 26)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(100, 20)
+        Me.LabelControl10.Size = New System.Drawing.Size(86, 16)
         Me.LabelControl10.TabIndex = 31
         Me.LabelControl10.Text = "Load #"
         '
@@ -669,20 +660,18 @@ Partial Class frmLoadProcessing
         Me.GroupControl7.Controls.Add(Me.LoadNotesMemoEdit)
         Me.GroupControl7.Controls.Add(TotalBilledLabel)
         Me.GroupControl7.Controls.Add(TotalChargedLabel)
-        Me.GroupControl7.Location = New System.Drawing.Point(920, 59)
-        Me.GroupControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl7.Location = New System.Drawing.Point(789, 48)
         Me.GroupControl7.Name = "GroupControl7"
-        Me.GroupControl7.Size = New System.Drawing.Size(465, 191)
+        Me.GroupControl7.Size = New System.Drawing.Size(399, 155)
         Me.GroupControl7.TabIndex = 29
         Me.GroupControl7.Text = "Scheduled Load Data"
         '
         'LabelControl15
         '
         Me.LabelControl15.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "QuoteID", True))
-        Me.LabelControl15.Location = New System.Drawing.Point(383, 70)
-        Me.LabelControl15.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl15.Location = New System.Drawing.Point(328, 57)
         Me.LabelControl15.Name = "LabelControl15"
-        Me.LabelControl15.Size = New System.Drawing.Size(85, 16)
+        Me.LabelControl15.Size = New System.Drawing.Size(72, 13)
         Me.LabelControl15.TabIndex = 41
         Me.LabelControl15.Text = "LabelControl15"
         '
@@ -690,51 +679,46 @@ Partial Class frmLoadProcessing
         '
         Me.LabelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl9.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "ScheduledCarrierName", True))
-        Me.LabelControl9.Location = New System.Drawing.Point(97, 52)
-        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl9.Location = New System.Drawing.Point(83, 42)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(175, 16)
+        Me.LabelControl9.Size = New System.Drawing.Size(150, 13)
         Me.LabelControl9.TabIndex = 37
         Me.LabelControl9.Text = "LabelControl9"
         '
         'LabelControl8
         '
         Me.LabelControl8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "ScheduledShipmentDate", True))
-        Me.LabelControl8.Location = New System.Drawing.Point(97, 32)
-        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl8.Location = New System.Drawing.Point(83, 26)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(78, 16)
+        Me.LabelControl8.Size = New System.Drawing.Size(66, 13)
         Me.LabelControl8.TabIndex = 35
         Me.LabelControl8.Text = "LabelControl8"
         '
         'LabelControl6
         '
         Me.LabelControl6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "TotalCharged", True))
-        Me.LabelControl6.Location = New System.Drawing.Point(383, 32)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl6.Location = New System.Drawing.Point(328, 26)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(78, 16)
+        Me.LabelControl6.Size = New System.Drawing.Size(66, 13)
         Me.LabelControl6.TabIndex = 33
         Me.LabelControl6.Text = "LabelControl6"
         '
         'LabelControl5
         '
         Me.LabelControl5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "TotalBilled", True))
-        Me.LabelControl5.Location = New System.Drawing.Point(383, 52)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl5.Location = New System.Drawing.Point(328, 42)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(78, 16)
+        Me.LabelControl5.Size = New System.Drawing.Size(66, 13)
         Me.LabelControl5.TabIndex = 32
         Me.LabelControl5.Text = "LabelControl5"
         '
         'LoadNotesMemoEdit
         '
         Me.LoadNotesMemoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "LoadNotes", True))
-        Me.LoadNotesMemoEdit.Location = New System.Drawing.Point(6, 90)
-        Me.LoadNotesMemoEdit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LoadNotesMemoEdit.Location = New System.Drawing.Point(5, 73)
         Me.LoadNotesMemoEdit.MenuManager = Me.RibbonControl1
         Me.LoadNotesMemoEdit.Name = "LoadNotesMemoEdit"
-        Me.LoadNotesMemoEdit.Size = New System.Drawing.Size(454, 95)
+        Me.LoadNotesMemoEdit.Size = New System.Drawing.Size(389, 77)
         Me.LoadNotesMemoEdit.TabIndex = 5
         '
         'GroupControl6
@@ -757,46 +741,42 @@ Partial Class frmLoadProcessing
         Me.GroupControl6.Controls.Add(PlannedDeliveryDateLabel)
         Me.GroupControl6.Controls.Add(Me.AddToInvoiceCheckEdit)
         Me.GroupControl6.Controls.Add(PlannedDepartureDateLabel)
-        Me.GroupControl6.Location = New System.Drawing.Point(635, 59)
-        Me.GroupControl6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl6.Location = New System.Drawing.Point(544, 48)
         Me.GroupControl6.Name = "GroupControl6"
-        Me.GroupControl6.Size = New System.Drawing.Size(279, 191)
+        Me.GroupControl6.Size = New System.Drawing.Size(239, 155)
         Me.GroupControl6.TabIndex = 28
         Me.GroupControl6.Text = "Information from Workorder(s)"
         '
         'FreezeProtectCheckEdit
         '
         Me.FreezeProtectCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "FreezeProtectFlag", True))
-        Me.FreezeProtectCheckEdit.Location = New System.Drawing.Point(244, 126)
-        Me.FreezeProtectCheckEdit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.FreezeProtectCheckEdit.Location = New System.Drawing.Point(209, 102)
         Me.FreezeProtectCheckEdit.MenuManager = Me.RibbonControl1
         Me.FreezeProtectCheckEdit.Name = "FreezeProtectCheckEdit"
         Me.FreezeProtectCheckEdit.Properties.Caption = ""
         Me.FreezeProtectCheckEdit.Properties.ReadOnly = True
-        Me.FreezeProtectCheckEdit.Size = New System.Drawing.Size(19, 19)
+        Me.FreezeProtectCheckEdit.Size = New System.Drawing.Size(16, 19)
         Me.FreezeProtectCheckEdit.TabIndex = 41
         Me.FreezeProtectCheckEdit.TabStop = False
         '
         'CheckEdit2
         '
         Me.CheckEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OrSoonerFlag", True))
-        Me.CheckEdit2.Location = New System.Drawing.Point(244, 145)
-        Me.CheckEdit2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.CheckEdit2.Location = New System.Drawing.Point(209, 118)
         Me.CheckEdit2.MenuManager = Me.RibbonControl1
         Me.CheckEdit2.Name = "CheckEdit2"
         Me.CheckEdit2.Properties.Caption = ""
         Me.CheckEdit2.Properties.ReadOnly = True
-        Me.CheckEdit2.Size = New System.Drawing.Size(19, 19)
+        Me.CheckEdit2.Size = New System.Drawing.Size(16, 19)
         Me.CheckEdit2.TabIndex = 39
         Me.CheckEdit2.TabStop = False
         '
         'LabelControl7
         '
         Me.LabelControl7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "Fob", True))
-        Me.LabelControl7.Location = New System.Drawing.Point(113, 70)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl7.Location = New System.Drawing.Point(97, 57)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(78, 16)
+        Me.LabelControl7.Size = New System.Drawing.Size(66, 13)
         Me.LabelControl7.TabIndex = 37
         Me.LabelControl7.Text = "LabelControl7"
         '
@@ -804,10 +784,9 @@ Partial Class frmLoadProcessing
         '
         Me.LabelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "Logisticsname", True))
-        Me.LabelControl4.Location = New System.Drawing.Point(113, 110)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl4.Location = New System.Drawing.Point(97, 89)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(160, 20)
+        Me.LabelControl4.Size = New System.Drawing.Size(137, 16)
         Me.LabelControl4.TabIndex = 35
         Me.LabelControl4.Text = "LabelControl4"
         '
@@ -815,74 +794,69 @@ Partial Class frmLoadProcessing
         '
         Me.LabelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "CarrierName", True))
-        Me.LabelControl3.Location = New System.Drawing.Point(113, 90)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl3.Location = New System.Drawing.Point(97, 73)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(160, 20)
+        Me.LabelControl3.Size = New System.Drawing.Size(137, 16)
         Me.LabelControl3.TabIndex = 34
         Me.LabelControl3.Text = "LabelControl3"
         '
         'LabelControl2
         '
         Me.LabelControl2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "PlannedDeliveryDate", True))
-        Me.LabelControl2.Location = New System.Drawing.Point(113, 52)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl2.Location = New System.Drawing.Point(97, 42)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(78, 16)
+        Me.LabelControl2.Size = New System.Drawing.Size(66, 13)
         Me.LabelControl2.TabIndex = 31
         Me.LabelControl2.Text = "LabelControl2"
         '
         'LabelControl1
         '
         Me.LabelControl1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "PlannedDepartureDate", True))
-        Me.LabelControl1.Location = New System.Drawing.Point(113, 32)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl1.Location = New System.Drawing.Point(97, 26)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(78, 16)
+        Me.LabelControl1.Size = New System.Drawing.Size(66, 13)
         Me.LabelControl1.TabIndex = 30
         Me.LabelControl1.Text = "LabelControl1"
         '
         'BillCustomerCheckEdit
         '
         Me.BillCustomerCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "BillCustomer", True))
-        Me.BillCustomerCheckEdit.Location = New System.Drawing.Point(111, 126)
-        Me.BillCustomerCheckEdit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BillCustomerCheckEdit.Location = New System.Drawing.Point(95, 102)
         Me.BillCustomerCheckEdit.MenuManager = Me.RibbonControl1
         Me.BillCustomerCheckEdit.Name = "BillCustomerCheckEdit"
         Me.BillCustomerCheckEdit.Properties.Caption = ""
         Me.BillCustomerCheckEdit.Properties.ReadOnly = True
-        Me.BillCustomerCheckEdit.Size = New System.Drawing.Size(19, 19)
+        Me.BillCustomerCheckEdit.Size = New System.Drawing.Size(16, 19)
         Me.BillCustomerCheckEdit.TabIndex = 27
         Me.BillCustomerCheckEdit.TabStop = False
         '
         'AddToInvoiceCheckEdit
         '
         Me.AddToInvoiceCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "AddToInvoice", True))
-        Me.AddToInvoiceCheckEdit.Location = New System.Drawing.Point(111, 145)
-        Me.AddToInvoiceCheckEdit.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.AddToInvoiceCheckEdit.Location = New System.Drawing.Point(95, 118)
         Me.AddToInvoiceCheckEdit.MenuManager = Me.RibbonControl1
         Me.AddToInvoiceCheckEdit.Name = "AddToInvoiceCheckEdit"
         Me.AddToInvoiceCheckEdit.Properties.Caption = ""
         Me.AddToInvoiceCheckEdit.Properties.ReadOnly = True
-        Me.AddToInvoiceCheckEdit.Size = New System.Drawing.Size(19, 19)
+        Me.AddToInvoiceCheckEdit.Size = New System.Drawing.Size(16, 19)
         Me.AddToInvoiceCheckEdit.TabIndex = 25
         Me.AddToInvoiceCheckEdit.TabStop = False
         '
         'ModifiedTimeLabel1
         '
         Me.ModifiedTimeLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "ModifiedTime", True))
-        Me.ModifiedTimeLabel1.Location = New System.Drawing.Point(10, 252)
+        Me.ModifiedTimeLabel1.Location = New System.Drawing.Point(9, 205)
         Me.ModifiedTimeLabel1.Name = "ModifiedTimeLabel1"
-        Me.ModifiedTimeLabel1.Size = New System.Drawing.Size(285, 20)
+        Me.ModifiedTimeLabel1.Size = New System.Drawing.Size(244, 16)
         Me.ModifiedTimeLabel1.TabIndex = 11
         Me.ModifiedTimeLabel1.Text = "Label11"
         '
         'ModifiedByLabel1
         '
         Me.ModifiedByLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "ModifiedBy", True))
-        Me.ModifiedByLabel1.Location = New System.Drawing.Point(321, 252)
+        Me.ModifiedByLabel1.Location = New System.Drawing.Point(275, 205)
         Me.ModifiedByLabel1.Name = "ModifiedByLabel1"
-        Me.ModifiedByLabel1.Size = New System.Drawing.Size(68, 20)
+        Me.ModifiedByLabel1.Size = New System.Drawing.Size(58, 16)
         Me.ModifiedByLabel1.TabIndex = 9
         Me.ModifiedByLabel1.Text = "Label11"
         '
@@ -898,100 +872,99 @@ Partial Class frmLoadProcessing
         Me.GroupControl5.Controls.Add(Me.Label8)
         Me.GroupControl5.Controls.Add(Me.Label9)
         Me.GroupControl5.Controls.Add(Me.Label10)
-        Me.GroupControl5.Location = New System.Drawing.Point(324, 59)
-        Me.GroupControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl5.Location = New System.Drawing.Point(278, 48)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(303, 191)
+        Me.GroupControl5.Size = New System.Drawing.Size(260, 155)
         Me.GroupControl5.TabIndex = 1
         Me.GroupControl5.Text = "Destination / Consignee"
         '
         'Label1
         '
         Me.Label1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestCity", True))
-        Me.Label1.Location = New System.Drawing.Point(6, 90)
+        Me.Label1.Location = New System.Drawing.Point(5, 73)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(187, 20)
+        Me.Label1.Size = New System.Drawing.Size(160, 16)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Label1"
         '
         'Label2
         '
         Me.Label2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DeliveryHours", True))
-        Me.Label2.Location = New System.Drawing.Point(6, 169)
+        Me.Label2.Location = New System.Drawing.Point(5, 137)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(292, 20)
+        Me.Label2.Size = New System.Drawing.Size(250, 16)
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Label1"
         '
         'Label3
         '
         Me.Label3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestAddress2", True))
-        Me.Label3.Location = New System.Drawing.Point(6, 70)
+        Me.Label3.Location = New System.Drawing.Point(5, 57)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(292, 20)
+        Me.Label3.Size = New System.Drawing.Size(250, 16)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "Label1"
         '
         'Label4
         '
         Me.Label4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestAddress1", True))
-        Me.Label4.Location = New System.Drawing.Point(6, 52)
+        Me.Label4.Location = New System.Drawing.Point(5, 42)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(292, 20)
+        Me.Label4.Size = New System.Drawing.Size(250, 16)
         Me.Label4.TabIndex = 17
         Me.Label4.Text = "Label1"
         '
         'Label5
         '
         Me.Label5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestPhone", True))
-        Me.Label5.Location = New System.Drawing.Point(6, 149)
+        Me.Label5.Location = New System.Drawing.Point(5, 121)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(292, 20)
+        Me.Label5.Size = New System.Drawing.Size(250, 16)
         Me.Label5.TabIndex = 22
         Me.Label5.Text = "Label1"
         '
         'Label6
         '
         Me.Label6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestName", True))
-        Me.Label6.Location = New System.Drawing.Point(6, 32)
+        Me.Label6.Location = New System.Drawing.Point(5, 26)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(292, 20)
+        Me.Label6.Size = New System.Drawing.Size(250, 16)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Label1"
         '
         'Label7
         '
         Me.Label7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestState", True))
-        Me.Label7.Location = New System.Drawing.Point(192, 90)
+        Me.Label7.Location = New System.Drawing.Point(165, 73)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(29, 20)
+        Me.Label7.Size = New System.Drawing.Size(25, 16)
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Label1"
         '
         'Label8
         '
         Me.Label8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestContact", True))
-        Me.Label8.Location = New System.Drawing.Point(6, 129)
+        Me.Label8.Location = New System.Drawing.Point(5, 105)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(292, 20)
+        Me.Label8.Size = New System.Drawing.Size(250, 16)
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Label1"
         '
         'Label9
         '
         Me.Label9.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestZip", True))
-        Me.Label9.Location = New System.Drawing.Point(240, 90)
+        Me.Label9.Location = New System.Drawing.Point(206, 73)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 20)
+        Me.Label9.Size = New System.Drawing.Size(50, 16)
         Me.Label9.TabIndex = 19
         Me.Label9.Text = "Label1"
         '
         'Label10
         '
         Me.Label10.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "DestCountry", True))
-        Me.Label10.Location = New System.Drawing.Point(6, 110)
+        Me.Label10.Location = New System.Drawing.Point(5, 89)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(292, 20)
+        Me.Label10.Size = New System.Drawing.Size(250, 16)
         Me.Label10.TabIndex = 20
         Me.Label10.Text = "Label1"
         '
@@ -1007,125 +980,121 @@ Partial Class frmLoadProcessing
         Me.GroupControl4.Controls.Add(Me.OriginContactLabel1)
         Me.GroupControl4.Controls.Add(Me.OriginZipLabel1)
         Me.GroupControl4.Controls.Add(Me.OriginCountryLabel1)
-        Me.GroupControl4.Location = New System.Drawing.Point(14, 59)
-        Me.GroupControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupControl4.Location = New System.Drawing.Point(12, 48)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(303, 191)
+        Me.GroupControl4.Size = New System.Drawing.Size(260, 155)
         Me.GroupControl4.TabIndex = 0
         Me.GroupControl4.Text = "Origin / Shipper"
         '
         'OriginCityLabel1
         '
         Me.OriginCityLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginCity", True))
-        Me.OriginCityLabel1.Location = New System.Drawing.Point(6, 90)
+        Me.OriginCityLabel1.Location = New System.Drawing.Point(5, 73)
         Me.OriginCityLabel1.Name = "OriginCityLabel1"
-        Me.OriginCityLabel1.Size = New System.Drawing.Size(187, 20)
+        Me.OriginCityLabel1.Size = New System.Drawing.Size(160, 16)
         Me.OriginCityLabel1.TabIndex = 3
         Me.OriginCityLabel1.Text = "Label1"
         '
         'PickupHoursLabel1
         '
         Me.PickupHoursLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "PickupHours", True))
-        Me.PickupHoursLabel1.Location = New System.Drawing.Point(6, 169)
+        Me.PickupHoursLabel1.Location = New System.Drawing.Point(5, 137)
         Me.PickupHoursLabel1.Name = "PickupHoursLabel1"
-        Me.PickupHoursLabel1.Size = New System.Drawing.Size(292, 20)
+        Me.PickupHoursLabel1.Size = New System.Drawing.Size(250, 16)
         Me.PickupHoursLabel1.TabIndex = 13
         Me.PickupHoursLabel1.Text = "Label1"
         '
         'OriginAddress2Label1
         '
         Me.OriginAddress2Label1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginAddress2", True))
-        Me.OriginAddress2Label1.Location = New System.Drawing.Point(6, 70)
+        Me.OriginAddress2Label1.Location = New System.Drawing.Point(5, 57)
         Me.OriginAddress2Label1.Name = "OriginAddress2Label1"
-        Me.OriginAddress2Label1.Size = New System.Drawing.Size(292, 20)
+        Me.OriginAddress2Label1.Size = New System.Drawing.Size(250, 16)
         Me.OriginAddress2Label1.TabIndex = 3
         Me.OriginAddress2Label1.Text = "Label1"
         '
         'OriginAddress1Label1
         '
         Me.OriginAddress1Label1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginAddress1", True))
-        Me.OriginAddress1Label1.Location = New System.Drawing.Point(6, 52)
+        Me.OriginAddress1Label1.Location = New System.Drawing.Point(5, 42)
         Me.OriginAddress1Label1.Name = "OriginAddress1Label1"
-        Me.OriginAddress1Label1.Size = New System.Drawing.Size(292, 20)
+        Me.OriginAddress1Label1.Size = New System.Drawing.Size(250, 16)
         Me.OriginAddress1Label1.TabIndex = 3
         Me.OriginAddress1Label1.Text = "Label1"
         '
         'OriginPhoneLabel1
         '
         Me.OriginPhoneLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginPhone", True))
-        Me.OriginPhoneLabel1.Location = New System.Drawing.Point(6, 149)
+        Me.OriginPhoneLabel1.Location = New System.Drawing.Point(5, 121)
         Me.OriginPhoneLabel1.Name = "OriginPhoneLabel1"
-        Me.OriginPhoneLabel1.Size = New System.Drawing.Size(292, 20)
+        Me.OriginPhoneLabel1.Size = New System.Drawing.Size(250, 16)
         Me.OriginPhoneLabel1.TabIndex = 11
         Me.OriginPhoneLabel1.Text = "Label1"
         '
         'OriginNameLabel1
         '
         Me.OriginNameLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginName", True))
-        Me.OriginNameLabel1.Location = New System.Drawing.Point(6, 32)
+        Me.OriginNameLabel1.Location = New System.Drawing.Point(5, 26)
         Me.OriginNameLabel1.Name = "OriginNameLabel1"
-        Me.OriginNameLabel1.Size = New System.Drawing.Size(292, 20)
+        Me.OriginNameLabel1.Size = New System.Drawing.Size(250, 16)
         Me.OriginNameLabel1.TabIndex = 1
         Me.OriginNameLabel1.Text = "Label1"
         '
         'OriginStateLabel1
         '
         Me.OriginStateLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginState", True))
-        Me.OriginStateLabel1.Location = New System.Drawing.Point(192, 90)
+        Me.OriginStateLabel1.Location = New System.Drawing.Point(165, 73)
         Me.OriginStateLabel1.Name = "OriginStateLabel1"
-        Me.OriginStateLabel1.Size = New System.Drawing.Size(29, 20)
+        Me.OriginStateLabel1.Size = New System.Drawing.Size(25, 16)
         Me.OriginStateLabel1.TabIndex = 3
         Me.OriginStateLabel1.Text = "Label1"
         '
         'OriginContactLabel1
         '
         Me.OriginContactLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginContact", True))
-        Me.OriginContactLabel1.Location = New System.Drawing.Point(6, 129)
+        Me.OriginContactLabel1.Location = New System.Drawing.Point(5, 105)
         Me.OriginContactLabel1.Name = "OriginContactLabel1"
-        Me.OriginContactLabel1.Size = New System.Drawing.Size(292, 20)
+        Me.OriginContactLabel1.Size = New System.Drawing.Size(250, 16)
         Me.OriginContactLabel1.TabIndex = 9
         Me.OriginContactLabel1.Text = "Label1"
         '
         'OriginZipLabel1
         '
         Me.OriginZipLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginZip", True))
-        Me.OriginZipLabel1.Location = New System.Drawing.Point(240, 90)
+        Me.OriginZipLabel1.Location = New System.Drawing.Point(206, 73)
         Me.OriginZipLabel1.Name = "OriginZipLabel1"
-        Me.OriginZipLabel1.Size = New System.Drawing.Size(58, 20)
+        Me.OriginZipLabel1.Size = New System.Drawing.Size(50, 16)
         Me.OriginZipLabel1.TabIndex = 5
         Me.OriginZipLabel1.Text = "Label1"
         '
         'OriginCountryLabel1
         '
         Me.OriginCountryLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.bsLoadInfo, "OriginCountry", True))
-        Me.OriginCountryLabel1.Location = New System.Drawing.Point(6, 110)
+        Me.OriginCountryLabel1.Location = New System.Drawing.Point(5, 89)
         Me.OriginCountryLabel1.Name = "OriginCountryLabel1"
-        Me.OriginCountryLabel1.Size = New System.Drawing.Size(292, 20)
+        Me.OriginCountryLabel1.Size = New System.Drawing.Size(250, 16)
         Me.OriginCountryLabel1.TabIndex = 7
         Me.OriginCountryLabel1.Text = "Label1"
         '
-        'GroupControl2
+        'GroupControlLPLoad
         '
-        Me.GroupControl2.Controls.Add(Me.GridControl1)
-        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 536)
-        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(1400, 377)
-        Me.GroupControl2.TabIndex = 2
-        Me.GroupControl2.Text = "Load Item Details"
+        Me.GroupControlLPLoad.Controls.Add(Me.GridControl1)
+        Me.GroupControlLPLoad.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControlLPLoad.Location = New System.Drawing.Point(0, 434)
+        Me.GroupControlLPLoad.Name = "GroupControlLPLoad"
+        Me.GroupControlLPLoad.Size = New System.Drawing.Size(1200, 308)
+        Me.GroupControlLPLoad.TabIndex = 2
+        Me.GroupControlLPLoad.Text = "Load Item Details"
         '
         'GridControl1
         '
         Me.GridControl1.DataSource = Me.bsLoadItems
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GridControl1.Location = New System.Drawing.Point(2, 25)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 20)
         Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1396, 350)
+        Me.GridControl1.Size = New System.Drawing.Size(1196, 286)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -1292,28 +1261,25 @@ Partial Class frmLoadProcessing
         Me.colIdnumber.VisibleIndex = 10
         Me.colIdnumber.Width = 106
         '
-        'GroupControl3
+        'GroupControlLPQuote
         '
-        Me.GroupControl3.Controls.Add(Me.GridControl2)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 394)
-        Me.GroupControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1400, 142)
-        Me.GroupControl3.TabIndex = 3
-        Me.GroupControl3.Text = "Carrier Freight Quotes"
+        Me.GroupControlLPQuote.Controls.Add(Me.GridControl2)
+        Me.GroupControlLPQuote.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControlLPQuote.Location = New System.Drawing.Point(0, 319)
+        Me.GroupControlLPQuote.Name = "GroupControlLPQuote"
+        Me.GroupControlLPQuote.Size = New System.Drawing.Size(1200, 115)
+        Me.GroupControlLPQuote.TabIndex = 3
+        Me.GroupControlLPQuote.Text = "Carrier Freight Quotes"
         '
         'GridControl2
         '
         Me.GridControl2.DataSource = Me.bsLoadQuotes
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GridControl2.Location = New System.Drawing.Point(2, 25)
+        Me.GridControl2.Location = New System.Drawing.Point(2, 20)
         Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl2.MenuManager = Me.RibbonControl1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1396, 115)
+        Me.GridControl2.Size = New System.Drawing.Size(1196, 93)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -1408,10 +1374,6 @@ Partial Class frmLoadProcessing
         Me.colCarrierQuoteNumber.VisibleIndex = 8
         Me.colCarrierQuoteNumber.Width = 210
         '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        '
         'colEmptyCost
         '
         Me.colEmptyCost.FieldName = "EmptyCost"
@@ -1433,25 +1395,28 @@ Partial Class frmLoadProcessing
         Me.colFreezeProtect.Visible = True
         Me.colFreezeProtect.VisibleIndex = 11
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
         'frmLoadProcessing
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1400, 913)
-        Me.Controls.Add(Me.GroupControl2)
-        Me.Controls.Add(Me.GroupControl3)
-        Me.Controls.Add(Me.GroupControl1)
+        Me.ClientSize = New System.Drawing.Size(1200, 742)
+        Me.Controls.Add(Me.GroupControlLPLoad)
+        Me.Controls.Add(Me.GroupControlLPQuote)
+        Me.Controls.Add(Me.GroupControlLPHeader)
         Me.Controls.Add(Me.RibbonControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frmLoadProcessing"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Load Processing"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
+        CType(Me.GroupControlLPHeader, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlLPHeader.ResumeLayout(False)
+        Me.GroupControlLPHeader.PerformLayout()
         CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl7.ResumeLayout(False)
@@ -1468,13 +1433,13 @@ Partial Class frmLoadProcessing
         Me.GroupControl5.ResumeLayout(False)
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.GroupControlLPLoad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlLPLoad.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsLoadItems, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GroupControlLPQuote, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlLPQuote.ResumeLayout(False)
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1485,9 +1450,9 @@ Partial Class frmLoadProcessing
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlLPHeader As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlLPLoad As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlLPQuote As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents bsLoadItems As System.Windows.Forms.BindingSource
     Friend WithEvents Timer1 As System.Windows.Forms.Timer

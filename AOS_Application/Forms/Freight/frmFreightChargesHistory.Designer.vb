@@ -1,8 +1,8 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmFreightChargesHistory
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -16,7 +16,7 @@ Partial Class frmFreightChargesHistory
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim lblShipmentnumber As System.Windows.Forms.Label
@@ -52,28 +52,8 @@ Partial Class frmFreightChargesHistory
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
-        Me.grFreightChargeHistory = New DevExpress.XtraGrid.GridControl()
-        Me.bsLoadChargeHistory = New System.Windows.Forms.BindingSource(Me.components)
-        Me.grvFreightChargesHistory = New AOS.CustomClasses.CustomDevExGridView()
-        Me.colLoadID = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colActualShipmentDate = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCarrierName = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colOriginName = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDestName = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colFob = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colFreezeProtectFlag = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colTotalGrossWeight = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colTotalSkids = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colTotalCharged = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colTotalBilled = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.luProductDesc = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.luContainer = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.luStdgallons = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControlFMHeader = New DevExpress.XtraEditors.GroupControl()
         Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
         Me.chkFreezeProtect = New DevExpress.XtraEditors.CheckEdit()
         Me.txtVariance = New DevExpress.XtraEditors.TextEdit()
@@ -96,6 +76,42 @@ Partial Class frmFreightChargesHistory
         Me.Shipfromaddress2TextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ShipfromstateprovTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ShipfromcityTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.GroupControlFreightMgmt = New DevExpress.XtraEditors.GroupControl()
+        Me.grFreightChargeHistory = New DevExpress.XtraGrid.GridControl()
+        Me.bsLoadChargeHistory = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvFreightChargesHistory = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colLoadID = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colActualShipmentDate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCarrierName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colOriginName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDestName = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFob = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFreezeProtectFlag = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalGrossWeight = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalSkids = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalCharged = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotalBilled = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.luProductDesc = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.luContainer = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.luStdgallons = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GroupControlQuotes = New DevExpress.XtraEditors.GroupControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.bsLoadQuotes = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grvQuotes = New AOS.CustomClasses.CustomDevExGridView()
+        Me.colLoadQuoteID = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLoadID1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCarrierID = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLogisticsProviderID = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colLogisticsname = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQuoteAmount = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colQuoteDate = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCarrierQuoteNumber = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colEmptyCost = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colEquipmentCost = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFreezeProtect = New DevExpress.XtraGrid.Columns.GridColumn()
         lblShipmentnumber = New System.Windows.Forms.Label()
         ShipmentdateLabel = New System.Windows.Forms.Label()
         ShipfromidLabel = New System.Windows.Forms.Label()
@@ -115,20 +131,9 @@ Partial Class frmFreightChargesHistory
         CType(Me.LoadMgmt_Images, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl4.SuspendLayout()
-        CType(Me.grFreightChargeHistory, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsLoadChargeHistory, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grvFreightChargesHistory, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.luProductDesc, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.luContainer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.luStdgallons, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl2.SuspendLayout()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
+        CType(Me.GroupControlFMHeader, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlFMHeader.SuspendLayout()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl5.SuspendLayout()
         CType(Me.chkFreezeProtect.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,6 +160,21 @@ Partial Class frmFreightChargesHistory
         CType(Me.Shipfromaddress2TextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ShipfromstateprovTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ShipfromcityTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControlFreightMgmt, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlFreightMgmt.SuspendLayout()
+        CType(Me.grFreightChargeHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsLoadChargeHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvFreightChargesHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.luProductDesc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.luContainer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.luStdgallons, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControlQuotes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlQuotes.SuspendLayout()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvQuotes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblShipmentnumber
@@ -162,7 +182,7 @@ Partial Class frmFreightChargesHistory
         lblShipmentnumber.AutoSize = True
         lblShipmentnumber.Location = New System.Drawing.Point(8, 31)
         lblShipmentnumber.Name = "lblShipmentnumber"
-        lblShipmentnumber.Size = New System.Drawing.Size(38, 17)
+        lblShipmentnumber.Size = New System.Drawing.Size(30, 13)
         lblShipmentnumber.TabIndex = 0
         lblShipmentnumber.Text = "Load"
         '
@@ -171,7 +191,7 @@ Partial Class frmFreightChargesHistory
         ShipmentdateLabel.AutoSize = True
         ShipmentdateLabel.Location = New System.Drawing.Point(8, 57)
         ShipmentdateLabel.Name = "ShipmentdateLabel"
-        ShipmentdateLabel.Size = New System.Drawing.Size(67, 17)
+        ShipmentdateLabel.Size = New System.Drawing.Size(53, 13)
         ShipmentdateLabel.TabIndex = 2
         ShipmentdateLabel.Text = "Ship Date"
         '
@@ -180,7 +200,7 @@ Partial Class frmFreightChargesHistory
         ShipfromidLabel.AutoSize = True
         ShipfromidLabel.Location = New System.Drawing.Point(10, 31)
         ShipfromidLabel.Name = "ShipfromidLabel"
-        ShipfromidLabel.Size = New System.Drawing.Size(68, 17)
+        ShipfromidLabel.Size = New System.Drawing.Size(52, 13)
         ShipfromidLabel.TabIndex = 14
         ShipfromidLabel.Text = "Company"
         '
@@ -189,7 +209,7 @@ Partial Class frmFreightChargesHistory
         Shipfromaddress1Label.AutoSize = True
         Shipfromaddress1Label.Location = New System.Drawing.Point(10, 57)
         Shipfromaddress1Label.Name = "Shipfromaddress1Label"
-        Shipfromaddress1Label.Size = New System.Drawing.Size(68, 17)
+        Shipfromaddress1Label.Size = New System.Drawing.Size(55, 13)
         Shipfromaddress1Label.TabIndex = 16
         Shipfromaddress1Label.Text = "Address 1"
         '
@@ -198,7 +218,7 @@ Partial Class frmFreightChargesHistory
         Shipfromaddress2Label.AutoSize = True
         Shipfromaddress2Label.Location = New System.Drawing.Point(10, 83)
         Shipfromaddress2Label.Name = "Shipfromaddress2Label"
-        Shipfromaddress2Label.Size = New System.Drawing.Size(68, 17)
+        Shipfromaddress2Label.Size = New System.Drawing.Size(55, 13)
         Shipfromaddress2Label.TabIndex = 18
         Shipfromaddress2Label.Text = "Address 2"
         '
@@ -207,7 +227,7 @@ Partial Class frmFreightChargesHistory
         ShipfromcityLabel.AutoSize = True
         ShipfromcityLabel.Location = New System.Drawing.Point(10, 109)
         ShipfromcityLabel.Name = "ShipfromcityLabel"
-        ShipfromcityLabel.Size = New System.Drawing.Size(90, 17)
+        ShipfromcityLabel.Size = New System.Drawing.Size(72, 13)
         ShipfromcityLabel.TabIndex = 20
         ShipfromcityLabel.Text = "City State Zip"
         '
@@ -216,7 +236,7 @@ Partial Class frmFreightChargesHistory
         Label2.AutoSize = True
         Label2.Location = New System.Drawing.Point(10, 31)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(68, 17)
+        Label2.Size = New System.Drawing.Size(52, 13)
         Label2.TabIndex = 14
         Label2.Text = "Company"
         '
@@ -225,7 +245,7 @@ Partial Class frmFreightChargesHistory
         Label4.AutoSize = True
         Label4.Location = New System.Drawing.Point(10, 57)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(68, 17)
+        Label4.Size = New System.Drawing.Size(55, 13)
         Label4.TabIndex = 16
         Label4.Text = "Address 1"
         '
@@ -234,7 +254,7 @@ Partial Class frmFreightChargesHistory
         Label5.AutoSize = True
         Label5.Location = New System.Drawing.Point(10, 83)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(68, 17)
+        Label5.Size = New System.Drawing.Size(55, 13)
         Label5.TabIndex = 18
         Label5.Text = "Address 2"
         '
@@ -243,7 +263,7 @@ Partial Class frmFreightChargesHistory
         Label6.AutoSize = True
         Label6.Location = New System.Drawing.Point(10, 109)
         Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(90, 17)
+        Label6.Size = New System.Drawing.Size(72, 13)
         Label6.TabIndex = 20
         Label6.Text = "City State Zip"
         '
@@ -252,7 +272,7 @@ Partial Class frmFreightChargesHistory
         Label7.AutoSize = True
         Label7.Location = New System.Drawing.Point(8, 109)
         Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(39, 17)
+        Label7.Size = New System.Drawing.Size(31, 13)
         Label7.TabIndex = 31
         Label7.Text = "Skids"
         '
@@ -261,7 +281,7 @@ Partial Class frmFreightChargesHistory
         Label8.AutoSize = True
         Label8.Location = New System.Drawing.Point(8, 83)
         Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(52, 17)
+        Label8.Size = New System.Drawing.Size(41, 13)
         Label8.TabIndex = 33
         Label8.Text = "Weight"
         '
@@ -270,7 +290,7 @@ Partial Class frmFreightChargesHistory
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(8, 129)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(96, 17)
+        Label1.Size = New System.Drawing.Size(78, 13)
         Label1.TabIndex = 35
         Label1.Text = "Freeze Protect"
         '
@@ -279,7 +299,7 @@ Partial Class frmFreightChargesHistory
         Label3.AutoSize = True
         Label3.Location = New System.Drawing.Point(180, 83)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(59, 17)
+        Label3.Size = New System.Drawing.Size(48, 13)
         Label3.TabIndex = 37
         Label3.Text = "Variance"
         '
@@ -288,7 +308,7 @@ Partial Class frmFreightChargesHistory
         Label9.AutoSize = True
         Label9.Location = New System.Drawing.Point(262, 83)
         Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(22, 17)
+        Label9.Size = New System.Drawing.Size(18, 13)
         Label9.TabIndex = 39
         Label9.Text = "%"
         '
@@ -307,7 +327,7 @@ Partial Class frmFreightChargesHistory
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.Size = New System.Drawing.Size(1382, 145)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1382, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnSave
@@ -416,34 +436,288 @@ Partial Class frmFreightChargesHistory
         'PanelControl1
         '
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl1.Controls.Add(Me.GroupControl4)
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 145)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 116)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1382, 649)
+        Me.PanelControl1.Size = New System.Drawing.Size(1382, 678)
         Me.PanelControl1.TabIndex = 1
         '
-        'GroupControl4
+        'PanelControl2
         '
-        Me.GroupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.GroupControl4.Controls.Add(Me.grFreightChargeHistory)
-        Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl4.Location = New System.Drawing.Point(0, 216)
-        Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1382, 433)
-        Me.GroupControl4.TabIndex = 6
-        Me.GroupControl4.Text = "Work Order Items"
+        Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControl2.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl2.Name = "PanelControl2"
+        Me.PanelControl2.Size = New System.Drawing.Size(1382, 216)
+        Me.PanelControl2.TabIndex = 5
+        '
+        'GroupControlFMHeader
+        '
+        Me.GroupControlFMHeader.Controls.Add(Me.GroupControl5)
+        Me.GroupControlFMHeader.Controls.Add(Me.GroupControl3)
+        Me.GroupControlFMHeader.Controls.Add(Me.GroupControl2)
+        Me.GroupControlFMHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControlFMHeader.Location = New System.Drawing.Point(0, 116)
+        Me.GroupControlFMHeader.Name = "GroupControlFMHeader"
+        Me.GroupControlFMHeader.Size = New System.Drawing.Size(1382, 216)
+        Me.GroupControlFMHeader.TabIndex = 23
+        Me.GroupControlFMHeader.Text = "Freight Charges History Parameters"
+        '
+        'GroupControl5
+        '
+        Me.GroupControl5.Controls.Add(Me.chkFreezeProtect)
+        Me.GroupControl5.Controls.Add(Me.txtVariance)
+        Me.GroupControl5.Controls.Add(Me.txtSkids)
+        Me.GroupControl5.Controls.Add(Me.txtTotalWeight)
+        Me.GroupControl5.Controls.Add(Label9)
+        Me.GroupControl5.Controls.Add(Label3)
+        Me.GroupControl5.Controls.Add(Label1)
+        Me.GroupControl5.Controls.Add(Label8)
+        Me.GroupControl5.Controls.Add(Label7)
+        Me.GroupControl5.Controls.Add(lblShipmentnumber)
+        Me.GroupControl5.Controls.Add(ShipmentdateLabel)
+        Me.GroupControl5.Controls.Add(Me.ShipmentdateDateEdit)
+        Me.GroupControl5.Controls.Add(Me.LoadNumberTextEdit)
+        Me.GroupControl5.Location = New System.Drawing.Point(12, 33)
+        Me.GroupControl5.Name = "GroupControl5"
+        Me.GroupControl5.Size = New System.Drawing.Size(280, 155)
+        Me.GroupControl5.TabIndex = 30
+        Me.GroupControl5.Text = "Load Info"
+        '
+        'chkFreezeProtect
+        '
+        Me.chkFreezeProtect.Location = New System.Drawing.Point(93, 129)
+        Me.chkFreezeProtect.MenuManager = Me.RibbonControl1
+        Me.chkFreezeProtect.Name = "chkFreezeProtect"
+        Me.chkFreezeProtect.Properties.Caption = ""
+        Me.chkFreezeProtect.Size = New System.Drawing.Size(75, 19)
+        Me.chkFreezeProtect.TabIndex = 43
+        '
+        'txtVariance
+        '
+        Me.txtVariance.Location = New System.Drawing.Point(234, 80)
+        Me.txtVariance.MenuManager = Me.RibbonControl1
+        Me.txtVariance.Name = "txtVariance"
+        Me.txtVariance.Size = New System.Drawing.Size(31, 20)
+        Me.txtVariance.TabIndex = 42
+        '
+        'txtSkids
+        '
+        Me.txtSkids.Location = New System.Drawing.Point(76, 102)
+        Me.txtSkids.MenuManager = Me.RibbonControl1
+        Me.txtSkids.Name = "txtSkids"
+        Me.txtSkids.Size = New System.Drawing.Size(80, 20)
+        Me.txtSkids.TabIndex = 41
+        '
+        'txtTotalWeight
+        '
+        Me.txtTotalWeight.Location = New System.Drawing.Point(76, 80)
+        Me.txtTotalWeight.MenuManager = Me.RibbonControl1
+        Me.txtTotalWeight.Name = "txtTotalWeight"
+        Me.txtTotalWeight.Size = New System.Drawing.Size(80, 20)
+        Me.txtTotalWeight.TabIndex = 40
+        '
+        'ShipmentdateDateEdit
+        '
+        Me.ShipmentdateDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "PlannedDepartureDate", True))
+        Me.ShipmentdateDateEdit.EditValue = Nothing
+        Me.ShipmentdateDateEdit.Enabled = False
+        Me.ShipmentdateDateEdit.Location = New System.Drawing.Point(76, 54)
+        Me.ShipmentdateDateEdit.MenuManager = Me.RibbonControl1
+        Me.ShipmentdateDateEdit.Name = "ShipmentdateDateEdit"
+        Me.ShipmentdateDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.ShipmentdateDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.ShipmentdateDateEdit.Size = New System.Drawing.Size(150, 20)
+        Me.ShipmentdateDateEdit.TabIndex = 0
+        '
+        'bsLoadInfo
+        '
+        Me.bsLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfo)
+        '
+        'LoadNumberTextEdit
+        '
+        Me.LoadNumberTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "LoadID", True))
+        Me.LoadNumberTextEdit.Enabled = False
+        Me.LoadNumberTextEdit.Location = New System.Drawing.Point(76, 28)
+        Me.LoadNumberTextEdit.MenuManager = Me.RibbonControl1
+        Me.LoadNumberTextEdit.Name = "LoadNumberTextEdit"
+        Me.LoadNumberTextEdit.Properties.ReadOnly = True
+        Me.LoadNumberTextEdit.Size = New System.Drawing.Size(150, 20)
+        Me.LoadNumberTextEdit.TabIndex = 1
+        Me.LoadNumberTextEdit.TabStop = False
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.TextEdit3)
+        Me.GroupControl3.Controls.Add(Label2)
+        Me.GroupControl3.Controls.Add(Me.TextEdit2)
+        Me.GroupControl3.Controls.Add(Label4)
+        Me.GroupControl3.Controls.Add(Me.TextEdit4)
+        Me.GroupControl3.Controls.Add(Me.TextEdit5)
+        Me.GroupControl3.Controls.Add(Me.TextEdit6)
+        Me.GroupControl3.Controls.Add(Label5)
+        Me.GroupControl3.Controls.Add(Label6)
+        Me.GroupControl3.Controls.Add(Me.TextEdit7)
+        Me.GroupControl3.Enabled = False
+        Me.GroupControl3.Location = New System.Drawing.Point(674, 33)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(348, 155)
+        Me.GroupControl3.TabIndex = 29
+        Me.GroupControl3.Text = "Destination"
+        '
+        'TextEdit3
+        '
+        Me.TextEdit3.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestName", True))
+        Me.TextEdit3.Enabled = False
+        Me.TextEdit3.Location = New System.Drawing.Point(94, 28)
+        Me.TextEdit3.MenuManager = Me.RibbonControl1
+        Me.TextEdit3.Name = "TextEdit3"
+        Me.TextEdit3.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit3.TabIndex = 21
+        '
+        'TextEdit2
+        '
+        Me.TextEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestAddress1", True))
+        Me.TextEdit2.Location = New System.Drawing.Point(94, 54)
+        Me.TextEdit2.MenuManager = Me.RibbonControl1
+        Me.TextEdit2.Name = "TextEdit2"
+        Me.TextEdit2.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit2.TabIndex = 1
+        '
+        'TextEdit4
+        '
+        Me.TextEdit4.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestZip", True))
+        Me.TextEdit4.Location = New System.Drawing.Point(266, 106)
+        Me.TextEdit4.MenuManager = Me.RibbonControl1
+        Me.TextEdit4.Name = "TextEdit4"
+        Me.TextEdit4.Size = New System.Drawing.Size(68, 20)
+        Me.TextEdit4.TabIndex = 5
+        '
+        'TextEdit5
+        '
+        Me.TextEdit5.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestAddress2", True))
+        Me.TextEdit5.Location = New System.Drawing.Point(94, 80)
+        Me.TextEdit5.MenuManager = Me.RibbonControl1
+        Me.TextEdit5.Name = "TextEdit5"
+        Me.TextEdit5.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit5.TabIndex = 2
+        '
+        'TextEdit6
+        '
+        Me.TextEdit6.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestState", True))
+        Me.TextEdit6.Location = New System.Drawing.Point(232, 106)
+        Me.TextEdit6.MenuManager = Me.RibbonControl1
+        Me.TextEdit6.Name = "TextEdit6"
+        Me.TextEdit6.Size = New System.Drawing.Size(28, 20)
+        Me.TextEdit6.TabIndex = 4
+        '
+        'TextEdit7
+        '
+        Me.TextEdit7.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestCity", True))
+        Me.TextEdit7.Location = New System.Drawing.Point(94, 106)
+        Me.TextEdit7.MenuManager = Me.RibbonControl1
+        Me.TextEdit7.Name = "TextEdit7"
+        Me.TextEdit7.Size = New System.Drawing.Size(132, 20)
+        Me.TextEdit7.TabIndex = 3
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.TextEdit1)
+        Me.GroupControl2.Controls.Add(ShipfromidLabel)
+        Me.GroupControl2.Controls.Add(Me.Shipfromaddress1TextEdit)
+        Me.GroupControl2.Controls.Add(Shipfromaddress1Label)
+        Me.GroupControl2.Controls.Add(Me.ShipfrompostalcodeTextEdit)
+        Me.GroupControl2.Controls.Add(Me.Shipfromaddress2TextEdit)
+        Me.GroupControl2.Controls.Add(Me.ShipfromstateprovTextEdit)
+        Me.GroupControl2.Controls.Add(Shipfromaddress2Label)
+        Me.GroupControl2.Controls.Add(ShipfromcityLabel)
+        Me.GroupControl2.Controls.Add(Me.ShipfromcityTextEdit)
+        Me.GroupControl2.Location = New System.Drawing.Point(308, 33)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(348, 155)
+        Me.GroupControl2.TabIndex = 28
+        Me.GroupControl2.Text = "Origin"
+        '
+        'TextEdit1
+        '
+        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginName", True))
+        Me.TextEdit1.Enabled = False
+        Me.TextEdit1.Location = New System.Drawing.Point(94, 28)
+        Me.TextEdit1.MenuManager = Me.RibbonControl1
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(240, 20)
+        Me.TextEdit1.TabIndex = 21
+        '
+        'Shipfromaddress1TextEdit
+        '
+        Me.Shipfromaddress1TextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginAddress1", True))
+        Me.Shipfromaddress1TextEdit.Enabled = False
+        Me.Shipfromaddress1TextEdit.Location = New System.Drawing.Point(94, 54)
+        Me.Shipfromaddress1TextEdit.MenuManager = Me.RibbonControl1
+        Me.Shipfromaddress1TextEdit.Name = "Shipfromaddress1TextEdit"
+        Me.Shipfromaddress1TextEdit.Size = New System.Drawing.Size(240, 20)
+        Me.Shipfromaddress1TextEdit.TabIndex = 1
+        '
+        'ShipfrompostalcodeTextEdit
+        '
+        Me.ShipfrompostalcodeTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginZip", True))
+        Me.ShipfrompostalcodeTextEdit.Enabled = False
+        Me.ShipfrompostalcodeTextEdit.Location = New System.Drawing.Point(266, 106)
+        Me.ShipfrompostalcodeTextEdit.MenuManager = Me.RibbonControl1
+        Me.ShipfrompostalcodeTextEdit.Name = "ShipfrompostalcodeTextEdit"
+        Me.ShipfrompostalcodeTextEdit.Size = New System.Drawing.Size(68, 20)
+        Me.ShipfrompostalcodeTextEdit.TabIndex = 5
+        '
+        'Shipfromaddress2TextEdit
+        '
+        Me.Shipfromaddress2TextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginAddress2", True))
+        Me.Shipfromaddress2TextEdit.Enabled = False
+        Me.Shipfromaddress2TextEdit.Location = New System.Drawing.Point(94, 80)
+        Me.Shipfromaddress2TextEdit.MenuManager = Me.RibbonControl1
+        Me.Shipfromaddress2TextEdit.Name = "Shipfromaddress2TextEdit"
+        Me.Shipfromaddress2TextEdit.Size = New System.Drawing.Size(240, 20)
+        Me.Shipfromaddress2TextEdit.TabIndex = 2
+        '
+        'ShipfromstateprovTextEdit
+        '
+        Me.ShipfromstateprovTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginState", True))
+        Me.ShipfromstateprovTextEdit.Enabled = False
+        Me.ShipfromstateprovTextEdit.Location = New System.Drawing.Point(232, 106)
+        Me.ShipfromstateprovTextEdit.MenuManager = Me.RibbonControl1
+        Me.ShipfromstateprovTextEdit.Name = "ShipfromstateprovTextEdit"
+        Me.ShipfromstateprovTextEdit.Size = New System.Drawing.Size(28, 20)
+        Me.ShipfromstateprovTextEdit.TabIndex = 4
+        '
+        'ShipfromcityTextEdit
+        '
+        Me.ShipfromcityTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginCity", True))
+        Me.ShipfromcityTextEdit.Enabled = False
+        Me.ShipfromcityTextEdit.Location = New System.Drawing.Point(94, 106)
+        Me.ShipfromcityTextEdit.MenuManager = Me.RibbonControl1
+        Me.ShipfromcityTextEdit.Name = "ShipfromcityTextEdit"
+        Me.ShipfromcityTextEdit.Size = New System.Drawing.Size(132, 20)
+        Me.ShipfromcityTextEdit.TabIndex = 3
+        '
+        'GroupControlFreightMgmt
+        '
+        Me.GroupControlFreightMgmt.Controls.Add(Me.grFreightChargeHistory)
+        Me.GroupControlFreightMgmt.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControlFreightMgmt.Location = New System.Drawing.Point(0, 447)
+        Me.GroupControlFreightMgmt.Name = "GroupControlFreightMgmt"
+        Me.GroupControlFreightMgmt.Size = New System.Drawing.Size(1382, 347)
+        Me.GroupControlFreightMgmt.TabIndex = 6
+        Me.GroupControlFreightMgmt.Text = "Work Order Items"
         '
         'grFreightChargeHistory
         '
         Me.grFreightChargeHistory.DataSource = Me.bsLoadChargeHistory
         Me.grFreightChargeHistory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grFreightChargeHistory.Location = New System.Drawing.Point(0, 0)
+        Me.grFreightChargeHistory.Location = New System.Drawing.Point(2, 20)
         Me.grFreightChargeHistory.MainView = Me.grvFreightChargesHistory
         Me.grFreightChargeHistory.Name = "grFreightChargeHistory"
         Me.grFreightChargeHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.luProductDesc, Me.luContainer, Me.luStdgallons, Me.RepositoryItemCheckEdit1, Me.RepositoryItemLookUpEdit1})
-        Me.grFreightChargeHistory.Size = New System.Drawing.Size(1382, 433)
+        Me.grFreightChargeHistory.Size = New System.Drawing.Size(1378, 325)
         Me.grFreightChargeHistory.TabIndex = 4
         Me.grFreightChargeHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvFreightChargesHistory})
         '
@@ -591,268 +865,148 @@ Partial Class frmFreightChargesHistory
         Me.RepositoryItemLookUpEdit1.NullText = ""
         Me.RepositoryItemLookUpEdit1.ValueMember = "Productid"
         '
-        'PanelControl2
+        'GroupControlQuotes
         '
-        Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl2.Controls.Add(Me.GroupControl1)
-        Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl2.Location = New System.Drawing.Point(0, 0)
-        Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(1382, 216)
-        Me.PanelControl2.TabIndex = 5
+        Me.GroupControlQuotes.Controls.Add(Me.GridControl2)
+        Me.GroupControlQuotes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControlQuotes.Location = New System.Drawing.Point(0, 332)
+        Me.GroupControlQuotes.Name = "GroupControlQuotes"
+        Me.GroupControlQuotes.Size = New System.Drawing.Size(1382, 115)
+        Me.GroupControlQuotes.TabIndex = 7
+        Me.GroupControlQuotes.Text = "Carrier Freight Quotes"
         '
-        'GroupControl1
+        'GridControl2
         '
-        Me.GroupControl1.Controls.Add(Me.GroupControl5)
-        Me.GroupControl1.Controls.Add(Me.GroupControl3)
-        Me.GroupControl1.Controls.Add(Me.GroupControl2)
-        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1382, 216)
-        Me.GroupControl1.TabIndex = 23
-        Me.GroupControl1.Text = "Freight Charges History Parameters"
+        Me.GridControl2.DataSource = Me.bsLoadQuotes
+        Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControl2.Location = New System.Drawing.Point(2, 20)
+        Me.GridControl2.MainView = Me.grvQuotes
+        Me.GridControl2.MenuManager = Me.RibbonControl1
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(1378, 93)
+        Me.GridControl2.TabIndex = 0
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvQuotes})
         '
-        'GroupControl5
+        'bsLoadQuotes
         '
-        Me.GroupControl5.Controls.Add(Me.chkFreezeProtect)
-        Me.GroupControl5.Controls.Add(Me.txtVariance)
-        Me.GroupControl5.Controls.Add(Me.txtSkids)
-        Me.GroupControl5.Controls.Add(Me.txtTotalWeight)
-        Me.GroupControl5.Controls.Add(Label9)
-        Me.GroupControl5.Controls.Add(Label3)
-        Me.GroupControl5.Controls.Add(Label1)
-        Me.GroupControl5.Controls.Add(Label8)
-        Me.GroupControl5.Controls.Add(Label7)
-        Me.GroupControl5.Controls.Add(lblShipmentnumber)
-        Me.GroupControl5.Controls.Add(ShipmentdateLabel)
-        Me.GroupControl5.Controls.Add(Me.ShipmentdateDateEdit)
-        Me.GroupControl5.Controls.Add(Me.LoadNumberTextEdit)
-        Me.GroupControl5.Location = New System.Drawing.Point(12, 33)
-        Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(280, 155)
-        Me.GroupControl5.TabIndex = 30
-        Me.GroupControl5.Text = "Load Info"
+        Me.bsLoadQuotes.DataSource = GetType(AOS.BusinessObjects.ViewLoadQuotesByLoadIDCollection)
         '
-        'chkFreezeProtect
+        'grvQuotes
         '
-        Me.chkFreezeProtect.Location = New System.Drawing.Point(93, 129)
-        Me.chkFreezeProtect.MenuManager = Me.RibbonControl1
-        Me.chkFreezeProtect.Name = "chkFreezeProtect"
-        Me.chkFreezeProtect.Properties.Caption = ""
-        Me.chkFreezeProtect.Size = New System.Drawing.Size(75, 19)
-        Me.chkFreezeProtect.TabIndex = 43
+        Me.grvQuotes.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLoadQuoteID, Me.colLoadID1, Me.colCarrierID, Me.GridColumn1, Me.colLogisticsProviderID, Me.colLogisticsname, Me.colQuoteAmount, Me.colQuoteDate, Me.colCarrierQuoteNumber, Me.colEmptyCost, Me.colEquipmentCost, Me.colFreezeProtect})
+        Me.grvQuotes.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.grvQuotes.GridControl = Me.GridControl2
+        Me.grvQuotes.Name = "grvQuotes"
+        Me.grvQuotes.OptionsBehavior.Editable = False
+        Me.grvQuotes.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.grvQuotes.OptionsSelection.MultiSelect = True
+        Me.grvQuotes.OptionsView.ShowGroupPanel = False
+        Me.grvQuotes.OptionsView.ShowIndicator = False
         '
-        'txtVariance
+        'colLoadQuoteID
         '
-        Me.txtVariance.Location = New System.Drawing.Point(234, 80)
-        Me.txtVariance.MenuManager = Me.RibbonControl1
-        Me.txtVariance.Name = "txtVariance"
-        Me.txtVariance.Size = New System.Drawing.Size(31, 22)
-        Me.txtVariance.TabIndex = 42
+        Me.colLoadQuoteID.Caption = "Quote #"
+        Me.colLoadQuoteID.FieldName = "LoadQuoteID"
+        Me.colLoadQuoteID.Name = "colLoadQuoteID"
+        Me.colLoadQuoteID.Visible = True
+        Me.colLoadQuoteID.VisibleIndex = 0
+        Me.colLoadQuoteID.Width = 59
         '
-        'txtSkids
+        'colLoadID1
         '
-        Me.txtSkids.Location = New System.Drawing.Point(76, 102)
-        Me.txtSkids.MenuManager = Me.RibbonControl1
-        Me.txtSkids.Name = "txtSkids"
-        Me.txtSkids.Size = New System.Drawing.Size(80, 22)
-        Me.txtSkids.TabIndex = 41
+        Me.colLoadID1.Caption = "Load #"
+        Me.colLoadID1.FieldName = "LoadID"
+        Me.colLoadID1.Name = "colLoadID1"
+        Me.colLoadID1.Visible = True
+        Me.colLoadID1.VisibleIndex = 1
+        Me.colLoadID1.Width = 57
         '
-        'txtTotalWeight
+        'colCarrierID
         '
-        Me.txtTotalWeight.Location = New System.Drawing.Point(76, 80)
-        Me.txtTotalWeight.MenuManager = Me.RibbonControl1
-        Me.txtTotalWeight.Name = "txtTotalWeight"
-        Me.txtTotalWeight.Size = New System.Drawing.Size(80, 22)
-        Me.txtTotalWeight.TabIndex = 40
+        Me.colCarrierID.FieldName = "CarrierID"
+        Me.colCarrierID.Name = "colCarrierID"
+        Me.colCarrierID.Visible = True
+        Me.colCarrierID.VisibleIndex = 2
+        Me.colCarrierID.Width = 77
         '
-        'ShipmentdateDateEdit
+        'GridColumn1
         '
-        Me.ShipmentdateDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "PlannedDepartureDate", True))
-        Me.ShipmentdateDateEdit.EditValue = Nothing
-        Me.ShipmentdateDateEdit.Enabled = False
-        Me.ShipmentdateDateEdit.Location = New System.Drawing.Point(76, 54)
-        Me.ShipmentdateDateEdit.MenuManager = Me.RibbonControl1
-        Me.ShipmentdateDateEdit.Name = "ShipmentdateDateEdit"
-        Me.ShipmentdateDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ShipmentdateDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.ShipmentdateDateEdit.Size = New System.Drawing.Size(150, 22)
-        Me.ShipmentdateDateEdit.TabIndex = 0
+        Me.GridColumn1.FieldName = "CarrierName"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 3
+        Me.GridColumn1.Width = 260
         '
-        'bsLoadInfo
+        'colLogisticsProviderID
         '
-        Me.bsLoadInfo.DataSource = GetType(AOS.BusinessObjects.ViewLoadInfo)
+        Me.colLogisticsProviderID.Caption = "3rd Party ID"
+        Me.colLogisticsProviderID.FieldName = "LogisticsProviderID"
+        Me.colLogisticsProviderID.Name = "colLogisticsProviderID"
+        Me.colLogisticsProviderID.Visible = True
+        Me.colLogisticsProviderID.VisibleIndex = 4
+        Me.colLogisticsProviderID.Width = 80
         '
-        'LoadNumberTextEdit
+        'colLogisticsname
         '
-        Me.LoadNumberTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "LoadID", True))
-        Me.LoadNumberTextEdit.Enabled = False
-        Me.LoadNumberTextEdit.Location = New System.Drawing.Point(76, 28)
-        Me.LoadNumberTextEdit.MenuManager = Me.RibbonControl1
-        Me.LoadNumberTextEdit.Name = "LoadNumberTextEdit"
-        Me.LoadNumberTextEdit.Properties.ReadOnly = True
-        Me.LoadNumberTextEdit.Size = New System.Drawing.Size(150, 22)
-        Me.LoadNumberTextEdit.TabIndex = 1
-        Me.LoadNumberTextEdit.TabStop = False
+        Me.colLogisticsname.Caption = "3rd Party Name"
+        Me.colLogisticsname.FieldName = "Logisticsname"
+        Me.colLogisticsname.Name = "colLogisticsname"
+        Me.colLogisticsname.Visible = True
+        Me.colLogisticsname.VisibleIndex = 5
+        Me.colLogisticsname.Width = 272
         '
-        'GroupControl3
+        'colQuoteAmount
         '
-        Me.GroupControl3.Controls.Add(Me.TextEdit3)
-        Me.GroupControl3.Controls.Add(Label2)
-        Me.GroupControl3.Controls.Add(Me.TextEdit2)
-        Me.GroupControl3.Controls.Add(Label4)
-        Me.GroupControl3.Controls.Add(Me.TextEdit4)
-        Me.GroupControl3.Controls.Add(Me.TextEdit5)
-        Me.GroupControl3.Controls.Add(Me.TextEdit6)
-        Me.GroupControl3.Controls.Add(Label5)
-        Me.GroupControl3.Controls.Add(Label6)
-        Me.GroupControl3.Controls.Add(Me.TextEdit7)
-        Me.GroupControl3.Enabled = False
-        Me.GroupControl3.Location = New System.Drawing.Point(674, 33)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(348, 155)
-        Me.GroupControl3.TabIndex = 29
-        Me.GroupControl3.Text = "Destination"
+        Me.colQuoteAmount.FieldName = "QuoteAmount"
+        Me.colQuoteAmount.Name = "colQuoteAmount"
+        Me.colQuoteAmount.Visible = True
+        Me.colQuoteAmount.VisibleIndex = 6
+        Me.colQuoteAmount.Width = 89
         '
-        'TextEdit3
+        'colQuoteDate
         '
-        Me.TextEdit3.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestName", True))
-        Me.TextEdit3.Enabled = False
-        Me.TextEdit3.Location = New System.Drawing.Point(94, 28)
-        Me.TextEdit3.MenuManager = Me.RibbonControl1
-        Me.TextEdit3.Name = "TextEdit3"
-        Me.TextEdit3.Size = New System.Drawing.Size(240, 22)
-        Me.TextEdit3.TabIndex = 21
+        Me.colQuoteDate.FieldName = "QuoteDate"
+        Me.colQuoteDate.Name = "colQuoteDate"
+        Me.colQuoteDate.Visible = True
+        Me.colQuoteDate.VisibleIndex = 7
+        Me.colQuoteDate.Width = 92
         '
-        'TextEdit2
+        'colCarrierQuoteNumber
         '
-        Me.TextEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestAddress1", True))
-        Me.TextEdit2.Location = New System.Drawing.Point(94, 54)
-        Me.TextEdit2.MenuManager = Me.RibbonControl1
-        Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Size = New System.Drawing.Size(240, 22)
-        Me.TextEdit2.TabIndex = 1
+        Me.colCarrierQuoteNumber.FieldName = "CarrierQuoteNumber"
+        Me.colCarrierQuoteNumber.Name = "colCarrierQuoteNumber"
+        Me.colCarrierQuoteNumber.Visible = True
+        Me.colCarrierQuoteNumber.VisibleIndex = 8
+        Me.colCarrierQuoteNumber.Width = 210
         '
-        'TextEdit4
+        'colEmptyCost
         '
-        Me.TextEdit4.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestZip", True))
-        Me.TextEdit4.Location = New System.Drawing.Point(266, 106)
-        Me.TextEdit4.MenuManager = Me.RibbonControl1
-        Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Size = New System.Drawing.Size(68, 22)
-        Me.TextEdit4.TabIndex = 5
+        Me.colEmptyCost.FieldName = "EmptyCost"
+        Me.colEmptyCost.Name = "colEmptyCost"
+        Me.colEmptyCost.Visible = True
+        Me.colEmptyCost.VisibleIndex = 9
         '
-        'TextEdit5
+        'colEquipmentCost
         '
-        Me.TextEdit5.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestAddress2", True))
-        Me.TextEdit5.Location = New System.Drawing.Point(94, 80)
-        Me.TextEdit5.MenuManager = Me.RibbonControl1
-        Me.TextEdit5.Name = "TextEdit5"
-        Me.TextEdit5.Size = New System.Drawing.Size(240, 22)
-        Me.TextEdit5.TabIndex = 2
+        Me.colEquipmentCost.FieldName = "EquipmentCost"
+        Me.colEquipmentCost.Name = "colEquipmentCost"
+        Me.colEquipmentCost.Visible = True
+        Me.colEquipmentCost.VisibleIndex = 10
         '
-        'TextEdit6
+        'colFreezeProtect
         '
-        Me.TextEdit6.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestState", True))
-        Me.TextEdit6.Location = New System.Drawing.Point(232, 106)
-        Me.TextEdit6.MenuManager = Me.RibbonControl1
-        Me.TextEdit6.Name = "TextEdit6"
-        Me.TextEdit6.Size = New System.Drawing.Size(28, 22)
-        Me.TextEdit6.TabIndex = 4
-        '
-        'TextEdit7
-        '
-        Me.TextEdit7.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "DestCity", True))
-        Me.TextEdit7.Location = New System.Drawing.Point(94, 106)
-        Me.TextEdit7.MenuManager = Me.RibbonControl1
-        Me.TextEdit7.Name = "TextEdit7"
-        Me.TextEdit7.Size = New System.Drawing.Size(132, 22)
-        Me.TextEdit7.TabIndex = 3
-        '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.TextEdit1)
-        Me.GroupControl2.Controls.Add(ShipfromidLabel)
-        Me.GroupControl2.Controls.Add(Me.Shipfromaddress1TextEdit)
-        Me.GroupControl2.Controls.Add(Shipfromaddress1Label)
-        Me.GroupControl2.Controls.Add(Me.ShipfrompostalcodeTextEdit)
-        Me.GroupControl2.Controls.Add(Me.Shipfromaddress2TextEdit)
-        Me.GroupControl2.Controls.Add(Me.ShipfromstateprovTextEdit)
-        Me.GroupControl2.Controls.Add(Shipfromaddress2Label)
-        Me.GroupControl2.Controls.Add(ShipfromcityLabel)
-        Me.GroupControl2.Controls.Add(Me.ShipfromcityTextEdit)
-        Me.GroupControl2.Location = New System.Drawing.Point(308, 33)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(348, 155)
-        Me.GroupControl2.TabIndex = 28
-        Me.GroupControl2.Text = "Origin"
-        '
-        'TextEdit1
-        '
-        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginName", True))
-        Me.TextEdit1.Enabled = False
-        Me.TextEdit1.Location = New System.Drawing.Point(94, 28)
-        Me.TextEdit1.MenuManager = Me.RibbonControl1
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(240, 22)
-        Me.TextEdit1.TabIndex = 21
-        '
-        'Shipfromaddress1TextEdit
-        '
-        Me.Shipfromaddress1TextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginAddress1", True))
-        Me.Shipfromaddress1TextEdit.Enabled = False
-        Me.Shipfromaddress1TextEdit.Location = New System.Drawing.Point(94, 54)
-        Me.Shipfromaddress1TextEdit.MenuManager = Me.RibbonControl1
-        Me.Shipfromaddress1TextEdit.Name = "Shipfromaddress1TextEdit"
-        Me.Shipfromaddress1TextEdit.Size = New System.Drawing.Size(240, 22)
-        Me.Shipfromaddress1TextEdit.TabIndex = 1
-        '
-        'ShipfrompostalcodeTextEdit
-        '
-        Me.ShipfrompostalcodeTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginZip", True))
-        Me.ShipfrompostalcodeTextEdit.Enabled = False
-        Me.ShipfrompostalcodeTextEdit.Location = New System.Drawing.Point(266, 106)
-        Me.ShipfrompostalcodeTextEdit.MenuManager = Me.RibbonControl1
-        Me.ShipfrompostalcodeTextEdit.Name = "ShipfrompostalcodeTextEdit"
-        Me.ShipfrompostalcodeTextEdit.Size = New System.Drawing.Size(68, 22)
-        Me.ShipfrompostalcodeTextEdit.TabIndex = 5
-        '
-        'Shipfromaddress2TextEdit
-        '
-        Me.Shipfromaddress2TextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginAddress2", True))
-        Me.Shipfromaddress2TextEdit.Enabled = False
-        Me.Shipfromaddress2TextEdit.Location = New System.Drawing.Point(94, 80)
-        Me.Shipfromaddress2TextEdit.MenuManager = Me.RibbonControl1
-        Me.Shipfromaddress2TextEdit.Name = "Shipfromaddress2TextEdit"
-        Me.Shipfromaddress2TextEdit.Size = New System.Drawing.Size(240, 22)
-        Me.Shipfromaddress2TextEdit.TabIndex = 2
-        '
-        'ShipfromstateprovTextEdit
-        '
-        Me.ShipfromstateprovTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginState", True))
-        Me.ShipfromstateprovTextEdit.Enabled = False
-        Me.ShipfromstateprovTextEdit.Location = New System.Drawing.Point(232, 106)
-        Me.ShipfromstateprovTextEdit.MenuManager = Me.RibbonControl1
-        Me.ShipfromstateprovTextEdit.Name = "ShipfromstateprovTextEdit"
-        Me.ShipfromstateprovTextEdit.Size = New System.Drawing.Size(28, 22)
-        Me.ShipfromstateprovTextEdit.TabIndex = 4
-        '
-        'ShipfromcityTextEdit
-        '
-        Me.ShipfromcityTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OriginCity", True))
-        Me.ShipfromcityTextEdit.Enabled = False
-        Me.ShipfromcityTextEdit.Location = New System.Drawing.Point(94, 106)
-        Me.ShipfromcityTextEdit.MenuManager = Me.RibbonControl1
-        Me.ShipfromcityTextEdit.Name = "ShipfromcityTextEdit"
-        Me.ShipfromcityTextEdit.Size = New System.Drawing.Size(132, 22)
-        Me.ShipfromcityTextEdit.TabIndex = 3
+        Me.colFreezeProtect.FieldName = "FreezeProtect"
+        Me.colFreezeProtect.Name = "colFreezeProtect"
+        Me.colFreezeProtect.Visible = True
+        Me.colFreezeProtect.VisibleIndex = 11
         '
         'frmFreightChargesHistory
         '
         Me.ClientSize = New System.Drawing.Size(1382, 794)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PanelControl1)
+        Me.Controls.Add(Me.GroupControlFreightMgmt)
+        Me.Controls.Add(Me.GroupControlQuotes)
+        Me.Controls.Add(Me.GroupControlFMHeader)
         Me.Controls.Add(Me.RibbonControl1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -865,20 +1019,9 @@ Partial Class frmFreightChargesHistory
         CType(Me.LoadMgmt_Images, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl4.ResumeLayout(False)
-        CType(Me.grFreightChargeHistory, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsLoadChargeHistory, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grvFreightChargesHistory, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.luProductDesc, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.luContainer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.luStdgallons, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl2.ResumeLayout(False)
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
+        CType(Me.GroupControlFMHeader, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlFMHeader.ResumeLayout(False)
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl5.ResumeLayout(False)
         Me.GroupControl5.PerformLayout()
@@ -908,6 +1051,21 @@ Partial Class frmFreightChargesHistory
         CType(Me.Shipfromaddress2TextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ShipfromstateprovTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ShipfromcityTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControlFreightMgmt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlFreightMgmt.ResumeLayout(False)
+        CType(Me.grFreightChargeHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsLoadChargeHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvFreightChargesHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.luProductDesc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.luContainer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.luStdgallons, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControlQuotes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlQuotes.ResumeLayout(False)
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvQuotes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -917,7 +1075,7 @@ Partial Class frmFreightChargesHistory
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlFreightMgmt As DevExpress.XtraEditors.GroupControl
     Friend WithEvents grFreightChargeHistory As DevExpress.XtraGrid.GridControl
     Friend WithEvents grvFreightChargesHistory As CustomDevExGridView
     Friend WithEvents luProductDesc As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
@@ -925,7 +1083,7 @@ Partial Class frmFreightChargesHistory
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents luStdgallons As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlFMHeader As DevExpress.XtraEditors.GroupControl
     Friend WithEvents btnSave As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnClose As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnAddShipmentItem As DevExpress.XtraBars.BarButtonItem
@@ -973,4 +1131,20 @@ Partial Class frmFreightChargesHistory
     Friend WithEvents colFob As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colFreezeProtectFlag As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents rbtnPrint As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents GroupControlQuotes As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend grvQuotes As CustomDevExGridView
+    Friend WithEvents colLoadQuoteID As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colLoadID1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colCarrierID As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colLogisticsProviderID As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colLogisticsname As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colQuoteAmount As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colQuoteDate As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colCarrierQuoteNumber As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colEmptyCost As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colEquipmentCost As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colFreezeProtect As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bsLoadQuotes As BindingSource
 End Class

@@ -3,8 +3,9 @@
 Public Class rptFreightChargeHistory
     Public vLoadId As Integer
     Public vMatchingLoads As List(Of Integer)
+    Public selectedQuoteIds As List(Of Integer)
 
-    Public Sub New(ByVal vID As Integer, ByVal vMatchingLoadIds As List(Of Integer))
+    Public Sub New(ByVal vID As Integer, ByVal vMatchingLoadIds As List(Of Integer), ByVal vSelectedQuoteIds As List(Of Integer))
         MyBase.New()
         'This call is required by the Designer.
         InitializeComponent()
@@ -12,6 +13,7 @@ Public Class rptFreightChargeHistory
 
         vLoadId = vID
         vMatchingLoads = vMatchingLoadIds
+        selectedQuoteIds = vSelectedQuoteIds
         getdata()
     End Sub
 
@@ -34,6 +36,7 @@ Public Class rptFreightChargeHistory
 
         Dim oQuotes = New ViewLoadQuoteDataCollection
         oQuotes.Query.Where(oQuotes.Query.LoadID.Equal(vLoadId))
+        oQuotes.Query.Where(oQuotes.Query.LoadQuoteId.In(selectedQuoteIds.ToArray()))
         oQuotes.Query.Load()
         DetailReport.DataSource = oQuotes
     End Sub

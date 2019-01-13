@@ -254,4 +254,8 @@
         getLoadData(vLoadID)
 
     End Sub
+
+    Private Sub GroupControl3_Paint(sender As Object, e As PaintEventArgs) Handles GroupControlLPQuote.Paint
+
+    End Sub
 End Class
