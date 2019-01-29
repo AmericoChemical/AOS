@@ -6,7 +6,7 @@
 '===============================================================================
 ' EntitySpaces Version : 2009.2.1214.0
 ' EntitySpaces Driver  : SQL
-' Date Generated       : 12/13/2018 2:51:15 PM
+' Date Generated       : 1/28/2019 3:30:28 PM
 '===============================================================================
 
 Imports System
@@ -314,6 +314,9 @@ Namespace BusinessObjects
 												
 						Case "OrSoonerFlag"
 							Me.str.OrSoonerFlag = CType(value, string)
+												
+						Case "FreezeProtectDesc"
+							Me.str.FreezeProtectDesc = CType(value, string)
 					
 					End Select
 					
@@ -1276,6 +1279,19 @@ Namespace BusinessObjects
 			
 			Set(ByVal value As Nullable(Of System.Boolean))
 				MyBase.SetSystemBoolean(ViewLoadInfoMetadata.ColumnNames.OrSoonerFlag, value)
+			End Set
+		End Property		
+			
+		' <summary>
+		' Maps to viewLoadInfo.FreezeProtectDesc
+		' </summary>
+		Public Overridable Property FreezeProtectDesc As System.String
+			Get
+				Return MyBase.GetSystemString(ViewLoadInfoMetadata.ColumnNames.FreezeProtectDesc)
+			End Get
+			
+			Set(ByVal value As System.String)
+				MyBase.SetSystemString(ViewLoadInfoMetadata.ColumnNames.FreezeProtectDesc, value)
 			End Set
 		End Property		
 		
@@ -2547,6 +2563,26 @@ Namespace BusinessObjects
 					End If
 				End Set
 			End Property
+		  	
+			Public Property FreezeProtectDesc As System.String 
+				Get
+					Dim data_ As System.String = entity.FreezeProtectDesc
+					
+					if data_ Is Nothing Then
+						Return String.Empty
+					Else
+						Return Convert.ToString(data_)
+					End If
+				End Get
+
+				Set(ByVal Value as System.String)
+					If String.IsNullOrEmpty(value) Then
+						entity.FreezeProtectDesc = Nothing
+					Else
+						entity.FreezeProtectDesc = Convert.ToString(Value)
+					End If
+				End Set
+			End Property
 		  
 
 			Private entity As esViewLoadInfo
@@ -2954,6 +2990,12 @@ Namespace BusinessObjects
 		Public ReadOnly Property OrSoonerFlag As esQueryItem
 			Get
 				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.OrSoonerFlag, esSystemType.Boolean)
+			End Get
+		End Property 
+		
+		Public ReadOnly Property FreezeProtectDesc As esQueryItem
+			Get
+				Return New esQueryItem(Me, ViewLoadInfoMetadata.ColumnNames.FreezeProtectDesc, esSystemType.String)
 			End Get
 		End Property 
 		
@@ -3503,6 +3545,11 @@ Namespace BusinessObjects
 			c.PropertyName = ViewLoadInfoMetadata.PropertyNames.OrSoonerFlag
 			_columns.Add(c)
 				
+			c = New esColumnMetadata(ViewLoadInfoMetadata.ColumnNames.FreezeProtectDesc, 61, GetType(System.String), esSystemType.String)	
+			c.PropertyName = ViewLoadInfoMetadata.PropertyNames.FreezeProtectDesc
+			c.CharacterMaxLength = 9
+			_columns.Add(c)
+				
 		End Sub
 #End Region		
 	
@@ -3592,6 +3639,7 @@ Namespace BusinessObjects
 			 Public Const FreezeProtectFlag As String = "FreezeProtectFlag"
 			 Public Const Custname As String = "CUSTNAME"
 			 Public Const OrSoonerFlag As String = "OrSoonerFlag"
+			 Public Const FreezeProtectDesc As String = "FreezeProtectDesc"
 		End Class
 #End Region	
 		
@@ -3658,6 +3706,7 @@ Namespace BusinessObjects
 			 Public Const FreezeProtectFlag As String = "FreezeProtectFlag"
 			 Public Const Custname As String = "Custname"
 			 Public Const OrSoonerFlag As String = "OrSoonerFlag"
+			 Public Const FreezeProtectDesc As String = "FreezeProtectDesc"
 		End Class
 #End Region	
 
@@ -3765,7 +3814,8 @@ Namespace BusinessObjects
 				meta.AddTypeMap("TotalSkids", new esTypeMap("int", "System.Int32"))
 				meta.AddTypeMap("FreezeProtectFlag", new esTypeMap("bit", "System.Boolean"))
 				meta.AddTypeMap("Custname", new esTypeMap("varchar", "System.String"))
-				meta.AddTypeMap("OrSoonerFlag", new esTypeMap("bit", "System.Boolean"))			
+				meta.AddTypeMap("OrSoonerFlag", new esTypeMap("bit", "System.Boolean"))
+				meta.AddTypeMap("FreezeProtectDesc", new esTypeMap("varchar", "System.String"))			
 				
 				
 				 

@@ -131,7 +131,7 @@ Public Class frmFreightChargesHistory
         Dim oEmailparameters As Emailparameters = oMySettings.getEmailParameters("FreightHistoryCharges")
 
         Dim historyEmail As New Email
-        historyEmail.Subject = String.Format("Freight For Load#:{0}, Cust:{1}", oLoadInfo.LoadID, oLoadInfo.Custname)
+        historyEmail.Subject = String.Format("Freight For {0}", oLoadInfo.Custname)
         historyEmail.MailBody = emailBody
         If (oEmailparameters Is Nothing) Then
             historyEmail.From = "custserv@americochemical.com"
