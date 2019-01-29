@@ -759,13 +759,11 @@ Module WorkOrderProcessing
                 vCarrier = ""
         End Select
 
-        vHeaderDetails = String.Format("{0} - {1}, {2} <br/> DELV: {3} {4}<br/> CARRIER: {5}" _
-                                       , oCustomer.Custname _
-                                       , oWorkOrder.Shipcity _
-                                       , oWorkOrder.Shipstateprov _
-                                       , formatDate(oWorkOrder.Deliverydate) + vSooner + vFP _
-                                       , vTransType _
-                                       , vCarrier)
+        vHeaderDetails = $"{oCustomer.Custname} - {oWorkOrder.Shipcity}, {oWorkOrder.Shipstateprov} <br/><br/>" &
+            $" SHIP: {formatDate(oWorkOrder.Plannedshipdate)}<br/>" &
+            $" DELV: {formatDate(oWorkOrder.Deliverydate) + vSooner + vFP} {vTransType}<br/>" &
+            $" CARRIER: {vCarrier}"
+
         vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(vHeaderDetails, _
                                                           , _
                                                           CellStyle.ItemHeading))
@@ -773,6 +771,7 @@ Module WorkOrderProcessing
         vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues("", _
                                                           , _
                                                           CellStyle.ItemHeading))
+
 
         oWOEmailPlan = getWOEmailPlan(vWorkorderNum)
         For Each oItem As ViewWOEmailPlan In oWOEmailPlan
@@ -878,12 +877,13 @@ Module WorkOrderProcessing
                         oMaterial.Query.Where(oMaterial.Query.Prodordernum.Equal(oItem.Sourcedocument), oMaterial.Query.Materialid.NotIn(127, 129, 200))
                         If oMaterial.Query.Load Then
                             For Each oRec As ViewProdItemDataWOEmail In oMaterial
-                                vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(String.Format("{0} {1:F2} - {2} - {3}  -  ({4:F2})",
-                                                                                     vPad,
-                                                                                     oRec.Qty.ToString.PadLeft(6, " "),
-                                                                                     oRec.Uom,
-                                                                                     oRec.Materialdesc,
-                                                                                     oRec.Available)))
+
+                                'Display negative available values in red
+                                Dim formattedAvailable = $"{oRec.Available:F2}"
+                                vWorkOrderPlanSummary.Rows.Add(setHtmlCellsValues(
+                                    $"{vPad} {oRec.Qty.ToString.PadLeft(6, " "):F2} - {oRec.Uom} - {oRec.Materialdesc}  -  " &
+                                    $"({If(oRec.Available < 0, Email.OutputHtmlColorText(formattedAvailable, "red"), formattedAvailable)})"))
+
 
                                 'For each Raw Material that is IN PRODUCTION, add the DATENEEDED value from the Production Order
                                 Dim oRMProd As New ViewRawMaterialInProductionCollection

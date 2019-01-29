@@ -229,4 +229,9 @@ Public Class Email
         Return True
     End Function
 
+    Public Shared Function OutputHtmlColorText(text As String, color As String) As String
+        Dim htmlExpression As String = $"<span style=""color:{color}"">{text}</span>"
+        Return htmlExpression
+    End Function
+
 End Class
