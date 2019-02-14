@@ -21,3 +21,6 @@
 /AOS_Application/.vs/AOS.WindowsApp/v15
 /AOS_Application/.vs/AOS.WindowsApp/config
 *.cache
+/AOS_Application/packages
+/AOS_Application/References
+/AOS_Application/.vs
