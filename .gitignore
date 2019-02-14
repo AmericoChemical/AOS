@@ -24,3 +24,4 @@
 /AOS_Application/packages
 /AOS_Application/References
 /AOS_Application/.vs
+/AOS_Application/Services/EmailService/EmailService.csproj.user
