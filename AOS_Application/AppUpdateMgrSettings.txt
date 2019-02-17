@@ -1,0 +1,5 @@
+APP NAME: AOS - Americo Operations System
+ASSEMBLY: AOS.exe
+CURR VER: 18.1120
+LAST UPD: 11/20/2018
+UPD PATH: \\acpi-sql\aos\AOS2016

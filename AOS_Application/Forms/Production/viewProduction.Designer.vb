@@ -619,6 +619,7 @@ Partial Class viewProduction
         Me.rbtnRetrieveRelabelOrders.Id = 85
         Me.rbtnRetrieveRelabelOrders.ImageOptions.LargeImageIndex = 17
         Me.rbtnRetrieveRelabelOrders.Name = "rbtnRetrieveRelabelOrders"
+        Me.rbtnRetrieveRelabelOrders.Tag = 362
         '
         'btnEditRelabelOrder
         '
@@ -626,6 +627,7 @@ Partial Class viewProduction
         Me.btnEditRelabelOrder.Id = 86
         Me.btnEditRelabelOrder.ImageOptions.LargeImageIndex = 19
         Me.btnEditRelabelOrder.Name = "btnEditRelabelOrder"
+        Me.btnEditRelabelOrder.Tag = 363
         '
         'btnCancelRelabelOrder
         '
@@ -634,6 +636,7 @@ Partial Class viewProduction
         Me.btnCancelRelabelOrder.Id = 87
         Me.btnCancelRelabelOrder.ImageOptions.LargeImageIndex = 20
         Me.btnCancelRelabelOrder.Name = "btnCancelRelabelOrder"
+        Me.btnCancelRelabelOrder.Tag = 364
         '
         'rbtnPrintRelabelOrder
         '
@@ -641,6 +644,7 @@ Partial Class viewProduction
         Me.rbtnPrintRelabelOrder.Id = 88
         Me.rbtnPrintRelabelOrder.ImageOptions.LargeImageIndex = 21
         Me.rbtnPrintRelabelOrder.Name = "rbtnPrintRelabelOrder"
+        Me.rbtnPrintRelabelOrder.Tag = 365
         '
         'rbtnOpenRelabelOrders
         '
@@ -648,6 +652,7 @@ Partial Class viewProduction
         Me.rbtnOpenRelabelOrders.Id = 89
         Me.rbtnOpenRelabelOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnOpenRelabelOrders.Name = "rbtnOpenRelabelOrders"
+        Me.rbtnOpenRelabelOrders.Tag = 358
         '
         'rbtnCompletedRelabelOrders
         '
@@ -655,6 +660,7 @@ Partial Class viewProduction
         Me.rbtnCompletedRelabelOrders.Id = 90
         Me.rbtnCompletedRelabelOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnCompletedRelabelOrders.Name = "rbtnCompletedRelabelOrders"
+        Me.rbtnCompletedRelabelOrders.Tag = 359
         '
         'rbtnCanceledRelabelOrders
         '
@@ -662,6 +668,7 @@ Partial Class viewProduction
         Me.rbtnCanceledRelabelOrders.Id = 91
         Me.rbtnCanceledRelabelOrders.ImageOptions.LargeImageIndex = 25
         Me.rbtnCanceledRelabelOrders.Name = "rbtnCanceledRelabelOrders"
+        Me.rbtnCanceledRelabelOrders.Tag = 366
         '
         'rRptRelabelStartDate
         '
@@ -671,6 +678,7 @@ Partial Class viewProduction
         Me.rRptRelabelStartDate.EditWidth = 80
         Me.rRptRelabelStartDate.Id = 92
         Me.rRptRelabelStartDate.Name = "rRptRelabelStartDate"
+        Me.rRptRelabelStartDate.Tag = 367
         '
         'RepositoryItemDateEdit3
         '
@@ -678,6 +686,7 @@ Partial Class viewProduction
         Me.RepositoryItemDateEdit3.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit3.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit3.Name = "RepositoryItemDateEdit3"
+        Me.RepositoryItemDateEdit3.Tag = 367
         '
         'rRptRelabelEndDate
         '
@@ -687,6 +696,7 @@ Partial Class viewProduction
         Me.rRptRelabelEndDate.EditWidth = 80
         Me.rRptRelabelEndDate.Id = 93
         Me.rRptRelabelEndDate.Name = "rRptRelabelEndDate"
+        Me.rRptRelabelEndDate.Tag = 367
         '
         'RepositoryItemDateEdit4
         '
@@ -694,6 +704,7 @@ Partial Class viewProduction
         Me.RepositoryItemDateEdit4.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit4.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit4.Name = "RepositoryItemDateEdit4"
+        Me.RepositoryItemDateEdit4.Tag = 367
         '
         'rbtnPrintRelabelOrdersSummary
         '
@@ -701,6 +712,7 @@ Partial Class viewProduction
         Me.rbtnPrintRelabelOrdersSummary.Id = 94
         Me.rbtnPrintRelabelOrdersSummary.ImageOptions.LargeImageIndex = 21
         Me.rbtnPrintRelabelOrdersSummary.Name = "rbtnPrintRelabelOrdersSummary"
+        Me.rbtnPrintRelabelOrdersSummary.Tag = 367
         '
         'rbtnActiveChemicals
         '
@@ -756,6 +768,7 @@ Partial Class viewProduction
         Me.rbtnRelabeledProductsList.Id = 102
         Me.rbtnRelabeledProductsList.ImageOptions.LargeImageIndex = 27
         Me.rbtnRelabeledProductsList.Name = "rbtnRelabeledProductsList"
+        Me.rbtnRelabeledProductsList.Tag = 361
         '
         'Ribbon_LargeImages
         '
@@ -924,6 +937,7 @@ Partial Class viewProduction
         Me.RibbonPage6.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup12, Me.RibbonPageGroup13, Me.RibbonPageGroup14, Me.RibbonPageGroup17})
         Me.RibbonPage6.Name = "RibbonPage6"
         Me.RibbonPage6.Text = "Relabel Orders"
+        Me.RibbonPage6.Tag = 135
         '
         'RibbonPageGroup12
         '

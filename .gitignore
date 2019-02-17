@@ -25,3 +25,6 @@
 /AOS_Application/References
 /AOS_Application/.vs
 /AOS_Application/Services/EmailService/EmailService.csproj.user
+/AOS_Application/obj
+/AOS_Application/bin/ATEK-Phil
+/AOS_Application/Services/EmailService/obj

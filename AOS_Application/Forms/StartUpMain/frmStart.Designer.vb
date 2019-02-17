@@ -122,6 +122,7 @@ Partial Class frmStart
         '
         'msgNet
         '
+        Me.msgNet.Appearance.Options.UseTextOptions = True
         Me.msgNet.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
         Me.msgNet.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
         Me.msgNet.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
@@ -166,6 +167,7 @@ Partial Class frmStart
         '
         'LabelControl1
         '
+        Me.LabelControl1.Appearance.Options.UseTextOptions = True
         Me.LabelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl1.Location = New System.Drawing.Point(74, 38)
@@ -247,13 +249,14 @@ Partial Class frmStart
         '
         'LabelControl4
         '
+        Me.LabelControl4.Appearance.Options.UseTextOptions = True
         Me.LabelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl4.Location = New System.Drawing.Point(74, 37)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(349, 34)
         Me.LabelControl4.TabIndex = 37
-        Me.LabelControl4.Text = "Enter IP Address or name of SQL Server Machine, and SQL Server Instance name, if " & _
+        Me.LabelControl4.Text = "Enter IP Address or name of SQL Server Machine, and SQL Server Instance name, if " &
     "applicable (i.e. ServerName\InstanceName)"
         '
         'editSQLServerName
@@ -275,6 +278,7 @@ Partial Class frmStart
         '
         'lblCopyright
         '
+        Me.lblCopyright.Appearance.Options.UseTextOptions = True
         Me.lblCopyright.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.lblCopyright.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lblCopyright.Location = New System.Drawing.Point(12, 268)
@@ -293,6 +297,7 @@ Partial Class frmStart
         '
         'LabelControl6
         '
+        Me.LabelControl6.Appearance.Options.UseTextOptions = True
         Me.LabelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl6.Location = New System.Drawing.Point(12, 313)
@@ -307,6 +312,7 @@ Partial Class frmStart
         '
         'frmStart
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(479, 367)
