@@ -2364,6 +2364,11 @@
     <Compile Include="Forms\WorkOrders\frmWorkOrdersDailyList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Reports\rptCommissionAssignmentByCustomer.Designer.vb">
       <DependentUpon>rptCommissionAssignmentByCustomer.vb</DependentUpon>
     </Compile>
@@ -2917,7 +2922,6 @@
     <Compile Include="Forms\WorkOrders\viewWorkOrders.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -5652,12 +5656,19 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Resources\export_excel.png" />
+    <Content Include="My Project\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.vb</LastGenOutput>
+    </Content>
     <Content Include="SQLScripts\TableChanges.sql" />
     <Content Include="SQLScripts\TableData.sql" />
     <Content Include="SQLScripts\Views.sql" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\EmailService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="packages\Microsoft.VisualStudio.SlowCheetah.3.2.20\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('packages\Microsoft.VisualStudio.SlowCheetah.3.2.20\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
@@ -5666,7 +5677,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.VisualStudio.SlowCheetah.3.2.20\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.VisualStudio.SlowCheetah.3.2.20\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+    <Error Condition="!Exists('packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets'))" />
   </Target>
+  <Import Project="packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets" Condition="Exists('packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
