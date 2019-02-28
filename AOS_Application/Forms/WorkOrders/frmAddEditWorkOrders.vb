@@ -1,4 +1,5 @@
 Imports AOS.BusinessObjects
+Imports DevExpress.XtraEditors.Controls
 Imports System.Windows.Forms
 
 
@@ -319,12 +320,12 @@ Public Class frmAddEditWorkOrders
         unallocateWorkOrder(vWorkorderNum)
 
         'first, check to see if all workorderitems have been unallocated or production orders and purchase requistions have been removed
-        If (oWorkOrder.Orderstatus = "PENDING") AndAlso _
+        If (oWorkOrder.Orderstatus = "PENDING") AndAlso
             bsWorkOrderItems.Count > 0 Then
             Dim oItems As WorkorderitemCollection = getAllocatedWorkOrderItems(vWorkorderNum)
-            If (oItems Is Nothing OrElse _
+            If (oItems Is Nothing OrElse
                 oItems.Count <= 0) Then
-                If IsDBNull(eTransportType.EditValue) = False AndAlso _
+                If IsDBNull(eTransportType.EditValue) = False AndAlso
                     eTransportType.EditValue = TransportType.DIRECT.ToString() Then
                     If (saveWorkOrderChanges()) Then
                         directWorkOrderFulfillment(vWorkorderNum)
@@ -436,7 +437,7 @@ Public Class frmAddEditWorkOrders
         End If
 
         Dim vDate As Date? = getUserDateAllowNull("Enter New Work Order Date:")
-        If Not vDate Is Nothing AndAlso _
+        If Not vDate Is Nothing AndAlso
             IsDBNull(vDate) = False Then
 
             Dim oOrd As New Workorder
@@ -513,7 +514,7 @@ Public Class frmAddEditWorkOrders
             MsgBox("You must select a Tranport Type first", MsgBoxStyle.Critical, "Error - No Transport Type Selected")
             Exit Sub
         End If
-        If eTransportType.EditValue = PurchaseItemType.DIRECT.ToString() AndAlso _
+        If eTransportType.EditValue = PurchaseItemType.DIRECT.ToString() AndAlso
             String.IsNullOrEmpty(Me.ePlannedShippedDate.Text) Then
             MsgBox("Ship Date is required.", MsgBoxStyle.Critical, "Error")
             ePlannedShippedDate.Focus()
@@ -1812,8 +1813,8 @@ Public Class frmAddEditWorkOrders
             Return False
         End If
         For Each oWOItem As ViewWorkOrderItemsScreen In bsWorkOrderItems
-            If oWOItem.Customerpo Is Nothing OrElse _
-                IsDBNull(oWOItem.Customerpo) OrElse _
+            If oWOItem.Customerpo Is Nothing OrElse
+                IsDBNull(oWOItem.Customerpo) OrElse
                 String.IsNullOrEmpty(oWOItem.Customerpo) Then
                 MsgBox("One or more Work Order Items have missing Customer PO #, please fix the work order item(s)", MsgBoxStyle.Critical, "Word Order Items - Error")
                 Return False
@@ -1869,5 +1870,29 @@ Public Class frmAddEditWorkOrders
             Exit Sub
         End If
 
+    End Sub
+
+
+
+    Private Sub CheckEdit1_EditValueChanging(sender As Object, e As ChangingEventArgs) Handles CheckEdit1.EditValueChanging
+        If e.OldValue <> e.NewValue Then
+            Dim loadWorkorders As New ViewLoadWorkordersCollection
+            loadWorkorders.Query.Where(loadWorkorders.Query.Workordernumber = vWorkorderNum)
+            If (loadWorkorders.Query.Load() AndAlso loadWorkorders.Count > 0) Then
+                MsgBox("Load has already been created. Please edit from Load page. Load#" & loadWorkorders(0).LoadID)
+                e.Cancel = True
+            End If
+        End If
+    End Sub
+
+    Private Sub eOrSoonerFlag_EditValueChanging(sender As Object, e As ChangingEventArgs) Handles eOrSoonerFlag.EditValueChanging
+        If e.OldValue <> e.NewValue Then
+            Dim loadWorkorders As New ViewLoadWorkordersCollection
+            loadWorkorders.Query.Where(loadWorkorders.Query.Workordernumber = vWorkorderNum)
+            If (loadWorkorders.Query.Load() AndAlso loadWorkorders.Count > 0) Then
+                MsgBox("Load has already been created. Please edit from Load page. Load#" & loadWorkorders(0).LoadID)
+                e.Cancel = True
+            End If
+        End If
     End Sub
 End Class

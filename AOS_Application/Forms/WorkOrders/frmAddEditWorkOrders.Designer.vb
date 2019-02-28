@@ -31,12 +31,12 @@ Partial Class frmAddEditWorkOrders
         Dim OnholdreasonLabel As System.Windows.Forms.Label
         Dim Label15 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddEditWorkOrders))
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject5 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim EditorButtonImageOptions2 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim EditorButtonImageOptions4 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim EditorButtonImageOptions5 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim EditorButtonImageOptions6 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
         Me.bsWorkOrder = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsFOB = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsCarriers = New System.Windows.Forms.BindingSource(Me.components)
@@ -418,14 +418,14 @@ Partial Class frmAddEditWorkOrders
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.Size = New System.Drawing.Size(1592, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1592, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnSave
         '
         Me.btnSave.Caption = "Save  Order"
         Me.btnSave.Id = 0
-        Me.btnSave.LargeImageIndex = 6
+        Me.btnSave.ImageOptions.LargeImageIndex = 6
         Me.btnSave.LargeWidth = 60
         Me.btnSave.Name = "btnSave"
         '
@@ -433,7 +433,7 @@ Partial Class frmAddEditWorkOrders
         '
         Me.btnCancel.Caption = "Cancel Order"
         Me.btnCancel.Id = 1
-        Me.btnCancel.LargeImageIndex = 7
+        Me.btnCancel.ImageOptions.LargeImageIndex = 7
         Me.btnCancel.LargeWidth = 60
         Me.btnCancel.Name = "btnCancel"
         '
@@ -441,21 +441,21 @@ Partial Class frmAddEditWorkOrders
         '
         Me.btnAddWOItem.Caption = "Add New Product"
         Me.btnAddWOItem.Id = 2
-        Me.btnAddWOItem.LargeImageIndex = 12
+        Me.btnAddWOItem.ImageOptions.LargeImageIndex = 12
         Me.btnAddWOItem.Name = "btnAddWOItem"
         '
         'rbtnEditMatchingItems
         '
         Me.rbtnEditMatchingItems.Caption = "Edit Matching Items"
         Me.rbtnEditMatchingItems.Id = 3
-        Me.rbtnEditMatchingItems.LargeImageIndex = 24
+        Me.rbtnEditMatchingItems.ImageOptions.LargeImageIndex = 24
         Me.rbtnEditMatchingItems.Name = "rbtnEditMatchingItems"
         '
         'btnDeleteWOItem
         '
         Me.btnDeleteWOItem.Caption = "Delete Item"
         Me.btnDeleteWOItem.Id = 4
-        Me.btnDeleteWOItem.LargeImageIndex = 19
+        Me.btnDeleteWOItem.ImageOptions.LargeImageIndex = 19
         Me.btnDeleteWOItem.LargeWidth = 50
         Me.btnDeleteWOItem.Name = "btnDeleteWOItem"
         '
@@ -464,7 +464,7 @@ Partial Class frmAddEditWorkOrders
         Me.btnPrintWorkOrder.Caption = "Print Work Order"
         Me.btnPrintWorkOrder.Enabled = False
         Me.btnPrintWorkOrder.Id = 9
-        Me.btnPrintWorkOrder.LargeImageIndex = 5
+        Me.btnPrintWorkOrder.ImageOptions.LargeImageIndex = 5
         Me.btnPrintWorkOrder.LargeWidth = 65
         Me.btnPrintWorkOrder.Name = "btnPrintWorkOrder"
         '
@@ -501,14 +501,14 @@ Partial Class frmAddEditWorkOrders
         '
         Me.rbtnChangeWorkOrderDate.Caption = "Change Work Order Date"
         Me.rbtnChangeWorkOrderDate.Id = 13
-        Me.rbtnChangeWorkOrderDate.LargeImageIndex = 22
+        Me.rbtnChangeWorkOrderDate.ImageOptions.LargeImageIndex = 22
         Me.rbtnChangeWorkOrderDate.Name = "rbtnChangeWorkOrderDate"
         '
         'rbtnChangeHoldStatus
         '
         Me.rbtnChangeHoldStatus.Caption = "Change On Hold Status"
         Me.rbtnChangeHoldStatus.Id = 14
-        Me.rbtnChangeHoldStatus.LargeImageIndex = 21
+        Me.rbtnChangeHoldStatus.ImageOptions.LargeImageIndex = 21
         Me.rbtnChangeHoldStatus.Name = "rbtnChangeHoldStatus"
         '
         'BarButtonItem1
@@ -516,7 +516,7 @@ Partial Class frmAddEditWorkOrders
         Me.BarButtonItem1.Caption = "Add New Sample"
         Me.BarButtonItem1.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.BarButtonItem1.Id = 15
-        Me.BarButtonItem1.LargeImageIndex = 13
+        Me.BarButtonItem1.ImageOptions.LargeImageIndex = 13
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'BarButtonItem2
@@ -524,7 +524,7 @@ Partial Class frmAddEditWorkOrders
         Me.BarButtonItem2.Caption = "Add New Reagent"
         Me.BarButtonItem2.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.BarButtonItem2.Id = 16
-        Me.BarButtonItem2.LargeImageIndex = 16
+        Me.BarButtonItem2.ImageOptions.LargeImageIndex = 16
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
         'BarButtonItem3
@@ -532,7 +532,7 @@ Partial Class frmAddEditWorkOrders
         Me.BarButtonItem3.Caption = "Add New Equipment"
         Me.BarButtonItem3.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.BarButtonItem3.Id = 17
-        Me.BarButtonItem3.LargeImageIndex = 15
+        Me.BarButtonItem3.ImageOptions.LargeImageIndex = 15
         Me.BarButtonItem3.Name = "BarButtonItem3"
         '
         'BarButtonItem4
@@ -540,7 +540,7 @@ Partial Class frmAddEditWorkOrders
         Me.BarButtonItem4.Caption = "Add New Empty Item"
         Me.BarButtonItem4.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.BarButtonItem4.Id = 18
-        Me.BarButtonItem4.LargeImageIndex = 14
+        Me.BarButtonItem4.ImageOptions.LargeImageIndex = 14
         Me.BarButtonItem4.Name = "BarButtonItem4"
         '
         'BarButtonItem5
@@ -548,7 +548,7 @@ Partial Class frmAddEditWorkOrders
         Me.BarButtonItem5.Caption = "Add New Misc Item"
         Me.BarButtonItem5.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.BarButtonItem5.Id = 19
-        Me.BarButtonItem5.LargeImageIndex = 17
+        Me.BarButtonItem5.ImageOptions.LargeImageIndex = 17
         Me.BarButtonItem5.Name = "BarButtonItem5"
         '
         'rbtnEditSingleItem
@@ -556,49 +556,49 @@ Partial Class frmAddEditWorkOrders
         Me.rbtnEditSingleItem.Caption = "Edit Single Item"
         Me.rbtnEditSingleItem.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnEditSingleItem.Id = 21
-        Me.rbtnEditSingleItem.LargeImageIndex = 18
+        Me.rbtnEditSingleItem.ImageOptions.LargeImageIndex = 18
         Me.rbtnEditSingleItem.Name = "rbtnEditSingleItem"
         '
         'btnEditAll
         '
         Me.btnEditAll.Caption = "Edit All"
         Me.btnEditAll.Id = 22
-        Me.btnEditAll.LargeImageIndex = 23
+        Me.btnEditAll.ImageOptions.LargeImageIndex = 23
         Me.btnEditAll.Name = "btnEditAll"
         '
         'rbtnAutoPlan
         '
         Me.rbtnAutoPlan.Caption = "Auto" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Plan"
         Me.rbtnAutoPlan.Id = 13
-        Me.rbtnAutoPlan.LargeImageIndex = 0
+        Me.rbtnAutoPlan.ImageOptions.LargeImageIndex = 0
         Me.rbtnAutoPlan.Name = "rbtnAutoPlan"
         '
         'rbtnEditPlan
         '
         Me.rbtnEditPlan.Caption = "Edit" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Plan"
         Me.rbtnEditPlan.Id = 13
-        Me.rbtnEditPlan.LargeImageIndex = 0
+        Me.rbtnEditPlan.ImageOptions.LargeImageIndex = 0
         Me.rbtnEditPlan.Name = "rbtnEditPlan"
         '
         'rbtnPrintPlan
         '
         Me.rbtnPrintPlan.Caption = "Print" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Plan"
         Me.rbtnPrintPlan.Id = 23
-        Me.rbtnPrintPlan.LargeImageIndex = 0
+        Me.rbtnPrintPlan.ImageOptions.LargeImageIndex = 0
         Me.rbtnPrintPlan.Name = "rbtnPrintPlan"
         '
         'rbtnEmailPlan
         '
         Me.rbtnEmailPlan.Caption = "Email Plan"
         Me.rbtnEmailPlan.Id = 24
-        Me.rbtnEmailPlan.LargeImageIndex = 0
+        Me.rbtnEmailPlan.ImageOptions.LargeImageIndex = 0
         Me.rbtnEmailPlan.Name = "rbtnEmailPlan"
         '
         'rbtnChangePlannedShipDate
         '
         Me.rbtnChangePlannedShipDate.Caption = "Change Planned Ship Date"
         Me.rbtnChangePlannedShipDate.Id = 30
-        Me.rbtnChangePlannedShipDate.LargeImageIndex = 22
+        Me.rbtnChangePlannedShipDate.ImageOptions.LargeImageIndex = 22
         Me.rbtnChangePlannedShipDate.Name = "rbtnChangePlannedShipDate"
         '
         'btnPrintWorkOrderDocs
@@ -606,7 +606,7 @@ Partial Class frmAddEditWorkOrders
         Me.btnPrintWorkOrderDocs.Caption = "Print WO Docs"
         Me.btnPrintWorkOrderDocs.Enabled = False
         Me.btnPrintWorkOrderDocs.Id = 31
-        Me.btnPrintWorkOrderDocs.LargeImageIndex = 5
+        Me.btnPrintWorkOrderDocs.ImageOptions.LargeImageIndex = 5
         Me.btnPrintWorkOrderDocs.Name = "btnPrintWorkOrderDocs"
         '
         'rbtnPickItems
@@ -614,7 +614,7 @@ Partial Class frmAddEditWorkOrders
         Me.rbtnPickItems.Caption = "Pick Items for Shipment"
         Me.rbtnPickItems.CategoryGuid = New System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537")
         Me.rbtnPickItems.Id = 32
-        Me.rbtnPickItems.LargeImageIndex = 11
+        Me.rbtnPickItems.ImageOptions.LargeImageIndex = 11
         Me.rbtnPickItems.Name = "rbtnPickItems"
         '
         'WorkOrderImages
@@ -698,9 +698,9 @@ Partial Class frmAddEditWorkOrders
         Me.PanelControl1.Controls.Add(Me.GroupControl4)
         Me.PanelControl1.Controls.Add(Me.pnlTopWorkOrderInformation)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 95)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 116)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1592, 557)
+        Me.PanelControl1.Size = New System.Drawing.Size(1592, 536)
         Me.PanelControl1.TabIndex = 1
         '
         'GroupControl4
@@ -710,7 +710,7 @@ Partial Class frmAddEditWorkOrders
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(0, 278)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1592, 279)
+        Me.GroupControl4.Size = New System.Drawing.Size(1592, 258)
         Me.GroupControl4.TabIndex = 1
         Me.GroupControl4.Text = "Work Order Items"
         '
@@ -718,11 +718,11 @@ Partial Class frmAddEditWorkOrders
         '
         Me.grWorkOrderItems.DataSource = Me.bsWorkOrderItems
         Me.grWorkOrderItems.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grWorkOrderItems.Location = New System.Drawing.Point(2, 51)
+        Me.grWorkOrderItems.Location = New System.Drawing.Point(2, 49)
         Me.grWorkOrderItems.MainView = Me.grvWorkOrderItems
         Me.grWorkOrderItems.Name = "grWorkOrderItems"
         Me.grWorkOrderItems.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.luProductDesc, Me.luContainer, Me.luStdgallons, Me.RepositoryItemCheckEdit1, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemCheckEdit2, Me.RepositoryItemHyperLinkEdit1, Me.RepositoryItemHyperLinkEdit2, Me.RepositoryItemHyperLinkEdit3})
-        Me.grWorkOrderItems.Size = New System.Drawing.Size(1588, 226)
+        Me.grWorkOrderItems.Size = New System.Drawing.Size(1588, 207)
         Me.grWorkOrderItems.TabIndex = 0
         Me.grWorkOrderItems.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvWorkOrderItems})
         '
@@ -1194,7 +1194,7 @@ Partial Class frmAddEditWorkOrders
         Me.pnlLegend.Controls.Add(Me.lblColorMapping)
         Me.pnlLegend.Controls.Add(Me.lblPinkColor)
         Me.pnlLegend.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlLegend.Location = New System.Drawing.Point(2, 22)
+        Me.pnlLegend.Location = New System.Drawing.Point(2, 20)
         Me.pnlLegend.Name = "pnlLegend"
         Me.pnlLegend.Size = New System.Drawing.Size(1588, 29)
         Me.pnlLegend.TabIndex = 8
@@ -1295,7 +1295,7 @@ Partial Class frmAddEditWorkOrders
         '
         Me.XtraTabPage5.Controls.Add(Me.eGeneralNotes)
         Me.XtraTabPage5.Name = "XtraTabPage5"
-        Me.XtraTabPage5.Size = New System.Drawing.Size(794, 187)
+        Me.XtraTabPage5.Size = New System.Drawing.Size(793, 185)
         Me.XtraTabPage5.Text = "General"
         '
         'eGeneralNotes
@@ -1304,7 +1304,7 @@ Partial Class frmAddEditWorkOrders
         Me.eGeneralNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.eGeneralNotes.Location = New System.Drawing.Point(0, 0)
         Me.eGeneralNotes.Name = "eGeneralNotes"
-        Me.eGeneralNotes.Size = New System.Drawing.Size(794, 187)
+        Me.eGeneralNotes.Size = New System.Drawing.Size(793, 185)
         Me.eGeneralNotes.TabIndex = 0
         '
         'XtraTabPage1
@@ -1312,7 +1312,7 @@ Partial Class frmAddEditWorkOrders
         Me.XtraTabPage1.Controls.Add(Me.eProdFulfillmentNotes)
         Me.XtraTabPage1.Name = "XtraTabPage1"
         Me.XtraTabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.XtraTabPage1.Size = New System.Drawing.Size(794, 187)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(793, 185)
         Me.XtraTabPage1.Text = "Production / Fulfillment"
         '
         'eProdFulfillmentNotes
@@ -1321,7 +1321,7 @@ Partial Class frmAddEditWorkOrders
         Me.eProdFulfillmentNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.eProdFulfillmentNotes.Location = New System.Drawing.Point(3, 3)
         Me.eProdFulfillmentNotes.Name = "eProdFulfillmentNotes"
-        Me.eProdFulfillmentNotes.Size = New System.Drawing.Size(788, 181)
+        Me.eProdFulfillmentNotes.Size = New System.Drawing.Size(787, 179)
         Me.eProdFulfillmentNotes.TabIndex = 26
         '
         'XtraTabPage2
@@ -1329,7 +1329,7 @@ Partial Class frmAddEditWorkOrders
         Me.XtraTabPage2.Controls.Add(Me.eAccountingNotes)
         Me.XtraTabPage2.Name = "XtraTabPage2"
         Me.XtraTabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.XtraTabPage2.Size = New System.Drawing.Size(794, 187)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(793, 185)
         Me.XtraTabPage2.Text = "Accounting"
         '
         'eAccountingNotes
@@ -1338,7 +1338,7 @@ Partial Class frmAddEditWorkOrders
         Me.eAccountingNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.eAccountingNotes.Location = New System.Drawing.Point(3, 3)
         Me.eAccountingNotes.Name = "eAccountingNotes"
-        Me.eAccountingNotes.Size = New System.Drawing.Size(788, 181)
+        Me.eAccountingNotes.Size = New System.Drawing.Size(787, 179)
         Me.eAccountingNotes.TabIndex = 26
         '
         'XtraTabPage3
@@ -1346,7 +1346,7 @@ Partial Class frmAddEditWorkOrders
         Me.XtraTabPage3.Controls.Add(Me.eTransportationNotes)
         Me.XtraTabPage3.Name = "XtraTabPage3"
         Me.XtraTabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.XtraTabPage3.Size = New System.Drawing.Size(794, 187)
+        Me.XtraTabPage3.Size = New System.Drawing.Size(793, 185)
         Me.XtraTabPage3.Text = "Transportation"
         '
         'eTransportationNotes
@@ -1355,7 +1355,7 @@ Partial Class frmAddEditWorkOrders
         Me.eTransportationNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.eTransportationNotes.Location = New System.Drawing.Point(3, 3)
         Me.eTransportationNotes.Name = "eTransportationNotes"
-        Me.eTransportationNotes.Size = New System.Drawing.Size(788, 181)
+        Me.eTransportationNotes.Size = New System.Drawing.Size(787, 179)
         Me.eTransportationNotes.TabIndex = 84
         '
         'XtraTabPage4
@@ -1363,7 +1363,7 @@ Partial Class frmAddEditWorkOrders
         Me.XtraTabPage4.Controls.Add(Me.eBillOfLadingNotes)
         Me.XtraTabPage4.Name = "XtraTabPage4"
         Me.XtraTabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.XtraTabPage4.Size = New System.Drawing.Size(794, 187)
+        Me.XtraTabPage4.Size = New System.Drawing.Size(793, 185)
         Me.XtraTabPage4.Text = "Bill-of-Lading"
         '
         'eBillOfLadingNotes
@@ -1372,7 +1372,7 @@ Partial Class frmAddEditWorkOrders
         Me.eBillOfLadingNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.eBillOfLadingNotes.Location = New System.Drawing.Point(3, 3)
         Me.eBillOfLadingNotes.Name = "eBillOfLadingNotes"
-        Me.eBillOfLadingNotes.Size = New System.Drawing.Size(788, 181)
+        Me.eBillOfLadingNotes.Size = New System.Drawing.Size(787, 179)
         Me.eBillOfLadingNotes.TabIndex = 82
         '
         'eOrderType
@@ -1641,7 +1641,9 @@ Partial Class frmAddEditWorkOrders
         Me.eLogistics.Location = New System.Drawing.Point(80, 152)
         Me.eLogistics.Name = "eLogistics"
         Me.eLogistics.Properties.AllowMouseWheel = False
-        Me.eLogistics.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.AOS.My.Resources.Resources.record_edit, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.AOS.My.Resources.Resources.record_add, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
+        EditorButtonImageOptions1.Image = Global.AOS.My.Resources.Resources.record_edit
+        EditorButtonImageOptions2.Image = Global.AOS.My.Resources.Resources.record_add
+        Me.eLogistics.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, EditorButtonImageOptions1), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, EditorButtonImageOptions2)})
         Me.eLogistics.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Logisticsname", "Logisticsname", 76, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.eLogistics.Properties.DataSource = Me.bsLogistics
         Me.eLogistics.Properties.DisplayMember = "Logisticsname"
@@ -1660,7 +1662,9 @@ Partial Class frmAddEditWorkOrders
         Me.eCarrier.Location = New System.Drawing.Point(80, 178)
         Me.eCarrier.Name = "eCarrier"
         Me.eCarrier.Properties.AllowMouseWheel = False
-        Me.eCarrier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Edit Freight Carrier", -1, True, True, True, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.AOS.My.Resources.Resources.transport_edit, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject3, "", Nothing, Nothing, True), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Add New Freight Carrier", -1, True, True, True, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.AOS.My.Resources.Resources.transport_add, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject4, "", Nothing, Nothing, True)})
+        EditorButtonImageOptions3.Image = Global.AOS.My.Resources.Resources.transport_edit
+        EditorButtonImageOptions4.Image = Global.AOS.My.Resources.Resources.transport_add
+        Me.eCarrier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Edit Freight Carrier", -1, True, True, True, EditorButtonImageOptions3), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Add New Freight Carrier", -1, True, True, True, EditorButtonImageOptions4)})
         Me.eCarrier.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CarrierID", "Carrier ID", 100, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CarrierName", "Carrier Name", 200, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.eCarrier.Properties.DataSource = Me.bsCarriers
         Me.eCarrier.Properties.DisplayMember = "CarrierName"
@@ -1819,7 +1823,9 @@ Partial Class frmAddEditWorkOrders
         Me.eCustomer.Location = New System.Drawing.Point(8, 24)
         Me.eCustomer.Name = "eCustomer"
         Me.eCustomer.Properties.AllowMouseWheel = False
-        Me.eCustomer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.AOS.My.Resources.Resources.customer_edit, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject5, "", Nothing, Nothing, True), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.AOS.My.Resources.Resources.customer_add, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject6, "", Nothing, Nothing, True)})
+        EditorButtonImageOptions5.Image = Global.AOS.My.Resources.Resources.customer_edit
+        EditorButtonImageOptions6.Image = Global.AOS.My.Resources.Resources.customer_add
+        Me.eCustomer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, EditorButtonImageOptions5), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, EditorButtonImageOptions6)})
         Me.eCustomer.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custname", "Customer Name", 250, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipcity", 100, "City"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Custshipstateprov", 50, "State")})
         Me.eCustomer.Properties.DataSource = Me.bsCustomers
         Me.eCustomer.Properties.DisplayMember = "Custname"
@@ -1832,6 +1838,7 @@ Partial Class frmAddEditWorkOrders
         'lblEditInfo
         '
         Me.lblEditInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblEditInfo.Appearance.Options.UseTextOptions = True
         Me.lblEditInfo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lblEditInfo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lblEditInfo.Location = New System.Drawing.Point(880, 28)

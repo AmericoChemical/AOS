@@ -122,7 +122,7 @@ Partial Class frmAddEditMaterialProductLink
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
         Me.RibbonControl1.ShowToolbarCustomizeItem = False
-        Me.RibbonControl1.Size = New System.Drawing.Size(480, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(480, 116)
         Me.RibbonControl1.Toolbar.ShowCustomizeItem = False
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -130,35 +130,35 @@ Partial Class frmAddEditMaterialProductLink
         '
         Me.btnNewCostRecord.Caption = "New Cost Record"
         Me.btnNewCostRecord.Id = 0
-        Me.btnNewCostRecord.LargeGlyph = Global.AOS.My.Resources.Resources.NewRecord
+        Me.btnNewCostRecord.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.NewRecord
         Me.btnNewCostRecord.Name = "btnNewCostRecord"
         '
         'btnEditCostRecord
         '
         Me.btnEditCostRecord.Caption = "Edit Cost Record"
-        Me.btnEditCostRecord.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Id = 1
+        Me.btnEditCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditCostRecord.Name = "btnEditCostRecord"
         '
         'btnDeleteCostRecord
         '
         Me.btnDeleteCostRecord.Caption = "Delete Cost Record"
-        Me.btnDeleteCostRecord.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Id = 2
+        Me.btnDeleteCostRecord.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteCostRecord.Name = "btnDeleteCostRecord"
         '
         'btnSave
         '
         Me.btnSave.Caption = "Save"
         Me.btnSave.Id = 4
-        Me.btnSave.LargeGlyph = Global.AOS.My.Resources.Resources.SaveChanges
+        Me.btnSave.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.SaveChanges
         Me.btnSave.Name = "btnSave"
         '
         'btnCancel
         '
         Me.btnCancel.Caption = "Cancel"
         Me.btnCancel.Id = 5
-        Me.btnCancel.LargeGlyph = Global.AOS.My.Resources.Resources.CancelChanges
+        Me.btnCancel.ImageOptions.LargeImage = Global.AOS.My.Resources.Resources.CancelChanges
         Me.btnCancel.Name = "btnCancel"
         '
         'RibbonPage1
@@ -232,6 +232,7 @@ Partial Class frmAddEditMaterialProductLink
         Me.PriorityTextEdit.Location = New System.Drawing.Point(92, 187)
         Me.PriorityTextEdit.Name = "PriorityTextEdit"
         Me.PriorityTextEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PriorityTextEdit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.PriorityTextEdit.Properties.Mask.EditMask = "d"
         Me.PriorityTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.PriorityTextEdit.Properties.MaxLength = 9
@@ -244,13 +245,14 @@ Partial Class frmAddEditMaterialProductLink
         '
         'LabelControl1
         '
+        Me.LabelControl1.Appearance.Options.UseTextOptions = True
         Me.LabelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl1.Location = New System.Drawing.Point(163, 177)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(209, 41)
         Me.LabelControl1.TabIndex = 13
-        Me.LabelControl1.Text = "Enter a Priority of ""0"" to prevent pulling Finished Goods into Raw Material Inven" & _
+        Me.LabelControl1.Text = "Enter a Priority of ""0"" to prevent pulling Finished Goods into Raw Material Inven" &
     "tory"
         '
         'frmAddEditMaterialProductLink

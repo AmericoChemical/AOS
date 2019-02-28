@@ -15,6 +15,7 @@ Public Class frmFreightChargesHistory
 
     Public vLoadID As Integer   'ShipmentNumber passed from calling form for edit and review of shipment
     Dim oLoadInfo As ViewLoadInfo
+    Private oQuotes As ViewLoadQuotesByLoadIDCollection
     Dim oFreightChargeHistory As ViewLoadInfoCollection
 
     'Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
@@ -30,18 +31,29 @@ Public Class frmFreightChargesHistory
             Me.Close()
         End If
         bsLoadInfo.DataSource = oLoadInfo
+
+        oQuotes = New ViewLoadQuotesByLoadIDCollection
+        oQuotes.Query.Where(oQuotes.Query.LoadID.Equal(vLoadID))
+        oQuotes.Query.Load()
+        bsLoadQuotes.DataSource = oQuotes
+
         txtVariance.Text = 10
         txtTotalWeight.Text = oLoadInfo.TotalGrossWeight
-        If (oLoadInfo.TotalSkids.HasValue) Then
-            txtSkids.Text = oLoadInfo.TotalSkids.Value.ToString()
-        Else
-            txtSkids.Text = ""
-        End If
-        If (oLoadInfo.FreezeProtectFlag.HasValue) Then
-            chkFreezeProtect.Checked = oLoadInfo.FreezeProtectFlag
-        Else
-            chkFreezeProtect.Checked = False
-        End If
+
+
+        txtSkids.Text = ""
+        'If (oLoadInfo.TotalSkids.HasValue) Then
+        '    txtSkids.Text = oLoadInfo.TotalSkids.Value.ToString()
+        'Else
+        '    txtSkids.Text = ""
+        'End If
+
+        chkFreezeProtect.Checked = False
+        'If (oLoadInfo.FreezeProtectFlag.HasValue) Then
+        '    chkFreezeProtect.Checked = oLoadInfo.FreezeProtectFlag
+        'Else
+        '    chkFreezeProtect.Checked = False
+        'End If
 
 
     End Sub
@@ -94,7 +106,14 @@ Public Class frmFreightChargesHistory
             Dim row As ViewLoadInfo = grvFreightChargesHistory.GetRow(i)
             matchingLoadsIds.Add(row.LoadID)
         Next
-        Dim rtpFreightChargesHistory As New rptFreightChargeHistory(vLoadID, matchingLoadsIds)
+
+        Dim selectedQuoteIds As New List(Of Integer)
+        For Each i As Integer In grvQuotes.GetSelectedRows()
+            Dim row As ViewLoadQuotesByLoadID = grvQuotes.GetRow(i)
+            selectedQuoteIds.Add(row.LoadQuoteID)
+        Next
+
+        Dim rtpFreightChargesHistory As New rptFreightChargeHistory(vLoadID, matchingLoadsIds, selectedQuoteIds)
         Return rtpFreightChargesHistory
     End Function
 
@@ -112,7 +131,7 @@ Public Class frmFreightChargesHistory
         Dim oEmailparameters As Emailparameters = oMySettings.getEmailParameters("FreightHistoryCharges")
 
         Dim historyEmail As New Email
-        historyEmail.Subject = String.Format("Freight For Load#:{0}, Cust:{1}", oLoadInfo.LoadID, oLoadInfo.Custname)
+        historyEmail.Subject = String.Format("Freight For {0}", oLoadInfo.Custname)
         historyEmail.MailBody = emailBody
         If (oEmailparameters Is Nothing) Then
             historyEmail.From = "custserv@americochemical.com"
@@ -153,6 +172,10 @@ Public Class frmFreightChargesHistory
     Private Sub rbtnPrint_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles rbtnPrint.ItemClick
         Dim rtpFreightChargesHistory As rptFreightChargeHistory = GetFreightHistoryChargeReport()
         rtpFreightChargesHistory.ShowPreview()
+
+    End Sub
+
+    Private Sub grFreightChargeHistory_Click(sender As Object, e As EventArgs) Handles grFreightChargeHistory.Click
 
     End Sub
 

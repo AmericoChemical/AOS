@@ -36,6 +36,8 @@ Partial Class frmLoadProcessing
         Dim Label16 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
         Dim TotalSkidsLabel As System.Windows.Forms.Label
+        Dim Label18 As System.Windows.Forms.Label
+        Dim Label19 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLoadProcessing))
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.rbtnBack = New DevExpress.XtraBars.BarButtonItem()
@@ -48,6 +50,7 @@ Partial Class frmLoadProcessing
         Me.rbtnPrintLoadInfo = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnDeleteLoadBillingRecs = New DevExpress.XtraBars.BarButtonItem()
         Me.rbtnFreightChargesHistory = New DevExpress.XtraBars.BarButtonItem()
+        Me.rbtnEditLoad = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonLargeImages = New DevExpress.Utils.ImageCollection(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -56,7 +59,7 @@ Partial Class frmLoadProcessing
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.History = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControlLPHeader = New DevExpress.XtraEditors.GroupControl()
         Me.lblTotalSkidsValue = New DevExpress.XtraEditors.LabelControl()
         Me.bsLoadInfo = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSelectVendor = New DevExpress.XtraEditors.SimpleButton()
@@ -73,6 +76,8 @@ Partial Class frmLoadProcessing
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LoadNotesMemoEdit = New DevExpress.XtraEditors.MemoEdit()
         Me.GroupControl6 = New DevExpress.XtraEditors.GroupControl()
+        Me.FreezeProtectCheckEdit = New DevExpress.XtraEditors.CheckEdit()
+        Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -104,7 +109,7 @@ Partial Class frmLoadProcessing
         Me.OriginContactLabel1 = New System.Windows.Forms.Label()
         Me.OriginZipLabel1 = New System.Windows.Forms.Label()
         Me.OriginCountryLabel1 = New System.Windows.Forms.Label()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControlLPLoad = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.bsLoadItems = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New AOS.CustomClasses.CustomDevExGridView()
@@ -128,7 +133,7 @@ Partial Class frmLoadProcessing
         Me.colHazclassnumber = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPackagegroup = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdnumber = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControlLPQuote = New DevExpress.XtraEditors.GroupControl()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.bsLoadQuotes = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView2 = New AOS.CustomClasses.CustomDevExGridView()
@@ -141,6 +146,9 @@ Partial Class frmLoadProcessing
         Me.colQuoteAmount = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colQuoteDate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCarrierQuoteNumber = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colEmptyCost = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colEquipmentCost = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFreezeProtect = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         PlannedDeliveryDateLabel = New System.Windows.Forms.Label()
         PlannedDepartureDateLabel = New System.Windows.Forms.Label()
@@ -158,29 +166,33 @@ Partial Class frmLoadProcessing
         Label16 = New System.Windows.Forms.Label()
         Label11 = New System.Windows.Forms.Label()
         TotalSkidsLabel = New System.Windows.Forms.Label()
+        Label18 = New System.Windows.Forms.Label()
+        Label19 = New System.Windows.Forms.Label()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
+        CType(Me.GroupControlLPHeader, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlLPHeader.SuspendLayout()
         CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl7.SuspendLayout()
         CType(Me.LoadNotesMemoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl6.SuspendLayout()
+        CType(Me.FreezeProtectCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BillCustomerCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AddToInvoiceCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl5.SuspendLayout()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
+        CType(Me.GroupControlLPLoad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlLPLoad.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsLoadItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl3.SuspendLayout()
+        CType(Me.GroupControlLPQuote, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControlLPQuote.SuspendLayout()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -333,13 +345,31 @@ Partial Class frmLoadProcessing
         TotalSkidsLabel.TabIndex = 37
         TotalSkidsLabel.Text = "Skids:"
         '
+        'Label18
+        '
+        Label18.AutoSize = True
+        Label18.Location = New System.Drawing.Point(121, 105)
+        Label18.Name = "Label18"
+        Label18.Size = New System.Drawing.Size(82, 13)
+        Label18.TabIndex = 40
+        Label18.Text = "Freeze Protect:"
+        '
+        'Label19
+        '
+        Label19.AutoSize = True
+        Label19.Location = New System.Drawing.Point(143, 121)
+        Label19.Name = "Label19"
+        Label19.Size = New System.Drawing.Size(60, 13)
+        Label19.TabIndex = 38
+        Label19.Text = "Or Sooner:"
+        '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnBack, Me.rbtnSchedule, Me.rbtnAddQuote, Me.rbtnEditQuote, Me.rbtnDeleteQuote, Me.rbtnEditCharges, Me.rbtnEditBillings, Me.rbtnPrintLoadInfo, Me.rbtnDeleteLoadBillingRecs, Me.rbtnFreightChargesHistory})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.rbtnBack, Me.rbtnSchedule, Me.rbtnAddQuote, Me.rbtnEditQuote, Me.rbtnDeleteQuote, Me.rbtnEditCharges, Me.rbtnEditBillings, Me.rbtnPrintLoadInfo, Me.rbtnDeleteLoadBillingRecs, Me.rbtnFreightChargesHistory, Me.rbtnEditLoad})
         Me.RibbonControl1.LargeImages = Me.RibbonLargeImages
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 11
+        Me.RibbonControl1.MaxItemId = 12
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -431,6 +461,13 @@ Partial Class frmLoadProcessing
         Me.rbtnFreightChargesHistory.ImageOptions.LargeImageIndex = 4
         Me.rbtnFreightChargesHistory.Name = "rbtnFreightChargesHistory"
         '
+        'rbtnEditLoad
+        '
+        Me.rbtnEditLoad.Caption = "Edit Load"
+        Me.rbtnEditLoad.Id = 11
+        Me.rbtnEditLoad.ImageOptions.LargeImageIndex = 6
+        Me.rbtnEditLoad.Name = "rbtnEditLoad"
+        '
         'RibbonLargeImages
         '
         Me.RibbonLargeImages.ImageSize = New System.Drawing.Size(32, 32)
@@ -448,6 +485,7 @@ Partial Class frmLoadProcessing
         Me.RibbonPageGroup1.AllowTextClipping = False
         Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnBack)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnPrintLoadInfo, True)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.rbtnEditLoad)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.ShowCaptionButton = False
         Me.RibbonPageGroup1.Text = "Load Mgmt"
@@ -497,30 +535,30 @@ Partial Class frmLoadProcessing
         Me.History.Name = "History"
         Me.History.Text = "History"
         '
-        'GroupControl1
+        'GroupControlLPHeader
         '
-        Me.GroupControl1.Controls.Add(Me.lblTotalSkidsValue)
-        Me.GroupControl1.Controls.Add(TotalSkidsLabel)
-        Me.GroupControl1.Controls.Add(Me.btnSelectVendor)
-        Me.GroupControl1.Controls.Add(Me.LabelControl14)
-        Me.GroupControl1.Controls.Add(Me.LabelControl13)
-        Me.GroupControl1.Controls.Add(Me.LabelControl12)
-        Me.GroupControl1.Controls.Add(Me.LabelControl11)
-        Me.GroupControl1.Controls.Add(Me.LabelControl10)
-        Me.GroupControl1.Controls.Add(Me.GroupControl7)
-        Me.GroupControl1.Controls.Add(Me.GroupControl6)
-        Me.GroupControl1.Controls.Add(TotalContainersLabel)
-        Me.GroupControl1.Controls.Add(Me.ModifiedTimeLabel1)
-        Me.GroupControl1.Controls.Add(Me.ModifiedByLabel1)
-        Me.GroupControl1.Controls.Add(Me.GroupControl5)
-        Me.GroupControl1.Controls.Add(Me.GroupControl4)
-        Me.GroupControl1.Controls.Add(TotalGrossWeightLabel)
-        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 95)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(1200, 224)
-        Me.GroupControl1.TabIndex = 1
-        Me.GroupControl1.Text = "Load Information"
+        Me.GroupControlLPHeader.Controls.Add(Me.lblTotalSkidsValue)
+        Me.GroupControlLPHeader.Controls.Add(TotalSkidsLabel)
+        Me.GroupControlLPHeader.Controls.Add(Me.btnSelectVendor)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl14)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl13)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl12)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl11)
+        Me.GroupControlLPHeader.Controls.Add(Me.LabelControl10)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl7)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl6)
+        Me.GroupControlLPHeader.Controls.Add(TotalContainersLabel)
+        Me.GroupControlLPHeader.Controls.Add(Me.ModifiedTimeLabel1)
+        Me.GroupControlLPHeader.Controls.Add(Me.ModifiedByLabel1)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl5)
+        Me.GroupControlLPHeader.Controls.Add(Me.GroupControl4)
+        Me.GroupControlLPHeader.Controls.Add(TotalGrossWeightLabel)
+        Me.GroupControlLPHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControlLPHeader.Location = New System.Drawing.Point(0, 95)
+        Me.GroupControlLPHeader.Name = "GroupControlLPHeader"
+        Me.GroupControlLPHeader.Size = New System.Drawing.Size(1200, 224)
+        Me.GroupControlLPHeader.TabIndex = 1
+        Me.GroupControlLPHeader.Text = "Load Information"
         '
         'lblTotalSkidsValue
         '
@@ -685,6 +723,10 @@ Partial Class frmLoadProcessing
         '
         'GroupControl6
         '
+        Me.GroupControl6.Controls.Add(Label18)
+        Me.GroupControl6.Controls.Add(Me.FreezeProtectCheckEdit)
+        Me.GroupControl6.Controls.Add(Label19)
+        Me.GroupControl6.Controls.Add(Me.CheckEdit2)
         Me.GroupControl6.Controls.Add(Me.LabelControl7)
         Me.GroupControl6.Controls.Add(Label14)
         Me.GroupControl6.Controls.Add(Me.LabelControl4)
@@ -704,6 +746,30 @@ Partial Class frmLoadProcessing
         Me.GroupControl6.Size = New System.Drawing.Size(239, 155)
         Me.GroupControl6.TabIndex = 28
         Me.GroupControl6.Text = "Information from Workorder(s)"
+        '
+        'FreezeProtectCheckEdit
+        '
+        Me.FreezeProtectCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "FreezeProtectFlag", True))
+        Me.FreezeProtectCheckEdit.Location = New System.Drawing.Point(209, 102)
+        Me.FreezeProtectCheckEdit.MenuManager = Me.RibbonControl1
+        Me.FreezeProtectCheckEdit.Name = "FreezeProtectCheckEdit"
+        Me.FreezeProtectCheckEdit.Properties.Caption = ""
+        Me.FreezeProtectCheckEdit.Properties.ReadOnly = True
+        Me.FreezeProtectCheckEdit.Size = New System.Drawing.Size(16, 19)
+        Me.FreezeProtectCheckEdit.TabIndex = 41
+        Me.FreezeProtectCheckEdit.TabStop = False
+        '
+        'CheckEdit2
+        '
+        Me.CheckEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoadInfo, "OrSoonerFlag", True))
+        Me.CheckEdit2.Location = New System.Drawing.Point(209, 118)
+        Me.CheckEdit2.MenuManager = Me.RibbonControl1
+        Me.CheckEdit2.Name = "CheckEdit2"
+        Me.CheckEdit2.Properties.Caption = ""
+        Me.CheckEdit2.Properties.ReadOnly = True
+        Me.CheckEdit2.Size = New System.Drawing.Size(16, 19)
+        Me.CheckEdit2.TabIndex = 39
+        Me.CheckEdit2.TabStop = False
         '
         'LabelControl7
         '
@@ -760,7 +826,7 @@ Partial Class frmLoadProcessing
         Me.BillCustomerCheckEdit.Name = "BillCustomerCheckEdit"
         Me.BillCustomerCheckEdit.Properties.Caption = ""
         Me.BillCustomerCheckEdit.Properties.ReadOnly = True
-        Me.BillCustomerCheckEdit.Size = New System.Drawing.Size(75, 19)
+        Me.BillCustomerCheckEdit.Size = New System.Drawing.Size(16, 19)
         Me.BillCustomerCheckEdit.TabIndex = 27
         Me.BillCustomerCheckEdit.TabStop = False
         '
@@ -772,7 +838,7 @@ Partial Class frmLoadProcessing
         Me.AddToInvoiceCheckEdit.Name = "AddToInvoiceCheckEdit"
         Me.AddToInvoiceCheckEdit.Properties.Caption = ""
         Me.AddToInvoiceCheckEdit.Properties.ReadOnly = True
-        Me.AddToInvoiceCheckEdit.Size = New System.Drawing.Size(75, 19)
+        Me.AddToInvoiceCheckEdit.Size = New System.Drawing.Size(16, 19)
         Me.AddToInvoiceCheckEdit.TabIndex = 25
         Me.AddToInvoiceCheckEdit.TabStop = False
         '
@@ -1010,15 +1076,15 @@ Partial Class frmLoadProcessing
         Me.OriginCountryLabel1.TabIndex = 7
         Me.OriginCountryLabel1.Text = "Label1"
         '
-        'GroupControl2
+        'GroupControlLPLoad
         '
-        Me.GroupControl2.Controls.Add(Me.GridControl1)
-        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl2.Location = New System.Drawing.Point(0, 434)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(1200, 308)
-        Me.GroupControl2.TabIndex = 2
-        Me.GroupControl2.Text = "Load Item Details"
+        Me.GroupControlLPLoad.Controls.Add(Me.GridControl1)
+        Me.GroupControlLPLoad.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControlLPLoad.Location = New System.Drawing.Point(0, 434)
+        Me.GroupControlLPLoad.Name = "GroupControlLPLoad"
+        Me.GroupControlLPLoad.Size = New System.Drawing.Size(1200, 308)
+        Me.GroupControlLPLoad.TabIndex = 2
+        Me.GroupControlLPLoad.Text = "Load Item Details"
         '
         'GridControl1
         '
@@ -1195,15 +1261,15 @@ Partial Class frmLoadProcessing
         Me.colIdnumber.VisibleIndex = 10
         Me.colIdnumber.Width = 106
         '
-        'GroupControl3
+        'GroupControlLPQuote
         '
-        Me.GroupControl3.Controls.Add(Me.GridControl2)
-        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl3.Location = New System.Drawing.Point(0, 319)
-        Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(1200, 115)
-        Me.GroupControl3.TabIndex = 3
-        Me.GroupControl3.Text = "Carrier Freight Quotes"
+        Me.GroupControlLPQuote.Controls.Add(Me.GridControl2)
+        Me.GroupControlLPQuote.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControlLPQuote.Location = New System.Drawing.Point(0, 319)
+        Me.GroupControlLPQuote.Name = "GroupControlLPQuote"
+        Me.GroupControlLPQuote.Size = New System.Drawing.Size(1200, 115)
+        Me.GroupControlLPQuote.TabIndex = 3
+        Me.GroupControlLPQuote.Text = "Carrier Freight Quotes"
         '
         'GridControl2
         '
@@ -1223,7 +1289,7 @@ Partial Class frmLoadProcessing
         '
         'GridView2
         '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLoadQuoteID, Me.colLoadID1, Me.colCarrierID, Me.colCarrierName, Me.colLogisticsProviderID, Me.colLogisticsname, Me.colQuoteAmount, Me.colQuoteDate, Me.colCarrierQuoteNumber})
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLoadQuoteID, Me.colLoadID1, Me.colCarrierID, Me.colCarrierName, Me.colLogisticsProviderID, Me.colLogisticsname, Me.colQuoteAmount, Me.colQuoteDate, Me.colCarrierQuoteNumber, Me.colEmptyCost, Me.colEquipmentCost, Me.colFreezeProtect})
         Me.GridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
@@ -1308,6 +1374,27 @@ Partial Class frmLoadProcessing
         Me.colCarrierQuoteNumber.VisibleIndex = 8
         Me.colCarrierQuoteNumber.Width = 210
         '
+        'colEmptyCost
+        '
+        Me.colEmptyCost.FieldName = "EmptyCost"
+        Me.colEmptyCost.Name = "colEmptyCost"
+        Me.colEmptyCost.Visible = True
+        Me.colEmptyCost.VisibleIndex = 9
+        '
+        'colEquipmentCost
+        '
+        Me.colEquipmentCost.FieldName = "EquipmentCost"
+        Me.colEquipmentCost.Name = "colEquipmentCost"
+        Me.colEquipmentCost.Visible = True
+        Me.colEquipmentCost.VisibleIndex = 10
+        '
+        'colFreezeProtect
+        '
+        Me.colFreezeProtect.FieldName = "FreezeProtect"
+        Me.colFreezeProtect.Name = "colFreezeProtect"
+        Me.colFreezeProtect.Visible = True
+        Me.colFreezeProtect.VisibleIndex = 11
+        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -1317,9 +1404,9 @@ Partial Class frmLoadProcessing
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1200, 742)
-        Me.Controls.Add(Me.GroupControl2)
-        Me.Controls.Add(Me.GroupControl3)
-        Me.Controls.Add(Me.GroupControl1)
+        Me.Controls.Add(Me.GroupControlLPLoad)
+        Me.Controls.Add(Me.GroupControlLPQuote)
+        Me.Controls.Add(Me.GroupControlLPHeader)
         Me.Controls.Add(Me.RibbonControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmLoadProcessing"
@@ -1327,9 +1414,9 @@ Partial Class frmLoadProcessing
         Me.Text = "Load Processing"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonLargeImages, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
+        CType(Me.GroupControlLPHeader, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlLPHeader.ResumeLayout(False)
+        Me.GroupControlLPHeader.PerformLayout()
         CType(Me.bsLoadInfo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl7.ResumeLayout(False)
@@ -1338,19 +1425,21 @@ Partial Class frmLoadProcessing
         CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl6.ResumeLayout(False)
         Me.GroupControl6.PerformLayout()
+        CType(Me.FreezeProtectCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BillCustomerCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AddToInvoiceCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl5.ResumeLayout(False)
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.GroupControlLPLoad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlLPLoad.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsLoadItems, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl3.ResumeLayout(False)
+        CType(Me.GroupControlLPQuote, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControlLPQuote.ResumeLayout(False)
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsLoadQuotes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1361,9 +1450,9 @@ Partial Class frmLoadProcessing
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlLPHeader As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlLPLoad As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControlLPQuote As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents bsLoadItems As System.Windows.Forms.BindingSource
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
@@ -1463,4 +1552,10 @@ Partial Class frmLoadProcessing
     Friend WithEvents lblTotalSkidsValue As DevExpress.XtraEditors.LabelControl
     Friend WithEvents rbtnFreightChargesHistory As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents History As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents rbtnEditLoad As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents FreezeProtectCheckEdit As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CheckEdit2 As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents colEmptyCost As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colEquipmentCost As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colFreezeProtect As DevExpress.XtraGrid.Columns.GridColumn
 End Class

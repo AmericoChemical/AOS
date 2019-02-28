@@ -38,6 +38,9 @@ Partial Class frmAddEditLoad
         Dim Label5 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
         Dim CommentsLabel As System.Windows.Forms.Label
+        Dim lblSkids As System.Windows.Forms.Label
+        Dim Label8 As System.Windows.Forms.Label
+        Dim Label7 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddEditLoad))
         Me.bsFOB = New System.Windows.Forms.BindingSource(Me.components)
         Me.bsCarriers = New System.Windows.Forms.BindingSource(Me.components)
@@ -79,9 +82,14 @@ Partial Class frmAddEditLoad
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControl6 = New DevExpress.XtraEditors.GroupControl()
+        Me.chkOrSooner = New DevExpress.XtraEditors.CheckEdit()
+        Me.bsLoad = New System.Windows.Forms.BindingSource(Me.components)
+        Me.chkFreezeProtect = New DevExpress.XtraEditors.CheckEdit()
+        Me.chkEditOverrideSkids = New DevExpress.XtraEditors.CheckEdit()
+        Me.txtTotalSkids = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
         Me.FreightcarrierLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bsLoad = New System.Windows.Forms.BindingSource(Me.components)
         Me.LogisticsidLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.bsLogistics = New System.Windows.Forms.BindingSource(Me.components)
         Me.FobLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
@@ -129,6 +137,9 @@ Partial Class frmAddEditLoad
         Label5 = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
         CommentsLabel = New System.Windows.Forms.Label()
+        lblSkids = New System.Windows.Forms.Label()
+        Label8 = New System.Windows.Forms.Label()
+        Label7 = New System.Windows.Forms.Label()
         CType(Me.bsFOB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCarriers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -150,10 +161,16 @@ Partial Class frmAddEditLoad
         Me.PanelControl2.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl6.SuspendLayout()
+        CType(Me.chkOrSooner.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bsLoad, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkFreezeProtect.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkEditOverrideSkids.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalSkids.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl5.SuspendLayout()
         CType(Me.FreightcarrierLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bsLoad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogisticsidLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsLogistics, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FobLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -358,6 +375,33 @@ Partial Class frmAddEditLoad
         CommentsLabel.TabIndex = 11
         CommentsLabel.Text = "Notes"
         '
+        'lblSkids
+        '
+        lblSkids.AutoSize = True
+        lblSkids.Location = New System.Drawing.Point(7, 31)
+        lblSkids.Name = "lblSkids"
+        lblSkids.Size = New System.Drawing.Size(31, 13)
+        lblSkids.TabIndex = 6
+        lblSkids.Text = "Skids"
+        '
+        'Label8
+        '
+        Label8.AutoSize = True
+        Label8.Location = New System.Drawing.Point(7, 57)
+        Label8.Name = "Label8"
+        Label8.Size = New System.Drawing.Size(78, 13)
+        Label8.TabIndex = 27
+        Label8.Text = "Freeze Protect"
+        '
+        'Label7
+        '
+        Label7.AutoSize = True
+        Label7.Location = New System.Drawing.Point(7, 83)
+        Label7.Name = "Label7"
+        Label7.Size = New System.Drawing.Size(56, 13)
+        Label7.TabIndex = 29
+        Label7.Text = "Or Sooner"
+        '
         'bsFOB
         '
         Me.bsFOB.DataSource = GetType(AOS.BusinessObjects.ListFobCollection)
@@ -385,66 +429,66 @@ Partial Class frmAddEditLoad
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.RibbonControl1.Size = New System.Drawing.Size(1382, 95)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1382, 116)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'btnSave
         '
         Me.btnSave.Caption = "Save"
         Me.btnSave.Id = 0
-        Me.btnSave.LargeImageIndex = 6
+        Me.btnSave.ImageOptions.LargeImageIndex = 6
         Me.btnSave.Name = "btnSave"
         '
         'btnCancel
         '
         Me.btnCancel.Caption = "Cancel"
         Me.btnCancel.Id = 1
-        Me.btnCancel.LargeImageIndex = 7
+        Me.btnCancel.ImageOptions.LargeImageIndex = 7
         Me.btnCancel.Name = "btnCancel"
         '
         'btnAddShipmentItem
         '
         Me.btnAddShipmentItem.Caption = "Add New Item"
         Me.btnAddShipmentItem.Id = 2
-        Me.btnAddShipmentItem.LargeImageIndex = 18
+        Me.btnAddShipmentItem.ImageOptions.LargeImageIndex = 18
         Me.btnAddShipmentItem.Name = "btnAddShipmentItem"
         '
         'btnEditShipmentItem
         '
         Me.btnEditShipmentItem.Caption = "Edit Item"
-        Me.btnEditShipmentItem.Glyph = Global.AOS.My.Resources.Resources.Edit
         Me.btnEditShipmentItem.Id = 3
-        Me.btnEditShipmentItem.LargeImageIndex = 20
+        Me.btnEditShipmentItem.ImageOptions.Image = Global.AOS.My.Resources.Resources.Edit
+        Me.btnEditShipmentItem.ImageOptions.LargeImageIndex = 20
         Me.btnEditShipmentItem.Name = "btnEditShipmentItem"
         '
         'btnDeleteShipmentItem
         '
         Me.btnDeleteShipmentItem.Caption = "Delete Item"
-        Me.btnDeleteShipmentItem.Glyph = Global.AOS.My.Resources.Resources.Delete
         Me.btnDeleteShipmentItem.Id = 4
-        Me.btnDeleteShipmentItem.LargeImageIndex = 19
+        Me.btnDeleteShipmentItem.ImageOptions.Image = Global.AOS.My.Resources.Resources.Delete
+        Me.btnDeleteShipmentItem.ImageOptions.LargeImageIndex = 19
         Me.btnDeleteShipmentItem.Name = "btnDeleteShipmentItem"
         '
         'btnPrintBOL
         '
         Me.btnPrintBOL.Caption = "Print BOL"
-        Me.btnPrintBOL.Glyph = Global.AOS.My.Resources.Resources.proforma_print
         Me.btnPrintBOL.Id = 9
-        Me.btnPrintBOL.LargeImageIndex = 5
+        Me.btnPrintBOL.ImageOptions.Image = Global.AOS.My.Resources.Resources.proforma_print
+        Me.btnPrintBOL.ImageOptions.LargeImageIndex = 5
         Me.btnPrintBOL.Name = "btnPrintBOL"
         '
         'rbtnSplitLoad
         '
         Me.rbtnSplitLoad.Caption = "Split Load"
         Me.rbtnSplitLoad.Id = 10
-        Me.rbtnSplitLoad.LargeImageIndex = 8
+        Me.rbtnSplitLoad.ImageOptions.LargeImageIndex = 8
         Me.rbtnSplitLoad.Name = "rbtnSplitLoad"
         '
         'rbtnLoadFreightCharges
         '
         Me.rbtnLoadFreightCharges.Caption = "Edit Freight Charges/Quotes"
         Me.rbtnLoadFreightCharges.Id = 11
-        Me.rbtnLoadFreightCharges.LargeImageIndex = 13
+        Me.rbtnLoadFreightCharges.ImageOptions.LargeImageIndex = 13
         Me.rbtnLoadFreightCharges.Name = "rbtnLoadFreightCharges"
         '
         'LoadMgmt_Images
@@ -509,9 +553,9 @@ Partial Class frmAddEditLoad
         Me.PanelControl1.Controls.Add(Me.GroupControl4)
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 95)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 116)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1382, 699)
+        Me.PanelControl1.Size = New System.Drawing.Size(1382, 678)
         Me.PanelControl1.TabIndex = 1
         '
         'GroupControl4
@@ -521,7 +565,7 @@ Partial Class frmAddEditLoad
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(0, 286)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(1382, 413)
+        Me.GroupControl4.Size = New System.Drawing.Size(1382, 392)
         Me.GroupControl4.TabIndex = 6
         Me.GroupControl4.Text = "Work Order Items"
         '
@@ -533,7 +577,7 @@ Partial Class frmAddEditLoad
         Me.grShipmentItems.MainView = Me.GridView1
         Me.grShipmentItems.Name = "grShipmentItems"
         Me.grShipmentItems.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.luProductDesc, Me.luContainer, Me.luStdgallons, Me.RepositoryItemCheckEdit1, Me.RepositoryItemLookUpEdit1})
-        Me.grShipmentItems.Size = New System.Drawing.Size(1382, 413)
+        Me.grShipmentItems.Size = New System.Drawing.Size(1382, 392)
         Me.grShipmentItems.TabIndex = 4
         Me.grShipmentItems.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -681,6 +725,7 @@ Partial Class frmAddEditLoad
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.GroupControl6)
         Me.GroupControl1.Controls.Add(Me.GroupControl5)
         Me.GroupControl1.Controls.Add(Me.GroupControl3)
         Me.GroupControl1.Controls.Add(Me.GroupControl2)
@@ -696,6 +741,66 @@ Partial Class frmAddEditLoad
         Me.GroupControl1.Size = New System.Drawing.Size(1382, 286)
         Me.GroupControl1.TabIndex = 23
         Me.GroupControl1.Text = "Shipment Information"
+        '
+        'GroupControl6
+        '
+        Me.GroupControl6.Controls.Add(Me.chkOrSooner)
+        Me.GroupControl6.Controls.Add(Label7)
+        Me.GroupControl6.Controls.Add(Me.chkFreezeProtect)
+        Me.GroupControl6.Controls.Add(Label8)
+        Me.GroupControl6.Controls.Add(Me.chkEditOverrideSkids)
+        Me.GroupControl6.Controls.Add(Me.txtTotalSkids)
+        Me.GroupControl6.Controls.Add(lblSkids)
+        Me.GroupControl6.Location = New System.Drawing.Point(1012, 74)
+        Me.GroupControl6.Name = "GroupControl6"
+        Me.GroupControl6.Size = New System.Drawing.Size(280, 191)
+        Me.GroupControl6.TabIndex = 31
+        Me.GroupControl6.Text = "Additional Information"
+        '
+        'chkOrSooner
+        '
+        Me.chkOrSooner.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoad, "OrSoonerFlag", True))
+        Me.chkOrSooner.Location = New System.Drawing.Point(99, 81)
+        Me.chkOrSooner.MenuManager = Me.RibbonControl1
+        Me.chkOrSooner.Name = "chkOrSooner"
+        Me.chkOrSooner.Properties.Caption = ""
+        Me.chkOrSooner.Size = New System.Drawing.Size(75, 19)
+        Me.chkOrSooner.TabIndex = 30
+        Me.chkOrSooner.TabStop = False
+        '
+        'bsLoad
+        '
+        Me.bsLoad.DataSource = GetType(AOS.BusinessObjects.Load)
+        '
+        'chkFreezeProtect
+        '
+        Me.chkFreezeProtect.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoad, "FREEZEPROTECTFLAG", True))
+        Me.chkFreezeProtect.Location = New System.Drawing.Point(99, 55)
+        Me.chkFreezeProtect.MenuManager = Me.RibbonControl1
+        Me.chkFreezeProtect.Name = "chkFreezeProtect"
+        Me.chkFreezeProtect.Properties.Caption = ""
+        Me.chkFreezeProtect.Size = New System.Drawing.Size(75, 19)
+        Me.chkFreezeProtect.TabIndex = 28
+        Me.chkFreezeProtect.TabStop = False
+        '
+        'chkEditOverrideSkids
+        '
+        Me.chkEditOverrideSkids.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.bsLoad, "OverrideSkids", True))
+        Me.chkEditOverrideSkids.Location = New System.Drawing.Point(166, 28)
+        Me.chkEditOverrideSkids.MenuManager = Me.RibbonControl1
+        Me.chkEditOverrideSkids.Name = "chkEditOverrideSkids"
+        Me.chkEditOverrideSkids.Properties.Caption = "Override"
+        Me.chkEditOverrideSkids.Size = New System.Drawing.Size(75, 19)
+        Me.chkEditOverrideSkids.TabIndex = 26
+        Me.chkEditOverrideSkids.TabStop = False
+        '
+        'txtTotalSkids
+        '
+        Me.txtTotalSkids.Location = New System.Drawing.Point(99, 28)
+        Me.txtTotalSkids.MenuManager = Me.RibbonControl1
+        Me.txtTotalSkids.Name = "txtTotalSkids"
+        Me.txtTotalSkids.Size = New System.Drawing.Size(48, 20)
+        Me.txtTotalSkids.TabIndex = 12
         '
         'GroupControl5
         '
@@ -727,10 +832,6 @@ Partial Class frmAddEditLoad
         Me.FreightcarrierLookUpEdit.Properties.ValueMember = "CarrierID"
         Me.FreightcarrierLookUpEdit.Size = New System.Drawing.Size(206, 20)
         Me.FreightcarrierLookUpEdit.TabIndex = 0
-        '
-        'bsLoad
-        '
-        Me.bsLoad.DataSource = GetType(AOS.BusinessObjects.Load)
         '
         'LogisticsidLookUpEdit
         '
@@ -1057,11 +1158,18 @@ Partial Class frmAddEditLoad
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl6.ResumeLayout(False)
+        Me.GroupControl6.PerformLayout()
+        CType(Me.chkOrSooner.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bsLoad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkFreezeProtect.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkEditOverrideSkids.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalSkids.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl5.ResumeLayout(False)
         Me.GroupControl5.PerformLayout()
         CType(Me.FreightcarrierLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bsLoad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogisticsidLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsLogistics, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FobLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1170,4 +1278,9 @@ Partial Class frmAddEditLoad
     Friend WithEvents colQtyContainers As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colTotalWeight As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colWeightUOM As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GroupControl6 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents txtTotalSkids As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents chkOrSooner As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkFreezeProtect As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkEditOverrideSkids As DevExpress.XtraEditors.CheckEdit
 End Class
